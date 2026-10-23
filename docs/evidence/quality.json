@@ -1,0 +1,159 @@
+{
+  "version": "0.1.0-preview.7",
+  "dsh": "0.2.1-rc.2",
+  "candidateSha256": "5c05bef5759b4c13a17ffc802d56744345d2dab7a1d382a6d13907ee9c5bb372",
+  "deterministicFixture": true,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "unitTests": 58,
+  "qualityFixturesPerMode": 5,
+  "originalLifecycleFixturesPerMode": 4,
+  "templateFlowsPerMode": true,
+  "scope": "Real DSH via fresh tgz install; physical SVG time distance, local controls, downloads, graph keyboard/edges, light640/dark360, reload; no new model requests from local controls.",
+  "results": {
+    "native": {
+      "results": [
+        {
+          "kind": "irregular",
+          "toolMode": "native",
+          "deterministicFixture": true,
+          "timePixelIntervalRatio": 0.12499996789742791,
+          "filteredDownload": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "bars",
+          "toolMode": "native",
+          "deterministicFixture": true,
+          "patterns": true,
+          "signedValuesAndMissing": true,
+          "keyboardFilter": true,
+          "scopeDownloads": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "missing",
+          "toolMode": "native",
+          "deterministicFixture": true,
+          "missingNotZero": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "prebinned",
+          "toolMode": "native",
+          "deterministicFixture": true,
+          "selectedDenominators": true,
+          "zeroBinsRetained": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "graph",
+          "toolMode": "native",
+          "deterministicFixture": true,
+          "keyboardDetails": true,
+          "wheelDoesNotZoom": true,
+          "distinctEdgePaths": 5,
+          "reducedMotion": true,
+          "allNodesAndEdgesInNarrowViewport": true,
+          "selfLoopOutsideNode": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        }
+      ],
+      "pageErrors": []
+    },
+    "ptc": {
+      "results": [
+        {
+          "kind": "irregular",
+          "toolMode": "ptc",
+          "deterministicFixture": true,
+          "timePixelIntervalRatio": 0.12499996789742791,
+          "filteredDownload": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "bars",
+          "toolMode": "ptc",
+          "deterministicFixture": true,
+          "patterns": true,
+          "signedValuesAndMissing": true,
+          "keyboardFilter": true,
+          "scopeDownloads": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "missing",
+          "toolMode": "ptc",
+          "deterministicFixture": true,
+          "missingNotZero": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "prebinned",
+          "toolMode": "ptc",
+          "deterministicFixture": true,
+          "selectedDenominators": true,
+          "zeroBinsRetained": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        },
+        {
+          "kind": "graph",
+          "toolMode": "ptc",
+          "deterministicFixture": true,
+          "keyboardDetails": true,
+          "wheelDoesNotZoom": true,
+          "distinctEdgePaths": 5,
+          "reducedMotion": true,
+          "allNodesAndEdgesInNarrowViewport": true,
+          "selfLoopOutsideNode": true,
+          "narrowWidth": 360,
+          "narrowOverflow": 0,
+          "localControlsMadeNoModelRequests": true,
+          "refresh": true
+        }
+      ],
+      "pageErrors": []
+    }
+  },
+  "screenshots": [
+    "quality/native-quality-bars-360.png",
+    "quality/native-quality-graph-360.png",
+    "quality/native-quality-irregular-360.png",
+    "quality/native-quality-prebinned-640.png"
+  ],
+  "boundary": "No claim of all device or screen-reader compatibility; graph overview has small labels at 360px, Locate and the full relationship list provide detail. Natural semantic acceptance recorded independently.",
+  "developmentFindings": [
+    "Initial regression assumed blue despite saved berry theme; test now explicitly previews ocean.",
+    "Visual review found legend/ticks overlap and resize fit using previous layout; moved legend/units and fit current geometry.",
+    "Self-loop originally stayed behind its node; increased loop excursion and added actual outside-node assertion."
+  ]
+}

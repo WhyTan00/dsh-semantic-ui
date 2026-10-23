@@ -2,13 +2,14 @@ import {createServer} from 'node:http';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {setTimeout as delay} from 'node:timers/promises';
 import {architecture,decision,chart,distribution,largeArchitecture} from '../../fixtures/examples';
+import {qualityFixtures} from '../../fixtures/quality';
 const output=process.env.FIXTURE_OUTPUT_DIR!;mkdirSync(output,{recursive:true});let seq=0;
 const server=createServer(async(req,res)=>{
  if(req.method==='GET'){res.setHeader('Content-Type','application/json');res.end(JSON.stringify({object:'list',data:[{id:'semantic-fixture',object:'model',owned_by:'local-deterministic-fixture'}]}));return;}
  let body='';for await(const c of req)body+=c;
  const request=JSON.parse(body);const n=++seq;writeFileSync(`${output}/${n}.json`,JSON.stringify(request,null,2));
  const userText=JSON.stringify(request.messages.filter((m:any)=>m.role==='user'));
- const which=[...userText.matchAll(/Semantic fixture (architecture|decision|chart|histogram)/g)].at(-1)?.[1]??'architecture';const view=userText.includes('ARCHITECTURE_SCALE')?largeArchitecture:which.includes('decision')?decision:which.includes('histogram')?distribution:which.includes('chart')?chart:architecture;
+ const which=[...userText.matchAll(/Semantic fixture (architecture|decision|chart|histogram)/g)].at(-1)?.[1]??'architecture';const quality=[...userText.matchAll(/QUALITY_FIXTURE=(irregular|bars|missing|prebinned|graph)/g)].at(-1)?.[1] as keyof typeof qualityFixtures|undefined;const view=quality?qualityFixtures[quality]:userText.includes('ARCHITECTURE_SCALE')?largeArchitecture:which.includes('decision')?decision:which.includes('histogram')?distribution:which.includes('chart')?chart:architecture;
  const fillers=[...JSON.stringify(request.messages.filter((m:any)=>m.role==='user')).matchAll(/HISTORY_FILLER_(\d+)/g)];
  const last=request.messages.at(-1);const done=last?.role==='tool';const toolNames=request.tools?.map((t:any)=>t.function?.name)??[];
  // The host appends user-role reminders after the real prompt; choose the

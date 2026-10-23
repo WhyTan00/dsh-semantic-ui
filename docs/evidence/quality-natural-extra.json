@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0-preview.7",
+  "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+  "results": [
+    {
+      "id": "N2",
+      "nodes": 1,
+      "renderer": "GenUI",
+      "newModelRequests": 0
+    },
+    {
+      "id": "N3",
+      "nodes": 1,
+      "renderer": "GenUI",
+      "newModelRequests": 0
+    },
+    {
+      "id": "D2",
+      "nodes": 1,
+      "renderer": "Semantic UI",
+      "newModelRequests": 0,
+      "current300Status": "No matching rule — no winner inferred\n\nLocal deterministic rules. No model request. Highest priority wins; tied rules combine recommendations. This evaluates the supplied policy; it does not verify the policy against the source facts.\n\nChanged: 当前需求量: 80 → 300",
+      "current300Constraints": "Hard constraints (2)\n\n方案 A：100GB 上限: 增长到 300GB 一旦确认，即超出 A 的 100GB 上限，A 被容量硬约束排除。 — not triggered\n\nEvidence (1)\n\n方案 B：1000GB 上限: 需求超过 1000GB 时 B 的上限也不够。 — not triggered\n\nEvidence (1)",
+      "confirmed50Status": "Proposed policy result: 方案 B：1000GB 上限\n\nLocal deterministic rules. No model request. Highest priority wins; tied rules combine recommendations. This evaluates the supplied policy; it does not verify the policy against the source facts.\n\nChanged: 可能增长到的规模: 300 → 50; 增长到 300GB 是否已确认: 可能 → 已确认\n\nRule r3_confirmed_growth · priority 20 · Declared source: model judgment: 增长已确认，300GB 超出 A 的 100GB 上限，B 的 1000GB 可一次覆盖，避免中途迁移。\n\nEvidence (2)"
+    }
+  ],
+  "pageErrors": [],
+  "boundary": "Reopened original answers; no model prompt or answer retry. D2 counterexamples demonstrate model-authored policy errors. Initial navigation reached only 5 recent sessions; expanded public Show more control before D2."
+}

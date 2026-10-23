@@ -2,9 +2,9 @@
 
 核实日期：2026-10-23。范围为个人 DSH Semantic UI；只研究公开资料和公开源码。结论：**没有理由把目录外任务一律优先交给某个 GenUI。应按所需能力、实际可用工具、宿主兼容和状态/反馈语义选择。**
 
-本次核对 33 个仓库的固定 commit、许可证和选定的 manifest/契约/实现文件。可复核清单见 [PROJECTS](PROJECTS.md)，事实源为 [projects.json](projects.json)。这是一轮有选择的源码研究，不是对 33 个系统的完整审计、性能横评或运行认证。源码 HEAD 中的 canary、dev、unstable 版本都标为观察值，不冒充已发布稳定包。
+本次核对 35 个仓库的固定 commit、许可证和选定的 manifest/契约/实现文件。可复核清单见 [PROJECTS](PROJECTS.md)，事实源为 [projects.json](projects.json)。这是一轮有选择的源码研究，不是对 35 个系统的完整审计、性能横评或运行认证。源码 HEAD 中的 canary、dev、unstable 版本都标为观察值，不冒充已发布稳定包。
 
-补充研究：[GenUI 吸收范围与缺口](GENUI-ABSORPTION.zh-CN.md) 逐项说明已实现、设计采用及暂缓项；[产品价值与模型进步](MODEL-PROGRESS.zh-CN.md) 记录可检验的定位、个人模板与主题优先的迭代顺序，以及停止重复建设的条件。当前清单扩展至 126 份固定源码文件；preview.5 发行时的 116 份记录保留为历史证据。
+补充研究：[GenUI 吸收范围与缺口](GENUI-ABSORPTION.zh-CN.md) 逐项说明已实现、设计采用及暂缓项；[产品价值与模型进步](MODEL-PROGRESS.zh-CN.md) 记录可检验的定位、个人模板与主题优先的迭代顺序，以及停止重复建设的条件。当前清单扩展至 139 份固定源码文件；preview.5 发行时的 116 份记录保留为历史证据。
 
 ## 先分清四种责任
 
@@ -70,3 +70,5 @@ Chart.js 适合常规 Canvas 图，但当前与 ECharts 重叠。D3 是底层原
 5. 没有适合且已可用的工具时，说明缺口并使用文字；不凭仓库名或组件截图承诺能力。
 
 这次已实际采用的代码变化和未来表单的最小合同见 [ADOPTION](ADOPTION.zh-CN.md)。未来候选是明确的开发方向，不是已实现能力。更新时重新核对源码/发行/许可证，运行 `pnpm research:generate` 与 `pnpm research:check`；这两个命令不自动联网、安装或启用候选项目。
+
+preview.7 的定向采用补充 Unovis 与 Visa Chart Components，并补读 Observable Plot 时间尺度、React Flow 键盘状态及 ECharts ARIA。实际改动和验证边界见 [可视化质量迭代](../QUALITY.zh-CN.md)。

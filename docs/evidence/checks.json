@@ -2,11 +2,11 @@
   "platform": "macOS arm64",
   "dsh": "0.2.1-rc.2",
   "typecheck": "passed",
-  "unitTestFiles": 5,
-  "unitTestsPassed": 51,
+  "unitTestFiles": 6,
+  "unitTestsPassed": 58,
   "unitTestsFailed": 0,
   "build": "passed",
-  "naturalQuestionAcceptance": "33 cases completed in three frozen 11-question rounds through real WorkBuddy model; latest round has four semantic failures, all preserved. Not full acceptance.",
+  "naturalQuestionAcceptance": "44 frozen-question first attempts across four rounds. Round4: 4 pass / 3 notes / 4 fail (A1/A3/D1/D2); full GenUI enabled unlike rounds1-3, not controlled benchmarking.",
   "delivery": "output.presentationMeta on standard tool/result and tool/ptc-dispatch events",
   "fixes": [
     "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
@@ -16,20 +16,23 @@
     "Own guidance scoped to own UI specs, allowing other plugins outside the three-component catalog.",
     "Decision result and origin explicitly declared; missing blocking conditions listed.",
     "Numeric receipt returns deterministic bounded full-data facts for checking prose.",
-    "Bulk model evidence separated from runtime tgz without removing first failures."
+    "Bulk model evidence separated from runtime tgz without removing first failures.",
+    "Actual elapsed-time geometry; stable color/pattern identities; all-missing states; scoped source table downloads.",
+    "Keyboard graph selection; parallel/cycle/self edges; current-container fit including edges.",
+    "Explicit proposed versus declared policy and reset conditions/dimensions."
   ],
   "modelProvider": "workbuddy",
   "model": "deepseek-v4.1-flash",
   "reasoningEffort": "high",
   "latestNaturalBrowserErrors": [],
   "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts.",
-  "version": "0.1.0-preview.6",
+  "version": "0.1.0-preview.7",
   "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round.",
   "research": {
-    "projects": 33,
-    "pinnedSourceFiles": 126,
-    "licenseFiles": 33,
-    "newRuntimeDependencies": "Same chart stack; native storage/connection/boot peers made explicit. Zod aligned to host 4.4.3.",
+    "projects": 35,
+    "pinnedSourceFiles": 139,
+    "licenseFiles": 35,
+    "newRuntimeDependencies": 0,
     "derivedInventory": "consistent"
   },
   "targetedModelCases": 2,
@@ -53,5 +56,19 @@
   },
   "targetedModelProseAttributionNotes": 1,
   "templateEvidence": "templates.json",
-  "runtimeLicensePackages": 85
+  "runtimeLicensePackages": 85,
+  "priorPreview6Summary": {
+    "version": "0.1.0-preview.6",
+    "unitTestsPassed": 51,
+    "unitTestFiles": 5,
+    "research": {
+      "projects": 33,
+      "pinnedSourceFiles": 126,
+      "licenseFiles": 33,
+      "newRuntimeDependencies": "Same chart stack; native storage/connection/boot peers made explicit. Zod aligned to host 4.4.3.",
+      "derivedInventory": "consistent"
+    },
+    "targetedModelBoundary": "Two fresh template-reuse conversations; P2 derived a correct combined mean but overstated program provenance. Not a full 11-question round."
+  },
+  "qualityEvidence": "quality.json"
 }

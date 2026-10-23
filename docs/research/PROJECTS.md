@@ -2,7 +2,7 @@
 
 本文件由 projects.json 派生；执行 `pnpm research:generate` 更新、`pnpm research:check` 核对。人工结论见 [研究说明](README.md) 与 [采用记录](ADOPTION.zh-CN.md)。
 
-核实日期：2026-10-23。33 个公开仓库，126 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
+核实日期：2026-10-24。35 个公开仓库，139 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
 
 ## ui-runtime
 
@@ -63,13 +63,15 @@
 | [chartjs/Chart.js](https://github.com/chartjs/Chart.js/tree/76d8cf895a7485dc838c90ef37e2bc9d9e388fcb) | chart.js 4.6.1 | [MIT](https://github.com/chartjs/Chart.js/blob/76d8cf895a7485dc838c90ef37e2bc9d9e388fcb/LICENSE.md) | Canvas 图表与插件体系适合普通仪表盘。 | **候选**：Canvas 可访问性需应用补等价文本/源表；不能以 renderer 切换代替统计口径验证。 |
 | [leeoniya/uPlot](https://github.com/leeoniya/uPlot/tree/7807ebb3e20a4f327628ca5413043e61934d101e) | uplot 1.6.32 | [MIT](https://github.com/leeoniya/uPlot/blob/7807ebb3e20a4f327628ca5413043e61934d101e/LICENSE) | 面向稠密时间序列，明确 aligned x/null 数据格式与 cursor/zoom。 | **候选**：适合作为将来大时序专用 renderer；厂商性能数字未复测，当前 2000 行不构成迁移动机。 |
 | [plotly/plotly.js](https://github.com/plotly/plotly.js/tree/96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2) | plotly.js 4.1.2 | [MIT](https://github.com/plotly/plotly.js/blob/96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2/LICENSE) | 科学、统计、金融与 3D trace 覆盖较广。 | **候选**：专用复杂图候选，需要按 trace 拆包、WebGL 上下文预算和方法语义验证；不整包替换当前通用图表。 |
+| [f5/unovis](https://github.com/f5/unovis/tree/616df8273c02b794deb12ab9b2e748f64099b32e) | @unovis/ts 1.7.1 | [Apache-2.0](https://github.com/f5/unovis/blob/616df8273c02b794deb12ab9b2e748f64099b32e/LICENSE) | 系列身份与配色一致；用纹理和线型补充颜色，支持主题与可访问表达。 | **采用设计**：采用稳定系列编码与填充纹理思路，继续使用 ECharts；不增加它的多框架与地图依赖。 |
+| [visa/visa-chart-components](https://github.com/visa/visa-chart-components/tree/8b657d1ccc3f0799eccdba31c5f669e402d4133c) | @visa/visa-charts-data-table 3.0.2 | [MIT](https://github.com/visa/visa-chart-components/blob/8b657d1ccc3f0799eccdba31c5f669e402d4133c/LICENSE) | 同源图表与数据表、明确可访问说明和键盘路径。 | **采用设计**：采用图表/说明/表格/导出同源及明确 scope；不宣称实现其完整辅助技术能力。 |
 
 ## chart-grammar
 
 | 项目 / 固定源码 | 观察版本 | 许可证 | 取其所长 | 采用决定与边界 |
 |---|---|---|---|---|---|
 | [vega/vega-lite](https://github.com/vega/vega-lite/tree/85fab8d12c873b3b224ef9a33c807642953325ba) | vega-lite 6.5.0 | [BSD-3-Clause](https://github.com/vega/vega-lite/blob/85fab8d12c873b3b224ef9a33c807642953325ba/LICENSE) | mark/encoding/transform/parameter 把图形和交互组合为声明式语法。 | **候选**：未来复杂统计/关联视图候选。原始 spec 有 URL 与表达式能力，不能作为当前模型 option 直通；需自己的安全子集和统计方法。 |
-| [observablehq/plot](https://github.com/observablehq/plot/tree/535723d5e433727720d9b673c31622821bb03210) | @observablehq/plot 0.6.17 | [ISC](https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/LICENSE) | 探索性统计图与 bin/group/window 等变换清楚分层。 | **参考**：吸收空箱/缺失和口径检查；不把含函数的 Plot/JS option 交给模型执行，也不自动补全分位数方法。 |
+| [observablehq/plot](https://github.com/observablehq/plot/tree/535723d5e433727720d9b673c31622821bb03210) | @observablehq/plot 0.6.17 | [ISC](https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/LICENSE) | 探索性统计图与 bin/group/window 等变换清楚分层。 | **采用设计**：吸收空箱/缺失和口径检查；不把含函数的 Plot/JS option 交给模型执行，也不自动补全分位数方法。 |
 | [TanStack/charts](https://github.com/TanStack/charts/tree/778f2cc6ca174256ba9d9f6cf603af94bb70db8b) | tanstack-charts (private) | [MIT](https://github.com/TanStack/charts/blob/778f2cc6ca174256ba9d9f6cf603af94bb70db8b/LICENSE) | typed grammar、scene/renderer 分离、按子路径加载和可访问交互契约。 | **候选**：README 指明 main 未发布并指向 v1.1.0；renderer 支持不完全相同，不把原生端静态检查当设备验收。 |
 | [antvis/G2](https://github.com/antvis/G2/tree/94526ab37787d5aee552042bc7708bdb447ace67) | @antv/g2 5.4.8 | [MIT](https://github.com/antvis/G2/blob/94526ab37787d5aee552042bc7708bdb447ace67/LICENSE) | 声明式图形语法与 AntV G 多 renderer/交互生态。 | **候选**：复杂语法要由可信编译器生成，不接收任意回调；已有 ECharts 时先证明特定需求。 |
 

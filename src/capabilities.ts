@@ -1,9 +1,9 @@
 import {components,VERSION,type ComponentName} from './protocol';
 
 const descriptions:Record<ComponentName,{purpose:string;controls:string[];requires:string[]}>={
- ArchitectureExplorer:{purpose:'Declared relationships, dependencies and continuous scenario paths.',controls:['search','scenario highlighting','neighborhood focus','relationship list'],requires:['explicit nodes and edges','direction and declared roles']},
- DecisionExplorer:{purpose:'Compare common dimensions under finite declared rules and hard constraints.',controls:['focus dimensions','local condition changes','rule and missing-condition explanations'],requires:['supplied option set','unknown values kept null','declared policy origin']},
- DataChart:{purpose:'Inspect lines, category bars and equal-width histograms with source tables.',controls:['range','visible series','source table scope and pagination'],requires:['units and explicit missing values','time offset, timezone and granularity when relevant','shared histogram boundaries and denominator']},
+ ArchitectureExplorer:{purpose:'Declared relationships, dependencies and continuous scenario paths.',controls:['search','scenario highlighting','neighborhood focus','relationship list'],requires:['explicit nodes and edges, including cycles and parallel relations','direction and declared roles']},
+ DecisionExplorer:{purpose:'Compare common dimensions under finite declared rules and hard constraints.',controls:['focus dimensions','local condition changes','rule and missing-condition explanations','reset original conditions'],requires:['supplied option set','unknown values kept null','declared policy origin']},
+ DataChart:{purpose:'Inspect lines, category bars and equal-width histograms with source tables.',controls:['range','visible series','source table scope and pagination','explicit scoped JSON download'],requires:['units and explicit missing values','time offset, timezone and granularity when relevant','shared histogram boundaries and denominator']},
 };
 
 /** Own renderer capabilities only; no inference about another enabled plugin. */

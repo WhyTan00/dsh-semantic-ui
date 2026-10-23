@@ -49,6 +49,22 @@
       "validationRejectedCalls": 0,
       "uniquePageErrorMessages": [],
       "browserErrorBoundary": "One shared browser context per round; per-case arrays are cumulative. Do not sum repeated entries as independent errors."
+    },
+    {
+      "round": 4,
+      "version": "0.1.0-preview.7",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 4,
+      "semanticPassWithNotes": 3,
+      "semanticFail": 4,
+      "modelRequests": 33,
+      "renderedComponents": 7,
+      "genuiComponents": 2,
+      "validationRejectedCalls": 1,
+      "uniquePageErrorMessages": [],
+      "generationComposition": "Semantic UI + public GenUI 0.14.0 fully enabled; rounds 1-3 did not include GenUI guidance. Same frozen questions but different composition, not a controlled accuracy benchmark.",
+      "extraBrowserRecord": "evidence/quality-natural-extra.json"
     }
   ],
   "results": [
@@ -1511,6 +1527,513 @@
         "screenshots": []
       },
       "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "A1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-A1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Four nodes/four directed edges and shared Database are preserved.",
+            "Scenario says read and write paths share only Database, but the supplied full paths also share Order API. Prose says Order API only hands work to Queue despite its direct database read, and overstates queue replacement consequences."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-A1-component-0-640.png",
+          "evidence/natural/r4-A1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "A2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-A2.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Five nodes/four adjacent edges and notification-only retry/no payment rollback preserved.",
+            "Inventory failure stopping payment is an inferred sequential-flow interpretation; claims that all upstream effects are absent remain too strong. No extra rollback edge created."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-A2-component-0-640.png",
+          "evidence/natural/r4-A2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "A3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-A3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Five allowed relations and prohibition-as-constraint preserved.",
+            "Invents Search to Gateway to Account as the only compliant route although Search to Gateway is not supplied. Prose incorrectly calls paths independent despite shared Gateway and infers exclusive data ownership from bounded topology."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-A3-component-0-640.png",
+          "evidence/natural/r4-A3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "D1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-D1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Unknown prices and initial no-winner receipt preserved; private network excludes managed hosting when enabled.",
+            "Final prose still recommends managed hosting despite unknown relative prices and operations capacity, assumes lock-in and relative migration costs."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-D1-component-0-640.png",
+          "evidence/natural/r4-D1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "D2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-D2.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 1,
+        "validationIssues": 1,
+        "modelInternalCorrections": true,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Original capacities retained; one rejected empty recommendation corrected within the same first attempt.",
+            "Prose calls A currently optimal and B more costly without a comparable cost basis.",
+            "Browser counterexample: current demand 300GB does not exclude A because the model constraint only examines future demand/confirmation. With confirmed future demand 50GB, model rule still picks B and explains that 300GB exceeds A. This is a model policy error, not an evaluator arithmetic failure."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-D2-component-0-640.png",
+          "evidence/natural/r4-D2-component-0-360.png",
+          "evidence/natural/r4-D2-extra.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "D3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-D3.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Both unknown cells retained, no rules and no unique winner; known does not automatically outrank unknown.",
+            "A suitableWhen still implies a known 3-day lead time can settle a lead-time-only comparison while B remains unknown. Prose list of any one information category is insufficient as a universal sufficiency claim."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-D3-component-0-640.png",
+          "evidence/natural/r4-D3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "N1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-N1.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Native control and accessible snapshot; no new model call."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Correct UTC dates, 4/5/3/6, 4.5 mean, +2 net change and Jan 3 decrease; dataFacts and rendered time axis agree."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-N1-component-0-640.png",
+          "evidence/natural/r4-N1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "N2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-N2.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Valid n=3, missing=1, mean zero; negative, true zero and null preserved. Full mean x/4 explicitly unknown.",
+            "Used available GenUI table/keyvalue rather than Semantic UI chart; original rendered GenUI history verified, no duplicate component. Small data does not require exploration."
+          ]
+        },
+        "expression": "genui-table-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-N2-extra.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "N3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-N3.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Valid7/missing1, bins3/4, proportions3/7 and4/7, final upper endpoint retained; weighted mean withheld without weights.",
+            "Used GenUI table/keyvalue, verified in actual history. Alternate interval wording does not define a recommended binning; primary requested bins are correct."
+          ]
+        },
+        "expression": "genui-table-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r4-N3-extra.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "T1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Plain text: 60 minutes."
+          ]
+        },
+        "expression": "plain-prose",
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 4,
+      "questionId": "T2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.7",
+        "candidateSha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r4-T2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent reviewed complete first-attempt payloads, prose and frozen facts; browser counterexamples checked separately without another model request.",
+          "notes": [
+            "Correct unknown versus measured zero and explicit direction-dependence; plain text.",
+            "Examples of mean/variance/extrema/proportion changes are phrased broadly; exact effect depends on the data, missing mechanism and statistic."
+          ]
+        },
+        "expression": "plain-prose",
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
     }
   ],
   "excludedSetupAttempts": [
@@ -1542,6 +2065,15 @@
         "Zero has scale-specific meaning and imputation can bias either way.",
         "Isolated profile disables temporary first-party 1017 model badge to avoid duplicate single-slot registration with WorkBuddy 5.6.2; model route/settings unchanged."
       ]
+    },
+    {
+      "afterRound": 3,
+      "version": "0.1.0-preview.7",
+      "changes": [
+        "Elapsed-time geometry, scoped downloads, stable visual encodings and graph keyboard/layout fixes.",
+        "Explicit proposed/declared policy results; sourceFactsVerified false; numeric receipt distinguishes echoed summary from computed dataFacts."
+      ],
+      "boundary": "Round4 model candidate differs from final only in client self-loop geometry and later documentation; exact candidate SHA retained. Subsequent client change is verified by fresh Native/PTC installation, not attributed to natural testing."
     }
   ],
   "evidenceDistribution": "Full records remain open in the source tag and the separately checksummed evidence archive; runtime package retains this compact index and frozen questions."

@@ -1,0 +1,18 @@
+{
+  "toolMode": "native",
+  "deterministicFixture": true,
+  "saveVersionRestore": true,
+  "importExport": true,
+  "invalidImportRejected": true,
+  "conflictDetected": true,
+  "appearanceAffectsChart": true,
+  "previewLeavesHistoryUnchanged": true,
+  "freshSessionNewDataMean": 250,
+  "exactTemplateVersion": 1,
+  "refresh": true,
+  "restartPersistence": false,
+  "deleteKeepsHistory": false,
+  "keyboard": true,
+  "narrowWidth": 360,
+  "pageErrors": []
+}

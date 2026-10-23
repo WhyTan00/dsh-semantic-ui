@@ -1,6 +1,16 @@
 # 验证证据与未通过项
 
-状态：三轮自然问题已实际执行，内容语义验收未全部通过，继续预览。所有数据和问题均为虚构。
+状态：四轮固定自然问题共 44 条已实际执行，内容语义验收未全部通过，继续预览。所有数据和问题均为虚构。
+
+## preview.7 可视化与交互质量
+
+58 项单元测试、构建和 35 项/139 份固定来源一致性通过。新候选包在全新 profile 真实安装，Native/PTC 各完成原四样例、模板流程和五个新增质量样例。实际 SVG 时间距离比例约 1:8，过滤下载与显示数据一致；键盘选择、条件重置、自环外露和窄屏全图边界均实测。640/360px 页面错误与组件根横向溢出为 0。详细记录和截图见 [质量说明](QUALITY.zh-CN.md) 与 [质量证据](evidence/quality.json)。
+
+第四轮沿用原 11 题、WorkBuddy/high，每题独立新会话。共 33 次模型请求；4 通过、3 有保留、4 失败（A1/A3/D1/D2）。7 个本插件组件、2 个 GenUI 表格、2 个纯文字回答。N2/N3 由 GenUI 呈现后实际回读；没有把它们计为本插件图表通过。本轮完整开启 GenUI，与前三轮上下文不同，不能将通过数当成受控准确率比较。
+
+A1/A3 仍从图补写不成立的路径/独立性结论；D1 价格与人力未知仍给出倾向；D2 容量规则只检查未来需求而漏掉当前需求。原 D2 实际改为当前 300GB 时没有排除 A；确认未来 50GB 时却继续推荐 B，并用原 300GB 解释。程序忠实执行了模型规则，这不代表规则符合题意。D3 已不生成赢家规则，但附加条件文字仍有过强表述。所有首次记录及反例见 [逐题索引](natural-question-results.json) 和 [追加浏览器证据](evidence/quality-natural-extra.json)。
+
+本次真实模型运行使用较早候选；最终客户端另外修正自环外露，新的 Native/PTC 安装矩阵验证该变化。候选与最终归档 SHA 分别记录，模型测试不冒充在最终归档上执行。Linux CI 以 [按 commit 记录的结果](evidence/linux-ci.json) 为准。
 
 ## preview.6 模板迭代
 
@@ -78,7 +88,7 @@
 
 ## 系统区分
 
-macOS：本轮本地实测。Linux：GitHub-hosted ubuntu-latest / Node 24.21.0 的冻结安装、研究清单一致性、类型检查、37 项测试、构建、真实 DSH Native/PTC 四样例矩阵和打包均通过，见 [Linux CI 证据](evidence/linux-ci.json) 与 [实际运行](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39941303029)。这不等于 Linux 实机桌面、真实移动设备或个人模型验收。
+macOS：本轮本地实测。Linux：下述为 preview.5 历史记录；各新版本以 linux-ci.json 标注的 commit 为准。GitHub-hosted ubuntu-latest / Node 24.21.0 的冻结安装、研究清单一致性、类型检查、37 项测试、构建、真实 DSH Native/PTC 四样例矩阵和打包均通过，见 [Linux CI 证据](evidence/linux-ci.json) 与 [实际运行](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39941303029)。这不等于 Linux 实机桌面、真实移动设备或个人模型验收。
 
 Linux Chromium 的宿主侧栏 hover card 曾遮挡系列复选框的鼠标点击；CI 保留失败记录，并使用真实 focus + Space 键验证该复选框的可访问交互，未使用 force click 或移除宿主 DOM。macOS 的鼠标路径已通过。这是锁定宿主的 UI 边界，CI 通过也不等于 Linux 全部鼠标路径已验收。
 
