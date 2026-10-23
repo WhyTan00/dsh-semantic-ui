@@ -6,14 +6,22 @@ Original project code is MIT. The following exact installed production dependenc
 |---|---|---|---|
 | @dagrejs/dagre | 3.1.1 | MIT | [LICENSE](licenses/dagrejs__dagre@3.1.1/LICENSE) |
 | @dagrejs/graphlib | 4.0.5 | MIT | [LICENSE](licenses/dagrejs__graphlib@4.0.5/LICENSE) |
+| @deepseek-ai/cordis-plugin-group | 1.0.5 | MIT | [LICENSE](licenses/deepseek-ai__cordis-plugin-group@1.0.5/LICENSE) |
 | @deepseek-ai/cordis-plugin-include | 1.0.10 | MIT | [LICENSE](licenses/deepseek-ai__cordis-plugin-include@1.0.10/LICENSE) |
 | @deepseek-ai/cordis-plugin-loader | 1.0.6 | MIT | [LICENSE](licenses/deepseek-ai__cordis-plugin-loader@1.0.6/LICENSE) |
 | @deepseek-ai/cordis | 4.0.5 | MIT | [LICENSE](licenses/deepseek-ai__cordis@4.0.5/LICENSE) |
 | @deepseek-ai/cosmokit | 1.8.6 | MIT | [LICENSE](licenses/deepseek-ai__cosmokit@1.8.6/LICENSE) |
 | @deepseek-ai/dsh-agent | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-agent@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-app-boot | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-app-boot@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-atomic-write | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-atomic-write@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-brand | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-brand@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-client-connection | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-credentials | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-credentials@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-fs | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-fs@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-home-paths | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-home-paths@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-launch-environment | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-launch-environment@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-llm | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-llm@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-package-manifest | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-package-manifest@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-ptc-runtime | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-ptc-runtime@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-sandbox-policy | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-sandbox-policy@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-sandbox | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-sandbox@0.2.1-rc.2/LICENSE) |
@@ -21,6 +29,7 @@ Original project code is MIT. The following exact installed production dependenc
 | @deepseek-ai/dsh-session-persistence | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-session-persistence@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-session-projection | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-session-projection@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-session | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-session@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-skill | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-skill@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-storage-domain | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-storage-domain@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-storage | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-storage@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-system-prompt | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-system-prompt@0.2.1-rc.2/LICENSE) |
@@ -33,6 +42,7 @@ Original project code is MIT. The following exact installed production dependenc
 | @deepseek-ai/dsh-working-directory | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-working-directory@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-workspace | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-workspace@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/schemastery | 3.18.5 | MIT | [LICENSE](licenses/deepseek-ai__schemastery@3.18.5/LICENSE) |
+| @eslint-community/regexpp | 4.12.2 | MIT | [LICENSE](licenses/eslint-community__regexpp@4.12.2/LICENSE) |
 | @json-render/core | 0.21.1 | Apache-2.0 | [LICENSE](licenses/json-render__core@0.21.1/LICENSE) |
 | @json-render/react | 0.21.1 | Apache-2.0 | [LICENSE](licenses/json-render__react@0.21.1/LICENSE) |
 | @standard-schema/spec | 1.1.0 | MIT | [LICENSE](licenses/standard-schema__spec@1.1.0/LICENSE) |
@@ -46,6 +56,7 @@ Original project code is MIT. The following exact installed production dependenc
 | @types/react | 19.2.14 | MIT | [LICENSE](licenses/types__react@19.2.14/LICENSE) |
 | @xyflow/react | 12.12.0 | MIT | [LICENSE](licenses/xyflow__react@12.12.0/LICENSE) |
 | @xyflow/system | 0.0.83 | MIT | [LICENSE](licenses/xyflow__system@0.0.83/LICENSE) |
+| ajv | 8.20.0 | MIT | [LICENSE](licenses/ajv@8.20.0/LICENSE) |
 | argparse | 2.0.1 | Python-2.0 | [LICENSE](licenses/argparse@2.0.1/LICENSE) |
 | classcat | 5.0.5 | MIT | [LICENSE.md](licenses/classcat@5.0.5/LICENSE.md) |
 | csstype | 3.2.3 | MIT | [LICENSE](licenses/csstype@3.2.3/LICENSE) |
@@ -59,13 +70,19 @@ Original project code is MIT. The following exact installed production dependenc
 | d3-transition | 3.0.1 | ISC | [LICENSE](licenses/d3-transition@3.0.1/LICENSE) |
 | d3-zoom | 3.0.0 | ISC | [LICENSE](licenses/d3-zoom@3.0.0/LICENSE) |
 | echarts | 6.1.0 | Apache-2.0 | [LICENSE](licenses/echarts@6.1.0/LICENSE), [NOTICE](licenses/echarts@6.1.0/NOTICE), [LICENSE-d3](licenses/echarts@6.1.0/licenses/LICENSE-d3) |
+| fast-deep-equal | 3.1.3 | MIT | [LICENSE](licenses/fast-deep-equal@3.1.3/LICENSE) |
+| fast-uri | 3.1.9 | BSD-3-Clause | [LICENSE](licenses/fast-uri@3.1.9/LICENSE) |
 | js-yaml | 4.3.2 | MIT | [LICENSE](licenses/js-yaml@4.3.2/LICENSE) |
+| json-schema-traverse | 1.0.0 | MIT | [LICENSE](licenses/json-schema-traverse@1.0.0/LICENSE) |
 | node-addon-native-custom-loader | 0.1.9 | MIT | [LICENSE](licenses/node-addon-native-custom-loader@0.1.9/LICENSE) |
 | node-addon-require-builtin-darwin-arm64 | 0.1.9 | MIT | [LICENSE](licenses/node-addon-require-builtin-darwin-arm64@0.1.9/LICENSE) |
 | node-addon-require-builtin | 0.1.9 | MIT | [LICENSE](licenses/node-addon-require-builtin@0.1.9/LICENSE) |
 | react-dom | 19.3.1 | MIT | [LICENSE](licenses/react-dom@19.3.1/LICENSE) |
 | react | 19.3.1 | MIT | [LICENSE](licenses/react@19.3.1/LICENSE) |
+| require-from-string | 2.0.2 | MIT | [license](licenses/require-from-string@2.0.2/license) |
+| resolve.exports | 2.0.4 | MIT | [license](licenses/resolve.exports@2.0.4/license) |
 | scheduler | 0.28.0 | MIT | [LICENSE](licenses/scheduler@0.28.0/LICENSE) |
+| semver | 7.8.5 | ISC | [LICENSE](licenses/semver@7.8.5/LICENSE) |
 | tslib | 2.3.0 | 0BSD | [LICENSE.txt](licenses/tslib@2.3.0/LICENSE.txt) |
 | use-sync-external-store | 1.7.0 | MIT | [LICENSE](licenses/use-sync-external-store@1.7.0/LICENSE) |
 | zod | 4.4.3 | MIT | [LICENSE](licenses/zod@4.4.3/LICENSE) |

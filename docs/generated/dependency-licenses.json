@@ -16,6 +16,14 @@
     ]
   },
   {
+    "name": "@deepseek-ai/cordis-plugin-group",
+    "version": "1.0.5",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__cordis-plugin-group@1.0.5/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/cordis-plugin-include",
     "version": "1.0.10",
     "license": "MIT",
@@ -56,11 +64,43 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-app-boot",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-app-boot@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-atomic-write",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-atomic-write@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-brand",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-brand@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-client-connection",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-credentials",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-credentials@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -72,11 +112,35 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-home-paths",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-home-paths@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-launch-environment",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-launch-environment@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-llm",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-llm@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-package-manifest",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-package-manifest@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -133,6 +197,14 @@
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-session@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-skill",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-skill@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -229,6 +301,14 @@
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__schemastery@3.18.5/LICENSE"
+    ]
+  },
+  {
+    "name": "@eslint-community/regexpp",
+    "version": "4.12.2",
+    "license": "MIT",
+    "files": [
+      "licenses/eslint-community__regexpp@4.12.2/LICENSE"
     ]
   },
   {
@@ -333,6 +413,14 @@
     "license": "MIT",
     "files": [
       "licenses/xyflow__system@0.0.83/LICENSE"
+    ]
+  },
+  {
+    "name": "ajv",
+    "version": "8.20.0",
+    "license": "MIT",
+    "files": [
+      "licenses/ajv@8.20.0/LICENSE"
     ]
   },
   {
@@ -442,11 +530,35 @@
     ]
   },
   {
+    "name": "fast-deep-equal",
+    "version": "3.1.3",
+    "license": "MIT",
+    "files": [
+      "licenses/fast-deep-equal@3.1.3/LICENSE"
+    ]
+  },
+  {
+    "name": "fast-uri",
+    "version": "3.1.9",
+    "license": "BSD-3-Clause",
+    "files": [
+      "licenses/fast-uri@3.1.9/LICENSE"
+    ]
+  },
+  {
     "name": "js-yaml",
     "version": "4.3.2",
     "license": "MIT",
     "files": [
       "licenses/js-yaml@4.3.2/LICENSE"
+    ]
+  },
+  {
+    "name": "json-schema-traverse",
+    "version": "1.0.0",
+    "license": "MIT",
+    "files": [
+      "licenses/json-schema-traverse@1.0.0/LICENSE"
     ]
   },
   {
@@ -490,11 +602,35 @@
     ]
   },
   {
+    "name": "require-from-string",
+    "version": "2.0.2",
+    "license": "MIT",
+    "files": [
+      "licenses/require-from-string@2.0.2/license"
+    ]
+  },
+  {
+    "name": "resolve.exports",
+    "version": "2.0.4",
+    "license": "MIT",
+    "files": [
+      "licenses/resolve.exports@2.0.4/license"
+    ]
+  },
+  {
     "name": "scheduler",
     "version": "0.28.0",
     "license": "MIT",
     "files": [
       "licenses/scheduler@0.28.0/LICENSE"
+    ]
+  },
+  {
+    "name": "semver",
+    "version": "7.8.5",
+    "license": "ISC",
+    "files": [
+      "licenses/semver@7.8.5/LICENSE"
     ]
   },
   {

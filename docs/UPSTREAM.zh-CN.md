@@ -26,3 +26,9 @@
 | client 打包 | [client modules](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/docs/subsystems/client-modules.md) | dsh.client + exports[./client]；公开 closure-factory 格式，外部共享 React 仅用于宿主 wrapper |
 
 0.1.1-rc.2 的安装存在不等于本插件兼容；首版不宣称旧接口兼容。实际测试状态见 VALIDATION。
+
+## preview.6 的个人库接入
+
+固定同一 DSH commit 的公开 [Connection 接口](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/client/connection/src/rpc.ts)、[owner-only 精确路由](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/client/connection/src/rpc-host.ts)、[storageDomain](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/storage/storage-domain/src/index.ts) 和 [profileContext](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/boot/app-boot/src/profile-context.ts)。
+
+实测共享 `/api` interceptor 只能有一个，已由 Gateway 使用；通用 `handle` 在锁定宿主触发 webServer 注入约束。最终使用公开 `connection.fetch.register` 精确扩展点，由宿主执行认证/owner 检查，保留原生 RPC 请求/响应信封和客户端关联 ID 校验。storage 默认按 HOME 存放，因此额外按公开 profile 名称划分 domain。没有修改宿主依赖、认证、全局路由或历史格式。

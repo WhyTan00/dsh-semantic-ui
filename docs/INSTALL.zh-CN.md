@@ -13,12 +13,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.5.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.6.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.5.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
+运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.6.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 
@@ -64,3 +64,7 @@ Linux CI 与 Linux 实机必须分开记录；CI 构建/测试通过不能替代
 ```
 
 它只停用显示徽标，不改变模型目录、请求参数或 WorkBuddy 路由。本插件本身不改此设置，也不替用户修改已有服务。使用其他连接器/版本时，不应无依据套用这个开关。
+
+## 个人模板与回退
+
+preview.6 以 profile 名称分隔个人模板库。复制或修改默认主题不改历史；跨 profile 迁移使用显式导出/导入。操作入口和保留字段见 [模板说明](TEMPLATES.zh-CN.md)。回退到 preview.5 可以读取旧 1.0 节点，新的 1.1 节点需恢复 preview.6 renderer 才能显示；不会自动降级重写历史。

@@ -2,7 +2,7 @@
   "results": [
     {
       "kind": "architecture",
-      "sessionId": "ptc-fixture-1",
+      "sessionId": "session-2319c547-3696-4b81-bbd6-ee21125197c3",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -20,7 +20,7 @@
     },
     {
       "kind": "decision",
-      "sessionId": "ptc-fixture-2",
+      "sessionId": "session-51775d4a-bf85-4f92-8283-bddd2f4b98a0",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -38,7 +38,7 @@
     },
     {
       "kind": "chart",
-      "sessionId": "ptc-fixture-3",
+      "sessionId": "session-5a3c7716-3860-4f11-a600-220561f3d08e",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -57,7 +57,7 @@
     },
     {
       "kind": "histogram",
-      "sessionId": "ptc-fixture-4",
+      "sessionId": "session-962f37e1-5772-491b-8e2e-03565f978043",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -75,7 +75,5 @@
       "model": "deterministic fixture; not model acceptance"
     }
   ],
-  "errors": [],
-  "version": "0.1.0-preview.5",
-  "fixtureOnly": true
+  "errors": []
 }

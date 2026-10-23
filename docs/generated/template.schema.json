@@ -1,0 +1,333 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "format": {
+      "type": "string",
+      "const": "dsh-semantic-ui-template"
+    },
+    "version": {
+      "type": "number",
+      "const": 1
+    },
+    "template": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 80
+        },
+        "definition": {
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "component": {
+                  "type": "string",
+                  "const": "ArchitectureExplorer"
+                }
+              },
+              "required": [
+                "component"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "component": {
+                  "type": "string",
+                  "const": "DecisionExplorer"
+                },
+                "dimensions": {
+                  "minItems": 1,
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "inputs": {
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "number",
+                          "boolean",
+                          "choice"
+                        ]
+                      },
+                      "unit": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      },
+                      "choices": {
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 80
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label",
+                      "type"
+                    ],
+                    "additionalProperties": false
+                  }
+                }
+              },
+              "required": [
+                "component",
+                "dimensions",
+                "inputs"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "component": {
+                  "type": "string",
+                  "const": "DataChart"
+                },
+                "chart": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "chartType": {
+                          "type": "string",
+                          "enum": [
+                            "line",
+                            "bar"
+                          ]
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 80
+                        },
+                        "x": {
+                          "type": "object",
+                          "properties": {
+                            "kind": {
+                              "type": "string",
+                              "enum": [
+                                "time",
+                                "category"
+                              ]
+                            },
+                            "timezone": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80
+                            },
+                            "granularity": {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 80
+                            },
+                            "order": {
+                              "type": "string",
+                              "enum": [
+                                "ascending",
+                                "input"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "order"
+                          ],
+                          "additionalProperties": false
+                        },
+                        "series": {
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "label": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 80
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "label"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "chartType",
+                        "unit",
+                        "x",
+                        "series"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "chartType": {
+                          "type": "string",
+                          "const": "histogram"
+                        },
+                        "unit": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 80
+                        },
+                        "display": {
+                          "type": "string",
+                          "enum": [
+                            "count",
+                            "proportion"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "chartType",
+                        "unit",
+                        "display"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                }
+              },
+              "required": [
+                "component",
+                "chart"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "theme": {
+          "type": "object",
+          "properties": {
+            "mode": {
+              "type": "string",
+              "enum": [
+                "light",
+                "dark"
+              ]
+            },
+            "palette": {
+              "type": "string",
+              "enum": [
+                "ocean",
+                "forest",
+                "berry"
+              ]
+            },
+            "font": {
+              "type": "string",
+              "enum": [
+                "system",
+                "serif",
+                "mono"
+              ]
+            },
+            "density": {
+              "type": "string",
+              "enum": [
+                "comfortable",
+                "compact"
+              ]
+            },
+            "textSize": {
+              "type": "string",
+              "enum": [
+                "standard",
+                "large"
+              ]
+            }
+          },
+          "required": [
+            "mode",
+            "palette",
+            "font",
+            "density",
+            "textSize"
+          ],
+          "additionalProperties": false
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "direction": {
+              "type": "string",
+              "enum": [
+                "auto",
+                "horizontal",
+                "vertical"
+              ]
+            }
+          },
+          "required": [
+            "direction"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "name",
+        "definition",
+        "theme",
+        "layout"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "format",
+    "version",
+    "template"
+  ],
+  "additionalProperties": false
+}

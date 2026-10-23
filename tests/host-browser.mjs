@@ -1,4 +1,4 @@
-import{chromium}from'@playwright/test';import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import assert from'node:assert/strict';
+import{chromium,expect}from'@playwright/test';import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import assert from'node:assert/strict';
 const origin=process.env.HOST_ORIGIN;const output=process.env.HOST_OUTPUT;const auth=readFileSync(output+'/dsh-host.log','utf8').match(/http:\/\/127\.0\.0\.1:\d+\/\?token=[^\s]+/)[0];
 const browser=await chromium.launch();const context=await browser.newContext({viewport:{width:1100,height:2300}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
 await page.goto(auth);await page.waitForTimeout(900);if(await page.getByRole('button',{name:'Continue',exact:true}).isVisible())await page.getByRole('button',{name:'Continue',exact:true}).click();
@@ -19,6 +19,13 @@ for(const [kind,title]of cases){
  assert.equal(await page.locator('[data-semantic-ui]').count(),0,'No invented partial spec before the real checkpoint');
  await page.getByRole('heading',{name:title,exact:true}).waitFor({timeout:25000});await page.getByText('Deterministic fixture completed.',{exact:false}).waitFor({timeout:15000});
  const host=page.locator('[data-semantic-ui]');await host.scrollIntoViewIfNeeded();assert.equal(await host.count(),1);writeFileSync(output+'/evidence/'+kind+'-snapshot.txt',await page.locator('body').ariaSnapshot());const completed=page.getByRole('button',{name:/Completed in/});await completed.waitFor({timeout:15000});assert.notEqual(await completed.getAttribute('aria-expanded'),'true','Tool process stays folded');
+ await page.getByText('Templates & appearance',{exact:true}).click();await page.getByText('Library loaded.',{exact:true}).waitFor();
+ await page.getByRole('combobox',{name:'Color mode',exact:true}).selectOption('dark');await page.getByRole('combobox',{name:'Palette',exact:true}).selectOption('forest');
+ await expect(host.locator('.semantic-root')).toHaveCSS('background-color','rgb(21, 33, 49)');
+ if(kind==='architecture')await expect(host.locator('.react-flow__node').first()).toHaveCSS('background-color','rgb(30, 46, 66)');
+ if(kind==='chart'||kind==='histogram')await expect.poll(()=>host.locator('.plot svg').innerHTML()).toContain('#7bd4be');
+ if(kind==='decision')assert(await page.getByText('Rule result: Managed platform',{exact:true}).isVisible());
+ await page.getByText('Templates & appearance',{exact:true}).click();
  await host.evaluate(el=>el.style.maxWidth='640px');const wide=await host.boundingBox();await host.screenshot({path:`${output}/evidence/${kind}-640.png`});
  if(kind==='architecture'){await page.getByRole('combobox',{name:'Locate node'}).selectOption('queue');await page.getByRole('checkbox',{name:'Immediate neighborhood'}).check();await page.getByText('Showing 3/4 nodes',{exact:false}).waitFor();await page.getByRole('combobox',{name:'Scenario',exact:true}).selectOption('delivery');await page.getByRole('button',{name:'Restore full graph'}).click();}
  if(kind==='decision'){await page.getByRole('combobox',{name:'Require private networking'}).selectOption('true');await page.getByText('Rule result: Virtual machine',{exact:true}).waitFor();await page.getByRole('combobox',{name:'Require private networking'}).selectOption('unknown');await page.getByText('Insufficient conditions — recommendation withheld',{exact:true}).waitFor();await page.getByText('Missing conditions: Require private networking',{exact:true}).waitFor();}
@@ -37,6 +44,6 @@ for(const [kind,title]of cases){
  }
  await context.storageState({path:output+'/browser-state.json'});
  const second=await context.newPage();await second.goto(origin);await second.getByRole('treeitem',{name:new RegExp(name)}).click();if(process.env.HISTORY_ONLY){const earlier=second.getByRole('button',{name:/Load earlier|Load older/i});await earlier.waitFor();await earlier.click();}await second.getByRole('heading',{name:title,exact:true}).waitFor();assert.equal(await second.locator('[data-semantic-ui]').count(),1);await second.close();
- results.push({kind,sessionId,hostGeneratingState:true,noInventedPartialSpec:true,toolProcessFolded:true,completed:true,controlsChangedData:true,numericAriaAfterSelection,wideContainer:wide.width,narrowContainer:narrow.width,narrowOverflow:overflow,refresh:true,sessionSwitch:true,historyReopen:true,historyPrepend:!!process.env.HISTORY_ONLY,interactionPreferences:'reset on reload',model:'deterministic fixture; not model acceptance'});writeFileSync(output+'/evidence/lifecycle.json',JSON.stringify({results,errors},null,2));console.log(JSON.stringify({kind,path:process.env.TOOL_MODE,passed:true,wide:wide.width,narrow:narrow.width}));
+ results.push({kind,sessionId,hostGeneratingState:true,noInventedPartialSpec:true,toolProcessFolded:true,completed:true,themePreview:'dark forest; actual graph nodes/chart series/table checked',controlsChangedData:true,numericAriaAfterSelection,wideContainer:wide.width,narrowContainer:narrow.width,narrowOverflow:overflow,refresh:true,sessionSwitch:true,historyReopen:true,historyPrepend:!!process.env.HISTORY_ONLY,interactionPreferences:'reset on reload',model:'deterministic fixture; not model acceptance'});writeFileSync(output+'/evidence/lifecycle.json',JSON.stringify({results,errors},null,2));console.log(JSON.stringify({kind,path:process.env.TOOL_MODE,passed:true,wide:wide.width,narrow:narrow.width}));
 }
 assert.equal(errors.length,0,'No browser page errors');await browser.close();

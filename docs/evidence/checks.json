@@ -2,8 +2,8 @@
   "platform": "macOS arm64",
   "dsh": "0.2.1-rc.2",
   "typecheck": "passed",
-  "unitTestFiles": 4,
-  "unitTestsPassed": 37,
+  "unitTestFiles": 5,
+  "unitTestsPassed": 51,
   "unitTestsFailed": 0,
   "build": "passed",
   "naturalQuestionAcceptance": "33 cases completed in three frozen 11-question rounds through real WorkBuddy model; latest round has four semantic failures, all preserved. Not full acceptance.",
@@ -23,17 +23,35 @@
   "reasoningEffort": "high",
   "latestNaturalBrowserErrors": [],
   "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts.",
-  "version": "0.1.0-preview.5",
+  "version": "0.1.0-preview.6",
   "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round.",
   "research": {
     "projects": 33,
-    "pinnedSourceFiles": 116,
+    "pinnedSourceFiles": 126,
     "licenseFiles": 33,
-    "newRuntimeDependencies": 0,
+    "newRuntimeDependencies": "Same chart stack; native storage/connection/boot peers made explicit. Zod aligned to host 4.4.3.",
     "derivedInventory": "consistent"
   },
-  "targetedModelCases": 4,
-  "targetedModelSemanticFailures": 3,
-  "targetedModelBoundary": "E1 notes; E2/E3/E4 failures retained; not a complete new round.",
-  "aria": "Registered AriaComponent; chart/histogram accessible description verified after local selection in Native and PTC."
+  "targetedModelCases": 2,
+  "targetedModelSemanticFailures": 0,
+  "targetedModelBoundary": "Two fresh template-reuse conversations; P2 derived a correct combined mean but overstated program provenance. Not a full 11-question round.",
+  "aria": "Registered AriaComponent; chart/histogram accessible description verified after local selection in Native and PTC.",
+  "priorPreview5Summary": {
+    "version": "0.1.0-preview.5",
+    "unitTestsPassed": 37,
+    "unitTestFiles": 4,
+    "research": {
+      "projects": 33,
+      "pinnedSourceFiles": 126,
+      "licenseFiles": 33,
+      "newRuntimeDependencies": "Same chart stack; native storage/connection/boot peers made explicit. Zod aligned to host 4.4.3.",
+      "derivedInventory": "consistent"
+    },
+    "targetedModelCases": 4,
+    "targetedModelSemanticFailures": 3,
+    "targetedModelBoundary": "E1 notes; E2/E3/E4 failures retained; not a complete new round."
+  },
+  "targetedModelProseAttributionNotes": 1,
+  "templateEvidence": "templates.json",
+  "runtimeLicensePackages": 85
 }

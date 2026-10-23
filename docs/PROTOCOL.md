@@ -1,14 +1,15 @@
-# Semantic protocol 1.0
+# Semantic protocol 1.1 (reads 1.0 history)
 
 The only model-facing tool is `dsh_semantic_ui`:
 
 1. `{"action":"catalog"}` returns only this renderer's supported components, data requirements, local controls and explicit state/feedback limits. It does not infer another plugin's capability or implement an external protocol.
 2. `{"action":"describe","component":"ArchitectureExplorer"}` returns the selected payload schema, envelope and semantic rules.
-3. `{"action":"render","view":{...}}` validates and delivers one checkpoint.
+3. `{"action":"templates"}` lists private personal templates; `{"action":"template","templateId":"…"}` inspects its current or explicitly requested `templateVersion`.
+4. `{"action":"render","view":{...},"templateId":"…","templateVersion":1}` validates fresh input and applies an exact saved version. Both template arguments are optional for ordinary rendering. Model access never modifies the library.
 
 The catalog props, TypeScript types, validator and generated JSON Schema use the schemas in `src/protocol.ts`. Do not generate standalone or inline JSONL via `catalog.prompt()`. The runtime skill and checked-in SKILL.md derive from the same guidance source.
 
-An envelope contains `protocolVersion`, `component`, `displayId`, `revision`, `summary`, and `payload`. Only ArchitectureExplorer, DecisionExplorer and DataChart are accepted. Runtime limits: conservative UTF-8 budget 131072 bytes, 12 levels, 80 nodes, 240 edges, 2000 chart rows, 10000 total histogram observations. Text and rule counts are separately bounded by the schema. URLs are not loaded; evidence is inert text. Unknown properties, callbacks, scripts, non-finite numbers, cyclic data and unsupported versions are rejected. There are no arbitrary actions or ECharts options.
+An envelope contains `protocolVersion`, `component`, `displayId`, `revision`, `summary`, and `payload`. Protocol 1.1 optionally carries a strict `presentation` object: version 1, bounded theme/layout, and exact template identity. A 1.0 checkpoint must not contain presentation. The host always snapshots the resolved theme for new deliveries; it never dereferences a mutable library during replay. Only ArchitectureExplorer, DecisionExplorer and DataChart are accepted. Runtime limits: conservative UTF-8 budget 131072 bytes, 12 levels, 80 nodes, 240 edges, 2000 chart rows, 10000 total histogram observations. Text and rule counts are separately bounded by the schema. URLs are not loaded; evidence is inert text. Unknown properties, callbacks, scripts, non-finite numbers, cyclic data and unsupported versions are rejected. There are no arbitrary actions or ECharts options.
 
 `displayId` is supplied by the model: 1–80 ASCII letters, digits, `_ . : -`, starting with a letter or digit. Use a new ID for each distinct subject; identity is scoped to `(DSH session, turn, displayId)`. Updates to the same subject increase the positive integer `revision`. Replays and exact duplicate checkpoints do not create another node. Lower revisions retain the latest state. Same-revision conflicting content and component-type changes produce readable conflicts rather than silently changing meaning. The first checkpoint anchors the row; subsequent updates retain its identity. Cross-turn updates use a new identity by design.
 
@@ -38,4 +39,4 @@ Unweighted mean = sum of non-null observations / valid n. Empty/all-missing mean
 
 ## State
 
-DSH owns content persistence. Local selection, dimensions and ranges reset on reload, reopening, or a new payload revision. No browser storage holds a second conversation copy. No state return to the model or cross-device preference sync is implemented. Generation uses the host's real pending state; semantic checkpoints are atomic. Unknown protocol versions and rendering errors remain readable.
+DSH owns content persistence. Local selection, dimensions and ranges reset on reload, reopening, or a new payload revision. No browser storage holds a second conversation copy. Personal templates/default themes use a separate owner-only, profile-scoped host storage domain. The host’s short receipt carries the resolved appearance, enabling presentationMeta to preserve the exact execution-time version even if the library later changes. See [template format and lifecycle](TEMPLATES.zh-CN.md) and [generated exchange schema](generated/template.schema.json). No state return to the model or cross-device preference sync is implemented. Generation uses the host's real pending state; semantic checkpoints are atomic. Unknown protocol versions and rendering errors remain readable.

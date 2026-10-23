@@ -1,0 +1,99 @@
+{
+  "version": "0.1.0-preview.6",
+  "dsh": "0.2.1-rc.2",
+  "protocol": "1.1",
+  "verifiedAt": "2026-10-23T15:41:25.496051+00:00",
+  "fixture": "deterministic, not natural model acceptance",
+  "native": {
+    "toolMode": "native",
+    "deterministicFixture": true,
+    "saveVersionRestore": true,
+    "importExport": true,
+    "invalidImportRejected": true,
+    "conflictDetected": true,
+    "appearanceAffectsChart": true,
+    "previewLeavesHistoryUnchanged": true,
+    "freshSessionNewDataMean": 250,
+    "exactTemplateVersion": 1,
+    "refresh": true,
+    "restartPersistence": false,
+    "deleteKeepsHistory": false,
+    "keyboard": true,
+    "narrowWidth": 360,
+    "pageErrors": []
+  },
+  "ptc": {
+    "toolMode": "ptc",
+    "deterministicFixture": true,
+    "saveVersionRestore": true,
+    "importExport": true,
+    "invalidImportRejected": true,
+    "conflictDetected": true,
+    "appearanceAffectsChart": true,
+    "previewLeavesHistoryUnchanged": true,
+    "freshSessionNewDataMean": 250,
+    "exactTemplateVersion": 1,
+    "refresh": true,
+    "restartPersistence": true,
+    "deleteKeepsHistory": true,
+    "keyboard": true,
+    "narrowWidth": 360,
+    "pageErrors": []
+  },
+  "initialIntegrationFailures": [
+    "The shared /api interceptor is reserved by the DSH Gateway; using another interceptor fails.",
+    "The pinned generic handle route hit a Cordis service-injection guard. Final implementation uses the public owner-only exact Fetch route with native correlated RPC envelopes."
+  ],
+  "storage": "Host storageDomain, per-profile namespace; immutable versions and concrete history snapshots",
+  "unitTests": 51,
+  "naturalModelCases": {
+    "provider": "workbuddy",
+    "model": "deepseek-v4.1-flash",
+    "reasoningEffort": "high",
+    "cases": [
+      {
+        "id": "P1",
+        "requests": 4,
+        "firstAttempt": true,
+        "semanticViews": 1,
+        "genuiViews": 0,
+        "pageErrors": [],
+        "assessment": {
+          "templateReuse": "passed",
+          "dataAndMissingness": "passed",
+          "appearanceAndVersion": "passed",
+          "prose": "passed",
+          "note": null,
+          "fullFrozenRound": false
+        },
+        "record": "templates/P1.json"
+      },
+      {
+        "id": "P2",
+        "requests": 4,
+        "firstAttempt": true,
+        "semanticViews": 1,
+        "genuiViews": 0,
+        "pageErrors": [],
+        "assessment": {
+          "templateReuse": "passed",
+          "dataAndMissingness": "passed",
+          "appearanceAndVersion": "passed",
+          "prose": "passed-with-attribution-note",
+          "note": "The combined 20/7 mean is numerically correct, but was model-derived and echoed in summary. It is not a computed dataFacts field. The final prose overstated its program-verification provenance.",
+          "fullFrozenRound": false
+        },
+        "record": "templates/P2.json"
+      }
+    ],
+    "modelRequests": 8,
+    "candidateSha256": "f38635be0423c4dbba949f603b3f26bf91b1abf0d983e9223dae3a7b212748c5",
+    "notAFullFrozenRound": true
+  },
+  "priorHistoryReadback": {
+    "at": "2026-10-23T15:43:22.355Z",
+    "oldSemanticHistory": true,
+    "genuiHistoryCount": 2,
+    "ownerUiImport": true
+  }
+}

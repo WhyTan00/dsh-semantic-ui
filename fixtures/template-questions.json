@@ -1,0 +1,14 @@
+[
+  {
+    "id": "P1",
+    "question": "请沿用我保存的‘我的传感器周报’模板，展示这组全新的虚构观测。单位摄氏度，UTC，每天一个点，按日期升序。2026-02-01：传感器A=10，B=8；02-02：A=20，B=8；02-03：A缺失，B=8；02-04：A=0，B=8。请保留缺失与零的区别，说明两组各自的有效样本数和全量均值，并沿用我保存的外观。不要带入上一份报告的数据。",
+    "expected": {"templateName":"我的传感器周报","templateVersion":1,"a":{"n":3,"missing":1,"mean":10},"b":{"n":4,"missing":0,"mean":8}},
+    "boundary": "Separate targeted template-use case, not one of the frozen 11-question rounds."
+  },
+  {
+    "id": "P2",
+    "question": "这次仍用我保存的‘我的传感器周报’模板，但所有观测换成以下新的虚构数据，单位摄氏度，UTC，逐日升序：2026-03-01：传感器A=-6，B=2；03-02：A=0，B=4；03-03：A=6，B=6；03-04：A缺失，B=8。请保留缺失点，给出有效样本数和全量均值；外观用我保存的版本，不沿用上次的数值或结论。",
+    "expected": {"templateName":"我的传感器周报","templateVersion":1,"a":{"n":3,"missing":1,"mean":0},"b":{"n":4,"missing":0,"mean":5}},
+    "boundary": "Fresh session and different data; retain the first attempt and any internal corrections."
+  }
+]

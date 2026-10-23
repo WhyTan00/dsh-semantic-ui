@@ -2,7 +2,7 @@
   "results": [
     {
       "kind": "architecture",
-      "sessionId": "native-fixture-1",
+      "sessionId": "session-b4782005-ccf7-48ec-80b4-2a2fd5517af5",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -20,7 +20,7 @@
     },
     {
       "kind": "decision",
-      "sessionId": "native-fixture-2",
+      "sessionId": "session-61865a2d-3ad2-4629-a51e-bf9e27abccc9",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -38,7 +38,7 @@
     },
     {
       "kind": "chart",
-      "sessionId": "native-fixture-3",
+      "sessionId": "session-ec88adc2-6bcb-4ebd-8317-45a63bc08172",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -57,7 +57,7 @@
     },
     {
       "kind": "histogram",
-      "sessionId": "native-fixture-4",
+      "sessionId": "session-96c8bcc7-ba8c-4bca-9848-aedcc39ecbeb",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -75,7 +75,5 @@
       "model": "deterministic fixture; not model acceptance"
     }
   ],
-  "errors": [],
-  "version": "0.1.0-preview.5",
-  "fixtureOnly": true
+  "errors": []
 }

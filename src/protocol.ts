@@ -1,6 +1,7 @@
 import { z } from 'zod';
+import {presentationSchema} from './theme';
 
-export const VERSION = '1.0' as const;
+export const VERSION = '1.1' as const;
 export const LIMITS = { bytes: 131072, depth: 12, nodes: 80, edges: 240, rows: 2000, observations: 10000 } as const;
 const id = z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$/);
 const text = z.string().min(1).max(1200);
@@ -36,7 +37,7 @@ export const chartSchema = z.discriminatedUnion('chartType', [
 ]);
 export const components = { ArchitectureExplorer: architectureSchema, DecisionExplorer: decisionSchema, DataChart: chartSchema } as const;
 export type ComponentName = keyof typeof components;
-const base = { protocolVersion: z.literal(VERSION), displayId: id, revision: z.number().int().min(1).max(100000), summary: z.string().min(1).max(500) };
+const base = { protocolVersion: z.enum(['1.0',VERSION]), displayId: id, revision: z.number().int().min(1).max(100000), summary: z.string().min(1).max(500), presentation:presentationSchema.optional() };
 export const envelopeSchema = z.discriminatedUnion('component', [
   z.strictObject({ ...base, component: z.literal('ArchitectureExplorer'), payload: architectureSchema }),
   z.strictObject({ ...base, component: z.literal('DecisionExplorer'), payload: decisionSchema }),
@@ -48,7 +49,7 @@ export type Decision = z.infer<typeof decisionSchema>;
 export type Chart = z.infer<typeof chartSchema>;
 export interface Issue { code: string; path: string; reason: string; hint: string }
 export type Validation = { ok: true; value: Envelope } | { ok: false; issues: Issue[] };
-function bounded(input: unknown): Issue | undefined {
+export function bounded(input: unknown): Issue | undefined {
   let bytes = 0;
   const seen = new WeakSet<object>();
   function walk(v: unknown, depth: number): void {
@@ -73,6 +74,7 @@ export function validateEnvelope(input: unknown): Validation {
   const parsed = envelopeSchema.safeParse(input);
   if (!parsed.success) return { ok: false, issues: parsed.error.issues.map(i => ({ code: i.path[0] === 'protocolVersion' ? 'UNSUPPORTED_VERSION' : 'STRUCTURE', path: '$.' + i.path.join('.'), reason: i.message, hint: 'Call dsh_semantic_ui with action=describe for the component schema; submit pure data matching it.' })) };
   const v = parsed.data; const issues: Issue[] = [];
+  if(v.protocolVersion==='1.0'&&v.presentation)issues.push({code:'UNSUPPORTED_VERSION',path:'$.presentation',reason:'Presentation snapshots require protocol 1.1.',hint:'Use protocolVersion 1.1; existing 1.0 checkpoints remain readable.'});
   const fail = (path: string, reason: string, code = 'SEMANTIC') => issues.push({ code, path: '$.payload.' + path, reason, hint: 'Correct the source facts or explicitly mark the value unknown. Do not invent replacements.' });
   const unique = (items: {id:string}[], path:string) => { const ids=new Set<string>(); for(const item of items) { if(ids.has(item.id)) fail(path,`Duplicate ID: ${item.id}`,'DUPLICATE_ID');ids.add(item.id); } return ids; };
   if (v.component === 'ArchitectureExplorer') {

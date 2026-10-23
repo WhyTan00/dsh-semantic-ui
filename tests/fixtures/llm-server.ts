@@ -18,7 +18,10 @@ const server=createServer(async(req,res)=>{
  const probe=probeAt>=0&&probeAt>Math.max(semanticAt,legacyAt);
  const ptc=toolNames.includes('run_code')&&!toolNames.includes('dsh_semantic_ui');
  const name=ptc?'run_code':'dsh_semantic_ui';
- const args=ptc?{description:'Deterministic semantic host fixture',code:`const result = await tools.dsh_semantic_ui(${JSON.stringify({action:'render',view})}); console.log(JSON.stringify(result));`}:{action:'render',view};
+ const reuse=[...userText.matchAll(/TEMPLATE_REUSE=([a-f0-9-]+):(\d+)/g)].at(-1);
+ const fresh=structuredClone(view);if(reuse&&fresh.component==='DataChart'&&fresh.payload.chartType!=='histogram'){fresh.payload.title='Fresh template sensor readings';fresh.summary='New measurements; statistics are recalculated from this dataset.';fresh.payload.rows.forEach((row,i)=>{row.values.a=100*(i+1);});}
+ const semanticArgs={action:'render',view:reuse?fresh:view,...(reuse?{templateId:reuse[1],templateVersion:Number(reuse[2])}:{})};
+ const args=ptc?{description:'Deterministic semantic host fixture',code:`const result = await tools.dsh_semantic_ui(${JSON.stringify(semanticArgs)}); console.log(JSON.stringify(result));`}:semanticArgs;
  const base={id:`fixture-${n}`,object:'chat.completion.chunk',created:Math.floor(Date.now()/1000),model:'semantic-fixture'};
  res.writeHead(200,{'Content-Type':'text/event-stream','Cache-Control':'no-cache','Connection':'keep-alive'});
  const send=(delta:any,finish_reason:any=null)=>res.write('data: '+JSON.stringify({...base,choices:[{index:0,delta,finish_reason}]})+'\n\n');

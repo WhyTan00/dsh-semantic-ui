@@ -55,3 +55,9 @@
 
 第三轮 D1/D2/D3/T2 仍有内容语义失败。后续重点是可解释比较中提议规则与用户事实的对应、未知比较不能自动胜出、额外自然语言结论的克制；不把 schema 通过、页面正常或完成题数当作内容正确。当前预览可安装，但不能据此声称完整语义验收或生产稳定性。
 从 README、VALIDATION、fixtures/questions.json 和 natural-question-results.json 恢复。完整任务书仍为 DEVELOPMENT_BRIEF，不降低验收标准。私有运行日志及原始模型可见请求保留在本项目忽略目录，公共证据只含虚构示例与非敏感结果。
+
+## preview.6：个人模板与主题
+
+已实现三组件的受限模板提取、字段合同校验、明暗/配色/字体/密度/字号、关系图方向，以及 owner 界面保存、版本回退、复制、导入导出和删除。默认主题只影响新视图；1.1 checkpoint 保存具体主题与模板版本，继续读取 1.0 历史。公开 owner-only 精确 Fetch 入口配合原生 RPC 信封，按 profile 名称隔离 storageDomain。
+
+Native/PTC 模板生命周期、换数据、重启持久化和旧历史均通过确定性验证。两个自然新会话均自行调用 templates → template → describe → render，共 8 次请求；数据与样式复用通过。P2 对模型额外计算的合并均值做了过强的程序来源归因，保留为备注。旧三轮 11 题中的语义失败仍存在，本版仍是 preview。详见 [模板使用](TEMPLATES.zh-CN.md)、[本轮证据](evidence/templates.json)。之前“模板未实现”的条目限定于 preview.5，后续主线为检验重复使用收益及有界 RequestForm。
