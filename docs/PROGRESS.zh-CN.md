@@ -16,13 +16,13 @@
 - Native / PTC 各四个代表样例通过生成状态、工具过程折叠、交互、640/360px 容器、刷新、切会话、历史重开及 28 回合后的实际补页；pageerror 为 0。
 - 公开 GenUI 0.14.0 的旧消息与新语义节点在隔离真实宿主并存，刷新与重启恢复；关闭本插件新生成后仍保留历史。GenUI 自身的指引无法通过 renderUiTool 完全关闭。
 - 实测 24 节点/45 边关系图的 360px 概览和邻域定位；80 节点/240 边只验证纯布局和校验，不外推可读性。
-- 68 项生产/peer 运行依赖保留实际许可证与 NOTICE，包括嵌套的第三方许可证。
+- preview.6 按实际安装闭包核对 85 项生产/peer 依赖并保留许可证与 NOTICE，修正了 pnpm --prod 对同时为 dev 的 peer 的遗漏。
 
 ## 发行与安装
 
-- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.5 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.5) 为准；不宣称 npm 已发布。
+- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.6 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.6) 为准；不宣称 npm 已发布。
 - 最终 tgz 在新建隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native 样例；安装输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
-- Linux CI 的准确版本、37 项测试、真实 DSH Native/PTC 代表矩阵及打包状态以 [linux-ci.json](evidence/linux-ci.json) 为准。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
+- Linux CI 的准确版本、51 项测试、真实 DSH Native/PTC 代表矩阵及打包状态以 [linux-ci.json](evidence/linux-ci.json) 为准。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
 - 自有代码 MIT；依赖逐项保留许可证与 NOTICE。工具输出为有界回执，DataChart 附程序计算的数值事实；原始私人路径不公开。完整模型记录/截图分离为证据 tgz，紧凑索引保留在运行包，SHA256SUMS 同时覆盖两个包。
 
 ## preview.5 的开源生态吸收

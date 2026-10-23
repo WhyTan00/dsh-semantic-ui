@@ -1,23 +1,23 @@
 {
-  "platform": "GitHub-hosted Linux x64 (ubuntu-latest)",
-  "node": "24.21.0",
-  "runId": 39941303029,
-  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39941303029",
-  "implementationCommit": "17eed6ce3769dba21cb9907a4c9eb3c83cc60918",
+  "version": "0.1.0-preview.6",
+  "runId": 39981921034,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39981921034",
+  "implementationCommit": "eff8c058570c208d43df9fd8d4e1e28834d5250b",
   "conclusion": "success",
   "checks": [
     "frozen dependency install",
-    "generated schema and skill consistency",
-    "33-project / 116-source research inventory consistency",
-    "TypeScript",
-    "37 unit tests",
-    "release build",
-    "real DSH Native/PTC four-fixture lifecycle at 640/360px with selected numeric ARIA descriptions",
-    "runtime/evidence archives and checksums"
+    "generated protocol/template schemas and skill consistency",
+    "33-project / 126-source research inventory",
+    "TypeScript and 51 unit tests",
+    "isolated React client and host build",
+    "real DSH Native/PTC four-component lifecycle with actual dark theme colors",
+    "template versions/restore/import/export/conflict, 360px and keyboard",
+    "profile storage across host restart; fresh-session data reuse and deletion-safe history",
+    "runtime/evidence archive packaging and SHA-256"
   ],
   "linuxPhysicalDesktopVerified": false,
-  "linuxPointerBoundary": "series checkbox tested via native keyboard focus + Space; host sidebar hover can cover mouse targets",
-  "naturalModelAcceptance": "CI uses deterministic fixtures. Four preview.5 targeted WorkBuddy first attempts and source inspection are separate macOS evidence, including content failures.",
+  "linuxPointerBoundary": "Series checkbox uses keyboard focus + Space when the host sidebar hover preview can cover pointer input.",
+  "naturalModelAcceptance": "Two WorkBuddy template cases are separate macOS evidence; P2 retains a provenance attribution note. Prior full 11-question semantic failures remain.",
   "earlierRuns": [
     {
       "runId": 39904209133,
@@ -47,8 +47,13 @@
       "runId": 39926874887,
       "conclusion": "success",
       "implementationCommit": "1c36556d48c5a02d8a7832cbd5ed17a200d12b5f"
+    },
+    {
+      "version": "0.1.0-preview.5",
+      "runId": 39941303029,
+      "implementationCommit": "17eed6ce3769dba21cb9907a4c9eb3c83cc60918",
+      "conclusion": "success"
     }
   ],
-  "finalReleaseSourceBoundary": "Later evidence/install metadata changes do not change the validated src or tests trees.",
-  "version": "0.1.0-preview.5"
+  "finalReleaseSourceBoundary": "Subsequent changes only add documentation, screenshots and installation/evidence metadata. Runtime source, tests and build scripts match the validated implementation commit."
 }

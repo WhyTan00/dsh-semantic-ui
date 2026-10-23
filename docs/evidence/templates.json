@@ -95,5 +95,19 @@
     "oldSemanticHistory": true,
     "genuiHistoryCount": 2,
     "ownerUiImport": true
+  },
+  "packagedIntegration": {
+    "file": "templates/clean-install-candidate.json",
+    "sha256": "b30e3d6cc1f71ad2ceb277c2336f156b3d71ce327b86c561ddf80dc7fc20b46d",
+    "modes": [
+      "native",
+      "ptc"
+    ],
+    "allFourComponentsThemeChecked": true,
+    "sourceCommit": "eff8c058570c208d43df9fd8d4e1e28834d5250b",
+    "screenshots": [
+      "templates/native-editor-360.png",
+      "templates/ptc-editor-360.png"
+    ]
   }
 }
