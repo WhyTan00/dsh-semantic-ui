@@ -697,6 +697,11 @@
             "path": "src/client/artifact/portability.ts",
             "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/artifact/portability.ts",
             "sha256OfFetchedText": "c73ccb8e7a96b85db5108af700b23f3110ffff80ee4bc655aa3eb893f0027a96"
+          },
+          {
+            "path": "src/client/templates.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/templates.ts",
+            "sha256OfFetchedText": "18ac75f08fb9e71df5f1f3078e594c8e3c2f7e1555bc6c9dcbb77200b7519d65"
           }
         ]
       },
@@ -764,6 +769,11 @@
             "path": "README.zh-CN.md",
             "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/README.zh-CN.md",
             "sha256OfFetchedText": "4f98b218ac45a7d223bc221f995ce75be175d26db0a7ac58ae8d991aa08431d2"
+          },
+          {
+            "path": "src/designs/store.ts",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/src/designs/store.ts",
+            "sha256OfFetchedText": "0b420e5404f6c90df59f8ef4cb76fb8186a62ea20633441f100d8ad2e6dc0e7a"
           }
         ]
       },

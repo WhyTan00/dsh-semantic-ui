@@ -2,7 +2,7 @@
 
 本文件由 projects.json 派生；执行 `pnpm research:generate` 更新、`pnpm research:check` 核对。人工结论见 [研究说明](README.md) 与 [采用记录](ADOPTION.zh-CN.md)。
 
-核实日期：2026-10-23。33 个公开仓库，124 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
+核实日期：2026-10-23。33 个公开仓库，126 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
 
 ## ui-runtime
 
