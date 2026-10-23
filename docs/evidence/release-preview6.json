@@ -1,0 +1,40 @@
+{
+  "verifiedAt": "2026-10-23T16:14:29.158876+00:00",
+  "release": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.6",
+  "authentication": "none",
+  "allFourDownloadsVerified": true,
+  "runtimeFileCount": 154,
+  "assets": [
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.6.tgz",
+      "status": 200,
+      "bytes": 1366904,
+      "sha256": "f86d135394338ad85a8dfb1b280dffc1914c69bf41883c44e904cc6370af4f63",
+      "byteIdenticalToLocal": true
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.6.tgz",
+      "status": 200,
+      "bytes": 10339320,
+      "sha256": "f380fcc810c9ae75b0c6c3ba357c07c5eb6dbdce0525bc0123acc30aefc0ca70",
+      "byteIdenticalToLocal": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "status": 200,
+      "bytes": 227,
+      "sha256": "56f24d44c8823d66747726d8cfca81d31f9bf117aecf6ad9d628ad504fb424c3",
+      "byteIdenticalToLocal": true
+    },
+    {
+      "name": "package-manifest.json",
+      "status": 200,
+      "bytes": 13842,
+      "sha256": "ad6d9a2f09433e62d9a940545876eed0c434d044b3bcee9d292df635613a2abe",
+      "byteIdenticalToLocal": true
+    }
+  ],
+  "tagCommit": "d9a7a7800a31a6d5503288244ffbebc0dd1f62bc",
+  "ciRun": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39985591971",
+  "note": "Post-release download verification. Frozen archives are not regenerated to include this receipt."
+}

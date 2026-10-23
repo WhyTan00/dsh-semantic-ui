@@ -1,8 +1,8 @@
 {
   "version": "0.1.0-preview.6",
-  "runId": 39981921034,
-  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39981921034",
-  "implementationCommit": "eff8c058570c208d43df9fd8d4e1e28834d5250b",
+  "runId": 39985591971,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39985591971",
+  "implementationCommit": "2063b0d66742fa52f17494fd5f0813dff7ceeef0",
   "conclusion": "success",
   "checks": [
     "frozen dependency install",
@@ -65,7 +65,55 @@
       "implementationCommit": "d9a7a7800a31a6d5503288244ffbebc0dd1f62bc",
       "conclusion": "failure",
       "reason": "Template width asserted immediately after shrinking container, before asynchronous ResizeObserver chart layout. Follow-up retains the 1px bound, waits for actual SVG/container agreement, and records both dimensions."
+    },
+    {
+      "runId": 39981921034,
+      "implementationCommit": "eff8c058570c208d43df9fd8d4e1e28834d5250b",
+      "conclusion": "success"
+    },
+    {
+      "runId": 39983312561,
+      "implementationCommit": "55cb0aa6a303ff534c16299d5f414ea628999751",
+      "conclusion": "success"
     }
   ],
-  "finalReleaseSourceBoundary": "The immutable preview.6 release runtime matches the validated implementation commit. Post-release follow-up changes only the browser test, CI diagnostics and documentation; release tag and assets are unchanged. Exact follow-up CI run is recorded in the Release notes."
+  "finalReleaseSourceBoundary": "CI commit 2063b0d reruns all checks with the exact release runtime source and the corrected browser assertion. The subsequent commit updates evidence/documentation only. The immutable preview.6 release tag and all four asset bytes are unchanged.",
+  "featureImplementationCommit": "eff8c058570c208d43df9fd8d4e1e28834d5250b",
+  "releaseTagCommit": "d9a7a7800a31a6d5503288244ffbebc0dd1f62bc",
+  "resizeEvidence": [
+    {
+      "toolMode": "native",
+      "narrowLayout": {
+        "immediate": {
+          "rootWidth": 358,
+          "overflow": 304,
+          "plotWidth": 326,
+          "svgWidth": 646
+        },
+        "settled": {
+          "rootWidth": 358,
+          "overflow": 0,
+          "plotWidth": 326,
+          "svgWidth": 326
+        }
+      }
+    },
+    {
+      "toolMode": "ptc",
+      "narrowLayout": {
+        "immediate": {
+          "rootWidth": 358,
+          "overflow": 304,
+          "plotWidth": 326,
+          "svgWidth": 646
+        },
+        "settled": {
+          "rootWidth": 358,
+          "overflow": 0,
+          "plotWidth": 326,
+          "svgWidth": 326
+        }
+      }
+    }
+  ]
 }
