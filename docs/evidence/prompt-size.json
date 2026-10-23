@@ -1,16 +1,25 @@
 {
-  "source": "actual model-visible request captured from pinned DSH; deterministic fixture",
-  "toolDescriptorUtf8Bytes": 1070,
-  "residentPrincipleUtf8Bytes": 628,
-  "combinedKnownUtf8Bytes": 1698,
+  "source": "Actual authorized WorkBuddy run; public DSH llm/stream GenerateOptions boundary.",
+  "version": "0.1.0-preview.3",
+  "toolDescriptorUtf8Bytes": 1039,
+  "residentPrincipleUtf8Bytes": 1016,
+  "residentPrinciplePresentInCapturedInput": true,
   "largeComponentSchemasResident": false,
-  "fullSchemas": "returned only by explicit action=describe",
   "onDemandDescriptorBytes": {
-    "ArchitectureExplorer": 2570,
-    "DecisionExplorer": 4868,
-    "DataChart": 3999
+    "ArchitectureExplorer": 3222,
+    "DecisionExplorer": 5641,
+    "DataChart": 4104
   },
-  "runtimeSkill": "discovery description is additional host-managed context; body uses the same guidance",
-  "providerTokens": null,
-  "tokenBoundary": "No matching provider tokenizer or authorized real model request yet; bytes are measured, not mislabeled as tokens."
+  "provider": "workbuddy",
+  "model": "deepseek-v4.1-flash",
+  "reasoningEffort": "high",
+  "firstRound3RequestUsage": {
+    "inputTokens": 10164,
+    "outputTokens": 198,
+    "totalTokens": 10490,
+    "cacheReadTokens": 128
+  },
+  "tokenBoundary": "Provider usage covers the entire request, including host instructions and other tools. No matching tokenizer isolates this plugin cost; UTF-8 bytes are not tokens. Internal adapter HTTP serialization was not captured.",
+  "rawInputKeptPrivately": true,
+  "combinedKnownUtf8Bytes": 2055
 }

@@ -6,12 +6,17 @@
   "unitTestsPassed": 30,
   "unitTestsFailed": 0,
   "build": "passed",
-  "naturalQuestionAcceptance": "not-run; needs independent personal model authorization",
+  "naturalQuestionAcceptance": "33 cases completed in three frozen 11-question rounds through real WorkBuddy model; latest round has four semantic failures, all preserved. Not full acceptance.",
   "delivery": "output.presentationMeta on standard tool/result and tool/ptc-dispatch events",
   "fixes": [
     "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
     "Unequal-width histogram bins rejected instead of drawing misleading equal-width bars.",
     "Duplicate timestamp instants rejected across equivalent offsets.",
     "DataChart static summary explicitly refers to original full data after local filters."
-  ]
+  ],
+  "modelProvider": "workbuddy",
+  "model": "deepseek-v4.1-flash",
+  "reasoningEffort": "high",
+  "latestNaturalBrowserErrors": [],
+  "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts."
 }

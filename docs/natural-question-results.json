@@ -1,182 +1,1547 @@
 {
-  "protocol": "same questions; fresh session per item; retain first attempts and retries; same route/model/settings between rounds",
+  "protocol": "Frozen questions; fresh session per item; all first results and tool-level corrections retained; same personal route/model/high effort; no human expression hints or answer retries.",
+  "dsh": "0.2.1-rc.2",
+  "questionSetSha256": "0e185ec955aa9d9829319347c7b3560c8c4a75f02ddf891c8a42b9cd913f3245",
+  "samplingBoundary": "Provider model version and sampling seed/temperature were not controllable. Temperature/maxTokens are retained when exposed by DSH. New session/time metadata differ; no claim of a causal or statistical prompt benchmark.",
+  "rounds": [
+    {
+      "round": 1,
+      "version": "0.1.0-preview.1",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 3,
+      "semanticPassWithNotes": 2,
+      "semanticFail": 6,
+      "modelRequests": 35,
+      "renderedComponents": 8,
+      "validationRejectedCalls": 3,
+      "uniquePageErrorMessages": [
+        "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+      ],
+      "browserErrorBoundary": "One shared browser context per round; per-case arrays are cumulative. Do not sum repeated entries as independent errors."
+    },
+    {
+      "round": 2,
+      "version": "0.1.0-preview.2",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 3,
+      "semanticPassWithNotes": 2,
+      "semanticFail": 6,
+      "modelRequests": 23,
+      "renderedComponents": 5,
+      "validationRejectedCalls": 0,
+      "uniquePageErrorMessages": [
+        "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+      ],
+      "browserErrorBoundary": "One shared browser context per round; per-case arrays are cumulative. Do not sum repeated entries as independent errors."
+    },
+    {
+      "round": 3,
+      "version": "0.1.0-preview.3",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 4,
+      "semanticPassWithNotes": 3,
+      "semanticFail": 4,
+      "modelRequests": 30,
+      "renderedComponents": 7,
+      "validationRejectedCalls": 0,
+      "uniquePageErrorMessages": [],
+      "browserErrorBoundary": "One shared browser context per round; per-case arrays are cumulative. Do not sum repeated entries as independent errors."
+    }
+  ],
   "results": [
     {
       "round": 1,
       "questionId": "A1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-A1.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 1,
+        "validationIssues": 1,
+        "modelInternalCorrections": true,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Final four directed relations and shared Database preserved.",
+            "First render rejected an invalid shared-dependency scenario; model repaired it within the same attempt.",
+            "Prose and node details add unprovided queue ordering and operational assumptions."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-A1-component-0-640.png",
+          "evidence/natural/r1-A1-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "A2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-A2.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 1,
+        "validationIssues": 2,
+        "modelInternalCorrections": true,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Main flow and no payment rollback preserved after path repair.",
+            "Prose asserts upstream completion and no need for rollback without supplied policy; single-node failure path initially invalid."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-A2-component-0-640.png",
+          "evidence/natural/r1-A2-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "A3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-A3.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 1,
+        "validationIssues": 5,
+        "modelInternalCorrections": true,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Final graph retained the supplied core relations after path repair.",
+            "Prose invents mandatory Store-to-Index replication and isolation/consistency mechanisms."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-A3-component-0-640.png",
+          "evidence/natural/r1-A3-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "D1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-D1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Common dimensions and unknown price retained; proposed preference uses maintenance responsibility.",
+            "Backup, monitoring and service scope are overstated beyond supplier updates actually supplied."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-D1-component-0-640.png",
+          "evidence/natural/r1-D1-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "D2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-D2.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "80GB/300GB capacities preserved.",
+            "Unknown certainty and team capacity initialized as facts; comparative costs and migration claims invented."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-D2-component-0-640.png",
+          "evidence/natural/r1-D2-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "D3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-D3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Unknown data retained in cells.",
+            "Known values treated as superior to unknown comparators; an information-gathering action added as a third comparable option."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-D3-component-0-640.png",
+          "evidence/natural/r1-D3-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "N1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-N1.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "UTC, unit, four dates and local decline correct in payload.",
+            "Prose incorrectly calls evenly spaced daily observations irregular."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-N1-component-0-640.png",
+          "evidence/natural/r1-N1-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "N2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-N2.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Reopened original answer; corrected shadow-root accessible snapshot measurement, no model request or answer retry."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Three valid values, one null, negative/zero retained; observed mean is zero with explicit denominator."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r1-N2-component-0-640.png",
+          "evidence/natural/r1-N2-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "N3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-N3.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Plain table is appropriate: counts 3 and 4, proportions 3/7 and 4/7; upper boundary 4 included; no unspecified weighted mean."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "T1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Correct short plain text: 60 minutes."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 1,
       "questionId": "T2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.1",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r1-T2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Core missing-versus-zero distinction is correct.",
+            "Extra claim that zero is always extreme and imputation lowers the mean is not generally true with negatives or offset scales."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "A1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-A1.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Four directed relations and shared Database preserved without validation retry.",
+            "Failure consequences qualified; some wording about two-way dependence is imprecise."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r2-A1-component-0-640.png",
+          "evidence/natural/r2-A1-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "A2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-A2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "No payment rollback and downstream scope stated.",
+            "Table says inventory and prior stages are completed when inventory errors; adds unspecified notification-queue behavior."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "A3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-A3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Introduces Search→Store as an ordinary edge labelled forbidden, violating actual-edge semantics.",
+            "Summary incorrectly counts nodes/allowed edges; Index update source correctly left unknown."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r2-A3-component-0-640.png",
+          "evidence/natural/r2-A3-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "D1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-D1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "One hard constraint excludes managed hosting for low switching cost while its reason says this is not an exclusion.",
+            "Some provider maintenance/migration capabilities invented."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r2-D1-component-0-640.png",
+          "evidence/natural/r2-D1-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "D2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-D2.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Uncertain growth no longer initialized as certain; price unknown retained.",
+            "A maintenance remains unknown in cells but prose/rules treat it as less burdensome than B."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r2-D2-component-0-640.png",
+          "evidence/natural/r2-D2-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "D3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-D3.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Initial state withholds a winner and preserves the two suppliers.",
+            "Changing priority still recommends known value over an unknown comparator without comparison evidence."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": [
+          "evidence/natural/r2-D3-component-0-640.png",
+          "evidence/natural/r2-D3-component-0-360.png"
+        ]
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "N1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-N1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Dates, values, unit, net change and dip correct; no forecast.",
+            "Plain text does not explicitly repeat UTC, but does not convert or alter the given daily dates."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "N2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-N2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Correct observed mean and n=3; complete four-sample mean remains unknown."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "N3",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-N3.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Correct bin table and denominator; missing excluded; unspecified weighted mean refused."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "T1",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Correct plain text."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
       "retryAttempts": []
     },
     {
       "round": 2,
       "questionId": "T2",
-      "status": "not-run",
-      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
-      "firstAttempt": null,
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.2",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r2-T2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Defines measured zero as absence of quantity and imputation as systematically downward, invalid for offset scales and negative observations."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [
+          "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
+        ],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "A1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-A1.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Four directed relations, Database sharing, paths and local selection correct.",
+            "Some exclusivity and dependency-impact statements extend beyond the supplied graph and should stay scoped to it."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-A1-component-0-640.png",
+          "evidence/natural/r3-A1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "A2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-A2.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Four directed adjacent edges, singleton notification failure and no payment rollback preserved.",
+            "Inventory propagation now labelled as an inference; explicit retry/termination policies remain unknown.",
+            "Statements that all upstream effects are absent remain stronger than supplied evidence."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-A2-component-0-640.png",
+          "evidence/natural/r3-A2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "A3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-A3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Six supplied nodes and five allowed relations preserved; prohibition appears in constraints, never an actual edge.",
+            "Index/Store synchronization and enforcement mechanism correctly left unknown.",
+            "Prose calls no direct edge zero coupling; graph topology alone cannot establish full independence."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-A3-component-0-640.png",
+          "evidence/natural/r3-A3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "D1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-D1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Prices stay unknown.",
+            "Information-gathering still included as a third comparable option, and provider maintenance scope overclaimed."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-D1-component-0-640.png",
+          "evidence/natural/r3-D1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "D2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-D2.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Capacities and unknown maintenance capability retained.",
+            "Prose asserts a definite cost advantage for A without costs.",
+            "A proposed rule recommends B even when its own explanation says maintenance capability conflicts with feasibility."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-D2-component-0-640.png",
+          "evidence/natural/r3-D2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "D3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-D3.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Initial conditions withhold a winner and unknowns retained.",
+            "Priority-change rules still prefer known over unknown comparators; threshold exclusion described in prose is not encoded as hard constraints."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-D3-component-0-640.png",
+          "evidence/natural/r3-D3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "N1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-N1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 1,
+        "controls": [
+          {
+            "index": 0,
+            "changed": true,
+            "method": "Accessible snapshot comparison after actual native control interaction."
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "UTC daily ordering, unit, all four values, Jan 3 decline and +2 endpoint change correct; no invented forecast."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r3-N1-component-0-640.png",
+          "evidence/natural/r3-N1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "N2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-N2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Effective n=3, missing=1, mean zero; full mean x/4 left unknown; negative and zero values retained."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "N3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-N3.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Plain table correct: valid7, count3/count4, ratios3/7 and4/7, final upper boundary; weighted mean requires weights."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "T1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "pass",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Correct plain text: 60 minutes."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 3,
+      "questionId": "T2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.3",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r3-T2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "validationIssues": 0,
+        "modelInternalCorrections": false,
+        "componentCount": 0,
+        "controls": [],
+        "containers": [],
+        "semanticAssessment": {
+          "status": "fail",
+          "reviewMethod": "Agent manually checked complete first-attempt prose, all delivered payloads, declared rules and supplied frozen facts; no output selected by component count.",
+          "notes": [
+            "Core distinction correct and both-direction bias acknowledged.",
+            "An extra parenthetical still universally assigns downward mean bias, contradicting negative-value cases."
+          ]
+        },
+        "expression": "plain-prose-or-table",
+        "pageErrors": [],
+        "screenshots": []
+      },
       "retryAttempts": []
     }
   ],
-  "questionSetSha256": "0e185ec955aa9d9829319347c7b3560c8c4a75f02ddf891c8a42b9cd913f3245"
+  "excludedSetupAttempts": [
+    {
+      "status": "excluded-setup-failure",
+      "questionId": "A1",
+      "record": "evidence/natural/setup-before-round-2-A1.json",
+      "reason": "Harness was started before async plugin installation finished; precondition asserted wrong version but shell continued. Stopped immediately after detecting installed version. Not counted as a corrected-version success; every input and event preserved."
+    }
+  ],
+  "modelInternalCorrections": "Multiple render calls in the same first attempt are not human/harness answer retries; every rejected call is retained.",
+  "fixes": [
+    {
+      "afterRound": 1,
+      "version": "0.1.0-preview.2",
+      "changes": [
+        "Continuous directed scenario paths, singleton path without edges.",
+        "Unknown local conditions start null; uncertain growth stays uncertain.",
+        "Known values do not beat unknown values; model judgments differ from supplied policy."
+      ]
+    },
+    {
+      "afterRound": 2,
+      "version": "0.1.0-preview.3",
+      "changes": [
+        "Prohibitions belong in node constraints, never actual edges/scenario paths.",
+        "Hard constraint predicate true means exclude; reason must agree.",
+        "Priority alone does not resolve unknown comparison values.",
+        "Zero has scale-specific meaning and imputation can bias either way.",
+        "Isolated profile disables temporary first-party 1017 model badge to avoid duplicate single-slot registration with WorkBuddy 5.6.2; model route/settings unchanged."
+      ]
+    }
+  ]
 }

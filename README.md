@@ -13,7 +13,7 @@ Plain text remains appropriate for simple questions. No model-generated JavaScri
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.1.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.3.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.
@@ -28,7 +28,7 @@ DSH's shared React 18 hosts a small wrapper; a plugin-owned React 19 root runs j
 
 ## Evidence and limitations
 
-This release distinguishes **real DSH with a deterministic fixture** from **real model acceptance**. See [validation results](docs/VALIDATION.zh-CN.md), [the frozen 11 questions](fixtures/questions.json) and [both natural-question round records](docs/natural-question-results.json). A fixture is not evidence of model expression choice. The release remains a preview until the required natural-question rounds are actually run.
+This release distinguishes **real DSH with a deterministic fixture** from **real model acceptance**. See [validation results](docs/VALIDATION.zh-CN.md), [the frozen 11 questions](fixtures/questions.json) and [all natural-question round records](docs/natural-question-results.json). A fixture is not evidence of model expression choice. Three complete frozen 11-question rounds have now run through the existing personal WorkBuddy route (`deepseek-v4.1-flash`, high effort). Every first attempt and one excluded setup failure are retained. The latest round still has four content-semantic failures, so this remains a preview: valid structure and a rendered component do not establish factual correctness. See [per-question records](docs/natural-question-results.json).
 
 [Public API/version evidence](docs/UPSTREAM.zh-CN.md) · [protocol and data semantics](docs/PROTOCOL.md) · [specific GenUI compatibility limits](docs/GENUI.zh-CN.md) · [中文说明](docs/OVERVIEW.zh-CN.md)
 

@@ -1,6 +1,6 @@
 {
   "name": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.1",
+  "version": "0.1.0-preview.3",
   "description": "Bounded semantic UI for native DeepSeek Harness conversations, powered by json-render.",
   "type": "module",
   "license": "MIT",

@@ -1,12 +1,35 @@
 {
-  "scope": "task-owned isolated personal DSH profile only",
-  "accountStatus": "signed-out",
-  "officialApiKeyConfigured": false,
-  "verifiedThrough": [
-    "account/getState",
-    "credentials/describe (metadata only)",
-    "Models onboarding UI"
-  ],
-  "secretsReadOrCopied": false,
-  "realModelRequestsExecuted": 0
+  "verifiedAt": "2026-10-23T07:38:10.413Z",
+  "dsh": "0.2.1-rc.2",
+  "provider": "workbuddy",
+  "model": "deepseek-v4.1-flash",
+  "reasoningEffort": "high",
+  "connector": {
+    "package": "dsh-connect-workbuddy",
+    "version": "5.6.2",
+    "upstream": "https://github.com/dingminhua/dsh-connect-workbuddy"
+  },
+  "authorization": "Existing personal WorkBuddy sign-in reused normally through public connector in task-owned isolated DSH profile.",
+  "agentReadOrCopiedCredentialBytes": false,
+  "globalRouteOrSharedHostChanged": false,
+  "realModelVerified": true,
+  "naturalRound1": {
+    "completed": 11,
+    "firstAttemptsRetained": true,
+    "retriesFromHumanOrTestDriver": 0
+  },
+  "naturalRound2": {
+    "completed": 11,
+    "firstAttemptsRetained": true
+  },
+  "priorEmptyProfileCheck": {
+    "scope": "Historical check of the initial isolated official DeepSeek account/key profile; superseded by verified existing personal WorkBuddy route.",
+    "doesNotEstablish": "Absence or lack of authorization of another existing personal model route."
+  },
+  "naturalRound3": {
+    "completed": 11,
+    "firstAttemptsRetained": true,
+    "extraFullRound": true
+  },
+  "excludedSetupAttempts": 1
 }

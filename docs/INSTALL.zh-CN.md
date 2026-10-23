@@ -13,12 +13,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.1.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.3.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-自然使用需要在这个 profile 的 **Settings → Models** 通过正常界面授权个人模型。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
+自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 
 ## 项目内隔离实例
 
@@ -44,10 +44,21 @@ pnpm exec dsh plugin --profile web add /absolute/path/to/release.tgz
 
 回退：先保存 profile 的 patch/package 元数据和 DSH 自有会话备份，再用 `dsh plugin --profile web add /absolute/path/to/previous.tgz` 恢复兼容包。协议不支持时显示可读错误，不迁移或改写旧消息。不对 0.1.x 宣称兼容。
 
-这是本插件首个公开版本，目前没有已验收的旧插件包可回退；上面的 previous.tgz 流程仅适用于日后已有兼容包的情况。当前可停用生成、完全停用插件，或重新安装同一版本。完全移出 composition 后普通会话仍可读取，重新启用同版本后历史组件恢复，已在任务独立实例测试。
+旧公开包 v0.1.0-preview.1 仍可下载并通过相同命令回退；它尚无当时完成的自然问题证据，旧版与当前版都不作生产稳定性承诺。也可停用生成、完全停用插件，或重新安装同一版本。完全移出 composition 后普通会话仍可读取，重新启用同版本后历史组件恢复，已在任务独立实例测试。
 
 ## macOS / Linux
 
 开发命令使用 Node、pnpm，不依赖 macOS GUI。无模型时 `pnpm test:host` 使用明确标注的本地确定性夹具运行真实 DSH；它不计为自然提问验收。测试用的浏览器为 Playwright Chromium，可用 `pnpm exec playwright install chromium` 安装。
 
 Linux CI 与 Linux 实机必须分开记录；CI 构建/测试通过不能替代用户 Linux 桌面和个人模型验证。锁屏只影响真实 GUI 操作，不影响本项目 CLI、安装和测试执行。
+
+## WorkBuddy 连接器的独立兼容提示
+
+本次使用公开 `dsh-connect-workbuddy@5.6.2`，个人模型登录通过连接器正常使用，未提取或复制密钥。DSH 0.2.1-rc.2 的临时 DeepSeek 1017 模型标签与该连接器争用 single slot，在前两轮测试产生一个页面注册错误。第三轮仅在隔离测试 profile 的 `cordis.patch.yml` 关闭该临时标签后错误消失：
+
+```yaml
+- id: ui-deepseek-model-label-1017
+  disabled: true
+```
+
+它只停用显示徽标，不改变模型目录、请求参数或 WorkBuddy 路由。本插件本身不改此设置，也不替用户修改已有服务。使用其他连接器/版本时，不应无依据套用这个开关。
