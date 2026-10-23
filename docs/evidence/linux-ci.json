@@ -1,22 +1,23 @@
 {
   "platform": "GitHub-hosted Linux x64 (ubuntu-latest)",
   "node": "24.21.0",
-  "runId": 39926874887,
-  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39926874887",
-  "implementationCommit": "1c36556d48c5a02d8a7832cbd5ed17a200d12b5f",
+  "runId": 39941303029,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39941303029",
+  "implementationCommit": "17eed6ce3769dba21cb9907a4c9eb3c83cc60918",
   "conclusion": "success",
   "checks": [
     "frozen dependency install",
     "generated schema and skill consistency",
+    "33-project / 116-source research inventory consistency",
     "TypeScript",
-    "34 unit tests",
+    "37 unit tests",
     "release build",
-    "real DSH Native and PTC four-fixture lifecycle at 640/360px",
-    "runtime and full-evidence packages with checksums and manifest"
+    "real DSH Native/PTC four-fixture lifecycle at 640/360px with selected numeric ARIA descriptions",
+    "runtime/evidence archives and checksums"
   ],
   "linuxPhysicalDesktopVerified": false,
   "linuxPointerBoundary": "series checkbox tested via native keyboard focus + Space; host sidebar hover can cover mouse targets",
-  "naturalModelAcceptance": "CI uses deterministic DSH fixtures; the three complete WorkBuddy rounds and preview.4 coexistence pilot/followup are separate macOS evidence.",
+  "naturalModelAcceptance": "CI uses deterministic fixtures. Four preview.5 targeted WorkBuddy first attempts and source inspection are separate macOS evidence, including content failures.",
   "earlierRuns": [
     {
       "runId": 39904209133,
@@ -41,8 +42,13 @@
       "runId": 39921071777,
       "conclusion": "success",
       "implementationCommit": "8143e36e27a19778d085b6650562c0a62dfd4e29"
+    },
+    {
+      "runId": 39926874887,
+      "conclusion": "success",
+      "implementationCommit": "1c36556d48c5a02d8a7832cbd5ed17a200d12b5f"
     }
   ],
   "finalReleaseSourceBoundary": "Later evidence/install metadata changes do not change the validated src or tests trees.",
-  "version": "0.1.0-preview.4"
+  "version": "0.1.0-preview.5"
 }
