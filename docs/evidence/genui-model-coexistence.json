@@ -1,0 +1,155 @@
+{
+  "date": "2026-10-23",
+  "scope": "Four fresh-session first attempts with both complete generation plugins enabled, followed by one real form submit and one separately retained numeric rerun. Not a new complete frozen 11-question round.",
+  "dsh": "0.2.1-rc.2",
+  "semanticVersion": "0.1.0-preview.4",
+  "genuiVersion": "@changfenhuang/dsh-genui@0.14.0",
+  "provider": "workbuddy",
+  "model": "deepseek-v4.1-flash",
+  "reasoningEffort": "high",
+  "semanticGuidance": "Scoped to this plugin; other plugins retain protocols outside the three-component catalog. No GenUI tool or generation prompt was hidden.",
+  "initialSelection": {
+    "ArchitectureExplorer": 1,
+    "DecisionExplorer": 1,
+    "DataChart": 1,
+    "GenUIForm": 1,
+    "duplicateViews": 0,
+    "boundary": "Four observed choices, not a routing guarantee."
+  },
+  "records": [
+    {
+      "id": "C1",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C1.json",
+      "modelRequests": 4,
+      "assessment": {
+        "selection": "pass",
+        "content": "pass-with-notes",
+        "reason": "Four supplied edges are correct; prose adds an unsupported denial of reverse calls/callbacks."
+      },
+      "candidateSha256": "6b1fa689362a96715c6ca4796ed157a7be138a41068036ade54022c4be6293d9",
+      "pageErrors": []
+    },
+    {
+      "id": "C2",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C2.json",
+      "modelRequests": 4,
+      "assessment": {
+        "selection": "pass",
+        "content": "fail",
+        "reason": "Recommends A and later migration under unknown costs and migration conditions. Capacity facts alone do not establish this preference."
+      },
+      "candidateSha256": "6b1fa689362a96715c6ca4796ed157a7be138a41068036ade54022c4be6293d9",
+      "pageErrors": []
+    },
+    {
+      "id": "C3",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C3.json",
+      "modelRequests": 3,
+      "assessment": {
+        "selection": "pass",
+        "content": "fail",
+        "reason": "Correct data and chart, but prose claims the dip to 3 is above the starting value 4."
+      },
+      "candidateSha256": "6b1fa689362a96715c6ca4796ed157a7be138a41068036ade54022c4be6293d9",
+      "pageErrors": []
+    },
+    {
+      "id": "C4",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C4.json",
+      "modelRequests": 3,
+      "assessment": {
+        "selection": "pass",
+        "content": "fail",
+        "reason": "Correct GenUI form selection and eventual callback. Initial prose promises refresh preservation; actual unsent fields reset on reload."
+      },
+      "candidateSha256": "6b1fa689362a96715c6ca4796ed157a7be138a41068036ade54022c4be6293d9",
+      "pageErrors": []
+    },
+    {
+      "id": "C3-data-facts-followup",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C3-data-facts-followup.json",
+      "modelRequests": 3,
+      "assessment": {
+        "selection": "pass",
+        "content": "pass",
+        "reason": "Separate targeted new-session rerun after adding deterministic dataFacts. Receipt is delivered to the model and prose correctly states the endpoints and minimum. This does not replace C3 or establish general accuracy."
+      },
+      "candidateSha256": "5c669e7141a7288235a7d2d9cc3c3b8a1f6fed0419418e25eefc775daf8d519e",
+      "pageErrors": []
+    },
+    {
+      "id": "C4-callback",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C4-callback.json",
+      "modelRequests": 5,
+      "assessment": {
+        "selection": "not-a-new-choice-test",
+        "content": "callback-pass-refresh-promise-fail",
+        "reason": "Real UI click sent selected theme, name and notes to a second model turn. Unsubmitted local fields reset after reload; refilled before the first submit."
+      },
+      "candidateSha256": "6b1fa689362a96715c6ca4796ed157a7be138a41068036ade54022c4be6293d9",
+      "pageErrors": []
+    }
+  ],
+  "numericFollowup": {
+    "originalFailureRecord": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C3.json",
+    "rerunRecord": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/coexistence/C3-data-facts-followup.json",
+    "dataFacts": {
+      "scope": "original-full-data",
+      "chartType": "line",
+      "unit": "°C",
+      "order": "ascending",
+      "timezone": "UTC",
+      "granularity": "day",
+      "rows": 4,
+      "firstRow": {
+        "id": "d0101",
+        "x": "2026-01-01T00:00:00+00:00",
+        "xTruncated": false
+      },
+      "lastRow": {
+        "id": "d0104",
+        "x": "2026-01-04T00:00:00+00:00",
+        "xTruncated": false
+      },
+      "series": [
+        {
+          "id": "temp",
+          "valid": 4,
+          "missing": 0,
+          "mean": 4.5,
+          "minimum": 3,
+          "maximum": 6,
+          "firstValue": 4,
+          "lastValue": 6,
+          "netChange": 2,
+          "adjacentValidDecreases": 1
+        }
+      ]
+    },
+    "presentInFollowingModelRequest": true,
+    "interpretation": "Correct on this targeted followup; no claim of causal or general accuracy."
+  },
+  "formCallback": {
+    "beforeRefresh": {
+      "name": "测试访客",
+      "history": true,
+      "notes": "虚构测试：周末下午，6人以内"
+    },
+    "afterRefresh": {
+      "name": "",
+      "history": false,
+      "notes": ""
+    },
+    "refilledBeforeFirstSubmit": true,
+    "actualUserAction": [
+      {
+        "type": "text",
+        "text": "[genui-action] book_club_signup。用户刚刚在界面中触发了动作 \"book_club_signup\"，请根据组件数据执行相应操作，并用 dsh-ui 输出更新后的界面。 组件数据: {\"type\":\"submit\",\"answers\":{\"themes\":[\"历史\"]},\"fields\":{\"signup-name\":\"测试访客\",\"signup-notes\":\"虚构测试：周末下午，6人以内\"},\"total\":1,\"answered\":1}"
+      }
+    ],
+    "continuedModelTurn": true
+  },
+  "evidenceDistribution": "Full JSON and screenshots remain in Git and the separate evidence tgz; the runtime tgz contains this compact index.",
+  "physicalPhoneVerified": false,
+  "completeSemanticAcceptance": false
+}

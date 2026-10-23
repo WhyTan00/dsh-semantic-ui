@@ -29,6 +29,7 @@ describe('deterministic comparisons',()=>{
  it('keeps unknown distinct from false and zero',()=>{const p=dec().payload;expect(decide(p,{private:null}).status).toBe('insufficient');expect(decide(p,{}).recommendations).toEqual([]);});
  it('combines equal-priority recommendations and honors hard constraints',()=>{const p=dec().payload;p.rules.push({...p.rules[0],id:'tie',recommend:['vm']});expect(decide(p,{private:false}).recommendations).toEqual(['managed','vm']);p.rules=[{...p.rules[1],recommend:['managed']}];expect(decide(p,{private:true}).status).toBe('blocked');});
  it('withholds a known winner if an unknown higher-priority rule could override it',()=>{const p=dec().payload;p.rules[1].when.clauses=[{input:'budget',op:'gt',value:2}];expect(decide(p,{private:false,budget:null}).status).toBe('insufficient');});
+ it('names unknown conditions that actually block a result without treating false or zero as missing',()=>{const p=dec().payload;p.inputs.push({id:'budget',label:'Available budget',type:'number',initial:null});p.rules[1].when.clauses=[{input:'budget',op:'gt',value:2}];expect(decide(p,{private:false,budget:null}).missingInputs).toEqual([{id:'budget',label:'Available budget'}]);expect(decide(p,{private:false,budget:0}).missingInputs).toEqual([]);p.rules[1].when.clauses=[{input:'private',op:'eq',value:true}];p.constraints[0].when.clauses=[{input:'budget',op:'lt',value:1}];p.constraints[0].optionId='managed';expect(decide(p,{private:false}).missingInputs).toEqual([{id:'budget',label:'Available budget'}]);});
 });
 describe('numeric semantics',()=>{
  it('preserves zero, negatives and null in mean and sample count',()=>expect(numericStats([null,0,-3,3])).toEqual({n:3,missing:1,sum:0,mean:0,min:-3,max:3}));
@@ -38,6 +39,6 @@ describe('numeric semantics',()=>{
 });
 describe('single tool-delivery contract',()=>{
  it('describes every catalog schema on demand',()=>{for(const c of ['ArchitectureExplorer','DecisionExplorer','DataChart']as const){const d=describeComponent(c);expect(JSON.stringify(d.payloadSchema)).toContain('"additionalProperties":false');expect(d.delivery).toContain('action=render');}});
- it('keeps resident instructions on the tool channel',()=>{expect(GUIDANCE).toContain('Never output UI specs or JSON/JSONL fences');expect(TOOL_DESCRIPTION).toContain('action=describe');expect(GUIDANCE).not.toContain('catalog.prompt');});
+ it('keeps its own delivery on the tool channel while allowing other plugin protocols',()=>{expect(GUIDANCE).toContain("Never output this plugin's UI specs or JSON/JSONL fences");expect(GUIDANCE).toContain('Other enabled plugins retain their own protocols');expect(TOOL_DESCRIPTION).toContain('action=describe');expect(GUIDANCE).not.toContain('catalog.prompt');});
 });
 it('rejects accessors without executing them and invalid calendar dates',()=>{let called=false;const v={get payload(){called=true;return {};}};rejects(v,'NON_JSON');expect(called).toBe(false);const p=structuredClone(chart);if(p.component==='DataChart'&&p.payload.chartType!=='histogram'){p.payload.rows[0].x='2026-02-31T00:00:00Z';rejects(p);}});

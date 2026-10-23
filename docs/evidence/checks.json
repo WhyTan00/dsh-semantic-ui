@@ -2,8 +2,8 @@
   "platform": "macOS arm64",
   "dsh": "0.2.1-rc.2",
   "typecheck": "passed",
-  "unitTestFiles": 3,
-  "unitTestsPassed": 30,
+  "unitTestFiles": 4,
+  "unitTestsPassed": 34,
   "unitTestsFailed": 0,
   "build": "passed",
   "naturalQuestionAcceptance": "33 cases completed in three frozen 11-question rounds through real WorkBuddy model; latest round has four semantic failures, all preserved. Not full acceptance.",
@@ -12,11 +12,17 @@
     "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
     "Unequal-width histogram bins rejected instead of drawing misleading equal-width bars.",
     "Duplicate timestamp instants rejected across equivalent offsets.",
-    "DataChart static summary explicitly refers to original full data after local filters."
+    "DataChart static summary explicitly refers to original full data after local filters.",
+    "Own guidance scoped to own UI specs, allowing other plugins outside the three-component catalog.",
+    "Decision result and origin explicitly declared; missing blocking conditions listed.",
+    "Numeric receipt returns deterministic bounded full-data facts for checking prose.",
+    "Bulk model evidence separated from runtime tgz without removing first failures."
   ],
   "modelProvider": "workbuddy",
   "model": "deepseek-v4.1-flash",
   "reasoningEffort": "high",
   "latestNaturalBrowserErrors": [],
-  "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts."
+  "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts.",
+  "version": "0.1.0-preview.4",
+  "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round."
 }

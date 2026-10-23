@@ -1,6 +1,6 @@
 # 实际进度
 
-状态：0.1.0-preview.3 预览；三轮共 33 题真实模型已执行，内容语义验收仍未全部通过。更新日期：2026-10-23。
+状态：0.1.0-preview.4 预览；三轮共 33 题真实模型已执行，内容语义验收仍未全部通过。更新日期：2026-10-23。
 
 ## 有效范围与决定
 
@@ -12,7 +12,7 @@
 ## 已完成并验证
 
 - 三组件、统一 catalog/schema、严格语义校验、统计纯函数、声明式比较、本地交互、错误降级及按需工具说明。
-- TypeScript、30 项测试、发行构建通过。新增修复：真正重启时的历史读取、不等宽直方图拒绝、重复时间点的不同 offset 校验。
+- TypeScript、34 项测试、发行构建通过。新增修复：真正重启时的历史读取、不等宽直方图拒绝、重复时间点的不同 offset 校验。
 - Native / PTC 各四个代表样例通过生成状态、工具过程折叠、交互、640/360px 容器、刷新、切会话、历史重开及 28 回合后的实际补页；pageerror 为 0。
 - 公开 GenUI 0.14.0 的旧消息与新语义节点在隔离真实宿主并存，刷新与重启恢复；关闭本插件新生成后仍保留历史。GenUI 自身的指引无法通过 renderUiTool 完全关闭。
 - 实测 24 节点/45 边关系图的 360px 概览和邻域定位；80 节点/240 边只验证纯布局和校验，不外推可读性。
@@ -20,10 +20,16 @@
 
 ## 发行与安装
 
-- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.3 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.3) 为准；不宣称 npm 已发布。
+- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.4 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.4) 为准；不宣称 npm 已发布。
 - 最终 tgz 在新建隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native 样例；安装输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
-- Linux CI 实际通过，含 30 项测试、真实 DSH Native/PTC 代表矩阵及打包，见 [linux-ci.json](evidence/linux-ci.json)。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
-- 自有代码 MIT；依赖逐项保留许可证与 NOTICE。普通工具输出仅短回执，原始私有运行数据不随源码或包公开。
+- Linux CI 的准确版本、34 项测试、真实 DSH Native/PTC 代表矩阵及打包状态以 [linux-ci.json](evidence/linux-ci.json) 为准。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
+- 自有代码 MIT；依赖逐项保留许可证与 NOTICE。工具输出为有界回执，DataChart 附程序计算的数值事实；原始私人路径不公开。完整模型记录/截图分离为证据 tgz，紧凑索引保留在运行包，SHA256SUMS 同时覆盖两个包。
+
+## preview.4 的成熟度改进
+
+本插件的围栏/工具指引只约束自己的三组件，避免阻止其他插件的目录外协议。比较组件展示阻塞条件、规则结果和声明的来源；数值回执新增全量数据的程序核对事实。34 项测试和本次 Native/PTC 四样例生命周期已通过。
+
+同时完整开启公开 GenUI 0.14.0 的四题真实模型测试中，三类任务选择本插件，报名表选择 GenUI，没有重复视图；表单实际提交成功回传主题、昵称和备注。首次趋势正文把 3 说成高于起点 4，表单正文错误承诺未提交内容刷新不丢，比较仍有过早推荐；都保留失败。数值回执后的单题新会话复测正确，另行保留，不冒充完整第四轮。见 [成熟度评估](MATURITY.zh-CN.md) 与 [共存证据](evidence/genui-model-coexistence.json)。
 
 ## 真实模型接入与剩余工作
 

@@ -1,9 +1,8 @@
 {
-  "source": "real DSH 0.2.1-rc.2; deterministic fixture, not natural-question acceptance",
-  "delivery": "standard tool-result presentation metadata",
   "results": [
     {
       "kind": "architecture",
+      "sessionId": "native-fixture-1",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -15,12 +14,13 @@
       "refresh": true,
       "sessionSwitch": true,
       "historyReopen": true,
-      "historyPrepend": true,
+      "historyPrepend": false,
       "interactionPreferences": "reset on reload",
       "model": "deterministic fixture; not model acceptance"
     },
     {
       "kind": "decision",
+      "sessionId": "native-fixture-2",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -32,12 +32,13 @@
       "refresh": true,
       "sessionSwitch": true,
       "historyReopen": true,
-      "historyPrepend": true,
+      "historyPrepend": false,
       "interactionPreferences": "reset on reload",
       "model": "deterministic fixture; not model acceptance"
     },
     {
       "kind": "chart",
+      "sessionId": "native-fixture-3",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -49,12 +50,13 @@
       "refresh": true,
       "sessionSwitch": true,
       "historyReopen": true,
-      "historyPrepend": true,
+      "historyPrepend": false,
       "interactionPreferences": "reset on reload",
       "model": "deterministic fixture; not model acceptance"
     },
     {
       "kind": "histogram",
+      "sessionId": "native-fixture-4",
       "hostGeneratingState": true,
       "noInventedPartialSpec": true,
       "toolProcessFolded": true,
@@ -66,10 +68,12 @@
       "refresh": true,
       "sessionSwitch": true,
       "historyReopen": true,
-      "historyPrepend": true,
+      "historyPrepend": false,
       "interactionPreferences": "reset on reload",
       "model": "deterministic fixture; not model acceptance"
     }
   ],
-  "pageErrors": []
+  "errors": [],
+  "version": "0.1.0-preview.4",
+  "fixtureOnly": true
 }

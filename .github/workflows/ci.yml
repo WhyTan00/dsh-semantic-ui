@@ -27,4 +27,5 @@ jobs:
           path: |
             artifacts/*.tgz
             artifacts/SHA256SUMS
+            artifacts/package-manifest.json
           if-no-files-found: error

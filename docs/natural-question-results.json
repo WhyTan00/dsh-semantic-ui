@@ -61,7 +61,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-A1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-A1.json",
         "modelRequestCount": 5,
         "validationRejectedCalls": 1,
         "validationIssues": 1,
@@ -100,8 +100,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-A1-component-0-640.png",
-          "evidence/natural/r1-A1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -115,7 +115,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-A2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-A2.json",
         "modelRequestCount": 5,
         "validationRejectedCalls": 1,
         "validationIssues": 2,
@@ -153,8 +153,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-A2-component-0-640.png",
-          "evidence/natural/r1-A2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -168,7 +168,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-A3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-A3.json",
         "modelRequestCount": 5,
         "validationRejectedCalls": 1,
         "validationIssues": 5,
@@ -206,8 +206,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-A3-component-0-640.png",
-          "evidence/natural/r1-A3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-A3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -221,7 +221,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-D1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-D1.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -259,8 +259,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-D1-component-0-640.png",
-          "evidence/natural/r1-D1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -274,7 +274,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-D2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-D2.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -312,8 +312,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-D2-component-0-640.png",
-          "evidence/natural/r1-D2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -327,7 +327,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-D3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-D3.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -365,8 +365,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-D3-component-0-640.png",
-          "evidence/natural/r1-D3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-D3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -380,7 +380,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-N1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-N1.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -418,8 +418,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-N1-component-0-640.png",
-          "evidence/natural/r1-N1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-N1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-N1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -433,7 +433,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-N2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-N2.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -470,8 +470,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r1-N2-component-0-640.png",
-          "evidence/natural/r1-N2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-N2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r1-N2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -485,7 +485,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-N3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-N3.json",
         "modelRequestCount": 2,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -517,7 +517,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-T1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-T1.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -549,7 +549,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r1-T2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r1-T2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -582,7 +582,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-A1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-A1.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -620,8 +620,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r2-A1-component-0-640.png",
-          "evidence/natural/r2-A1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-A1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-A1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -635,7 +635,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-A2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-A2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -668,7 +668,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-A3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-A3.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -706,8 +706,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r2-A3-component-0-640.png",
-          "evidence/natural/r2-A3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-A3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-A3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -721,7 +721,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-D1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-D1.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -759,8 +759,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r2-D1-component-0-640.png",
-          "evidence/natural/r2-D1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -774,7 +774,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-D2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-D2.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -812,8 +812,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r2-D2-component-0-640.png",
-          "evidence/natural/r2-D2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -827,7 +827,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-D3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-D3.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -865,8 +865,8 @@
           "single slot \"conversation.input.model.label\" already has a registration at priority 0 (registered by dsh-connect-workbuddy-client) — register at a different priority to shadow it (lowest renders)"
         ],
         "screenshots": [
-          "evidence/natural/r2-D3-component-0-640.png",
-          "evidence/natural/r2-D3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r2-D3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -880,7 +880,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-N1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-N1.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -913,7 +913,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-N2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-N2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -945,7 +945,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-N3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-N3.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -977,7 +977,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-T1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-T1.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1009,7 +1009,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r2-T2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r2-T2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1041,7 +1041,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-A1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-A1.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1077,8 +1077,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-A1-component-0-640.png",
-          "evidence/natural/r3-A1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1092,7 +1092,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-A2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-A2.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1129,8 +1129,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-A2-component-0-640.png",
-          "evidence/natural/r3-A2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1144,7 +1144,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-A3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-A3.json",
         "modelRequestCount": 3,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1181,8 +1181,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-A3-component-0-640.png",
-          "evidence/natural/r3-A3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-A3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1196,7 +1196,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-D1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-D1.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1232,8 +1232,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-D1-component-0-640.png",
-          "evidence/natural/r3-D1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1247,7 +1247,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-D2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-D2.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1284,8 +1284,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-D2-component-0-640.png",
-          "evidence/natural/r3-D2-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D2-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D2-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1299,7 +1299,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-D3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-D3.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1335,8 +1335,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-D3-component-0-640.png",
-          "evidence/natural/r3-D3-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D3-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-D3-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1350,7 +1350,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-N1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-N1.json",
         "modelRequestCount": 4,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1385,8 +1385,8 @@
         "expression": "semantic-ui-and-prose",
         "pageErrors": [],
         "screenshots": [
-          "evidence/natural/r3-N1-component-0-640.png",
-          "evidence/natural/r3-N1-component-0-360.png"
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-N1-component-0-640.png",
+          "https://raw.githubusercontent.com/WhyTan00/dsh-semantic-ui/v0.1.0-preview.4/docs/evidence/natural/r3-N1-component-0-360.png"
         ]
       },
       "retryAttempts": []
@@ -1400,7 +1400,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-N2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-N2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1430,7 +1430,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-N3.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-N3.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1460,7 +1460,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-T1.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-T1.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1490,7 +1490,7 @@
         "provider": "workbuddy",
         "model": "deepseek-v4.1-flash",
         "reasoningEffort": "high",
-        "record": "evidence/natural/r3-T2.json",
+        "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/r3-T2.json",
         "modelRequestCount": 1,
         "validationRejectedCalls": 0,
         "validationIssues": 0,
@@ -1517,7 +1517,7 @@
     {
       "status": "excluded-setup-failure",
       "questionId": "A1",
-      "record": "evidence/natural/setup-before-round-2-A1.json",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/setup-before-round-2-A1.json",
       "reason": "Harness was started before async plugin installation finished; precondition asserted wrong version but shell continued. Stopped immediately after detecting installed version. Not counted as a corrected-version success; every input and event preserved."
     }
   ],
@@ -1543,5 +1543,6 @@
         "Isolated profile disables temporary first-party 1017 model badge to avoid duplicate single-slot registration with WorkBuddy 5.6.2; model route/settings unchanged."
       ]
     }
-  ]
+  ],
+  "evidenceDistribution": "Full records remain open in the source tag and the separately checksummed evidence archive; runtime package retains this compact index and frozen questions."
 }

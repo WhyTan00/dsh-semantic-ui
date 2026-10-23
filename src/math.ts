@@ -15,7 +15,10 @@ export function decide(p:Decision,inputs:InputValues){
   const blocked=new Set(constraints.filter(c=>c.match===true).map(c=>c.constraint.optionId));
   const recommendations=unresolved.length?[]:p.options.filter(o=>triggered.some(r=>r.recommend.includes(o.id))&&!blocked.has(o.id)).map(o=>o.id);
   const uncertainConstraints=constraints.some(c=>c.match==='unknown'&&recommendations.includes(c.constraint.optionId));
-  return {status:unresolved.length||uncertainConstraints?'insufficient':!triggered.length?'no-match':!recommendations.length?'blocked':'matched', recommendations:uncertainConstraints?[]:recommendations,triggered,unresolved:unresolved.map(r=>r.rule),constraints};
+  const pendingConditions=[...unresolved.map(r=>r.rule.when),...constraints.filter(c=>c.match==='unknown'&&recommendations.includes(c.constraint.optionId)).map(c=>c.constraint.when)];
+  const missing=new Set(pendingConditions.flatMap(c=>c.clauses.filter(clause=>inputs[clause.input]===null||inputs[clause.input]===undefined).map(clause=>clause.input)));
+  const missingInputs=p.inputs.filter(input=>missing.has(input.id)).map(input=>({id:input.id,label:input.label}));
+  return {status:unresolved.length||uncertainConstraints?'insufficient':!triggered.length?'no-match':!recommendations.length?'blocked':'matched', recommendations:uncertainConstraints?[]:recommendations,triggered,unresolved:unresolved.map(r=>r.rule),constraints,missingInputs};
 }
 export function numericStats(values:(number|null)[]){
   let n=0,missing=0,sum=0,min=Infinity,max=-Infinity;

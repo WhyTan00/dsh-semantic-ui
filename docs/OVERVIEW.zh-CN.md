@@ -10,4 +10,6 @@ json-render 提供真实使用的 catalog / registry / renderer；React Flow 处
 
 具体 GenUI 的围栏组件与生成 React 应用是不同协议；本项目不接管或改写它们的历史。源码核实发现某些版本无法只关闭所有生成引导同时保留 renderer，限制及保守共存方式见 [GENUI](GENUI.zh-CN.md)。
 
+preview.4 已做真实模型共存测试并补充数值回执、比较缺失条件和更准确的规则来源提示。三类支持任务可优先使用本插件，表单等交互仍需合适的 GenUI；不能称为全面替代。实际失败、定向复测和后续优先项见 [成熟度评估](MATURITY.zh-CN.md)。完整测试资料分为独立证据包，运行包保留紧凑索引。
+
 安装包、校验和及下载位置以个人仓库 Release 为准；安装、版本范围、隔离 profile、停用生成并保留历史及回退详见 [INSTALL](INSTALL.zh-CN.md)。
