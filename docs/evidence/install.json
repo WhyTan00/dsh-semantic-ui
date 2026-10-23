@@ -1,31 +1,44 @@
 {
+  "version": "0.1.0-preview.6",
   "dsh": "0.2.1-rc.2",
-  "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no source overlay",
   "package": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.5",
-  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.5.tgz",
-  "sha256": "466f29a362809e8a39ed4e19db725f60556803c7653cf1a36d2e04cd970e9f02",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.6.tgz",
+  "sha256": "f86d135394338ad85a8dfb1b280dffc1914c69bf41883c44e904cc6370af4f63",
+  "verifiedAt": "2026-10-23T16:06:19.840Z",
+  "installation": "Actual dsh plugin --profile web add final tgz into the task-owned personal profile; no source overlay. All packaged files compared to the final archive.",
+  "allPackagedFilesVerified": 154,
   "hostStarted": true,
-  "clientRenderedAllFourFixtures": true,
-  "toolModes": [
-    "native"
-  ],
+  "templateStoredAcrossRestart": true,
+  "newTemplateHistoriesPreserved": 2,
+  "oldSemanticHistoryCount": 1,
+  "oldGenuiHistoryCount": 2,
   "pageErrors": [],
-  "installedFilesEqualTgz": {
-    "dist/host.js": true,
-    "dist/client.js": true,
-    "dist/protocol.js": true,
-    "package.json": true
+  "testObserverEnabled": false,
+  "freshProfileCandidate": {
+    "sha256": "b30e3d6cc1f71ad2ceb277c2336f156b3d71ce327b86c561ddf80dc7fc20b46d",
+    "record": "templates/clean-install-candidate.json",
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "fourComponentLifecycle": true,
+    "templateLifecycle": true,
+    "identicalFinalRuntimeAndInstallContracts": {
+      "package.json": true,
+      "cordis.patch.yml": true,
+      "SKILL.md": true,
+      "dist/host.js": true,
+      "dist/client.js": true,
+      "dist/protocol.js": true
+    }
   },
-  "allPackagedFilesVerified": 128,
-  "licenseAndNoticeBothPresent": true,
-  "sourceAndTestsTreesMatchCiCommit": "b0adee48096ebdf7afd8054ed66ebf0859f15393",
-  "priorInstallSuperseded": "Earlier pre-license file-list receipt retained privately; this receipt verifies the current complete package.",
-  "additionalPackagingCi": {
-    "runId": 39942753158,
-    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39942753158",
-    "commit": "b0adee48096ebdf7afd8054ed66ebf0859f15393",
-    "conclusion": "success",
-    "scope": "Full workflow including the final license/notice file contract; source and tests unchanged from initial research CI."
-  }
+  "naturalCandidate": {
+    "sha256": "f38635be0423c4dbba949f603b3f26bf91b1abf0d983e9223dae3a7b212748c5",
+    "sameFinalExecutableFiles": {
+      "dist/host.js": true,
+      "dist/client.js": true,
+      "dist/protocol.js": true
+    }
+  },
+  "boundary": "Natural model testing used the earlier candidate; final executable files are byte-identical. Fresh profile integration used a later candidate with byte-identical executable files, package metadata, installation patch and skill. Final archive installation and all-file/history readback are recorded separately."
 }

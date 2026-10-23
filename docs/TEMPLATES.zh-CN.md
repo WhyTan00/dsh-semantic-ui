@@ -12,7 +12,7 @@
 
 外观预览本身不保存：刷新后回到该消息生成时的样式。范围、系列开关、条件输入等探索状态仍在刷新后复位。模板库与这些临时操作状态是不同对象。
 
-[自然语言换数据后的 360px 图表](evidence/templates/P1-360.png) · [模板编辑界面](evidence/templates/native-editor-360.png)
+[自然语言换数据后的 360px 图表](https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.6/docs/evidence/templates/P1-360.png) · [模板编辑界面](https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.6/docs/evidence/templates/native-editor-360.png)
 
 ## 保存内容
 

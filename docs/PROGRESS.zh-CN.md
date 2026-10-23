@@ -21,7 +21,7 @@
 ## 发行与安装
 
 - 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.6 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.6) 为准；不宣称 npm 已发布。
-- 最终 tgz 在新建隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native 样例；安装输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
+- 发行候选在全新隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native/PTC 样例及模板流程。最终 tgz 在任务独立 profile 中安装，154 文件和历史回读核对通过；运行文件及安装合同与全新安装候选逐字节相同。各自输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
 - Linux CI 的准确版本、51 项测试、真实 DSH Native/PTC 代表矩阵及打包状态以 [linux-ci.json](evidence/linux-ci.json) 为准。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
 - 自有代码 MIT；依赖逐项保留许可证与 NOTICE。工具输出为有界回执，DataChart 附程序计算的数值事实；原始私人路径不公开。完整模型记录/截图分离为证据 tgz，紧凑索引保留在运行包，SHA256SUMS 同时覆盖两个包。
 
