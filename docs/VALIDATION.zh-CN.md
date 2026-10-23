@@ -5,7 +5,7 @@
 ## 当前实际证据
 
 - macOS 原生命令环境：联网依赖安装、HTTPS 请求、本地随机端口 HTTP 监听/回读均实际通过。执行边界的私有证据不随项目公开。
-- 固定公开 DSH 0.2.1-rc.2、真实 Web Client、真实工具注册与 DSH 自有日志；以本地确定性 HTTP 夹具替代模型，仅用于宿主链路。UI 整值载荷保存在标准工具结果的 presentation metadata，模型只收到短回执。
+- 固定公开 DSH 0.2.1-rc.2、真实 Web Client、真实工具注册与 DSH 自有日志；以本地确定性 HTTP 夹具替代模型，仅用于宿主链路。UI 整值载荷保存在标准工具结果的 presentation metadata，模型收到有界回执，DataChart 另附程序计算的数值事实。
 - Native：ArchitectureExplorer、DecisionExplorer、折线 DataChart、histogram DataChart 已通过实际工具执行、聊天挂载、过程持续折叠、控件改变内容、刷新、切会话及新页面历史重开。实际组件容器为 640px 和 360px；各例组件根横向溢出为 0。局部表格允许显式可访问横向滚动。
 - 本地交互刷新复位；重放后每个展示 ID 只显示一个组件。
 - PTC 已独立跑通四个代表样例的同一生命周期矩阵，结果见 evidence/ptc-lifecycle.json。夹具曾漏传 run_code 必需 description，另有等待最终 turn 完成的时序问题；均修复后重跑，不用首次失败冒充成功。Native 结果见 evidence/native-lifecycle.json。
@@ -64,7 +64,7 @@
 
 ## 系统区分
 
-macOS：本轮本地实测。Linux：GitHub-hosted ubuntu-latest / Node 24.21.0 的冻结安装、类型检查、30 项测试、构建、真实 DSH Native/PTC 四样例矩阵和打包均通过，见 [Linux CI 证据](evidence/linux-ci.json) 与 [实际运行](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39905479679)。这不等于 Linux 实机桌面、真实移动设备或个人模型验收。
+macOS：本轮本地实测。Linux：GitHub-hosted ubuntu-latest / Node 24.21.0 的冻结安装、类型检查、34 项测试、构建、真实 DSH Native/PTC 四样例矩阵和打包均通过，见 [Linux CI 证据](evidence/linux-ci.json) 与 [实际运行](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39926874887)。这不等于 Linux 实机桌面、真实移动设备或个人模型验收。
 
 Linux Chromium 的宿主侧栏 hover card 曾遮挡系列复选框的鼠标点击；CI 保留失败记录，并使用真实 focus + Space 键验证该复选框的可访问交互，未使用 force click 或移除宿主 DOM。macOS 的鼠标路径已通过。这是锁定宿主的 UI 边界，CI 通过也不等于 Linux 全部鼠标路径已验收。
 

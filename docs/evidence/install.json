@@ -2,9 +2,9 @@
   "dsh": "0.2.1-rc.2",
   "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no source overlay",
   "package": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.3",
-  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.3.tgz",
-  "sha256": "f2ffc11dd1500dfb438a0efee9a33e646bafe06ff792ed9a94a9ccacb33f2e38",
+  "version": "0.1.0-preview.4",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.4.tgz",
+  "sha256": "378c2f56debfd7588748cd58cf8d17c6d04fa7e835ab8e2964a0f30d31b4c412",
   "hostStarted": true,
   "clientRenderedAllFourFixtures": true,
   "toolModes": [
@@ -17,5 +17,6 @@
     "dist/protocol.js": true,
     "package.json": true
   },
-  "hostCodeMatchesRealNaturalRound3": true
+  "sourceAndTestsTreesMatchCiCommit": "1c36556d48c5a02d8a7832cbd5ed17a200d12b5f",
+  "naturalModelBoundary": "Separate candidate hashes and original outputs are recorded in genui-model-coexistence.json; this install test uses deterministic fixtures."
 }
