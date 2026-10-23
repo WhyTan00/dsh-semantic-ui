@@ -1,9 +1,9 @@
 {
   "platform": "GitHub-hosted Linux x64 (ubuntu-latest)",
   "node": "24.21.0",
-  "runId": 39905479679,
-  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39905479679",
-  "implementationCommit": "052fd62146dc7ed6f0a6bfec7e6ff3b23dab9b64",
+  "runId": 39921071777,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39921071777",
+  "implementationCommit": "8143e36e27a19778d085b6650562c0a62dfd4e29",
   "conclusion": "success",
   "checks": [
     "frozen dependency install",
@@ -16,7 +16,7 @@
   ],
   "linuxPhysicalDesktopVerified": false,
   "linuxPointerBoundary": "series checkbox tested via native keyboard focus + Space; host sidebar hover can cover mouse targets",
-  "naturalModelAcceptance": "not-run",
+  "naturalModelAcceptance": "CI runs deterministic DSH fixtures only; the three WorkBuddy model rounds are separate macOS evidence.",
   "earlierRuns": [
     {
       "runId": 39904209133,
@@ -31,6 +31,12 @@
       "runId": 39904851711,
       "conclusion": "failure",
       "reason": "The same host hover overlay recurred on PTC; keyboard accessibility path added explicitly."
+    },
+    {
+      "runId": 39905479679,
+      "conclusion": "success",
+      "implementationCommit": "052fd62146dc7ed6f0a6bfec7e6ff3b23dab9b64"
     }
-  ]
+  ],
+  "finalReleaseSourceBoundary": "Later evidence/install metadata changes do not change the validated src or tests trees."
 }
