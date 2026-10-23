@@ -29,7 +29,14 @@ try{
   await page.getByRole('button',{name:'Save new version',exact:true}).click();await page.getByRole('alert').filter({hasText:/CONFLICT/}).waitFor();await page.getByRole('button',{name:'Reload library',exact:true}).click();await page.getByText('Library refreshed.',{exact:false}).waitFor();
   // Keyboard-only reachability in the native Shadow DOM. No hidden mouse-only action.
   const modeSelect=page.getByRole('combobox',{name:'Color mode',exact:true});await modeSelect.focus();await modeSelect.press('Tab');await page.getByRole('combobox',{name:'Palette',exact:true}).evaluate(el=>{if(el.getRootNode().activeElement!==el)throw Error('Keyboard focus did not reach palette');});
-  await host.evaluate(el=>el.style.maxWidth='360px');assert(await host.locator('.semantic-root').evaluate(el=>el.scrollWidth-el.clientWidth)<=1);await page.setViewportSize({width:1100,height:4200});await host.scrollIntoViewIfNeeded();await page.waitForTimeout(250);await host.screenshot({path:output+'/evidence/templates-dark-360.png'});await page.setViewportSize({width:1100,height:1800});
+  // ECharts resizes through ResizeObserver, after the width mutation's layout.
+  // Wait for the actual SVG and container to agree; do not sample the old SVG
+  // synchronously or hide overflow to make the assertion pass.
+  const measureLayout=(resize=false)=>host.evaluate((el,resize)=>{if(resize)el.style.maxWidth='360px';const root=el.shadowRoot.querySelector('.semantic-root'),plot=root.querySelector('.plot'),svg=plot.querySelector('svg');return {rootWidth:root.clientWidth,overflow:root.scrollWidth-root.clientWidth,plotWidth:plot.clientWidth,svgWidth:Number(svg.getAttribute('width'))};},resize);
+  const narrowLayout={immediate:await measureLayout(true)};
+  try{await expect.poll(async()=>{const current=await measureLayout();return current.overflow<=1&&Math.abs(current.svgWidth-current.plotWidth)<=1;},{message:'360px template UI and chart must settle without horizontal overflow',timeout:5000}).toBe(true);}
+  finally{narrowLayout.settled=await measureLayout();writeFileSync(output+'/evidence/template-layout.json',JSON.stringify(narrowLayout,null,2)+'\n');console.log(JSON.stringify({toolMode:mode,narrowLayout}));}
+  await page.setViewportSize({width:1100,height:4200});await host.scrollIntoViewIfNeeded();await page.waitForTimeout(250);await host.screenshot({path:output+'/evidence/templates-dark-360.png'});await page.setViewportSize({width:1100,height:1800});
   await page.reload();await page.getByRole('heading',{name:'Fictional sensor readings',exact:true}).waitFor();assert.equal(await host.locator('.semantic-root').evaluate(el=>getComputedStyle(el).backgroundColor),'rgb(250, 252, 255)','Unsaved theme preview must not rewrite the checkpoint');
   // New session, actual tool/result or PTC checkpoint, and new numeric data.
   const sessionTitle=`Semantic template reuse ${mode} ${Date.now()}`,created=await rpc('session/create',{workspaceId:workspace.workspaceId});await rpc('session/rename',{sessionId:created.sessionId,title:sessionTitle});await rpc('session/selectModel',{sessionId:created.sessionId,provider:'semantic-fixture',model:'semantic-fixture'});

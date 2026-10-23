@@ -53,7 +53,19 @@
       "runId": 39941303029,
       "implementationCommit": "17eed6ce3769dba21cb9907a4c9eb3c83cc60918",
       "conclusion": "success"
+    },
+    {
+      "runId": 39984354605,
+      "implementationCommit": "d9a7a7800a31a6d5503288244ffbebc0dd1f62bc",
+      "conclusion": "failure",
+      "reason": "Template width asserted immediately after shrinking container, before asynchronous ResizeObserver chart layout. Follow-up retains the 1px bound, waits for actual SVG/container agreement, and records both dimensions."
+    },
+    {
+      "runId": 39984458316,
+      "implementationCommit": "d9a7a7800a31a6d5503288244ffbebc0dd1f62bc",
+      "conclusion": "failure",
+      "reason": "Template width asserted immediately after shrinking container, before asynchronous ResizeObserver chart layout. Follow-up retains the 1px bound, waits for actual SVG/container agreement, and records both dimensions."
     }
   ],
-  "finalReleaseSourceBoundary": "Subsequent changes only add documentation, screenshots and installation/evidence metadata. Runtime source, tests and build scripts match the validated implementation commit."
+  "finalReleaseSourceBoundary": "The immutable preview.6 release runtime matches the validated implementation commit. Post-release follow-up changes only the browser test, CI diagnostics and documentation; release tag and assets are unchanged. Exact follow-up CI run is recorded in the Release notes."
 }
