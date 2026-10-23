@@ -1,6 +1,6 @@
 # 实际进度
 
-状态：0.1.0-preview.7 候选实现与本地验证完成，正在完成发行；内容语义验收仍未全部通过。更新日期：2026-10-24。
+状态：0.1.0-preview.7，可交互可视化质量迭代与发行验证完成；内容语义验收仍未全部通过。更新日期：2026-10-24。
 
 ## 有效范围与决定
 
@@ -19,6 +19,9 @@
 - preview.6 按实际安装闭包核对 85 项生产/peer 依赖并保留许可证与 NOTICE，修正了 pnpm --prod 对同时为 dev 的 peer 的遗漏。
 
 ## 发行与安装
+
+当前版本为 [v0.1.0-preview.7](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.7)。58 项测试及 Linux CI 40008133551（实现 commit e8d2bd6）通过；本版全新安装的 Native/PTC 四原样例、五质量样例和模板流程均通过。最终包 SHA、逐文件核对与旧历史回读以 install.json 为准。以下 preview.6 说明保留为历史发行证据。
+
 
 - 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.6 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.6) 为准；不宣称 npm 已发布。
 - 发行候选在全新隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native/PTC 样例及模板流程。最终 tgz 在任务独立 profile 中安装，154 文件和历史回读核对通过；运行文件及安装合同与全新安装候选逐字节相同。各自输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。

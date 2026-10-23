@@ -1,12 +1,12 @@
 {
-  "version": "0.1.0-preview.6",
+  "version": "0.1.0-preview.7",
   "dsh": "0.2.1-rc.2",
   "package": "@whytan/dsh-semantic-ui",
-  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.6.tgz",
-  "sha256": "f86d135394338ad85a8dfb1b280dffc1914c69bf41883c44e904cc6370af4f63",
-  "verifiedAt": "2026-10-23T16:06:19.840Z",
-  "installation": "Actual dsh plugin --profile web add final tgz into the task-owned personal profile; no source overlay. All packaged files compared to the final archive.",
-  "allPackagedFilesVerified": 154,
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.7.tgz",
+  "sha256": "1d9900e2d23eb977e364e986c68d834bddde356ccceff008ddec6c5a6cd25d1a",
+  "verifiedAt": "2026-10-23T19:06:36.342Z",
+  "installation": "Actual dsh plugin --profile web add final tgz into only the task-owned personal profile; no source overlay. Every packaged file compared with the archive.",
+  "allPackagedFilesVerified": 158,
   "hostStarted": true,
   "templateStoredAcrossRestart": true,
   "newTemplateHistoriesPreserved": 2,
@@ -15,13 +15,14 @@
   "pageErrors": [],
   "testObserverEnabled": false,
   "freshProfileCandidate": {
-    "sha256": "b30e3d6cc1f71ad2ceb277c2336f156b3d71ce327b86c561ddf80dc7fc20b46d",
-    "record": "templates/clean-install-candidate.json",
+    "sha256": "5c05bef5759b4c13a17ffc802d56744345d2dab7a1d382a6d13907ee9c5bb372",
+    "record": "quality/clean-install-candidate.json",
     "toolModes": [
       "native",
       "ptc"
     ],
     "fourComponentLifecycle": true,
+    "qualityFixturesPerMode": 5,
     "templateLifecycle": true,
     "identicalFinalRuntimeAndInstallContracts": {
       "package.json": true,
@@ -33,12 +34,16 @@
     }
   },
   "naturalCandidate": {
-    "sha256": "f38635be0423c4dbba949f603b3f26bf91b1abf0d983e9223dae3a7b212748c5",
-    "sameFinalExecutableFiles": {
+    "sha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
+    "sameFinalRuntimeAndInstallContracts": {
+      "package.json": true,
+      "cordis.patch.yml": true,
+      "SKILL.md": true,
       "dist/host.js": true,
-      "dist/client.js": true,
+      "dist/client.js": false,
       "dist/protocol.js": true
-    }
+    },
+    "difference": "Client self-loop curve radius increased after visual review; separately verified by the fresh Native/PTC matrix. Host guidance/receipts/protocol unchanged."
   },
-  "boundary": "Natural model testing used the earlier candidate; final executable files are byte-identical. Fresh profile integration used a later candidate with byte-identical executable files, package metadata, installation patch and skill. Final archive installation and all-file/history readback are recorded separately."
+  "boundary": "Natural round4 used its own earlier candidate. The final executable/install contract matches the later fresh-profile candidate byte for byte. Final archive installation and all-file/old-history readback are independent checks. No model request during final readback."
 }
