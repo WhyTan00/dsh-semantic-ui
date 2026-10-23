@@ -11,6 +11,7 @@
   "fixes": [
     "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
     "Unequal-width histogram bins rejected instead of drawing misleading equal-width bars.",
-    "Duplicate timestamp instants rejected across equivalent offsets."
+    "Duplicate timestamp instants rejected across equivalent offsets.",
+    "DataChart static summary explicitly refers to original full data after local filters."
   ]
 }
