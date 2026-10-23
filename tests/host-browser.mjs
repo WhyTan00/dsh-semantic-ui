@@ -11,6 +11,9 @@ for(const [kind,title]of cases){
  const name=`Semantic fixture ${kind} ${Date.now()}`;const {sessionId}=await rpc('session/create',{workspaceId:workspace.workspaceId});await rpc('session/rename',{sessionId,title:name});await rpc('session/selectModel',{sessionId,provider:'semantic-fixture',model:'semantic-fixture'});
  await rpc('session/prompt',{sessionId,requestId:crypto.randomUUID(),mode:'queue',content:[{type:'text',text:`${name}: ${kind} deterministic host fixture. Not a natural-question model test.`}],clientTimeZone:'UTC'});
  await page.getByRole('treeitem',{name:new RegExp(name)}).click().catch(async e=>{writeFileSync(output+'/browser-failure.txt',await page.locator('body').ariaSnapshot());throw e;});
+ // Leave the sidebar row so its host-owned hover preview closes before
+ // exercising pointer controls in the conversation on Linux Chromium.
+ await page.getByRole('banner').hover();
  await page.getByRole('button',{name:'Stop generating',exact:true}).waitFor({timeout:15000});
  assert.equal(await page.locator('[data-semantic-ui]').count(),0,'No invented partial spec before the real checkpoint');
  await page.getByRole('heading',{name:title,exact:true}).waitFor({timeout:25000});await page.getByText('Deterministic fixture completed.',{exact:false}).waitFor({timeout:15000});
