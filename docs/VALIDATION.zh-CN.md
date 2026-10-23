@@ -44,6 +44,8 @@
 
 macOS：本轮本地实测。Linux：同一 Node/pnpm 构建与测试命令已提供；CI 运行状态另行记载，不声称 Linux 实机、真实移动设备或用户个人模型验证已经通过。
 
+Linux Chromium 的宿主侧栏 hover card 曾遮挡系列复选框的鼠标点击；CI 保留失败记录，并使用真实 focus + Space 键验证该复选框的可访问交互，未使用 force click 或移除宿主 DOM。macOS 的鼠标路径已通过。这是锁定宿主的 UI 边界，CI 通过也不等于 Linux 全部鼠标路径已验收。
+
 ## 可查看的真实宿主截图
 
 以下为真实 DSH 内组件截图，使用确定性夹具，不是自然问题模型效果：

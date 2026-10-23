@@ -44,6 +44,8 @@ pnpm exec dsh plugin --profile web add /absolute/path/to/release.tgz
 
 回退：先保存 profile 的 patch/package 元数据和 DSH 自有会话备份，再用 `dsh plugin --profile web add /absolute/path/to/previous.tgz` 恢复兼容包。协议不支持时显示可读错误，不迁移或改写旧消息。不对 0.1.x 宣称兼容。
 
+这是本插件首个公开版本，目前没有已验收的旧插件包可回退；上面的 previous.tgz 流程仅适用于日后已有兼容包的情况。当前可停用生成、完全停用插件，或重新安装同一版本。完全移出 composition 后普通会话仍可读取，重新启用同版本后历史组件恢复，已在任务独立实例测试。
+
 ## macOS / Linux
 
 开发命令使用 Node、pnpm，不依赖 macOS GUI。无模型时 `pnpm test:host` 使用明确标注的本地确定性夹具运行真实 DSH；它不计为自然提问验收。测试用的浏览器为 Playwright Chromium，可用 `pnpm exec playwright install chromium` 安装。
