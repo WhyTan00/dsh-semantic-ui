@@ -1,0 +1,16 @@
+{
+  "platform": "macOS arm64",
+  "dsh": "0.2.1-rc.2",
+  "typecheck": "passed",
+  "unitTestFiles": 3,
+  "unitTestsPassed": 30,
+  "unitTestsFailed": 0,
+  "build": "passed",
+  "naturalQuestionAcceptance": "not-run; needs independent personal model authorization",
+  "delivery": "output.presentationMeta on standard tool/result and tool/ptc-dispatch events",
+  "fixes": [
+    "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
+    "Unequal-width histogram bins rejected instead of drawing misleading equal-width bars.",
+    "Duplicate timestamp instants rejected across equivalent offsets."
+  ]
+}

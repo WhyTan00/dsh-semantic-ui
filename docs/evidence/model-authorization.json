@@ -1,0 +1,12 @@
+{
+  "scope": "task-owned isolated personal DSH profile only",
+  "accountStatus": "signed-out",
+  "officialApiKeyConfigured": false,
+  "verifiedThrough": [
+    "account/getState",
+    "credentials/describe (metadata only)",
+    "Models onboarding UI"
+  ],
+  "secretsReadOrCopied": false,
+  "realModelRequestsExecuted": 0
+}

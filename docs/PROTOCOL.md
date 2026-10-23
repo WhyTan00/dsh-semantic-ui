@@ -1,0 +1,38 @@
+# Semantic protocol 1.0
+
+The only model-facing tool is `dsh_semantic_ui`:
+
+1. `{"action":"describe","component":"ArchitectureExplorer"}` returns the selected payload schema, envelope and semantic rules.
+2. `{"action":"render","view":{...}}` validates and delivers one checkpoint.
+
+The catalog props, TypeScript types, validator and generated JSON Schema use the schemas in `src/protocol.ts`. Do not generate standalone or inline JSONL via `catalog.prompt()`. The runtime skill and checked-in SKILL.md derive from the same guidance source.
+
+An envelope contains `protocolVersion`, `component`, `displayId`, `revision`, `summary`, and `payload`. Only ArchitectureExplorer, DecisionExplorer and DataChart are accepted. Runtime limits: conservative UTF-8 budget 131072 bytes, 12 levels, 80 nodes, 240 edges, 2000 chart rows, 10000 total histogram observations. Text and rule counts are separately bounded by the schema. URLs are not loaded; evidence is inert text. Unknown properties, callbacks, scripts, non-finite numbers, cyclic data and unsupported versions are rejected. There are no arbitrary actions or ECharts options.
+
+`displayId` is supplied by the model: 1–80 ASCII letters, digits, `_ . : -`, starting with a letter or digit. Use a new ID for each distinct subject; identity is scoped to `(DSH session, turn, displayId)`. Updates to the same subject increase the positive integer `revision`. Replays and exact duplicate checkpoints do not create another node. Lower revisions retain the latest state. Same-revision conflicting content and component-type changes produce readable conflicts rather than silently changing meaning. The first checkpoint anchors the row; subsequent updates retain its identity. Cross-turn updates use a new identity by design.
+
+Canonical output is a short status/summary receipt. Only an explicitly requested `describe` returns a schema to the model. Delivered payloads are not duplicated in model output. `output.presentationMeta` projects a complete validated snapshot under `meta.dshSemanticUi`; DSH persists it in its standard `tool/result` or nested `tool/ptc-dispatch` event. Both paths are independently tested on the pinned release. There are no custom required session event types or calls to the upstream-only experimental plugin-record API. In nested PTC, a completed inner call can produce its UI even if later outer code fails; this is the same inner-call success boundary as ordinary effects, not an atomic outer-program transaction.
+
+Errors carry stable `code`, `path`, `reason`, `hint`; at most 30 issues are returned per failure. Validation errors have a readable chat checkpoint; rendering exceptions fall back to the summary. Invalid data never falls through to a generic executable renderer. Schema-based validation does not prove model-supplied facts: users must still verify evidence.
+
+## Architecture
+
+IDs and references must exist and be unique. Scenario edge count equals node count minus one; each segment must use the declared edge and direction. Undirected edges permit either traversal. Self-loops, multiple edges and cycles are retained. Dagre computes a flat layout only; no nested-group promises. Search/locate and neighborhood filtering change the view, not the input facts. Hidden counts and restore-full actions are explicit. Relationships are also available as text.
+
+## Decision rules
+
+Options have exactly the common dimensions, with null for unknown facts. Inputs are finite numbers, booleans or enumerated choices, each allowing unknown. Conditions are a finite `all`/`any` list of up to 12 clauses using `eq/ne/gt/gte/lt/lte`; ordering operators require numeric inputs. There is no expression evaluator or recursion.
+
+Highest matching priority wins. Equal-priority rules combine recommendations, preserving input option order. Active hard constraints exclude options. An unknown condition that could override a winner, or an unknown hard constraint on a recommended option, withholds the recommendation. No matching rule, all excluded options and insufficient conditions are distinct states. Origin identifies given rules versus model-proposed judgments. Focus dimensions only affect the table. Input changes list original and current values. No operation calls the model again.
+
+## Numeric data
+
+Line/category bar rows use one declared unit and explicit series values or null. No missing-to-zero replacement. Time x values need valid ISO timestamps with offsets, an IANA timezone, granularity and explicit sort strategy. Duplicate x values require upstream aggregation instead of accidental summation. Category bars are never described as histograms.
+
+Histograms use raw observations or explicitly pre-aggregated counts and shared strictly increasing, equal-width bin boundaries. Unequal-width bins return `BIN_WIDTH`: the preview does not implement density semantics and must not draw unequal intervals at equal widths or invent rebinning from pre-aggregated counts. Bins are `[lower, upper)`, with the final upper bound included. Out-of-range observations are rejected. Proportion = bin count / selected valid observations in that group; zero denominator gives unknown. Missing observations are reported for the whole group because their bin is unknowable. Range changes select bins, preserving boundaries. The full source and derived selected bins are labeled separately.
+
+Unweighted mean = sum of non-null observations / valid n. Empty/all-missing means are unknown. Overflow is reported as unknown, not infinity. Weighted averages, arbitrary ratios and quantiles are unsupported without a declared method; the schema rejects invented calculation requests. ECharts receives trusted configuration derived from these functions. Filtered metrics update deterministically; a supplied narrative is labeled as applying to the original full dataset.
+
+## State
+
+DSH owns content persistence. Local selection, dimensions and ranges reset on reload, reopening, or a new payload revision. No browser storage holds a second conversation copy. No state return to the model or cross-device preference sync is implemented. Generation uses the host's real pending state; semantic checkpoints are atomic. Unknown protocol versions and rendering errors remain readable.

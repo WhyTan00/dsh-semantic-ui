@@ -1,0 +1,13 @@
+.handoff/
+node_modules/
+dist/
+coverage/
+.env
+.env.*
+!.env.example
+.DS_Store
+artifacts/local/
+
+artifacts/*.tgz
+artifacts/SHA256SUMS
+artifacts/package-manifest.json

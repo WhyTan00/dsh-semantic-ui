@@ -1,0 +1,9 @@
+{
+  "platform": "macOS arm64",
+  "nodes": 80,
+  "edges": 240,
+  "jsonBytes": 32063,
+  "validationMs": 7.2895420000000115,
+  "dagreLayoutMs": 177.46166700000003,
+  "boundary": "validation and pure layout only; not browser readability proof at this scale"
+}

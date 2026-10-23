@@ -1,0 +1,39 @@
+{
+  "source": "real DSH 0.2.1-rc.2; deterministic fixture, not natural-question acceptance",
+  "genui": {
+    "package": "@changfenhuang/dsh-genui",
+    "version": "0.14.0",
+    "unmodifiedPublicPackage": true,
+    "renderUiTool": false,
+    "fenceFeedback": false
+  },
+  "bothRenderersVisible": true,
+  "legacyMessageOwnedByOriginalRenderer": true,
+  "refresh": true,
+  "sessionSwitch": true,
+  "generationDisabled": {
+    "semanticToolAbsent": true,
+    "semanticResidentGuidanceAbsent": true,
+    "semanticHistoryRestored": true,
+    "genuiHistoryRestored": true
+  },
+  "pluginOmittedFromComposition": {
+    "conversationStillReadable": true,
+    "semanticRendererAbsent": true,
+    "genuiHistoryRestored": true
+  },
+  "reenablingRestoresSemanticHistory": true,
+  "genuiRemainingGuidance": true,
+  "genuiValidationToolStillPresent": true,
+  "largerGraph": {
+    "nodes": 24,
+    "edges": 45,
+    "narrowContainer": 360,
+    "narrowOverflow": 0,
+    "searchAndNeighborhood": true,
+    "fullGraphRestored": true
+  },
+  "pageErrors": [],
+  "modelSelectionCompatibility": "not tested; deterministic fixtures do not establish expression choice",
+  "userExistingEnvironment": "not accessed or verified"
+}

@@ -1,0 +1,54 @@
+import Schema from '@deepseek-ai/schemastery';
+import type { Context } from '@deepseek-ai/cordis';
+import { defineTool } from '@deepseek-ai/dsh-tools';
+import type {} from '@deepseek-ai/dsh-agent';
+import type {} from '@deepseek-ai/dsh-session-projection';
+import type {} from '@deepseek-ai/dsh-system-prompt';
+import type {} from '@deepseek-ai/dsh-skill';
+import { z } from 'zod';
+import { components, validateEnvelope, type ComponentName } from '../protocol';
+import { META } from './events';
+import { GUIDANCE, TOOL_DESCRIPTION } from './guidance';
+export const name='dsh-semantic-ui';
+export interface Config {generation:boolean}
+export const Config:Schema<Config>=Schema.object({generation:Schema.boolean().default(true)});
+export const inject=['tools','systemPrompt','sessionProjections'];
+export const parameters={
+  action:{type:'string',enum:['describe','render'],required:true,description:'Obtain exact fields, or deliver a validated view.'},
+  component:{type:'string',enum:['ArchitectureExplorer','DecisionExplorer','DataChart'],description:'Required for describe.'},
+  view:{type:'object',additionalProperties:true,description:'Required for render. Versioned view with component payload; get fields via describe first.'},
+} as const;
+// Both native tool/result and nested tool/ptc-dispatch persist presentation
+// metadata in the pinned host. No custom event, log mutation or private API.
+export function presentationMeta(args:unknown,value:unknown){
+  const receipt=value as {status?:string;turn?:number;displayId?:string;issues?:unknown};
+  if(!receipt||!Number.isSafeInteger(receipt.turn))return null;
+  if(receipt.status==='delivered'){
+    const checked=validateEnvelope((args as {view?:unknown})?.view);
+    return checked.ok?JSON.parse(JSON.stringify({[META]:{turn:receipt.turn,view:checked.value}})):null;
+  }
+  if(receipt.status==='validation-failed')return JSON.parse(JSON.stringify({[META]:{turn:receipt.turn,displayId:receipt.displayId,issues:receipt.issues}}));
+  return null;
+}
+export function describe(component:ComponentName){return {component,protocolVersion:'1.0',payloadSchema:z.toJSONSchema(components[component]),envelope:{protocolVersion:'1.0',displayId:'stable-subject-id',revision:1,component,summary:'A short readable conclusion.',payload:'Follow payloadSchema.'},delivery:'Call dsh_semantic_ui action=render with view. Do not output this JSON in prose.',semantics:component==='DecisionExplorer'?'Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred.':component==='DataChart'?'Line/bar rows need explicit null for missing values. Time timestamps need offsets, timezone and granularity; duplicate instants need explicit upstream aggregation. Histograms share increasing equal-width bin boundaries: [lower,upper), last bin includes upper. Unequal-width bins are unsupported; do not invent rebinning from pre-aggregated counts. Ratio denominator is valid observations in each group; missing is excluded. Weighted averages and quantiles are unsupported.':'Every edge and scenario path must reference existing IDs and preserve direction. Flat graph only; cycles are retained.'};}
+export function apply(ctx:Context,config:Config={generation:true}){
+  if(config.generation===false)return;
+  ctx.inject(['skills'],skillCtx=>{skillCtx.skills.register({name:'dsh-semantic-ui',source:'runtime',description:'Explain relationships, tradeoffs and numbers through the semantic UI tool when useful.',content:GUIDANCE+'\n\nThe only delivery entry is dsh_semantic_ui. Get the chosen component fields with action=describe, then deliver action=render. Display IDs are turn-scoped; revisions increase for updates. All schema and semantics are enforced at runtime.'});});
+  ctx.systemPrompt.section({name:'dsh-semantic-ui:delivery',order:850,text:GUIDANCE});
+  ctx.tools.register(defineTool({name:'dsh_semantic_ui',description:TOOL_DESCRIPTION,parameters,output:{schema:{type:'object',additionalProperties:true},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}],presentationMeta},async execute(args,exec){
+    exec.signal.throwIfAborted();
+    if(args.action==='describe'){
+      if(!args.component||!(args.component in components))throw Error('COMPONENT at $.component: select ArchitectureExplorer, DecisionExplorer, or DataChart.');
+      return JSON.parse(JSON.stringify(describe(args.component)));
+    }
+    const checked=validateEnvelope(args.view);if(!checked.ok){
+      const b=exec.agent?ctx.sessionProjections.stateOf(exec.agent.session,'turnBoundary'):undefined;
+      const candidate=args.view?.displayId;const displayId=typeof candidate==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$/.test(candidate)?candidate:'failed-'+String(exec.callId).replace(/[^a-zA-Z0-9_.:-]/g,'').slice(0,60);
+      return JSON.parse(JSON.stringify({status:'validation-failed',...(b&&b.openTurnStartSeq!==null?{turn:b.lastTurn,displayId}:{}),issues:checked.issues.slice(0,30)}));
+    }
+    if(!exec.agent)throw Error('HOST_SESSION: delivery requires a real agent session.');
+    const boundary=ctx.sessionProjections.stateOf(exec.agent.session,'turnBoundary');
+    if(!boundary||boundary.openTurnStartSeq===null)throw Error('HOST_TURN: delivery requires an open turn.');
+    return {status:'delivered',turn:boundary.lastTurn,displayId:checked.value.displayId,revision:checked.value.revision,component:checked.value.component,summary:checked.value.summary};
+  }}));
+}

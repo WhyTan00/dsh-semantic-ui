@@ -1,0 +1,2 @@
+import{it,expect,vi}from'vitest';import{apply}from'../src/dsh/host';
+it('generation=false registers no model tool, prompt or skill',()=>{const ctx={tools:{register:vi.fn()},systemPrompt:{section:vi.fn()},inject:vi.fn()};apply(ctx as any,{generation:false});expect(ctx.tools.register).not.toHaveBeenCalled();expect(ctx.systemPrompt.section).not.toHaveBeenCalled();expect(ctx.inject).not.toHaveBeenCalled();});

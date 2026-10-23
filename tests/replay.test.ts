@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import {definition,checkpointOf} from '../src/dsh/definition';
+import {architecture} from '../fixtures/examples';
+import {META} from '../src/dsh/events';
+import {presentationMeta} from '../src/dsh/host';
+const match=(view=architecture)=>({event:{type:'tool/result',seq:12,data:{meta:{[META]:{turn:1,view}}}},role:'start',id:'1:sample-architecture'}as any);
+const context=(state:any)=>({state,key:'stable-context-key',id:'1:sample-architecture',start:{event:{seq:12},location:{kind:'turn',turn:1}}}as any);
+it('replays a whole checkpoint without tool cards or canonical tool values',()=>{const s=definition.start!({}as any,match(),{}as any);const n=definition.buildViewNode!(context(s));expect(n?.data).toMatchObject({view:architecture});expect((n as any).groupTree).toBe('turn');expect(n?.key).toBe('stable-context-key');});
+it('ignores exact replay and lower revisions; updates the same identity',()=>{let s=definition.start!({}as any,match(),{}as any);expect(definition.update!(context(s),match())).toBe(s);const view={...architecture,revision:2,summary:'Updated summary'};s=definition.update!(context(s),match(view));expect((s as any).view.summary).toBe('Updated summary');expect(definition.update!(context(s),match())).toBe(s);});
+it('makes revision conflicts and unknown versions readable',()=>{const s=definition.start!({}as any,match(),{}as any);const conflict=definition.update!(context(s),match({...architecture,summary:'Conflicting facts'}));expect((conflict as any).issues[0].code).toBe('REVISION_CONFLICT');const unknown=definition.start!({}as any,match({...architecture,protocolVersion:'2.0'}as any),{}as any);expect((unknown as any).issues[0].code).toBe('UNSUPPORTED_VERSION');});
+it('puts the whole payload in persisted presentation metadata, outside the short model receipt',()=>{const receipt={status:'delivered',turn:1,displayId:architecture.displayId,summary:architecture.summary};expect(receipt).not.toHaveProperty('view');const meta=presentationMeta({view:architecture},receipt);for(const type of ['tool/result','tool/ptc-dispatch']){const event={type,data:{meta,isError:false}};expect(checkpointOf(event)?.view).toEqual(architecture);expect(definition.match!(event as any)).toMatchObject({id:'1:sample-architecture'});}expect(checkpointOf({type:'tool/ptc-dispatch',data:{meta,isError:true}})).toBeUndefined();});

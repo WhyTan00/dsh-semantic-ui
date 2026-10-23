@@ -1,0 +1,13 @@
+# 项目中文说明
+
+本项目把“模型选表达”与“组件保证数据语义”分开：理解关系时可用 ArchitectureExplorer，比较取舍时可用 DecisionExplorer，核对数值时可用 DataChart；简单事实和短说明依然直接文字。组件不会证明模型给出的事实，更不会自行补造业务结论。
+
+json-render 提供真实使用的 catalog / registry / renderer；React Flow 处理关系图视口与节点边交互，Dagre 负责初始布局，ECharts 按已计算的数据绘图。协议、语义校验、路径连续性、未知值、决策规则和统计口径由本项目独立编写。
+
+本插件把工具参数验证后的整值 checkpoint 存入 DSH 自有会话日志，通过公开聊天节点展示；过程折叠不隐藏组件，重放不重复创建。交互本地执行，刷新复位，不冒充模型重新分析。没有第二套模型调用或聊天数据库。
+
+当前是预览版。真实宿主确定性夹具、模型自然问题验收、Linux CI 和实际设备是不同证据。完整状态见 [VALIDATION](VALIDATION.zh-CN.md)；未执行的两轮自然问题逐项保留为 not-run。
+
+具体 GenUI 的围栏组件与生成 React 应用是不同协议；本项目不接管或改写它们的历史。源码核实发现某些版本无法只关闭所有生成引导同时保留 renderer，限制及保守共存方式见 [GENUI](GENUI.zh-CN.md)。
+
+安装包、校验和及下载位置以个人仓库 Release 为准；安装、版本范围、隔离 profile、停用生成并保留历史及回退详见 [INSTALL](INSTALL.zh-CN.md)。

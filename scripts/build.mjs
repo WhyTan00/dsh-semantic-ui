@@ -1,0 +1,12 @@
+import {build} from 'esbuild';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {resolve} from 'node:path';
+import {execFileSync} from 'node:child_process';
+await mkdir('.handoff/build',{recursive:true});await mkdir('dist',{recursive:true});
+const cssInline={name:'css-inline',setup(b){b.onResolve({filter:/\.css\?inline$/},a=>({path:a.path.replace(/\?inline$/,''),namespace:'inline-css',pluginData:{resolveDir:a.resolveDir}}));b.onLoad({filter:/.*/,namespace:'inline-css'},async a=>{const fs=await import('node:fs/promises');const path=await import('node:path');const{createRequire}=await import('node:module');const req=createRequire(path.join(a.pluginData.resolveDir,'entry.js'));const p=a.path.startsWith('.')?path.resolve(a.pluginData.resolveDir,a.path):req.resolve(a.path);return{contents:'export default '+JSON.stringify(await fs.readFile(p,'utf8')),loader:'js'};});}};
+await build({entryPoints:['src/island.tsx'],bundle:true,format:'esm',platform:'browser',outfile:'.handoff/build/island.js',minify:true,legalComments:'inline',define:{'process.env.NODE_ENV':'"production"','import.meta.env.MODE':'"production"','import.meta.env':'{}'},plugins:[cssInline]});
+await writeFile('.handoff/build/island.d.ts',"export {mount} from '../../src/island';\n");
+await build({entryPoints:['src/dsh/client.tsx'],bundle:true,format:'cjs',platform:'browser',outfile:'dist/client.js',external:['react','react/jsx-runtime'],plugins:[{name:'isolated-island',setup(b){b.onResolve({filter:/^\.\.\/host-island$/},()=>({path:resolve('.handoff/build/island.js')}));}}],minify:true,legalComments:'linked',banner:{js:'window.__ModuleLoader__.load({id:"@whytan/dsh-semantic-ui",factory:(require)=>{var module={exports:{}};var exports=module.exports;'},footer:{js:'return module.exports;}});'}});
+for(const [entry,name]of[['src/dsh/host.ts','host'],['src/protocol.ts','protocol']])await build({entryPoints:[entry],bundle:true,format:'esm',platform:'node',outfile:`dist/${name}.js`,packages:'external',sourcemap:false});
+execFileSync('node',['node_modules/typescript/bin/tsc','-p','tsconfig.types.json'],{stdio:'inherit'});
+console.log('Built host, closure-factory client with isolated React 19, and protocol.');

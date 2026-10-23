@@ -1,0 +1,182 @@
+{
+  "protocol": "same questions; fresh session per item; retain first attempts and retries; same route/model/settings between rounds",
+  "results": [
+    {
+      "round": 1,
+      "questionId": "A1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "A2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "A3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "D1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "D2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "D3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "N1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "N2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "N3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "T1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 1,
+      "questionId": "T2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "A1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "A2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "A3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "D1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "D2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "D3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "N1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "N2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "N3",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "T1",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    },
+    {
+      "round": 2,
+      "questionId": "T2",
+      "status": "not-run",
+      "reason": "Task-owned isolated profile: account signed-out and official model credential configured=false, verified through public authorization metadata and Models UI. Deterministic fixtures do not count.",
+      "firstAttempt": null,
+      "retryAttempts": []
+    }
+  ],
+  "questionSetSha256": "0e185ec955aa9d9829319347c7b3560c8c4a75f02ddf891c8a42b9cd913f3245"
+}

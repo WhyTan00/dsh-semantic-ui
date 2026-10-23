@@ -1,0 +1,13 @@
+[
+ {"id":"A1","task":"architecture-dependencies","question":"虚构包裹服务中，Order API 把任务交给 Queue，Queue 交给 Worker，Worker 将状态写入 Database，Order API 也直接查询 Database。各部分怎样依赖，哪个共享依赖值得重点关注？","facts":["四节点四条有向关系全部保留","Database 是 API 与 Worker 的共享依赖","不得补造服务"],"expression":"关系探索有收益；简洁且完整的文字也可合理"},
+ {"id":"A2","task":"architecture-failure-path","question":"虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？","facts":["保持给定方向与五节点四条相邻边","通知重试不能推导成支付回滚","未给出的回退路径不编造"],"expression":"适合带有明示场景的关系解释"},
+ {"id":"A3","task":"architecture-constraints","question":"虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Search 访问 Store。请帮我理解边界与耦合。","facts":["保留五条允许关系及禁止约束","禁止关系不能伪造成实际边","不虚构层级"],"expression":"架构探索有收益"},
+ {"id":"D1","task":"decision-common-dimensions","question":"虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？","facts":["共同维度对齐","价格为未知而非零","推荐若有须标判断依据"],"expression":"比较探索或清楚的并列比较"},
+ {"id":"D2","task":"decision-conditional","question":"虚构存储选项 A 上限 100GB、部署简单，B 上限 1000GB、维护复杂。现在需求 80GB，以后可能到 300GB。不同需求下该如何选？","facts":["容量是硬约束","80GB和300GB分别核对","不给未提供的费用或分数"],"expression":"条件变化值得本地比较"},
+ {"id":"D3","task":"decision-insufficient","question":"虚构供应商 A 交期 3 天、质保未知；B 交期未知、质保 2 年。我们既关心交期又关心质保，但没确定优先级。哪家更合适？","facts":["未知值不补齐","无唯一赢家可以成立","不编造权重"],"expression":"允许条件不足或并列，不强求推荐"},
+ {"id":"N1","task":"data-trend","question":"虚构传感器 UTC 每日读数为 2026-01-01:4、01-02:5、01-03:3、01-04:6，单位摄氏度。整体变化怎样，局部是否有回落？","facts":["日期顺序正确","1月3日回落","单位与时区保留"],"expression":"趋势图与核对数据有收益"},
+ {"id":"N2","task":"data-null-zero-negative","question":"虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？","facts":["有效样本3，缺失1","均值0摄氏度","缺失不是零且负数不能删除"],"expression":"图表或简短准确文字均可"},
+ {"id":"N3","task":"data-distribution","question":"虚构处理时间观测为 0、0、1、2、2、3、4、缺失，单位毫秒。用 [0,2)、[2,4] 两段看分布，各段占有效观测多少？另有人要加权平均，但没有给权重。","facts":["有效7缺失1","计数3和4，比例3/7和4/7","4计入最后一箱","拒绝无权重的加权平均"],"expression":"直方图有明确口径，类别柱状图不能冒称直方图"},
+ {"id":"T1","task":"plain-fact","question":"一小时有多少分钟？","facts":["60分钟"],"expression":"纯文字足够"},
+ {"id":"T2","task":"plain-explanation","question":"简单解释一下为什么缺失读数不等于零。","facts":["未观测与实际测得零不同"],"expression":"纯文字足够"}
+]

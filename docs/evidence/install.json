@@ -1,0 +1,19 @@
+{
+  "dsh": "0.2.1-rc.2",
+  "installation": "actual dsh plugin --profile web add local tgz into fresh isolated profile",
+  "hostStarted": true,
+  "clientBootEntries": [
+    {
+      "id": "@whytan/dsh-semantic-ui",
+      "hasRevision": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation",
+        "@deepseek-ai/dsh-client-ui-chat",
+        "@deepseek-ai/dsh-client-ui-renderer"
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "testedArtifact": "whytan-dsh-semantic-ui-0.1.0-preview.1.tgz",
+  "boundary": "Clean package installation and host/client activation; fixture lifecycle uses the same source build. Final SHA-256 is in the release assets."
+}

@@ -1,0 +1,16 @@
+{
+  "source": "actual model-visible request captured from pinned DSH; deterministic fixture",
+  "toolDescriptorUtf8Bytes": 1070,
+  "residentPrincipleUtf8Bytes": 628,
+  "combinedKnownUtf8Bytes": 1698,
+  "largeComponentSchemasResident": false,
+  "fullSchemas": "returned only by explicit action=describe",
+  "onDemandDescriptorBytes": {
+    "ArchitectureExplorer": 2570,
+    "DecisionExplorer": 4868,
+    "DataChart": 3999
+  },
+  "runtimeSkill": "discovery description is additional host-managed context; body uses the same guidance",
+  "providerTokens": null,
+  "tokenBoundary": "No matching provider tokenizer or authorized real model request yet; bytes are measured, not mislabeled as tokens."
+}
