@@ -2,7 +2,7 @@
 
 本文件由 projects.json 派生；执行 `pnpm research:generate` 更新、`pnpm research:check` 核对。人工结论见 [研究说明](README.md) 与 [采用记录](ADOPTION.zh-CN.md)。
 
-核实日期：2026-10-23。33 个公开仓库，116 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
+核实日期：2026-10-23。33 个公开仓库，124 份固定源码文件。版本列来自 pinned HEAD 的 manifest，含 canary/private 根包，**不是最新稳定发行查询**。文档/源码研究不等于运行、性能或设备验收。
 
 ## ui-runtime
 
@@ -43,8 +43,8 @@
 
 | 项目 / 固定源码 | 观察版本 | 许可证 | 取其所长 | 采用决定与边界 |
 |---|---|---|---|---|---|
-| [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui/tree/ad8dc166deaf4eee7dea758fc0a84a8728402b52) | @changfenhuang/dsh-genui 0.14.0 | [MIT](https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/LICENSE) | 白名单表单、测验、图表和动作回传；已有 DSH 原生集成。 | **已有互通证据**：已实测的是冻结 npm 0.14.0；本次 main commit 是另一个源码快照。renderUiTool=false 仍保留其它生成指引；ECharts option 直通不移植。 |
-| [pengyue-polaron/deepseek-harness-genui](https://github.com/pengyue-polaron/deepseek-harness-genui/tree/f6289bc709c5b1992c851bf5e63237a5fa453e1f) | dsh-plugin-genui 0.15.1 | [MIT](https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/LICENSE) | 完整 React/TypeScript 应用和下轮可读的应用状态适合任务型小工具。 | **参考**：manifest 声明 DSH 0.1.x 范围，不覆盖本项目 0.2.1-rc.2；不因功能更广就推荐直接安装。 |
+| [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui/tree/ad8dc166deaf4eee7dea758fc0a84a8728402b52) | @changfenhuang/dsh-genui 0.14.0 | [MIT](https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/LICENSE) | 白名单组件、动作回传、有界本地状态与带状态的产物格式；已有 DSH 集成。 | **已有互通证据**：已实测的是冻结 npm 0.14.0；本次 main commit 是另一个源码快照。renderUiTool=false 仍保留其它生成指引；ECharts option 直通不移植。 |
+| [pengyue-polaron/deepseek-harness-genui](https://github.com/pengyue-polaron/deepseek-harness-genui/tree/f6289bc709c5b1992c851bf5e63237a5fa453e1f) | dsh-plugin-genui 0.15.1 | [MIT](https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/LICENSE) | 任务型 React 应用、后续回合可读状态，以及候选/可用版本和显式能力授权。 | **参考**：manifest 声明 DSH 0.1.x 范围，不覆盖本项目 0.2.1-rc.2；不因功能更广就推荐直接安装。 |
 
 ## form-engine
 

@@ -672,6 +672,31 @@
             "path": "src/plugin/chart-contract.ts",
             "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/plugin/chart-contract.ts",
             "sha256OfFetchedText": "90803fd8f6b31b2a586001be5e04774e684147d93d55a9cc2df1bfa4833e1911"
+          },
+          {
+            "path": "src/client/interaction-store.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/interaction-store.ts",
+            "sha256OfFetchedText": "d9088834a2521862368f428b745b25ed270c6b2125efd4d6fa6f0fe72d09db1c"
+          },
+          {
+            "path": "src/client/submission-registry.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/submission-registry.ts",
+            "sha256OfFetchedText": "d6c304e91a80ef34f3ea7d5acdfe977f18a8965802f1398417a8a7c90c1d4d40"
+          },
+          {
+            "path": "src/client/artifact/types.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/artifact/types.ts",
+            "sha256OfFetchedText": "5cfd4e0743fa5f831aed3ad79086fca3d8fb341628e2ea3183cce2e509a9d490"
+          },
+          {
+            "path": "src/client/artifact/create.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/artifact/create.ts",
+            "sha256OfFetchedText": "9b7f93ed811830121cd3c0765f7acf6763636658f0d8cdb6b4e961c86c1ddd2b"
+          },
+          {
+            "path": "src/client/artifact/portability.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/client/artifact/portability.ts",
+            "sha256OfFetchedText": "c73ccb8e7a96b85db5108af700b23f3110ffff80ee4bc655aa3eb893f0027a96"
           }
         ]
       },
@@ -693,10 +718,10 @@
           }
         }
       ],
-      "strengths": "白名单表单、测验、图表和动作回传；已有 DSH 原生集成。",
+      "strengths": "白名单组件、动作回传、有界本地状态与带状态的产物格式；已有 DSH 集成。",
       "tradeoffs": "已实测的是冻结 npm 0.14.0；本次 main commit 是另一个源码快照。renderUiTool=false 仍保留其它生成指引；ECharts option 直通不移植。",
       "appliedTo": [],
-      "adoptionBoundary": "已有固定 npm 版本共存/真实表单回传证据，不代表新 main 全部行为验收。",
+      "adoptionBoundary": "冻结 npm 0.14.0 有共存/真实表单回传证据；固定源码新增状态、提交范围及导出机制研究，未移植/执行全部能力，见 GENUI-ABSORPTION.zh-CN.md。",
       "validation": "Frozen public npm 0.14.0 tested separately; this HEAD is source research only."
     },
     {
@@ -724,6 +749,21 @@
             "path": "package.json",
             "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/package.json",
             "sha256OfFetchedText": "15ed67dae5ec045e0b9bff456b0187821a9782ea4c27195913a4d13997715ded"
+          },
+          {
+            "path": "src/artifacts/types.ts",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/src/artifacts/types.ts",
+            "sha256OfFetchedText": "6e90941980004c47de5b1feb642545fc351838e0e93dea15084d20dcbf7486c3"
+          },
+          {
+            "path": "src/runtime/permissions.ts",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/src/runtime/permissions.ts",
+            "sha256OfFetchedText": "bc72dbe714d896618e5d9005c974ff22fce8cde46cf1abc48724c9b9a14f446a"
+          },
+          {
+            "path": "README.zh-CN.md",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/README.zh-CN.md",
+            "sha256OfFetchedText": "4f98b218ac45a7d223bc221f995ce75be175d26db0a7ac58ae8d991aa08431d2"
           }
         ]
       },
@@ -748,10 +788,10 @@
           }
         }
       ],
-      "strengths": "完整 React/TypeScript 应用和下轮可读的应用状态适合任务型小工具。",
+      "strengths": "任务型 React 应用、后续回合可读状态，以及候选/可用版本和显式能力授权。",
       "tradeoffs": "manifest 声明 DSH 0.1.x 范围，不覆盖本项目 0.2.1-rc.2；不因功能更广就推荐直接安装。",
       "appliedTo": [],
-      "adoptionBoundary": "源码/manifest 研究；未在本项目宿主执行。",
+      "adoptionBoundary": "README/manifest、artifact 类型与权限函数研究；未在本项目宿主执行，也未进行完整安全审计。",
       "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
     },
     {

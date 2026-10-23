@@ -8,7 +8,7 @@
 |---|---|---|
 | [omdsh-dev/dsh-genui](https://github.com/omdsh-dev/dsh-genui/tree/7301d8a8ec6d5a164beff75e5a8afd20e45f9518) | npm manifest `@changfenhuang/dsh-genui` 0.14.0 / 7301d8a8ec6d5a164beff75e5a8afd20e45f9518 | dsh-ui 围栏白名单组件、模型动作回传、host 指引与 client renderer |
 | [pengyue-polaron/deepseek-harness-genui](https://github.com/pengyue-polaron/deepseek-harness-genui/tree/f6289bc709c5b1992c851bf5e63237a5fa453e1f) | manifest `dsh-plugin-genui` 0.15.1 / f6289bc709c5b1992c851bf5e63237a5fa453e1f | 生成 React 应用、编译及应用状态进入下轮；其 manifest 支持的旧 DSH 范围未包括本项目锁定的 0.2.1-rc.2 |
-| 本插件 | 0.1.0-preview.4 / protocol 1.0 | 唯一工具提交三类受约束语义载荷、原生独立聊天节点、本地确定性操作 |
+| 本插件 | 0.1.0-preview.5 / protocol 1.0 | 唯一工具提交三类受约束语义载荷、原生独立聊天节点、本地确定性操作 |
 
 在第一个对象的固定源码 [src/plugin/index.ts](https://github.com/omdsh-dev/dsh-genui/blob/7301d8a8ec6d5a164beff75e5a8afd20e45f9518/src/plugin/index.ts) 中，公开配置只有 `fenceFeedback` 与 `renderUiTool`。`renderUiTool: false` 只关闭 render_ui，**仍注册 validate_dsh_ui、系统围栏指引及 genui Skill**；`fenceFeedback: false` 只关闭同回合反馈。没有核实到允许只保留历史 renderer、同时关闭全部 host 指引/Skill 的独立配置。本项目不发明 injectPrompt 或类似开关。
 

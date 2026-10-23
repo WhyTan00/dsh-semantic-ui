@@ -4,6 +4,8 @@
 
 本次核对 33 个仓库的固定 commit、许可证和选定的 manifest/契约/实现文件。可复核清单见 [PROJECTS](PROJECTS.md)，事实源为 [projects.json](projects.json)。这是一轮有选择的源码研究，不是对 33 个系统的完整审计、性能横评或运行认证。源码 HEAD 中的 canary、dev、unstable 版本都标为观察值，不冒充已发布稳定包。
 
+补充研究：[GenUI 吸收范围与缺口](GENUI-ABSORPTION.zh-CN.md) 逐项说明已实现、设计采用及暂缓项；[产品价值与模型进步](MODEL-PROGRESS.zh-CN.md) 记录可检验的定位、下一步工作流和停止重复建设的条件。当前清单扩展至 124 份固定源码文件；preview.5 发行时的 116 份记录保留为历史证据。
+
 ## 先分清四种责任
 
 | 层 | 代表 | 负责什么 | 不能由它证明什么 |

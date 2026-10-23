@@ -10,6 +10,8 @@ Plain text remains appropriate for simple questions. No model-generated JavaScri
 
 The [interactive UI ecosystem study](docs/research/README.md) curates 33 public projects with immutable source pins, licenses, actual chart dependencies and adoption decisions. It replaces a blanket GenUI fallback with capability-based selection. Preview.5 adds a read-only `action=catalog`, initial-policy `decisionFacts`, and working ECharts ARIA descriptions. Future form submission and application state remain explicitly unimplemented; see the [adoption record](docs/research/ADOPTION.zh-CN.md).
 
+The [GenUI absorption map](docs/research/GENUI-ABSORPTION.zh-CN.md) distinguishes researched patterns from implemented features. The [model-progress strategy](docs/research/MODEL-PROGRESS.zh-CN.md) proposes measurable workflow value and criteria for retiring redundant features. These documents describe future work; they add no runtime capabilities.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
