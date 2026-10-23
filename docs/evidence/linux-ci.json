@@ -1,0 +1,36 @@
+{
+  "platform": "GitHub-hosted Linux x64 (ubuntu-latest)",
+  "node": "24.21.0",
+  "runId": 39905479679,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39905479679",
+  "implementationCommit": "052fd62146dc7ed6f0a6bfec7e6ff3b23dab9b64",
+  "conclusion": "success",
+  "checks": [
+    "frozen dependency install",
+    "generated schema consistency",
+    "TypeScript",
+    "30 unit tests",
+    "release build",
+    "real DSH Native and PTC four-fixture lifecycle at 640/360px",
+    "release package and checksum"
+  ],
+  "linuxPhysicalDesktopVerified": false,
+  "linuxPointerBoundary": "series checkbox tested via native keyboard focus + Space; host sidebar hover can cover mouse targets",
+  "naturalModelAcceptance": "not-run",
+  "earlierRuns": [
+    {
+      "runId": 39904209133,
+      "conclusion": "failure",
+      "reason": "Host sidebar hover preview intercepted chart checkbox pointer input."
+    },
+    {
+      "runId": 39904525406,
+      "conclusion": "success"
+    },
+    {
+      "runId": 39904851711,
+      "conclusion": "failure",
+      "reason": "The same host hover overlay recurred on PTC; keyboard accessibility path added explicitly."
+    }
+  ]
+}

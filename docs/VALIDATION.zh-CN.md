@@ -42,7 +42,7 @@
 
 ## 系统区分
 
-macOS：本轮本地实测。Linux：同一 Node/pnpm 构建与测试命令已提供；CI 运行状态另行记载，不声称 Linux 实机、真实移动设备或用户个人模型验证已经通过。
+macOS：本轮本地实测。Linux：GitHub-hosted ubuntu-latest / Node 24.21.0 的冻结安装、类型检查、30 项测试、构建、真实 DSH Native/PTC 四样例矩阵和打包均通过，见 [Linux CI 证据](evidence/linux-ci.json) 与 [实际运行](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/39905479679)。这不等于 Linux 实机桌面、真实移动设备或个人模型验收。
 
 Linux Chromium 的宿主侧栏 hover card 曾遮挡系列复选框的鼠标点击；CI 保留失败记录，并使用真实 focus + Space 键验证该复选框的可访问交互，未使用 force click 或移除宿主 DOM。macOS 的鼠标路径已通过。这是锁定宿主的 UI 边界，CI 通过也不等于 Linux 全部鼠标路径已验收。
 

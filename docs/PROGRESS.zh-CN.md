@@ -1,6 +1,6 @@
 # 实际进度
 
-状态：预览发行准备中；自然问题模型验收尚未完成。更新日期：2026-10-23。
+状态：0.1.0-preview.1 预览发行；自然问题模型验收尚未完成。更新日期：2026-10-23。
 
 ## 有效范围与决定
 
@@ -18,9 +18,12 @@
 - 实测 24 节点/45 边关系图的 360px 概览和邻域定位；80 节点/240 边只验证纯布局和校验，不外推可读性。
 - 68 项生产/peer 运行依赖保留实际许可证与 NOTICE，包括嵌套的第三方许可证。
 
-## 正在完成
+## 发行与安装
 
-版本化 tgz、SHA-256、最终安装校验、个人 GitHub 公开预览 Release 和 Linux CI。真实结果写入 VALIDATION 及 evidence，发布成功后更新本页。
+- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.1 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.1) 为准；不宣称 npm 已发布。
+- 最终 tgz 在新建隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native 样例；安装输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
+- Linux CI 实际通过，含 30 项测试、真实 DSH Native/PTC 代表矩阵及打包，见 [linux-ci.json](evidence/linux-ci.json)。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
+- 自有代码 MIT；依赖逐项保留许可证与 NOTICE。普通工具输出仅短回执，原始私有运行数据不随源码或包公开。
 
 ## 唯一外部依赖与恢复入口
 
