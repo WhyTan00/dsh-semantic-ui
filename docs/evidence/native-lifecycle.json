@@ -44,6 +44,7 @@
       "toolProcessFolded": true,
       "completed": true,
       "controlsChangedData": true,
+      "numericAriaAfterSelection": "Fictional sensor readings. line chart; unit °C. Selected range 2–3. Sensor B: 1 valid, 1 missing. Equivalent values are available in the source data table.",
       "wideContainer": 640,
       "narrowContainer": 360,
       "narrowOverflow": 0,
@@ -62,6 +63,7 @@
       "toolProcessFolded": true,
       "completed": true,
       "controlsChangedData": true,
+      "numericAriaAfterSelection": "Fictional processing time distribution. histogram chart; unit ms. Selected range 1–2. Group A: 6 valid selected observations; 1 missing in full group, bin unknown. Group B: 5 valid selected observations; 1 missing in full group, bin unknown. Equivalent values are available in the source data table.",
       "wideContainer": 640,
       "narrowContainer": 360,
       "narrowOverflow": 0,
@@ -74,6 +76,6 @@
     }
   ],
   "errors": [],
-  "version": "0.1.0-preview.4",
+  "version": "0.1.0-preview.5",
   "fixtureOnly": true
 }

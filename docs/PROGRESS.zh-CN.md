@@ -1,6 +1,6 @@
 # 实际进度
 
-状态：0.1.0-preview.4 预览；三轮共 33 题真实模型已执行，内容语义验收仍未全部通过。更新日期：2026-10-23。
+状态：0.1.0-preview.5 预览；三轮共 33 题真实模型已执行，内容语义验收仍未全部通过。更新日期：2026-10-23。
 
 ## 有效范围与决定
 
@@ -12,7 +12,7 @@
 ## 已完成并验证
 
 - 三组件、统一 catalog/schema、严格语义校验、统计纯函数、声明式比较、本地交互、错误降级及按需工具说明。
-- TypeScript、34 项测试、发行构建通过。新增修复：真正重启时的历史读取、不等宽直方图拒绝、重复时间点的不同 offset 校验。
+- TypeScript、37 项测试、发行构建通过。新增修复：真正重启时的历史读取、不等宽直方图拒绝、重复时间点的不同 offset 校验。
 - Native / PTC 各四个代表样例通过生成状态、工具过程折叠、交互、640/360px 容器、刷新、切会话、历史重开及 28 回合后的实际补页；pageerror 为 0。
 - 公开 GenUI 0.14.0 的旧消息与新语义节点在隔离真实宿主并存，刷新与重启恢复；关闭本插件新生成后仍保留历史。GenUI 自身的指引无法通过 renderUiTool 完全关闭。
 - 实测 24 节点/45 边关系图的 360px 概览和邻域定位；80 节点/240 边只验证纯布局和校验，不外推可读性。
@@ -20,10 +20,16 @@
 
 ## 发行与安装
 
-- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.4 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.4) 为准；不宣称 npm 已发布。
+- 个人公开仓库：[WhyTan00/dsh-semantic-ui](https://github.com/WhyTan00/dsh-semantic-ui)。版本化 tgz、SHA256SUMS、打包清单以 [v0.1.0-preview.5 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.5) 为准；不宣称 npm 已发布。
 - 最终 tgz 在新建隔离 profile 中通过真实 dsh plugin add 安装并运行四个 Native 样例；安装输入 SHA-256 见 [install.json](evidence/install.json)。安装、保留历史、完全停用及恢复同版本见 INSTALL。
 - Linux CI 的准确版本、34 项测试、真实 DSH Native/PTC 代表矩阵及打包状态以 [linux-ci.json](evidence/linux-ci.json) 为准。宿主侧栏 hover 的 Linux 鼠标遮挡限制已记录，CI 的系列复选框使用原生键盘操作；不宣称 Linux 实机或手机验收。
 - 自有代码 MIT；依赖逐项保留许可证与 NOTICE。工具输出为有界回执，DataChart 附程序计算的数值事实；原始私人路径不公开。完整模型记录/截图分离为证据 tgz，紧凑索引保留在运行包，SHA256SUMS 同时覆盖两个包。
+
+## preview.5 的开源生态吸收
+
+33 个项目、116 份固定源码的研究、许可证、真实依赖与采用决定进入 docs/research；选型表可由脚本重建并在 CI 检查。目录外按实际能力/宿主/状态选择，不再笼统优先 GenUI。新增只读 catalog、初始条件 decisionFacts 和 ECharts ARIA 注册/动态描述，未增加第三方运行依赖。
+
+四题定向模型测试保留首次结果和 25 次请求：能力目录及比较回执实际进入模型；两个比较正文仍有语义失败；GenUI 新表单等待 1000ms 后刷新保留草稿，但备注单独提交承诺失败。先前 C4 为不同实例/时序，没有外推为全部表单持久化规则。本插件的表单反馈、草稿持久化与外部协议 adapter 都仍未实现。来源和下一步 RequestForm 合同见 [研究采用记录](research/ADOPTION.zh-CN.md)。
 
 ## preview.4 的成熟度改进
 

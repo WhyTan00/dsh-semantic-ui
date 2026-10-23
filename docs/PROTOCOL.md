@@ -2,8 +2,9 @@
 
 The only model-facing tool is `dsh_semantic_ui`:
 
-1. `{"action":"describe","component":"ArchitectureExplorer"}` returns the selected payload schema, envelope and semantic rules.
-2. `{"action":"render","view":{...}}` validates and delivers one checkpoint.
+1. `{"action":"catalog"}` returns only this renderer's supported components, data requirements, local controls and explicit state/feedback limits. It does not infer another plugin's capability or implement an external protocol.
+2. `{"action":"describe","component":"ArchitectureExplorer"}` returns the selected payload schema, envelope and semantic rules.
+3. `{"action":"render","view":{...}}` validates and delivers one checkpoint.
 
 The catalog props, TypeScript types, validator and generated JSON Schema use the schemas in `src/protocol.ts`. Do not generate standalone or inline JSONL via `catalog.prompt()`. The runtime skill and checked-in SKILL.md derive from the same guidance source.
 
@@ -24,6 +25,8 @@ IDs and references must exist and be unique. Scenario edge count equals node cou
 Options have exactly the common dimensions, with null for unknown facts. Inputs are finite numbers, booleans or enumerated choices, each allowing unknown. Conditions are a finite `all`/`any` list of up to 12 clauses using `eq/ne/gt/gte/lt/lte`; ordering operators require numeric inputs. There is no expression evaluator or recursion.
 
 Highest matching priority wins. Equal-priority rules combine recommendations, preserving input option order. Active hard constraints exclude options. An unknown condition that could override a winner, or an unknown hard constraint on a recommended option, withholds the recommendation. No matching rule, all excluded options and insufficient conditions are distinct states. The UI labels the result as a rule evaluation and lists missing blocking conditions. Declared origin distinguishes given rules versus model-proposed judgments; origin is model-supplied and not independently verified. Focus dimensions only affect the table. Input changes list original and current values. No operation calls the model again.
+
+Decision render receipts include `decisionFacts`: initial policy status, recommended option IDs, matched/pending rules, missing conditions, active/unknown constraints and declared-origin counts. These facts evaluate the submitted declarations; they do not certify user facts or rule origin. Prose must not turn an insufficient result into a winner. Local controls do not silently change the already delivered receipt or call the model.
 
 ## Numeric data
 

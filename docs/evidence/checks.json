@@ -3,7 +3,7 @@
   "dsh": "0.2.1-rc.2",
   "typecheck": "passed",
   "unitTestFiles": 4,
-  "unitTestsPassed": 34,
+  "unitTestsPassed": 37,
   "unitTestsFailed": 0,
   "build": "passed",
   "naturalQuestionAcceptance": "33 cases completed in three frozen 11-question rounds through real WorkBuddy model; latest round has four semantic failures, all preserved. Not full acceptance.",
@@ -23,6 +23,17 @@
   "reasoningEffort": "high",
   "latestNaturalBrowserErrors": [],
   "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts.",
-  "version": "0.1.0-preview.4",
-  "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round."
+  "version": "0.1.0-preview.5",
+  "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round.",
+  "research": {
+    "projects": 33,
+    "pinnedSourceFiles": 116,
+    "licenseFiles": 33,
+    "newRuntimeDependencies": 0,
+    "derivedInventory": "consistent"
+  },
+  "targetedModelCases": 4,
+  "targetedModelSemanticFailures": 3,
+  "targetedModelBoundary": "E1 notes; E2/E3/E4 failures retained; not a complete new round.",
+  "aria": "Registered AriaComponent; chart/histogram accessible description verified after local selection in Native and PTC."
 }

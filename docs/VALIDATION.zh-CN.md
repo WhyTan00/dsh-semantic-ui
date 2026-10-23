@@ -9,7 +9,7 @@
 - Native：ArchitectureExplorer、DecisionExplorer、折线 DataChart、histogram DataChart 已通过实际工具执行、聊天挂载、过程持续折叠、控件改变内容、刷新、切会话及新页面历史重开。实际组件容器为 640px 和 360px；各例组件根横向溢出为 0。局部表格允许显式可访问横向滚动。
 - 本地交互刷新复位；重放后每个展示 ID 只显示一个组件。
 - PTC 已独立跑通四个代表样例的同一生命周期矩阵，结果见 evidence/ptc-lifecycle.json。夹具曾漏传 run_code 必需 description，另有等待最终 turn 完成的时序问题；均修复后重跑，不用首次失败冒充成功。Native 结果见 evidence/native-lifecycle.json。
-- preview.4 的 TypeScript、34 项协议/引用/路径/决策/统计/数值回执/重放/合同测试及发行构建通过；Native/PTC 四样例生命周期也已在本次源码复测。计数见 [checks.json](evidence/checks.json)。历史补页和跨进程矩阵是先前相同协议的独立证据，没有冒充本次数值回执的自然模型测试。
+- preview.5 的 TypeScript、37 项协议/引用/路径/决策/统计/数值回执/重放/合同测试及发行构建通过；Native/PTC 四样例生命周期也已在本次源码复测。计数见 [checks.json](evidence/checks.json)。历史补页和跨进程矩阵是先前相同协议的独立证据，没有冒充本次数值回执的自然模型测试。
 - 运行时依赖逐项保留许可证，实际包括 MIT、Apache-2.0、Python-2.0、ISC、BSD-3-Clause、0BSD，不能一概称为 MIT。
 
 版本包安装证据单独保存在 [install.json](evidence/install.json)，其中的 SHA-256 对应实际安装的 tgz。该回执不嵌入 tgz，避免包内自包含自身校验和。旧 v0.1.0-preview.1 的安装证据仍保留在其不可变 tag 中。
@@ -61,6 +61,12 @@
 数值回执增加程序计算的原始全量数据事实后，同一 N1 原题在独立新会话完成一次定向复测，模型实际收到首值 4、最低 3、末值 6 的回执，正文正确。首次失败与复测完整分别保留，见 [共存索引](evidence/genui-model-coexistence.json) 和 [成熟度评估](MATURITY.zh-CN.md)。这不是第四轮完整 11 题验收，也没有以复测覆盖原错误。公开证据分别记录候选包哈希；最终发行包包含追加证据和说明，不能把候选哈希称为最终包哈希。
 
 完整自然记录与截图继续随源码公开，并另附独立 evidence tgz；运行 tgz 保留紧凑索引，避免每次安装下载全部记录。所有原始失败均保留。两个包的校验和都列入 SHA256SUMS。
+
+## preview.5 的开源研究采用与定向验证
+
+33 个公开仓库的固定源码/许可证与选型决定已沉淀在 [研究入口](research/README.md)，不是 33 个系统都在本机实装。新增 catalog、比较回执和 ARIA 模块；37 项单元测试通过，Native/PTC 各四个样例实际核对动态可访问描述、控件及 640/360px 生命周期。没有新增候选库的运行依赖，也不宣称 A2UI/AG-UI/MCP Apps 协议兼容。
+
+个人 WorkBuddy 同一路由/high、完整开启两个插件的四题定向首次结果见 [ecosystem-adoption](evidence/ecosystem-adoption.json)：能力题调用 catalog，两个比较题收到实际回执，目录外表单使用 GenUI。比较正文仍有不成立的偏好/附加推理；表单等待 1000ms 后的草稿刷新保留，但“备注单独提交”承诺失败。模型请求共 25 次；能力题包含公开包源码检查，公开副本对源码输出/无关 Skill 元数据做显式省略并保留摘要，原件私有保留。首次最终正文与失败没有被替换。不是第四轮完整 11 题验收，没有由一次持久化成功推断所有 GenUI 表单。
 
 ## 系统区分
 

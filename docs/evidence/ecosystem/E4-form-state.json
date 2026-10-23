@@ -1,0 +1,17 @@
+{
+  "caseId": "E4",
+  "waitAfterInputMs": 1000,
+  "noteOnlySubmitDisabled": true,
+  "beforeRefresh": {
+    "history": true,
+    "notes": "虚构测试：周末下午，6人以内"
+  },
+  "afterRefresh": {
+    "history": true,
+    "notes": "虚构测试：周末下午，6人以内"
+  },
+  "modelRequests": 0,
+  "submitted": false,
+  "pageErrors": [],
+  "boundary": "This model-generated form instance, after waiting for persistence; not a universal claim about all GenUI controls."
+}

@@ -1,24 +1,22 @@
 {
-  "source": "Actual authorized WorkBuddy coexistence followup; public DSH llm/stream boundary.",
-  "version": "0.1.0-preview.4",
-  "toolDescriptorUtf8Bytes": 1058,
-  "residentPrincipleUtf8Bytes": 1330,
+  "source": "Actual personal WorkBuddy targeted run; public DSH llm/stream boundary.",
+  "version": "0.1.0-preview.5",
+  "toolDescriptorUtf8Bytes": 1159,
+  "residentPrincipleUtf8Bytes": 1688,
   "residentPrinciplePresentInCapturedInput": true,
+  "capturedDescriptionMatchesFinalSource": true,
   "largeComponentSchemasResident": false,
+  "onDemandCatalogUtf8Bytes": 1868,
   "onDemandDescriptorBytes": {
     "ArchitectureExplorer": 3222,
-    "DecisionExplorer": 5641,
+    "DecisionExplorer": 5884,
     "DataChart": 4253
   },
+  "decisionReceiptExampleUtf8Bytes": 861,
   "provider": "workbuddy",
   "model": "deepseek-v4.1-flash",
   "reasoningEffort": "high",
-  "tokenBoundary": "Provider usage covers the entire request, including host instructions and other tools. No matching tokenizer isolates this plugin cost; UTF-8 bytes are not tokens. Internal adapter HTTP serialization was not captured.",
-  "rawInputKeptPrivately": true,
-  "combinedKnownUtf8Bytes": 2388,
-  "numericReceiptExampleUtf8Bytes": 669,
-  "numericReceiptContainsRawRows": false,
-  "previousCompleteRound": "0.1.0-preview.3",
-  "capturedToolDescriptorUtf8Bytes": 1039,
-  "finalWordingBoundary": "Final tool description further scopes its prose prohibition to these components; resident guidance and parameters match the captured pilot. Captured bytes and final descriptor bytes are reported separately."
+  "combinedKnownUtf8Bytes": 2847,
+  "tokenBoundary": "Whole-request usage includes DSH, other plugins and optional source inspection. UTF-8 bytes are not tokens; no causal cost/latency benchmark.",
+  "rawInputKeptPrivately": true
 }

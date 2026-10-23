@@ -8,12 +8,14 @@ A personal, independently written **preview** plugin for native [DeepSeek Harnes
 
 Plain text remains appropriate for simple questions. No model-generated JavaScript, JSX, HTML, callbacks, arbitrary ECharts options or network resources are accepted.
 
+The [interactive UI ecosystem study](docs/research/README.md) curates 33 public projects with immutable source pins, licenses, actual chart dependencies and adoption decisions. It replaces a blanket GenUI fallback with capability-based selection. Preview.5 adds a read-only `action=catalog`, initial-policy `decisionFacts`, and working ECharts ARIA descriptions. Future form submission and application state remain explicitly unimplemented; see the [adoption record](docs/research/ADOPTION.zh-CN.md).
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.4.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.5.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.
@@ -22,7 +24,7 @@ Reload the DSH page after installation. See [installation, isolation and rollbac
 
 The host validates a versioned semantic payload and projects the whole checkpoint through `output.presentationMeta`. The pinned DSH persists it in standard `tool/result` (Native) or `tool/ptc-dispatch` (nested PTC) events, separately from the short model receipt. The client uses `ConversationNodeDefinition` and the `conversation.chat.node` slot, with `groupTree: 'turn'`, to render outside folded tool steps. DSH's session log remains the only conversation store. Replaying checkpoints restores content; local controls reset after reload. No state is sent back to the model and no cross-device interaction sync is claimed.
 
-The model sees a bounded receipt, not the full delivered spec. DataChart additionally returns deterministic full-data `dataFacts` for checking numeric prose. `action=describe` exposes the selected schema on demand. The same schemas supply the catalog, runtime types, validation and [generated protocol reference](docs/generated/protocol.schema.json).
+The model sees a bounded receipt, not the full delivered spec. DataChart additionally returns deterministic full-data `dataFacts` for checking numeric prose; DecisionExplorer returns `decisionFacts` evaluated under original declared conditions. Neither receipt certifies model-supplied facts or policy. `action=describe` exposes the selected schema on demand. The same schemas supply the catalog, runtime types, validation and [generated protocol reference](docs/generated/protocol.schema.json).
 
 DSH's shared React 18 hosts a small wrapper; a plugin-owned React 19 root runs json-render and the components inside a shadow root. This satisfies json-render's pinned React peer requirement without replacing DSH's React or styles.
 
@@ -41,6 +43,7 @@ The runtime `.tgz` contains compact evidence indexes. Full first attempts and sc
 ```sh
 pnpm install --frozen-lockfile
 pnpm docs:generate
+pnpm research:check       # pinned sources, licenses and derived inventory
 pnpm check
 pnpm dev                  # component development preview only
 pnpm test:host            # isolated real DSH + deterministic fixture

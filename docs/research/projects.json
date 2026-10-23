@@ -1,0 +1,1921 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-10-23",
+  "scope": "Personal DSH Semantic UI project. Public sources only. No company code, private adapters, credentials or user data.",
+  "method": "Repository metadata and immutable default-branch commit; fetched README, license, selected package manifests and selected contract/implementation files. Not a full security audit or runtime test of every project. Selection judgments are original.",
+  "versionBoundary": "manifestObservations describe pinned source trees, including prereleases/private roots; they are not a registry latest-version claim. Existing installed versions remain separately pinned.",
+  "licenseBoundary": "Top-level source licenses are recorded for research, not a blanket license of optional products, assets or every dependency. No upstream code was copied into implementation; existing production license inventory is maintained separately.",
+  "benchmarkBoundary": "Upstream token, latency, bundle and performance claims were not reproduced. No universal ranking by stars or chart count.",
+  "projects": [
+    {
+      "id": "json-render",
+      "repo": "vercel-labs/json-render",
+      "layer": "ui-runtime",
+      "decision": "existing-runtime",
+      "source": {
+        "commit": "f78cc14f34c138d39a350b5e0991b8adf8b167ab",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/vercel-labs/json-render",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/vercel-labs/json-render/blob/f78cc14f34c138d39a350b5e0991b8adf8b167ab/LICENSE",
+            "sha256OfFetchedText": "014bb31e83d5c2e76aea1cc6e82217346ab41362f32cb355ad0f5c10aa0aeaff"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/vercel-labs/json-render/blob/f78cc14f34c138d39a350b5e0991b8adf8b167ab/README.md",
+            "sha256OfFetchedText": "4f0b85cbce1da48fa5a698cf559df7d6a858fbc444d810f0899355a10ac6326a"
+          },
+          {
+            "path": "packages/core/package.json",
+            "url": "https://github.com/vercel-labs/json-render/blob/f78cc14f34c138d39a350b5e0991b8adf8b167ab/packages/core/package.json",
+            "sha256OfFetchedText": "240a254ffc4d5942638737aec1002c0a5e4bc4089266874e7dd3c389a596e9b7"
+          },
+          {
+            "path": "packages/core/src/schema.ts",
+            "url": "https://github.com/vercel-labs/json-render/blob/f78cc14f34c138d39a350b5e0991b8adf8b167ab/packages/core/src/schema.ts",
+            "sha256OfFetchedText": "275e75d56e87d88343f302181a725e7fc6d554da61733f94c0c5f2ccff1ea9d6"
+          },
+          {
+            "path": "packages/core/src/actions.ts",
+            "url": "https://github.com/vercel-labs/json-render/blob/f78cc14f34c138d39a350b5e0991b8adf8b167ab/packages/core/src/actions.ts",
+            "sha256OfFetchedText": "f16366660a1700c56ca3ecdf859581d8186381a9a5aec44c0afff67e5c10a1c5"
+          }
+        ]
+      },
+      "license": {
+        "expression": "Apache-2.0",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/core/package.json",
+          "name": "@json-render/core",
+          "version": "0.21.1",
+          "private": false,
+          "license": "Apache-2.0",
+          "dependencies": {
+            "zod": "^4.0.0"
+          }
+        }
+      ],
+      "strengths": "catalog/schema/renderer 同源，允许组件目录与动作白名单。",
+      "tradeoffs": "保留 0.21.1；默认 JSONL 生成提示不适合本项目的唯一工具交付。",
+      "appliedTo": [
+        "src/catalog.ts",
+        "src/island.tsx"
+      ],
+      "adoptionBoundary": "已有运行依赖，非本轮新增。",
+      "validation": "Existing pinned dependency already exercised in this project; this HEAD snapshot is not an upgrade test."
+    },
+    {
+      "id": "a2ui",
+      "repo": "a2ui-project/a2ui",
+      "layer": "ui-protocol",
+      "decision": "adopt-pattern",
+      "source": {
+        "commit": "020a9d6f694761ad16b35bc38945e4ccd0ac14e8",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/a2ui-project/a2ui",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/a2ui-project/a2ui/blob/020a9d6f694761ad16b35bc38945e4ccd0ac14e8/LICENSE",
+            "sha256OfFetchedText": "8c8b5b632d56c4c1658296963c693db5396772a33caaddb9a22593c4155c437a"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/a2ui-project/a2ui/blob/020a9d6f694761ad16b35bc38945e4ccd0ac14e8/README.md",
+            "sha256OfFetchedText": "32fce5253f4e6f02f0c3ac184536e5e316d182ab2081a09013874c9e98d7b711"
+          },
+          {
+            "path": "typescript/catalogs/vegachart/package.json",
+            "url": "https://github.com/a2ui-project/a2ui/blob/020a9d6f694761ad16b35bc38945e4ccd0ac14e8/typescript/catalogs/vegachart/package.json",
+            "sha256OfFetchedText": "d1def90a9eb5f88c220a589ea395345f2ee38c17d944dc78e91f2797c07906aa"
+          },
+          {
+            "path": "docs/public/concepts/catalogs.md",
+            "url": "https://github.com/a2ui-project/a2ui/blob/020a9d6f694761ad16b35bc38945e4ccd0ac14e8/docs/public/concepts/catalogs.md",
+            "sha256OfFetchedText": "22fee2ddf03019ba4042ea3be1379eb2266948145b91bb3a806155a4adf15629"
+          }
+        ]
+      },
+      "license": {
+        "expression": "Apache-2.0",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "typescript/catalogs/vegachart/package.json",
+          "name": "@a2ui/catalog-vegachart",
+          "version": "0.1.0",
+          "private": false,
+          "license": "Apache-2.0",
+          "dependencies": {
+            "vega": "^5.30.0",
+            "vega-embed": "^6.26.0",
+            "vega-lite": "^5.21.0",
+            "zod": "^3.25.76"
+          }
+        }
+      ],
+      "strengths": "客户端先声明 catalog；模型只能使用当前客户端认可的组件。",
+      "tradeoffs": "吸收能力声明，暂不实现其 surface/data-binding 消息转换；当前 0.9.1 与 1.0 candidate 不能混用。",
+      "appliedTo": [
+        "src/capabilities.ts"
+      ],
+      "adoptionBoundary": "新能力目录；不是 A2UI wire 兼容。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "ag-ui",
+      "repo": "ag-ui-protocol/ag-ui",
+      "layer": "interaction-protocol",
+      "decision": "adopt-pattern",
+      "source": {
+        "commit": "ec24165f725a5b01ecddb1f62df305855a7917c8",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/ag-ui-protocol/ag-ui",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/ag-ui-protocol/ag-ui/blob/ec24165f725a5b01ecddb1f62df305855a7917c8/LICENSE",
+            "sha256OfFetchedText": "06dcddbb6908a0c6dd4a9e8ec822eea41d5a460a53089fecccc8a68049e99241"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/ag-ui-protocol/ag-ui/blob/ec24165f725a5b01ecddb1f62df305855a7917c8/README.md",
+            "sha256OfFetchedText": "16d60903c04d41f2d9e8e117e9cb7bb52200509e1f5299b6e1bca552ab75b989"
+          },
+          {
+            "path": "docs/concepts/capabilities.mdx",
+            "url": "https://github.com/ag-ui-protocol/ag-ui/blob/ec24165f725a5b01ecddb1f62df305855a7917c8/docs/concepts/capabilities.mdx",
+            "sha256OfFetchedText": "2616c5bff5a6b71265a02c3eedde2875c576960c43fbf610312f4b5a9c255999"
+          },
+          {
+            "path": "docs/concepts/state.mdx",
+            "url": "https://github.com/ag-ui-protocol/ag-ui/blob/ec24165f725a5b01ecddb1f62df305855a7917c8/docs/concepts/state.mdx",
+            "sha256OfFetchedText": "40e81e96a57ecffb4ca6e185b66e703d3fdeab4c45ee133d0b45117959b96a7a"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [],
+      "strengths": "能力发现、状态 snapshot/delta 与工具生命周期分层。",
+      "tradeoffs": "吸收显式能力和有界结果；保留 DSH 自有事件，不平行引入第二套会话状态流。",
+      "appliedTo": [
+        "src/capabilities.ts",
+        "src/facts.ts"
+      ],
+      "adoptionBoundary": "新能力声明与声明式比较回执；不是 AG-UI adapter。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "assistant-ui",
+      "repo": "assistant-ui/assistant-ui",
+      "layer": "ui-runtime",
+      "decision": "adopt-pattern",
+      "source": {
+        "commit": "c015c32a08c0cd01b9f436b2759e3d4ada69a9e5",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/assistant-ui/assistant-ui",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/LICENSE",
+            "sha256OfFetchedText": "eafb05991a572efa34097474b31fef45b14a8879ed1d1a8fd77de62e6fa7d275"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/README.md",
+            "sha256OfFetchedText": "91f519bdf12a72584e13dcca4bb42bb1d6aff47e3ea0692dcccd6ab1213a9b3c"
+          },
+          {
+            "path": "packages/diagrammatic/package.json",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/diagrammatic/package.json",
+            "sha256OfFetchedText": "890d090ac9faf6bb82c3e0e0941c4f66a397d10d359b710b071beeab9428f266"
+          },
+          {
+            "path": "packages/generative-frame/package.json",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-frame/package.json",
+            "sha256OfFetchedText": "ad69bb9950ad83f504a31aa98f88e4b781708ab7023c958631354147e9bb444b"
+          },
+          {
+            "path": "packages/generative-ui/package.json",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/package.json",
+            "sha256OfFetchedText": "f18f7126eed48c50f8332141681d387a036b3a7ccd79ec8ecfe1572bc8af5a05"
+          },
+          {
+            "path": "packages/generative-ui/src/actionRegistry.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/actionRegistry.ts",
+            "sha256OfFetchedText": "09d3021a718fc32c09cdae0950ea5a52374ce6124f5561d6d0026f9cbaaa107f"
+          },
+          {
+            "path": "packages/generative-ui/src/defaultGenerativeUIComponents.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/defaultGenerativeUIComponents.ts",
+            "sha256OfFetchedText": "78bee4e7bb099940b8ec772f661b41913ad9303165ed0798e2b70f410432fd8e"
+          },
+          {
+            "path": "packages/generative-ui/src/buildPresentParameters.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/buildPresentParameters.ts",
+            "sha256OfFetchedText": "fd541127f08b10719edf47cbdb70cef79d6bf40b3d19ff3bd20f203c7095bde5"
+          },
+          {
+            "path": "packages/generative-ui/src/vocabulary/definitions/form.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/vocabulary/definitions/form.ts",
+            "sha256OfFetchedText": "eca73e339f601920382617335e0dedfc909cad825d28b0439e588eb26d3d1f39"
+          },
+          {
+            "path": "packages/generative-ui/src/vocabulary/chartData.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/vocabulary/chartData.ts",
+            "sha256OfFetchedText": "a0676c24ebe8b0af622527e3041c0b4b1a11918500b69877f0115b3f52d7a351"
+          },
+          {
+            "path": "packages/generative-ui/src/vocabulary/collectFormValues.ts",
+            "url": "https://github.com/assistant-ui/assistant-ui/blob/c015c32a08c0cd01b9f436b2759e3d4ada69a9e5/packages/generative-ui/src/vocabulary/collectFormValues.ts",
+            "sha256OfFetchedText": "2dd6d853c031915e9ba3e0f4448b284802281aa46d113170bd82cfea827e4473"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/diagrammatic/package.json",
+          "name": "diagrammatic",
+          "version": "0.0.4",
+          "private": true,
+          "license": "MIT",
+          "dependencies": {
+            "@types/react": "*",
+            "react": "^18 || ^19"
+          }
+        },
+        {
+          "path": "packages/generative-frame/package.json",
+          "name": "generative-frame",
+          "version": "0.0.8",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@assistant-ui/react": "^0.15.0",
+            "@types/react": "*",
+            "react": "^18 || ^19"
+          }
+        },
+        {
+          "path": "packages/generative-ui/package.json",
+          "name": "@assistant-ui/generative-ui",
+          "version": "0.0.7",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@assistant-ui/react": "^0.15.0",
+            "@types/react": "*",
+            "react": "^18 || ^19",
+            "zod": "^4.0.0"
+          }
+        }
+      ],
+      "strengths": "当前 toolkit/present 将工具执行、组件词汇与动作处理分开；表单收集读取真实命名控件值。",
+      "tradeoffs": "仅吸收分层/动作契约。chartData 的缺失点补零与本项目语义冲突，拒绝照搬；0.0.x 新包不直接当稳定底座。",
+      "appliedTo": [
+        "src/capabilities.ts",
+        "docs/research/ADOPTION.zh-CN.md"
+      ],
+      "adoptionBoundary": "能力边界已落实；用户动作回传仍是候选设计。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "tool-ui",
+      "repo": "assistant-ui/tool-ui",
+      "layer": "component-kit",
+      "decision": "reference-only",
+      "source": {
+        "commit": "49a870286facdbf28160cd647f0d337ebdc9b275",
+        "defaultBranch": "main",
+        "archived": true,
+        "metadataUrl": "https://api.github.com/repos/assistant-ui/tool-ui",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/assistant-ui/tool-ui/blob/49a870286facdbf28160cd647f0d337ebdc9b275/README.md",
+            "sha256OfFetchedText": "997e202c0912c67c36f723d6d5143f82c06c369f37504b31e27eec26a1afb16e"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/assistant-ui/tool-ui/blob/49a870286facdbf28160cd647f0d337ebdc9b275/LICENSE.md",
+            "sha256OfFetchedText": "71fd4b7b76d27a09af2e8b2bedf14e51f4c229e32b59654d327cc24dc63e60d7"
+          },
+          {
+            "path": "apps/www/package.json",
+            "url": "https://github.com/assistant-ui/tool-ui/blob/49a870286facdbf28160cd647f0d337ebdc9b275/apps/www/package.json",
+            "sha256OfFetchedText": "83c6a174feb1fef12dc2f57f4ecba1e3a309262bcf46b4a30731420bc71b4c3a"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "apps/www/package.json",
+          "name": "tool-ui-www",
+          "version": "0.2.0",
+          "private": true,
+          "license": "MIT",
+          "dependencies": {
+            "@assistant-ui/react": "^0.12.3",
+            "@mdx-js/react": "^3.1.1",
+            "@radix-ui/react-accordion": "^1.2.12",
+            "@radix-ui/react-avatar": "^1.1.11",
+            "@radix-ui/react-collapsible": "^1.1.12",
+            "@radix-ui/react-dialog": "^1.1.15",
+            "@radix-ui/react-dropdown-menu": "^2.1.16",
+            "@radix-ui/react-label": "^2.1.8",
+            "@radix-ui/react-popover": "^1.1.15",
+            "@radix-ui/react-radio-group": "^1.3.8",
+            "@radix-ui/react-select": "^2.2.6",
+            "@radix-ui/react-separator": "^1.1.8",
+            "@radix-ui/react-slider": "^1.3.6",
+            "@radix-ui/react-slot": "^1.2.4",
+            "@radix-ui/react-switch": "^1.2.6",
+            "@radix-ui/react-tabs": "^1.1.13",
+            "@radix-ui/react-toggle": "^1.1.10",
+            "@radix-ui/react-toggle-group": "^1.1.11",
+            "@radix-ui/react-tooltip": "^1.2.8",
+            "ansi-to-react": "^6.2.6",
+            "lucide-react": "^0.563.0",
+            "radix-ui": "^1.4.3",
+            "react": "19.2.4",
+            "recharts": "2.15.4",
+            "zod": "4.3.6",
+            "zustand": "^5.0.11"
+          }
+        }
+      ],
+      "strengths": "Zod 校验、工具专属组件和用户选择收据的设计便于理解。",
+      "tradeoffs": "仓库已归档。旧示例 Recharts 2.15.4 不代表当前 assistant-ui 依赖；不作为新增运行时。",
+      "appliedTo": [],
+      "adoptionBoundary": "保留历史设计参考，不引入已归档依赖。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "openui",
+      "repo": "thesysdev/openui",
+      "layer": "ui-runtime",
+      "decision": "adopt-pattern",
+      "source": {
+        "commit": "c9f93b6e57d05b19b9781846769da530c6741dc4",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/thesysdev/openui",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/LICENSE",
+            "sha256OfFetchedText": "b6bdd2d3d161722fb3f3afc039114cfa9f3236f036e1c98e0853bc3a85f6cd9e"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/README.md",
+            "sha256OfFetchedText": "3f00cb29c5a822ba027ffaa2e80b3e5dcb652d2201ca5bc40e49cece53581b10"
+          },
+          {
+            "path": "packages/lang-core/package.json",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/packages/lang-core/package.json",
+            "sha256OfFetchedText": "c482b9ac5c25515e93be4a3437b503ef03b5076f9502198b8a9ddfd71357fec1"
+          },
+          {
+            "path": "packages/lang-core/src/runtime/state-field.ts",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/packages/lang-core/src/runtime/state-field.ts",
+            "sha256OfFetchedText": "650c1e892c8f6ae6657e2f868df9dbcd702d44e2d7f29fcddb90c9ea3b6d9ecc"
+          },
+          {
+            "path": "packages/react-ui/package.json",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/packages/react-ui/package.json",
+            "sha256OfFetchedText": "80dc0c9e7088d8bd3d992c0e87dd6c228fe2925c62a8f4807232d58e06b9f68d"
+          },
+          {
+            "path": "packages/react-ui/src/components/Charts/BarChart/BarChart.tsx",
+            "url": "https://github.com/thesysdev/openui/blob/c9f93b6e57d05b19b9781846769da530c6741dc4/packages/react-ui/src/components/Charts/BarChart/BarChart.tsx",
+            "sha256OfFetchedText": "dd0fc988d89b98aed45a3a197e9f9dcc06fa1d6d74b003e7f3cd52324d79666b"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/lang-core/package.json",
+          "name": "@openuidev/lang-core",
+          "version": "1.0.1",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "zod": "catalog:"
+          }
+        },
+        {
+          "path": "packages/react-ui/package.json",
+          "name": "@openuidev/react-ui",
+          "version": "0.18.1",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@radix-ui/react-accordion": "^1.2.2",
+            "@radix-ui/react-aspect-ratio": "^1.1.1",
+            "@radix-ui/react-checkbox": "^1.1.3",
+            "@radix-ui/react-dialog": "^1.1.15",
+            "@radix-ui/react-dropdown-menu": "^2.1.7",
+            "@radix-ui/react-label": "^2.1.1",
+            "@radix-ui/react-radio-group": "^1.2.2",
+            "@radix-ui/react-select": "^2.1.5",
+            "@radix-ui/react-separator": "^1.1.7",
+            "@radix-ui/react-slider": "^1.2.2",
+            "@radix-ui/react-slot": "^1.2.4",
+            "@radix-ui/react-switch": "^1.1.2",
+            "@radix-ui/react-tabs": "^1.1.2",
+            "@radix-ui/react-toggle-group": "^1.1.2",
+            "@radix-ui/react-tooltip": "^1.2.7",
+            "d3-scale": "^4.0.2",
+            "d3-selection": "^3.0.0",
+            "d3-shape": "^3.2.0",
+            "lucide-react": "^0.562.0",
+            "react": "catalog:",
+            "zustand": "catalog:",
+            "zod": "catalog:"
+          }
+        }
+      ],
+      "strengths": "紧凑 DSL、流式解析、状态绑定和组件子路径拆分；当前图表实现使用 D3 模块。",
+      "tradeoffs": "吸收按能力拆分，保留整值 checkpoint；厂商 token/延迟对比未在本项目复现，不因营销数字换协议。",
+      "appliedTo": [
+        "src/capabilities.ts",
+        "docs/research/ADOPTION.zh-CN.md"
+      ],
+      "adoptionBoundary": "能力边界已落实；DSL/响应式表达式未接入。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "tambo",
+      "repo": "tambo-ai/tambo",
+      "layer": "ui-runtime",
+      "decision": "reference-only",
+      "source": {
+        "commit": "6e2c1bff3b68a00c094b6d876788cc8f33f7bb02",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/tambo-ai/tambo",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/LICENSE",
+            "sha256OfFetchedText": "961971302406ab236c4252c2c4247a8250f09cf3d8afbd2427e332b7a6985d4e"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/README.md",
+            "sha256OfFetchedText": "0872773b15c00cd874b645eb5316983b957cf1381f77cd7ff61bf38a0bd5794d"
+          },
+          {
+            "path": "react-sdk/src/v1/hooks/use-tambo-v1-component-state.ts",
+            "url": "https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/react-sdk/src/v1/hooks/use-tambo-v1-component-state.ts",
+            "sha256OfFetchedText": "4aad0cd636af67817df209559eeab9b129d9b50197849a2e88e4986d91b68631"
+          },
+          {
+            "path": "react-sdk/package.json",
+            "url": "https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/react-sdk/package.json",
+            "sha256OfFetchedText": "b74ac14cf933a3536b6fa906d9d219bd19f7410d165bbaf69029e6ccfed16251"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "react-sdk/package.json",
+          "name": "@tambo-ai/react",
+          "version": "1.4.0",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@types/react": "^18.0.0 || ^19.0.0",
+            "react": "^18.0.0 || ^19.0.0",
+            "zod": "^3.25.76 || ^4",
+            "zod-to-json-schema": "^3.25.1"
+          }
+        }
+      ],
+      "strengths": "区分生成组件与可持续编辑组件；状态同步有 pending/error/debounce。",
+      "tradeoffs": "完整方案包含自己的会话/agent 后端。只借鉴状态所有权和错误契约，不替换 DSH 模型/会话库。",
+      "appliedTo": [],
+      "adoptionBoundary": "自托管文档与 hook 源码研究；未部署。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "copilotkit",
+      "repo": "CopilotKit/CopilotKit",
+      "layer": "ui-runtime",
+      "decision": "reference-only",
+      "source": {
+        "commit": "6d9264274b9952e1a89ed01d1ef3507c72f67aab",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/CopilotKit/CopilotKit",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/CopilotKit/CopilotKit/blob/6d9264274b9952e1a89ed01d1ef3507c72f67aab/LICENSE",
+            "sha256OfFetchedText": "15a0e5343aea872c0573ad72feb6044b336f162d724cc1673c608e6b37ea071b"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/CopilotKit/CopilotKit/blob/6d9264274b9952e1a89ed01d1ef3507c72f67aab/README.md",
+            "sha256OfFetchedText": "7964714cd965f90463ca36a8d2363e46da0aa61725dd28063864f0989a085008"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [],
+      "strengths": "生成 UI、共享状态和人参与流程有完整应用层组合。",
+      "tradeoffs": "开源 SDK 与托管 Intelligence 功能分别核对；本项目已有 DSH host，不整套换聊天/状态层。",
+      "appliedTo": [],
+      "adoptionBoundary": "公开文档与许可证研究；未接入 SDK 或托管服务。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "mcp-apps",
+      "repo": "modelcontextprotocol/ext-apps",
+      "layer": "app-protocol",
+      "decision": "candidate",
+      "source": {
+        "commit": "82221c0c8ce7661efa6771c9d461511b1650495f",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/modelcontextprotocol/ext-apps",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/LICENSE",
+            "sha256OfFetchedText": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/README.md",
+            "sha256OfFetchedText": "03bb330e99c0ee241cde4614e78cfc7c17f3593b145c69ddd0f6c930606b8c0e"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/package.json",
+            "sha256OfFetchedText": "3fdef1682591ab6c8b8ba461cd52f265aae9d27b763b071a3da51a28e61db515"
+          },
+          {
+            "path": "src/app-bridge.ts",
+            "url": "https://github.com/modelcontextprotocol/ext-apps/blob/82221c0c8ce7661efa6771c9d461511b1650495f/src/app-bridge.ts",
+            "sha256OfFetchedText": "e8137c95b6adeaf42df5b716e46c461203f0a9e6bb34326d9b7ab87b59586880"
+          }
+        ]
+      },
+      "license": {
+        "expression": "mixed Apache-2.0 / legacy MIT transition; non-spec documentation CC-BY-4.0",
+        "note": "LICENSE takes precedence over MIT-only manifest shorthand; no code copied.",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@modelcontextprotocol/ext-apps",
+          "version": "2.0.3",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
+            "zod": "^4.2.0"
+          }
+        }
+      ],
+      "strengths": "UI resource、host bridge、能力协商、CSP 与 sandbox 为较开放应用提供清楚边界。",
+      "tradeoffs": "DSH 未验收此适配器。LICENSE 正在 Apache-2.0/历史 MIT 转换，普通文档 CC-BY-4.0；不能只看 package.json 的 MIT。",
+      "appliedTo": [],
+      "adoptionBoundary": "仅候选适配设计；不宣称 MCP Apps 兼容。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "dsh-genui-whitelist",
+      "repo": "omdsh-dev/dsh-genui",
+      "layer": "dsh-plugin",
+      "decision": "existing-interop",
+      "source": {
+        "commit": "ad8dc166deaf4eee7dea758fc0a84a8728402b52",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/omdsh-dev/dsh-genui",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/LICENSE",
+            "sha256OfFetchedText": "f4d265194e0824721af0592462a71fe750c04db3565c23c5d6c65fdee25fb4b0"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/README.md",
+            "sha256OfFetchedText": "69379b90707103872911dc6b18e6eb404d5823d26bac6ed3c4181b2a5e1e82f5"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/package.json",
+            "sha256OfFetchedText": "91ee58a1fb4394f2f9b1a96ea58a68bca08001af8b0631bba794bba163995a97"
+          },
+          {
+            "path": "src/plugin/index.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/plugin/index.ts",
+            "sha256OfFetchedText": "752583ab3aa2cccb1be21403ff9ba6f4b81d6f3cba8abe403b92b38ab07f2fc7"
+          },
+          {
+            "path": "src/plugin/chart-contract.ts",
+            "url": "https://github.com/omdsh-dev/dsh-genui/blob/ad8dc166deaf4eee7dea758fc0a84a8728402b52/src/plugin/chart-contract.ts",
+            "sha256OfFetchedText": "90803fd8f6b31b2a586001be5e04774e684147d93d55a9cc2df1bfa4833e1911"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@changfenhuang/dsh-genui",
+          "version": "0.14.0",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "react": "^18.0.0 || ^19.0.0"
+          }
+        }
+      ],
+      "strengths": "白名单表单、测验、图表和动作回传；已有 DSH 原生集成。",
+      "tradeoffs": "已实测的是冻结 npm 0.14.0；本次 main commit 是另一个源码快照。renderUiTool=false 仍保留其它生成指引；ECharts option 直通不移植。",
+      "appliedTo": [],
+      "adoptionBoundary": "已有固定 npm 版本共存/真实表单回传证据，不代表新 main 全部行为验收。",
+      "validation": "Frozen public npm 0.14.0 tested separately; this HEAD is source research only."
+    },
+    {
+      "id": "dsh-genui-app",
+      "repo": "pengyue-polaron/deepseek-harness-genui",
+      "layer": "dsh-plugin",
+      "decision": "reference-only",
+      "source": {
+        "commit": "f6289bc709c5b1992c851bf5e63237a5fa453e1f",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/pengyue-polaron/deepseek-harness-genui",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/README.md",
+            "sha256OfFetchedText": "42d0d889968aaaededee151d6db6e88b8cee2adfd90f184f4ba3d89b285f730d"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/LICENSE",
+            "sha256OfFetchedText": "3d2426067b28384e7567084e8a9dd3e60e8cc9b7ff7e38ee64bbf185ebe46e54"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/f6289bc709c5b1992c851bf5e63237a5fa453e1f/package.json",
+            "sha256OfFetchedText": "15ed67dae5ec045e0b9bff456b0187821a9782ea4c27195913a4d13997715ded"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "dsh-plugin-genui",
+          "version": "0.15.1",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "lucide-react": "^0.468.0",
+            "react": "^18.3.1",
+            "recharts": "^3.10.1",
+            "zustand": "^5.0.8"
+          }
+        }
+      ],
+      "strengths": "完整 React/TypeScript 应用和下轮可读的应用状态适合任务型小工具。",
+      "tradeoffs": "manifest 声明 DSH 0.1.x 范围，不覆盖本项目 0.2.1-rc.2；不因功能更广就推荐直接安装。",
+      "appliedTo": [],
+      "adoptionBoundary": "源码/manifest 研究；未在本项目宿主执行。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "shadcn",
+      "repo": "shadcn-ui/ui",
+      "layer": "component-kit",
+      "decision": "candidate",
+      "source": {
+        "commit": "3d98900e9b73c45f035f8109e9d41ba6a51685e7",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/shadcn-ui/ui",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/shadcn-ui/ui/blob/3d98900e9b73c45f035f8109e9d41ba6a51685e7/README.md",
+            "sha256OfFetchedText": "bb0869848a2063e405b141aa6fae8b10f132ac45036f613459e2d778b7609619"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/shadcn-ui/ui/blob/3d98900e9b73c45f035f8109e9d41ba6a51685e7/LICENSE.md",
+            "sha256OfFetchedText": "1564074e13439397221ffd522e2e504d56561994a23d371aa5e3ad43e4f5423f"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [],
+      "strengths": "组件源码归应用维护，可只采用所需交互原语和主题 token。",
+      "tradeoffs": "需要承担复制后维护和可访问性验证；本项目不为获得一个控件装整套样式体系。",
+      "appliedTo": [],
+      "adoptionBoundary": "未来有界表单原语候选，未复制代码。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "rjsf",
+      "repo": "rjsf-team/react-jsonschema-form",
+      "layer": "form-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "14cab6f31d09d85b6ec6a4cbe030044c403576fc",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/rjsf-team/react-jsonschema-form",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/rjsf-team/react-jsonschema-form/blob/14cab6f31d09d85b6ec6a4cbe030044c403576fc/README.md",
+            "sha256OfFetchedText": "c08f80146713eb1f4de070de619a6c2e48dc7b4ff46b47ba1a76379322fdd67d"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/rjsf-team/react-jsonschema-form/blob/14cab6f31d09d85b6ec6a4cbe030044c403576fc/LICENSE.md",
+            "sha256OfFetchedText": "2590ed517c3e27c426127a85b4559cf8c7a287f1dd3a12892e8a10cb7d49c8ca"
+          },
+          {
+            "path": "packages/core/package.json",
+            "url": "https://github.com/rjsf-team/react-jsonschema-form/blob/14cab6f31d09d85b6ec6a4cbe030044c403576fc/packages/core/package.json",
+            "sha256OfFetchedText": "e06dcbdff84443ea811020993826a3e78094baca4cd0ec23e82967a2bfe47c0e"
+          }
+        ]
+      },
+      "license": {
+        "expression": "Apache-2.0",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/core/package.json",
+          "name": "@rjsf/core",
+          "version": "6.11.0",
+          "private": false,
+          "license": "Apache-2.0",
+          "dependencies": {
+            "react": ">=18"
+          }
+        }
+      ],
+      "strengths": "JSON Schema 与界面配置/validator 分离，跨主题的受控表单。",
+      "tradeoffs": "完整 schema/validator/自定义 widget 范围较大；先限制字段与规则目录，再设计 DSH 提交收据。",
+      "appliedTo": [],
+      "adoptionBoundary": "未来有界表单候选，未接入或宣称回传已实现。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "surveyjs",
+      "repo": "surveyjs/survey-library",
+      "layer": "form-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "3a28913a07b4aa1bed8db14ed0519688d3f8f97b",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/surveyjs/survey-library",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/surveyjs/survey-library/blob/3a28913a07b4aa1bed8db14ed0519688d3f8f97b/README.md",
+            "sha256OfFetchedText": "91f0720f6b4227f165a457889596b4722fec26bf65f96ec1e53b0f4bad2eb847"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/surveyjs/survey-library/blob/3a28913a07b4aa1bed8db14ed0519688d3f8f97b/LICENSE",
+            "sha256OfFetchedText": "ef2cef07ff83d3ab514f530d85b8b86eb5979f2897eabb875cb69c2bbd8ee611"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [],
+      "strengths": "JSON 表单、多步骤、条件可见性和测验适合信息收集。",
+      "tradeoffs": "Form Library 为 MIT；Creator、Dashboard、PDF 属不同商业产品。复杂表达式/文件上传不直接进入模型可写目录。",
+      "appliedTo": [],
+      "adoptionBoundary": "仅选型；没有引入商业组件。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "echarts",
+      "repo": "apache/echarts",
+      "layer": "chart-engine",
+      "decision": "existing-runtime",
+      "source": {
+        "commit": "34f4d927eafe251f26f63afd3aeefa30f2feba30",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/apache/echarts",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/apache/echarts/blob/34f4d927eafe251f26f63afd3aeefa30f2feba30/README.md",
+            "sha256OfFetchedText": "8cc8864325843d975f082cba0fd4cf208093feffb03568f48f164725dab8ebf9"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/apache/echarts/blob/34f4d927eafe251f26f63afd3aeefa30f2feba30/LICENSE",
+            "sha256OfFetchedText": "634293835b43a6dd2094fa39182a3d9a6b9ca43b7fdb9ac354e8037af2a3093a"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/apache/echarts/blob/34f4d927eafe251f26f63afd3aeefa30f2feba30/package.json",
+            "sha256OfFetchedText": "3b5f84e135d641960271dd2d7d63b5486896a471fee8e0e841f822fa3846bb28"
+          }
+        ]
+      },
+      "license": {
+        "expression": "Apache-2.0",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "echarts",
+          "version": "6.1.0",
+          "private": false,
+          "license": "Apache-2.0",
+          "dependencies": {
+            "zrender": "6.1.0"
+          }
+        }
+      ],
+      "strengths": "模块化 SVG/Canvas、系列/坐标轴交互丰富，当前引擎已稳定接入。",
+      "tradeoffs": "继续用受限语义载荷编译配置；本轮补注册 AriaComponent 并让可访问描述随选择更新。",
+      "appliedTo": [
+        "src/components/DataChart.tsx",
+        "tests/host-browser.mjs"
+      ],
+      "adoptionBoundary": "已有引擎；本轮修复实际无障碍模块遗漏。",
+      "validation": "Existing pinned dependency already exercised in this project; this HEAD snapshot is not an upgrade test."
+    },
+    {
+      "id": "vega-lite",
+      "repo": "vega/vega-lite",
+      "layer": "chart-grammar",
+      "decision": "candidate",
+      "source": {
+        "commit": "85fab8d12c873b3b224ef9a33c807642953325ba",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/vega/vega-lite",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/vega/vega-lite/blob/85fab8d12c873b3b224ef9a33c807642953325ba/LICENSE",
+            "sha256OfFetchedText": "f618900fd0d64046963b29f40590cdd1e341a2f41449f99110d82fd81fea808c"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/vega/vega-lite/blob/85fab8d12c873b3b224ef9a33c807642953325ba/README.md",
+            "sha256OfFetchedText": "fc43a69cb2874d9ecf8e94e0e560cd86620d916170ecdba5d308f3efc12845eb"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/vega/vega-lite/blob/85fab8d12c873b3b224ef9a33c807642953325ba/package.json",
+            "sha256OfFetchedText": "6e702fb398bb612cb76a569581916075d1db3b5dda87f5814414d41a18ecfbb5"
+          }
+        ]
+      },
+      "license": {
+        "expression": "BSD-3-Clause",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "vega-lite",
+          "version": "6.5.0",
+          "private": false,
+          "license": "BSD-3-Clause",
+          "dependencies": {
+            "vega-event-selector": "~4.0.0",
+            "vega-expression": "~6.2.2",
+            "vega-util": "~2.1.3",
+            "vega": "^6.4.0"
+          }
+        }
+      ],
+      "strengths": "mark/encoding/transform/parameter 把图形和交互组合为声明式语法。",
+      "tradeoffs": "未来复杂统计/关联视图候选。原始 spec 有 URL 与表达式能力，不能作为当前模型 option 直通；需自己的安全子集和统计方法。",
+      "appliedTo": [],
+      "adoptionBoundary": "文档/manifest 研究，未新增 renderer。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "observable-plot",
+      "repo": "observablehq/plot",
+      "layer": "chart-grammar",
+      "decision": "reference-only",
+      "source": {
+        "commit": "535723d5e433727720d9b673c31622821bb03210",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/observablehq/plot",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/README.md",
+            "sha256OfFetchedText": "4654799ebb8ad20cc87e2bf1fb894fbc35073a02e1f1f8f15d3bf3ff3a674dac"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/LICENSE",
+            "sha256OfFetchedText": "4b295e011e0e046170041b5b46f1349393aeceb95797793a55bd21dbb543363a"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/package.json",
+            "sha256OfFetchedText": "d7fe81d0430b4f10d797e4b1ad3e0bf8589b8de7fa5c3f0019affeb7a503e3de"
+          }
+        ]
+      },
+      "license": {
+        "expression": "ISC",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@observablehq/plot",
+          "version": "0.6.17",
+          "private": false,
+          "license": "ISC",
+          "dependencies": {
+            "d3": "^7.9.0"
+          }
+        }
+      ],
+      "strengths": "探索性统计图与 bin/group/window 等变换清楚分层。",
+      "tradeoffs": "吸收空箱/缺失和口径检查；不把含函数的 Plot/JS option 交给模型执行，也不自动补全分位数方法。",
+      "appliedTo": [],
+      "adoptionBoundary": "统计语义参考；当前仍用自有纯函数与 ECharts。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "d3",
+      "repo": "d3/d3",
+      "layer": "visualization-primitives",
+      "decision": "reference-only",
+      "source": {
+        "commit": "3d1a90c30805c17b79eb24c13c5aa45454534850",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/d3/d3",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/d3/d3/blob/3d1a90c30805c17b79eb24c13c5aa45454534850/README.md",
+            "sha256OfFetchedText": "1a0ae703426b282df2102bb5944ed3dd56940759dadc416cf45dad83b1cd6f40"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/d3/d3/blob/3d1a90c30805c17b79eb24c13c5aa45454534850/LICENSE",
+            "sha256OfFetchedText": "3e6849627f74ff73c257a3ae1efb574015d94fc1035c05ec3c15805165efcbc4"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/d3/d3/blob/3d1a90c30805c17b79eb24c13c5aa45454534850/package.json",
+            "sha256OfFetchedText": "fbc10b238e56da7eeb0fdb1c8fc1d95fcbe8ec5a12df2b0344d8c835198b1e22"
+          }
+        ]
+      },
+      "license": {
+        "expression": "ISC",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "d3",
+          "version": "7.9.0",
+          "private": false,
+          "license": "ISC",
+          "dependencies": {
+            "d3-array": "^3.2.4",
+            "d3-axis": "^3.0.0",
+            "d3-brush": "^3.0.0",
+            "d3-chord": "^3.0.1",
+            "d3-color": "^3.1.0",
+            "d3-contour": "^4.0.2",
+            "d3-delaunay": "^6.0.4",
+            "d3-dispatch": "^3.0.1",
+            "d3-drag": "^3.0.0",
+            "d3-dsv": "^3.0.1",
+            "d3-ease": "^3.0.1",
+            "d3-fetch": "^3.0.1",
+            "d3-force": "^3.0.0",
+            "d3-format": "^3.1.0",
+            "d3-geo": "^3.1.1",
+            "d3-hierarchy": "^3.1.2",
+            "d3-interpolate": "^3.0.1",
+            "d3-path": "^3.1.0",
+            "d3-polygon": "^3.0.1",
+            "d3-quadtree": "^3.0.1",
+            "d3-random": "^3.0.1",
+            "d3-scale": "^4.0.2",
+            "d3-scale-chromatic": "^3.1.0",
+            "d3-selection": "^3.0.0",
+            "d3-shape": "^3.2.0",
+            "d3-time": "^3.1.0",
+            "d3-time-format": "^4.1.0",
+            "d3-timer": "^3.0.1",
+            "d3-transition": "^3.0.1",
+            "d3-zoom": "^3.0.0"
+          }
+        }
+      ],
+      "strengths": "比例尺、形状、层次/地理/交互原语可分别组合。",
+      "tradeoffs": "自由度高，布局、可访问性和生命周期由应用承担；不是开箱即用的 Agent UI 协议。",
+      "appliedTo": [],
+      "adoptionBoundary": "底层构建思想参考，不新增全量 d3 依赖。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "recharts",
+      "repo": "recharts/recharts",
+      "layer": "chart-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "acbf510580468fd2ce4fe15f49aef51894346f88",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/recharts/recharts",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/recharts/recharts/blob/acbf510580468fd2ce4fe15f49aef51894346f88/LICENSE",
+            "sha256OfFetchedText": "2d3aa48a8d1d3b93093680e8e68d3a64cfb590c3ade377ffcaefc69dac7c2ce5"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/recharts/recharts/blob/acbf510580468fd2ce4fe15f49aef51894346f88/README.md",
+            "sha256OfFetchedText": "f855882c0ab7bfe083228cd0ae2b7dd73a20eb827fee21bebb5fbb4ef297b93a"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/recharts/recharts/blob/acbf510580468fd2ce4fe15f49aef51894346f88/package.json",
+            "sha256OfFetchedText": "8374479d43edf0cd4689ea736063204d14dedd1c788118a4db784c9d1f3a8f09"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "recharts",
+          "version": "3.11.0-canary.6",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "react": "^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0",
+            "@types/react": "*"
+          }
+        }
+      ],
+      "strengths": "React 声明式组件组合，SVG 易于随应用主题定制。",
+      "tradeoffs": "与现有 ECharts 重叠，不双装同类引擎；默认分支 manifest 为 canary，不等同稳定 npm 发行。",
+      "appliedTo": [],
+      "adoptionBoundary": "替代引擎候选，未迁移。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "visx",
+      "repo": "airbnb/visx",
+      "layer": "visualization-primitives",
+      "decision": "candidate",
+      "source": {
+        "commit": "485c0359664ee8e612992defb16e1f035ed40b23",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/airbnb/visx",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/airbnb/visx/blob/485c0359664ee8e612992defb16e1f035ed40b23/LICENSE",
+            "sha256OfFetchedText": "8c766533b7d4200b4dfb1a1afff396e3665460d21d7b4c34d059efcb5a332c84"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/airbnb/visx/blob/485c0359664ee8e612992defb16e1f035ed40b23/README.md",
+            "sha256OfFetchedText": "9b135a0989943619d964c98f4532f051493e7b7d90337b2fa4069fadead96e55"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/airbnb/visx/blob/485c0359664ee8e612992defb16e1f035ed40b23/package.json",
+            "sha256OfFetchedText": "ab34cfba7cb357ee27bf190c04a234695bcaeaf341f788fff6a698c564a330fc"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@visx/root",
+          "version": "0.0.0",
+          "private": true,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "React+D3 的低层组件可制作产品特有图形。",
+      "tradeoffs": "构建完整坐标轴/控件/无障碍需要自己维护；root 私有包 0.0.0 不是组件发行版本。",
+      "appliedTo": [],
+      "adoptionBoundary": "仅特殊图形需求候选。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "nivo",
+      "repo": "plouc/nivo",
+      "layer": "chart-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "0dae2c32052a573f9f1d66ec1b453b572119b265",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/plouc/nivo",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/plouc/nivo/blob/0dae2c32052a573f9f1d66ec1b453b572119b265/README.md",
+            "sha256OfFetchedText": "365f421d03abc96ab85e18657e338a8b958840d04d005a7dff7465b630d51ee9"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/plouc/nivo/blob/0dae2c32052a573f9f1d66ec1b453b572119b265/LICENSE.md",
+            "sha256OfFetchedText": "a2a2442ac2f3c1e7377942c51caa0b63be81e0c5227ad0f1d9b9e16be1b99b31"
+          },
+          {
+            "path": "packages/core/package.json",
+            "url": "https://github.com/plouc/nivo/blob/0dae2c32052a573f9f1d66ec1b453b572119b265/packages/core/package.json",
+            "sha256OfFetchedText": "d789634bd1ed39d5ac9c87abaef36450cfa0ec2b02908684fd7fe4834a4cea30"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/core/package.json",
+          "name": "@nivo/core",
+          "version": "0.99.0",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@types/d3-shape": "^3.1.6",
+            "d3-color": "^3.1.0",
+            "d3-format": "^1.4.4",
+            "d3-interpolate": "^3.0.1",
+            "d3-scale": "^4.0.2",
+            "d3-scale-chromatic": "^3.0.0",
+            "d3-shape": "^3.2.0",
+            "d3-time-format": "^3.0.0",
+            "react": "^16.14 || ^17.0 || ^18.0 || ^19.0"
+          }
+        }
+      ],
+      "strengths": "丰富预制 React 图形，SVG/Canvas 与主题能力方便应用使用。",
+      "tradeoffs": "图种数量不证明数据含义，需逐图验证；当前无必要叠加完整组件体系。",
+      "appliedTo": [],
+      "adoptionBoundary": "只保留特定图形候选。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "chartjs",
+      "repo": "chartjs/Chart.js",
+      "layer": "chart-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "76d8cf895a7485dc838c90ef37e2bc9d9e388fcb",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/chartjs/Chart.js",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/chartjs/Chart.js/blob/76d8cf895a7485dc838c90ef37e2bc9d9e388fcb/README.md",
+            "sha256OfFetchedText": "30418232ad2cc5a51fa0938e12dc97e31cfd1fb3b0bc352132f281c0c10da348"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/chartjs/Chart.js/blob/76d8cf895a7485dc838c90ef37e2bc9d9e388fcb/LICENSE.md",
+            "sha256OfFetchedText": "41a84aa2caba645f966a18d9c2056b73e6d3a81d80bc0046bc0011a2634d4cce"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/chartjs/Chart.js/blob/76d8cf895a7485dc838c90ef37e2bc9d9e388fcb/package.json",
+            "sha256OfFetchedText": "7c2ba274b47a8606a6db7730df328a7875bfbd92744f31fb425509c2e8d8191e"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "chart.js",
+          "version": "4.6.1",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "Canvas 图表与插件体系适合普通仪表盘。",
+      "tradeoffs": "Canvas 可访问性需应用补等价文本/源表；不能以 renderer 切换代替统计口径验证。",
+      "appliedTo": [],
+      "adoptionBoundary": "普通 Canvas 图表候选，不更换当前引擎。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "uplot",
+      "repo": "leeoniya/uPlot",
+      "layer": "chart-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "7807ebb3e20a4f327628ca5413043e61934d101e",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/leeoniya/uPlot",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/leeoniya/uPlot/blob/7807ebb3e20a4f327628ca5413043e61934d101e/LICENSE",
+            "sha256OfFetchedText": "8f989229699b4fe2f1a0432d0e9edc338a8a911e250e2d1b01ecd770a5f5b1bd"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/leeoniya/uPlot/blob/7807ebb3e20a4f327628ca5413043e61934d101e/README.md",
+            "sha256OfFetchedText": "64c31fb7822b8cb33bee8718fc1a550534f7bd6bcbb918549bf65c95472ba01e"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/leeoniya/uPlot/blob/7807ebb3e20a4f327628ca5413043e61934d101e/package.json",
+            "sha256OfFetchedText": "3256a9ce42afbaeac0ade6272988200a3ebace55fbe3272fa6ab506389aaaade"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "uplot",
+          "version": "1.6.32",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "面向稠密时间序列，明确 aligned x/null 数据格式与 cursor/zoom。",
+      "tradeoffs": "适合作为将来大时序专用 renderer；厂商性能数字未复测，当前 2000 行不构成迁移动机。",
+      "appliedTo": [],
+      "adoptionBoundary": "未来性能候选，无本地性能结论。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "plotly",
+      "repo": "plotly/plotly.js",
+      "layer": "chart-engine",
+      "decision": "candidate",
+      "source": {
+        "commit": "96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/plotly/plotly.js",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/plotly/plotly.js/blob/96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2/README.md",
+            "sha256OfFetchedText": "fea6ce7917d644bad473e21be6828c07877aa5e76a9b7bdcfbe70b3ab917e4e5"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/plotly/plotly.js/blob/96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2/LICENSE",
+            "sha256OfFetchedText": "8c45d9eaf50c2f72dd9c7ab9ef440788ba58a3538484b5c51c1f17d5128752e7"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/plotly/plotly.js/blob/96c9eb33d55f4b3ef7ec177adfcc2f542904bfb2/package.json",
+            "sha256OfFetchedText": "6b987c5ae366ded1513ac05c1d934e0ffc51dcb8f393f9fbf309149eab0bff2f"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "plotly.js",
+          "version": "4.1.2",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@plotly/d3": "3.8.2",
+            "@plotly/d3-sankey": "0.12.3",
+            "@plotly/d3-sankey-circular": "0.33.1",
+            "@types/d3": "^3.5.53",
+            "d3-force": "^1.2.1",
+            "d3-format": "^1.4.5",
+            "d3-geo": "^1.12.1",
+            "d3-geo-projection": "^2.9.0",
+            "d3-hierarchy": "^1.1.9",
+            "d3-interpolate": "^3.0.1",
+            "d3-time": "^1.1.0",
+            "d3-time-format": "^2.3.0"
+          }
+        }
+      ],
+      "strengths": "科学、统计、金融与 3D trace 覆盖较广。",
+      "tradeoffs": "专用复杂图候选，需要按 trace 拆包、WebGL 上下文预算和方法语义验证；不整包替换当前通用图表。",
+      "appliedTo": [],
+      "adoptionBoundary": "未安装或测量包体/性能。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "tanstack-charts",
+      "repo": "TanStack/charts",
+      "layer": "chart-grammar",
+      "decision": "candidate",
+      "source": {
+        "commit": "778f2cc6ca174256ba9d9f6cf603af94bb70db8b",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/TanStack/charts",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/TanStack/charts/blob/778f2cc6ca174256ba9d9f6cf603af94bb70db8b/LICENSE",
+            "sha256OfFetchedText": "a09cf172b475f76e0cb456e3cd346b1aa3fe5169ae5454f9f7fbe98b3e93c85f"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/TanStack/charts/blob/778f2cc6ca174256ba9d9f6cf603af94bb70db8b/README.md",
+            "sha256OfFetchedText": "8e93c66dd8774b5f347ba6b4e3dd52d2e9b8210147ea397485fa8d0f54b409fc"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/TanStack/charts/blob/778f2cc6ca174256ba9d9f6cf603af94bb70db8b/package.json",
+            "sha256OfFetchedText": "b43bcc37d7e95210e79f4642862df2350b09969a37f351d200a33baf328e4830"
+          },
+          {
+            "path": "docs/compatibility.md",
+            "url": "https://github.com/TanStack/charts/blob/778f2cc6ca174256ba9d9f6cf603af94bb70db8b/docs/compatibility.md",
+            "sha256OfFetchedText": "ef1c4eaebb88df1cdbb2b9fa6f04073f67aa2994f5d1bab558d278e055c11fc5"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "tanstack-charts",
+          "private": true,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "typed grammar、scene/renderer 分离、按子路径加载和可访问交互契约。",
+      "tradeoffs": "README 指明 main 未发布并指向 v1.1.0；renderer 支持不完全相同，不把原生端静态检查当设备验收。",
+      "appliedTo": [],
+      "adoptionBoundary": "新候选，未跑本项目工作负载。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "antv-g2",
+      "repo": "antvis/G2",
+      "layer": "chart-grammar",
+      "decision": "candidate",
+      "source": {
+        "commit": "94526ab37787d5aee552042bc7708bdb447ace67",
+        "defaultBranch": "v5",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/antvis/G2",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/antvis/G2/blob/94526ab37787d5aee552042bc7708bdb447ace67/LICENSE",
+            "sha256OfFetchedText": "98edde832138822906fb3f365b59a9a54b3abf6e85e52de0f5f1fd804ff83ab7"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/antvis/G2/blob/94526ab37787d5aee552042bc7708bdb447ace67/README.md",
+            "sha256OfFetchedText": "6e5f5dc33d0a96d5772295cd870ba896785be6be08afa7cd6d761aefb373b302"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/antvis/G2/blob/94526ab37787d5aee552042bc7708bdb447ace67/package.json",
+            "sha256OfFetchedText": "42ece136f41dd5e6b891a472830ae2c95943d802b0590faef12c1aad04c43ce5"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@antv/g2",
+          "version": "5.4.8",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "声明式图形语法与 AntV G 多 renderer/交互生态。",
+      "tradeoffs": "复杂语法要由可信编译器生成，不接收任意回调；已有 ECharts 时先证明特定需求。",
+      "appliedTo": [],
+      "adoptionBoundary": "复杂图形候选，未新增依赖。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "react-flow",
+      "repo": "xyflow/xyflow",
+      "layer": "graph-ui",
+      "decision": "existing-runtime",
+      "source": {
+        "commit": "8523d8dd9f1551954bc221dccabd6a3119ef9e22",
+        "defaultBranch": "main",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/xyflow/xyflow",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/xyflow/xyflow/blob/8523d8dd9f1551954bc221dccabd6a3119ef9e22/LICENSE",
+            "sha256OfFetchedText": "023119ac20fb1c8c9930abe0bcd196989a1960388529a96fc43cebf96f07c9ff"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/xyflow/xyflow/blob/8523d8dd9f1551954bc221dccabd6a3119ef9e22/README.md",
+            "sha256OfFetchedText": "be7df4c1810d7c7d0e44e26d08404a97fa9ab62d3fdf3e5fd4c31f3070472d63"
+          },
+          {
+            "path": "packages/react/package.json",
+            "url": "https://github.com/xyflow/xyflow/blob/8523d8dd9f1551954bc221dccabd6a3119ef9e22/packages/react/package.json",
+            "sha256OfFetchedText": "f673232dd6c317b221f3a6a3fae2ba7e6930ce12626ab440a922f403c993ad3a"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/react/package.json",
+          "name": "@xyflow/react",
+          "version": "12.12.0",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "zustand": "^4.4.0",
+            "@types/react": ">=17",
+            "react": ">=17"
+          }
+        }
+      ],
+      "strengths": "节点界面、视口/选择/定位与自定义 React 节点成熟易组合。",
+      "tradeoffs": "它是交互层，不是自动布局/事实推理。保留用户给定方向和边，Pro 模板与 MIT 核心区分。",
+      "appliedTo": [
+        "src/components/ArchitectureExplorer.tsx"
+      ],
+      "adoptionBoundary": "已有 12.12.0 运行依赖，保持。",
+      "validation": "Existing pinned dependency already exercised in this project; this HEAD snapshot is not an upgrade test."
+    },
+    {
+      "id": "dagre",
+      "repo": "dagrejs/dagre",
+      "layer": "graph-layout",
+      "decision": "existing-runtime",
+      "source": {
+        "commit": "32e7f30f97f029fbfc89ce50e072d4fc16145838",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/dagrejs/dagre",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/dagrejs/dagre/blob/32e7f30f97f029fbfc89ce50e072d4fc16145838/README.md",
+            "sha256OfFetchedText": "c358b9119e416c36bdc692b85839bff787800e0ae73a444ae781d68327d6eb08"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/dagrejs/dagre/blob/32e7f30f97f029fbfc89ce50e072d4fc16145838/LICENSE",
+            "sha256OfFetchedText": "6a349742a6cb219d5a2fc8d0844f6d89a6efc62e20c664450d884fc7ff2d6015"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/dagrejs/dagre/blob/32e7f30f97f029fbfc89ce50e072d4fc16145838/package.json",
+            "sha256OfFetchedText": "fb3a64805b845df430565e7d3107341defba3c669617fa512541c9ea2dde277c"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "@dagrejs/dagre",
+          "version": "3.1.2-pre",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "方向性节点边图的初始分层布局，适合当前平面关系图。",
+      "tradeoffs": "保留冻结 3.1.1；main 的 3.1.2-pre 不作为升级理由；不承诺复杂嵌套分组。",
+      "appliedTo": [
+        "src/components/ArchitectureExplorer.tsx"
+      ],
+      "adoptionBoundary": "已有运行依赖，非本轮换引擎。",
+      "validation": "Existing pinned dependency already exercised in this project; this HEAD snapshot is not an upgrade test."
+    },
+    {
+      "id": "antv-g6",
+      "repo": "antvis/G6",
+      "layer": "graph-ui",
+      "decision": "candidate",
+      "source": {
+        "commit": "55a74698a9b432df993daae744c4c5526ab097b0",
+        "defaultBranch": "v5",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/antvis/G6",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/antvis/G6/blob/55a74698a9b432df993daae744c4c5526ab097b0/LICENSE",
+            "sha256OfFetchedText": "d296127a77fae081300d5b18fcfa5ccda75cd16670c1b46dc890a8903ca95128"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/antvis/G6/blob/55a74698a9b432df993daae744c4c5526ab097b0/README.md",
+            "sha256OfFetchedText": "78a64c70bb5a59dc7b3029f70c7945c2be3dd998f1f374635d5e70c7899f37f3"
+          },
+          {
+            "path": "packages/g6/package.json",
+            "url": "https://github.com/antvis/G6/blob/55a74698a9b432df993daae744c4c5526ab097b0/packages/g6/package.json",
+            "sha256OfFetchedText": "7d07f2eb4a8b490ae93b13079ebc501a528ccdc66a99c2d57378a22187b57bcd"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "packages/g6/package.json",
+          "name": "@antv/g6",
+          "version": "5.1.1",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "关系图布局、交互行为、combo 与渲染器生态较广。",
+      "tradeoffs": "复杂关系网候选；不与 React Flow 重复装载，不把图算法输出冒充用户事实。",
+      "appliedTo": [],
+      "adoptionBoundary": "源码/manifest 研究，未做规模实测。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "cytoscape",
+      "repo": "cytoscape/cytoscape.js",
+      "layer": "graph-ui",
+      "decision": "candidate",
+      "source": {
+        "commit": "9aab1b4489645c15e82fce71fdce738f58d8165d",
+        "defaultBranch": "unstable",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/cytoscape/cytoscape.js",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/cytoscape/cytoscape.js/blob/9aab1b4489645c15e82fce71fdce738f58d8165d/LICENSE",
+            "sha256OfFetchedText": "a29c0d78a54de204b78357976c3d272a573b8592d0478b9db07af3f1da31a65a"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/cytoscape/cytoscape.js/blob/9aab1b4489645c15e82fce71fdce738f58d8165d/README.md",
+            "sha256OfFetchedText": "d76cc17e7f9ca5ca5d5269376ff6445eb02ecfbd86aa17ea8318e99874979a72"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/cytoscape/cytoscape.js/blob/9aab1b4489645c15e82fce71fdce738f58d8165d/package.json",
+            "sha256OfFetchedText": "fd5e9a9d12b4b8473e69ad2aa1d15d0d8cbef25c7ae253896a17ecb9dd4c6c75"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "cytoscape",
+          "version": "3.35.0-unstable",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "图论分析与关系网络显示结合，适合分析型网络任务。",
+      "tradeoffs": "默认 unstable 分支的 manifest 不能作为生产版本；与流程节点 UI 的侧重点不同。",
+      "appliedTo": [],
+      "adoptionBoundary": "网络分析候选，未新增算法/renderer。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "elkjs",
+      "repo": "kieler/elkjs",
+      "layer": "graph-layout",
+      "decision": "candidate",
+      "source": {
+        "commit": "95f18bf65e59b6a8973aece313ddfb04ca9a1bb1",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/kieler/elkjs",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/kieler/elkjs/blob/95f18bf65e59b6a8973aece313ddfb04ca9a1bb1/README.md",
+            "sha256OfFetchedText": "b2d1f5d457f07b28356f400b6600ea62f5239f0d0db51b23933d4aa47711d95c"
+          },
+          {
+            "path": "LICENSE.md",
+            "url": "https://github.com/kieler/elkjs/blob/95f18bf65e59b6a8973aece313ddfb04ca9a1bb1/LICENSE.md",
+            "sha256OfFetchedText": "637e81f4a1b6b4079535c499fca05e238cf7605c1ff5b76d60d7da7ce96700c9"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/kieler/elkjs/blob/95f18bf65e59b6a8973aece313ddfb04ca9a1bb1/package.json",
+            "sha256OfFetchedText": "d9dd38f4dedde47958711e584f316124b849f4fd9a870efb3068a2ffe6df3dea"
+          }
+        ]
+      },
+      "license": {
+        "expression": "EPL-2.0",
+        "manifestExpression": "EPL-2.0 OR GPL-3.0-or-later",
+        "note": "File and package metadata differ in detail; verify chosen distributed artifact before reuse.",
+        "sourceFiles": [
+          "LICENSE.md"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "elkjs",
+          "version": "0.13.0",
+          "private": false,
+          "license": "EPL-2.0 OR GPL-3.0-or-later",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "层次布局、端口与复杂节点连接适合更复杂工程图。",
+      "tradeoffs": "仅布局引擎。EPL-2.0 文件与 manifest 的 EPL/GPL 选项应按实际发行核对；当前没有移植或再许可。",
+      "appliedTo": [],
+      "adoptionBoundary": "嵌套/端口布局候选，非当前平面图承诺。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "threejs",
+      "repo": "mrdoob/three.js",
+      "layer": "3d-engine",
+      "decision": "defer",
+      "source": {
+        "commit": "ee6a50ecf766fd9010951ab384120db9dd13b902",
+        "defaultBranch": "dev",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/mrdoob/three.js",
+        "files": [
+          {
+            "path": "README.md",
+            "url": "https://github.com/mrdoob/three.js/blob/ee6a50ecf766fd9010951ab384120db9dd13b902/README.md",
+            "sha256OfFetchedText": "d553d824625a07d7690de93af6f8daf13d6aaed42700929d7ce4e725fa5ef10d"
+          },
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/mrdoob/three.js/blob/ee6a50ecf766fd9010951ab384120db9dd13b902/LICENSE",
+            "sha256OfFetchedText": "8b378ebe60e2fe500158cb0ac71cb5e8b7d92953c2abcc63a0eb90499653b5bc"
+          },
+          {
+            "path": "package.json",
+            "url": "https://github.com/mrdoob/three.js/blob/ee6a50ecf766fd9010951ab384120db9dd13b902/package.json",
+            "sha256OfFetchedText": "50e651ded364f9b1d0325bec5af816e2fd83679b9122ba58b4f009862bd4cd0c"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "package.json",
+          "name": "three",
+          "version": "0.186.0",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {}
+        }
+      ],
+      "strengths": "通用 3D 场景和 WebGL/WebGPU renderer。",
+      "tradeoffs": "只有真实空间理解任务才考虑受限 Scene catalog；资源、资产来源与设备能力需单独设计，不能执行模型任意脚本。",
+      "appliedTo": [],
+      "adoptionBoundary": "未实现 3D 能力。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    },
+    {
+      "id": "deckgl",
+      "repo": "visgl/deck.gl",
+      "layer": "geo-engine",
+      "decision": "defer",
+      "source": {
+        "commit": "abad7af23f682e22438a4bde06a919b865014c16",
+        "defaultBranch": "master",
+        "archived": false,
+        "metadataUrl": "https://api.github.com/repos/visgl/deck.gl",
+        "files": [
+          {
+            "path": "LICENSE",
+            "url": "https://github.com/visgl/deck.gl/blob/abad7af23f682e22438a4bde06a919b865014c16/LICENSE",
+            "sha256OfFetchedText": "e499a2c2ba3b9faabe91fdfddf43e329439263264b7148e5548d0ec605cce9f2"
+          },
+          {
+            "path": "README.md",
+            "url": "https://github.com/visgl/deck.gl/blob/abad7af23f682e22438a4bde06a919b865014c16/README.md",
+            "sha256OfFetchedText": "4d392d6787f920f1181751dba014f520f021e4da40b0eb325d8f00a4c78524df"
+          },
+          {
+            "path": "modules/core/package.json",
+            "url": "https://github.com/visgl/deck.gl/blob/abad7af23f682e22438a4bde06a919b865014c16/modules/core/package.json",
+            "sha256OfFetchedText": "2e364eee75467f3d54671843aed2c47dfc6e02b066a8d1e58b83ad403d915487"
+          }
+        ]
+      },
+      "license": {
+        "expression": "MIT",
+        "sourceFiles": [
+          "LICENSE"
+        ]
+      },
+      "manifestObservations": [
+        {
+          "path": "modules/core/package.json",
+          "name": "@deck.gl/core",
+          "version": "9.4.0-beta.4",
+          "private": false,
+          "license": "MIT",
+          "dependencies": {
+            "@luma.gl/core": "^10.0.0-alpha.4",
+            "@luma.gl/engine": "^10.0.0-alpha.4",
+            "@luma.gl/gpgpu": "^10.0.0-alpha.4",
+            "@luma.gl/shadertools": "^10.0.0-alpha.4",
+            "@luma.gl/webgl": "^10.0.0-alpha.4"
+          }
+        }
+      ],
+      "strengths": "可组合 GPU 地理/大数据图层，支持 picking/highlight/filter。",
+      "tradeoffs": "需要明确坐标系、数据归属与地图服务条件；科学数据可视化不是随便套地图，未做设备/性能验证。",
+      "appliedTo": [],
+      "adoptionBoundary": "未实现地图能力。",
+      "validation": "Primary-source review only; no upstream runtime/benchmark/device certification."
+    }
+  ]
+}

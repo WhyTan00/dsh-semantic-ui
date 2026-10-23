@@ -1,6 +1,6 @@
 import{describe,it,expect}from'vitest';
-import{chartFacts}from'../src/facts';
-import{chart,distribution}from'../fixtures/examples';
+import{chartFacts,decisionFacts}from'../src/facts';
+import{chart,distribution,decision}from'../fixtures/examples';
 import type{Chart}from'../src/protocol';
 describe('deterministic numeric receipts',()=>{
  it('grounds endpoints, the actual minimum and the dip without filling missing values',()=>{
@@ -16,5 +16,14 @@ describe('deterministic numeric receipts',()=>{
  it('preserves histogram denominators while bounding large-bin receipt size',()=>{
   const p=structuredClone(distribution.payload)as Extract<Chart,{chartType:'histogram'}>;let facts=chartFacts(p);if(facts.chartType!=='histogram')throw Error('Expected histogram facts');expect(facts.groups[0]).toMatchObject({valid:8,missing:1,counts:[2,3,3],proportions:[0.25,0.375,0.375]});
   p.source={mode:'prebinned',boundaries:Array.from({length:81},(_,i)=>i),groups:[{id:'all',label:'All',counts:Array(80).fill(0),missing:1}]};facts=chartFacts(p);if(facts.chartType!=='histogram')throw Error('Expected histogram facts');expect(facts.boundaries).toBe(null);expect(facts.groups[0]).toMatchObject({valid:0,missing:1,counts:null,proportions:null});expect(facts.binDetails).toContain('omitted');
+ });
+});
+describe('declared decision receipts',()=>{
+ it('withholds an initial winner when conditions are missing, even if the summary is confident',()=>{
+  if(decision.component!=='DecisionExplorer')throw Error('Expected decision fixture');const p=structuredClone(decision.payload);p.inputs[0].initial=null;const before=JSON.stringify(p);const facts=decisionFacts(p);
+  expect(facts.status).toBe('insufficient');expect(facts.recommendedOptionIds).toEqual([]);expect(facts.missingInputs).toEqual([{id:'private',label:'Require private networking'}]);expect(facts.boundary).toContain('does not independently verify');expect(JSON.stringify(p)).toBe(before);
+ });
+ it('distinguishes a declared policy result from verified user facts',()=>{
+  if(decision.component!=='DecisionExplorer')throw Error('Expected decision fixture');const facts=decisionFacts(decision.payload);expect(facts.status).toBe('matched');expect(facts.recommendedOptionIds).toEqual(['managed']);expect(facts.declaredOriginCounts.given+facts.declaredOriginCounts.modelJudgment).toBe(decision.payload.rules.length);
  });
 });

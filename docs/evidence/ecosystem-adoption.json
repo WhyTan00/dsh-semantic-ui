@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-23",
+  "scope": "Four separately retained targeted fresh-session first attempts, not a new full frozen 11-question round. Both generation plugins enabled; same personal WorkBuddy route and high effort.",
+  "version": "0.1.0-preview.5",
+  "candidateSha256": "2ea9f12b68deb54ef2ca2e6b1a045f0c907242e0244d967812ff7190037eda62",
+  "questionMapping": {
+    "E1": "Capability/interaction boundary question",
+    "E2": "Frozen D2",
+    "E3": "Frozen D3",
+    "E4": "Same fictional form request as earlier C4"
+  },
+  "records": [
+    {
+      "id": "E1",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.5/docs/evidence/ecosystem/E1.json",
+      "requests": 14,
+      "toolNames": [
+        "dsh_semantic_ui",
+        "skill",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "bash",
+        "validate_dsh_ui"
+      ],
+      "semanticComponents": 0,
+      "genuiFences": 1,
+      "assessment": {
+        "status": "pass-with-notes",
+        "reason": "Own catalog was queried. Model inspected installed public package source and distinguishes local controls, feedback and state; inspection cost 14 model requests. Source claims are not universal UI acceptance."
+      },
+      "decisionFacts": [],
+      "pageErrors": []
+    },
+    {
+      "id": "E2",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.5/docs/evidence/ecosystem/E2.json",
+      "requests": 4,
+      "toolNames": [
+        "skill",
+        "dsh_semantic_ui",
+        "dsh_semantic_ui",
+        "dsh_semantic_ui"
+      ],
+      "semanticComponents": 1,
+      "genuiFences": 0,
+      "assessment": {
+        "status": "fail",
+        "reason": "Receipt correctly withholds a winner under missing migration conditions, but prose still frames capacity as favoring B under merely possible growth and turns capacity facts into preference rules."
+      },
+      "decisionFacts": [
+        {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "insufficient",
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [
+            "r_growth_within_B"
+          ],
+          "pendingRuleIds": [
+            "r_migrate_ok"
+          ],
+          "missingInputs": [
+            {
+              "id": "migrationTolerance",
+              "label": "对后期迁移的容忍度"
+            }
+          ],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 2,
+            "modelJudgment": 2
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "id": "E3",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.5/docs/evidence/ecosystem/E3.json",
+      "requests": 4,
+      "toolNames": [
+        "skill",
+        "dsh_semantic_ui",
+        "dsh_semantic_ui",
+        "dsh_semantic_ui"
+      ],
+      "semanticComponents": 1,
+      "genuiFences": 0,
+      "assessment": {
+        "status": "fail",
+        "reason": "Correct initial no-winner conclusion, but additional prose incorrectly requires the other dimension not to be worse even under an explicit priority; declared rules/no-match do not verify that explanation."
+      },
+      "decisionFacts": [
+        {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 3
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        }
+      ],
+      "pageErrors": []
+    },
+    {
+      "id": "E4",
+      "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.5/docs/evidence/ecosystem/E4.json",
+      "requests": 3,
+      "toolNames": [
+        "skill",
+        "validate_dsh_ui"
+      ],
+      "semanticComponents": 0,
+      "genuiFences": 1,
+      "assessment": {
+        "status": "fail",
+        "reason": "Appropriate GenUI form; draft actually survives a reload after waiting 1000ms. Extra prose says notes-only submission is allowed, but the button is disabled with notes and no theme."
+      },
+      "decisionFacts": [],
+      "pageErrors": []
+    }
+  ],
+  "formStateCheck": {
+    "caseId": "E4",
+    "waitAfterInputMs": 1000,
+    "noteOnlySubmitDisabled": true,
+    "beforeRefresh": {
+      "history": true,
+      "notes": "虚构测试：周末下午，6人以内"
+    },
+    "afterRefresh": {
+      "history": true,
+      "notes": "虚构测试：周末下午，6人以内"
+    },
+    "modelRequests": 0,
+    "submitted": false,
+    "pageErrors": [],
+    "boundary": "This model-generated form instance, after waiting for persistence; not a universal claim about all GenUI controls."
+  },
+  "interpretation": "Catalog and declared-policy receipts reach the model; numeric ARIA is tested separately with host fixtures. Correct tool/renderer choice does not prove prose or policy follows user facts. E4 draft survives this wait/reload; prior C4 reset is a different instance/timing, so neither observation generalizes to all forms.",
+  "comparisonWithPriorForm": "Prior C4 used a different generated form and immediate reload. This E4 waited 1000ms after input. These observations do not isolate which factor explains the difference.",
+  "allFirstAttemptsRetained": true,
+  "manualAnswerRetries": 0,
+  "globalRoutesOrUnrelatedServicesChanged": false,
+  "agentReadOrCopiedCredentialBytes": false,
+  "completeSemanticAcceptance": false,
+  "sourceInspectionExport": "Public derivative withholds source inspection text and unrelated skill metadata with digests; original input/output records remain private. Final answers and failures are retained without selection."
+}
