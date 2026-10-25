@@ -22,14 +22,14 @@ Preview.8 adds **computed requirements and a portable verification core**: typed
 
 Preview.9 uses **protocol1.3** to distinguish resource availability from capability support, expose hard/preference-only input links, and compute signed zero-fill comparisons explicitly. A fresh installed real DSH Native/PTC matrix covers the new predicates plus saved1.0/1.1/1.2 snapshot semantics.90 tests pass. No new natural-model requests were made: the original six semantic failures remain open. See [source mapping and limits](docs/GROUNDING-FOLLOWUP.zh-CN.md) and [versioned evidence](docs/evidence/preview9.json). Preview.8 archives, manifests, checksums and installation evidence remain unchanged.
 
-Working source candidate **preview.10-dev.0** adds an inspectable missing-value comparison using the existing core and an explicit unverified-model explanation label. 94 tests and targeted real DSH Native/PTC checks passed; no new model calls or release. See the [local checkpoint](docs/CHART-COMPARISON.zh-CN.md). Published preview.9 remains unchanged.
+**Preview.10** adds an inspectable missing-value comparison using the existing core and an explicit unverified-model explanation label. 94 tests and targeted archive-installed DSH Native/PTC chart checks passed, including protocol1.0 history, null-preserving downloads and360px layout. No new model calls; the original six semantic failures remain. See the [chart guide](docs/CHART-COMPARISON.zh-CN.md) and [versioned evidence](docs/evidence/preview10.json). Published preview.8/9 archives remain unchanged.
 
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.9.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.10.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.
@@ -44,7 +44,7 @@ DSH's shared React 18 hosts a small wrapper; a plugin-owned React 19 root runs j
 
 ## Evidence and limitations
 
-This release distinguishes **real DSH with deterministic fixtures** from **real model acceptance**. TypeScript, 90 tests, and a fresh installed Native/PTC lifecycle/quality/requirements/template matrix passed. Six complete frozen 11-question rounds (66 first attempts) are retained. New full rounds 5 and 6 scored 3 pass / 3 notes / 5 fail and 2 / 4 / 5. Final targeted run 9 repeated six selected original questions: **all six still fail content semantics**, including incorrect source-to-requirement mapping, extra prose claims, and GenUI/plain-text errors. It is not a complete seventh round or a controlled accuracy benchmark. Run 8 also preserves an actual integration failure and its repeated UI effects; setup-only attempts are separately identified.
+This release distinguishes **real DSH with deterministic fixtures** from **real model acceptance**. TypeScript and94 tests pass. Preview.10 adds archive-installed Native/PTC chart checks; the full lifecycle/quality/requirements/template and GenUI compatibility evidence is retained at its accepted preview.9 version. Six complete frozen 11-question rounds (66 first attempts) are retained. New full rounds 5 and 6 scored 3 pass / 3 notes / 5 fail and 2 / 4 / 5. Final targeted run 9 repeated six selected original questions: **all six still fail content semantics**, including incorrect source-to-requirement mapping, extra prose claims, and GenUI/plain-text errors. It is not a complete seventh round or a controlled accuracy benchmark. Run 8 also preserves an actual integration failure and its repeated UI effects; setup-only attempts are separately identified.
 
 See [validation](docs/VALIDATION.zh-CN.md), [frozen questions](fixtures/questions.json), and [all first-attempt records](docs/natural-question-results.json). This remains a preview: bounded computation can be correct while model-supplied premises or prose are wrong. Forms/feedback, arbitrary chart types, actual mobile-device and screen-reader acceptance remain open.
 

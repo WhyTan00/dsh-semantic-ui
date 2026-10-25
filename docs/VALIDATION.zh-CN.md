@@ -136,3 +136,7 @@ Linux Chromium 的宿主侧栏 hover card 曾遮挡系列复选框的鼠标点�
 ![DataChart 640](evidence/chart-640.png)
 
 ![Histogram 360](evidence/histogram-360.png)
+
+## A2派生评语勘误
+
+原run9-A2的工具参数及保存metadata均包含共享边payment→notify。此前派生评语说“所声明路径没有交集”不成立，已纠正；这不是图交集计算缺陷。原题并不因此认证模型选定的故障范围，反向阻塞和上游已经完成的断言仍缺依据，A2继续fail，原6题0通过/6失败/18请求保持不变。原始响应与请求未改，见 [勘误证据](evidence/preview10/assessment-correction.json)。

@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0-preview.10",
+  "protocol": "1.3",
+  "dsh": "0.2.1-rc.2",
+  "changes": [
+    "Inspectable same-table-scope missing-value comparison from existing chartFacts",
+    "Explicit unverified full-data model explanation label",
+    "Derived A2 assessment corrected without changing original records or outcome"
+  ],
+  "unitTests": 94,
+  "unitFiles": 10,
+  "acceptedSourceCommit": "f2d4cfbf8cf4bdbd17122e8a87617e31c7fbc4b5",
+  "installedChartCandidate": {
+    "sha256": "d932efc51d7924947b07bbfc9f486c15b40a1d4961b479bf485bed1bb55fa288",
+    "filesVerified": 261,
+    "suite": "Native/PTC: ordinary, signed/all-missing, protocol1.0 chart; PTC also reads prior Native history after process restart",
+    "record": "preview10/candidate-install.json",
+    "native": "preview10/native.json",
+    "ptc": "preview10/ptc.json"
+  },
+  "standaloneMcp": "preview10/standalone-mcp.json",
+  "finalInstall": "preview10/install.json",
+  "linuxCi": "preview10/linux-ci.json",
+  "assessmentCorrection": "preview10/assessment-correction.json",
+  "reusedEvidence": {
+    "version": "0.1.0-preview.9",
+    "fullFixtureMatrix": "preview9.json",
+    "genuiHistoryAndGenerationOff": "preview9/genui-compat.json",
+    "boundary": "Historical accepted evidence, not a new preview10 full-matrix or GenUI retest."
+  },
+  "newNaturalModelRequests": 0,
+  "originalRun9": {
+    "cases": 6,
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "modelRequests": 18
+  },
+  "remaining": [
+    "Source-to-requirement translation and free-form model prose remain unaccepted",
+    "Current Codex conversation loading, actual phone and screen reader acceptance remain unverified"
+  ],
+  "stage": "installed candidate passed; final archive and Linux receipt recorded separately before release"
+}

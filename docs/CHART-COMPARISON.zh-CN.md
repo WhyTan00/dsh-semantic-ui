@@ -1,6 +1,6 @@
-# 可检查的缺失值对照（未发行候选）
+# 可检查的缺失值对照（preview.10）
 
-候选：0.1.0-preview.10-dev.0，协议仍为1.3。已发布preview.9及其安装包、manifest、SHA和原六题首次结果保持不变。本段只交付本地源码，不重新发行。
+版本：0.1.0-preview.10，协议仍为1.3。以全新隔离profile实际安装候选归档，再验证本次改动。已发布preview.8/9及其安装包、manifest、SHA和原六题首次结果保持不变。
 
 ## 用户可见变化
 
@@ -29,6 +29,6 @@ DataChart新增默认折叠的 **Computed missing-value comparison**。主要图
 
 首次自动化检查通过后，视觉检查发现四列表格的结论列需要横向滚动；改为三列并增加表本身的宽度断言，定向复测通过。原始回执保留，公共派生证据按实际分支标记每例覆盖范围。
 
-本段未建立可用非付费额度的门槛：现有记录和公开连接器接口不能证明本批次覆盖范围；未调用账单/恢复/探测接口，未读凭据，不推断余额为零。新增自然模型请求0，原六题的自由正文/来源翻译验收仍未通过。没有新包安装、Release、全局Codex配置或付费调用。
+本段未建立可用非付费额度的门槛：现有记录和公开连接器接口不能证明本批次覆盖范围；未调用账单/恢复/探测接口，未读凭据，不推断余额为零。新增自然模型请求0，原六题的自由正文/来源翻译验收仍未通过。本次候选归档已实际安装：启动前逐文件核对261文件，独立MCP归档入口的4项真实协议检查通过。最终安装与Linux状态按下面的版本证据单独记录，没有全局Codex配置或付费调用。
 
-[检查证据](evidence/chart-comparison.json) · [当前已发布版本](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.9)
+[源码阶段证据](evidence/chart-comparison.json) · [preview.10安装与CI证据](evidence/preview10.json) · [Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.10)

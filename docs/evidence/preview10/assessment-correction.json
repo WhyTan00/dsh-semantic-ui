@@ -1,0 +1,32 @@
+{
+  "kind": "derived-assessment-correction-not-a-model-retest",
+  "questionId": "A2",
+  "originalRecord": "docs/evidence/natural/r9-A2.json",
+  "rawArgumentAndSavedMetadataScenariosMatch": true,
+  "declaredSharedNodeIds": [
+    "payment",
+    "notify"
+  ],
+  "declaredSharedEdgeIds": [
+    "e-pay-notify"
+  ],
+  "previousDerivedNote": "Preserves explicit notification retry but invents reverse notification obstruction and says scenarios overlap on payment→notification although the declared scenario paths do not. Upstream-completed assertion unproven.",
+  "correctedNote": "Preserves explicit notification-only retry and no payment rollback. The declared scenario arrays DO overlap on payment→notify; this is internally consistent, but does not independently verify the model-selected failure scope against the original prompt. Reverse notification obstruction and upstream-already-completed assertions remain unsupported.",
+  "sourcePromptCertifiesFailureScope": false,
+  "status": "fail",
+  "targetedRun9Unchanged": {
+    "cases": 6,
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "modelRequests": 18
+  },
+  "newModelRequests": 0,
+  "unchangedRawRecordSha256": {
+    "docs/evidence/natural/r9-A2.json": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+    "docs/evidence/natural/r9-A3.json": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "docs/evidence/natural/r9-D1.json": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "docs/evidence/natural/r9-D2.json": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+    "docs/evidence/natural/r9-N2.json": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "docs/evidence/natural/r9-T2.json": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2"
+  }
+}

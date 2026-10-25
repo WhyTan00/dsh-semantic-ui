@@ -1,0 +1,14 @@
+{
+  "verifiedAt": "2026-10-25T14:56:44.990Z",
+  "standaloneExtractedFromReleaseArchiveOutsideRepository": true,
+  "version": "0.1.0-preview.10",
+  "runtimeArchiveSha256": "d932efc51d7924947b07bbfc9f486c15b40a1d4961b479bf485bed1bb55fa288",
+  "portableSkillPresent": true,
+  "actualJsonRpcStdioTests": 4,
+  "result": "passed",
+  "newRequiresAvailabilityChecked": true,
+  "usesDsh": false,
+  "requiresModelCredentials": false,
+  "bytes": 640848,
+  "sha256": "3dc202720d010cfd28555e2a46aae550688ff5e64fa8e1b12fdae6c2423af957"
+}

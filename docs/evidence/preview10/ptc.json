@@ -1,0 +1,67 @@
+{
+  "results": [
+    {
+      "kind": "legacy-native-after-process-restart",
+      "sourceProtocol": "1.0",
+      "restored": true
+    },
+    {
+      "kind": "ordinary",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.3",
+      "computedFromSameCore": true,
+      "fullFilteredScopes": true,
+      "signedHigherLowerSameAndAllMissing": false,
+      "emptySelectionAndNoSeries": true,
+      "exportNullPreserved": true,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true
+    },
+    {
+      "kind": "signed",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.3",
+      "computedFromSameCore": true,
+      "fullFilteredScopes": false,
+      "signedHigherLowerSameAndAllMissing": true,
+      "emptySelectionAndNoSeries": false,
+      "exportNullPreserved": false,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true
+    },
+    {
+      "kind": "legacy",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.0",
+      "computedFromSameCore": true,
+      "fullFilteredScopes": true,
+      "signedHigherLowerSameAndAllMissing": false,
+      "emptySelectionAndNoSeries": true,
+      "exportNullPreserved": true,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true
+    }
+  ],
+  "pageErrors": [],
+  "newPaidModelRequests": 0,
+  "boundary": "Actual release candidate installed into a fresh isolated DSH profile; deterministic local endpoint, separate fixture-only history tool; not natural-model acceptance.",
+  "provenance": {
+    "runtimeArchiveSha256": "d932efc51d7924947b07bbfc9f486c15b40a1d4961b479bf485bed1bb55fa288",
+    "rawReportBoundaryCorrection": "The old browser reporter used a fixed source-overlay sentence; the installer independently verified every archived file before startup. Raw local report retained; reporter now distinguishes both paths."
+  }
+}
