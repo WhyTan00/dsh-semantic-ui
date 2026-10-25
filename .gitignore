@@ -14,3 +14,5 @@ artifacts/package-manifest.json
 
 # Private original inputs and native provenance
 docs/materials/
+
+artifacts/releases/

@@ -1,0 +1,101 @@
+{
+  "results": [
+    {
+      "kind": "capacity",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "current300ExcludesA": true,
+      "confirmed50KeepsBoth": true,
+      "unknownDistinctFromZero": true,
+      "eligibilityNotPreference": true,
+      "reset": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "paths",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "graphSelection": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "proposal",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "modelDeclaredOriginCannotAuthorize": true,
+      "explicitKeyboardExploration": true,
+      "hardRequirementsStillApply": true,
+      "resetRevokesExploration": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true,
+      "reloadRevokesExploration": true
+    },
+    {
+      "kind": "capability",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "booleanFalsePreserved": true,
+      "unknownCapabilityNotFalse": true,
+      "requiredCapabilityExcludesUnsupported": true,
+      "noAutomaticPreference": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "resource",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "requiresAvailabilityTruthTable": true,
+      "unknownNotFalse": true,
+      "capabilityDirectionDistinct": true,
+      "noAutomaticPreference": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "scope",
+      "toolMode": "ptc",
+      "protocolVersion": "1.3",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "hardCapacity300And1001": true,
+      "preferenceOnlyCannotChangeEligibility": true,
+      "noInventedDeploymentOrMaintenanceFacts": true,
+      "reset": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "check-only",
+      "toolMode": "ptc",
+      "computedFacts": true,
+      "semanticComponents": 0,
+      "deterministicFixture": true
+    }
+  ],
+  "pageErrors": []
+}

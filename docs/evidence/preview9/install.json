@@ -1,0 +1,17 @@
+{
+  "dsh": "0.2.1-rc.2",
+  "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+  "package": "@whytan/dsh-semantic-ui",
+  "version": "0.1.0-preview.9",
+  "filename": "candidate-3163b690f13d364c39af4a792dc87c434e036112fbecb8f3e102815fc87ca9b7.tgz",
+  "sha256": "3163b690f13d364c39af4a792dc87c434e036112fbecb8f3e102815fc87ca9b7",
+  "hostStarted": true,
+  "allPackagedFilesVerified": 258,
+  "clientRenderedAllFourFixtures": true,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "pageErrors": [],
+  "phase": "candidate fresh-install matrix passed; final archive readback pending"
+}

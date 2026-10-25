@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0-preview.9",
+  "protocol": "1.3",
+  "dsh": "0.2.1-rc.2",
+  "candidateSha256": "3163b690f13d364c39af4a792dc87c434e036112fbecb8f3e102815fc87ca9b7",
+  "freshInstalledFiles": 258,
+  "unitTests": 90,
+  "unitFiles": 9,
+  "typecheck": "passed",
+  "build": "passed",
+  "licenseClosurePackages": 171,
+  "researchProjects": 35,
+  "pinnedSources": 139,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "fixturesPerMode": {
+    "originalLifecycle": 4,
+    "quality": 5,
+    "grounding": 6,
+    "checkOnly": 1,
+    "protocolHistory": 3,
+    "templates": true
+  },
+  "legacyProtocolHistory": "Explicit fixture tool persists1.0/1.1/1.2 through standard tool metadata. Reads after refresh/session/new page; PTC also reads the earlier Native snapshots after process restart. No old logs mutated.",
+  "oldProtocolBehavior": "1.0/1.1 keep legacy declared policy,1.2 keeps preference review and reload revocation.",
+  "narrowRootOverflow": 0,
+  "pageErrors": [],
+  "localControlsTriggerModelRequests": false,
+  "actualPaidModelRequests": 0,
+  "naturalRetest": {
+    "status": "not-run",
+    "route": "Existing personal WorkBuddy route was previously exercised; authentication is not the missing condition.",
+    "reason": "No verified allowance/quota record establishing a new six-question inference budget was found in existing task materials. No new budget, account, API or model request was introduced.",
+    "semanticAcceptance": "Six original run9 failures remain; corrected fixtures do not replace them."
+  },
+  "standaloneMcp": "preview9/standalone-mcp.json",
+  "finalInstall": "preview9/install.json",
+  "linuxCi": "preview9/linux-ci.json",
+  "sourceMapping": "../GROUNDING-FOLLOWUP.zh-CN.md",
+  "originalRecordsUnchangedSha256": {
+    "docs/evidence/natural/r9-A2.json": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+    "docs/evidence/natural/r9-A3.json": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "docs/evidence/natural/r9-D1.json": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "docs/evidence/natural/r9-D2.json": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+    "docs/evidence/natural/r9-N2.json": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "docs/evidence/natural/r9-T2.json": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2"
+  }
+}

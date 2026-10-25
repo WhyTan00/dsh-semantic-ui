@@ -35,7 +35,7 @@ jobs:
         with:
           name: semantic-ui-preview-package
           path: |
-            artifacts/*.tgz
-            artifacts/SHA256SUMS
-            artifacts/package-manifest.json
+            artifacts/releases/**/*.tgz
+            artifacts/releases/**/SHA256SUMS
+            artifacts/releases/**/package-manifest.json
           if-no-files-found: error

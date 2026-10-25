@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "version": "1.0",
+      "priorNativeHistoryAfterProcessRestart": true
+    },
+    {
+      "version": "1.1",
+      "priorNativeHistoryAfterProcessRestart": true
+    },
+    {
+      "version": "1.2",
+      "priorNativeHistoryAfterProcessRestart": true
+    },
+    {
+      "version": "1.0",
+      "toolMode": "ptc",
+      "fixtureOnly": true,
+      "standardPersistedCheckpoint": true,
+      "processFolded": true,
+      "unchangedProtocol": true,
+      "legacyPreferencePreserved": true,
+      "reviewedPreferencePreserved": false,
+      "refresh": true,
+      "sessionSwitch": true,
+      "newPageReopen": true,
+      "narrowOverflow": 0
+    },
+    {
+      "version": "1.1",
+      "toolMode": "ptc",
+      "fixtureOnly": true,
+      "standardPersistedCheckpoint": true,
+      "processFolded": true,
+      "unchangedProtocol": true,
+      "legacyPreferencePreserved": true,
+      "reviewedPreferencePreserved": false,
+      "refresh": true,
+      "sessionSwitch": true,
+      "newPageReopen": true,
+      "narrowOverflow": 0
+    },
+    {
+      "version": "1.2",
+      "toolMode": "ptc",
+      "fixtureOnly": true,
+      "standardPersistedCheckpoint": true,
+      "processFolded": true,
+      "unchangedProtocol": true,
+      "legacyPreferencePreserved": false,
+      "reviewedPreferencePreserved": true,
+      "refresh": true,
+      "sessionSwitch": true,
+      "newPageReopen": true,
+      "narrowOverflow": 0
+    }
+  ],
+  "pageErrors": [],
+  "boundary": "Old-version fixture tool writes standard checkpoints; no saved log mutation and no natural/model claim."
+}

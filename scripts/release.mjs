@@ -1,6 +1,6 @@
 import{publicDocumentation,privatePackagePath}from'./public-files.mjs';
 import{execFileSync}from'node:child_process';import{readFile,writeFile,mkdir,cp,rm}from'node:fs/promises';import{resolve}from'node:path';import{createHash}from'node:crypto';
-const p=JSON.parse(await readFile('package.json','utf8'));await mkdir('artifacts',{recursive:true});
+const p=JSON.parse(await readFile('package.json','utf8'));const releaseDir=resolve('artifacts/releases',p.version);await mkdir(releaseDir,{recursive:true});
 execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'inherit'});
 const outputStage=resolve('.handoff/build/release-output-'+p.version);await mkdir(outputStage,{recursive:true});
 const result=JSON.parse(execFileSync('npm',['pack','--json','--pack-destination',outputStage],{encoding:'utf8'}))[0];
@@ -26,8 +26,8 @@ if(archive.files.some(f=>privatePackagePath(f.path)))throw Error('Private coordi
 for(const file of archive.files.filter(f=>/\.(?:md|json|txt)$/.test(f.path))){const content=await readFile(resolve(stage,file.path),'utf8');if(/\/Users\/|\/home\/[^\s/]+\/|[?&]token=[A-Za-z0-9_-]{12}/.test(content))throw Error('Private data entered evidence archive: '+file.path);}
 const evidenceBytes=await readFile(resolve(outputStage,archive.filename));const evidenceHash=createHash('sha256').update(evidenceBytes).digest('hex');
 // Publish coherent artifacts only after all package and evidence checks pass.
-await writeFile('artifacts/'+result.filename,bytes);await writeFile('artifacts/'+archive.filename,evidenceBytes);
-await writeFile('artifacts/SHA256SUMS',`${hash}  ${result.filename}\n${evidenceHash}  ${archive.filename}\n`);
+await writeFile(resolve(releaseDir,result.filename),bytes);await writeFile(resolve(releaseDir,archive.filename),evidenceBytes);
+await writeFile(resolve(releaseDir,'SHA256SUMS'),`${hash}  ${result.filename}\n${evidenceHash}  ${archive.filename}\n`);
 const evidenceArchive={filename:archive.filename,bytes:evidenceBytes.length,sha256:evidenceHash,files:archive.files.length};
-await writeFile('artifacts/package-manifest.json',JSON.stringify({version:p.version,filename:result.filename,sha256:hash,files:result.files.map(f=>({path:f.path,size:f.size})),evidenceArchive,status:'preview; see validation evidence'},null,2)+'\n');
+await writeFile(resolve(releaseDir,'package-manifest.json'),JSON.stringify({version:p.version,filename:result.filename,sha256:hash,files:result.files.map(f=>({path:f.path,size:f.size})),evidenceArchive,status:'preview; see validation evidence'},null,2)+'\n');
 console.log(JSON.stringify({filename:result.filename,bytes:bytes.length,sha256:hash,files:result.files.length,evidenceArchive}));
