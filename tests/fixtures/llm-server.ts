@@ -2,6 +2,7 @@ import {createServer} from 'node:http';
 import {mkdirSync,writeFileSync} from 'node:fs';
 import {setTimeout as delay} from 'node:timers/promises';
 import {architecture,decision,chart,distribution,largeArchitecture} from '../../fixtures/examples';
+import {signedComparison} from '../../fixtures/chart-comparison';
 import {qualityFixtures} from '../../fixtures/quality';
 import {capacity,sharedPaths,proposal,capability,resource,inputScope} from '../../fixtures/grounding';
 const output=process.env.FIXTURE_OUTPUT_DIR!;mkdirSync(output,{recursive:true});let seq=0;
@@ -10,7 +11,7 @@ const server=createServer(async(req,res)=>{
  let body='';for await(const c of req)body+=c;
  const request=JSON.parse(body);const n=++seq;writeFileSync(`${output}/${n}.json`,JSON.stringify(request,null,2));
  const userText=JSON.stringify(request.messages.filter((m:any)=>m.role==='user'));
- const which=[...userText.matchAll(/Semantic fixture (architecture|decision|chart|histogram)/g)].at(-1)?.[1]??'architecture';const quality=[...userText.matchAll(/QUALITY_FIXTURE=(irregular|bars|missing|prebinned|graph)/g)].at(-1)?.[1] as keyof typeof qualityFixtures|undefined;const grounding=[...userText.matchAll(/GROUNDING_FIXTURE=(capacity|paths|proposal|capability|resource|scope)/g)].at(-1)?.[1];const view=grounding?(grounding==='capacity'?capacity:grounding==='proposal'?proposal:grounding==='capability'?capability:grounding==='resource'?resource:grounding==='scope'?inputScope:sharedPaths):quality?qualityFixtures[quality]:userText.includes('ARCHITECTURE_SCALE')?largeArchitecture:which.includes('decision')?decision:which.includes('histogram')?distribution:which.includes('chart')?chart:architecture;
+ const which=[...userText.matchAll(/Semantic fixture (architecture|decision|chart|histogram)/g)].at(-1)?.[1]??'architecture';const quality=[...userText.matchAll(/QUALITY_FIXTURE=(irregular|bars|missing|prebinned|graph)/g)].at(-1)?.[1] as keyof typeof qualityFixtures|undefined;const grounding=[...userText.matchAll(/GROUNDING_FIXTURE=(capacity|paths|proposal|capability|resource|scope)/g)].at(-1)?.[1];const view=userText.includes('COMPARISON_FIXTURE')?signedComparison:grounding?(grounding==='capacity'?capacity:grounding==='proposal'?proposal:grounding==='capability'?capability:grounding==='resource'?resource:grounding==='scope'?inputScope:sharedPaths):quality?qualityFixtures[quality]:userText.includes('ARCHITECTURE_SCALE')?largeArchitecture:which.includes('decision')?decision:which.includes('histogram')?distribution:which.includes('chart')?chart:architecture;
  const fillers=[...JSON.stringify(request.messages.filter((m:any)=>m.role==='user')).matchAll(/HISTORY_FILLER_(\d+)/g)];
  const last=request.messages.at(-1);const done=last?.role==='tool';const toolNames=request.tools?.map((t:any)=>t.function?.name)??[];
  // The host appends user-role reminders after the real prompt; choose the
@@ -19,12 +20,12 @@ const server=createServer(async(req,res)=>{
  const legacy=legacyAt>=0&&legacyAt>Math.max(semanticAt,probeAt);
  const probe=probeAt>=0&&probeAt>Math.max(semanticAt,legacyAt);
  const ptc=toolNames.includes('run_code')&&!toolNames.includes('dsh_semantic_ui');
- const snapshot=[...userText.matchAll(/PROTOCOL_HISTORY=(1\.[012])/g)].at(-1)?.[1];
+ const snapshot=[...userText.matchAll(/PROTOCOL_(?:CHART_)?HISTORY=(1\.[012])/g)].at(-1)?.[1];
  const target=snapshot?'semantic_history_fixture':'dsh_semantic_ui';
  const name=ptc?'run_code':target;
  const reuse=[...userText.matchAll(/TEMPLATE_REUSE=([a-f0-9-]+):(\d+)/g)].at(-1);
  const fresh=structuredClone(view);if(reuse&&fresh.component==='DataChart'&&fresh.payload.chartType!=='histogram'){fresh.payload.title='Fresh template sensor readings';fresh.summary='New measurements; statistics are recalculated from this dataset.';fresh.payload.rows.forEach((row,i)=>{row.values.a=100*(i+1);});}
- const semanticArgs=snapshot?{version:snapshot}:{action:userText.includes('CHECK_ONLY')?'check':'render',view:reuse?fresh:view,...(reuse?{templateId:reuse[1],templateVersion:Number(reuse[2])}:{})};
+ const semanticArgs=snapshot?{version:snapshot,...(userText.includes('PROTOCOL_CHART_HISTORY')?{component:'DataChart'}:{})}:{action:userText.includes('CHECK_ONLY')?'check':'render',view:reuse?fresh:view,...(reuse?{templateId:reuse[1],templateVersion:Number(reuse[2])}:{})};
  const args=ptc?{description:'Deterministic semantic host fixture',code:`const result = await tools.${target}(${JSON.stringify(semanticArgs)}); console.log(JSON.stringify(result));`}:semanticArgs;
  const base={id:`fixture-${n}`,object:'chat.completion.chunk',created:Math.floor(Date.now()/1000),model:'semantic-fixture'};
  res.writeHead(200,{'Content-Type':'text/event-stream','Cache-Control':'no-cache','Connection':'keep-alive'});

@@ -1,5 +1,6 @@
 import type {Chart} from './protocol';
 import {histogram,numericStats,sortedRows} from './math';
+import {chartFacts} from './facts';
 import type {themeTokens} from './theme';
 
 export type ChartSelection={enabled:string[];from:number;to:number;scope:'filtered'|'all'};
@@ -66,6 +67,12 @@ export function chartView(p:Chart,selection:ChartSelection,tokens:Tokens){
     else{const indices=binLabels.map((_,i)=>i).filter(i=>scope==='all'||i>=from&&i<=to);headers=['Bin',...visible.map(g=>g.label)];tableRows=indices.map(i=>[binLabels[i],...visible.map(g=>{const n='selectedN'in g&&typeof g.selectedN==='number'?g.selectedN:g.n;return p.display==='count'?g.counts[i]:n?g.counts[i]/n:null;})]);}
   }else{const tableDefs=scope==='all'?defs:chosen;headers=[`x (${p.x.kind==='time'?`${p.x.timezone}, ${p.x.granularity}`:'category'})`,...tableDefs.map(s=>`${s.label} (${p.unit})`)];tableRows=(scope==='all'?allRows:rows).map(r=>[r.x,...tableDefs.map(s=>r.values[s.id])]);}
   const tableScope=p.chartType==='histogram'?(scope==='all'&&p.source.mode==='observations'?'original-observations':scope==='all'?'pre-aggregated-bins':'filtered-derived-bins'):scope==='all'?'all-source-rows':'filtered-source-rows';
+  let zeroFillComparison=null;
+  if(p.chartType!=='histogram'){
+    const comparisonRows=scope==='all'?allRows:rows,comparisonSeries=scope==='all'?defs:chosen;
+    const facts=chartFacts({...p,rows:comparisonRows,series:comparisonSeries});
+    if(facts.chartType!=='histogram')zeroFillComparison={scope:tableScope,rowCount:comparisonRows.length,series:facts.series.map(s=>({...s,label:defs.find(d=>d.id===s.id)?.label??s.id}))};
+  }
   const download={format:'dsh-semantic-ui-table',version:1,title:p.title,chartType:p.chartType,unit:p.unit,scope:tableScope,selection:scope==='filtered'?{from,to,seriesIds:chosen.map(s=>s.id)}:null,...(p.chartType==='histogram'&&tableScope!=='original-observations'?{measure:p.display,denominator:p.display==='proportion'?'valid observations per group in this table scope; missing excluded':null}:{}),headers,rows:tableRows};
-  return {defs,total,chosen,selectedBins,visibleStats,emptyReason,temporal,horizontal,description,option,headers,tableRows,tableScope,download};
+  return {defs,total,chosen,selectedBins,visibleStats,emptyReason,temporal,horizontal,description,option,headers,tableRows,tableScope,download,zeroFillComparison};
 }

@@ -1,0 +1,47 @@
+{
+  "status": "unreleased-local-candidate",
+  "version": "0.1.0-preview.10-dev.0",
+  "protocol": "1.3",
+  "verifiedAt": "2026-10-25T11:28:15.184433+00:00",
+  "unitTests": 94,
+  "unitFiles": 10,
+  "typecheck": "passed",
+  "build": "passed",
+  "modelRequests": 0,
+  "naturalQuestionsRun": 0,
+  "localDeterministicEndpointPostRequests": 12,
+  "allowanceGate": "not-established; inspected record/interface evidence does not establish non-paid allocation; no zero-balance inference",
+  "liveBillingRequests": 0,
+  "credentialBytesRead": false,
+  "dsh": "0.2.1-rc.2",
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "casesPerMode": 3,
+  "legacyNativeAfterProcessRestart": true,
+  "narrowWidth": 360,
+  "rootOverflow": 0,
+  "comparisonTableOverflow": 0,
+  "pageErrors": [],
+  "dataAndExports": "Source/exports retain null; scope and series align with source table. Core arithmetic reused without data replacement.",
+  "firstChecksAndRevisions": [
+    "94 tests and first targeted hosts passed; visual review identified a four-column local-scroll usability issue.",
+    "Three-column comparison plus specific no-horizontal-scroll assertion; targeted Native/PTC rerun passed.",
+    "Initial raw suite-level case flags normalized in this public derivative to actual branch assertions."
+  ],
+  "newReleaseOrInstall": false,
+  "newLinuxCi": false,
+  "publishedPreview9Unchanged": true,
+  "originalSixAccepted": false,
+  "compiledCandidateSha256": {
+    "dist/host.js": "129bfdbf62bba160bfb7ea8d1218ee14eda78b4967aab03904391e43c06aaf58",
+    "dist/client.js": "d544239d2fdf3e0ca8a5248ec1d5bc9cd45a4871ccf0ac019a67961a94d5d135",
+    "dist/core.js": "28eb419db616ecd41fe73118421058c0028a514bd53e75c562421f0ab8a2ca7b",
+    "dist/mcp.js": "40535aed346d1d8aa7d5711ce21c3a56d39e6d3557e89e07baaf9944fa1c0037"
+  },
+  "records": [
+    "chart-comparison/native.json",
+    "chart-comparison/ptc.json"
+  ]
+}

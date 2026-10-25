@@ -22,6 +22,8 @@ Preview.8 adds **computed requirements and a portable verification core**: typed
 
 Preview.9 uses **protocol1.3** to distinguish resource availability from capability support, expose hard/preference-only input links, and compute signed zero-fill comparisons explicitly. A fresh installed real DSH Native/PTC matrix covers the new predicates plus saved1.0/1.1/1.2 snapshot semantics.90 tests pass. No new natural-model requests were made: the original six semantic failures remain open. See [source mapping and limits](docs/GROUNDING-FOLLOWUP.zh-CN.md) and [versioned evidence](docs/evidence/preview9.json). Preview.8 archives, manifests, checksums and installation evidence remain unchanged.
 
+Working source candidate **preview.10-dev.0** adds an inspectable missing-value comparison using the existing core and an explicit unverified-model explanation label. 94 tests and targeted real DSH Native/PTC checks passed; no new model calls or release. See the [local checkpoint](docs/CHART-COMPARISON.zh-CN.md). Published preview.9 remains unchanged.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

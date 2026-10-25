@@ -6,6 +6,7 @@ import {SVGRenderer} from 'echarts/renderers';
 import {useAppearance} from '../appearance';
 import type {Chart} from '../protocol';
 import {chartView,type ChartSelection} from '../chart-view';
+const computedNumber=(value:number|null)=>value===null?'unknown':String(value);
 echarts.use([LineChart,BarChart,GridComponent,TooltipComponent,LegendComponent,AriaComponent,SVGRenderer]);
 
 function Plot({option,description,horizontal}:{option:echarts.EChartsCoreOption;description:string;horizontal:boolean}){
@@ -33,8 +34,14 @@ export function DataChart({data:p}:{data:Chart}){
   <div aria-live="polite" className="stats">{p.chartType==='histogram'?view.selectedBins.map(g=><p key={g.id}>{g.label}: {g.selectedN} valid selected observations / {g.n} full valid; {g.missing} missing in full group (cannot assign missing observations to a bin).{p.display==='proportion'?` Proportion = bin count / ${g.selectedN} selected valid observations.`:''}</p>):view.visibleStats.map(s=><p key={s.id}>{s.label}: n={s.n}, missing={s.missing}; mean={s.mean===null?'unknown':s.mean.toLocaleString('en',{maximumFractionDigits:4})} {p.unit}</p>)}</div>
   {p.chartType==='histogram'?<p className="meta">Shared bins: [lower, upper), final bin includes its upper boundary. {p.display==='count'?'Height = observation count.':'Each group uses its own selected valid n; missing values excluded.'} {p.source.mode==='prebinned'?'Source is explicitly pre-aggregated; raw observations are unavailable.':'Source is raw observations.'}</p>:null}
   <p className="meta">Series keep their color and pattern when filtered. Axis labels may be abbreviated; use the table for exact labels and values.</p>
-  {p.fullDataExplanation?<details><summary>Explanation based on original full data</summary><p>{p.fullDataExplanation}</p><p className="meta">This explanation is not recomputed after filtering.</p></details>:null}
+  {p.fullDataExplanation?<details><summary>Model explanation — original full data (unverified)</summary><p>{p.fullDataExplanation}</p><p className="meta">Model-authored text, not independently verified by the calculations. It stays fixed after filtering and refers to the original full data.</p></details>:null}
   <div className="toolbar"><label>Table scope <select aria-label="Table scope" value={scope} onChange={e=>{setScope(e.target.value as ChartSelection['scope']);setDownloaded(false);}}><option value="filtered">{p.chartType==='histogram'?'Derived bins · filtered':'Source rows · filtered'}</option><option value="all">{p.chartType==='histogram'&&p.source.mode==='prebinned'?'Pre-aggregated bins · all':'Source data · all'}</option></select></label><button onClick={download}>Download this table</button></div>
+  {view.zeroFillComparison?<details><summary>Computed missing-value comparison</summary>
+   <p className="meta">Scope: {view.zeroFillComparison.scope} · {view.zeroFillComparison.rowCount} rows. This check follows the table scope; the plotted range may differ.</p>
+   <p>Hypothesis: replace only the declared missing values with zero in this scope. Source data, chart and download stay unchanged. This is not an estimate of the unknown complete data.</p>
+   {view.zeroFillComparison.series.length?<div className="table-wrap" role="region" aria-label="Computed missing-value comparison" tabIndex={0}><table><caption>Observed means versus an explicit zero-fill hypothesis · {view.zeroFillComparison.scope}</caption><thead><tr><th scope="col">Series</th><th scope="col">Mean comparison</th><th scope="col">Change vs observed</th></tr></thead><tbody>{view.zeroFillComparison.series.map(s=><tr key={s.id}><th scope="row">{s.label}</th><td><p>Observed: n={s.valid}, missing={s.missing}; mean={computedNumber(s.mean)} {p.unit}</p><p>Hypothesis: count={s.zeroFillIllustration.count}; mean={computedNumber(s.zeroFillIllustration.mean)} {p.unit}</p></td><td>{s.zeroFillIllustration.directionRelativeToObservedMean}; difference={computedNumber(s.zeroFillIllustration.differenceFromObservedMean)} {p.unit}</td></tr>)}</tbody></table></div>:<p role="status">No series in this table scope.</p>}
+   <p className="meta">Higher, lower or same compares with observed readings only, not with an unknown complete-data mean. Empty data, no observed values or numeric overflow leave calculations unknown. Missing is never silently changed to an observation.</p>
+  </details>:null}
   {downloaded?<p className="meta" role="status">Downloaded this table scope as JSON, including units, selection and missing values.</p>:null}
   <Table key={`${scope}:${from}:${to}:${enabled.join(',')}`} headers={view.headers} rows={view.tableRows} scope={view.tableScope}/>
  </section>;

@@ -1,0 +1,64 @@
+{
+  "results": [
+    {
+      "kind": "legacy-native-after-process-restart",
+      "sourceProtocol": "1.0",
+      "restored": true
+    },
+    {
+      "kind": "ordinary",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.3",
+      "computedFromSameCore": true,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true,
+      "fullFilteredScopes": true,
+      "signedHigherLowerSameAndAllMissing": false,
+      "emptySelectionAndNoSeries": true,
+      "exportNullPreserved": true
+    },
+    {
+      "kind": "signed",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.3",
+      "computedFromSameCore": true,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true,
+      "fullFilteredScopes": false,
+      "signedHigherLowerSameAndAllMissing": true,
+      "emptySelectionAndNoSeries": false,
+      "exportNullPreserved": false
+    },
+    {
+      "kind": "legacy",
+      "toolMode": "ptc",
+      "sourceProtocol": "1.0",
+      "computedFromSameCore": true,
+      "modelExplanationUnverified": true,
+      "processFolded": true,
+      "refreshResetsControls": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "comparisonTableFitsWithoutScroll": true,
+      "localControlsMakeNoRequests": true,
+      "fullFilteredScopes": true,
+      "signedHigherLowerSameAndAllMissing": false,
+      "emptySelectionAndNoSeries": true,
+      "exportNullPreserved": true
+    }
+  ],
+  "pageErrors": [],
+  "newPaidModelRequests": 0,
+  "boundary": "Isolated real DSH + local deterministic endpoint; source overlays, no release/install or natural-model claim.",
+  "derivativeBoundary": "Raw first reports retained privately; shared-suite coverage flags corrected here to each actually asserted branch. No natural first attempt modified."
+}
