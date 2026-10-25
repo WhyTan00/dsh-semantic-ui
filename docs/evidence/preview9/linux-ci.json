@@ -1,5 +1,24 @@
 {
   "version": "0.1.0-preview.9",
-  "conclusion": "pending",
-  "boundary": "Will be replaced only after exact implementation commit CI completes. Prior preview8 CI remains unchanged."
+  "runId": 40184112284,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40184112284",
+  "implementationCommit": "36cf17eee49b9ef9b4a14aa53b4f28e48ef2af7c",
+  "conclusion": "success",
+  "checks": [
+    "frozen dependency installation",
+    "generated protocol/template/skill consistency",
+    "35 public projects/139 source inventory",
+    "TypeScript and90 unit/protocol tests",
+    "private provenance copy/path guards",
+    "DSH/client/core/standalone MCP build",
+    "source-mounted real DSH Native/PTC original lifecycle/templates/five quality/six grounding/check-only",
+    "legacy1.0/1.1/1.2 standard checkpoint fixtures and process restart readback",
+    "versioned runtime/evidence packaging and artifact upload"
+  ],
+  "actualArchiveInstallation": "Independent macOS fresh-profile verification; source-host CI is not its substitute.",
+  "naturalModelRequests": 0,
+  "naturalSemanticsAccepted": false,
+  "linuxPhysicalDesktopVerified": false,
+  "finalizationBoundary": "Subsequent changes are documentation/evidence only, including the independent GenUI compatibility record. Final executable/install contracts match the recorded candidate byte for byte.",
+  "preview8EvidenceUnchanged": true
 }

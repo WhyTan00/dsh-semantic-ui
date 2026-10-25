@@ -46,5 +46,14 @@
     "docs/evidence/natural/r9-D2.json": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
     "docs/evidence/natural/r9-N2.json": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
     "docs/evidence/natural/r9-T2.json": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2"
+  },
+  "genuiCompatibility": {
+    "record": "preview9/genui-compat.json",
+    "version": "0.14.0",
+    "toolMode": "native",
+    "deterministicOnly": true,
+    "bothHistoriesAndGenerationOff": "passed",
+    "remainingGenuiGuidance": true,
+    "naturalExpressionSelection": "not tested in this version"
   }
 }

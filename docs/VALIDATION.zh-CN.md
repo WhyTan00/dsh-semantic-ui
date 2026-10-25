@@ -6,6 +6,8 @@
 
 90项测试/9文件、类型检查、构建及独立MCP四项stdio检查通过。候选3163b690…全新安装258文件后，Native/PTC各原四例、五质量例、六语义例、check-only、模板及三种旧协议通过。旧协议由独立测试工具经标准metadata写入，未改旧日志；1.0/1.1保留旧策略求值，1.2保留审阅与刷新撤销。PTC重启进程回读前一Native的旧协议记录。640/360px组件根溢出0、页面错误0，本地控件不调用模型。
 
+本版另外在独立真实宿主复核公开GenUI0.14.0：两个renderer并存、原renderer读取旧消息、刷新/切会话、关闭本插件生成后两类历史继续读取、移出/重新启用本插件的历史恢复均通过。GenUI自己的指引和校验工具仍存在，不能把两个配置开关称为完全关闭生成；不是自然模型选择验收。见 [GenUI回归](evidence/preview9/genui-compat.json)。
+
 新资源方向与D2输入范围的合同不等于模型翻译已正确。补零升降只对照已观测均值，仍不认证自由正文。本轮没有新增自然推理请求：原个人WorkBuddy登录/调用曾验证，现存任务资料未建立该轮新增预算/额度记录，因此没有引入新预算或调用。run9原六题失败保持未通过；实际手机、屏幕阅读器和Codex当前客户端加载仍待验。
 
 [版本汇总](evidence/preview9.json) · [实际安装](evidence/preview9/install.json) · [Linux CI](evidence/preview9/linux-ci.json) · [逐题边界](GROUNDING-FOLLOWUP.zh-CN.md)
