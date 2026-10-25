@@ -1,0 +1,50 @@
+{
+  "version": "0.1.0-preview.11",
+  "protocol": "1.4",
+  "runId": 40218548897,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40218548897",
+  "implementationCommit": "96cee313ca9c1f01313199e2e375652ef02953eb",
+  "conclusion": "success",
+  "event": "workflow_dispatch",
+  "consistencyOnlyInput": true,
+  "unitTests": 44,
+  "checks": [
+    "frozen dependency installation",
+    "generated schema/template/skill consistency",
+    "public research inventory",
+    "typecheck and44 selected tests",
+    "build and versioned packaging",
+    "normal archive installation into fresh Linux DSH profile; all266 files compared before startup",
+    "Native5/PTC6 declaration cases including rejection/history/360px",
+    "safe receipt/artifact upload"
+  ],
+  "skipped": [
+    "full unit/check aggregate",
+    "old full host matrix",
+    "chart-only matrix",
+    "duplicate source-mounted consistency suite"
+  ],
+  "normalArchiveInstall": {
+    "dsh": "0.2.1-rc.2",
+    "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+    "package": "@whytan/dsh-semantic-ui",
+    "version": "0.1.0-preview.11",
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.11.tgz",
+    "sha256": "3b5685128a427b463be5ece6f1fd90aa29f8dc7e46ee8ce5bb2dac52934dd4dd",
+    "hostStarted": true,
+    "allPackagedFilesVerified": 266,
+    "validationSuite": "declaration-consistency",
+    "newCasesPerMode": 5,
+    "ptcAdditionalCrossProcessRead": 1,
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "pageErrors": []
+  },
+  "macAndLinuxRuntimeBytesIdentical": true,
+  "standaloneMcp": "Separate archive-extracted macOS stdio3 checks outside repository cwd",
+  "newNaturalModelRequests": 0,
+  "linuxPhysicalDesktopVerified": false,
+  "boundary": "Only nested evidence is finalized after this run; exact tested runtime bytes are retained. CI/package/fixtures do not establish source translation or free prose."
+}
