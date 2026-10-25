@@ -1,0 +1,11 @@
+{
+  "historyReads": 4,
+  "protocol": "1.4",
+  "fixtureToolEnabled": false,
+  "modelPromptRequests": 0,
+  "pageErrors": [],
+  "mappingWidth": 360,
+  "mappingOverflow": 0,
+  "hostMode": "ptc",
+  "boundary": "New process reads the accepted Native/PTC histories from this task-owned profile; no new prompts or archive installation."
+}

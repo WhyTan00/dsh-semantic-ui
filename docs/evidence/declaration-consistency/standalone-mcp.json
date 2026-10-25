@@ -1,0 +1,10 @@
+{
+  "candidate": "0.1.0-preview.11-dev.0",
+  "protocol": "1.4",
+  "standaloneOutsideRepo": true,
+  "actualJsonRpcTests": 3,
+  "includesValidAndInvalidDeclarationsAndTemplateContract": true,
+  "entrySha256": "b4238a2458572f1ff09a4a2053f3697545f91754ba9ed3ae41f68228ef63cad7",
+  "realModelRequests": 0,
+  "boundary": "Compiled source candidate, not a release archive or current Codex client acceptance."
+}

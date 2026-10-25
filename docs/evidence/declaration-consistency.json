@@ -1,0 +1,101 @@
+{
+  "candidate": "0.1.0-preview.11-dev.0",
+  "published": false,
+  "protocol": "1.4",
+  "dsh": "0.2.1-rc.2",
+  "scope": "Local declaration consistency, not independent source or natural-language verification",
+  "uniqueNarrowTests": 44,
+  "unitFiles": 4,
+  "typecheck": "passed",
+  "build": "passed",
+  "finalUiGroupSsrCheck": "1 additional selected assertion passed after grouping effect declarations with field roles",
+  "standaloneMcp": "declaration-consistency/standalone-mcp.json",
+  "host": {
+    "native": "declaration-consistency/native.json",
+    "ptc": "declaration-consistency/ptc.json",
+    "nativeCases": 5,
+    "ptcCases": 6,
+    "finalUiReadback": "declaration-consistency/readback.json",
+    "boundary": "Fresh isolated source candidate and deterministic loopback endpoint. Not release/archive-install/CI/full-matrix/GenUI QA. Final frontend grouping reread four saved1.4 views without a fixture tool or new prompt; core/MCP bytes unchanged."
+  },
+  "behavior": [
+    "Missing or contradictory boolean role/relation declarations rejected with field issues",
+    "Expected hard/preference scope checked against actual structural dependencies",
+    "Genuine preference-only inputs remain legal; preferences withheld by default",
+    "Unknowns and opposite capability/resource three-value directions retained",
+    "Compact lossless declaration mappings; oversized computed receipts rejected before delivery",
+    "Roles/effects retained in explicit template contracts",
+    "Internally consistent but falsely labeled facts can still pass; sourceFactsVerified remains false"
+  ],
+  "historyVersions": [
+    "1.0",
+    "1.1",
+    "1.2",
+    "1.3"
+  ],
+  "historyBoundary": "Old1.0/1.1/1.2 payload semantics checked locally; old1.3 persisted through real Native/PTC metadata and cross-process reopening. No old payload rewritten.",
+  "initialFailuresAndRepairs": [
+    {
+      "kind": "derived renamed test fixture",
+      "failure": "Replaced option values and accidentally omitted two declared comparison dimensions",
+      "repair": "Keep those declared fields and unknowns while renaming only the numeric source field"
+    },
+    {
+      "kind": "MCP comparison assertion",
+      "failure": "Full equality also included adapter-only nativeRendering guidance",
+      "repair": "Compare the entire core result after removing exactly that adapter annotation"
+    },
+    {
+      "kind": "test TypeScript",
+      "failure": "Legacy protocol literal widened to string and MCP destructuring inferred an empty object",
+      "repair": "Use a literal version and an explicitly typed adapter wrapper"
+    },
+    {
+      "kind": "evidence-only readback helper",
+      "failure": "Older Native sessions were below the first history page",
+      "repair": "Use existing Show more paging; retain first failure and read all four saved views successfully"
+    },
+    {
+      "kind": "visual capture",
+      "failure": "Whole tall-host screenshot included app occlusion",
+      "repair": "Capture the actual narrow declaration region; group roles and expected/actual effects together"
+    }
+  ],
+  "newNaturalModelRequests": 0,
+  "newExternalApiOrQuotaBillingCalls": 0,
+  "originalRun9": {
+    "cases": 6,
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18,
+    "rawFilesUnchangedSha256": {
+      "docs/evidence/natural/r9-A2.json": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+      "docs/evidence/natural/r9-A3.json": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "docs/evidence/natural/r9-D1.json": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+      "docs/evidence/natural/r9-D2.json": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+      "docs/evidence/natural/r9-N2.json": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "docs/evidence/natural/r9-T2.json": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2"
+    }
+  },
+  "remaining": [
+    "Model may translate a source incorrectly while roles and links remain mutually consistent",
+    "A2/A3 causal scope and N2/T2 GenUI/free-prose failures remain",
+    "Natural-question retest, current Codex client, actual phones and screen readers are unverified"
+  ],
+  "existingPreview10Unchanged": true,
+  "taskResourcesStopped": true,
+  "newDependencies": false,
+  "sourceHashes": {
+    "src/protocol.ts": "113735f44c86146b0929fe682e790904f4f441ad30b4d464c6dd2bb683afb5d1",
+    "src/decision-mapping.ts": "cdc6721c2c0ab4148787ddf3351a34e5f8a88ae98c371c6ffb191651d9c586ca",
+    "src/core.ts": "5bb999a2fa9534bc972d6d031d9b341fc627bff0997b13a996dee13babb41666",
+    "src/components/DecisionExplorer.tsx": "e48cdda8ca9a8e05f6eef4f5025c75ba81618943f1c4b7de316fe7678b731234"
+  },
+  "compiledEntryHashes": {
+    "dist/host.js": "99e61b15c39b8c028958dfcd895474700be73cce687f4e40a8ac9ba41661127c",
+    "dist/client.js": "bcf99929c3b22b24a50c15677212b78e11584cd9ca0b5709224058e93b08d0bd",
+    "dist/core.js": "b4723c97a51a61eb0f55aedd8407eaa0c46cd08cd209aafe55a6ddd026e22337",
+    "dist/mcp.js": "b4238a2458572f1ff09a4a2053f3697545f91754ba9ed3ae41f68228ef63cad7"
+  },
+  "currentFixtureCompatibility": "Existing fixture endpoint now uses explicitly authored1.4 declarations for new deliveries; old history sources remain intact. One selected assertion checked all current fixtures after the final helper cleanup. Full suites were not rerun."
+}

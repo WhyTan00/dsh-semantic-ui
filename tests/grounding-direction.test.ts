@@ -20,7 +20,9 @@ function saved(id:string):Envelope{
 }
 function correctedMaintenance(){
  const view=saved('D1');if(view.component!=='DecisionExplorer')throw Error();view.protocolVersion=VERSION;
- view.payload.requirements!.find(r=>r.dimension==='team_maint')!.relation='requires-availability';return view;
+ view.payload.requirements!.find(r=>r.dimension==='team_maint')!.relation='requires-availability';
+ for(const r of view.payload.requirements!){const d=view.payload.dimensions.find(d=>d.id===r.dimension)!,i=view.payload.inputs.find(i=>i.id===r.input)!;d.semanticRole=r.relation==='requires-availability'?'resource-need':'capability-support';i.semanticRole=r.relation==='requires-availability'?'resource-available':'capability-need';}
+ view.payload.inputs.forEach(i=>i.expectedEffect='hard');return view;
 }
 describe('boolean source mapping directions',()=>{
  it('preserves the original D1 counterexample and requires explicit source correction',()=>{
@@ -43,7 +45,7 @@ describe('boolean source mapping directions',()=>{
   const p=capability.payload as Decision;
   expect(validateEnvelope(capability).ok).toBe(true);expect(decide(p,{needed:true},true).eligibleOptionIds).toEqual(['vm']);
   const next=correctedMaintenance();expect(validateEnvelope({...next,protocolVersion:'1.2'}).ok).toBe(false);
-  expect(analyzeEnvelope(next)).toHaveProperty('protocolVersion','1.3');
+  expect(analyzeEnvelope(next)).toHaveProperty('protocolVersion','1.4');
   expect(analyzeEnvelope(next)).toHaveProperty('sourceFactsVerified',false);
  });
  it('preserves conditional inactivity and rejects mixed boolean/numeric units',()=>{
@@ -76,7 +78,7 @@ describe('declared input effect coverage',()=>{
  });
 });
 
-it('preserves protocol1.3 predicate direction in both persisted tool-result paths',()=>{
+it('preserves current explicit predicate direction in both persisted tool-result paths',()=>{
  const view=correctedMaintenance(),meta=presentationMeta({view},{status:'delivered',turn:1,protocolVersion:VERSION});
  for(const type of ['tool/result','tool/ptc-dispatch']){
   const checkpoint=checkpointOf(JSON.parse(JSON.stringify({type,data:{meta,isError:false}})));
@@ -86,7 +88,7 @@ it('preserves protocol1.3 predicate direction in both persisted tool-result path
 it('returns new requirement direction and input effects through actual MCP stdio',async()=>{
  const transport=new StdioClientTransport({command:process.execPath,args:['--import','tsx','src/mcp-main.ts'],stderr:'pipe'}),client=new Client({name:'direction-contract-check',version:'1.0.0'});
  try{await client.connect(transport);const result=await client.callTool({name:'semantic_ui_check',arguments:{view:correctedMaintenance()}});
-  expect(result.structuredContent).toHaveProperty('protocolVersion','1.3');expect(result.structuredContent).toHaveProperty('decisionFacts.eligibleOptionIds',['hosted']);
+  expect(result.structuredContent).toHaveProperty('protocolVersion','1.4');expect(result.structuredContent).toHaveProperty('decisionFacts.eligibleOptionIds',['hosted']);
   expect(result.structuredContent).toHaveProperty('decisionFacts.requirements.2.relation','requires-availability');expect(result.structuredContent).toHaveProperty('decisionFacts.inputEffects.1.affectsEligibility',true);
  }finally{await client.close();await transport.close();}
 },20000);

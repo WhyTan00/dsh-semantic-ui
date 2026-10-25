@@ -3,11 +3,13 @@ import type {Decision} from '../protocol';
 import {decide,type InputValues} from '../math';
 import {Evidence} from './ArchitectureExplorer';
 import {useAppearance} from '../appearance';
+import {decisionDeclarationFacts} from '../decision-mapping';
 export function DecisionExplorer({data:p}:{data:Decision}){
  const {strictPolicy}=useAppearance();
  const [values,setValues]=useState<InputValues>(()=>Object.fromEntries(p.inputs.map(i=>[i.id,i.initial])));
  const [dimensions,setDimensions]=useState(()=>p.dimensions.map(d=>d.id));
  const [exploreProposals,setExploreProposals]=useState(false);
+ const mapping=p.inputs.some(i=>i.expectedEffect)||p.dimensions.some(d=>d.semanticRole)?decisionDeclarationFacts(p):null;
  const result=decide(p,values,strictPolicy,exploreProposals);const changed=p.inputs.filter(i=>values[i.id]!==i.initial);
  return <section className="explorer decision" aria-label={p.title}><h3>{p.title}</h3>
   <fieldset><legend>Focus dimensions — display only</legend>{p.dimensions.map(d=><label key={d.id}><input type="checkbox" checked={dimensions.includes(d.id)} onChange={e=>setDimensions(old=>e.target.checked?[...old,d.id]:old.filter(x=>x!==d.id))}/>{d.label}</label>)}</fieldset>
@@ -29,7 +31,7 @@ export function DecisionExplorer({data:p}:{data:Decision}){
    {result.triggered.map(r=><div key={r.id}><p>Rule {r.id} · priority {r.priority} · {strictPolicy?`Model-declared source label: ${r.origin} (unverified)`:r.origin==='given'?'Declared source: user-given rule':'Declared source: model judgment'}: {strictPolicy?'Fixed policy explanation: ':''}{r.reason}</p>{strictPolicy?<p>Current predicate ({r.when.mode}): {r.when.clauses.map(c=>`${p.inputs.find(i=>i.id===c.input)?.label}: ${String(values[c.input]??'Unknown')} ${c.op} ${String(c.value)}`).join('; ')}</p>:null}<Evidence items={r.evidence}/></div>)}
    {result.unresolved.map(r=><p key={r.id}>Rule {r.id} needs more input (priority {r.priority}).</p>)}
   </div>
-  {strictPolicy&&p.inputs.length?<details><summary>Condition mapping (declared, not source verified)</summary>{result.inputEffects.map(effect=><p key={effect.inputId}>{p.inputs.find(i=>i.id===effect.inputId)?.label}: {effect.scope}. Requirements: {effect.requirementIds.join(', ')||'none'}; constraints: {effect.constraintIds.join(', ')||'none'}; preference rules: {effect.ruleIds.join(', ')||'none'}.</p>)}<p className="meta">These links describe the supplied policy. A valid mapping does not prove the model translated the original request correctly.</p></details>:null}
+  {strictPolicy&&p.inputs.length?<details><summary>Condition mapping (declared, not source verified)</summary><section aria-label="Declared field mappings">{mapping?<h4>Declaration checks — source unverified</h4>:null}{result.inputEffects.map(effect=><p key={effect.inputId}>{p.inputs.find(i=>i.id===effect.inputId)?.label}: {effect.scope}.{mapping?` Actual dependency scope; declared expected effect: ${p.inputs.find(i=>i.id===effect.inputId)?.expectedEffect}.`:''} Requirements: {effect.requirementIds.join(', ')||'none'}; constraints: {effect.constraintIds.join(', ')||'none'}; preference rules: {effect.ruleIds.join(', ')||'none'}.</p>)}{mapping?<>{mapping.requirements.map(r=><p key={r.requirementId}>{r.requirementId}: field {r.dimensionId} ({r.dimensionRole??'numeric'}, {r.unit??'unitless'}) → {r.relation} → input {r.inputId} ({r.inputRole??'numeric'}).</p>)}<p className="meta">Roles and expected effects are supplied declarations. Inactive predicates still count as dependencies; not every value change changes the result. These checks do not certify the source or model prose.</p></>:null}<p className="meta">These links describe the supplied policy. A valid mapping does not prove the model translated the original request correctly.</p></section></details>:null}
   <details><summary>Hard constraints ({p.constraints.length})</summary>{result.constraints.map(({constraint:c,match})=><div key={c.id}><p>{p.options.find(o=>o.id===c.optionId)?.label}: {c.reason} — {match===true?'excluded':match==='unknown'?'unknown':'not triggered'}</p><Evidence items={c.evidence}/></div>)}</details>
  </section>;
 }

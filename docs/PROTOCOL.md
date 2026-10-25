@@ -1,6 +1,6 @@
-# Semantic protocol1.3 (reads1.0 /1.1 /1.2 history)
+# Semantic protocol1.4 candidate (reads1.0 /1.1 /1.2 /1.3 history)
 
-Preview.9 uses protocol1.3. See [source mapping and validation limits](GROUNDING-FOLLOWUP.zh-CN.md). Published preview.8 remains protocol1.2.
+Local preview.11-dev.0 uses protocol1.4 with [explicit role/effect consistency checks](DECLARATION-CHECKS.zh-CN.md). Published preview.9/10 use protocol1.3. See [source mapping and validation limits](GROUNDING-FOLLOWUP.zh-CN.md). Published preview.8 remains protocol1.2.
 
 The DSH model-facing tool is `dsh_semantic_ui`:
 

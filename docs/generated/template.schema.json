@@ -67,6 +67,13 @@
                         "type": "string",
                         "minLength": 1,
                         "maxLength": 80
+                      },
+                      "semanticRole": {
+                        "type": "string",
+                        "enum": [
+                          "capability-support",
+                          "resource-need"
+                        ]
                       }
                     },
                     "required": [
@@ -112,6 +119,21 @@
                           "minLength": 1,
                           "maxLength": 80
                         }
+                      },
+                      "semanticRole": {
+                        "type": "string",
+                        "enum": [
+                          "capability-need",
+                          "resource-available"
+                        ]
+                      },
+                      "expectedEffect": {
+                        "type": "string",
+                        "enum": [
+                          "hard",
+                          "preference-only",
+                          "hard-and-preference"
+                        ]
                       }
                     },
                     "required": [

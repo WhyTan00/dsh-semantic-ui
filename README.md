@@ -24,6 +24,8 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 **Preview.10** adds an inspectable missing-value comparison using the existing core and an explicit unverified-model explanation label. 94 tests and targeted archive-installed DSH Native/PTC chart checks passed, including protocol1.0 history, null-preserving downloads and360px layout. No new model calls; the original six semantic failures remain. See the [chart guide](docs/CHART-COMPARISON.zh-CN.md) and [versioned evidence](docs/evidence/preview10.json). Published preview.8/9 archives remain unchanged.
 
+Local development candidate **preview.11-dev.0 / protocol1.4** adds executable declaration checks: capability/resource roles must agree with boolean relations, and each input’s expected hard/preference effect must match its dependency graph. It rejects contradictions without rewriting the policy, preserves1.0–1.3 histories, and keeps source verification explicitly false. This candidate is not a new release. See the [declaration guide and runnable checks](docs/DECLARATION-CHECKS.zh-CN.md).
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

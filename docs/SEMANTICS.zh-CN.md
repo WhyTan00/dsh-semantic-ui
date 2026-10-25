@@ -43,3 +43,5 @@
 ## 协议1.3 /preview.9
 
 新增requires-availability表达选项需要资源、输入提供资源，方向与supports相反；提供inputEffects区分硬条件和偏好专用控件。真实Native/PTC及1.0/1.1/1.2历史夹具通过，原模型错误未被覆写。补零方向仅相对观测均值，不能推断真实完整均值偏差。详见 [来源映射](GROUNDING-FOLLOWUP.zh-CN.md) 和 [版本证据](evidence/preview9.json)。
+
+本地候选协议1.4增加显式角色与控件预期作用的交叉校验，源事实仍未核实；字段、错误码、历史和可运行入口见 [声明检查](DECLARATION-CHECKS.zh-CN.md)。

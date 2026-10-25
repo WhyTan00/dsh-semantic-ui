@@ -1,6 +1,6 @@
 {
   "name": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.10",
+  "version": "0.1.0-preview.11-dev.0",
   "description": "Bounded semantic UI for native DeepSeek Harness conversations, powered by json-render.",
   "type": "module",
   "license": "MIT",
@@ -63,7 +63,8 @@
     "docs/CODEX.zh-CN.md",
     "docs/SEMANTICS.zh-CN.md",
     "docs/GROUNDING-FOLLOWUP.zh-CN.md",
-    "docs/CHART-COMPARISON.zh-CN.md"
+    "docs/CHART-COMPARISON.zh-CN.md",
+    "docs/DECLARATION-CHECKS.zh-CN.md"
   ],
   "dsh": {
     "client": {
@@ -93,7 +94,8 @@
     "research:check": "node scripts/research-check.mjs",
     "research:generate": "node scripts/research-check.mjs --write",
     "test:release-isolation": "node tests/release-isolation.mjs",
-    "test:chart-host": "CHART_CHECK_ONLY=1 node tests/host-lifecycle.mjs"
+    "test:chart-host": "CHART_CHECK_ONLY=1 node tests/host-lifecycle.mjs",
+    "test:consistency-host": "CONSISTENCY_CHECK_ONLY=1 node tests/host-lifecycle.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "3.1.1",
