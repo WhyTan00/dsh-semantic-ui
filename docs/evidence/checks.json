@@ -2,11 +2,11 @@
   "platform": "macOS arm64",
   "dsh": "0.2.1-rc.2",
   "typecheck": "passed",
-  "unitTestFiles": 6,
-  "unitTestsPassed": 58,
+  "unitTestFiles": 8,
+  "unitTestsPassed": 80,
   "unitTestsFailed": 0,
   "build": "passed",
-  "naturalQuestionAcceptance": "44 frozen-question first attempts across four rounds. Round4: 4 pass / 3 notes / 4 fail (A1/A3/D1/D2); full GenUI enabled unlike rounds1-3, not controlled benchmarking.",
+  "naturalQuestionAcceptance": "Six complete frozen rounds /66 first attempts. New full rounds5:3 pass/3 notes/5 fail;6:2/4/5. Final targeted run9:0/0/6 on six selected questions, not a complete round. No semantic acceptance or accuracy trend claimed.",
   "delivery": "output.presentationMeta on standard tool/result and tool/ptc-dispatch events",
   "fixes": [
     "Cross-process reopening uses standard persisted result metadata; unsupported custom required events removed.",
@@ -19,25 +19,30 @@
     "Bulk model evidence separated from runtime tgz without removing first failures.",
     "Actual elapsed-time geometry; stable color/pattern identities; all-missing states; scoped source table downloads.",
     "Keyboard graph selection; parallel/cycle/self edges; current-container fit including edges.",
-    "Explicit proposed versus declared policy and reset conditions/dimensions."
+    "Explicit proposed versus declared policy and reset conditions/dimensions.",
+    "Protocol1.2 typed number/boolean requirements and actual current-condition traces; no unused controls in new delivery.",
+    "New preference rules held by default, even model self-declared given origin; local exploration resets.",
+    "Computed graph facts/canonical summary; check-only action, hypothetical zero-fill facts, lossless receipt assertion.",
+    "Portable read-only MCP, host-neutral core and optional skill; no global installation.",
+    "Pack validation preserves existing artifacts on check failure; every installed packaged file verified before host starts."
   ],
   "modelProvider": "workbuddy",
   "model": "deepseek-v4.1-flash",
   "reasoningEffort": "high",
   "latestNaturalBrowserErrors": [],
   "validationBoundary": "Bounded structural/graph/rule/statistical validation does not prove that a model statement follows the user facts.",
-  "version": "0.1.0-preview.7",
+  "version": "0.1.0-preview.8",
   "genuiModelCoexistence": "Four fresh sessions; three semantic components and one GenUI form, actual callback; initial content failures preserved. One separate numeric rerun correct, not a complete new round.",
   "research": {
     "projects": 35,
     "pinnedSourceFiles": 139,
     "licenseFiles": 35,
-    "newRuntimeDependencies": 0,
+    "newRuntimeDependencies": "MCP SDK1.32.2 (dev dependency bundled into optional standalone executable); existing DSH chart stack unchanged.",
     "derivedInventory": "consistent"
   },
-  "targetedModelCases": 2,
-  "targetedModelSemanticFailures": 0,
-  "targetedModelBoundary": "Two fresh template-reuse conversations; P2 derived a correct combined mean but overstated program provenance. Not a full 11-question round.",
+  "targetedModelCases": 8,
+  "targetedModelSemanticFailures": 7,
+  "targetedModelBoundary": "Run8 two cases includes one actual implementation failure with repeated delivered effects. Run9 six original selected cases all semantic failures. Setup run7 two cases separately excluded after installed-byte audit.",
   "aria": "Registered AriaComponent; chart/histogram accessible description verified after local selection in Native and PTC.",
   "priorPreview5Summary": {
     "version": "0.1.0-preview.5",
@@ -54,9 +59,9 @@
     "targetedModelSemanticFailures": 3,
     "targetedModelBoundary": "E1 notes; E2/E3/E4 failures retained; not a complete new round."
   },
-  "targetedModelProseAttributionNotes": 1,
+  "targetedModelProseAttributionNotes": 0,
   "templateEvidence": "templates.json",
-  "runtimeLicensePackages": 85,
+  "runtimeLicensePackages": 171,
   "priorPreview6Summary": {
     "version": "0.1.0-preview.6",
     "unitTestsPassed": 51,
@@ -70,5 +75,13 @@
     },
     "targetedModelBoundary": "Two fresh template-reuse conversations; P2 derived a correct combined mean but overstated program provenance. Not a full 11-question round."
   },
-  "qualityEvidence": "quality.json"
+  "qualityEvidence": "quality.json",
+  "semanticEvidence": "semantic-grounding.json",
+  "codexEvidence": "codex-mcp.json",
+  "priorPreview7Summary": {
+    "version": "0.1.0-preview.7",
+    "unitTestsPassed": 58,
+    "runtimeLicensePackages": 85,
+    "qualityEvidence": "quality.json"
+  }
 }

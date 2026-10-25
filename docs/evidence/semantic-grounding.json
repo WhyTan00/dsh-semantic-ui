@@ -1,0 +1,34 @@
+{
+  "version": "0.1.0-preview.8",
+  "protocolVersion": "1.2",
+  "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+  "freshInstalledFiles": 252,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "fixturesPerMode": {
+    "originalLifecycle": 4,
+    "quality": 5,
+    "grounding": 4,
+    "checkOnly": 1,
+    "templates": true
+  },
+  "results": [
+    "Current300 excludes100GB; confirmed50 recomputes50; null differs from0.",
+    "Unitless boolean output is lossless JSON; true/false/unknown requirements differ.",
+    "Model-provided origin given cannot enable preference; explicit keyboard local exploration, reset/reload revocation.",
+    "Graph intersections/shared targets computed without inferred routing.",
+    "Check-only gives actual receipt without a semantic UI checkpoint.",
+    "640/360px, no component-root overflow/pageerrors; controls make no model requests."
+  ],
+  "templateRestartPersistence": "Native saved template persisted into PTC restarted host; PTC verifies delete leaves original history.",
+  "records": {
+    "native": "semantic/native-grounding.json",
+    "ptc": "semantic/ptc-grounding.json",
+    "cleanInstall": "semantic/clean-install-candidate.json",
+    "naturalCounterexamples": "semantic-natural-extra.json"
+  },
+  "naturalBoundary": "Program/fixture checks passed; final natural target6/6 failed content semantics. Correct computation of model-supplied structure does not prove correct source mapping.",
+  "finalArchive": "Exact executable/install-contract comparison is recorded separately in install.json."
+}

@@ -104,6 +104,7 @@ describe('fresh-data reuse and appearance snapshots',()=>{
     apply(ctx);await Promise.all(pending);const signal=new AbortController().signal;
     const saved=await handler('library',{action:'save',expectedRevision:0,name:'Native chart',definition:extractDefinition(validatedView(chart)),theme:{...defaultTheme,mode:'dark'},layout:defaultLayout},signal,{principal:{kind:'owner'}});expect(saved.ok).toBe(true);
     const t=saved.value.templates[0],tool=ctx.tools.register.mock.calls[0][0],exec={signal,agent:{session:{}},callId:'test'};
+    const checkedOnly=await tool.execute({action:'check',view:chart},{signal});expect(checkedOnly.status).toBe('validated');expect(checkedOnly).toHaveProperty('dataFacts');expect(presentationMeta({view:chart},checkedOnly)).toBe(null);
     const args={action:'render',view:chart,templateId:t.id,templateVersion:1},result=await tool.execute(args,exec);expect(result).not.toHaveProperty('view');expect(result.presentation.template).toEqual({id:t.id,version:1,name:'Native chart'});expect(checkpointOf({type:'tool/result',data:{meta:presentationMeta(args,result)}})?.view?.payload).toEqual(chart.payload);
     const {templateVersion:_,...missingVersion}=args;await expect(tool.execute(missingVersion,exec)).rejects.toThrow('TEMPLATE_VERSION');
   });

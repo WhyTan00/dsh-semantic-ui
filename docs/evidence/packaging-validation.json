@@ -1,0 +1,6 @@
+{
+  "failureInjected": "missing required package file in task-private copy of release script",
+  "validationFailedAsExpected": true,
+  "allFourPriorArtifactBytesPreserved": true,
+  "sourceScriptUnmodifiedByProbe": true
+}

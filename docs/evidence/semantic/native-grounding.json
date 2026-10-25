@@ -1,0 +1,71 @@
+{
+  "results": [
+    {
+      "kind": "capacity",
+      "toolMode": "native",
+      "protocolVersion": "1.2",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "current300ExcludesA": true,
+      "confirmed50KeepsBoth": true,
+      "unknownDistinctFromZero": true,
+      "eligibilityNotPreference": true,
+      "reset": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "paths",
+      "toolMode": "native",
+      "protocolVersion": "1.2",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "graphSelection": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "proposal",
+      "toolMode": "native",
+      "protocolVersion": "1.2",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "modelDeclaredOriginCannotAuthorize": true,
+      "explicitKeyboardExploration": true,
+      "hardRequirementsStillApply": true,
+      "resetRevokesExploration": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true,
+      "reloadRevokesExploration": true
+    },
+    {
+      "kind": "capability",
+      "toolMode": "native",
+      "protocolVersion": "1.2",
+      "deterministicFixture": true,
+      "canonicalSummary": true,
+      "booleanFalsePreserved": true,
+      "unknownCapabilityNotFalse": true,
+      "requiredCapabilityExcludesUnsupported": true,
+      "noAutomaticPreference": true,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "actualToolReceipt": true,
+      "refresh": true
+    },
+    {
+      "kind": "check-only",
+      "toolMode": "native",
+      "computedFacts": true,
+      "semanticComponents": 0,
+      "deterministicFixture": true
+    }
+  ],
+  "pageErrors": []
+}

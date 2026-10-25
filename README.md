@@ -16,12 +16,16 @@ Preview.6 adds **personal templates and bounded themes**: save a field contract 
 
 Preview.7 improves **visual and interaction fidelity**: elapsed-time axes, stable color/pattern identity, long-label bars, explicit all-missing states, scope-matched table downloads, keyboard graph inspection, distinct parallel/self edges, and responsive graph fitting. The [quality guide](docs/QUALITY.zh-CN.md) links each change to public sources and actual checks. No new rendering dependency was added.
 
+Preview.8 adds **computed requirements and a portable verification core**: typed numeric/boolean conditions, graph intersections, unknown-aware eligibility, and preference policies held until explicit local exploration. A no-render `action=check` returns computed facts. New deliveries use protocol 1.2; saved 1.0/1.1 histories retain their behavior. See [semantic boundaries](docs/SEMANTICS.zh-CN.md).
+
+**Codex already provides native interactive visualizations on supported surfaces.** The optional [Codex bridge](docs/CODEX.zh-CN.md) reuses our core through three read-only MCP tools and a portable skill; it does not duplicate the renderer. CLI/IDE can consume computed results but do not render native interactive visualizations. The bridge passed standalone JSON-RPC tests; it has not been globally installed or accepted in a live Codex model conversation.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.7.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.8.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.
@@ -36,7 +40,9 @@ DSH's shared React 18 hosts a small wrapper; a plugin-owned React 19 root runs j
 
 ## Evidence and limitations
 
-This release distinguishes **real DSH with a deterministic fixture** from **real model acceptance**. See [validation results](docs/VALIDATION.zh-CN.md), [the frozen 11 questions](fixtures/questions.json) and [all natural-question round records](docs/natural-question-results.json). A fixture is not evidence of model expression choice. Four complete frozen 11-question rounds have now run through the existing personal WorkBuddy route (`deepseek-v4.1-flash`, high effort). Every first attempt and one excluded setup failure are retained. Round 4 also enabled public GenUI 0.14.0 (7 Semantic UI views, 2 GenUI tables, 2 plain answers); rounds 1–3 did not include its generation guidance, so the counts are not a controlled benchmark. The latest round has 4 passes, 3 passes with notes and 4 content-semantic failures (A1/A3/D1/D2), so this remains a preview: valid structure and a rendered component do not establish factual correctness. See [per-question records](docs/natural-question-results.json).
+This release distinguishes **real DSH with deterministic fixtures** from **real model acceptance**. TypeScript, 80 tests, and a fresh installed Native/PTC lifecycle/quality/requirements/template matrix passed. Six complete frozen 11-question rounds (66 first attempts) are retained. New full rounds 5 and 6 scored 3 pass / 3 notes / 5 fail and 2 / 4 / 5. Final targeted run 9 repeated six selected original questions: **all six still fail content semantics**, including incorrect source-to-requirement mapping, extra prose claims, and GenUI/plain-text errors. It is not a complete seventh round or a controlled accuracy benchmark. Run 8 also preserves an actual integration failure and its repeated UI effects; setup-only attempts are separately identified.
+
+See [validation](docs/VALIDATION.zh-CN.md), [frozen questions](fixtures/questions.json), and [all first-attempt records](docs/natural-question-results.json). This remains a preview: bounded computation can be correct while model-supplied premises or prose are wrong. Forms/feedback, arbitrary chart types, actual mobile-device and screen-reader acceptance remain open.
 
 [Public API/version evidence](docs/UPSTREAM.zh-CN.md) · [protocol and data semantics](docs/PROTOCOL.md) · [specific GenUI compatibility limits](docs/GENUI.zh-CN.md) · [中文说明](docs/OVERVIEW.zh-CN.md)
 

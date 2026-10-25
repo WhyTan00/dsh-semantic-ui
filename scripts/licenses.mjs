@@ -5,12 +5,18 @@ import{execFileSync}from'node:child_process';import{mkdir,readFile,readdir,copyF
 const data=JSON.parse(execFileSync('pnpm',['licenses','list','--json'],{encoding:'utf8'}));
 const runtimePaths=new Set();
 async function metadata(name,parent){
- const require=createRequire(parent);try{return require.resolve(name+'/package.json');}catch{
-  let directory=path.dirname(require.resolve(name));
-  while(directory!==path.dirname(directory)){try{const file=path.join(directory,'package.json');if(JSON.parse(await readFile(file,'utf8')).name===name)return file;}catch{}directory=path.dirname(directory);}
-  throw Error('Cannot resolve runtime license metadata: '+name);
+ const require=createRequire(parent);let entry;
+ try{entry=require.resolve(name+'/package.json');}catch{entry=require.resolve(name);}
+ // Some exports maps resolve package.json to a nested module-format marker.
+ // Walk to the manifest that actually names the dependency before following it.
+ let directory=path.dirname(entry);
+ while(directory!==path.dirname(directory)){
+  try{const file=path.join(directory,'package.json');if(JSON.parse(await readFile(file,'utf8')).name===name)return file;}catch{}
+  directory=path.dirname(directory);
  }
+ throw Error('Cannot resolve runtime license metadata: '+name);
 }
+
 async function visit(file,root=false){
  const location=await realpath(path.dirname(file));if(runtimePaths.has(location))return;if(!root)runtimePaths.add(location);
  const meta=JSON.parse(await readFile(file,'utf8'));
@@ -20,6 +26,8 @@ async function visit(file,root=false){
  }
 }
 await visit(path.resolve('package.json'),true);
+// The portable MCP executable bundles this build-time dependency into runtime code.
+await visit(await metadata('@modelcontextprotocol/sdk',path.resolve('package.json')));
 let rows=[],missing=[];await mkdir('licenses',{recursive:true});
 for(const [license,pkgs]of Object.entries(data))for(const pkg of pkgs){
  for(const location of pkg.paths??[]){if(!runtimePaths.has(await realpath(location)))continue;const meta=JSON.parse(await readFile(path.join(location,'package.json'),'utf8'));const slug=meta.name.replace(/^@/,'').replaceAll('/','__')+'@'+meta.version;const dest=path.join('licenses',slug);await mkdir(dest,{recursive:true});
@@ -34,5 +42,5 @@ for(const [license,pkgs]of Object.entries(data))for(const pkg of pkgs){
 }
 rows=[...new Map(rows.map(r=>[r.name+'@'+r.version,r])).values()].sort((a,b)=>(a.name+a.version).localeCompare(b.name+b.version));
 await writeFile('docs/generated/dependency-licenses.json',JSON.stringify(rows,null,2)+'\n');
-await writeFile('THIRD_PARTY_NOTICES.md','# Third-party notices\n\nOriginal project code is MIT. The following exact installed production dependencies and peer runtime dependencies retain their own copyright and license. Browser bundle legal notices also ship in dist/client.js.LEGAL.txt. Development-only tooling is governed by its installed license and the lockfile.\n\n| Package | Version | License | Retained notices |\n|---|---|---|---|\n'+rows.map(r=>`| ${r.name} | ${r.version} | ${typeof r.license==='string'?r.license:JSON.stringify(r.license)} | ${r.files.map(f=>`[${path.basename(f)}](${f})`).join(', ')||'See package metadata'} |`).join('\n')+'\n');
+await writeFile('THIRD_PARTY_NOTICES.md','# Third-party notices\n\nOriginal project code is MIT. The following exact installed production/peer dependencies and bundled MCP SDK dependency closure retain their own copyright and license. Browser bundle legal notices also ship in dist/client.js.LEGAL.txt. Development-only tooling is governed by its installed license and the lockfile.\n\n| Package | Version | License | Retained notices |\n|---|---|---|---|\n'+rows.map(r=>`| ${r.name} | ${r.version} | ${typeof r.license==='string'?r.license:JSON.stringify(r.license)} | ${r.files.map(f=>`[${path.basename(f)}](${f})`).join(', ')||'See package metadata'} |`).join('\n')+'\n');
 console.log(JSON.stringify({packages:rows.length,licenseFamilies:[...new Set(rows.map(r=>r.license))],withoutRootLicenseFile:missing}));

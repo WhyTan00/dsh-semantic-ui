@@ -1,0 +1,65 @@
+{
+  "results": [
+    {
+      "kind": "irregular",
+      "toolMode": "native",
+      "deterministicFixture": true,
+      "timePixelIntervalRatio": 0.12499996789742791,
+      "filteredDownload": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "refresh": true
+    },
+    {
+      "kind": "bars",
+      "toolMode": "native",
+      "deterministicFixture": true,
+      "patterns": true,
+      "signedValuesAndMissing": true,
+      "keyboardFilter": true,
+      "scopeDownloads": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "refresh": true
+    },
+    {
+      "kind": "missing",
+      "toolMode": "native",
+      "deterministicFixture": true,
+      "missingNotZero": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "refresh": true
+    },
+    {
+      "kind": "prebinned",
+      "toolMode": "native",
+      "deterministicFixture": true,
+      "selectedDenominators": true,
+      "zeroBinsRetained": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "refresh": true
+    },
+    {
+      "kind": "graph",
+      "toolMode": "native",
+      "deterministicFixture": true,
+      "keyboardDetails": true,
+      "wheelDoesNotZoom": true,
+      "distinctEdgePaths": 5,
+      "reducedMotion": true,
+      "allNodesAndEdgesInNarrowViewport": true,
+      "selfLoopOutsideNode": true,
+      "narrowWidth": 360,
+      "narrowOverflow": 0,
+      "localControlsMadeNoModelRequests": true,
+      "refresh": true
+    }
+  ],
+  "pageErrors": []
+}

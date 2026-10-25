@@ -65,6 +65,36 @@
       "uniquePageErrorMessages": [],
       "generationComposition": "Semantic UI + public GenUI 0.14.0 fully enabled; rounds 1-3 did not include GenUI guidance. Same frozen questions but different composition, not a controlled accuracy benchmark.",
       "extraBrowserRecord": "evidence/quality-natural-extra.json"
+    },
+    {
+      "round": 5,
+      "version": "0.1.0-preview.8",
+      "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 3,
+      "semanticPassWithNotes": 3,
+      "semanticFail": 5,
+      "modelRequests": 33,
+      "renderedComponents": 7,
+      "genuiComponents": 1,
+      "uniquePageErrorMessages": [],
+      "generationComposition": "Semantic UI + public GenUI0.14.0 enabled. Guidance/schema/receipt candidates differ between runs. Not controlled accuracy benchmarking."
+    },
+    {
+      "round": 6,
+      "version": "0.1.0-preview.8",
+      "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+      "cases": 11,
+      "completed": 11,
+      "semanticPass": 2,
+      "semanticPassWithNotes": 4,
+      "semanticFail": 5,
+      "modelRequests": 36,
+      "renderedComponents": 7,
+      "genuiComponents": 3,
+      "uniquePageErrorMessages": [],
+      "generationComposition": "Semantic UI + public GenUI0.14.0 enabled. Guidance/schema/receipt candidates differ between runs. Not controlled accuracy benchmarking."
     }
   ],
   "results": [
@@ -2034,6 +2064,916 @@
         "screenshots": []
       },
       "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "A1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-A1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "Correct four nodes/four directed edges and shared Database; operational scope is conditional and not independently verified."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "Order API",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-A1-component-0-640.png",
+          "evidence/natural/r5-A1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "A2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-A2.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Treats notification-only retry as unspecified despite explicit user rule; adds unsupported no-upstream-effect conclusions."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "入口",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-A2-component-0-640.png",
+          "evidence/natural/r5-A2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "A3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-A3.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Says Gateway→Search→Index and Gateway→Account→Store do not intersect, although Gateway is shared; adds independence claims."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "Client",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-A3-component-0-640.png",
+          "evidence/natural/r5-A3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "D1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-D1.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Invents CNY/month and operations-hour comparison dimensions; suggests entering limits resolves comparison although option facts remain unknown."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-D1-component-0-640.png",
+          "evidence/natural/r5-D1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "D2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-D2.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 1,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Current300 numeric capacity is checked, but omitted unknown dimensions permit default proposed A; relative maintenance/cost and future controls are not faithful."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-D2-component-0-640.png",
+          "evidence/natural/r5-D2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "D3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-D3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "No winner, unknown cells retained; suitableWhen text is stronger than a preference-only input supports."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-D3-component-0-640.png",
+          "evidence/natural/r5-D3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "N1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-N1.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass",
+          "notes": [
+            "Dates/values, n4, mean4.5, net+2 and intervening dip correct."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "range-filter",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r5-N1-component-0-640.png",
+          "evidence/natural/r5-N1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "N2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-N2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass",
+          "notes": [
+            "Observed n3/missing1, mean0 and unknown four-reading mean m/4 correct."
+          ]
+        },
+        "expression": "plain-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "N3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-N3.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Bins and ratios correct; extra GenUI callout falsely says weighted mean equals12/7 only when weights are equal. Unequal weights can also give that value."
+          ]
+        },
+        "expression": "genui-and-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "T1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass",
+          "notes": [
+            "Correct plain answer60."
+          ]
+        },
+        "expression": "plain-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 5,
+      "questionId": "T2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r5-T2.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "Zero versus missing correct, bias example scoped to nonnegative readings; missing need not imply no observation ever occurred."
+          ]
+        },
+        "expression": "plain-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "A1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-A1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "Main topology faithful; operational impact claims are stronger than declared graph alone."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "Order API",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-A1-component-0-640.png",
+          "evidence/natural/r6-A1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "A2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-A2.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Calls Auth a common upstream of Entry and Stock, which reverses the supplied Entry→Auth direction; adds unsupported upstream/rollback implications."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "入口",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-A2-component-0-640.png",
+          "evidence/natural/r6-A2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "A3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-A3.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "Six operation edges represent five endpoint pairs because Account read/write are split, not an invented route. Prohibitions and shared Client/Gateway correct; ownership/independence prose remains too strong."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "node-selection",
+            "selected": "Client 客户端",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-A3-component-0-640.png",
+          "evidence/natural/r6-A3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "D1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-D1.json",
+        "modelRequestCount": 5,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Unused team-capacity control promised effects; broad provider-upkeep responsibility exceeds the supplied update fact."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-D1-component-0-640.png",
+          "evidence/natural/r6-D1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "D2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-D2.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Numeric current80/300 works and default policy withheld; B suitableWhen wrongly treats >100 as its only eligible interval, adds relative maintenance claims and recommends A in prose."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-D2-component-0-640.png",
+          "evidence/natural/r6-D2-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "D3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-D3.json",
+        "modelRequestCount": 3,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "No winner and unknowns retained; says both meet requirements although no hard requirements were declared."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "focus-dimension",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-D3-component-0-640.png",
+          "evidence/natural/r6-D3-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "N1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-N1.json",
+        "modelRequestCount": 4,
+        "validationRejectedCalls": 0,
+        "componentCount": 1,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass",
+          "notes": [
+            "Correct observed sequence, mean4.5 and dip."
+          ]
+        },
+        "expression": "semantic-ui-and-prose",
+        "controls": [
+          {
+            "kind": "range-filter",
+            "changed": true
+          }
+        ],
+        "containers": [
+          {
+            "wide": {
+              "width": 640,
+              "overflow": 0
+            },
+            "narrow": {
+              "width": 360,
+              "overflow": 0
+            }
+          }
+        ],
+        "pageErrors": [],
+        "screenshots": [
+          "evidence/natural/r6-N1-component-0-640.png",
+          "evidence/natural/r6-N1-component-0-360.png"
+        ]
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "N2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-N2.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "GenUI observed n3/mean0 correct; prose gives zero-filled mean -0.5 instead of0, interpolation0 instead of1 for evenly spaced observations."
+          ]
+        },
+        "expression": "genui-and-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "N3",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-N3.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "semanticAssessment": {
+          "status": "pass-with-notes",
+          "notes": [
+            "Bins/ratios correct; no unknown-weight result. Wording wrongly contrasts equal-weight arithmetic with weighted average as a whole."
+          ]
+        },
+        "expression": "genui-and-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "T1",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-T1.json",
+        "modelRequestCount": 1,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 0,
+        "semanticAssessment": {
+          "status": "pass",
+          "notes": [
+            "Correct plain answer60."
+          ]
+        },
+        "expression": "plain-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
+    },
+    {
+      "round": 6,
+      "questionId": "T2",
+      "status": "completed",
+      "firstAttempt": {
+        "version": "0.1.0-preview.8",
+        "candidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+        "provider": "workbuddy",
+        "model": "deepseek-v4.1-flash",
+        "reasoningEffort": "high",
+        "record": "evidence/natural/r6-T2.json",
+        "modelRequestCount": 2,
+        "validationRejectedCalls": 0,
+        "componentCount": 0,
+        "genuiComponentCount": 1,
+        "semanticAssessment": {
+          "status": "fail",
+          "notes": [
+            "Universal downward-bias claim is false for signed values; conflates observed mean and unknown complete-data mean."
+          ]
+        },
+        "expression": "genui-and-prose",
+        "controls": [],
+        "containers": [],
+        "pageErrors": [],
+        "screenshots": []
+      },
+      "retryAttempts": []
     }
   ],
   "excludedSetupAttempts": [
@@ -2042,6 +2982,24 @@
       "questionId": "A1",
       "record": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/docs/evidence/natural/setup-before-round-2-A1.json",
       "reason": "Harness was started before async plugin installation finished; precondition asserted wrong version but shell continued. Stopped immediately after detecting installed version. Not counted as a corrected-version success; every input and event preserved."
+    },
+    {
+      "record": "evidence/natural/setup-preview8-D1.json",
+      "run": 7,
+      "questionId": "D1",
+      "status": "excluded-setup-failure",
+      "actualInstalledCandidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+      "intendedCandidateSha256": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+      "reason": "Failed packaging left stale manifest; exact installed executable comparison proved old c350 candidate. These records are preserved, not final-control validation."
+    },
+    {
+      "record": "evidence/natural/setup-preview8-D2.json",
+      "run": 7,
+      "questionId": "D2",
+      "status": "excluded-setup-failure",
+      "actualInstalledCandidateSha256": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+      "intendedCandidateSha256": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+      "reason": "Failed packaging left stale manifest; exact installed executable comparison proved old c350 candidate. These records are preserved, not final-control validation."
     }
   ],
   "modelInternalCorrections": "Multiple render calls in the same first attempt are not human/harness answer retries; every rejected call is retained.",
@@ -2074,7 +3032,487 @@
         "Explicit proposed/declared policy results; sourceFactsVerified false; numeric receipt distinguishes echoed summary from computed dataFacts."
       ],
       "boundary": "Round4 model candidate differs from final only in client self-loop geometry and later documentation; exact candidate SHA retained. Subsequent client change is verified by fresh Native/PTC installation, not attributed to natural testing."
+    },
+    {
+      "afterRound": 6,
+      "version": "0.1.0-preview.8",
+      "changes": [
+        "All new preference policies withheld until explicit local exploration, even self-declared given origin.",
+        "Typed numeric and boolean hard requirements; unused-control rejection; new delivery guards versus preserved old snapshots.",
+        "Graph facts and canonical summary; no-render check action; hypothetical zero-fill arithmetic.",
+        "Lossless receipt before delivery; standalone read-only MCP and portable skill; packaging validation staging and installed-byte verification."
+      ],
+      "boundary": "Earlier round5/6 candidates are not final. Run8 implementation failure retained. Final code is run9 and clean Native/PTC c18 candidate; final archive additionally contains documentation/evidence."
     }
   ],
-  "evidenceDistribution": "Full records remain open in the source tag and the separately checksummed evidence archive; runtime package retains this compact index and frozen questions."
+  "evidenceDistribution": "Full records remain open in the source tag and the separately checksummed evidence archive; runtime package retains this compact index and frozen questions.",
+  "targetedRuns": [
+    {
+      "run": 8,
+      "round": 8,
+      "version": "0.1.0-preview.8",
+      "candidateSha256": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+      "cases": 2,
+      "completed": 2,
+      "semanticPass": 1,
+      "semanticPassWithNotes": 0,
+      "semanticFail": 1,
+      "modelRequests": 22,
+      "renderedComponents": 7,
+      "genuiComponents": 0,
+      "uniquePageErrorMessages": [],
+      "generationComposition": "Semantic UI + public GenUI0.14.0 enabled. Guidance/schema/receipt candidates differ between runs. Not controlled accuracy benchmarking.",
+      "completeFrozenRound": false,
+      "results": [
+        {
+          "round": 8,
+          "questionId": "D1",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r8-D1.json",
+            "modelRequestCount": 19,
+            "validationRejectedCalls": 1,
+            "componentCount": 6,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Implementation integration failure: unitless boolean receipt contained undefined unit; strict DSH lossless output rejected it after view delivery, producing repeated attempts and six components (19 model requests). All effects/errors retained; fixed to null and pre-return bounded assertion."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              },
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              },
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              },
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              },
+              null,
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              },
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              },
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              },
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              },
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              },
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r8-D1-component-0-640.png",
+              "evidence/natural/r8-D1-component-0-360.png",
+              "evidence/natural/r8-D1-component-1-640.png",
+              "evidence/natural/r8-D1-component-1-360.png",
+              "evidence/natural/r8-D1-component-2-640.png",
+              "evidence/natural/r8-D1-component-2-360.png",
+              "evidence/natural/r8-D1-component-3-640.png",
+              "evidence/natural/r8-D1-component-3-360.png",
+              "evidence/natural/r8-D1-component-4-640.png",
+              "evidence/natural/r8-D1-component-4-360.png",
+              "evidence/natural/r8-D1-component-5-640.png",
+              "evidence/natural/r8-D1-component-5-360.png"
+            ]
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 8,
+          "questionId": "D2",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r8-D2.json",
+            "modelRequestCount": 3,
+            "validationRejectedCalls": 0,
+            "componentCount": 1,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "pass",
+              "notes": [
+                "Faithful capacity-only comparison, no winner or guessed costs. Current80 both/current300 onlyB; duplicate equivalent capacity requirements redundant but do not change result."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r8-D2-component-0-640.png",
+              "evidence/natural/r8-D2-component-0-360.png"
+            ]
+          },
+          "retryAttempts": []
+        }
+      ],
+      "boundary": "Includes actual implementation lossless-output failure and repeated delivered views; not excluded as setup."
+    },
+    {
+      "run": 9,
+      "round": 9,
+      "version": "0.1.0-preview.8",
+      "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+      "cases": 6,
+      "completed": 6,
+      "semanticPass": 0,
+      "semanticPassWithNotes": 0,
+      "semanticFail": 6,
+      "modelRequests": 18,
+      "renderedComponents": 4,
+      "genuiComponents": 1,
+      "uniquePageErrorMessages": [],
+      "generationComposition": "Semantic UI + public GenUI0.14.0 enabled. Guidance/schema/receipt candidates differ between runs. Not controlled accuracy benchmarking.",
+      "completeFrozenRound": false,
+      "results": [
+        {
+          "round": 9,
+          "questionId": "A2",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-A2.json",
+            "modelRequestCount": 3,
+            "validationRejectedCalls": 0,
+            "componentCount": 1,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Preserves explicit notification retry but invents reverse notification obstruction and says scenarios overlap on payment→notification although the declared scenario paths do not. Upstream-completed assertion unproven."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "node-selection",
+                "selected": "入口",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r9-A2-component-0-640.png",
+              "evidence/natural/r9-A2-component-0-360.png"
+            ]
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 9,
+          "questionId": "A3",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-A3.json",
+            "modelRequestCount": 4,
+            "validationRejectedCalls": 0,
+            "componentCount": 1,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Correct five directed edges and Client/Gateway intersection; prose falsely generalizes read-only to no impact on writes, independent failure scope and coupling width equal to shared-node count."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "node-selection",
+                "selected": "Client",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r9-A3-component-0-640.png",
+              "evidence/natural/r9-A3-component-0-360.png"
+            ]
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 9,
+          "questionId": "D1",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-D1.json",
+            "modelRequestCount": 4,
+            "validationRejectedCalls": 0,
+            "componentCount": 1,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Model maps option needs-team-maintenance to a supports requirement on user has-team-capacity, reversing the business predicate. Actual local switch capacityYes wrongly excludes hosted; capacityNo leaves VM eligible. Also invents currency/month and broader upkeep facts. Computation is faithful to a wrong source mapping; no default preference does not cure it."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r9-D1-component-0-640.png",
+              "evidence/natural/r9-D1-component-0-360.png",
+              "evidence/natural/r9-D1-extra.png"
+            ]
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 9,
+          "questionId": "D2",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-D2.json",
+            "modelRequestCount": 4,
+            "validationRejectedCalls": 0,
+            "componentCount": 1,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Capacity80/300/1001/50 recomputes correctly, default policy stays off; model conflates A deployment simplicity with operations simplicity. reserveNow control references only preference policy, so changing it does not enforce300GB as prose promises."
+              ]
+            },
+            "expression": "semantic-ui-and-prose",
+            "controls": [
+              {
+                "kind": "focus-dimension",
+                "changed": true
+              }
+            ],
+            "containers": [
+              {
+                "wide": {
+                  "width": 640,
+                  "overflow": 0
+                },
+                "narrow": {
+                  "width": 360,
+                  "overflow": 0
+                }
+              }
+            ],
+            "pageErrors": [],
+            "screenshots": [
+              "evidence/natural/r9-D2-component-0-640.png",
+              "evidence/natural/r9-D2-component-0-360.png",
+              "evidence/natural/r9-D2-extra.png"
+            ]
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 9,
+          "questionId": "N2",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-N2.json",
+            "modelRequestCount": 2,
+            "validationRejectedCalls": 0,
+            "componentCount": 0,
+            "genuiComponentCount": 1,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "GenUI gives correct observed mean0 and unknown m/4; extra callout says every fill changes mean, contradicted by zero fill, and median-unaffected wording is unsupported. Did not invoke the new semantic check-only tool; this is not its natural-model acceptance."
+              ]
+            },
+            "expression": "genui-and-prose",
+            "controls": [],
+            "containers": [],
+            "pageErrors": [],
+            "screenshots": []
+          },
+          "retryAttempts": []
+        },
+        {
+          "round": 9,
+          "questionId": "T2",
+          "status": "completed",
+          "firstAttempt": {
+            "version": "0.1.0-preview.8",
+            "candidateSha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+            "provider": "workbuddy",
+            "model": "deepseek-v4.1-flash",
+            "reasoningEffort": "high",
+            "record": "evidence/natural/r9-T2.json",
+            "modelRequestCount": 1,
+            "validationRejectedCalls": 0,
+            "componentCount": 0,
+            "genuiComponentCount": 0,
+            "semanticAssessment": {
+              "status": "fail",
+              "notes": [
+                "Zero/missing distinction correct; universal mean-downward and total-underestimate assertions fail for signed data. Claims alarms necessarily disappear without support."
+              ]
+            },
+            "expression": "plain-prose",
+            "controls": [],
+            "containers": [],
+            "pageErrors": [],
+            "screenshots": []
+          },
+          "retryAttempts": []
+        }
+      ],
+      "boundary": "Final executable candidate; all six have semantic failures, including GenUI/plain prose. check-only capability was not selected naturally."
+    }
+  ]
 }

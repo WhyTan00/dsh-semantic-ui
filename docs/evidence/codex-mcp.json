@@ -1,0 +1,10 @@
+{
+  "verifiedAt": "2026-10-25T08:23:01.509Z",
+  "standaloneCopiedOutsideRepository": true,
+  "actualJsonRpcStdioTests": 3,
+  "result": "passed",
+  "usesDsh": false,
+  "requiresModelCredentials": false,
+  "bytes": 638127,
+  "sha256": "28a94e4430c7607d13c5791812c63a0425d8b2b54180cbae35e99ead6a34b8f3"
+}

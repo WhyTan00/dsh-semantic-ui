@@ -1,6 +1,6 @@
-# Semantic protocol 1.1 (reads 1.0 history)
+# Semantic protocol 1.2 (reads 1.0 / 1.1 history)
 
-The only model-facing tool is `dsh_semantic_ui`:
+The DSH model-facing tool is `dsh_semantic_ui`:
 
 1. `{"action":"catalog"}` returns only this renderer's supported components, data requirements, local controls and explicit state/feedback limits. It does not infer another plugin's capability or implement an external protocol.
 2. `{"action":"describe","component":"ArchitectureExplorer"}` returns the selected payload schema, envelope and semantic rules.
@@ -9,7 +9,7 @@ The only model-facing tool is `dsh_semantic_ui`:
 
 The catalog props, TypeScript types, validator and generated JSON Schema use the schemas in `src/protocol.ts`. Do not generate standalone or inline JSONL via `catalog.prompt()`. The runtime skill and checked-in SKILL.md derive from the same guidance source.
 
-An envelope contains `protocolVersion`, `component`, `displayId`, `revision`, `summary`, and `payload`. Protocol 1.1 optionally carries a strict `presentation` object: version 1, bounded theme/layout, and exact template identity. A 1.0 checkpoint must not contain presentation. The host always snapshots the resolved theme for new deliveries; it never dereferences a mutable library during replay. Only ArchitectureExplorer, DecisionExplorer and DataChart are accepted. Runtime limits: conservative UTF-8 budget 131072 bytes, 12 levels, 80 nodes, 240 edges, 2000 chart rows, 10000 total histogram observations. Text and rule counts are separately bounded by the schema. URLs are not loaded; evidence is inert text. Unknown properties, callbacks, scripts, non-finite numbers, cyclic data and unsupported versions are rejected. There are no arbitrary actions or ECharts options.
+An envelope contains `protocolVersion`, `component`, `displayId`, `revision`, `summary`, and `payload`. Protocol 1.1 and 1.2 optionally carry a strict `presentation` object: version 1, bounded theme/layout, and exact template identity. A 1.0 checkpoint must not contain presentation. The host always snapshots the resolved theme for new deliveries; it never dereferences a mutable library during replay. Only ArchitectureExplorer, DecisionExplorer and DataChart are accepted. Runtime limits: conservative UTF-8 budget 131072 bytes, 12 levels, 80 nodes, 240 edges, 2000 chart rows, 10000 total histogram observations. Text and rule counts are separately bounded by the schema. URLs are not loaded; evidence is inert text. Unknown properties, callbacks, scripts, non-finite numbers, cyclic data and unsupported versions are rejected. There are no arbitrary actions or ECharts options.
 
 `displayId` is supplied by the model: 1–80 ASCII letters, digits, `_ . : -`, starting with a letter or digit. Use a new ID for each distinct subject; identity is scoped to `(DSH session, turn, displayId)`. Updates to the same subject increase the positive integer `revision`. Replays and exact duplicate checkpoints do not create another node. Lower revisions retain the latest state. Same-revision conflicting content and component-type changes produce readable conflicts rather than silently changing meaning. The first checkpoint anchors the row; subsequent updates retain its identity. Cross-turn updates use a new identity by design.
 
@@ -36,6 +36,12 @@ Line/category bar rows use one declared unit and explicit series values or null.
 Histograms use raw observations or explicitly pre-aggregated counts and shared strictly increasing, equal-width bin boundaries. Unequal-width bins return `BIN_WIDTH`: the preview does not implement density semantics and must not draw unequal intervals at equal widths or invent rebinning from pre-aggregated counts. Bins are `[lower, upper)`, with the final upper bound included. Out-of-range observations are rejected. Proportion = bin count / selected valid observations in that group; zero denominator gives unknown. Missing observations are reported for the whole group because their bin is unknowable. Range changes select bins, preserving boundaries. The full source and derived selected bins are labeled separately.
 
 Unweighted mean = sum of non-null observations / valid n. Empty/all-missing means are unknown. Overflow is reported as unknown, not infinity. Weighted averages, arbitrary ratios and quantiles are unsupported without a declared method; the schema rejects invented calculation requests. ECharts receives trusted configuration derived from these functions. Filtered metrics update deterministically; both the envelope summary and a supplied narrative are labeled as applying to the original full dataset.
+
+## Protocol 1.2 requirements and preference review
+
+Numeric comparison dimensions use kind=number, an explicit unit, and numeric or null option values. Requirements reference that dimension and a numeric local input in the identical unit; at-least / at-most comparisons recompute eligibility. Optional when clauses activate requirements; unknown activation or values preserve unknown feasibility. Eligibility does not establish a preferred choice.
+
+Every newly delivered view uses current policy semantics. Historical 1.0/1.1 checkpoints remain readable with their prior behavior; unknown versions are rejected. All 1.2 preference rules await explicit local exploration, including model-declared given origins. Missing comparison cells still withhold preference. An origin string or omission of dimensions cannot authorize a winner. The local exploration checkbox resets on reload and does not feed back to the model. Graph facts, canonical summaries and current predicate traces are computed; original annotations remain unverified. See [semantics](SEMANTICS.zh-CN.md) and the [optional host-independent Codex bridge](CODEX.zh-CN.md).
 
 ## State
 

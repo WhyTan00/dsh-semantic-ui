@@ -8,7 +8,8 @@
           "type": "string",
           "enum": [
             "1.0",
-            "1.1"
+            "1.1",
+            "1.2"
           ]
         },
         "displayId": {
@@ -325,7 +326,8 @@
           "type": "string",
           "enum": [
             "1.0",
-            "1.1"
+            "1.1",
+            "1.2"
           ]
         },
         "displayId": {
@@ -477,6 +479,18 @@
                     "type": "string",
                     "minLength": 1,
                     "maxLength": 80
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "number",
+                      "boolean"
+                    ]
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
                   }
                 },
                 "required": [
@@ -511,9 +525,19 @@
                     "additionalProperties": {
                       "anyOf": [
                         {
-                          "type": "string",
-                          "minLength": 1,
-                          "maxLength": 1200
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1200
+                            },
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "boolean"
+                            }
+                          ]
                         },
                         {
                           "type": "null"
@@ -860,6 +884,104 @@
                 ],
                 "additionalProperties": false
               }
+            },
+            "requirements": {
+              "maxItems": 24,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "dimension": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "input": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "at-least",
+                      "at-most",
+                      "supports"
+                    ]
+                  },
+                  "when": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "any"
+                        ]
+                      },
+                      "clauses": {
+                        "minItems": 1,
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "input": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "eq",
+                                "ne",
+                                "gt",
+                                "gte",
+                                "lt",
+                                "lte"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "string",
+                                  "maxLength": 120
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "input",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "mode",
+                      "clauses"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "id",
+                  "dimension",
+                  "input",
+                  "relation"
+                ],
+                "additionalProperties": false
+              }
             }
           },
           "required": [
@@ -890,7 +1012,8 @@
           "type": "string",
           "enum": [
             "1.0",
-            "1.1"
+            "1.1",
+            "1.2"
           ]
         },
         "displayId": {

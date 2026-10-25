@@ -9,7 +9,7 @@ const descriptions:Record<ComponentName,{purpose:string;controls:string[];requir
 /** Own renderer capabilities only; no inference about another enabled plugin. */
 export function capabilityCatalog(){
  return {
-  catalogVersion:'1.0',protocolVersion:VERSION,delivery:'dsh_semantic_ui describe/render; atomic checkpoints in native DSH conversation history',
+  catalogVersion:'1.0',protocolVersion:VERSION,readOnlyAnalysisWithoutUI:true,delivery:'dsh_semantic_ui describe/render; atomic checkpoints in native DSH conversation history',
   components:(Object.keys(components)as ComponentName[]).map(component=>({component,...structuredClone(descriptions[component])})),
   interaction:{localControls:true,feedbackToModel:false,interactionPreferencesPersist:false,contentPersistence:'DSH standard tool-result metadata; renderer required for replay'},
   personalTemplates:{version:1,modelAccess:'read-only list/inspect/use',storage:'private DSH profile; owner UI mutations',themes:['light/dark','three palettes','font','density','text size'],versions:'immutable; exact version recorded in history',exports:'field contracts and appearance only; no previous values, conclusions or rules'},

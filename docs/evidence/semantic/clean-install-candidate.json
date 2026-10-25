@@ -1,0 +1,16 @@
+{
+  "dsh": "0.2.1-rc.2",
+  "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no source overlay",
+  "package": "@whytan/dsh-semantic-ui",
+  "version": "0.1.0-preview.8",
+  "filename": "clean-final-c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523.tgz",
+  "sha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+  "hostStarted": true,
+  "allPackagedFilesVerified": 252,
+  "clientRenderedAllFourFixtures": true,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "pageErrors": []
+}

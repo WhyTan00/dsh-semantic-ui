@@ -7,7 +7,7 @@ const input=decisionSchema.shape.inputs.unwrap().element.omit({initial:true});
 const chart=chartSchema.options[0];
 export const contractSchema=z.discriminatedUnion('component',[
   z.strictObject({component:z.literal('ArchitectureExplorer')}),
-  z.strictObject({component:z.literal('DecisionExplorer'),dimensions:z.array(field).min(1).max(12),inputs:z.array(input).max(12)}),
+  z.strictObject({component:z.literal('DecisionExplorer'),dimensions:decisionSchema.shape.dimensions,inputs:z.array(input).max(12)}),
   z.strictObject({component:z.literal('DataChart'),chartType:z.enum(['line','bar']),unit:chart.shape.unit,x:chart.shape.x,series:z.array(field).min(1).max(8)}),
   // Zod discriminated unions cannot share a discriminator: histograms use a
   // separate nested chart contract below instead (see definitionSchema).
@@ -24,6 +24,7 @@ export const definitionSchema=z.discriminatedUnion('component',[
   const unique=(fields:{id:string}[])=>new Set(fields.map(f=>f.id)).size===fields.length;
   if(d.component==='DecisionExplorer'){
     if(!unique(d.dimensions)||!unique(d.inputs))fail('Field IDs must be unique.');
+    for(const dimension of d.dimensions)if(dimension.kind==='number'&&!dimension.unit||dimension.kind==='boolean'&&dimension.unit)fail('Typed dimensions need a numeric unit or a unitless boolean.');
     for(const input of d.inputs)if(input.type==='choice'&&(!input.choices?.length||new Set(input.choices).size!==input.choices.length))fail('Choice fields require unique nonempty choices.');
   }
   if(d.component==='DataChart'&&d.chart.chartType!=='histogram'){

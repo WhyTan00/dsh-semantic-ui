@@ -55,6 +55,18 @@
                         "type": "string",
                         "minLength": 1,
                         "maxLength": 80
+                      },
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "number",
+                          "boolean"
+                        ]
+                      },
+                      "unit": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
                       }
                     },
                     "required": [
