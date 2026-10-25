@@ -1,0 +1,43 @@
+{
+  "status": "unreleased-source-checkpoint",
+  "protocol": "1.3",
+  "baseRelease": "v0.1.0-preview.8",
+  "verifiedAt": "2026-10-25T09:46:47.597527+00:00",
+  "unitTests": 89,
+  "unitFiles": 9,
+  "typecheck": "passed",
+  "build": "passed",
+  "component": {
+    "verifiedAt": "2026-10-25T09:40:35.611Z",
+    "renderer": "Independent bundled React component, not DSH Native/PTC",
+    "protocol": "1.3-unreleased",
+    "cases": {
+      "D1": "Explicit corrected relation: capacity true keeps both, false excludes VM, unknown preserves VM unknown only",
+      "D2": "Saved policy reserve input labeled preference-only; at50 both remain eligible and default preference withheld"
+    },
+    "narrowWidth": 360,
+    "rootOverflow": 0,
+    "pageErrors": [],
+    "networkRequests": 0,
+    "modelRequests": 0,
+    "firstAttemptsModified": false
+  },
+  "publicDocumentationIsolation": "copy and archive-path test passed; no release packaging executed",
+  "naturalModelRequests": 0,
+  "newNativePtcHostMatrix": "not run; only metadata/replay unit checks",
+  "newLinuxCi": "not run",
+  "newRelease": "not created",
+  "sourceMappingBoundary": "Corrected explicit D1 fixture, not automatic source inference or model acceptance. D2 mapping shows preference-only, not future capacity enforcement.",
+  "unchangedOriginalRecordSha256": {
+    "docs/evidence/natural/r9-A2.json": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+    "docs/evidence/natural/r9-A3.json": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "docs/evidence/natural/r9-D1.json": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "docs/evidence/natural/r9-D2.json": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+    "docs/evidence/natural/r9-N2.json": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "docs/evidence/natural/r9-T2.json": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2"
+  },
+  "screenshots": [
+    "grounding-followup/maintenance-360.png",
+    "grounding-followup/input-scope-360.png"
+  ]
+}

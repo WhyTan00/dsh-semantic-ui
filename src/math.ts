@@ -9,10 +9,28 @@ export function matches(condition: Decision['rules'][number]['when'], inputs: In
 export function referencedDecisionInputs(p:Decision){
  return new Set([...(p.requirements??[]).map(r=>r.input),...[...p.rules,...p.constraints,...(p.requirements??[]).filter(r=>r.when).map(r=>({when:r.when!}))].flatMap(r=>r.when.clauses.map(c=>c.input))]);
 }
+/** Declared links only; this does not establish that a label matches the source text. */
+export function decisionInputEffects(p:Decision){
+ const refers=(when:Decision['rules'][number]['when']|undefined,id:string)=>!!when?.clauses.some(c=>c.input===id);
+ return p.inputs.map(input=>{
+  const requirementIds=(p.requirements??[]).filter(r=>r.input===input.id||refers(r.when,input.id)).map(r=>r.id);
+  const constraintIds=p.constraints.filter(c=>refers(c.when,input.id)).map(c=>c.id);
+  const ruleIds=p.rules.filter(r=>refers(r.when,input.id)).map(r=>r.id);
+  const affectsEligibility=!!(requirementIds.length||constraintIds.length),affectsPreference=!!ruleIds.length;
+  return {inputId:input.id,requirementIds,constraintIds,ruleIds,affectsEligibility,affectsPreference,scope:affectsEligibility?(affectsPreference?'hard-and-preference':'hard'):affectsPreference?'preference-only':'unused'};
+ });
+}
+function requirementStatus(relation:NonNullable<Decision['requirements']>[number]['relation'],actual:unknown,needed:unknown,active:Truth){
+ if(active===false||relation==='supports'&&needed===false||relation==='requires-availability'&&actual===false)return 'inactive';
+ if(active==='unknown'||actual===null||needed===null)return 'unknown';
+ if(relation==='supports')return actual===true?'pass':'fail';
+ if(relation==='requires-availability')return needed===true?'pass':'fail';
+ return typeof actual==='number'&&typeof needed==='number'&&(relation==='at-least'?actual>=needed:actual<=needed)?'pass':'fail';
+}
 export function requirementChecks(p:Decision,inputs:InputValues){
  return (p.requirements??[]).flatMap(r=>p.options.map(option=>{
   const dimension=p.dimensions.find(d=>d.id===r.dimension)!,actual=option.values[r.dimension]??null,needed=inputs[r.input]??null,active=r.when?matches(r.when,inputs):true;
-  const status=active===false||r.relation==='supports'&&needed===false?'inactive':active==='unknown'||actual===null||needed===null?'unknown':r.relation==='supports'?(actual===true?'pass':'fail'):typeof actual==='number'&&typeof needed==='number'&&(r.relation==='at-least'?actual>=needed:actual<=needed)?'pass':'fail';
+  const status=requirementStatus(r.relation,actual,needed,active);
   return {requirementId:r.id,optionId:option.id,dimensionId:r.dimension,inputId:r.input,unit:dimension.unit??null,actual,needed,relation:r.relation,active,status};
  }));
 }
@@ -36,7 +54,7 @@ export function decide(p:Decision,inputs:InputValues,strictPolicy=false,exploreP
   requirements.filter(r=>r.status==='unknown'&&inputs[r.inputId]===null).forEach(r=>missing.add(r.inputId));
   const missingInputs=p.inputs.filter(input=>missing.has(input.id)).map(input=>({id:input.id,label:input.label}));
   const unknownFeasibilityIds=p.options.filter(o=>!blocked.has(o.id)&&(constraints.some(c=>c.constraint.optionId===o.id&&c.match==='unknown')||requirements.some(r=>r.optionId===o.id&&r.status==='unknown'))).map(o=>o.id);
-  return {unusedInputIds:p.inputs.filter(i=>!referencedDecisionInputs(p).has(i.id)).map(i=>i.id),status:unresolved.length||uncertainConstraints||proposalWithMissingFacts?'insufficient':requiresPolicyReview?'review-required':!triggered.length?'no-match':!recommendations.length?'blocked':'matched', recommendations:uncertainConstraints||proposalWithMissingFacts||requiresPolicyReview?[]:recommendations,triggered,unresolved:unresolved.map(r=>r.rule),constraints,requirements,missingInputs,unknownComparisonCells,proposalWithMissingFacts,requiresPolicyReview,preferenceMode:strictPolicy?(exploreProposals?'explicit-local-exploration':'withheld-pending-local-review'):'legacy-declared-policy',excludedOptionIds:[...blocked],unknownFeasibilityIds,eligibleOptionIds:p.options.filter(o=>!blocked.has(o.id)&&!unknownFeasibilityIds.includes(o.id)).map(o=>o.id)};
+  return {inputEffects:decisionInputEffects(p),unusedInputIds:p.inputs.filter(i=>!referencedDecisionInputs(p).has(i.id)).map(i=>i.id),status:unresolved.length||uncertainConstraints||proposalWithMissingFacts?'insufficient':requiresPolicyReview?'review-required':!triggered.length?'no-match':!recommendations.length?'blocked':'matched', recommendations:uncertainConstraints||proposalWithMissingFacts||requiresPolicyReview?[]:recommendations,triggered,unresolved:unresolved.map(r=>r.rule),constraints,requirements,missingInputs,unknownComparisonCells,proposalWithMissingFacts,requiresPolicyReview,preferenceMode:strictPolicy?(exploreProposals?'explicit-local-exploration':'withheld-pending-local-review'):'legacy-declared-policy',excludedOptionIds:[...blocked],unknownFeasibilityIds,eligibleOptionIds:p.options.filter(o=>!blocked.has(o.id)&&!unknownFeasibilityIds.includes(o.id)).map(o=>o.id)};
 }
 export function numericStats(values:(number|null)[]){
   let n=0,missing=0,sum=0,min=Infinity,max=-Infinity;

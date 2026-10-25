@@ -1,4 +1,6 @@
-# Semantic protocol 1.2 (reads 1.0 / 1.1 history)
+# Semantic protocol 1.3 source (unreleased; reads 1.0 / 1.1 / 1.2 history)
+
+The published preview.8 release uses protocol 1.2. See [unreleased source changes and validation limits](GROUNDING-FOLLOWUP.zh-CN.md) for 1.3.
 
 The DSH model-facing tool is `dsh_semantic_ui`:
 
@@ -46,3 +48,9 @@ Every newly delivered view uses current policy semantics. Historical 1.0/1.1 che
 ## State
 
 DSH owns content persistence. Local selection, dimensions and ranges reset on reload, reopening, or a new payload revision. No browser storage holds a second conversation copy. Personal templates/default themes use a separate owner-only, profile-scoped host storage domain. The host’s short receipt carries the resolved appearance, enabling presentationMeta to preserve the exact execution-time version even if the library later changes. See [template format and lifecycle](TEMPLATES.zh-CN.md) and [generated exchange schema](generated/template.schema.json). No state return to the model or cross-device preference sync is implemented. Generation uses the host's real pending state; semantic checkpoints are atomic. Unknown protocol versions and rendering errors remain readable.
+
+## Protocol 1.3 source addition (not released)
+
+`requires-availability` compares an option needing a boolean resource with a user input providing that resource. Option=false is inactive; option=true requires input=true, while unknown stays unknown. This is the opposite direction from `supports`, where the input declares a need and the option supplies the capability. Source labels do not prove the correct relation was selected. Protocol 1.2 snapshots retain their original meaning and reject this new relation.
+
+`decisionFacts.inputEffects` reports declared hard/preference links; a preference-only control cannot change hard eligibility. The owner UI exposes the same distinction. This does not authenticate model prose, alter original snapshots or establish a new natural-model acceptance result.

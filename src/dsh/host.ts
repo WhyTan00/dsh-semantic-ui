@@ -21,7 +21,7 @@ export const inject=['tools','systemPrompt','sessionProjections'];
 export const parameters={
   action:{type:'string',enum:['catalog','describe','templates','template','check','render'],required:true,description:'Discover capabilities/fields, list personal templates, inspect a template version, or deliver fresh validated data. Models cannot modify the library.'},
   component:{type:'string',enum:['ArchitectureExplorer','DecisionExplorer','DataChart'],description:'Required for describe.'},
-  view:{type:'object',additionalProperties:true,description:'Required for render. Versioned view with component payload; get fields via describe first.'},
+  view:{type:'object',additionalProperties:true,description:'Required for check or render. Versioned view with component payload; get fields via describe first.'},
   templateId:{type:'string',description:'For template or render: use a personal template ID returned by templates. Render requires templateVersion.'},
   templateVersion:{type:'integer',description:'Exact immutable version. Required when rendering with templateId; inspect action=template first.'},
 } as const;

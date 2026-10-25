@@ -11,3 +11,6 @@ artifacts/local/
 artifacts/*.tgz
 artifacts/SHA256SUMS
 artifacts/package-manifest.json
+
+# Private original inputs and native provenance
+docs/materials/

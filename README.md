@@ -20,6 +20,8 @@ Preview.8 adds **computed requirements and a portable verification core**: typed
 
 **Codex already provides native interactive visualizations on supported surfaces.** The optional [Codex bridge](docs/CODEX.zh-CN.md) reuses our core through three read-only MCP tools and a portable skill; it does not duplicate the renderer. CLI/IDE can consume computed results but do not render native interactive visualizations. The bridge passed standalone JSON-RPC tests; it has not been globally installed or accepted in a live Codex model conversation.
 
+The working source also contains an **unreleased protocol 1.3 follow-up** for resource-availability predicates and explicit hard/preference input links. Its 89 tests and standalone component checks do not establish new DSH-host or natural-model acceptance. See the [checkpoint and six-case status](docs/GROUNDING-FOLLOWUP.zh-CN.md). Published preview.8 assets remain unchanged.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

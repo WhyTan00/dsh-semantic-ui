@@ -11,7 +11,7 @@ try{
   const host=page.locator('[data-semantic-ui]');await host.evaluate(el=>el.style.maxWidth='640px');const requestsBefore=readdirSync(shared+'/requests').length;
   assert((await host.locator('.summary').innerText()).includes('Computed from supplied structured data'));
   await expect(host.getByText('Model interpretation (not independently verified)',{exact:true})).toBeVisible();
-  const result={kind,toolMode:mode,protocolVersion:'1.2',deterministicFixture:true,canonicalSummary:true};
+  const result={kind,toolMode:mode,protocolVersion:'1.3',deterministicFixture:true,canonicalSummary:true};
   if(kind==='capacity'){
    const current=host.getByRole('spinbutton',{name:'Current demand',exact:true}),future=host.getByRole('spinbutton',{name:'Possible future demand',exact:true}),confirmed=host.getByRole('combobox',{name:'Future demand confirmed',exact:true});
    await current.fill('300');await expect(host.getByRole('region',{name:'Requirement checks'}).getByRole('row',{name:'Storage A / Current demand 100 ≥ 300 GB fail',exact:true})).toBeVisible();await expect(host.getByText('Meets active requirements: Storage B. Excluded: Storage A. Unknown: none.',{exact:true})).toBeVisible();

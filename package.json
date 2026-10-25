@@ -61,7 +61,8 @@
     "plugin.json",
     "skills",
     "docs/CODEX.zh-CN.md",
-    "docs/SEMANTICS.zh-CN.md"
+    "docs/SEMANTICS.zh-CN.md",
+    "docs/GROUNDING-FOLLOWUP.zh-CN.md"
   ],
   "dsh": {
     "client": {
@@ -82,14 +83,15 @@
     "build": "node scripts/build.mjs",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
-    "check": "npm run typecheck && npm test && npm run build",
+    "check": "npm run typecheck && npm test && npm run test:release-isolation && npm run build",
     "docs:generate": "tsx scripts/generate-docs.ts",
     "release:pack": "node scripts/release.mjs",
     "test:host": "node tests/host-lifecycle.mjs",
     "test:history": "HISTORY_ONLY=1 node tests/host-lifecycle.mjs",
     "test:compat": "node tests/host-compat.mjs",
     "research:check": "node scripts/research-check.mjs",
-    "research:generate": "node scripts/research-check.mjs --write"
+    "research:generate": "node scripts/research-check.mjs --write",
+    "test:release-isolation": "node tests/release-isolation.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "3.1.1",

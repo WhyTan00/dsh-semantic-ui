@@ -1,7 +1,8 @@
 import { z } from 'zod';
 import {presentationSchema} from './theme';
 
-export const VERSION = '1.2' as const;
+export const VERSION = '1.3' as const;
+export const usesReviewedPolicy = (version:string) => version==='1.2'||version==='1.3';
 export const LIMITS = { bytes: 131072, depth: 12, nodes: 80, edges: 240, rows: 2000, observations: 10000 } as const;
 const id = z.string().regex(/^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$/);
 const text = z.string().min(1).max(1200);
@@ -24,7 +25,7 @@ export const decisionSchema = z.strictObject({
   inputs: z.array(z.strictObject({ id, label, type: z.enum(['number', 'boolean', 'choice']), unit: label.optional(), choices: z.array(label).max(12).optional(), initial: primitive.nullable() })).max(12).default([]),
   rules: z.array(z.strictObject({ id, priority: z.number().int().min(0).max(100), when: condition, recommend: z.array(id).min(1).max(8), reason: text, origin: z.enum(['given', 'model-judgment']), evidence })).max(24).default([]),
   constraints: z.array(z.strictObject({ id, optionId: id, when: condition, reason: text, evidence })).max(24).default([]),
-  requirements:z.array(z.strictObject({id,dimension:id,input:id,relation:z.enum(['at-least','at-most','supports']),when:condition.optional()})).max(24).optional(),
+  requirements:z.array(z.strictObject({id,dimension:id,input:id,relation:z.enum(['at-least','at-most','supports','requires-availability']),when:condition.optional()})).max(24).optional(),
 });
 const seriesSchema = z.array(z.strictObject({ id, label })).min(1).max(8);
 const boundaries = z.array(finite).min(2).max(81);
@@ -38,7 +39,7 @@ export const chartSchema = z.discriminatedUnion('chartType', [
 ]);
 export const components = { ArchitectureExplorer: architectureSchema, DecisionExplorer: decisionSchema, DataChart: chartSchema } as const;
 export type ComponentName = keyof typeof components;
-const base = { protocolVersion: z.enum(['1.0','1.1',VERSION]), displayId: id, revision: z.number().int().min(1).max(100000), summary: z.string().min(1).max(500), presentation:presentationSchema.optional() };
+const base = { protocolVersion: z.enum(['1.0','1.1','1.2',VERSION]), displayId: id, revision: z.number().int().min(1).max(100000), summary: z.string().min(1).max(500), presentation:presentationSchema.optional() };
 export const envelopeSchema = z.discriminatedUnion('component', [
   z.strictObject({ ...base, component: z.literal('ArchitectureExplorer'), payload: architectureSchema }),
   z.strictObject({ ...base, component: z.literal('DecisionExplorer'), payload: decisionSchema }),
@@ -90,14 +91,15 @@ export function validateEnvelope(input: unknown): Validation {
     const p=v.payload;const dims=unique(p.dimensions,'dimensions'),opts=unique(p.options,'options'),inputs=unique(p.inputs,'inputs');unique(p.rules,'rules');unique(p.constraints,'constraints');unique(p.requirements??[],'requirements');
     const defs=new Map(p.inputs.map(i=>[i.id,i]));
     for(const o of p.options) {for(const k of Object.keys(o.values))if(!dims.has(k))fail('options',`Unknown dimension ${k}.`,'REFERENCE');for(const k of dims)if(!(k in o.values))fail('options',`Option ${o.id} must explicitly set dimension ${k} to a fact or null.`);}
-    if(v.protocolVersion!==VERSION&&(p.requirements||p.dimensions.some(d=>d.kind||d.unit)||p.options.some(o=>Object.values(o.values).some(v=>typeof v==='number'))))fail('dimensions','Typed numeric comparisons require protocol 1.2.','UNSUPPORTED_VERSION');
+    if(!usesReviewedPolicy(v.protocolVersion)&&(p.requirements||p.dimensions.some(d=>d.kind||d.unit)||p.options.some(o=>Object.values(o.values).some(v=>typeof v==='number'))))fail('dimensions','Typed numeric comparisons require protocol 1.2.','UNSUPPORTED_VERSION');
     for(const d of p.dimensions){
       if(d.kind==='number'&&!d.unit)fail('dimensions',`Numeric dimension ${d.id} needs an explicit unit.`);
       if(d.kind==='boolean'&&d.unit)fail('dimensions',`Boolean dimension ${d.id} must not carry a numeric unit.`);
       if(d.unit&&!d.kind)fail('dimensions',`Dimension ${d.id} must declare kind=number when a unit is supplied.`);
-      for(const o of p.options){const value=o.values[d.id];if(v.protocolVersion===VERSION&&typeof value==='string'&&/^(unknown|未知|不详|未给|未提供|未确认|not (given|known|provided))/i.test(value.trim()))fail('options',`Option ${o.id}, dimension ${d.id}: unknown values must be null, not prose.`);if(value!==null&&value!==undefined&&typeof value!==(d.kind??'string'))fail('options',`Option ${o.id}, dimension ${d.id}: use ${d.kind??'text'} or null.`);}
+      for(const o of p.options){const value=o.values[d.id];if(usesReviewedPolicy(v.protocolVersion)&&typeof value==='string'&&/^(unknown|未知|不详|未给|未提供|未确认|not (given|known|provided))/i.test(value.trim()))fail('options',`Option ${o.id}, dimension ${d.id}: unknown values must be null, not prose.`);if(value!==null&&value!==undefined&&typeof value!==(d.kind??'string'))fail('options',`Option ${o.id}, dimension ${d.id}: use ${d.kind??'text'} or null.`);}
     }
-    for(const r of p.requirements??[]){const d=p.dimensions.find(d=>d.id===r.dimension),i=defs.get(r.input);if(!d||!i)fail('requirements',`Requirement ${r.id} references an unknown dimension or input.`,'REFERENCE');else if(r.relation==='supports'?(d.kind!=='boolean'||i.type!=='boolean'||!!d.unit||!!i.unit):(d.kind!=='number'||i.type!=='number'||!d.unit||d.unit!==i.unit))fail('requirements',`Requirement ${r.id} needs matching typed facts and input: supports uses unitless booleans; numeric comparisons use exactly the same explicit unit. No implicit conversion.`);}
+    if(v.protocolVersion!==VERSION&&p.requirements?.some(r=>r.relation==='requires-availability'))fail('requirements','requires-availability requires protocol 1.3; saved 1.2 supports semantics are unchanged.','UNSUPPORTED_VERSION');
+    for(const r of p.requirements??[]){const d=p.dimensions.find(d=>d.id===r.dimension),i=defs.get(r.input);if(!d||!i)fail('requirements',`Requirement ${r.id} references an unknown dimension or input.`,'REFERENCE');else if((r.relation==='supports'||r.relation==='requires-availability')?(d.kind!=='boolean'||i.type!=='boolean'||!!d.unit||!!i.unit):(d.kind!=='number'||i.type!=='number'||!d.unit||d.unit!==i.unit))fail('requirements',`Requirement ${r.id} needs matching typed facts and input: supports and requires-availability use unitless booleans; numeric comparisons use exactly the same explicit unit. No implicit conversion.`);}
     const validInput=(i:Decision['inputs'][number],value:unknown)=>value===null||(i.type==='number'?typeof value==='number':i.type==='boolean'?typeof value==='boolean':typeof value==='string'&&i.choices?.includes(value));
     for(const i of p.inputs){if(i.type==='choice'&&(!i.choices?.length||new Set(i.choices).size!==i.choices.length))fail('inputs',`Choice input ${i.id} needs unique choices.`);if(!validInput(i,i.initial))fail('inputs',`Initial value of ${i.id} does not match its type.`);}
     for(const r of [...p.rules,...p.constraints,...(p.requirements??[]).filter(r=>r.when).map(r=>({when:r.when!}))]) for(const c of r.when.clauses){const i=defs.get(c.input);if(!inputs.has(c.input)||!i)fail('rules',`Unknown condition input ${c.input}.`,'REFERENCE');else if(!validInput(i,c.value)||(!['eq','ne'].includes(c.op)&&i.type!=='number'))fail('rules',`Invalid comparison for ${c.input}.`);}
