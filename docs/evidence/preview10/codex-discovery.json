@@ -1,0 +1,11 @@
+{
+  "version": "0.1.0-preview.10",
+  "codexCli": "codex-cli 0.164.0",
+  "perInvocationConfigAccepted": true,
+  "archiveEntryUsed": true,
+  "globalConfigWritten": false,
+  "currentConversationToolLoaded": false,
+  "customUiRendered": false,
+  "modelRequests": 0,
+  "boundary": "codex mcp get is configuration discovery only. Actual JSON-RPC tool invocation is checked separately."
+}

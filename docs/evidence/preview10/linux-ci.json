@@ -1,0 +1,25 @@
+{
+  "version": "0.1.0-preview.10",
+  "runId": 40204841176,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40204841176",
+  "implementationCommit": "a709eb1b0c40a7c11cb977e42760fbd4c07e5f53",
+  "conclusion": "success",
+  "event": "workflow_dispatch",
+  "chartOnlyInput": true,
+  "unitTests": 94,
+  "checks": [
+    "frozen dependency installation",
+    "generated schema/template/skill consistency",
+    "35 public projects/139 source inventory",
+    "TypeScript and94 unit/protocol tests",
+    "public package/private path guards",
+    "client/core/host/standalone MCP build",
+    "source-mounted real DSH Native/PTC: ordinary,signed/all-missing,protocol1.0 chart; PTC cross-process history",
+    "versioned runtime/evidence packaging and upload"
+  ],
+  "fullHostMatrix": "explicitly skipped; accepted preview9 evidence is retained at its original version",
+  "actualArchiveInstallation": "Independent macOS archive installation; source-mounted CI does not substitute for it.",
+  "naturalModelRequests": 0,
+  "linuxPhysicalDesktopVerified": false,
+  "finalizationBoundary": "Later changes are documentation/evidence only; final executable/install contracts match the fully installed targeted-chart candidate."
+}

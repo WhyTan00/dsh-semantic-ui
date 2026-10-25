@@ -1,13 +1,13 @@
 # Codex 原生交互 UI 与本项目的接入
 
-核实：2026-10-25。结论：当前会话已提供原生 Visualize 能力；本项目接入 Codex 的价值在数据/规则校验与模板合同。展示使用宿主已有的可视化、Mermaid、表格或文字。
+核实：2026-10-25，再次读取官方Visualizations与插件打包文档。结论：当前会话已提供原生 Visualize 技能入口，未把技能可用当作本项目已在当前客户端出图验收；本项目接入 Codex 的价值在数据/规则校验与模板合同。展示使用宿主已有的可视化、Mermaid、表格或文字。
 
 ## 实际能力与范围
 
 | 对象 | 已核实 | 边界 |
 |---|---|---|
 | 当前会话 | 已有内置 Visualize skill 和 HTML 交互输出合同；本机 codex-cli 0.164.0 | 不能外推所有账号、所有 Web/桌面端均已开通 |
-| 官方 Visualizations | 图、图表、地图、计算器和可调交互；按账号/平台滚动提供 | 官方明确 CLI/IDE 不渲染这种交互可视化 |
+| 官方 Visualizations | 官方明确ChatGPT网页/桌面/移动端的可用范围；图、图表、地图、计算器和可调交互按账号/平台滚动提供 | 官方明确 CLI/IDE 不渲染这种交互可视化 |
 | Codex 插件 | 可分发 skills/MCP；公开目录与本地市场是不同发布渠道 | GitHub Release 不等于已上架官方插件目录 |
 | MCP Apps UI | 公开 iframe/UI-resource 桥接协议，适合兼容宿主 | 本次没有实现或认证 Codex 的自定义 MCP UI；不将 ChatGPT 的 iframe 支持外推到全部 Codex 客户端 |
 | 本项目薄适配 | 三个只读工具，真实 JSON-RPC stdio 测试；同一个 core 计算 | 没有第二套 renderer、用户动作回传、隐藏模板库或模型路由 |
@@ -48,3 +48,5 @@ codex mcp remove semantic-ui-checks
 - [Add UI to your MCP server](https://developers.openai.com/plugins/build/chatgpt-ui)：UI 可选、数据与展示分离、MCP Apps bridge。
 
 这些来源已实际检索并读取。没有把模型生图、静态 Mermaid、可交互视图、工具调用和业务状态持久化混为同一个能力。
+
+preview.10继续只分发同一检查核心与便携skill，不增加renderer。归档提取的独立入口与skill文件已验，真实JSON-RPC stdio4项通过，见 [本版记录](evidence/preview10/standalone-mcp.json)。DSH的个人模板编辑与历史主题快照已有实现；Codex桥接只检查显式导出的模板，尚未接入跨宿主模板持久化。

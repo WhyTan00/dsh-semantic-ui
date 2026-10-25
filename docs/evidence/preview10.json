@@ -39,5 +39,5 @@
     "Source-to-requirement translation and free-form model prose remain unaccepted",
     "Current Codex conversation loading, actual phone and screen reader acceptance remain unverified"
   ],
-  "stage": "installed candidate passed; final archive and Linux receipt recorded separately before release"
+  "stage": "Final archive install and targeted Linux CI are identified in separate linked receipts; bounded deterministic checks do not establish natural-model semantics."
 }
