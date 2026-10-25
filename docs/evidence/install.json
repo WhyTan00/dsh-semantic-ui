@@ -1,49 +1,68 @@
 {
-  "version": "0.1.0-preview.7",
+  "version": "0.1.0-preview.8",
   "dsh": "0.2.1-rc.2",
   "package": "@whytan/dsh-semantic-ui",
-  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.7.tgz",
-  "sha256": "1d9900e2d23eb977e364e986c68d834bddde356ccceff008ddec6c5a6cd25d1a",
-  "verifiedAt": "2026-10-23T19:06:36.342Z",
-  "installation": "Actual dsh plugin --profile web add final tgz into only the task-owned personal profile; no source overlay. Every packaged file compared with the archive.",
-  "allPackagedFilesVerified": 158,
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.8.tgz",
+  "sha256": "9d742b01209b5be2369d45b7ad134b93b70e304022f23a13c837b99e3fad7340",
+  "verifiedAt": "2026-10-25T08:46:23.319Z",
+  "installation": "Actual dsh plugin add final tgz into task-owned personal profile; all packaged files verified before host starts and after installation. No source overlay.",
+  "allPackagedFilesVerified": 256,
   "hostStarted": true,
   "templateStoredAcrossRestart": true,
   "newTemplateHistoriesPreserved": 2,
   "oldSemanticHistoryCount": 1,
   "oldGenuiHistoryCount": 2,
+  "currentProtocol12HistoryRendered": true,
   "pageErrors": [],
   "testObserverEnabled": false,
+  "modelRequestsForFinalReadback": 0,
   "freshProfileCandidate": {
-    "sha256": "5c05bef5759b4c13a17ffc802d56744345d2dab7a1d382a6d13907ee9c5bb372",
-    "record": "quality/clean-install-candidate.json",
+    "sha256": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+    "record": "semantic/clean-install-candidate.json",
     "toolModes": [
       "native",
       "ptc"
     ],
     "fourComponentLifecycle": true,
     "qualityFixturesPerMode": 5,
+    "groundingFixturesPerMode": 4,
+    "checkOnly": true,
     "templateLifecycle": true,
     "identicalFinalRuntimeAndInstallContracts": {
       "package.json": true,
       "cordis.patch.yml": true,
       "SKILL.md": true,
+      "plugin.json": true,
+      "skills/semantic-ui-checks/SKILL.md": true,
       "dist/host.js": true,
       "dist/client.js": true,
-      "dist/protocol.js": true
+      "dist/protocol.js": true,
+      "dist/core.js": true,
+      "dist/mcp.js": true
     }
   },
-  "naturalCandidate": {
-    "sha256": "66fb757173f1443e250cb89329b2e90297986c70aaa5ce4a67d12d231145f7d5",
-    "sameFinalRuntimeAndInstallContracts": {
+  "naturalCandidates": {
+    "round5": "9d176fd34edb7e33e0856b08da7b230fc0b7b808d5f72089857e2a9aa1428907",
+    "round6": "c35064630b13656642eb4208a5a4ed624464e093cbff7102f1ee92f17cb7d6dd",
+    "target8": "403013e689decdbf83366e10c51019c221eeec4f8364e5dd96afbb43a65dea44",
+    "finalTarget9": "c18a394155752af89aa8be5bfa3aca4fda56d8a1f72ef3f124e2db224f509523",
+    "sameFinalExecutableContractsAsTarget9": {
       "package.json": true,
       "cordis.patch.yml": true,
       "SKILL.md": true,
+      "plugin.json": true,
+      "skills/semantic-ui-checks/SKILL.md": true,
       "dist/host.js": true,
-      "dist/client.js": false,
-      "dist/protocol.js": true
+      "dist/client.js": true,
+      "dist/protocol.js": true,
+      "dist/core.js": true,
+      "dist/mcp.js": true
     },
-    "difference": "Client self-loop curve radius increased after visual review; separately verified by the fresh Native/PTC matrix. Host guidance/receipts/protocol unchanged."
+    "boundary": "Run8 failure preserved. Final target9 six semantic failures despite correct runtime guards; this is not complete model acceptance."
   },
-  "boundary": "Natural round4 used its own earlier candidate. The final executable/install contract matches the later fresh-profile candidate byte for byte. Final archive installation and all-file/old-history readback are independent checks. No model request during final readback."
+  "boundary": "Final archive differs from final tested candidate by documentation/evidence; all listed executable/install contracts identical. install.json is deliberately excluded from runtime tgz to avoid a self-referential hash.",
+  "previousRelease": {
+    "version": "0.1.0-preview.7",
+    "sha256": "1d9900e2d23eb977e364e986c68d834bddde356ccceff008ddec6c5a6cd25d1a"
+  }
 }

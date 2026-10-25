@@ -1,24 +1,25 @@
 {
-  "version": "0.1.0-preview.7",
-  "runId": 40008133551,
-  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40008133551",
-  "implementationCommit": "e8d2bd6b7d3709dab5f05884ad07d77d16f85490",
+  "version": "0.1.0-preview.8",
+  "runId": 40177575457,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40177575457",
+  "implementationCommit": "c8cdad88dff0322026e4814bab35e4451db6b4b7",
   "conclusion": "success",
   "checks": [
     "frozen dependency install",
     "generated schemas/skill consistency",
-    "35-project / 139-source research inventory",
-    "TypeScript and 58 unit tests",
-    "isolated React client and host build",
+    "35-project/139-source research inventory",
+    "TypeScript and80 unit/actual-stdio tests",
+    "isolated React client, host, core and standalone MCP build",
     "real DSH Native/PTC original four-component lifecycle",
-    "template lifecycle, persisted state across host restart, version restore/import/export/conflict",
-    "five quality fixtures per mode: elapsed-time SVG ratio, signed/long bars, missing, prebinned proportions, cyclic/parallel graph",
-    "640/360px, dark/light, keyboard, scoped downloads, no new model requests from local controls",
+    "template lifecycle/version/import/export/conflict and restart persistence",
+    "five quality fixtures per mode",
+    "four grounding fixtures per mode plus actual check-only tool receipt without UI",
+    "640/360px, keyboard, local controls with no model requests",
     "runtime/evidence packaging and SHA-256"
   ],
   "linuxPhysicalDesktopVerified": false,
   "linuxPointerBoundary": "Series/dimension checkbox controls use real keyboard focus + Space where a host hover card can cover pointer input.",
-  "naturalModelAcceptance": "Separate macOS WorkBuddy frozen round4: 4 pass, 3 notes, 4 fail; all first attempts retained. GenUI fully enabled, unlike rounds1-3.",
+  "naturalModelAcceptance": "Separate macOS WorkBuddy full rounds5/6:3/3/5 and2/4/5; final targeted six:0/0/6, not complete semantic acceptance. Original failures retained.",
   "earlierRuns": [
     {
       "runId": 39904209133,
@@ -82,7 +83,13 @@
       "runId": 39985591971,
       "implementationCommit": "2063b0d66742fa52f17494fd5f0813dff7ceeef0",
       "conclusion": "success"
+    },
+    {
+      "version": "0.1.0-preview.7",
+      "runId": 40008133551,
+      "implementationCommit": "e8d2bd6b7d3709dab5f05884ad07d77d16f85490",
+      "conclusion": "success"
     }
   ],
-  "finalReleaseSourceBoundary": "Full CI on the implementation commit. Subsequent finalization changes documentation/install evidence only; final archive and all-file/history verification are recorded independently in install.json."
+  "finalReleaseSourceBoundary": "Full CI on implementation commit c8cdad8. Subsequent finalization changes CI/install evidence only; final archive all-file/history verification is recorded independently in install.json."
 }
