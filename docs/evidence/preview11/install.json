@@ -1,0 +1,26 @@
+{
+  "dsh": "0.2.1-rc.2",
+  "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+  "package": "@whytan/dsh-semantic-ui",
+  "version": "0.1.0-preview.11",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.11.tgz",
+  "sha256": "3b5685128a427b463be5ece6f1fd90aa29f8dc7e46ee8ce5bb2dac52934dd4dd",
+  "hostStarted": true,
+  "allPackagedFilesVerified": 266,
+  "validationSuite": "declaration-consistency",
+  "newCasesPerMode": 5,
+  "ptcAdditionalCrossProcessRead": 1,
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "pageErrors": [],
+  "protocol": "1.4",
+  "status": "passed",
+  "sourceOverlayForSemanticPlugin": false,
+  "fixtureToolUsedDuringCases": true,
+  "cases": {
+    "native": 5,
+    "ptc": 6
+  }
+}

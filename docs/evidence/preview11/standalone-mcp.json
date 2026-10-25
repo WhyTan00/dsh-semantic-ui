@@ -1,0 +1,15 @@
+{
+  "version": "0.1.0-preview.11",
+  "protocol": "1.4",
+  "runtimeArchiveSha256": "3b5685128a427b463be5ece6f1fd90aa29f8dc7e46ee8ce5bb2dac52934dd4dd",
+  "actualJsonRpcStdioTests": 3,
+  "result": "passed",
+  "archiveExtractedOutsideRepository": true,
+  "serverCwdOutsideRepository": true,
+  "portablePluginAndSkillVerified": true,
+  "entrySha256": "c691a57da911015d5fdd2e315c40ee2d68145ede223c14295ce331f79611f616",
+  "globalCodexConfigWritten": false,
+  "currentCodexConversationLoaded": false,
+  "customCodexUiRendered": false,
+  "newModelRequests": 0
+}

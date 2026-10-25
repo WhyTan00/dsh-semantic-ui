@@ -52,3 +52,5 @@ codex mcp remove semantic-ui-checks
 preview.10继续只分发同一检查核心与便携skill，不增加renderer。归档提取的独立入口与skill文件已验，真实JSON-RPC stdio4项通过，见 [本版记录](evidence/preview10/standalone-mcp.json)。DSH的个人模板编辑与历史主题快照已有实现；Codex桥接只检查显式导出的模板，尚未接入跨宿主模板持久化。
 
 本地preview.11-dev.0 /协议1.4进一步复用同一core的声明角色和作用交叉检查，编译后的独立MCP入口通过3项真实stdio测试；不等于当前Codex已加载，也不证明自由正文或来源真实。原已发布preview.10仍为1.3。新合同、本地入口及限制见 [声明检查](DECLARATION-CHECKS.zh-CN.md)。
+
+preview.11将同一1.4核心与只读MCP归档交付；归档入口的独立协议验证见 [本版回执](evidence/preview11.json)，没有全局注册或当前会话已加载声明。

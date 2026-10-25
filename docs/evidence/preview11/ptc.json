@@ -1,0 +1,55 @@
+{
+  "toolMode": "ptc",
+  "results": [
+    {
+      "kind": "old1.3-native-after-process-restart",
+      "restored": true
+    },
+    {
+      "kind": "resource",
+      "protocol": "1.4",
+      "foldedProcess": true,
+      "refresh": true,
+      "actualReceiptMatchesCore": true,
+      "narrowWidth": 360,
+      "noControlModelRequests": true
+    },
+    {
+      "kind": "scope",
+      "protocol": "1.4",
+      "foldedProcess": true,
+      "refresh": true,
+      "actualReceiptMatchesCore": true,
+      "narrowWidth": 360,
+      "noControlModelRequests": true
+    },
+    {
+      "kind": "bad-role",
+      "rejected": true,
+      "code": "ROLE_RELATION",
+      "actualReceiptMatchesCore": true,
+      "errorHistoryRestored": true
+    },
+    {
+      "kind": "bad-effect",
+      "rejected": true,
+      "code": "INPUT_EFFECT",
+      "actualReceiptMatchesCore": true,
+      "errorHistoryRestored": true
+    },
+    {
+      "kind": "legacy",
+      "protocol": "1.3",
+      "foldedProcess": true,
+      "refresh": true,
+      "actualReceiptMatchesCore": false,
+      "narrowWidth": null,
+      "noControlModelRequests": true
+    }
+  ],
+  "pageErrors": [],
+  "newRealModelRequests": 0,
+  "boundary": "Recorded runtime tgz normally installed into fresh isolated DSH profile; semantic plugin is not source-mounted. Local deterministic endpoint and separate history fixture tool; not natural-model acceptance.",
+  "runtimeArchiveSha256": "3b5685128a427b463be5ece6f1fd90aa29f8dc7e46ee8ce5bb2dac52934dd4dd",
+  "rawReportNote": "The first local reporter used a fixed source-candidate sentence; installation and each packaged file were independently verified before host startup. Raw local report retained; reporter now branches on INSTALL_PACKAGE."
+}

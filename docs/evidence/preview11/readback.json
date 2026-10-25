@@ -1,0 +1,17 @@
+{
+  "version": "0.1.0-preview.11",
+  "runtimeArchiveSha256": "3b5685128a427b463be5ece6f1fd90aa29f8dc7e46ee8ce5bb2dac52934dd4dd",
+  "normalArchiveInstallation": true,
+  "sourceOverlayForSemanticPlugin": false,
+  "allPackagedFilesVerified": 266,
+  "oldProtocolHistory": "1.3",
+  "historyReads": 5,
+  "protocol": "1.4",
+  "fixtureToolEnabled": false,
+  "modelPromptRequests": 0,
+  "pageErrors": [],
+  "mappingWidth": 360,
+  "mappingOverflow": 0,
+  "hostMode": "ptc",
+  "boundary": "New process loads the normally installed archive without semantic source overlay or history fixture tool; reads current Native/PTC and old1.3 snapshots, no new prompts."
+}

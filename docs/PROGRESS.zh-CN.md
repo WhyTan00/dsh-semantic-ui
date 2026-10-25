@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.11按协议1.4交付声明一致性机制，实际版本归档、安装、MCP及Linux状态见 [本版回执](evidence/preview11.json)。下文dev.0为此前本地源码阶段，不能替代发行归档的验收。原六题语义仍未通过。
+
 本地preview.11-dev.0 /协议1.4增加可执行的角色/关系与预期作用/依赖图一致性检查，含过大计算回执的显式拒绝。新字段不回灌1.0–1.3历史。见 [本地入口与边界](DECLARATION-CHECKS.zh-CN.md)；不是新Release，也不把内部一致性当作原六题来源/正文语义通过。以下preview.10交付保持原样。
 
 preview.10新增DataChart同表格范围的可检查补零对照，以及未核实模型说明标记。94测试与实际归档安装的定向Native/PTC/旧1.0图表读回通过，模型请求0；最终包、CI与安装分别见 [本版证据](evidence/preview10.json) 和 [图表说明](CHART-COMPARISON.zh-CN.md)。A2派生评语纠正，两情景确有共享边，原始记录与失败结论不变。以下preview.9为历史已验收范围。

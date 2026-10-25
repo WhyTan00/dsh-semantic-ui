@@ -8,6 +8,10 @@ on:
         description: Validate the changed chart path; full host matrix otherwise
         type: boolean
         default: false
+      consistency_only:
+        description: Validate declarations and archive-installed Native/PTC; skip old full matrices
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -27,10 +31,20 @@ jobs:
       - run: git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json
       - run: pnpm research:check
       - run: pnpm check
+        if: github.event_name != 'workflow_dispatch' || !inputs.consistency_only
+      - name: Check declaration source
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+        run: |
+          pnpm typecheck
+          pnpm exec vitest run tests/decision-consistency.test.ts tests/grounding.test.ts tests/grounding-direction.test.ts tests/mcp.test.ts
+          pnpm build
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:host
-        if: github.event_name != 'workflow_dispatch' || !inputs.chart_only
+        if: github.event_name != 'workflow_dispatch' || !(inputs.chart_only || inputs.consistency_only)
       - run: pnpm test:chart-host
+        if: github.event_name != 'workflow_dispatch' || !inputs.consistency_only
+      - run: pnpm test:consistency-host
+        if: github.event_name != 'workflow_dispatch'
       - uses: actions/upload-artifact@v4
         if: failure()
         with:
@@ -41,6 +55,18 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
       - run: pnpm release:pack
+      - run: pnpm test:installed-consistency
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+        with:
+          name: declaration-install-receipts
+          path: |
+            artifacts/local/host-*/install.json
+            artifacts/local/host-*/installed-byte-check.json
+            artifacts/local/host-*/native/evidence/consistency.json
+            artifacts/local/host-*/ptc/evidence/consistency.json
+          if-no-files-found: error
       - uses: actions/upload-artifact@v4
         with:
           name: semantic-ui-preview-package

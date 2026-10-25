@@ -24,14 +24,14 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 **Preview.10** adds an inspectable missing-value comparison using the existing core and an explicit unverified-model explanation label. 94 tests and targeted archive-installed DSH Native/PTC chart checks passed, including protocol1.0 history, null-preserving downloads and360px layout. No new model calls; the original six semantic failures remain. See the [chart guide](docs/CHART-COMPARISON.zh-CN.md) and [versioned evidence](docs/evidence/preview10.json). Published preview.8/9 archives remain unchanged.
 
-Local development candidate **preview.11-dev.0 / protocol1.4** adds executable declaration checks: capability/resource roles must agree with boolean relations, and each input’s expected hard/preference effect must match its dependency graph. It rejects contradictions without rewriting the policy, preserves1.0–1.3 histories, and keeps source verification explicitly false. This candidate is not a new release. See the [declaration guide and runnable checks](docs/DECLARATION-CHECKS.zh-CN.md).
+**Preview.11 / protocol1.4** packages executable declaration checks: capability/resource roles must agree with boolean relations, and each input’s expected hard/preference effect must match its dependency graph. Contradictions are rejected without rewriting policy;1.0–1.3 histories retain their meanings and source verification stays false. See the [declaration guide](docs/DECLARATION-CHECKS.zh-CN.md) and [version-specific archive installation, MCP and Linux receipts](docs/evidence/preview11.json).
 
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.10.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.11.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.

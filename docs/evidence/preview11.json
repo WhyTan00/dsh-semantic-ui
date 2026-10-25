@@ -1,0 +1,24 @@
+{
+  "version": "0.1.0-preview.11",
+  "protocol": "1.4",
+  "dsh": "0.2.1-rc.2",
+  "acceptedImplementationCommit": "6390ca27e00a91eb4e957be2c91827cd6005c8b7",
+  "acceptedSourceEvidence": "declaration-consistency.json",
+  "sourceUniqueNarrowTests": 44,
+  "actualArchiveInstall": "preview11/install.json",
+  "native": "preview11/native.json",
+  "ptc": "preview11/ptc.json",
+  "finalReadback": "preview11/readback.json",
+  "archiveStandaloneMcp": "preview11/standalone-mcp.json",
+  "linuxArchiveCi": "preview11/linux-ci.json",
+  "newNaturalModelRequests": 0,
+  "sourceFactsVerified": false,
+  "originalRun9": {
+    "cases": 6,
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "reusedScope": "preview9 full/GenUI and prior1.0\u20131.2 compatibility remain historical evidence, not new full-matrix checks.",
+  "boundary": "Exact archive/install/CI identities and outcomes live in the linked versioned receipts. Source fixtures, packaging and releases do not certify source translation or free prose."
+}

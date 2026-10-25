@@ -1,6 +1,6 @@
-# 声明一致性检查：本地开发候选
+# 声明一致性检查：preview.11
 
-身份：**0.1.0-preview.11-dev.0 / 协议1.4**，尚未发行。当前公开安装包仍为preview.10。这个增量检查结构化声明是否互相矛盾，不能证明模型忠实翻译了原问题，也不认证自由正文。
+发行身份：**0.1.0-preview.11 / 协议1.4**。此前本地dev.0的来源检查保留原身份；本版实际归档安装、独立MCP和Linux按 [版本回执](evidence/preview11.json) 分别记录。这个增量检查结构化声明是否互相矛盾，不能证明模型忠实翻译了原问题，也不认证自由正文。
 
 ## 新增的可执行约束
 
@@ -50,8 +50,8 @@ pnpm test:consistency-host
 node dist/mcp.js
 ```
 
-`fixtures/consistency.ts`为显式编写的新声明；`fixtures/grounding.ts`和原run9保留原身份。宿主检查覆盖Native/PTC正常两例、两种拒绝、旧1.3历史与跨进程读回、360px和本地控件无新增请求。额外的新进程读回未启用历史夹具工具，也未提交新问题。源码候选不等于新归档安装、Release、完整GenUI复验、当前Codex客户端加载或真机验收。
+`fixtures/consistency.ts`为显式编写的新声明；`fixtures/grounding.ts`和原run9保留原身份。宿主检查覆盖Native/PTC正常两例、两种拒绝、旧1.3历史与跨进程读回、360px和本地控件无新增请求。额外的新进程读回未启用历史夹具工具，也未提交新问题。上述源码夹具不等于归档安装验收；本版另做正常归档安装。完整GenUI复验、当前Codex客户端加载和真机验收仍需独立证据。
 
 本轮不新增自然模型调用。原run9六题仍为0通过/6失败/原18请求；A2/A3因果与独立性、N2/T2绕过本插件的输出不会因这个检查而被修复。更强的来源保证仍需要独立输入与逐题证据。
 
-[版本证据](evidence/declaration-consistency.json) · [已发布preview.10](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.10)
+[本地dev.0原证据](evidence/declaration-consistency.json) · [本版归档回执](evidence/preview11.json) · [保留preview.10](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.10)
