@@ -32,6 +32,8 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 **Preview.13** adds scoped MCP initialization workflow instructions. [Two real isolated Codex CLI cases](docs/evidence/codex-cli.json) both initialized the server but used **zero check tools**: D1 prose failed the frozen criteria; N2 prose passed without plugin computation. Source/archive/Linux stdio contracts pass, but natural tool adoption and desktop UI are not accepted. [Versioned delivery receipts](docs/evidence/preview13.json) keep these outcomes separate; the original six DSH failures and preview.12 assets remain unchanged.
 
+A [source companion client](docs/CODEX-EXPLICIT.zh-CN.md) now routes the frozen preview.13 checks through a real ephemeral Codex app-server thread and discovers/reads its portable skill through temporary roots. This is explicit client use with zero new inference, separate from the two natural cases that used no tools. It does not repackage the release or install into the current desktop chat.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+后续已完成 [显式只读线程入口](CODEX-EXPLICIT.zh-CN.md)：现成preview.13归档通过真实Codex线程路由返回schema与source_check，并临时发现/读取自包skill。新增推理0，未重发归档；两题自然0调用和桌面富UI边界不变。
+
 2026-10-27已完成两道真实个人Codex CLI自然输入验收，见 [逐题记录](evidence/codex-cli.json)：正常登录及MCP初始化成功，两题均0次实际MCP检查调用。D1正文未通过事前语义预期；N2正文通过，但不能归因为插件计算。preview.13增加初始化工作流元数据，SDK/归档/Linux7项合同通过，仍未证明自然采用或当前桌面富UI。
 
 此前2026-10-25已核对官方Visualizations与插件合同；当前主会话提供原生Visualize入口，未把技能可用当作本插件已出图。展示仍使用宿主已有的可视化、Mermaid、表格或文字。

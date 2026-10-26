@@ -1,0 +1,634 @@
+{
+  "date": "2026-10-27",
+  "client": "codex-cli0.164.0 app-server STDIO, experimentalApi=true",
+  "example": "examples/codex-readonly.py",
+  "runtimeVersion": "0.1.0-preview.13",
+  "runtimeSourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "runtimeChanged": false,
+  "releaseRepacked": false,
+  "sourceProvenance": {
+    "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+    "recordPath": "docs/evidence/natural/r9-D1.json",
+    "recordSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+    "snapshotFile": "fixtures/codex-decision-source.json",
+    "snapshotSha256": "6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962"
+  },
+  "expectationsFixedBeforeRouting": true,
+  "qa": {
+    "appServerExitCode": 0,
+    "threadIdSha256": "0a657ba834560d52acfe7b611a18f8a50da4c00107a354f0f211dc3e68b8f4a3",
+    "activeSemanticServerCount": 1,
+    "otherServerMetadataDisabledCount": 5,
+    "configuredToolSubset": [
+      "semantic_ui_source_check",
+      "semantic_ui_schema"
+    ],
+    "explicitClientToolCalls": 4,
+    "modelSelectedToolCalls": 0,
+    "newModelTurns": 0,
+    "sentMethods": [
+      "initialize",
+      "thread/start",
+      "mcpServerStatus/list",
+      "mcpServerStatus/list",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "skills/list",
+      "skills/extraRoots/set",
+      "skills/list",
+      "fs/readFile",
+      "skills/extraRoots/set",
+      "skills/list",
+      "skills/extraRoots/set",
+      "thread/unsubscribe"
+    ],
+    "archiveSha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b",
+    "mcpEntrySha256": "f61d40a9531d47a4c6cfb17c8df4f223df920c7824172c2fd65701e31806f2c0",
+    "defaultModel": "gpt-6.1-sol",
+    "defaultReasoning": "max",
+    "globalConfigShaUnchanged": true,
+    "skill": {
+      "name": "semantic-ui-checks",
+      "scope": "user",
+      "sha256": "b256f81046674bcbd7284e824dfc1ab527b51ac59a0775b6b10843efea5af9c5",
+      "discoveredAndRead": true,
+      "absentBeforeAndAfterTemporaryRoot": true
+    },
+    "appServerWireSha256": "fc2a318a6e9f759fd059fa02f3a939cb0ff6d9cc694321e8e6575a7802593558",
+    "mcpWireSha256": "2c5dd5950951ece981ee1aec9f4a6af0982f0e607e5525000808b3ac2e29c37b",
+    "doubleWireMatch": true
+  },
+  "normalDocumentedEntry": {
+    "appServerExitCode": 0,
+    "threadIdSha256": "79fc53ae0e46f7530fa9097a2186ccf137b90f9bd66926addec2eb4aaddec30c",
+    "activeSemanticServerCount": 1,
+    "otherServerMetadataDisabledCount": 5,
+    "configuredToolSubset": [
+      "semantic_ui_source_check",
+      "semantic_ui_schema"
+    ],
+    "explicitClientToolCalls": 2,
+    "modelSelectedToolCalls": 0,
+    "newModelTurns": 0,
+    "sentMethods": [
+      "initialize",
+      "thread/start",
+      "mcpServerStatus/list",
+      "mcpServerStatus/list",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "skills/list",
+      "skills/extraRoots/set",
+      "skills/list",
+      "fs/readFile",
+      "skills/extraRoots/set",
+      "skills/list",
+      "skills/extraRoots/set",
+      "thread/unsubscribe"
+    ],
+    "archiveSha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b",
+    "mcpEntrySha256": "f61d40a9531d47a4c6cfb17c8df4f223df920c7824172c2fd65701e31806f2c0",
+    "defaultModel": "gpt-6.1-sol",
+    "defaultReasoning": "max",
+    "globalConfigShaUnchanged": true,
+    "skill": {
+      "name": "semantic-ui-checks",
+      "scope": "user",
+      "sha256": "b256f81046674bcbd7284e824dfc1ab527b51ac59a0775b6b10843efea5af9c5",
+      "discoveredAndRead": true,
+      "absentBeforeAndAfterTemporaryRoot": true
+    },
+    "appServerWireSha256": "0038eb0c4cb64a7f63544b75b522fda107f91ca9fc25a3e88d09508413dfb6ca",
+    "mcpWireSha256": "5e53710a6e895ac0417a7cf55574fdff5b15cb53a7dd7379b6de6bc580a00d4f",
+    "doubleWireMatch": true
+  },
+  "doubleWireRequestsAndResponsesMatch": true,
+  "sourceInspectionOnlyNoGeneratedProjection": true,
+  "schemaResponse": {
+    "component": "DecisionExplorer",
+    "receivedViaCodexThread": true
+  },
+  "sourceChecks": [
+    {
+      "request": {},
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"decision-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962\",\"jsonPointer\":\"/question\",\"textSha256\":\"c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1\",\"excerptSha256\":\"c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":201,\"textUTF8Bytes\":201},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source author/original human identity\",\"general natural-language meaning outside the documented grammar\",\"component annotations and arbitrary free prose\",\"cost ranking, recommendation, exclusivity or inferred opposite responsibilities\"],\"status\":\"compared\",\"sourceDecision\":{\"options\":[\"托管平台\",\"虚拟机\"],\"facts\":[{\"kind\":\"actor-updates\",\"option\":\"托管平台\",\"name\":null,\"actor\":\"供应商\",\"value\":true,\"spans\":[{\"textByteStart\":45,\"textByteEnd\":69}]},{\"kind\":\"capability\",\"option\":\"托管平台\",\"name\":\"私网\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":72,\"textByteEnd\":84}]},{\"kind\":\"capability\",\"option\":\"虚拟机\",\"name\":\"私网\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":87,\"textByteEnd\":105}]},{\"kind\":\"maintenance-need\",\"option\":\"虚拟机\",\"name\":null,\"actor\":\"团队\",\"value\":true,\"spans\":[{\"textByteStart\":108,\"textByteEnd\":126}]},{\"kind\":\"price\",\"option\":\"托管平台\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":129,\"textByteEnd\":150}]},{\"kind\":\"price\",\"option\":\"虚拟机\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":129,\"textByteEnd\":150}]},{\"kind\":\"capability-need\",\"option\":null,\"name\":\"私网\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":153,\"textByteEnd\":180}]}],\"clauses\":[{\"kind\":\"selection\",\"span\":{\"textByteStart\":0,\"textByteEnd\":42}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":45,\"textByteEnd\":69}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":72,\"textByteEnd\":84}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":87,\"textByteEnd\":105}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":108,\"textByteEnd\":126}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":129,\"textByteEnd\":150}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":153,\"textByteEnd\":180}},{\"kind\":\"comparison-request\",\"span\":{\"textByteStart\":183,\"textByteEnd\":198}}]},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"fieldChecks\":[],\"inputChecks\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"bounded parsed source declarations; not general natural-language certification\",\"text\":\"托管平台：由供应商更新=true；私网支持=false；价格声明未知。\\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\\n虚拟机是否由供应商更新未声明，不能自动取反。\\n当前需要私网=false（不据此排除缺少该能力的方案）。\\n团队维护余力未声明，保持未知。\\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962",
+            "jsonPointer": "/question",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 201,
+              "textUTF8Bytes": 201
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "托管平台",
+              "虚拟机"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "托管平台",
+                "name": null,
+                "actor": "供应商",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 45,
+                    "textByteEnd": 69
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "托管平台",
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 72,
+                    "textByteEnd": 84
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "虚拟机",
+                "name": "私网",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 87,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "虚拟机",
+                "name": null,
+                "actor": "团队",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 126
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "托管平台",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "虚拟机",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 153,
+                    "textByteEnd": 180
+                  }
+                ]
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 42
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 45,
+                  "textByteEnd": 69
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 72,
+                  "textByteEnd": 84
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 87,
+                  "textByteEnd": 105
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 108,
+                  "textByteEnd": 126
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 129,
+                  "textByteEnd": 150
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 153,
+                  "textByteEnd": 180
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 183,
+                  "textByteEnd": 198
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "fieldChecks": [],
+          "inputChecks": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "bounded parsed source declarations; not general natural-language certification",
+            "text": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "claims": [
+          {
+            "kind": "capability",
+            "option": "虚拟机",
+            "name": "私网",
+            "value": true
+          },
+          {
+            "kind": "actor-available",
+            "actor": "团队",
+            "value": null
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "托管平台",
+            "actor": "团队",
+            "value": false
+          },
+          {
+            "kind": "recommendation",
+            "text": "托管平台更便宜，应当优先。"
+          }
+        ]
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"decision-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962\",\"jsonPointer\":\"/question\",\"textSha256\":\"c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1\",\"excerptSha256\":\"c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":201,\"textUTF8Bytes\":201},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source author/original human identity\",\"general natural-language meaning outside the documented grammar\",\"component annotations and arbitrary free prose\",\"cost ranking, recommendation, exclusivity or inferred opposite responsibilities\"],\"status\":\"compared\",\"sourceDecision\":{\"options\":[\"托管平台\",\"虚拟机\"],\"facts\":[{\"kind\":\"actor-updates\",\"option\":\"托管平台\",\"name\":null,\"actor\":\"供应商\",\"value\":true,\"spans\":[{\"textByteStart\":45,\"textByteEnd\":69}]},{\"kind\":\"capability\",\"option\":\"托管平台\",\"name\":\"私网\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":72,\"textByteEnd\":84}]},{\"kind\":\"capability\",\"option\":\"虚拟机\",\"name\":\"私网\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":87,\"textByteEnd\":105}]},{\"kind\":\"maintenance-need\",\"option\":\"虚拟机\",\"name\":null,\"actor\":\"团队\",\"value\":true,\"spans\":[{\"textByteStart\":108,\"textByteEnd\":126}]},{\"kind\":\"price\",\"option\":\"托管平台\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":129,\"textByteEnd\":150}]},{\"kind\":\"price\",\"option\":\"虚拟机\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":129,\"textByteEnd\":150}]},{\"kind\":\"capability-need\",\"option\":null,\"name\":\"私网\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":153,\"textByteEnd\":180}]}],\"clauses\":[{\"kind\":\"selection\",\"span\":{\"textByteStart\":0,\"textByteEnd\":42}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":45,\"textByteEnd\":69}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":72,\"textByteEnd\":84}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":87,\"textByteEnd\":105}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":108,\"textByteEnd\":126}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":129,\"textByteEnd\":150}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":153,\"textByteEnd\":180}},{\"kind\":\"comparison-request\",\"span\":{\"textByteStart\":183,\"textByteEnd\":198}}]},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"fieldChecks\":[],\"inputChecks\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"capability\",\"status\":\"supported\",\"expected\":true,\"sourceSpans\":[{\"textByteStart\":87,\"textByteEnd\":105}]},{\"index\":1,\"kind\":\"actor-available\",\"status\":\"unknown\",\"expected\":null,\"sourceSpans\":[]},{\"index\":2,\"kind\":\"maintenance-need\",\"status\":\"unsupported-by-source\",\"expected\":null,\"sourceSpans\":[]},{\"index\":3,\"kind\":\"recommendation\",\"status\":\"not-assessed\",\"code\":\"SOURCE_CLAIM_UNSUPPORTED\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve unsupported mappings, policies or source claims first.\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962",
+            "jsonPointer": "/question",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 201,
+              "textUTF8Bytes": 201
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "托管平台",
+              "虚拟机"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "托管平台",
+                "name": null,
+                "actor": "供应商",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 45,
+                    "textByteEnd": 69
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "托管平台",
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 72,
+                    "textByteEnd": 84
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "虚拟机",
+                "name": "私网",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 87,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "虚拟机",
+                "name": null,
+                "actor": "团队",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 126
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "托管平台",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "虚拟机",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 153,
+                    "textByteEnd": 180
+                  }
+                ]
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 42
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 45,
+                  "textByteEnd": 69
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 72,
+                  "textByteEnd": 84
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 87,
+                  "textByteEnd": 105
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 108,
+                  "textByteEnd": 126
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 129,
+                  "textByteEnd": 150
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 153,
+                  "textByteEnd": 180
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 183,
+                  "textByteEnd": 198
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "fieldChecks": [],
+          "inputChecks": [],
+          "claimChecks": [
+            {
+              "index": 0,
+              "kind": "capability",
+              "status": "supported",
+              "expected": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 87,
+                  "textByteEnd": 105
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "kind": "actor-available",
+              "status": "unknown",
+              "expected": null,
+              "sourceSpans": []
+            },
+            {
+              "index": 2,
+              "kind": "maintenance-need",
+              "status": "unsupported-by-source",
+              "expected": null,
+              "sourceSpans": []
+            },
+            {
+              "index": 3,
+              "kind": "recommendation",
+              "status": "not-assessed",
+              "code": "SOURCE_CLAIM_UNSUPPORTED"
+            }
+          ],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "withheld",
+            "reason": "Resolve unsupported mappings, policies or source claims first."
+          }
+        }
+      }
+    },
+    {
+      "request": {
+        "sourceText": "替换成另一个来源",
+        "sourceKind": "arrows"
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "MCP error -32602: Input validation error: Invalid arguments for tool semantic_ui_source_check: Unrecognized keys: \"sourceText\", \"sourceKind\""
+          }
+        ],
+        "isError": true
+      }
+    }
+  ],
+  "skillDiscovery": {
+    "beforeCount": 30,
+    "duringCount": 31,
+    "afterCount": 30,
+    "targetOnlyReadFromArchivedPath": true,
+    "scopeUserIsTemporaryExtraRootNotGlobalInstall": true,
+    "otherSkillBodiesRead": false
+  },
+  "setupFailure": "First client assertion counted disabled server metadata as active connections. Corrected to require one connected semantic server and every inherited row disabled with empty tools/resources. First logs retained, no tool calls or inference in that failed setup.",
+  "boundaries": [
+    "Explicit app-server client routing, not model selection or desktop rich UI",
+    "No turn/start, provider fallback, global registration, model call, new CI or release",
+    "Full thread IDs and both complete protocol logs remain private; published hashes/structured results are derived records",
+    "Existing natural C1-D1/C2-N2 actualMcpCalls remain0; no third question or retry",
+    "Original DSH run9 0pass6fail18requests unchanged",
+    "sourceFactsVerified=false and identityVerified=false; configured file is not human or world authentication"
+  ],
+  "lifecycle": {
+    "ownedProcessesRemaining": 0,
+    "allAppServersExited": true,
+    "globalConfigShaUnchanged": true,
+    "newModelTurns": 0
+  }
+}

@@ -1,5 +1,7 @@
 # 实际进度
 
+现成preview.13的 [显式Codex只读入口](CODEX-EXPLICIT.zh-CN.md) 已验证：官方独立STDIO/临时线程实际调用schema/source_check，正常入口2项、定向正反例4项，双层请求/返回一致。未知/不支持/换源拒绝保留；自包skill经临时extraRoots被发现、读取且清除后消失。默认模型/推理与全局配置保持，新增推理0；两题自然工具调用仍0、正文结论及旧DSH0/6/18不变。仅新增源码伴随客户端、输入快照和文档/回执，不改runtime、不新发行或重打12/13。见 [本段回执](evidence/codex-explicit-route.json)。
+
 preview.13已作为独立预览发行，源码冻结373106e31e2e31867a46c7ed3279ed3c63942d81；只增加MCP初始化工作流，DSH host/client/core/protocol与preview.12同字节。7项源码/仓库外归档stdio和Linux CI40412046123通过，四份CI产物与本地同字节，未重跑旧宿主/GenUI矩阵。真实Codex CLI两题已全部终结：D1/preview.12初始化成功但0次工具、正文失败；N2/preview.13正文正确但0次工具。原题普通表达、无手工view/答案，C2有初始化工作流；两题不能用作版本A/B。正常个人登录可用，后台推理请求数unknown；无第三题/重试/全局注册。见 [真实逐题记录](evidence/codex-cli.json)、[版本交付回执](evidence/preview13.json)。自然工具采用、任意正文/世界事实与当前桌面富UI均未完成；原DSH0/6/18和preview.12资产保持。
 
 preview.12已实际发布为 [个人预览Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.12)，冻结源码/tag为629b7bacc2793f49bba62d66d758c25bd4518178。完整decision-zh接入同一个普通render/最终快照；未知不补值、本地假设不重写来源。28项窄单元/工具检查通过；实际运行归档正常装入全新profile，293文件逐字节核对，Native/PTC各6项必要验证及独立进程恢复通过，360px无溢出、pageerror=0。仓库外独立MCP与Linux CI通过，CI四份产物与本地完全同字节。安装、CI、匿名HTTPS及全部失败/边界按 [本版回执](evidence/preview12.json) 分开记录；补充回执为后续文档commit，不重打包或修改冻结版本。原六题仍0/6/18、sourceFacts/identity均false，零新自然模型请求；不冒称当前Codex客户端采用或真机验收。下文dev.0–5保留为历史源码阶段。
