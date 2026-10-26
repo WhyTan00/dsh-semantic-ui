@@ -64,3 +64,5 @@ preview.10继续只分发同一检查核心与便携skill，不增加renderer。
 本地preview.11-dev.0 /协议1.4进一步复用同一core的声明角色和作用交叉检查，编译后的独立MCP入口通过3项真实stdio测试；不等于当前Codex已加载，也不证明自由正文或来源真实。原已发布preview.10仍为1.3。新合同、本地入口及限制见 [声明检查](DECLARATION-CHECKS.zh-CN.md)。
 
 preview.11将同一1.4核心与只读MCP归档交付；归档入口的独立协议验证见 [本版回执](evidence/preview11.json)，没有全局注册或当前会话已加载声明。
+
+preview.12已把同一只读核心与有限来源检查实际归档发布，仓库外独立入口验证见 [回执](evidence/preview12/standalone-mcp.json)。正常来源绑定render仅在DSH；未修改当前Codex配置、未提供新UI资源或宣称当前对话已加载。

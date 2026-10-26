@@ -1,0 +1,14 @@
+{
+  "archiveExtractedOutsideRepository": true,
+  "noNodeModulesBesideServer": true,
+  "entrySha256": "49d0d06a12c43867564140fbbc1d669d19b9551dee988e7b09f30faa0e715143",
+  "explicitSourceKind": "decision-zh",
+  "sourceMatched": true,
+  "falseOppositeRejected": true,
+  "identityVerified": false,
+  "sourceFactsVerified": false,
+  "newNaturalModelRequests": 0,
+  "defaultReadOnlyStdioTestsPassed": 3,
+  "explicitSourceStdioScenariosPassed": 1,
+  "setupFailure": "First explicit-source probe read nonexistent sourceMetadata instead of public source; corrected test probe. Default3 tests and source comparison itself had passed."
+}

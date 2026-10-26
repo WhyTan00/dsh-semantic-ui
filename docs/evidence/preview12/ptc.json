@@ -1,0 +1,81 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "kind": "ptc-decision-bound",
+      "status": "bound",
+      "canonicalExplanation": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+      "whatIf": {
+        "vmEligibleWithAvailability": true,
+        "hostedStillUnknownUntilNeed": true,
+        "hostedExcludedWithNeed": true,
+        "unknownCellsRemain": 4,
+        "sourceExplanationFixed": true,
+        "newPrompts": 0
+      },
+      "refreshResetsLocalConditions": true,
+      "modelNotesAbsent": true,
+      "container": {
+        "width": 360,
+        "clientWidth": 358,
+        "scrollWidth": 358,
+        "height": 2150.71875
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "historyReopened": true
+    },
+    {
+      "kind": "ptc-decision-bad",
+      "status": "refused",
+      "codes": [
+        "SOURCE_VALUE",
+        "SOURCE_VALUE",
+        "SOURCE_FIELD_TYPE"
+      ]
+    },
+    {
+      "kind": "ptc-decision-unmapped",
+      "status": "refused",
+      "codes": [
+        "SOURCE_MAPPING_REQUIRED",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_FACT_MISSING",
+        "SOURCE_FACT_MISSING",
+        "SOURCE_FACT_MISSING",
+        "SOURCE_FACT_MISSING",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_MAPPING_MISSING",
+        "SOURCE_CONDITION_MISSING",
+        "SOURCE_CONDITION_MISSING",
+        "SOURCE_REQUIREMENT_ROLE",
+        "SOURCE_REQUIREMENT_ROLE",
+        "SOURCE_REQUIREMENT_MISSING",
+        "SOURCE_REQUIREMENT_MISSING"
+      ]
+    },
+    {
+      "kind": "ptc-permission-bound",
+      "status": "bound",
+      "permissionsCompatibility": true
+    },
+    {
+      "kind": "ptc-permission-refused",
+      "status": "refused",
+      "codes": [
+        "SOURCE_ACCESS_PROHIBITED"
+      ]
+    },
+    {
+      "kind": "ptc-legacy",
+      "legacyProtocol": "1.0",
+      "oldCheckpointRead": true
+    }
+  ],
+  "pageErrors": [],
+  "newRealModelRequests": 0,
+  "archiveInstallation": true
+}

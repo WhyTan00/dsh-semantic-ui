@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "mode": "native",
+      "crossProcessHistoryRestored": true,
+      "revision": 1,
+      "sourceExplanationVisible": true,
+      "modelAnnotationsAbsent": true,
+      "container": {
+        "width": 360,
+        "height": 2150.71875,
+        "clientWidth": 358,
+        "scrollWidth": 358,
+        "top": 267,
+        "bottom": 2417.71875
+      }
+    },
+    {
+      "mode": "ptc",
+      "crossProcessHistoryRestored": true,
+      "revision": 1,
+      "sourceExplanationVisible": true,
+      "modelAnnotationsAbsent": true,
+      "container": {
+        "width": 360,
+        "height": 2150.71875,
+        "clientWidth": 358,
+        "scrollWidth": 358,
+        "top": 267,
+        "bottom": 2417.71875
+      }
+    }
+  ],
+  "pageErrors": [],
+  "newPrompts": 0,
+  "newRealModelRequests": 0,
+  "checkpointHomeReused": true,
+  "archiveSha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+  "setupFailure": "Initial recovery-only test used unstable overflow list indexes; fixed locator before accepted recovery. No new prompts."
+}

@@ -36,6 +36,10 @@ checkpoint沿原meta扩展版本化的来源说明、文本摘要、实际host�
 
 没有该字段的旧1.0–1.4历史继续按原语义读取，旧外观/模板合同保留。来源记录并非对任意外部修改过的DSH日志的数字签名；这里只保证正常工具与恢复路径消费实际保存的最终快照，不把宿主引用当人类principal。
 
+## preview.12发行验证
+
+完整版本回执见 [preview.12](evidence/preview12.json)：实际tarball正常安装、293文件核字节、Native/PTC各6项必要接受/拒绝和旧1.0读取、刷新/历史重开及新进程恢复；独立MCP与同字节Linux归档安装分别留据。Decision的完整窄屏图见 [Native](evidence/decision-delivery-native.png)、[PTC](evidence/decision-delivery-ptc.png)。原始预期与本轮源码检查见 [源码证据](evidence/decision-delivery.json)。下节dev.5的较早权限矩阵继续保留其原构建身份，不外推成新包完整重验。
+
 ## 验证与界限
 
 实现前固定 [独立最小预期](../fixtures/source-delivery-expectations.json)。[本段证据](evidence/source-delivery.json) 逐项区分最终构建与修正前记录：

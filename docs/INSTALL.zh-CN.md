@@ -82,3 +82,5 @@ preview.10沿用协议1.3，增加同表格范围的缺失值对照；仅重验�
 preview.11使用协议1.4的新角色/作用合同，保存的1.0–1.3快照保持原解释。新交付请先describe，提供明确字段角色与expectedEffect。实际版本归档安装、MCP和Linux结果见 [本版回执](evidence/preview11.json)；可回退到保留的 [preview.10](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.10)，不改写会话。
 
 preview.12支持当前输入的有限Decision/权限来源绑定，普通render仍为唯一入口。打包要求干净的源码commit，manifest记录完整sourceCommit和各运行入口SHA-256；同版本输出若与已冻结字节不同则拒绝覆盖。`pnpm test:installed-source`将包正常装入新profile，启动前逐文件核字节，再检验必要的Native/PTC交付及旧1.0读取。窄矩阵不等于旧全矩阵重新通过，有限来源核对也不等于原自然题通过。
+
+实际发布、归档安装、独立MCP、Linux和匿名HTTPS检查见 [preview.12回执](evidence/preview12.json)。source tag固定实现commit，后续交付文档单独提交，不改变已发布四份资产。

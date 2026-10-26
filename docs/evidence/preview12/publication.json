@@ -1,0 +1,51 @@
+{
+  "releaseId": 424794421,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.12",
+  "tag": "v0.1.0-preview.12",
+  "sourceCommit": "629b7bacc2793f49bba62d66d758c25bd4518178",
+  "publishedAt": "2026-10-26T21:35:37Z",
+  "prerelease": true,
+  "draft": false,
+  "anonymousHttpsDownloads": [
+    {
+      "name": "package-manifest.json",
+      "assetId": 679549404,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.12/package-manifest.json",
+      "status": 200,
+      "bytes": 25933,
+      "sha256": "aa1448eeb7959a08bb402d4fb7c38333d516887ed06b41f586aa6a6b8ae54d6a",
+      "identicalToFrozenLocalAsset": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "assetId": 679549402,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.12/SHA256SUMS",
+      "status": 200,
+      "bytes": 229,
+      "sha256": "3afb231ae5f37c375aa0be5c0157931bb51e4f46ffc2a48b16f8915f53c96a75",
+      "identicalToFrozenLocalAsset": true
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.12.tgz",
+      "assetId": 679549409,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.12/whytan-dsh-semantic-ui-0.1.0-preview.12.tgz",
+      "status": 200,
+      "bytes": 2523713,
+      "sha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+      "identicalToFrozenLocalAsset": true
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.12.tgz",
+      "assetId": 679549408,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.12/whytan-dsh-semantic-ui-evidence-0.1.0-preview.12.tgz",
+      "status": 200,
+      "bytes": 29032032,
+      "sha256": "6a4a5ad8aa91be20ac42c6fcb5afdc69106c572163dac8b52671c954c16596ae",
+      "identicalToFrozenLocalAsset": true
+    }
+  ],
+  "credentialUsedForDownloads": false,
+  "remoteTagObject": "692289567e8e1f07fdbb6b47bf57efdad8c0f42c",
+  "remoteTagPeeledCommit": "629b7bacc2793f49bba62d66d758c25bd4518178",
+  "tagMatchesManifestSourceCommit": true
+}

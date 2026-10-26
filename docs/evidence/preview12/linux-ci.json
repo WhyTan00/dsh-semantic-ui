@@ -1,0 +1,58 @@
+{
+  "runId": 40405198820,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40405198820",
+  "sourceCommit": "629b7bacc2793f49bba62d66d758c25bd4518178",
+  "workflowInput": {
+    "source_only": true,
+    "chart_only": false,
+    "consistency_only": false
+  },
+  "conclusion": "success",
+  "runner": "ubuntu-latest",
+  "archiveInstall": {
+    "dsh": "0.2.1-rc.2",
+    "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+    "package": "@whytan/dsh-semantic-ui",
+    "version": "0.1.0-preview.12",
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.12.tgz",
+    "sha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+    "hostStarted": true,
+    "allPackagedFilesVerified": 293,
+    "validationSuite": "source-bound-decision-permissions",
+    "casesPerMode": 6,
+    "oldProtocol": "1.0",
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "pageErrors": []
+  },
+  "files": [
+    {
+      "file": "package-manifest.json",
+      "identical": true,
+      "localSha256": "aa1448eeb7959a08bb402d4fb7c38333d516887ed06b41f586aa6a6b8ae54d6a",
+      "ciSha256": "aa1448eeb7959a08bb402d4fb7c38333d516887ed06b41f586aa6a6b8ae54d6a"
+    },
+    {
+      "file": "SHA256SUMS",
+      "identical": true,
+      "localSha256": "3afb231ae5f37c375aa0be5c0157931bb51e4f46ffc2a48b16f8915f53c96a75",
+      "ciSha256": "3afb231ae5f37c375aa0be5c0157931bb51e4f46ffc2a48b16f8915f53c96a75"
+    },
+    {
+      "file": "whytan-dsh-semantic-ui-0.1.0-preview.12.tgz",
+      "identical": true,
+      "localSha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+      "ciSha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6"
+    },
+    {
+      "file": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.12.tgz",
+      "identical": true,
+      "localSha256": "6a4a5ad8aa91be20ac42c6fcb5afdc69106c572163dac8b52671c954c16596ae",
+      "ciSha256": "6a4a5ad8aa91be20ac42c6fcb5afdc69106c572163dac8b52671c954c16596ae"
+    }
+  ],
+  "historicalMatricesRerun": false,
+  "newNaturalModelRequests": 0
+}

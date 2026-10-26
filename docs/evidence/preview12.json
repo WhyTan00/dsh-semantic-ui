@@ -1,0 +1,26 @@
+{
+  "version": "0.1.0-preview.12",
+  "protocol": "1.4",
+  "dsh": "0.2.1-rc.2",
+  "sourceCommit": "629b7bacc2793f49bba62d66d758c25bd4518178",
+  "runtimeSha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+  "evidenceSha256": "6a4a5ad8aa91be20ac42c6fcb5afdc69106c572163dac8b52671c954c16596ae",
+  "sourceChecks": "decision-delivery.json",
+  "actualArchiveInstall": "preview12/install.json",
+  "native": "preview12/native.json",
+  "ptc": "preview12/ptc.json",
+  "crossProcessReadback": "preview12/readback.json",
+  "archiveStandaloneMcp": "preview12/standalone-mcp.json",
+  "linuxArchiveCi": "preview12/linux-ci.json",
+  "manifest": "preview12/package-manifest.json",
+  "newNaturalModelRequests": 0,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "originalRun9": {
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "boundary": "Finite source checking is not unrestricted prose, source identity or world truth. Package/source freeze is 629b7ba; supplemental delivery receipts are a later commit and do not change frozen archive bytes. Prior full/GenUI matrices retain historical version scope; current Codex adoption and real-device/screen-reader acceptance remain unverified.",
+  "publication": "preview12/publication.json"
+}
