@@ -1,0 +1,56 @@
+{
+  "frozenAt": "2026-10-26T22:16:08.382622+00:00",
+  "cases": {
+    "D1": {
+      "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+      "recordPath": "docs/evidence/natural/r9-D1.json",
+      "recordSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+      "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1"
+    },
+    "N2": {
+      "question": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+      "recordPath": "docs/evidence/natural/r9-N2.json",
+      "recordSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0"
+    }
+  },
+  "D1": {
+    "positive": [
+      "two exact named options and declared private-network/update/maintenance facts",
+      "unknown prices, unstated opposite maintenance/update facts and team availability remain unknown",
+      "current no-private-network need is distinct from future preference",
+      "any recommendation must identify an added conditional preference, not claim it was in source"
+    ],
+    "negative": [
+      "unstated opposite value becomes false",
+      "unknown price gains currency or billing unit",
+      "maintenance need reverses into capability support",
+      "default ranking or migration/future promise without source basis"
+    ],
+    "toolAcceptance": [
+      "actual model-origin MCP calls recorded",
+      "source inspection vs complete comparison match separately graded",
+      "no invented approval or source truth flag"
+    ]
+  },
+  "N2": {
+    "positive": [
+      "values -2,0,null,2 preserved",
+      "3 valid of4, one missing, observed sum0 and mean0 Celsius",
+      "complete four-reading mean remains unknown",
+      "zero is a real observation; zero fill is a separately labeled assumption and happens to leave this mean0"
+    ],
+    "negative": [
+      "drops observed0 or changes missing to observed0",
+      "mean of all4 asserted known",
+      "universal downward bias or cause of missingness invented"
+    ]
+  },
+  "boundaries": [
+    "ordinary original questions only, no view or expected answer in prompt",
+    "at most2 natural cases; no retries for passing, provider switch, quota query or paid API",
+    "CLI text adoption, tool output, prose correctness and rich UI assessed separately",
+    "backend model request count unknown unless client exposes it",
+    "run9 0pass6fail18requests unchanged"
+  ]
+}

@@ -1,6 +1,8 @@
 # Codex 原生交互 UI 与本项目的接入
 
-核实：2026-10-25，再次读取官方Visualizations与插件打包文档。结论：当前会话已提供原生 Visualize 技能入口，未把技能可用当作本项目已在当前客户端出图验收；本项目接入 Codex 的价值在数据/规则校验与模板合同。展示使用宿主已有的可视化、Mermaid、表格或文字。
+2026-10-27已完成两道真实个人Codex CLI自然输入验收，见 [逐题记录](evidence/codex-cli.json)：正常登录及MCP初始化成功，两题均0次实际MCP检查调用。D1正文未通过事前语义预期；N2正文通过，但不能归因为插件计算。preview.13增加初始化工作流元数据，SDK/归档/Linux7项合同通过，仍未证明自然采用或当前桌面富UI。
+
+此前2026-10-25已核对官方Visualizations与插件合同；当前主会话提供原生Visualize入口，未把技能可用当作本插件已出图。展示仍使用宿主已有的可视化、Mermaid、表格或文字。
 
 ## 实际能力与范围
 
@@ -71,6 +73,19 @@ preview.12已把同一只读核心与有限来源检查实际归档发布，仓�
 
 真实个人Codex CLI的第一次D1验收已完成：preview.12的MCP成功初始化并返回四工具目录，但模型未调用任何工具，正文还优先推荐托管；按事前预期判定失败，见 [完整首次回答](evidence/codex-cli/c1-D1-preview12.json)。不能把工具目录存在写成模型已采用，更不能由它证明正文或桌面富UI。
 
-preview.13候选将现有只读工作流放入MCP初始化的 `instructions`：先schema后check处理数值计算，有独立来源时先检查其有限语法，再对照新view。前512字符独立交代范围；来源内容绝不拼入指令。未配置来源时不宣称有来源工具，源kind/文件、事实与身份边界仍由原合同维护。实现使用MCP SDK公开ServerOptions，没有第二套模型/renderer或全局配置。官方合同见 [MCP初始化指引](https://learn.chatgpt.com/docs/extend/mcp)。指引帮助采用，并不能强制模型正确或证明D1已修好。
+preview.13将现有只读工作流放入MCP初始化的 `instructions`：先schema后check处理数值计算，有独立来源时先检查其有限语法，再对照新view。前512字符独立交代范围；来源内容绝不拼入指令。未配置来源时不宣称有来源工具，源kind/文件、事实与身份边界仍由原合同维护。实现使用MCP SDK公开ServerOptions，没有第二套模型/renderer或全局配置。官方合同见 [MCP初始化指引](https://learn.chatgpt.com/docs/extend/mcp)。指引帮助采用，并不能强制模型正确或证明D1已修好。
 
 真实验收只使用单次 `codex exec --ephemeral --ignore-user-config` 配置，显式保持原默认模型、推理和正常登录入口；read-only、禁shell/浏览器及其它MCP/apps/plugins/记忆/Goal/hooks，仅暴露本包只读工具。期望与原source先冻结，普通问题不含正确view、工具名或预期答案。JSONL、MCP原始报文与正文分别留存，后台推理请求数若未暴露则记unknown。`--ignore-user-config`不是更换账户；没有复制凭据或修改全局配置。官方入口见 [非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)。
+
+### 两题结果与剩余问题
+
+| 自然输入 | 实际归档/工具采用 | 内容判断 |
+|---|---|---|
+| 原D1条件权衡 | preview.12，4工具初始化成功，0次调用 | 直接优先托管并推当前维护减负，未通过独立预期；价格仍未知，不能用其它正确部分抵消无据策略 |
+| 原N2读数解释/均值 | preview.13，3工具及初始化指引成功返回，0次调用 | 3个有效值均值0℃、全部4次均值未知，正文通过；没有插件计算或来源核对发生 |
+
+普通问题未包含工具名、合法view或预期答案。C2有服务器初始化工作流，不能称无指引择工具；初始化返回也不证明模型实际读取/服从。两题的模型与推理沿本机默认值，没有改账户/路由或使用API备用；不同问题和版本不能计算准确率提升。共观察到2个自然回合，后台推理请求数未由CLI逐请求暴露，记unknown；没有第三题或重试D1。原DSH run9仍0通过/6失败/18请求。
+
+本机无模型调用的prompt-input调试没有显示MCP指引或工具名，但该输出不含独立tools/selector元数据，所以不能据此判定客户端丢失指引。已证实的是正常授权可用、MCP启动正常、自然工具采用未通过；下一步需要验证便携skill/客户端的实际工具暴露与采用路径，不能用手工SDK call替代。当前主对话未全局加载，桌面UI未验收。
+
+[preview.13发行与stdio/Linux回执](evidence/preview13.json) 将新MCP工作流与未通过的自然采用分开。DSH四个运行入口和preview.12同字节，旧宿主/GenUI矩阵保持各自原版本范围。

@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0-preview.13",
+  "sourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "runtimeSha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b",
+  "evidenceSha256": "1cceb8cfd75312f0cf7eff2879a5a2bfea0cd67180c4d365c1da23f236c9014f",
+  "protocol": "1.4",
+  "runtimeChange": "MCP initialization workflow metadata only; host/client/core/protocol matchpreview12 bytes",
+  "standaloneMcp": "preview13/standalone-mcp.json",
+  "linuxMcp": "preview13/linux-mcp.json",
+  "linuxCi": "preview13/linux-ci.json",
+  "runtimeDiff": "preview13/runtime-diff.json",
+  "manifest": "preview13/package-manifest.json",
+  "codexNaturalCases": "codex-cli.json",
+  "actualModelMcpToolCalls": 0,
+  "naturalCaseCount": 2,
+  "modelBackendRequestCount": "unknown",
+  "codexToolAdoption": "not accepted",
+  "currentCodexDesktopRichUi": "not tested",
+  "originalRun9": {
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "boundary": "Server instructions, SDK/CI and release do not prove natural MCP adoption, arbitrary prose or rich UI. C1-D1 failed prose and used no tool; C2-N2 prose passed without a tool. No D1 retry/third case. Original preview12 four assets unchanged.",
+  "publication": "preview13/publication.json"
+}

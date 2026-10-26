@@ -1,0 +1,38 @@
+{
+  "id": 40412046123,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40412046123",
+  "sourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "conclusion": "success",
+  "runner": "ubuntu-latest",
+  "workflowInput": {
+    "mcp_only": true,
+    "source_only": false,
+    "chart_only": false,
+    "consistency_only": false
+  },
+  "archiveStdioTestsPassed": 7,
+  "realModelRequests": 0,
+  "byteComparison": [
+    {
+      "name": "package-manifest.json",
+      "sameBytes": true,
+      "sha256": "704847820e6638fae186b788f4bdfbc1af87abc40d1d28736f2d2bf0820ba271"
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.13.tgz",
+      "sameBytes": true,
+      "sha256": "1cceb8cfd75312f0cf7eff2879a5a2bfea0cd67180c4d365c1da23f236c9014f"
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.13.tgz",
+      "sameBytes": true,
+      "sha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b"
+    },
+    {
+      "name": "SHA256SUMS",
+      "sameBytes": true,
+      "sha256": "9ca46587ed5bca7983bbb75d8bd878eb377548f29267e40dce95868d2ac04397"
+    }
+  ],
+  "dshBrowserMatricesRerun": false
+}

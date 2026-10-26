@@ -13,12 +13,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.12.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.12.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
+运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.13.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 
@@ -84,3 +84,5 @@ preview.11使用协议1.4的新角色/作用合同，保存的1.0–1.3快照保
 preview.12支持当前输入的有限Decision/权限来源绑定，普通render仍为唯一入口。打包要求干净的源码commit，manifest记录完整sourceCommit和各运行入口SHA-256；同版本输出若与已冻结字节不同则拒绝覆盖。`pnpm test:installed-source`将包正常装入新profile，启动前逐文件核字节，再检验必要的Native/PTC交付及旧1.0读取。窄矩阵不等于旧全矩阵重新通过，有限来源核对也不等于原自然题通过。
 
 实际发布、归档安装、独立MCP、Linux和匿名HTTPS检查见 [preview.12回执](evidence/preview12.json)。source tag固定实现commit，后续交付文档单独提交，不改变已发布四份资产。
+
+preview.13只改MCP初始化工作流，DSH四入口与preview.12同字节，未重跑旧DSH矩阵。独立归档/stdio/Linux检查与两题真实Codex结果见 [本版回执](evidence/preview13.json)：MCP正常启动，两题均没有实际检查调用，不能以N2正文正确宣称插件已被采用。当前Codex/全局配置未改；安装新会话不等于自动采用。

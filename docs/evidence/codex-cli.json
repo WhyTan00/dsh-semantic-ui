@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-27",
+  "scope": "normal personal Codex CLI, per-process MCP, original natural D1/N2 inputs",
+  "firstCase": "codex-cli/c1-D1-preview12.json",
+  "secondCase": "codex-cli/c2-N2-preview13.json",
+  "expectations": "codex-cli/expectations.json",
+  "diagnostics": "codex-cli/diagnostics.json",
+  "questionCount": 2,
+  "observedModelTurns": 2,
+  "backendModelRequests": "unknown",
+  "actualMcpCalls": 0,
+  "prose": {
+    "pass": 1,
+    "fail": 1
+  },
+  "actualPluginAdoption": "not accepted; no model-origin check call",
+  "assessmentMethod": "Agent review against independently frozen positive/negative expectations; no arbitrary-prose verifier",
+  "notAControlledAccuracyBenchmark": true,
+  "originalRun9": {
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "currentDesktopRichUiAdoption": "not tested",
+  "sourceFactsVerified": false,
+  "identityVerified": false
+}

@@ -1,0 +1,7 @@
+{
+  "dist/host.js": true,
+  "dist/client.js": true,
+  "dist/core.js": true,
+  "dist/mcp.js": false,
+  "dist/protocol.js": true
+}

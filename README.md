@@ -22,7 +22,7 @@ Preview.7 improves **visual and interaction fidelity**: elapsed-time axes, stabl
 
 Preview.8 adds **computed requirements and a portable verification core**: typed numeric/boolean conditions, graph intersections, unknown-aware eligibility, and preference policies held until explicit local exploration. A no-render `action=check` returns computed facts. New deliveries use protocol 1.2; saved 1.0/1.1 histories retain their behavior. See [semantic boundaries](docs/SEMANTICS.zh-CN.md).
 
-**This environment already exposes native Visualize tooling; availability depends on the surface and account.** The optional [Codex bridge](docs/CODEX.zh-CN.md) reuses our core through three read-only MCP tools and a portable skill; it does not duplicate the renderer. CLI/IDE can consume computed results but do not render native interactive visualizations. The bridge passed standalone JSON-RPC tests; it has not been globally installed or accepted in a live Codex model conversation.
+**This environment already exposes native Visualize tooling; availability depends on the surface and account.** The optional [Codex bridge](docs/CODEX.zh-CN.md) reuses our core through three read-only MCP tools and a portable skill; it does not duplicate the renderer. CLI/IDE can consume computed results but do not render native interactive visualizations. The bridge passes standalone JSON-RPC tests and initializes in isolated real Codex CLI cases; actual natural tool use was zero. It is not globally registered in the current chat.
 
 Preview.9 uses **protocol1.3** to distinguish resource availability from capability support, expose hard/preference-only input links, and compute signed zero-fill comparisons explicitly. A fresh installed real DSH Native/PTC matrix covers the new predicates plus saved1.0/1.1/1.2 snapshot semantics.90 tests pass. No new natural-model requests were made: the original six semantic failures remain open. See [source mapping and limits](docs/GROUNDING-FOLLOWUP.zh-CN.md) and [versioned evidence](docs/evidence/preview9.json). Preview.8 archives, manifests, checksums and installation evidence remain unchanged.
 
@@ -30,14 +30,14 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 **Preview.11 / protocol1.4** packages executable declaration checks: capability/resource roles must agree with boolean relations, and each input’s expected hard/preference effect must match its dependency graph. Contradictions are rejected without rewriting policy;1.0–1.3 histories retain their meanings and source verification stays false. See the [declaration guide](docs/DECLARATION-CHECKS.zh-CN.md) and [version-specific archive installation, MCP and Linux receipts](docs/evidence/preview11.json).
 
-Preview.13 candidate adds MCP initialization workflow instructions after a real Codex CLI D1 attempt initialized the preview.12 server but used no tools and failed the frozen prose criteria. That first failure is retained; guidance is not proof that D1 or desktop UI is fixed. See [Codex acceptance](docs/CODEX.zh-CN.md#preview13初始化时提供检查工作流).
+**Preview.13** adds scoped MCP initialization workflow instructions. [Two real isolated Codex CLI cases](docs/evidence/codex-cli.json) both initialized the server but used **zero check tools**: D1 prose failed the frozen criteria; N2 prose passed without plugin computation. Source/archive/Linux stdio contracts pass, but natural tool adoption and desktop UI are not accepted. [Versioned delivery receipts](docs/evidence/preview13.json) keep these outcomes separate; the original six DSH failures and preview.12 assets remain unchanged.
 
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.12.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.

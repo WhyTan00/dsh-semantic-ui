@@ -1,0 +1,46 @@
+{
+  "case": "C2-N2",
+  "question": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+  "source": {
+    "question": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+    "recordPath": "docs/evidence/natural/r9-N2.json",
+    "recordSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0"
+  },
+  "pluginVersion": "0.1.0-preview.13",
+  "archiveSha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b",
+  "sourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "client": "codex-cli0.164.0",
+  "model": "gpt-6.1-sol",
+  "reasoning": "max",
+  "authentication": "existing normal ChatGPT login; no API key copied",
+  "explicitToolPrompt": false,
+  "serverWorkflowGuidance": true,
+  "initializeInstructions": "For arithmetic over supplied numeric observations, inspect semantic_ui_schema, then use semantic_ui_check with a fresh view before stating computed results. Preserve null versus observed zero, units and unknowns. Checks do not verify source identity, world facts or free prose. This server provides no UI, actions or model route. Short nonnumeric explanations can use plain text.",
+  "catalog": [
+    "semantic_ui_schema",
+    "semantic_ui_check",
+    "semantic_ui_template_check"
+  ],
+  "actualToolCalls": [],
+  "finalAnswer": "**3 次有效读数的平均值是 0℃；全部 4 次的平均值无法确定。**\n\n已知读数为 −2℃、0℃、2℃，平均值为：\n\n\\[\n\\frac{-2+0+2}{3}=0℃\n\\]\n\n−2℃和 0℃都是有效温度；“缺失”表示没有读数，不能当作 0℃。\n\n因此可报告为：**平均温度 0℃（基于 3 次有效读数，4 次记录中有 1 次缺失）**。",
+  "rawSha256": "25b5a21196d180949c6789bb76128202df187a80104d6eda43a2c26b13e43d5a",
+  "finalSha256": "1de5bd7505a717203cac355f9b2c408ab61defa5ea7f5fd31f2decaf75210fd1",
+  "wireSha256": "8e20ba43ad5f4c0845b78908bcfaac56f88d439e4736b1c86cd53c6a987d2a06",
+  "exitCode": 0,
+  "modelBackendRequestCount": "unknown",
+  "observedModelTurns": 1,
+  "result": {
+    "mcpInitialization": "passed",
+    "actualToolAdoption": "not-used",
+    "numericToolCheck": "not-run",
+    "proseSemantics": "pass",
+    "reason": "Correctly states observed mean0C from3 valid readings, one missing among4 and unknown complete4-reading mean; keeps observed zero distinct from missing. This is unaided model prose, not a plugin-computed result."
+  },
+  "boundaries": [
+    "No post-fix D1 retry; two cases are different questions/versions, not an A/B study",
+    "CLI text, no desktop UI",
+    "no source/world/identity certification",
+    "original DSH run9 unchanged"
+  ]
+}

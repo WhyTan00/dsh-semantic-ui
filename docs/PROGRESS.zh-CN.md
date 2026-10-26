@@ -1,6 +1,6 @@
 # 实际进度
 
-preview.13候选推进真实Codex按次接入：preview.12的D1首次MCP初始化成功但0次工具调用，正文有无据优先推荐，实际失败保留于 [原回答](evidence/codex-cli/c1-D1-preview12.json)。据此为MCP初始化补充正常检查工作流，未重试D1或改判旧DSH六题。新版本归档和至多第二题N2尚待实际验收；已发布preview.12四资产不变。
+preview.13已作为独立预览发行，源码冻结373106e31e2e31867a46c7ed3279ed3c63942d81；只增加MCP初始化工作流，DSH host/client/core/protocol与preview.12同字节。7项源码/仓库外归档stdio和Linux CI40412046123通过，四份CI产物与本地同字节，未重跑旧宿主/GenUI矩阵。真实Codex CLI两题已全部终结：D1/preview.12初始化成功但0次工具、正文失败；N2/preview.13正文正确但0次工具。原题普通表达、无手工view/答案，C2有初始化工作流；两题不能用作版本A/B。正常个人登录可用，后台推理请求数unknown；无第三题/重试/全局注册。见 [真实逐题记录](evidence/codex-cli.json)、[版本交付回执](evidence/preview13.json)。自然工具采用、任意正文/世界事实与当前桌面富UI均未完成；原DSH0/6/18和preview.12资产保持。
 
 preview.12已实际发布为 [个人预览Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.12)，冻结源码/tag为629b7bacc2793f49bba62d66d758c25bd4518178。完整decision-zh接入同一个普通render/最终快照；未知不补值、本地假设不重写来源。28项窄单元/工具检查通过；实际运行归档正常装入全新profile，293文件逐字节核对，Native/PTC各6项必要验证及独立进程恢复通过，360px无溢出、pageerror=0。仓库外独立MCP与Linux CI通过，CI四份产物与本地完全同字节。安装、CI、匿名HTTPS及全部失败/边界按 [本版回执](evidence/preview12.json) 分开记录；补充回执为后续文档commit，不重打包或修改冻结版本。原六题仍0/6/18、sourceFacts/identity均false，零新自然模型请求；不冒称当前Codex客户端采用或真机验收。下文dev.0–5保留为历史源码阶段。
 
