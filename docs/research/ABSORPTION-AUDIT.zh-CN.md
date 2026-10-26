@@ -6,7 +6,7 @@
 
 本轮交付是采用复核、来源快照和优先级修订，没有增加运行功能、升级依赖或重发安装包。
 
-后续源码增量preview.12-dev.0–4已补上有界的独立来源对照：字面箭头、[双方案条件](../SOURCE-DECISION.zh-CN.md) 与 [直接访问/局部权限](../SOURCE-PERMISSIONS.zh-CN.md)，并复用 [DSH当前输入门禁](../HOST-SOURCE.zh-CN.md)。这些各有单独实现/验证范围，不改下表preview.11复核基线；任意正文、全局因果、提交闭环和结果迁移仍未完成。 dev.5进一步将权限来源核对接入 [正常render交付与恢复](../SOURCE-DELIVERY.zh-CN.md)，以新来源投影替代未核模型注释；范围仍限该合同。
+后续源码增量preview.12-dev.0–4已补上有界的独立来源对照：字面箭头、[双方案条件](../SOURCE-DECISION.zh-CN.md) 与 [直接访问/局部权限](../SOURCE-PERMISSIONS.zh-CN.md)，并复用 [DSH当前输入门禁](../HOST-SOURCE.zh-CN.md)。这些各有单独实现/验证范围，不改下表preview.11复核基线；任意正文、全局因果、提交闭环和结果迁移仍未完成。 dev.5进一步将权限来源核对接入 [正常render交付与恢复](../SOURCE-DELIVERY.zh-CN.md)，以新来源投影替代未核模型注释；范围仍限该合同。preview.12再补完整decision-zh的正常交付及本地假设边界，见同页；仍不改变下表基线或原自然失败。
 
 ## 证据怎么读
 

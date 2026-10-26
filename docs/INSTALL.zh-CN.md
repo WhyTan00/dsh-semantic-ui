@@ -13,12 +13,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.11.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.12.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.11.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
+运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.12.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 
@@ -80,3 +80,5 @@ DSH 安装与 Codex 接入独立。无需把 DSH renderer 装进 Codex；可复�
 preview.10沿用协议1.3，增加同表格范围的缺失值对照；仅重验改动图表的Native/PTC安装路径，既有完整矩阵仍按preview.9记录。当前安装与Linux检查见 [preview.10证据](evidence/preview10.json)。可回退到保留的 [preview.9 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.9)，不改写保存的会话。
 
 preview.11使用协议1.4的新角色/作用合同，保存的1.0–1.3快照保持原解释。新交付请先describe，提供明确字段角色与expectedEffect。实际版本归档安装、MCP和Linux结果见 [本版回执](evidence/preview11.json)；可回退到保留的 [preview.10](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.10)，不改写会话。
+
+preview.12支持当前输入的有限Decision/权限来源绑定，普通render仍为唯一入口。打包要求干净的源码commit，manifest记录完整sourceCommit和各运行入口SHA-256；同版本输出若与已冻结字节不同则拒绝覆盖。`pnpm test:installed-source`将包正常装入新profile，启动前逐文件核字节，再检验必要的Native/PTC交付及旧1.0读取。窄矩阵不等于旧全矩阵重新通过，有限来源核对也不等于原自然题通过。

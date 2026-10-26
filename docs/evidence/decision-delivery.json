@@ -1,0 +1,43 @@
+{
+  "version": "0.1.0-preview.12",
+  "stage": "source-build checks before archive freeze; install/release have separate receipts",
+  "protocol": "1.4",
+  "dsh": "0.2.1-rc.2",
+  "uniqueNarrowTests": 28,
+  "sourceFiles": {
+    "src/source-delivery.ts": "e80f80e40cfd5c6b4d36389e0e7bcb9bfb9fd4114b1ed16abb093b0145528bcf",
+    "src/source-decision.ts": "b1971e4e8cb9e92b879e5128b68237d7ee4bb4f0c85553f75b7a766e07eb4bc0",
+    "src/source-delivery-meta.ts": "978b322477935cb43da6b700d5dd12ac53fa660f1f17975481249db046d916e1",
+    "src/dsh/host.ts": "022be915ea9fce0b1f947ffd908651dcb9afc761583af49c90072a06b31b8eec",
+    "src/island.tsx": "e4f7c4e1db82cfab8228364da0402a8c2c402d9203a74eb5e3bd6d9bc96c9148"
+  },
+  "runtimeEntrypoints": {
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+    "dist/client.js": "d2397c116488e9958dc1ae903119c9f0e7319ae2fa6355908d5845aaff38e6df",
+    "dist/host.js": "b5362b8b6b10f558f7192507e0b83040cf25ac33d02be892d2cb87cae7e1db25",
+    "dist/core.js": "385f36a99c5e88203e6d7409e4e96a030c2f3e5cf4a4f45eaab12337f7b8eebc",
+    "dist/mcp.js": "49d0d06a12c43867564140fbbc1d669d19b9551dee988e7b09f30faa0e715143"
+  },
+  "native": "decision-delivery-native.json",
+  "ptc": "decision-delivery-ptc.json",
+  "casesPerMode": 6,
+  "screenshots": [
+    "decision-delivery-native.png",
+    "decision-delivery-ptc.png"
+  ],
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "newNaturalModelRequests": 0,
+  "originalRun9": {
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "failuresRetained": [
+    "First unit run: undefined mapping produced NON_JSON; fixed conditional request field. Two malformed negative fixture definitions corrected to be structurally valid.",
+    "Optional test attributes failed TypeScript; corrected before rebuilt host.",
+    "First host mistakenly used stale dist after stopped typecheck; no acceptance counted.",
+    "Native then PTC history reopening failed test selectors for folded session lists; fixed workspace-specific overflow selection. Component cases passed before that step."
+  ],
+  "boundary": "Finite original conditions and local what-if only; no arbitrary source/prose/world truth or human authentication. Historical full permissions, GenUI and protocol matrices were not rerun."
+}

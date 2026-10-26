@@ -1,6 +1,11 @@
 import{publicDocumentation,privatePackagePath}from'./public-files.mjs';
 import{execFileSync}from'node:child_process';import{readFile,writeFile,mkdir,cp,rm}from'node:fs/promises';import{resolve}from'node:path';import{createHash}from'node:crypto';
-const p=JSON.parse(await readFile('package.json','utf8'));const releaseDir=resolve('artifacts/releases',p.version);await mkdir(releaseDir,{recursive:true});
+const p=JSON.parse(await readFile('package.json','utf8'));const releaseDir=resolve('artifacts/releases',p.version);
+const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+if(execFileSync('git',['status','--porcelain=v1'],{encoding:'utf8'}).trim())throw Error('Freeze a clean source commit before packaging');
+async function existing(file){try{return await readFile(file);}catch(error){if(error.code==='ENOENT')return;throw error;}}
+const priorManifest=await existing(resolve(releaseDir,'package-manifest.json'));
+if(priorManifest&&JSON.parse(priorManifest).sourceCommit!==sourceCommit)throw Error('This version is already frozen to another source commit');
 execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'inherit'});
 const outputStage=resolve('.handoff/build/release-output-'+p.version);await mkdir(outputStage,{recursive:true});
 const result=JSON.parse(execFileSync('npm',['pack','--json','--pack-destination',outputStage],{encoding:'utf8'}))[0];
@@ -25,9 +30,11 @@ const archive=JSON.parse(execFileSync('npm',['pack','--json','--pack-destination
 if(archive.files.some(f=>privatePackagePath(f.path)))throw Error('Private coordination entered evidence archive');
 for(const file of archive.files.filter(f=>/\.(?:md|json|txt)$/.test(f.path))){const content=await readFile(resolve(stage,file.path),'utf8');if(/\/Users\/|\/home\/[^\s/]+\/|[?&]token=[A-Za-z0-9_-]{12}/.test(content))throw Error('Private data entered evidence archive: '+file.path);}
 const evidenceBytes=await readFile(resolve(outputStage,archive.filename));const evidenceHash=createHash('sha256').update(evidenceBytes).digest('hex');
-// Publish coherent artifacts only after all package and evidence checks pass.
-await writeFile(resolve(releaseDir,result.filename),bytes);await writeFile(resolve(releaseDir,archive.filename),evidenceBytes);
-await writeFile(resolve(releaseDir,'SHA256SUMS'),`${hash}  ${result.filename}\n${evidenceHash}  ${archive.filename}\n`);
 const evidenceArchive={filename:archive.filename,bytes:evidenceBytes.length,sha256:evidenceHash,files:archive.files.length};
-await writeFile(resolve(releaseDir,'package-manifest.json'),JSON.stringify({version:p.version,filename:result.filename,sha256:hash,files:result.files.map(f=>({path:f.path,size:f.size})),evidenceArchive,status:'preview; see validation evidence'},null,2)+'\n');
+const runtimeEntrypoints={};for(const name of ['host','client','core','mcp','protocol'])runtimeEntrypoints['dist/'+name+'.js']=createHash('sha256').update(await readFile('dist/'+name+'.js')).digest('hex');
+const manifest={version:p.version,sourceCommit,sourceTag:'v'+p.version,filename:result.filename,sha256:hash,runtimeEntrypoints,files:result.files.map(f=>({path:f.path,size:f.size})),evidenceArchive,status:'preview; see validation evidence'};
+const outputs=[[result.filename,bytes],[archive.filename,evidenceBytes],['SHA256SUMS',Buffer.from(`${hash}  ${result.filename}\n${evidenceHash}  ${archive.filename}\n`)],['package-manifest.json',Buffer.from(JSON.stringify(manifest,null,2)+'\n')]];
+// Check every existing output before writing anything. A frozen version is immutable.
+for(const [name,content]of outputs){const prior=await existing(resolve(releaseDir,name));if(prior&&!prior.equals(content))throw Error('Refusing to replace frozen release output: '+name);}
+await mkdir(releaseDir,{recursive:true});for(const[name,content]of outputs)await writeFile(resolve(releaseDir,name),content);
 console.log(JSON.stringify({filename:result.filename,bytes:bytes.length,sha256:hash,files:result.files.length,evidenceArchive}));

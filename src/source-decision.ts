@@ -11,6 +11,8 @@ const label=z.string().min(1).max(80),id=z.string().min(1).max(80);
 const literal=(s:string)=>/^[\p{L}\p{N}][\p{L}\p{N}_ -]{0,79}$/u.test(s)&&!['它','他们','其','我们','前者','后者'].includes(s)&&!/(需要|支持|没有|未知|负责|如果|但是|但|且|以及|或者|因为|因此|可能|以后|只要|只由|同时|不由|是否|与|和)/u.test(s);
 const key=(kind:Kind,option:string|null,name:string|null,actor:string|null)=>JSON.stringify([kind,option,name,actor]);
 const bytes=(s:string)=>new TextEncoder().encode(s).length;
+/** Chooses the existing finite grammar; it does not extract or authorize facts. */
+export const decisionSourcePrefix=(text:string)=>/^\s*[\p{L}\p{N}_-]{1,40}在(?:选择|比较|选)/u.test(text);
 
 /** Deliberately finite Chinese grammar, with complete clause coverage. No model/ID lookup. */
 export function parseDecisionSource(text:string,offset=0):{status:'ready';value:DecisionSource}|{status:'unsupported';issues:SourceIssue[]}{

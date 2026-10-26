@@ -14,17 +14,7 @@ The [GenUI absorption map](docs/research/GENUI-ABSORPTION.zh-CN.md) distinguishe
 
 The [2026-10-27 adoption review](docs/research/ABSORPTION-AUDIT.zh-CN.md) maps actual preview.11 code to upstream strengths and remaining gaps, with a separate refresh of 9 projects / 16 selected source files. Source/prose consistency, accepted form submissions, portable interactive results and device/accessibility validation remain open. This review adds documentation, not runtime features.
 
-The unreleased `0.1.0-preview.12-dev.0` candidate adds an opt-in [source relation check](docs/SOURCE-CHECKS.zh-CN.md): a caller-configured file snapshot is compared with graph directions and coverage. It verifies only literal arrow topology in an explicit excerpt; source identity, causal meaning and free prose remain unverified. Existing preview.11 releases and the six failed natural cases retain their original results.
-
-The subsequent source/build candidate `0.1.0-preview.12-dev.1` adds explicit [decision-zh source checks](docs/SOURCE-DECISION.zh-CN.md) for a documented finite Chinese comparison grammar. It checks capability needs, maintenance actor/burden direction, unknown prices and initial conditions without inferring unstated opposite facts. This is not unrestricted natural-language verification or a new published archive.
-
-Source/build candidate `0.1.0-preview.12-dev.2` adds `action=source-check` to the existing DSH tool, using the execution Agent's current own-turn user-source message through a public host projection. [Host source selection and evidence](docs/HOST-SOURCE.zh-CN.md) distinguish message IDs/text hashes from human authentication and file hashes. Native/PTC each pass six narrow deterministic cases, including rejection of the original D1 errors and source overrides; ordinary rendering remains available. No new archive or natural-model pass is claimed.
-
-Candidate `0.1.0-preview.12-dev.3` corrects the shared metadata leaf's scope text for `decision-zh`; arrow scope and the existing comparison-response contract are preserved. [Narrow verification](docs/evidence/source-scope.json) covers file/host-derived metadata and the rebuilt MCP entry; the earlier live host matrix remains evidence for dev.2 bytes.
-
-Candidate `0.1.0-preview.12-dev.4` adds [permissions-zh source comparison](docs/SOURCE-PERMISSIONS.zh-CN.md): explicit directed access, prohibitions, pair-bound read/write and subject-local only-targets. It checks positive graph projections and typed claims without inferring aliases, missing permissions, global exclusivity or causal prose. Existing source boundaries are reused; new Native/PTC deterministic cases and compiled MCP evidence are versioned separately. Original natural failures remain unchanged.
-
-Candidate `0.1.0-preview.12-dev.5` connects this to [normal source-bound render](docs/SOURCE-DELIVERY.zh-CN.md): current permissions input is rechecked, a fresh source-derived projection/explanation replaces unverified model notes, and the exact final snapshot is persisted outside folded tools. Incompatible views are refused; generic rendering stays explicitly source-unverified. Final-byte host checks and recovery are recorded separately from preliminary runs; arbitrary prose and original natural failures remain unverified.
+**Preview.12** adds bounded source checks for literal arrows, finite Chinese two-option decisions and direct access/permissions. Normal Decision/permissions rendering rechecks the current own-turn host input, rebuilds an explanation and display from checked declarations, then saves that exact snapshot. Mapping coordinates never authorize facts; unknowns stay unknown, unsupported source/views are refused, and local what-if controls remain separate from original source conditions. See [source delivery](docs/SOURCE-DELIVERY.zh-CN.md) and the [source grammar](docs/SOURCE-DECISION.zh-CN.md). This is not unrestricted language/prose verification, authenticated source identity, a natural-model pass, or current Codex client adoption. Earlier dev.0–5 source checks retain their versioned evidence under `docs/evidence/`.
 
 Preview.6 adds **personal templates and bounded themes**: save a field contract and appearance, version/restore it, import/export it, and use it with new data in a new conversation. The model can discover and use exact versions; only the owner UI edits the library. Historical views retain concrete theme snapshots. Two fresh WorkBuddy conversations reused a saved template with new data; both kept the requested values and appearance, with one prose-attribution caveat. [Template guide](docs/TEMPLATES.zh-CN.md).
 
@@ -45,7 +35,7 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.11.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.12.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.
@@ -81,7 +71,8 @@ pnpm dev                  # component development preview only
 pnpm test:host            # isolated real DSH + deterministic fixture
 pnpm test:history         # real history prepend, all four fixtures, Native + PTC
 pnpm test:compat          # installs public GenUI 0.14.0 in a fresh isolated profile
-pnpm release:pack         # writes artifacts/releases/<version>/
+pnpm release:pack         # clean committed source; immutable artifacts/releases/<version>/
+pnpm test:installed-source # preview.12 narrow archive-installed Native/PTC source suite
 ```
 
 Development preview is separate from DSH host verification. All examples are fictional. macOS and Linux instructions use the same Node-based commands; actual Linux CI status is recorded separately from local macOS checks.

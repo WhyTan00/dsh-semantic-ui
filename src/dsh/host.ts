@@ -14,9 +14,9 @@ import {mountLibrary} from './library';
 import {matchTemplate,newPresentation} from '../templates';
 import type {Presentation} from '../theme';
 import {currentHostSource,currentSourceProjection} from './source';
-import {checkSourceDecision} from '../source-decision';
+import {checkSourceDecision,parseDecisionSource,decisionSourcePrefix} from '../source-decision';
 import {checkSourcePermissions} from '../source-permissions';
-import {bindPermissionView} from '../source-delivery';
+import {bindPermissionView,bindDecisionView} from '../source-delivery';
 import {sourceDeliverySchema,type SourceDelivery} from '../source-delivery-meta';
 import {createPresentationChannel} from './presentation';
 export const name='dsh-semantic-ui';
@@ -27,7 +27,7 @@ export const parameters={
   action:{type:'string',enum:['catalog','describe','templates','template','check','source-check','render'],required:true,description:'Discover fields/templates, check current host source or deliver data. source-check uses the current own-turn user-source text, selecting finite decision-zh or permissions-zh by its actual syntax; arguments cannot supply source/kind/identity. Prose remains unverified.'},
   component:{type:'string',enum:['ArchitectureExplorer','DecisionExplorer','DataChart'],description:'Required for describe.'},
   view:{type:'object',additionalProperties:true,description:'Required for check or render. Versioned view with component payload; get fields via describe first.'},
-  mapping:{type:'object',additionalProperties:true,description:'For source-check of DecisionExplorer: explicit dimensions/inputs source coordinates; inspect the source first without view. Does not provide source facts.'},
+  mapping:{type:'object',additionalProperties:true,description:'For Decision source-check or source-bound render: complete dimensions/inputs source coordinates. Inspect source-check first. Coordinates never provide truth or authorization.'},
   claims:{type:'array',items:{type:'object',additionalProperties:true},description:'Optional bounded source claims for source-check; unsupported free claims are not certified.'},
   prose:{type:'string',description:'Optional source-check prose, always unverified.'},
   templateId:{type:'string',description:'For template or render: use a personal template ID returned by templates. Render requires templateVersion.'},
@@ -67,17 +67,22 @@ export function apply(ctx:Context,config:Config={generation:true}){
       const current=b&&b.openTurnStartSeq!==null?{turn:b.lastTurn,displayId}:undefined,short=issues?.slice(0,30);
       return {status:'validation-failed',...current,issues:short,...(current?{deliveryId:channel.remember({...current,issues:short})}:{})};
     };
-    if(Object.entries(args).some(([k,v])=>v!==undefined&&!['action','view','templateId','templateVersion'].includes(k)))return reject([{code:'RENDER_ARGUMENT',path:'$',reason:'Render accepts fresh view/template coordinates only; source, authority, prior checks and delivery handles cannot authorize this request.',hint:'Remove extra fields. The current host source is checked again during this render.'}]);
+    if(Object.entries(args).some(([k,v])=>v!==undefined&&!['action','view','mapping','templateId','templateVersion'].includes(k)))return reject([{code:'RENDER_ARGUMENT',path:'$',reason:'Render accepts fresh view/template and Decision field coordinates only; source, authority, prior checks and delivery handles cannot authorize this request.',hint:'Remove extra fields. The current host source is checked again during this render.'}]);
     const checked=validateForDelivery(args.view);if(!checked.ok)return reject(checked.issues);
     if(!exec.agent)throw Error('HOST_SESSION: delivery requires a real agent session.');
     const boundary=ctx.sessionProjections.stateOf(exec.agent.session,'turnBoundary');
     if(!boundary||boundary.openTurnStartSeq===null)throw Error('HOST_TURN: delivery requires an open turn.');
     let view=checked.value;const source=currentHostSource(ctx,exec);let sourceDelivery:SourceDelivery;
-    if(source.ok&&source.snapshot.kind==='permissions-zh'){
-      const bound=bindPermissionView(source.snapshot,view);if(!bound.ok)return reject(bound.issues);view=bound.view;
-      const meta=sourceDeliverySchema.safeParse({version:1,status:'bound',kind:'permissions-zh',explanation:bound.explanation,sourceRef:{textSha256:source.snapshot.textSha256,hostContext:source.snapshot.hostContext},viewIdentity:{displayId:view.displayId,revision:view.revision,component:view.component},sourceFactsVerified:false,identityVerified:false});
+    const decision=source.ok&&view.component==='DecisionExplorer'&&source.snapshot.kind==='decision-zh'&&(args.mapping!==undefined||decisionSourcePrefix(source.snapshot.excerpt)||parseDecisionSource(source.snapshot.excerpt).status==='ready');
+    if(source.ok&&(source.snapshot.kind==='permissions-zh'||decision)){
+      if(source.snapshot.kind==='permissions-zh'&&args.mapping!==undefined)return reject([{code:'SOURCE_MAPPING_COMPONENT',path:'$.mapping',reason:'Decision field mapping cannot authorize a permission graph.',hint:'Omit it; graph binding uses exact source labels.'}]);
+      const bound=decision?bindDecisionView(source.snapshot,view,args.mapping):bindPermissionView(source.snapshot,view);if(!bound.ok)return reject(bound.issues);view=bound.view;
+      const meta=sourceDeliverySchema.safeParse({version:1,status:'bound',kind:decision?'decision-zh':'permissions-zh',explanation:bound.explanation,sourceRef:{textSha256:source.snapshot.textSha256,hostContext:source.snapshot.hostContext},viewIdentity:{displayId:view.displayId,revision:view.revision,component:view.component},sourceFactsVerified:false,identityVerified:false});
       if(!meta.success)return reject([{code:'SOURCE_DELIVERY_LIMIT',path:'$.source',reason:'The complete source-bound explanation or reference exceeds the delivery contract.',hint:'No partial source approval is delivered.'}]);sourceDelivery=meta.data;
-    }else sourceDelivery={version:1,status:'unverified',code:source.ok?'SOURCE_RENDER_SCOPE':source.result.issues[0].code,reason:source.ok?'本次普通渲染未绑定该来源语法；结构化数据、模型摘要和注释均未作独立来源核对。':'当前来源不可用或不唯一；本次仅按通用结构合同显示，模型内容未核。',identityVerified:false,sourceFactsVerified:false};
+    }else{
+      if(args.mapping!==undefined)return reject([{code:'SOURCE_MAPPING_UNAVAILABLE',path:'$.mapping',reason:'No supported current Decision source is available for these coordinates.',hint:'Mapping supplies no facts. Inspect source-check and keep unsupported source unverified.'}]);
+      sourceDelivery={version:1,status:'unverified',code:source.ok?'SOURCE_RENDER_SCOPE':source.result.issues[0].code,reason:source.ok?'本次普通渲染未绑定该来源语法；结构化数据、模型摘要和注释均未作独立来源核对。':'当前来源不可用或不唯一；本次仅按通用结构合同显示，模型内容未核。',identityVerified:false,sourceFactsVerified:false};
+    }
     let presentation:Presentation=view.presentation??newPresentation(library()?.snapshot().defaultTheme);
     if(args.templateId){
       if(!Number.isSafeInteger(args.templateVersion))throw Error('TEMPLATE_VERSION: Render requires the exact version returned by action=template.');

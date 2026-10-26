@@ -1,6 +1,7 @@
 name: checks
 on:
   push:
+    branches: ["**"]
   pull_request:
   workflow_dispatch:
     inputs:
@@ -10,6 +11,10 @@ on:
         default: false
       consistency_only:
         description: Validate declarations and archive-installed Native/PTC; skip old full matrices
+        type: boolean
+        default: false
+      source_only:
+        description: Validate source-bound Decision and permissions from the installed archive
         type: boolean
         default: false
 permissions:
@@ -31,18 +36,24 @@ jobs:
       - run: git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json
       - run: pnpm research:check
       - run: pnpm check
-        if: github.event_name != 'workflow_dispatch' || !inputs.consistency_only
+        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only)
       - name: Check declaration source
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only
         run: |
           pnpm typecheck
           pnpm exec vitest run tests/decision-consistency.test.ts tests/grounding.test.ts tests/grounding-direction.test.ts tests/mcp.test.ts
           pnpm build
+      - name: Check source-bound delivery
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only
+        run: |
+          pnpm typecheck
+          pnpm exec vitest run tests/decision-delivery.test.ts tests/source-delivery.test.ts tests/replay.test.ts tests/host-source.test.ts tests/mcp.test.ts
+          pnpm test:release-isolation
       - run: pnpm exec playwright install --with-deps chromium
       - run: pnpm test:host
-        if: github.event_name != 'workflow_dispatch' || !(inputs.chart_only || inputs.consistency_only)
+        if: github.event_name != 'workflow_dispatch' || !(inputs.chart_only || inputs.consistency_only || inputs.source_only)
       - run: pnpm test:chart-host
-        if: github.event_name != 'workflow_dispatch' || !inputs.consistency_only
+        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only)
       - run: pnpm test:consistency-host
         if: github.event_name != 'workflow_dispatch'
       - uses: actions/upload-artifact@v4
@@ -55,10 +66,22 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
       - run: pnpm release:pack
-      - run: pnpm test:installed-consistency
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+      - run: pnpm test:installed-source
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only
+        with:
+          name: source-install-receipts
+          path: |
+            artifacts/local/host-*/install.json
+            artifacts/local/host-*/installed-byte-check.json
+            artifacts/local/host-*/native/evidence/decision-delivery.json
+            artifacts/local/host-*/ptc/evidence/decision-delivery.json
+          if-no-files-found: error
+      - run: pnpm test:installed-consistency
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only
         with:
           name: declaration-install-receipts
           path: |

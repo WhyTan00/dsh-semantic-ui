@@ -1,5 +1,6 @@
 import {validateEnvelope,VERSION,type Envelope,type Issue} from './protocol';
 import {checkSourcePermissions,parsePermissionSource} from './source-permissions';
+import {checkSourceDecision,sourceDecisionRequestSchema} from './source-decision';
 import type {SourceSnapshot} from './source-graph';
 
 /** Make a fresh source projection, never a keyword edit of model-authored notes. */
@@ -23,5 +24,25 @@ export function bindPermissionView(snapshot:SourceSnapshot,input:Envelope):{ok:t
  const checked=validateEnvelope(view);if(!checked.ok)return {ok:false,issues:checked.issues.map(i=>({...i,code:'SOURCE_DISPLAY_LIMIT',hint:'The complete derived display must fit the existing component limits; no notes or conditions were silently truncated.'}))};
  const final=checkSourcePermissions(snapshot,{view:checked.value}),canonical=final.canonicalExplanation as {status?:string;text?:string}|undefined;
  if((final.comparison as {status?:string}|undefined)?.status!=='matched'||canonical?.status!=='available'||!canonical.text)return mismatch(final);
+ return {ok:true,view:checked.value,explanation:canonical.text};
+}
+
+/** Field mappings are coordinates only. All cells, conditions and effects were
+ * checked against the current source before any new display is constructed. */
+export function bindDecisionView(snapshot:SourceSnapshot,input:Envelope,mapping:unknown):{ok:true;view:Envelope;explanation:string}|{ok:false;issues:Issue[]}{
+ const failed=(result:Record<string,unknown>)=>({ok:false as const,issues:((result.issues as {code:string;path:string;reason:string}[]|undefined)??[{code:'SOURCE_DELIVERY_UNSUPPORTED',path:'$.view',reason:'The complete Decision source/view could not be bound.'}]).map(i=>({...i,hint:'Inspect source-check and supply a complete field mapping. Unknown facts stay null; no old check or model policy authorizes this render.'}))});
+ const first=checkSourceDecision(snapshot,{view:input,...(mapping===undefined?{}:{mapping})});if((first.comparison as {status?:string}|undefined)?.status!=='matched')return failed(first);
+ const request=sourceDecisionRequestSchema.safeParse({view:input,mapping});if(!request.success||!request.data.mapping||input.component!=='DecisionExplorer')return failed(first);
+ const bindings=request.data.mapping,p=input.payload;
+ const view:Envelope={...input,protocolVersion:VERSION,summary:'来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。',payload:{
+  title:'来源声明的条件与取舍',
+  dimensions:p.dimensions.map(d=>({...d})),
+  options:p.options.map(o=>({id:o.id,label:o.label,values:Object.fromEntries(p.dimensions.map(d=>[d.id,o.values[d.id]])),advantages:[],disadvantages:[],suitableWhen:'来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。',evidence:[]})),
+  inputs:p.inputs.map(i=>({id:i.id,label:i.label,type:'boolean',initial:i.initial,semanticRole:i.semanticRole,expectedEffect:i.expectedEffect})),
+  requirements:(p.requirements??[]).map(r=>({...r})),constraints:[],rules:[],
+ }};
+ const checked=validateEnvelope(view);if(!checked.ok)return {ok:false,issues:checked.issues};
+ const final=checkSourceDecision(snapshot,{view:checked.value,mapping:bindings}),canonical=final.canonicalExplanation as {status?:string;text?:string}|undefined;
+ if((final.comparison as {status?:string}|undefined)?.status!=='matched'||canonical?.status!=='available'||!canonical.text)return failed(final);
  return {ok:true,view:checked.value,explanation:canonical.text};
 }
