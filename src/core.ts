@@ -6,6 +6,7 @@ import type {Validation} from './protocol';
 import {chartFacts,decisionFacts,graphFacts} from './facts';
 export {validateEnvelope,VERSION} from './protocol';
 export {extractDefinition,exportSchema,matchTemplate} from './templates';
+export {checkSourceGraph,parseExplicitRelations,sourceCheckRequestSchema} from './source-graph';
 
 /** A new request cannot select historical behavior to bypass current policy. */
 export function validateForDelivery(input:unknown):Validation{

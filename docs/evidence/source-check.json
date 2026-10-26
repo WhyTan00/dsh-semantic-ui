@@ -1,0 +1,86 @@
+{
+  "date": "2026-10-27",
+  "scope": "unreleased local candidate; explicit source relations only",
+  "version": "0.1.0-preview.12-dev.0",
+  "protocolVersion": "1.4",
+  "sourceCheckVersion": "1.0",
+  "sourceFactsVerified": false,
+  "sourceIdentityVerified": false,
+  "sourceAuthorshipVerified": false,
+  "freeProseVerified": false,
+  "sources": [
+    {
+      "path": "docs/evidence/natural/r9-A2.json",
+      "sha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+      "jsonPointer": "/question",
+      "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "excerpt": "入口→鉴权→库存→支付，支付→通知",
+      "expectedRelations": [
+        [
+          "入口",
+          "鉴权"
+        ],
+        [
+          "鉴权",
+          "库存"
+        ],
+        [
+          "库存",
+          "支付"
+        ],
+        [
+          "支付",
+          "通知"
+        ]
+      ],
+      "originalFirstGraph": "selected relation set matches",
+      "originalProse": "unverified; original failure retained"
+    },
+    {
+      "path": "docs/evidence/natural/r9-A3.json",
+      "sha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "jsonPointer": "/question",
+      "result": "unsupported natural-language policy; no conversion to source arrows"
+    }
+  ],
+  "verification": {
+    "selectedSourceTests": 16,
+    "selectedRegressionTotal": 81,
+    "files": 8,
+    "result": "passed",
+    "typecheck": "passed after correcting test helper Map and SDK result type annotations",
+    "firstTypecheck": "two earlier checks failed in test helper annotations; logs retained privately; no model or natural acceptance inferred",
+    "build": "passed",
+    "sourceEntrypoint": "actual JSON-RPC stdio",
+    "defaultEntrypoint": "original three tools tested unchanged"
+  },
+  "counterexamples": [
+    "reversed relation",
+    "omitted relation",
+    "extra unsupported relation",
+    "undirected edge",
+    "duplicate/unknown label",
+    "request source replacement or claimed authority",
+    "unsupported causal/rollback claim",
+    "extra prose on a supported edge claim",
+    "source changed after startup",
+    "A3/full-A2 unsupported syntax",
+    "changed IDs and source/view labels",
+    "cycles/self loops",
+    "non-text/ambiguous pointer or excerpt",
+    "oversized/invalid UTF-8/symlink/missing source"
+  ],
+  "archiveVerification": "See source-check/candidate.json for actual candidate byte identity and extracted entrypoint results; this source-stage receipt does not imply archive installation.",
+  "boundary": {
+    "newModelRequests": 0,
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "dshIndependentSource": "not implemented or validated",
+    "currentCodexClient": "not validated",
+    "originalHistories": "no migration or rewrite",
+    "publishedRelease": "none for this development candidate"
+  }
+}

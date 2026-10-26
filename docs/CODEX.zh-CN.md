@@ -14,7 +14,7 @@
 
 ## 可直接运行的可选 MCP 适配器
 
-解压运行 tgz 后，`dist/mcp.js` 为包含 MCP SDK 与语义核心的独立 Node 入口。Node 24+ 可运行；这个入口不导入 DSH，不读取文件、登录、网络或模型凭据。正常 DSH 安装方式仍见 INSTALL。
+解压运行 tgz 后，`dist/mcp.js` 为包含 MCP SDK 与语义核心的独立 Node 入口。Node 24+ 可运行；默认三个工具不导入 DSH、不读取文件、登录、网络或模型凭据。开发候选 preview.12-dev.0 新增显式启动配置的单一来源文件快照，见 [来源核对](SOURCE-CHECKS.zh-CN.md)；不自动启用或全局注册。正常 DSH 安装方式仍见 INSTALL。
 
 ```sh
 # 持久注册仅在希望新 Codex 会话加载它时执行：
@@ -26,11 +26,13 @@ codex mcp remove semantic-ui-checks
 
 真实 JSON-RPC stdio 三项测试已在仓库外的独立副本通过；Codex CLI 0.164.0 接受单次进程配置覆盖，未写全局配置。这些不是当前 Codex 对话已经加载工具或自定义 UI 已运行的证明。
 
-适配器只提供：
+适配器默认提供：
 
 - `semantic_ui_schema`：按需返回一个组件的严格数据合同。
 - `semantic_ui_check`：校验输入，计算图的共享目标/路径交集、数量要求、保守规则结果或统计；成功不意味着已经出图或事实真实。
 - `semantic_ui_template_check`：检查用户显式传入的导出模板和当次新数据，不读取/修改 DSH 私有模板库。
+
+仅在 preview.12-dev.0 的调用者启动配置提供 `--source-file` 时，增加 `semantic_ui_source_check`：对照已固定文件片段中的字面箭头、覆盖与方向，拒绝请求侧替换来源；作者身份、自由正文与因果仍未认证。已发布 preview.11 的默认三个工具和旧归档不改变，当前 Codex 客户端加载新候选仍未验证。
 
 有可用原生可视化时，用这些确定性结果约束展示；CLI/IDE 使用相同工具返回的数据与文字。工具不会自己请求模型。`./core` 是无宿主依赖的程序入口，便于其它适配器复用。
 

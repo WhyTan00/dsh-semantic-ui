@@ -1,0 +1,16 @@
+{
+  "version": "0.1.0-preview.12-dev.0",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.12-dev.0.tgz",
+  "sha256": "af537fad8a70be5670b7f98bb84982400e1a3a0cc32f49760c985fc7a9abf437",
+  "bytes": 1644541,
+  "fileCount": 271,
+  "everyExtractedFileMatched": true,
+  "entryAndProcessCwdOutsideRepository": true,
+  "tests": 7,
+  "result": "passed",
+  "entrypoint": "node package/dist/mcp.js, real JSON-RPC stdio",
+  "sourceInput": "caller-explicit local files; source data may be in the repository, code entry/cwd are extracted outside it",
+  "dshPluginInstallation": "not performed; this change is an optional independent MCP path",
+  "publishedRelease": false,
+  "newModelRequests": 0
+}
