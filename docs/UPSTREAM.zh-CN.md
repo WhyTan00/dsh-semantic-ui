@@ -1,6 +1,6 @@
 # 锁定的公开上游与能力
 
-核实日期：2026-10-23。版本以 package.json / pnpm-lock.yaml 为准。
+公开接口核实日期：2026-10-23；2026-10-27 更正 Zod 直接依赖版本。安装版本以 package.json / pnpm-lock.yaml 根 importer 为准。
 
 | 上游 | 固定版本 | 许可证 | 本项目职责 |
 |---|---|---|---|
@@ -10,7 +10,9 @@
 | @dagrejs/dagre | 3.1.1 | MIT | 初始扁平有向图布局 |
 | echarts | 6.1.0 | Apache-2.0 | SVG 图表呈现；不负责本项目统计口径 |
 | React / React DOM | 19.3.1 | MIT | 隔离渲染根；宿主自身仍使用 React 18 |
-| zod | 4.6.7 | MIT | 白名单 schema、类型、JSON Schema 与运行时校验 |
+| zod | 4.4.3 | MIT | 白名单 schema、类型、JSON Schema 与运行时校验 |
+
+本表列本项目锁定采用的版本；[研究清单](research/projects.json) 中固定源码 HEAD 的预发布观察不代表运行依赖升级，例如 Dagre 仍为 3.1.1。锁文件中的其它传递版本也不替代根 importer 的直接依赖选择。
 
 本项目独立实现协议、跨字段语义校验、声明式决策规则、统计纯函数、组件交互、错误降级及 DSH 适配。上述业务保证不是 json-render 自动提供的。
 

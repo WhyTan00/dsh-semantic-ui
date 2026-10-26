@@ -13,7 +13,9 @@
 | 图表可访问状态 | ECharts 的显式 ARIA 模块与等价数据 | `src/components/DataChart.tsx` 注册 AriaComponent；描述包含当前范围、有效/缺失量，随系列/范围更新 | 真实浏览器核对可访问标签，不冒充真实屏幕阅读器或手机验收 |
 | 可维护的选型来源 | 不把框架、协议、控件、图表引擎混为一谈 | projects.json + 派生 PROJECTS；`scripts/research-check.mjs` 检查固定 commit、许可证、采用路径和派生一致性 | 本地校验记录完整性，不自动证明上游仍维护或功能运行正常 |
 
-旧 DataChart 的 `aria.enabled` 没有对应模块注册，选项本身不能生效；本轮按公开引擎要求修复。模型侧原则同时更新：目录外按实际可用能力选择，不把 GenUI 或任意品牌当通用 fallback，不承诺本地控件能回传或跨刷新保存。
+**历史修复（2026-10-23，preview.5）**：preview.4 的 DataChart 设置了 `aria.enabled`，但没有注册对应模块；preview.5 在提交 `17eed6c` 中补充 `AriaComponent` 注册。可对照 [preview.4 源码](https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.4/src/components/DataChart.tsx) 与 [preview.5 源码](https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.5/src/components/DataChart.tsx)。该轮模型侧原则也更新为：目录外按实际可用能力选择，不把 GenUI 或任意品牌当通用 fallback，不承诺本地控件能回传或跨刷新保存。
+
+2026-10-27 的 9 项目 / 16 文件采用复核仅更新文档与来源快照，没有再次修改 ARIA 实现或新增运行功能；历史验证仍按原版本保留。
 
 ## 真实模型定向复核
 
