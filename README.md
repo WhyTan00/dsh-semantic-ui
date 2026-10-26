@@ -12,6 +12,8 @@ The [interactive UI ecosystem study](docs/research/README.md) curates 35 public 
 
 The [GenUI absorption map](docs/research/GENUI-ABSORPTION.zh-CN.md) distinguishes researched patterns from implemented features. The [model-progress strategy](docs/research/MODEL-PROGRESS.zh-CN.md) proposes measurable workflow value and criteria for retiring redundant features. Their proposed integrations remain separate from delivered features.
 
+The [2026-10-27 adoption review](docs/research/ABSORPTION-AUDIT.zh-CN.md) maps actual preview.11 code to upstream strengths and remaining gaps, with a separate refresh of 9 projects / 16 selected source files. Source/prose consistency, accepted form submissions, portable interactive results and device/accessibility validation remain open. This review adds documentation, not runtime features.
+
 Preview.6 adds **personal templates and bounded themes**: save a field contract and appearance, version/restore it, import/export it, and use it with new data in a new conversation. The model can discover and use exact versions; only the owner UI edits the library. Historical views retain concrete theme snapshots. Two fresh WorkBuddy conversations reused a saved template with new data; both kept the requested values and appearance, with one prose-attribution caveat. [Template guide](docs/TEMPLATES.zh-CN.md).
 
 Preview.7 improves **visual and interaction fidelity**: elapsed-time axes, stable color/pattern identity, long-label bars, explicit all-missing states, scope-matched table downloads, keyboard graph inspection, distinct parallel/self edges, and responsive graph fitting. The [quality guide](docs/QUALITY.zh-CN.md) links each change to public sources and actual checks. No new rendering dependency was added.

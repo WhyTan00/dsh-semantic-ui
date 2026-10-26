@@ -1,0 +1,255 @@
+{
+  "schemaVersion": "1.0",
+  "asOf": "2026-10-27",
+  "checkedAt": "2026-10-26T16:39:28.908643+00:00",
+  "implementationBaseline": {
+    "version": "0.1.0-preview.11",
+    "protocolVersion": "1.4",
+    "commit": "ec7cf58f920e5578f8b38719095d49dba6d15220"
+  },
+  "inventoryBaseline": {
+    "path": "projects.json",
+    "asOf": "2026-10-24",
+    "projects": 35,
+    "pinnedSourceFiles": 139
+  },
+  "review": "ABSORPTION-AUDIT.zh-CN.md",
+  "scope": "Fresh commit and file snapshots with targeted reading of relevant contracts/functions; no full-repository audit, upstream runtime certification, dependency upgrade or new model evaluation.",
+  "licenseBoundary": "Existing license conclusions remain pinned to projects.json snapshots. This refresh does not claim a new full license or security audit. No upstream implementation copied into production.",
+  "summary": {
+    "projects": 9,
+    "selectedFiles": 16,
+    "changedHeads": 6,
+    "changedComparedFiles": 1,
+    "newReads": 2
+  },
+  "projects": [
+    {
+      "id": "json-render",
+      "repo": "vercel-labs/json-render",
+      "commit": "c6f73d7d5f69acb80fc89faefd12c0865c8603d1",
+      "baselineCommit": "f78cc14f34c138d39a350b5e0991b8adf8b167ab",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "packages/core/src/actions.ts",
+          "url": "https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/core/src/actions.ts",
+          "status": "fetched",
+          "sha256": "f16366660a1700c56ca3ecdf859581d8186381a9a5aec44c0afff67e5c10a1c5",
+          "bytes": 7195,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "packages/core/src/schema.ts",
+          "url": "https://github.com/vercel-labs/json-render/blob/c6f73d7d5f69acb80fc89faefd12c0865c8603d1/packages/core/src/schema.ts",
+          "status": "fetched",
+          "sha256": "275e75d56e87d88343f302181a725e7fc6d554da61733f94c0c5f2ccff1ea9d6",
+          "bytes": 58018,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "a2ui",
+      "repo": "a2ui-project/a2ui",
+      "commit": "409ded29ccac3eebc541979ae5320771703248e8",
+      "baselineCommit": "020a9d6f694761ad16b35bc38945e4ccd0ac14e8",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "docs/public/concepts/catalogs.md",
+          "url": "https://github.com/a2ui-project/a2ui/blob/409ded29ccac3eebc541979ae5320771703248e8/docs/public/concepts/catalogs.md",
+          "status": "fetched",
+          "sha256": "22fee2ddf03019ba4042ea3be1379eb2266948145b91bb3a806155a4adf15629",
+          "bytes": 23925,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "docs/public/concepts/actions.md",
+          "url": "https://github.com/a2ui-project/a2ui/blob/409ded29ccac3eebc541979ae5320771703248e8/docs/public/concepts/actions.md",
+          "status": "fetched",
+          "sha256": "d699a9fb9e4e64c7c0632b7706d5957e5f5505b1c26cf9c470f8f4dbb3983c6c",
+          "bytes": 20671,
+          "baselineComparison": "new-read"
+        }
+      ]
+    },
+    {
+      "id": "ag-ui",
+      "repo": "ag-ui-protocol/ag-ui",
+      "commit": "5350270791cd8435818b24d7c1c711c0bbb8060c",
+      "baselineCommit": "ec24165f725a5b01ecddb1f62df305855a7917c8",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "docs/concepts/state.mdx",
+          "url": "https://github.com/ag-ui-protocol/ag-ui/blob/5350270791cd8435818b24d7c1c711c0bbb8060c/docs/concepts/state.mdx",
+          "status": "fetched",
+          "sha256": "40e81e96a57ecffb4ca6e185b66e703d3fdeab4c45ee133d0b45117959b96a7a",
+          "bytes": 8230,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "assistant-ui",
+      "repo": "assistant-ui/assistant-ui",
+      "commit": "7beac6fc271435b8c60e842a8e5ba327725d25e2",
+      "baselineCommit": "c015c32a08c0cd01b9f436b2759e3d4ada69a9e5",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "packages/generative-ui/src/actionRegistry.ts",
+          "url": "https://github.com/assistant-ui/assistant-ui/blob/7beac6fc271435b8c60e842a8e5ba327725d25e2/packages/generative-ui/src/actionRegistry.ts",
+          "status": "fetched",
+          "sha256": "09d3021a718fc32c09cdae0950ea5a52374ce6124f5561d6d0026f9cbaaa107f",
+          "bytes": 4123,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "packages/generative-ui/src/vocabulary/collectFormValues.ts",
+          "url": "https://github.com/assistant-ui/assistant-ui/blob/7beac6fc271435b8c60e842a8e5ba327725d25e2/packages/generative-ui/src/vocabulary/collectFormValues.ts",
+          "status": "fetched",
+          "sha256": "2dd6d853c031915e9ba3e0f4448b284802281aa46d113170bd82cfea827e4473",
+          "bytes": 4620,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "tambo",
+      "repo": "tambo-ai/tambo",
+      "commit": "6e2c1bff3b68a00c094b6d876788cc8f33f7bb02",
+      "baselineCommit": "6e2c1bff3b68a00c094b6d876788cc8f33f7bb02",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "react-sdk/src/v1/hooks/use-tambo-v1-component-state.ts",
+          "url": "https://github.com/tambo-ai/tambo/blob/6e2c1bff3b68a00c094b6d876788cc8f33f7bb02/react-sdk/src/v1/hooks/use-tambo-v1-component-state.ts",
+          "status": "fetched",
+          "sha256": "4aad0cd636af67817df209559eeab9b129d9b50197849a2e88e4986d91b68631",
+          "bytes": 9826,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "dsh-genui-whitelist",
+      "repo": "omdsh-dev/dsh-genui",
+      "commit": "bcde2e31131836dbee264ea533ef18de8a311bb5",
+      "baselineCommit": "ad8dc166deaf4eee7dea758fc0a84a8728402b52",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "src/client/submission-registry.ts",
+          "url": "https://github.com/omdsh-dev/dsh-genui/blob/bcde2e31131836dbee264ea533ef18de8a311bb5/src/client/submission-registry.ts",
+          "status": "fetched",
+          "sha256": "c67b3dde9a9d29b597a6a16383a6a3314efc6d474ca0c7231b49900184685b00",
+          "bytes": 6259,
+          "baselineComparison": "changed-content"
+        },
+        {
+          "path": "src/client/artifact/portability.ts",
+          "url": "https://github.com/omdsh-dev/dsh-genui/blob/bcde2e31131836dbee264ea533ef18de8a311bb5/src/client/artifact/portability.ts",
+          "status": "fetched",
+          "sha256": "c73ccb8e7a96b85db5108af700b23f3110ffff80ee4bc655aa3eb893f0027a96",
+          "bytes": 3829,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "dsh-genui-app",
+      "repo": "pengyue-polaron/deepseek-harness-genui",
+      "commit": "d24d91e3b6462aae498fa8452abcb44e3c53e9d5",
+      "baselineCommit": "f6289bc709c5b1992c851bf5e63237a5fa453e1f",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "src/artifacts/types.ts",
+          "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/d24d91e3b6462aae498fa8452abcb44e3c53e9d5/src/artifacts/types.ts",
+          "status": "fetched",
+          "sha256": "6e90941980004c47de5b1feb642545fc351838e0e93dea15084d20dcbf7486c3",
+          "bytes": 2019,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "src/runtime/permissions.ts",
+          "url": "https://github.com/pengyue-polaron/deepseek-harness-genui/blob/d24d91e3b6462aae498fa8452abcb44e3c53e9d5/src/runtime/permissions.ts",
+          "status": "fetched",
+          "sha256": "bc72dbe714d896618e5d9005c974ff22fce8cde46cf1abc48724c9b9a14f446a",
+          "bytes": 2440,
+          "baselineComparison": "same-content"
+        }
+      ]
+    },
+    {
+      "id": "observable-plot",
+      "repo": "observablehq/plot",
+      "commit": "535723d5e433727720d9b673c31622821bb03210",
+      "baselineCommit": "535723d5e433727720d9b673c31622821bb03210",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "src/scales/temporal.js",
+          "url": "https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/src/scales/temporal.js",
+          "status": "fetched",
+          "sha256": "6af6e94eefc77ce06fc7c74bd6ab6c6195fc04df3f1866fe43169bbc4fa3f875",
+          "bytes": 440,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "src/transforms/bin.js",
+          "url": "https://github.com/observablehq/plot/blob/535723d5e433727720d9b673c31622821bb03210/src/transforms/bin.js",
+          "status": "fetched",
+          "sha256": "af07c76075b3780aaa388058bff5b7931ecf0fc7e7127f987738cbbde0957cd2",
+          "bytes": 14885,
+          "baselineComparison": "new-read"
+        }
+      ]
+    },
+    {
+      "id": "visa-chart-components",
+      "repo": "visa/visa-chart-components",
+      "commit": "8b657d1ccc3f0799eccdba31c5f669e402d4133c",
+      "baselineCommit": "8b657d1ccc3f0799eccdba31c5f669e402d4133c",
+      "defaultBranch": "main",
+      "archived": false,
+      "files": [
+        {
+          "path": "packages/data-table/README.md",
+          "url": "https://github.com/visa/visa-chart-components/blob/8b657d1ccc3f0799eccdba31c5f669e402d4133c/packages/data-table/README.md",
+          "status": "fetched",
+          "sha256": "cb8493e0992d842b5ca9f1845a3d202515d6feea13b0e5db6257bd5f24ca18b5",
+          "bytes": 4470,
+          "baselineComparison": "same-content"
+        },
+        {
+          "path": "packages/utils/src/utils/accessibilityDescriptions.ts",
+          "url": "https://github.com/visa/visa-chart-components/blob/8b657d1ccc3f0799eccdba31c5f669e402d4133c/packages/utils/src/utils/accessibilityDescriptions.ts",
+          "status": "fetched",
+          "sha256": "a1034b14cee0fa679b09beecef153ef55740845bccd7b9117f4251678a37fbaf",
+          "bytes": 24306,
+          "baselineComparison": "same-content"
+        }
+      ]
+    }
+  ],
+  "officialDocuments": [
+    "https://a2ui.org/",
+    "https://a2ui.org/concepts/actions/",
+    "https://docs.ag-ui.com/concepts/state",
+    "https://vega.github.io/vega-lite/docs/parameter.html",
+    "https://observablehq.github.io/plot/transforms/bin",
+    "https://echarts.apache.org/handbook/en/best-practices/aria/",
+    "https://reactflow.dev/learn/advanced-use/accessibility"
+  ]
+}
