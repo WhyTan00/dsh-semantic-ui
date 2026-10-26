@@ -1,6 +1,6 @@
 # 普通比较问题的有限来源核对
 
-开发候选 `0.1.0-preview.12-dev.1` 新增 `decision-zh` 来源模式，核对合同1.0，Envelope仍为1.4。这是现有只读 MCP 的可选模式；默认三个工具与原 `arrows` 模式不变。本轮没有新Release、归档安装、模型调用或当前客户端加载验证。
+开发候选 `0.1.0-preview.12-dev.1` 新增 `decision-zh` 来源模式，核对合同1.0，Envelope仍为1.4。这是现有只读 MCP 的可选模式；默认三个工具与原 `arrows` 模式不变。下文是该增量的文件来源合同与证据；后续dev.2的 [DSH当前输入适配](HOST-SOURCE.zh-CN.md) 复用同一核对器，另列实际宿主证据。两段均没有新Release、归档安装、模型调用或当前Codex客户端加载验证。
 
 ## 已能完成的任务
 
@@ -84,6 +84,6 @@ node dist/mcp.js \
 
 原问题内容对照、源码入口与最终构建入口分别见 [本轮证据](evidence/source-decision.json)。测试包含原首次反例、改名称/ID/视图顺序、能力反向、当前硬需/不需要/偏好、维护否定及actor方向、余力肯定/否定/未知、缺字段、矛盾/指代、成本/推荐越界、请求换源拒绝和旧协议读取。
 
-旧1.0–1.4按原合同读取，不补角色或改历史；需要1.3 `requires-availability` 的新来源对照不能通过声明旧版本来改变旧语义。来源作者、原用户身份、任意自由正文及世界事实仍未认证，`sourceFactsVerified=false`。现有公开DSH会话接口不等于独立真人签名；本段没有实现DSH原消息来源接入，也未加载到当前Codex客户端。最终构建入口通过也不代表归档安装或自然模型理解通过。
+旧1.0–1.4按原合同读取，不补角色或改历史；需要1.3 `requires-availability` 的新来源对照不能通过声明旧版本来改变旧语义。来源作者、原用户身份、任意自由正文及世界事实仍未认证，`sourceFactsVerified=false`。现有公开DSH会话接口不等于独立真人签名；dev.1证据不包含DSH原消息来源接入；后续dev.2另见 [实际宿主适配](HOST-SOURCE.zh-CN.md)，仍未加载到当前Codex客户端。最终构建入口通过也不代表归档安装或自然模型理解通过。
 
 锁定DSH commit的 [会话事件类型](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/core/session/src/types.ts) 明确 `user/message` 也承载合成上下文；[消息类型](https://github.com/deepseek-ai/deepseek-harness/blob/687f282e8625c6b8d11ff58211a90524be2e4317/packages/llm/llm/src/message.ts) 的 user source标签本身不是principal或签名证明。这里区分“收到的消息/配置文件内容”和“独立人类身份”，不把尚未接入说成接口不存在。

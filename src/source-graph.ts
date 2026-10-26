@@ -3,9 +3,10 @@ import {bounded,validateEnvelope} from './protocol';
 
 export const SOURCE_LIMITS={fileBytes:1_048_576,textBytes:32768,excerptBytes:16384,relations:80,claims:32} as const;
 export interface SourceSnapshot{
- documentSha256:string;textSha256:string;excerptSha256:string;jsonPointer:string|null;
+ documentSha256?:string;textSha256:string;excerptSha256:string;jsonPointer?:string|null;
  textBytes:number;textByteStart:number;textByteEnd:number;excerpt:string;
  kind?:'arrows'|'decision-zh';
+ hostContext?:{sessionId:string;turn:number;turnStartSeq:number;messageId:string;messageSeq:number;producerSourceKind:'user';inherited:false;excludedSyntheticContexts:number};
 }
 export interface SourceIssue{code:string;path:string;reason:string}
 type Span={textByteStart:number;textByteEnd:number};
@@ -45,10 +46,10 @@ export function parseExplicitRelations(text:string,offset=0):{status:'ready';nod
 }
 
 export function sourceMetadata(s:SourceSnapshot){return {
- input:'caller-configured startup file snapshot; separate from tool arguments',
- documentSha256:s.documentSha256,textSha256:s.textSha256,excerptSha256:s.excerptSha256,jsonPointer:s.jsonPointer,
+ ...(s.hostContext?{input:'DSH current own-turn message content snapshot; not a file',hostContext:s.hostContext}:{input:s.documentSha256?'caller-configured startup file snapshot; separate from tool arguments':'provided text snapshot; no file identity',documentSha256:s.documentSha256??null,jsonPointer:s.jsonPointer??null}),
+ textSha256:s.textSha256,excerptSha256:s.excerptSha256,
  selection:{textUTF8ByteStart:s.textByteStart,textUTF8ByteEnd:s.textByteEnd,textUTF8Bytes:s.textBytes},
- identityVerified:false,authorship:'unverified; a configured file does not certify its author or original user',
+ identityVerified:false,authorship:s.hostContext?'unverified; host message IDs and producer source.kind are not an independent human principal or signature':'unverified; a configured file does not certify its author or original user',
  scope:'literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed',
 };}
 

@@ -1,0 +1,14 @@
+{
+  "frozenBeforeImplementation": "2026-10-26T18:29:33.782841+00:00",
+  "scope": "Current isolated DSH host input provenance and bounded content comparison; not independent human authentication.",
+  "expectations": [
+    "One current own-turn user-source text message received through the normal prompt entry has actual host session/turn/start seq/message ID/message seq and the exact UTF-8 text hash.",
+    "Source selection comes from the execution agent session and a public projection, never a tool argument's source text/file/message ID/authority.",
+    "Synthetic context is never selected as the user source; unknown producer, inherited/closed-turn input, multiple ambiguous user candidates, missing agent/open turn, non-text and oversized input fail closed.",
+    "Host metadata identifies a message-content snapshot. It must not claim a raw log-file byte hash, startup file origin or independent human principal/signature.",
+    "Original D1 wrong facts/requirement direction are rejected against actual host input; an explicitly authored source-aligned view can match only as a deterministic fixture.",
+    "Reversed capability with a true current need must have the exact computed eligibility/requirement result, not merely an output containing an ID.",
+    "Native/PTC and default render are checked narrowly through the existing isolated host, with local deterministic transport and no real model requests."
+  ],
+  "preserve": {"sourceFactsVerified":false,"identityVerified":false,"arbitraryProseVerified":false,"originalRun9Pass":0,"originalRun9Fail":6,"originalRequests":18,"newRealModelRequests":0,"globalConfigurationChanges":false}
+}

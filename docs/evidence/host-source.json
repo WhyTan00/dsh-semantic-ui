@@ -1,0 +1,468 @@
+{
+  "candidate": "0.1.0-preview.12-dev.2",
+  "reportedAt": "2026-10-26T19:19:47.051753+00:00",
+  "scope": "Current own-turn host message-content provenance and finite decision-zh comparison; not independent human identity or natural-model acceptance.",
+  "protocolVersion": "1.4",
+  "sourceDecisionContract": "1.0",
+  "dsh": {
+    "version": "0.2.1-rc.2",
+    "commit": "687f282e8625c6b8d11ff58211a90524be2e4317",
+    "entry": "Existing isolated host-lifecycle, fresh profile, ordinary session/prompt and actual Native/PTC dispatch; final dist/host.js loaded by patch",
+    "deprecatedSessionReadMethodsUsed": false
+  },
+  "expectations": {
+    "path": "fixtures/host-source-expectations.json",
+    "sha256": "2f223098ae9f1f238096229eea1f4179497bc17d1cc613a39a36e02468ff135e",
+    "frozenBeforeImplementation": true
+  },
+  "sourceSha256": {
+    "src/dsh/source.ts": "1fe9ecd279a7f35593be9b13a55e7638f55288be41b40e7970f15a8b9d9a8b9b",
+    "src/dsh/host.ts": "38b731ddf20b6fafe133e1e0f5c0364b5d4c7965ccdae04221a92decc5bc9ddf",
+    "src/source-graph.ts": "40364295784c31642e42037caaf7f5d86f925a5591aa29edcdfd8d1b261ba189",
+    "tests/host-source.test.ts": "4dcbbf268d2354fc1ca23c0a9bdae4bcfc8fcd75749f30d7f2a59db9b5b9f43f",
+    "tests/source-host-browser.mjs": "15f43a00d90fc2af1a30d2d6aad573b5f2621c5b58ede9f81ad376ebdb54b2d0",
+    "tests/host-source-assertions.mjs": "e5c81311656689b87d472d2ebdc5248df855412ae07a1d12a65fdbf60427c3ce",
+    "fixtures/host-source-expectations.json": "2f223098ae9f1f238096229eea1f4179497bc17d1cc613a39a36e02468ff135e"
+  },
+  "builtEntrypoints": {
+    "dist/host.js": "7cdb993b2f951efe1652d4019e39c91d1516540ad2bfdf9e2b857df69f213ef9",
+    "dist/mcp.js": "301cdc52132e3a7397962f08bf2d24bf506690221df7101dc56b57bbdb6cc1bc"
+  },
+  "verification": {
+    "sourceProjectionHostConfigReplay": {
+      "files": 3,
+      "tests": 12,
+      "result": "passed"
+    },
+    "fileSourceRegression": {
+      "files": 1,
+      "tests": 4,
+      "result": "passed"
+    },
+    "finalBuiltMcpRegression": {
+      "tests": 2,
+      "skippedUnrelated": 5,
+      "result": "passed",
+      "cases": [
+        "default three tools with no UI/resource",
+        "opt-in arrows file hash, original graph match and reversed rejection"
+      ],
+      "processCwdOutsideRepository": true
+    },
+    "typecheck": "passed",
+    "build": "passed",
+    "nativePtc": [
+      {
+        "mode": "native",
+        "passed": 6,
+        "pageErrors": [],
+        "results": [
+          {
+            "kind": "native-source-only",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "not-requested",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "a2d5119d5a18bc6c7739603fc5c2d11e9b00f301b908a01506113491af8068c4",
+              "messageIdSha256": "818814986d95841ec2fd327260d9805f99ed3e124bffab180df0d7d6f71b0d0d",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "native-original",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "mismatch",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_VALUE",
+              "SOURCE_VALUE",
+              "SOURCE_FIELD_LABEL",
+              "SOURCE_FIELD_TYPE",
+              "SOURCE_REQUIREMENT_ROLE"
+            ],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "41a414e5c4d59b0353cb17a3e8e934ceb34add142fbeb45b44dc1770512bfac5",
+              "messageIdSha256": "7d579b8b2d8d538cb8e8de34345ce7fba12e138a391ffdb324a4f483791c4b38",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "native-aligned",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "7c8619fd6fddc237b7472c81b62a2387e786f5ef9d00cbb9eb38b742533595dd",
+              "messageIdSha256": "f17297a170aafa6abadc42ddd3e271010af663195934eb7c4676ddf2d0aba395",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "native-reversed",
+            "textSha256": "df43bd8b8c0ca563d4086cdd89cb38beae6c8fb7e4f5941f19d8fc5730a28c83",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "4b4bbb293912a6bb95129ce40fbf2f9f240e35f56dae473f5e9cdd2cd31094b8",
+              "messageIdSha256": "4de00c310b27e4202633d7daaee39422ff964dfe0154986848ace820e33bcc71",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            },
+            "computedDecision": {
+              "status": "no-match",
+              "eligibleOptionIds": [],
+              "excludedOptionIds": [
+                "vm"
+              ],
+              "unknownFeasibilityIds": [
+                "hosted"
+              ],
+              "recommendedOptionIds": [],
+              "requirements": [
+                {
+                  "requirementId": "rq-private",
+                  "optionId": "hosted",
+                  "dimensionId": "private_net",
+                  "inputId": "need_private_net",
+                  "unit": null,
+                  "actual": true,
+                  "needed": true,
+                  "relation": "supports",
+                  "active": true,
+                  "status": "pass"
+                },
+                {
+                  "requirementId": "rq-private",
+                  "optionId": "vm",
+                  "dimensionId": "private_net",
+                  "inputId": "need_private_net",
+                  "unit": null,
+                  "actual": false,
+                  "needed": true,
+                  "relation": "supports",
+                  "active": true,
+                  "status": "fail"
+                },
+                {
+                  "requirementId": "rq-maint",
+                  "optionId": "hosted",
+                  "dimensionId": "team_maint",
+                  "inputId": "team_capacity",
+                  "unit": null,
+                  "actual": null,
+                  "needed": null,
+                  "relation": "requires-availability",
+                  "active": true,
+                  "status": "unknown"
+                },
+                {
+                  "requirementId": "rq-maint",
+                  "optionId": "vm",
+                  "dimensionId": "team_maint",
+                  "inputId": "team_capacity",
+                  "unit": null,
+                  "actual": true,
+                  "needed": null,
+                  "relation": "requires-availability",
+                  "active": true,
+                  "status": "unknown"
+                }
+              ],
+              "sourceFactsVerified": false
+            },
+            "exactRequirementAssertion": "passed against the saved actual receipt with the same assertion used by the browser harness; no extra host run"
+          },
+          {
+            "kind": "native-override",
+            "rejected": true
+          },
+          {
+            "kind": "native-default-render",
+            "defaultRender": true,
+            "folded": true
+          }
+        ]
+      },
+      {
+        "mode": "ptc",
+        "passed": 6,
+        "pageErrors": [],
+        "results": [
+          {
+            "kind": "ptc-source-only",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "not-requested",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "feb647fa07cb31d73b8ca17df50561e7dbf530be80a742d961c1c34864e7b61d",
+              "messageIdSha256": "f23b7cc380e0903b69ee474bd419ab1f09997dfb0f9c0dc56be30e99b8157bec",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "ptc-original",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "mismatch",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_VALUE",
+              "SOURCE_VALUE",
+              "SOURCE_FIELD_LABEL",
+              "SOURCE_FIELD_TYPE",
+              "SOURCE_REQUIREMENT_ROLE"
+            ],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "8454f9f46df0d26415fabbedd60f2c2a606edf31d1c6edcc102219b2a08e2402",
+              "messageIdSha256": "f1d1ec5954ea74800ac2f4a2fa8de2e7ddfde241577768536fdb7f125f82ba84",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "ptc-aligned",
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "0827e0aa9e44adb7ec208873bcdf277e77f314033abc57245c51658d173f9818",
+              "messageIdSha256": "e3bd823c973513a1c2971d1b4383e68a450fedb6272378e266fb4fb5e1cec030",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            }
+          },
+          {
+            "kind": "ptc-reversed",
+            "textSha256": "df43bd8b8c0ca563d4086cdd89cb38beae6c8fb7e4f5941f19d8fc5730a28c83",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostProvenance": {
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionIdSha256": "06fdf0efbfce05bacb9fc91d29d1067da78d0e2b68709fd31ea0caccdc8009d4",
+              "messageIdSha256": "eb9cef4913317363bf977ff713e5cd08ff92751c2abd56cf54c17c56978be8c9",
+              "sessionMatchesCreatedSession": true,
+              "actualIdsPresent": true,
+              "promptAccepted": true,
+              "idEvidence": "Actual public host projection; normal prompt receipt only returns accepted, not a message ID. No independent principal proof."
+            },
+            "computedDecision": {
+              "status": "no-match",
+              "eligibleOptionIds": [],
+              "excludedOptionIds": [
+                "vm"
+              ],
+              "unknownFeasibilityIds": [
+                "hosted"
+              ],
+              "recommendedOptionIds": [],
+              "requirements": [
+                {
+                  "requirementId": "rq-private",
+                  "optionId": "hosted",
+                  "dimensionId": "private_net",
+                  "inputId": "need_private_net",
+                  "unit": null,
+                  "actual": true,
+                  "needed": true,
+                  "relation": "supports",
+                  "active": true,
+                  "status": "pass"
+                },
+                {
+                  "requirementId": "rq-private",
+                  "optionId": "vm",
+                  "dimensionId": "private_net",
+                  "inputId": "need_private_net",
+                  "unit": null,
+                  "actual": false,
+                  "needed": true,
+                  "relation": "supports",
+                  "active": true,
+                  "status": "fail"
+                },
+                {
+                  "requirementId": "rq-maint",
+                  "optionId": "hosted",
+                  "dimensionId": "team_maint",
+                  "inputId": "team_capacity",
+                  "unit": null,
+                  "actual": null,
+                  "needed": null,
+                  "relation": "requires-availability",
+                  "active": true,
+                  "status": "unknown"
+                },
+                {
+                  "requirementId": "rq-maint",
+                  "optionId": "vm",
+                  "dimensionId": "team_maint",
+                  "inputId": "team_capacity",
+                  "unit": null,
+                  "actual": true,
+                  "needed": null,
+                  "relation": "requires-availability",
+                  "active": true,
+                  "status": "unknown"
+                }
+              ],
+              "sourceFactsVerified": false
+            },
+            "exactRequirementAssertion": "passed against the saved actual receipt with the same assertion used by the browser harness; no extra host run"
+          },
+          {
+            "kind": "ptc-override",
+            "rejected": true
+          },
+          {
+            "kind": "ptc-default-render",
+            "defaultRender": true,
+            "folded": true
+          }
+        ]
+      }
+    ],
+    "realModelRequestsAdded": 0,
+    "archiveInstallation": "not performed for this increment",
+    "currentCodexClientLoaded": false,
+    "linuxCi": "not run for this development increment",
+    "nativePtcAssertionScope": "Live runs asserted exact eligibility arrays; the shared exact four-requirement assertion was subsequently run against both saved actual receipts and added to the browser harness. No second host run."
+  },
+  "developmentCorrections": [
+    {
+      "kind": "typecheck",
+      "detail": "Test narrowed the sourceMetadata host/file union before accessing hostContext; production behavior unchanged."
+    },
+    {
+      "kind": "actual-host-fail-closed",
+      "attempts": 2,
+      "code": "HOST_SOURCE_PRODUCER",
+      "observedUnknownKinds": [
+        "runtime-context",
+        "skill-catalog",
+        "time-context"
+      ],
+      "resolution": "Checked pinned public producer contracts; explicitly exclude only verified synthetic kinds. Unknown producers still reject. Subsequent Native/PTC 6/6 passed."
+    }
+  ],
+  "messageBoundary": {
+    "selection": "Exactly one current own-turn user-source single-text message; no inherited/history fallback or request-supplied source",
+    "maxTextUtf8Bytes": 16384,
+    "excludedSyntheticKinds": [
+      "runtime-context",
+      "skill-catalog",
+      "time-context",
+      "skill-invocation",
+      "model-selection",
+      "tool-registry"
+    ],
+    "unknownKinds": "rejected even alongside a user-source candidate",
+    "hostOnlyProjection": true,
+    "textClearedOnTurnEndAndStart": true,
+    "documentSha256OrJsonPointerOnHostSource": false,
+    "identityVerified": false,
+    "sourceFactsVerified": false,
+    "freeProseVerified": false
+  },
+  "preserved": {
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "oldRawChanged": false,
+    "protocolMigrations": false,
+    "globalConfigurationChanges": false,
+    "newArchive": false,
+    "newRelease": false
+  },
+  "cleanup": {
+    "isolatedHarnessExited": true,
+    "taskTestPortsClosed": true
+  }
+}

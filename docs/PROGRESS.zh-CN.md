@@ -1,5 +1,7 @@
 # 实际进度
 
+源码/构建候选 `0.1.0-preview.12-dev.2` 新增 [DSH当前输入来源适配](HOST-SOURCE.zh-CN.md)：公开host-only投影读取当前own-turn单一user-source文本，实际Session/turn/message标识与文本摘要独立列出，合成上下文排除，未知/歧义/历史/非文本/超限等拒绝；工具参数不能换源。Native/PTC各6项、定向单元/回放12项、文件回归4项与最终编译MCP回归2项通过，类型/构建通过。仅宿主收到的内容，不是独立真人身份、任意正文或世界事实认证；原六题0/6/18不变，没有新模型调用/归档/Release/当前Codex加载。见 [证据](evidence/host-source.json)。
+
 源码/构建候选 `0.1.0-preview.12-dev.1` 增加 [D1普通来源条件核对](SOURCE-DECISION.zh-CN.md)：完整解析公布的有限中文语法，并核对DecisionExplorer字段/初始条件/维护方向，提供逐字段出处和有据说明；未知反面、余力、币种与周期不推定。原首次D1的关系/事实/价格单位反例被检出，不改raw或把手写对齐夹具算自然通过。最终构建入口与剩余边界见 [证据](evidence/source-decision.json)，未新打包/安装/Release或接入当前客户端。
 
 本地开发候选 `0.1.0-preview.12-dev.0` 新增 [独立来源片段核对](SOURCE-CHECKS.zh-CN.md)：调用者启动时固定单一文件与片段，MCP请求不能替换来源；对照ArchitectureExplorer的方向、遗漏/新增关系，支持受限路径/可达性并给出有界程序说明。作者身份、节点/边注释、任意因果和自由正文仍未认证，未接DSH原用户来源或当前Codex客户端。原A2首次图匹配四边不等于原正文通过，原0/6/18与旧发行保持；当前命令及候选身份见 [证据](evidence/source-check.json)。
