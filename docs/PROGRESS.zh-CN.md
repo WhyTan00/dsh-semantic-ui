@@ -1,5 +1,7 @@
 # 实际进度
 
+新增 [来源保障普通答复](CODEX-GROUNDED.zh-CN.md)：默认只读及`--answer`均0推理，只有明确`--model-candidate`启用单次有指引候选回合。原D1和独立名称/条件对照共2个新observed turns完成，本包模型调用4/5次，完整source比较最终matched；对照首次字面标签拒绝后同回合修正，原件保留。两候选按冻结预期逐项评读通过，产品仍标未核；最终正文仅用既有canonical，来源/世界/任意正文不认证。4离线合同、默认0/host-only/前置来源拒绝0均通过。模型后台请求数unknown；旧两题和DSH0/6/18不改。runtime13及资产保持，只提交伴随源码/文档/证据；见 [本段回执](evidence/grounded-answer.json)。
+
 现成preview.13的 [显式Codex只读入口](CODEX-EXPLICIT.zh-CN.md) 已验证：官方独立STDIO/临时线程实际调用schema/source_check，正常入口2项、定向正反例4项，双层请求/返回一致。未知/不支持/换源拒绝保留；自包skill经临时extraRoots被发现、读取且清除后消失。默认模型/推理与全局配置保持，新增推理0；两题自然工具调用仍0、正文结论及旧DSH0/6/18不变。仅新增源码伴随客户端、输入快照和文档/回执，不改runtime、不新发行或重打12/13。见 [本段回执](evidence/codex-explicit-route.json)。
 
 preview.13已作为独立预览发行，源码冻结373106e31e2e31867a46c7ed3279ed3c63942d81；只增加MCP初始化工作流，DSH host/client/core/protocol与preview.12同字节。7项源码/仓库外归档stdio和Linux CI40412046123通过，四份CI产物与本地同字节，未重跑旧宿主/GenUI矩阵。真实Codex CLI两题已全部终结：D1/preview.12初始化成功但0次工具、正文失败；N2/preview.13正文正确但0次工具。原题普通表达、无手工view/答案，C2有初始化工作流；两题不能用作版本A/B。正常个人登录可用，后台推理请求数unknown；无第三题/重试/全局注册。见 [真实逐题记录](evidence/codex-cli.json)、[版本交付回执](evidence/preview13.json)。自然工具采用、任意正文/世界事实与当前桌面富UI均未完成；原DSH0/6/18和preview.12资产保持。

@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-27",
+  "scope": "new opt-in companion-client path using unchanged preview13 runtime",
+  "modes": {
+    "default": "JSON source routing,0 model turns",
+    "answer": "host source-canonical text,0 model turns",
+    "answerWithModelCandidate": "one explicitly guided model turn, host final still source-canonical"
+  },
+  "sourceClient": "examples/codex-readonly.py",
+  "testedClientSha256": "13a4937f3da7de86dae544ffa160ddfb16d8289e6507d2e5415977dbd3bc7d18",
+  "runtimeSourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "runtimeChanged": false,
+  "newRelease": false,
+  "offlineContractTestsPassed": 4,
+  "newObservedModelTurns": 2,
+  "modelBackendRequests": "unknown",
+  "guidedModelPluginCalls": 9,
+  "builtInResourceDiscoveryItems": 4,
+  "cases": [
+    "grounded-answer/g1-D1.json",
+    "grounded-answer/g2-counter.json"
+  ],
+  "hostDeliveredCases": 2,
+  "rawProseReview": "both pass under frozen case-specific expectations; freeProseVerified=false",
+  "firstRejection": "counter input label 现在需要私网 outside finite accepted labels, SOURCE_FIELD_LABEL; corrected within same turn and retained, no retry turn",
+  "zeroInferenceAcceptance": [
+    "default source route",
+    "host-only answer",
+    "unsupported source with model-candidate requested; refused before turn/start"
+  ],
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "oldCodexCases": "codex-cli.json remains two original cases with0 model MCP calls",
+  "originalRun9": {
+    "semanticPass": 0,
+    "semanticFail": 6,
+    "originalRequests": 18
+  },
+  "boundaries": [
+    "Host chose skill and generic developer workflow; not unguided automatic tool selection",
+    "Typed skill provision and real model tool events are observed; internal reading is not directly observable",
+    "Host answer is existing finite source canonical, not model prose after filtering",
+    "CLI text, not current desktop rich UI or full-model/full-source acceptance"
+  ],
+  "lifecycle": {
+    "remainingOwnedProcesses": 0,
+    "allAppServersExitCode": 0,
+    "defaultConfigUnchanged": true,
+    "modelTurnsObservedAndCompleted": 2
+  },
+  "zeroModelRoutes": [
+    {
+      "run": "default-current",
+      "modelTurnStartRequests": 0,
+      "observedModelTurns": 0,
+      "completedTurns": 0,
+      "appServerExitCode": 0,
+      "hostDelivery": null
+    },
+    {
+      "run": "host-only",
+      "modelTurnStartRequests": 0,
+      "observedModelTurns": 0,
+      "completedTurns": 0,
+      "appServerExitCode": 0,
+      "hostDelivery": "delivered"
+    },
+    {
+      "run": "refusal-zero",
+      "modelTurnStartRequests": 0,
+      "observedModelTurns": 0,
+      "completedTurns": 0,
+      "appServerExitCode": 0,
+      "hostDelivery": "withheld"
+    }
+  ]
+}

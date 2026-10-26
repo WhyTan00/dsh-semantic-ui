@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+新增 [来源保障的普通答复](CODEX-GROUNDED.zh-CN.md)：`--answer`零推理输出有限说明；显式加`--model-candidate`才运行一个有指引候选回合。两次新回归均出现真实模型检查调用，最终由宿主复用既有canonical交付；不改变下述旧两题或桌面UI边界。
+
 后续已完成 [显式只读线程入口](CODEX-EXPLICIT.zh-CN.md)：现成preview.13归档通过真实Codex线程路由返回schema与source_check，并临时发现/读取自包skill。新增推理0，未重发归档；两题自然0调用和桌面富UI边界不变。
 
 2026-10-27已完成两道真实个人Codex CLI自然输入验收，见 [逐题记录](evidence/codex-cli.json)：正常登录及MCP初始化成功，两题均0次实际MCP检查调用。D1正文未通过事前语义预期；N2正文通过，但不能归因为插件计算。preview.13增加初始化工作流元数据，SDK/归档/Linux7项合同通过，仍未证明自然采用或当前桌面富UI。

@@ -34,6 +34,8 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 A [source companion client](docs/CODEX-EXPLICIT.zh-CN.md) now routes the frozen preview.13 checks through a real ephemeral Codex app-server thread and discovers/reads its portable skill through temporary roots. This is explicit client use with zero new inference, separate from the two natural cases that used no tools. It does not repackage the release or install into the current desktop chat.
 
+The [grounded answer companion](docs/CODEX-GROUNDED.zh-CN.md) adds zero-inference `--answer` and an explicit one-turn `--model-candidate` option. Two new skill/workflow-guided cases made real check calls; raw candidates stay separate from the final host-delivered finite source explanation. Earlier failures remain unchanged; this is not unguided selection, arbitrary-prose certification or desktop UI acceptance.
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

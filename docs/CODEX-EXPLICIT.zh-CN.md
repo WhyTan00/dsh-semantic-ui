@@ -1,5 +1,7 @@
 # Codex 线程的显式只读入口
 
+本页描述原默认零推理路径。后续已增加 [普通答复选项](CODEX-GROUNDED.zh-CN.md)：`--answer`仍零推理，只有额外显式`--model-candidate`启用单次候选回合。原默认模式及本页已记录的显式路由结果不变。
+
 已在 Codex CLI **0.164.0**、Node **24.22.1**、Python **3.14.8** 上实际验证。使用官方实验性 app-server STDIO API、单次进程及临时线程，将现有 preview.13 归档接到正常客户端工具路由；不启动推理回合。其它客户端版本须核对其本机协议。
 
 这补齐了显式调用和便携技能发现的入口。它不代表模型自然选择了工具、当前主会话加载了插件或桌面富 UI 已渲染。[两道自然题](evidence/codex-cli.json) 的0次模型工具调用和原始正文结论保持。[本段实际回执](evidence/codex-explicit-route.json) 单独保存显式路由结果。

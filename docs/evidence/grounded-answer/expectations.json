@@ -1,0 +1,65 @@
+{
+  "frozenAt": "2026-10-26T23:17:44.185587+00:00",
+  "sources": {
+    "D1": {
+      "path": "fixtures/codex-decision-source.json",
+      "documentSha256": "6eb57ed1cbf4542324b94bf050fd95a2c82c9702b5fe1b841a92e73f9808c962",
+      "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？"
+    },
+    "counter": {
+      "path": "fixtures/grounded-answer-counterexample.json",
+      "documentSha256": "97cc6bde4c0ea25da1440c774fdea97cd27db2ef120ac405c17b8b3cb5db8dd4",
+      "textSha256": "73c9a3170f3575d56d54a38878e41c998e062b7931acbea3272f979da67ebb6d",
+      "question": "测试小组在比较方案蓝与方案橙。前者没有私网、需要运营组维护；后者支持私网、由服务方更新。两边价格都未知。我们现在需要私网，该怎样权衡？"
+    }
+  },
+  "modelTurnsMax": 2,
+  "perCaseAttempts": 1,
+  "hostFinal": {
+    "positive": [
+      "uses only existing source_check canonicalExplanation from identical startup source",
+      "unknown prices and unstated opposites/actor availability remain unknown",
+      "source identity and world facts remain unverified",
+      "model raw prose never enters the guaranteed final answer"
+    ],
+    "negative": [
+      "model recommendation or inferred policy promoted into host delivery",
+      "claims that skill discovery proves model consumption",
+      "whole free prose certified by a generic judge or keyword deletion"
+    ]
+  },
+  "D1": {
+    "positive": [
+      "host explanation retains original declared facts, no-private-network needfalse, prices unknown, team availability unknown",
+      "candidate preference must be explicitly conditional, never falsely claimed given"
+    ],
+    "negative": [
+      "unconditional hosted preference",
+      "updater identity implies no team maintenance",
+      "invented currency, period, migration or future facts"
+    ]
+  },
+  "counter": {
+    "options": [
+      "方案蓝",
+      "方案橙"
+    ],
+    "positive": [
+      "blue private capabilityfalse and operations maintenance needtrue",
+      "orange private capabilitytrue and service-party updatertrue",
+      "current private needtrue",
+      "unknown other updater/maintenance facts, price and operations availability retained"
+    ],
+    "negative": [
+      "first-option/default recommendation despite declared hard need",
+      "copy D1 current needfalse",
+      "copy old names or infer unstated opposite responsibilities"
+    ]
+  },
+  "boundaries": [
+    "host-selected typed skill plus developer workflow, not unguided model selection",
+    "observed turns separate from unknown backend request count",
+    "C1-D1/C2-N2 and old run9 remain unchanged"
+  ]
+}
