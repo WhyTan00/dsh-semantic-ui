@@ -1,0 +1,84 @@
+{
+  "candidate": "0.1.0-preview.12-dev.3",
+  "leafChecks": [
+    {
+      "branch": "file-default-arrows",
+      "scope": "literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed",
+      "identityVerified": false,
+      "fileHashPreserved": true
+    },
+    {
+      "branch": "file-explicit-arrows",
+      "scope": "literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed",
+      "identityVerified": false,
+      "fileHashPreserved": true
+    },
+    {
+      "branch": "file-decision-zh",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed",
+      "identityVerified": false,
+      "fileHashPreserved": true
+    },
+    {
+      "branch": "host-projected-decision-zh-fixture",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed",
+      "identityVerified": false,
+      "hostFileFieldsAbsent": true,
+      "sourceFactsVerified": false,
+      "freeProse": "not-verified"
+    }
+  ],
+  "compiledMcpChecks": [
+    {
+      "branch": "arrows",
+      "scope": "literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed",
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProse": "not-verified",
+      "fileHashPreserved": true,
+      "serverVersion": "0.1.0-preview.12-dev.3"
+    },
+    {
+      "branch": "decision-zh",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed",
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProse": "not-verified",
+      "fileHashPreserved": true,
+      "serverVersion": "0.1.0-preview.12-dev.3"
+    }
+  ],
+  "hostCheck": "Public projection with an explicit synthetic unit fixture; no new real DSH host run or human provenance claim.",
+  "previousRealHostRun": "Native/PTC 6 each belong to dev.2 commit01b943e and its old built hashes, not this rebuilt candidate.",
+  "typecheck": "passed",
+  "build": "passed",
+  "builtEntrypoints": {
+    "dist/host.js": "fefb14e743cdbffd07c8208a9e78728ea749cacf96ed39713ef67b5a3abc7fa9",
+    "dist/core.js": "7a37c8b393b65b12f93481e2e3ed4c86f814ca5a7e42afd62323665593164853",
+    "dist/mcp.js": "68734dd2ab1d348245bf1cf0a71d4895360cb162afe7ff54d6e5e360743f40d8"
+  },
+  "sourceFiles": {
+    "src/source-graph.ts": "10946c7faf9044c1b094564517a7384b692d52100c1221ab3e848239c8019169",
+    "src/source-decision.ts": "96adf60b337938b467d145a1fb4ba2eb3263f36e4661d0f8b12020df0cd74ac8",
+    "src/dsh/source.ts": "1fe9ecd279a7f35593be9b13a55e7638f55288be41b40e7970f15a8b9d9a8b9b"
+  },
+  "preserved": {
+    "identityVerified": false,
+    "sourceFactsVerified": false,
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "rawChanged": false,
+    "newRealModelRequests": 0,
+    "newRealHostRuns": 0,
+    "newArchive": false,
+    "newRelease": false,
+    "newCi": false,
+    "newInstall": false,
+    "globalConfigurationChanges": false
+  },
+  "purpose": "Correct the shared metadata leaf scope by source kind; decision comparison responses already overrode scope correctly before this patch.",
+  "effectiveChange": "Only sourceMetadata.scope and development candidate identifiers; selection, checks, schema and protocol unchanged."
+}

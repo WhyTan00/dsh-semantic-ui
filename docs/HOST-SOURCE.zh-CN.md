@@ -2,6 +2,8 @@
 
 源码/构建候选 `0.1.0-preview.12-dev.2` 将现有 [有限中文比较核对](SOURCE-DECISION.zh-CN.md) 接到真实 DSH 当前回合。工具从执行 Agent 的 Session 和公开投影读取输入；调用参数不能提供、替换或认证来源。本段没有发布新归档、安装到用户工作台或加载到当前 Codex 客户端。
 
+后续 `0.1.0-preview.12-dev.3` 仅修正共用元数据叶子的 `scope` 文案，按 `decision-zh` 与缺省/arrows区分；比较返回层原已有正确覆盖。文件/宿主投影夹具的叶子结果和新编译MCP入口见 [窄检查](evidence/source-scope.json)。下文实际Native/PTC各6项仍对应dev.2及其原构建摘要，不宣称旧run测试了新字节。
+
 ## 正常入口
 
 在锁定的 DSH `0.2.1-rc.2` 中启用本插件，用户通过普通 `session/prompt` 发送符合已公布有限语法的比较问题。调用现有唯一工具：
