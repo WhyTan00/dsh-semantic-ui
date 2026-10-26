@@ -1,0 +1,14 @@
+{
+  "frozenBeforeImplementation": "2026-10-26T20:18:08Z",
+  "source": "docs/evidence/natural/r9-A3.json /question; unchanged original bytes",
+  "expectations": [
+    "Normal render reads the actual current host message again; prior source-check results, source parameters or forged proofs cannot authorize delivery.",
+    "A correctly bound positive projection can deliver source-derived explanation, labels and node/edge/path notes; arbitrary model summaries/annotations are not part of the grounded display.",
+    "Unbound Client alias, reversed access, forbidden positive edge or wrong pair mode cannot be delivered as source-bound.",
+    "Unsupported complete permission source is refused; unrelated generic render may remain explicitly source-unverified.",
+    "Persisted metadata contains exactly the validated final display snapshot, not mutable args.view or a different revision. No full spec is echoed to the model.",
+    "Fresh revisions and turns recheck current input. Replay restores only the final source-derived payload/explanation and rejects mismatched turn/revision evidence.",
+    "Normal Native/PTC, folded tools and one necessary refresh/history reopen are checked narrowly; old checkpoint/protocol/template reading remains compatible."
+  ],
+  "preserve": {"sourceFactsVerified":false,"identityVerified":false,"arbitraryProseVerified":false,"originalRun9":{"pass":0,"fail":6,"requests":18},"rawChanged":false,"currentCodexClientLoaded":false}
+}

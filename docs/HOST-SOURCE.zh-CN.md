@@ -6,6 +6,8 @@
 
 dev.4复用同一选源门禁，另支持 [permissions-zh](SOURCE-PERMISSIONS.zh-CN.md)：实际文本以有限场景 `中，` 开头选择访问/权限解析，其它仍走decision-zh；参数不能选择或替换模式。新模式和实际Native/PTC各4项的证据单列，不覆盖下文dev.2矩阵。
 
+dev.5将permissions核对接入 [普通render与正常聊天交付](SOURCE-DELIVERY.zh-CN.md)，匹配后生成并持久化新来源投影和说明，拒绝不匹配；其它语法明确unverified。下文dev.2对“render不自动source-gate”的描述是当时基线，不适用于dev.5支持的permissions路径；旧文件/MCP、历史和独立身份边界保持。
+
 ## 正常入口
 
 在锁定的 DSH `0.2.1-rc.2` 中启用本插件，用户通过普通 `session/prompt` 发送符合已公布有限语法的比较问题。调用现有唯一工具：

@@ -40,6 +40,8 @@ dev.2 的 [当前输入适配](HOST-SOURCE.zh-CN.md) 属于 DSH Host：从执行
 
 dev.4的显式 `--source-kind permissions-zh` 增加 [访问/权限核对](SOURCE-PERMISSIONS.zh-CN.md)，仍复用同一只读MCP来源工具。它只核有限直接访问、方向性禁止和局部权限，不增加Codex renderer、全局注册或当前客户端来源访问；原arrows/decision模式保留。
 
+dev.5的 [来源绑定交付](SOURCE-DELIVERY.zh-CN.md) 只接现有DSH render与checkpoint；MCP默认工具和来源核对仍独立只读，没有新增Codex UI资源、全局注册或当前客户端采用证明。
+
 有可用原生可视化时，用这些确定性结果约束展示；CLI/IDE 使用相同工具返回的数据与文字。工具不会自己请求模型。`./core` 是无宿主依赖的程序入口，便于其它适配器复用。
 
 根 `plugin.json` 和 `skills/semantic-ui-checks/` 提供可分发的技能包。这个最小包只含 skill；MCP 通过上述公开 CLI 显式注册。未修改用户的全局配置，也未自动添加到共享 AI 工作区或重启桌面程序。安装到新会话后才可声称该会话已加载；当前包的协议测试与宿主实际加载是两项独立证据。

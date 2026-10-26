@@ -1,5 +1,7 @@
 # 实际进度
 
+源码/构建候选 `0.1.0-preview.12-dev.5` 将 [来源绑定接入普通render](SOURCE-DELIVERY.zh-CN.md)：对当前permissions完整源重新核本次view，匹配后由来源声明重建展示及有限说明；原模型摘要/注释/路径说法不进入有据部分。不匹配/别名不明/全文不支持则真实拒绝；其它来源通用渲染明确未核。一次性宿主快照消除presentationMeta重读args.view的差异，新增来源meta恢复校验保持旧1.0–1.4及模板合同。实际修正、最终/前期构建、窄测试与Native/PTC/恢复分别见 [证据](evidence/source-delivery.json)。原0/6/18、身份/自由正文/世界事实未认证和当前Codex未采用保持，无新Release/安装/业务模型调用。
+
 源码/构建候选 `0.1.0-preview.12-dev.4` 增加 [A3访问/权限来源核对](SOURCE-PERMISSIONS.zh-CN.md)：完整有限语法解析正向访问、方向性禁止、pair-bound只读/读写与subject-local只能目标，提供出处与有据说明；不从注释/角色/别名生真值，不用缺边证明禁止或全局独占。正向投影和typed claims分开核对，原Client翻译与任意正文仍未核。新Native/PTC各4项及必要单元/MCP/旧模式窄回归通过，具体命令/编译身份见 [证据](evidence/source-permissions.json)。零新模型请求，原0/6/18与raw不变，未新归档/Release/安装/CI或当前Codex加载。
 
 源码/构建候选 `0.1.0-preview.12-dev.3` 仅修正 `sourceMetadata.scope` 按来源kind给出准确文案：decision-zh为有限双方案条件/责任语法，缺省/arrows保持原字面箭头范围。上层比较返回原已有正确覆盖，本段不改选源/判定/协议；文件与宿主投影夹具的叶子结果4项、新编译MCP的两种文件模式2项及类型/构建通过。没有新真实宿主或模型运行，dev.2的Native/PTC12项仍只对应旧字节；身份/自由正文未认证，原0/6/18及raw不变。见 [窄检查证据](evidence/source-scope.json)，未新CI/Release/归档/安装。

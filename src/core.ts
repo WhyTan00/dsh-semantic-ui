@@ -9,6 +9,7 @@ export {extractDefinition,exportSchema,matchTemplate} from './templates';
 export {checkSourceGraph,parseExplicitRelations,sourceCheckRequestSchema} from './source-graph';
 export {checkSourceDecision,parseDecisionSource,sourceDecisionRequestSchema} from './source-decision';
 export {checkSourcePermissions,parsePermissionSource,sourcePermissionsRequestSchema} from './source-permissions';
+export {bindPermissionView} from './source-delivery';
 
 /** A new request cannot select historical behavior to bypass current policy. */
 export function validateForDelivery(input:unknown):Validation{

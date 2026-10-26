@@ -7,7 +7,7 @@ import {decide,requirementChecks,decisionInputEffects} from '../src/math';
 import {analyzeEnvelope} from '../src/core';
 import {DecisionExplorer} from '../src/components/DecisionExplorer';
 import {AppearanceContext} from '../src/appearance';
-import {presentationMeta} from '../src/dsh/host';
+import {createPresentationChannel} from '../src/dsh/presentation';
 import {checkpointOf} from '../src/dsh/definition';
 import {Client} from '@modelcontextprotocol/sdk/client/index.js';
 import {StdioClientTransport} from '@modelcontextprotocol/sdk/client/stdio.js';
@@ -79,7 +79,8 @@ describe('declared input effect coverage',()=>{
 });
 
 it('preserves current explicit predicate direction in both persisted tool-result paths',()=>{
- const view=correctedMaintenance(),meta=presentationMeta({view},{status:'delivered',turn:1,protocolVersion:VERSION});
+ const view=correctedMaintenance(),channel=createPresentationChannel(),deliveryId=channel.remember({turn:1,view});
+ const meta=channel.presentationMeta({}, {status:'delivered',turn:1,displayId:view.displayId,revision:view.revision,deliveryId});
  for(const type of ['tool/result','tool/ptc-dispatch']){
   const checkpoint=checkpointOf(JSON.parse(JSON.stringify({type,data:{meta,isError:false}})));
   expect(checkpoint?.view).toEqual(view);

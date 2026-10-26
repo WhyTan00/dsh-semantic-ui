@@ -1,0 +1,294 @@
+{
+  "candidate": "0.1.0-preview.12-dev.5",
+  "baseCommit": "263d3f362b3f1a5749344dccf2812a26540aba04",
+  "protocolVersion": "1.4",
+  "checkpointSourceMetadataVersion": 1,
+  "scope": "Normal DSH render for supported complete permissions-zh input; source-derived projection/explanation and exact checkpoint transport. Not arbitrary prose, world facts or independent human identity.",
+  "expectations": {
+    "path": "fixtures/source-delivery-expectations.json",
+    "sha256": "0a84e2722593b8064c46b9f4dcddcb8afaa701e6933261c05b6215cb9282c235",
+    "frozenBeforeImplementation": true
+  },
+  "source": {
+    "path": "docs/evidence/natural/r9-A3.json",
+    "sha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8"
+  },
+  "deliveryContract": {
+    "normalTool": "dsh_semantic_ui action=render",
+    "priorCheckApprovalCache": false,
+    "currentHostInputRechecked": true,
+    "modelNotes": "Entire fresh display fields are generated from parsed source; no keyword deletion or unverified note echo in the bound component.",
+    "finalProjectionRechecked": true,
+    "persistedView": "Host-owned serialized final snapshot, consumed by one-use handle; presentationMeta does not reconstruct from args.view.",
+    "handle": "Transfer reference, not an identity signature or caller authorization. Capacity bounded; no silent eviction.",
+    "genericRender": "Explicitly source-unverified; complete unsupported permissions source is refused.",
+    "replay": "Legacy metadata remains readable; source turn/displayId/revision/component and same-revision provenance conflicts are checked. Logs are not digitally signed.",
+    "freeAssistantProse": "not verified"
+  },
+  "verification": {
+    "sourceDeliveryTests": 9,
+    "replayTests": 4,
+    "templateAndPredicateCompatibility": {
+      "tests": 3,
+      "skippedUnrelated": 20
+    },
+    "compiledMcpRegression": {
+      "tests": 2,
+      "skippedUnrelated": 3,
+      "cwdOutsideRepository": true
+    },
+    "typecheck": "passed",
+    "build": "passed",
+    "finalByteNativePtc": [
+      {
+        "mode": "native",
+        "passed": 2,
+        "cases": [
+          {
+            "kind": "native-bound",
+            "status": "bound",
+            "revisions": [
+              1,
+              2
+            ],
+            "folded": true,
+            "refresh": true,
+            "container": {
+              "width": 360,
+              "clientWidth": 358,
+              "scrollWidth": 358
+            },
+            "canonicalExplanation": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。",
+            "modelAnnotationsAbsent": true,
+            "sourceFactsVerified": false,
+            "identityVerified": false,
+            "historyReopened": true
+          },
+          {
+            "kind": "native-mismatch-after-check",
+            "status": "refused",
+            "codes": [
+              "SOURCE_ACCESS_MODE",
+              "SOURCE_ACCESS_PROHIBITED"
+            ],
+            "folded": true
+          }
+        ],
+        "pageErrors": []
+      },
+      {
+        "mode": "ptc",
+        "passed": 2,
+        "cases": [
+          {
+            "kind": "ptc-bound",
+            "status": "bound",
+            "revisions": [
+              1,
+              2
+            ],
+            "folded": true,
+            "refresh": true,
+            "container": {
+              "width": 360,
+              "clientWidth": 358,
+              "scrollWidth": 358
+            },
+            "canonicalExplanation": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。",
+            "modelAnnotationsAbsent": true,
+            "sourceFactsVerified": false,
+            "identityVerified": false,
+            "historyReopened": true
+          },
+          {
+            "kind": "ptc-mismatch-after-check",
+            "status": "refused",
+            "codes": [
+              "SOURCE_ACCESS_MODE",
+              "SOURCE_ACCESS_PROHIBITED"
+            ],
+            "folded": true
+          }
+        ],
+        "pageErrors": []
+      }
+    ],
+    "finalByteCrossProcessRecovery": {
+      "results": [
+        {
+          "mode": "native",
+          "crossProcessHistoryRestored": true,
+          "revision": 2,
+          "sourceExplanationVisible": true,
+          "modelAnnotationsAbsent": true,
+          "container": {
+            "width": 360,
+            "height": 1489.5,
+            "clientWidth": 358,
+            "scrollWidth": 358,
+            "top": 267,
+            "bottom": 1756.5
+          }
+        },
+        {
+          "mode": "ptc",
+          "crossProcessHistoryRestored": true,
+          "revision": 2,
+          "sourceExplanationVisible": true,
+          "modelAnnotationsAbsent": true,
+          "container": {
+            "width": 360,
+            "height": 1489.5,
+            "clientWidth": 358,
+            "scrollWidth": 358,
+            "top": 267,
+            "bottom": 1756.5
+          }
+        }
+      ],
+      "pageErrors": [],
+      "newPrompts": 0
+    },
+    "newRealModelRequests": 0,
+    "currentCodexClientLoaded": false,
+    "archiveInstalled": false,
+    "linuxCi": "not run"
+  },
+  "preparatoryVerification": {
+    "builtBeforeRoleCorrection": {
+      "dist/host.js": "bae0291012eb2507e4638d7b72c757a36b7b2619e9b9a42a8c597a95ee609c27",
+      "dist/client.js": "2e072690b0a88a5e5f8faaaf579bdd70eda0f9fe07ae2885b8bcaf1cc7088ca1",
+      "dist/core.js": "3d05798480defe02ba7ff48230a32c7fbf963febdac805a6b1bbf54f652cea52",
+      "dist/mcp.js": "8013e5b4a5e6cb212fb02ac71ebd9f220ecefc3f61acfa76e94a84d61a9efa88",
+      "src/source-delivery.ts": "33fedd06250605b91e0a64c0762b20e507c1654149236710679aa92ed5f661d9"
+    },
+    "nativePtc": [
+      {
+        "mode": "native",
+        "passed": 5,
+        "cases": [
+          {
+            "kind": "native-bound",
+            "status": "bound"
+          },
+          {
+            "kind": "native-mismatch-after-check",
+            "status": "refused"
+          },
+          {
+            "kind": "native-alias",
+            "status": "refused"
+          },
+          {
+            "kind": "native-unsupported",
+            "status": "refused"
+          },
+          {
+            "kind": "native-generic",
+            "status": "unverified"
+          }
+        ],
+        "pageErrors": []
+      },
+      {
+        "mode": "ptc",
+        "passed": 5,
+        "cases": [
+          {
+            "kind": "ptc-bound",
+            "status": "bound"
+          },
+          {
+            "kind": "ptc-mismatch-after-check",
+            "status": "refused"
+          },
+          {
+            "kind": "ptc-alias",
+            "status": "refused"
+          },
+          {
+            "kind": "ptc-unsupported",
+            "status": "refused"
+          },
+          {
+            "kind": "ptc-generic",
+            "status": "unverified"
+          }
+        ],
+        "pageErrors": []
+      }
+    ],
+    "scope": "Earlier full five-case runs are preserved but do not claim coverage of the final rebuilt role wording. Final new bytes were narrowly rechecked for source delivery/refusal and recovery."
+  },
+  "developmentCorrections": [
+    {
+      "kind": "semantic-counterexample",
+      "initial": "A node without positive outgoing access was described as only an access target. A prohibition-only caller disproved that statement.",
+      "result": "Failed independent counterexample retained, then corrected to unknown business responsibility while preserving its explicit prohibition. Renamed IDs and another lawful writer pass."
+    },
+    {
+      "kind": "visual-evidence",
+      "initial": "Initial locator screenshot was clipped by the host scroll/sticky layers.",
+      "result": "Complete component captured with larger viewport at the same actual 360px container; original bad capture retained privately."
+    },
+    {
+      "kind": "recovery-script",
+      "initial": "First recovery locator timed out because the owned workspace rows were collapsed.",
+      "result": "Expanded only the fixture workspace rows, then recovered both mode histories with no prompts."
+    }
+  ],
+  "builtEntrypoints": {
+    "dist/host.js": "bd4bc2371ae6402d7e307ceb238451972d617c2834a9a5275a2bd1c7d77bcd0d",
+    "dist/client.js": "2e072690b0a88a5e5f8faaaf579bdd70eda0f9fe07ae2885b8bcaf1cc7088ca1",
+    "dist/core.js": "0b2fd1d77b52b8273238ed76f4e66c779ff04c5d80a1130e412c1688100531eb",
+    "dist/mcp.js": "8013e5b4a5e6cb212fb02ac71ebd9f220ecefc3f61acfa76e94a84d61a9efa88"
+  },
+  "sourceSha256": {
+    "src/source-delivery.ts": "cb72a1cf7048e602511fd4403977be78275fe91696ef4bb3089a368f24df3bb8",
+    "src/source-delivery-meta.ts": "10ea276335323a68f7e35ceecf47835958668c57b583bf49c6c4a473f75d3bcf",
+    "src/dsh/host.ts": "f4bc444f979c0cc0b762f9e6e58f6b79f64415a1fc80c049d6f3cf85bf97ad6c",
+    "src/dsh/presentation.ts": "b7dcb735c722b32e9309abcdb18445c82b8cfe5eb21bc20ce6c1b854b479906f",
+    "src/dsh/definition.ts": "c48120900fca564e74c3c8b0b7e0e82acb10e580a62c26b8f427ece0acd720aa",
+    "src/dsh/events.ts": "e402abfea0bba8c1f84fc25ccb02e74becb74c13d073bb9cc6a0e6be967d67b9",
+    "src/island.tsx": "0a7ebdcaa702c21dff1dedf7a591491cb9a5953f2ad160da2af05bfc318d55b9",
+    "src/dsh/guidance.ts": "d5c35b01b9a7a4dc613df75c40c0dd64103362986f04996cfa5ff287fb3aba0f",
+    "tests/source-delivery.test.ts": "2a6f82ecdfabb846d701d284f663f716912797ce25a738ed0f76d8db86ce99da",
+    "tests/replay.test.ts": "d730b42375a3bfbef968e9f4fc44445c1817922564562b0ca9914ac6d5bb6f64",
+    "tests/source-delivery-browser.mjs": "e588ffa690e0f7d5b28154a9b0b9f7e62bc612426121b74821780bafac75aeaa",
+    "fixtures/source-delivery-expectations.json": "0a84e2722593b8064c46b9f4dcddcb8afaa701e6933261c05b6215cb9282c235"
+  },
+  "screenshots": [
+    {
+      "path": "docs/evidence/source-delivery-native.png",
+      "sha256": "d417c1b050914ef8f3da05855ff43b260462661f32c2ca09ef094850f7fa373b",
+      "source": "Final built bytes; complete component capture after independent process history restoration; 360px container, not a real phone test."
+    },
+    {
+      "path": "docs/evidence/source-delivery-ptc.png",
+      "sha256": "9c8da45ffec20146fd32d0a1b844288485229b2bd0486c3726ec515425ab7d01",
+      "source": "Final built bytes; complete component capture after independent process history restoration; 360px container, not a real phone test."
+    }
+  ],
+  "preserved": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "arbitraryProseVerified": false,
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "rawChanged": false,
+    "oldProtocolMigration": false,
+    "newRelease": false,
+    "newArchive": false,
+    "newInstall": false,
+    "newCi": false,
+    "globalConfigurationChanges": false
+  },
+  "cleanup": {
+    "allTaskCommandsTerminal": true,
+    "ownedFixtureHostAndRecoveryPortsClosed": true
+  }
+}

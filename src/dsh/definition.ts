@@ -2,6 +2,7 @@ import type {} from '@deepseek-ai/dsh-client-ui-chat/client';
 import type { ConversationNodeDefinition } from '@deepseek-ai/dsh-client-ui-conversation/client';
 import { validateEnvelope } from '../protocol';
 import { META, type Checkpoint, type ViewState } from './events';
+import {sourceDeliverySchema} from '../source-delivery-meta';
 export function checkpointOf(event:unknown):Checkpoint|undefined{
   const e=event as {type?:string;data?:{isError?:boolean;message?:{isError?:boolean};meta?:Record<string,unknown>}};
   if(!e||!['tool/result','tool/ptc-dispatch'].includes(e.type??'')||e.data?.isError||e.data?.message?.isError)return;
@@ -17,11 +18,17 @@ export const definition:ConversationNodeDefinition<ViewState>={
     if(!next.view||!prior.view)return next;
     if(next.view.component!==prior.view.component)return {...prior,issues:[{code:'IDENTITY_CONFLICT',path:'$.component',reason:'An existing display ID cannot change component type.',hint:'Use a new displayId for a different semantic component.'}]};
     if(next.view.revision<prior.view.revision)return prior;
-    if(next.view.revision===prior.view.revision){if(JSON.stringify(next.view)===JSON.stringify(prior.view))return prior;return {...prior,issues:[{code:'REVISION_CONFLICT',path:'$.revision',reason:'The same revision carries different data.',hint:'Increase revision for an update.'}]};}
+    if(next.view.revision===prior.view.revision){if(JSON.stringify([next.view,next.sourceDelivery])===JSON.stringify([prior.view,prior.sourceDelivery]))return prior;return {...prior,issues:[{code:'REVISION_CONFLICT',path:'$.revision',reason:'The same revision carries different data or source provenance.',hint:'Increase revision for an update.'}]};}
     return next;
   },
   buildViewNode:ctx=>ctx.state?{key:ctx.key,kind:'dsh-semantic-ui',id:ctx.id,target:'chat',anchorSeq:ctx.start?.event.seq??0,location:ctx.start?.location??{kind:'unresolved'},visibility:'visible',groupTree:'turn',data:ctx.state}:null,
 };
-function read(data:{turn:number;view?:unknown;issues?:ViewState['issues']}):ViewState{if(data.issues)return {turn:data.turn,issues:data.issues};const v=validateEnvelope(data.view);return v.ok?{turn:data.turn,view:v.value}:{turn:data.turn,issues:v.issues};}
+function read(data:Checkpoint):ViewState{
+ if(data.issues)return {turn:data.turn,issues:data.issues};const v=validateEnvelope(data.view);if(!v.ok)return {turn:data.turn,issues:v.issues};
+ if(data.sourceDelivery===undefined)return {turn:data.turn,view:v.value};
+ const source=sourceDeliverySchema.safeParse(data.sourceDelivery),s=source.success?source.data:undefined;
+ if(!s||s.status==='bound'&&(s.sourceRef.hostContext.turn!==data.turn||s.viewIdentity.displayId!==v.value.displayId||s.viewIdentity.revision!==v.value.revision||s.viewIdentity.component!==v.value.component))return {turn:data.turn,issues:[{code:'SOURCE_CHECKPOINT_MISMATCH',path:'$.sourceDelivery',reason:'Saved source metadata does not match this display turn/revision or supported contract.',hint:'No source claim or unverified view is restored from mismatched metadata.'}]};
+ return {turn:data.turn,view:v.value,sourceDelivery:s};
+}
 
 declare module '@deepseek-ai/dsh-client-ui-chat/client' { interface ChatNodeDataMap { 'dsh-semantic-ui': ViewState } }

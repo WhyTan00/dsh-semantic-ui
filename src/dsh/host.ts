@@ -5,9 +5,8 @@ import type {} from '@deepseek-ai/dsh-agent';
 import type {} from '@deepseek-ai/dsh-session-projection';
 import type {} from '@deepseek-ai/dsh-system-prompt';
 import type {} from '@deepseek-ai/dsh-skill';
-import { z } from 'zod';
-import { components, validateEnvelope, VERSION, type ComponentName } from '../protocol';
-import { META } from './events';
+import { components, validateEnvelope, type ComponentName } from '../protocol';
+import type {Checkpoint} from './events';
 import { GUIDANCE, TOOL_DESCRIPTION } from './guidance';
 import {analyzeValidated,analyzeEnvelope,describeSemantic,validateForDelivery} from '../core';
 import {capabilityCatalog} from '../capabilities';
@@ -17,6 +16,9 @@ import type {Presentation} from '../theme';
 import {currentHostSource,currentSourceProjection} from './source';
 import {checkSourceDecision} from '../source-decision';
 import {checkSourcePermissions} from '../source-permissions';
+import {bindPermissionView} from '../source-delivery';
+import {sourceDeliverySchema,type SourceDelivery} from '../source-delivery-meta';
+import {createPresentationChannel} from './presentation';
 export const name='dsh-semantic-ui';
 export interface Config {generation:boolean}
 export const Config:Schema<Config>=Schema.object({generation:Schema.boolean().default(true)});
@@ -31,28 +33,15 @@ export const parameters={
   templateId:{type:'string',description:'For template or render: use a personal template ID returned by templates. Render requires templateVersion.'},
   templateVersion:{type:'integer',description:'Exact immutable version. Required when rendering with templateId; inspect action=template first.'},
 } as const;
-// Both native tool/result and nested tool/ptc-dispatch persist presentation
-// metadata in the pinned host. No custom event, log mutation or private API.
-export function presentationMeta(args:unknown,value:unknown){
-  const receipt=value as {status?:string;turn?:number;displayId?:string;issues?:unknown;presentation?:Presentation;protocolVersion?:string};
-  if(!receipt||!Number.isSafeInteger(receipt.turn))return null;
-  if(receipt.status==='delivered'){
-    const input=(args as {view?:unknown})?.view;
-    const initial=validateEnvelope(input);if(!initial.ok)return null;
-    const checked=validateEnvelope(receipt.presentation?{...initial.value,protocolVersion:receipt.protocolVersion===VERSION?VERSION:initial.value.protocolVersion==='1.0'?'1.1':initial.value.protocolVersion,presentation:receipt.presentation}:initial.value);
-    return checked.ok?JSON.parse(JSON.stringify({[META]:{turn:receipt.turn,view:checked.value}})):null;
-  }
-  if(receipt.status==='validation-failed')return JSON.parse(JSON.stringify({[META]:{turn:receipt.turn,displayId:receipt.displayId,issues:receipt.issues}}));
-  return null;
-}
 export function describe(component:ComponentName){return {...describeSemantic(component),delivery:'Call dsh_semantic_ui action=render with view. Do not output this JSON in prose.'};}
 export function apply(ctx:Context,config:Config={generation:true}){
   const library=mountLibrary(ctx);
   if(config.generation===false)return;
+  const channel=createPresentationChannel();
   ctx.sessionProjections.register(currentSourceProjection);
   ctx.inject(['skills'],skillCtx=>{skillCtx.skills.register({name:'dsh-semantic-ui',source:'runtime',description:'Explain relationships, tradeoffs and numbers through the semantic UI tool when useful.',content:GUIDANCE+'\n\nThe only delivery entry for these semantic components is dsh_semantic_ui. Get the chosen component fields with action=describe, then deliver action=render. Display IDs are turn-scoped; revisions increase for updates. Runtime checks enforce structure and declared graph, comparison and numeric consistency; they cannot establish that model claims or rules follow the user facts.'});});
   ctx.systemPrompt.section({name:'dsh-semantic-ui:delivery',order:850,text:GUIDANCE});
-  ctx.tools.register(defineTool({name:'dsh_semantic_ui',description:TOOL_DESCRIPTION,parameters,output:{schema:{type:'object',additionalProperties:true},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}],presentationMeta},async execute(args,exec){
+  ctx.tools.register(defineTool({name:'dsh_semantic_ui',description:TOOL_DESCRIPTION,parameters,output:{schema:{type:'object',additionalProperties:true},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}],presentationMeta:channel.presentationMeta},async execute(args,exec){
     exec.signal.throwIfAborted();
     if(args.action==='check')return analyzeEnvelope(args.view);
     if(args.action==='source-check'){
@@ -72,22 +61,33 @@ export function apply(ctx:Context,config:Config={generation:true}){
       if(!args.component||!(args.component in components))throw Error('COMPONENT at $.component: select ArchitectureExplorer, DecisionExplorer, or DataChart.');
       return JSON.parse(JSON.stringify(describe(args.component)));
     }
-    const checked=validateForDelivery(args.view);if(!checked.ok){
+    const reject=(issues:Checkpoint['issues'])=>{
       const b=exec.agent?ctx.sessionProjections.stateOf(exec.agent.session,'turnBoundary'):undefined;
       const candidate=args.view?.displayId;const displayId=typeof candidate==='string'&&/^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$/.test(candidate)?candidate:'failed-'+String(exec.callId).replace(/[^a-zA-Z0-9_.:-]/g,'').slice(0,60);
-      return JSON.parse(JSON.stringify({status:'validation-failed',...(b&&b.openTurnStartSeq!==null?{turn:b.lastTurn,displayId}:{}),issues:checked.issues.slice(0,30)}));
-    }
+      const current=b&&b.openTurnStartSeq!==null?{turn:b.lastTurn,displayId}:undefined,short=issues?.slice(0,30);
+      return {status:'validation-failed',...current,issues:short,...(current?{deliveryId:channel.remember({...current,issues:short})}:{})};
+    };
+    if(Object.entries(args).some(([k,v])=>v!==undefined&&!['action','view','templateId','templateVersion'].includes(k)))return reject([{code:'RENDER_ARGUMENT',path:'$',reason:'Render accepts fresh view/template coordinates only; source, authority, prior checks and delivery handles cannot authorize this request.',hint:'Remove extra fields. The current host source is checked again during this render.'}]);
+    const checked=validateForDelivery(args.view);if(!checked.ok)return reject(checked.issues);
     if(!exec.agent)throw Error('HOST_SESSION: delivery requires a real agent session.');
     const boundary=ctx.sessionProjections.stateOf(exec.agent.session,'turnBoundary');
     if(!boundary||boundary.openTurnStartSeq===null)throw Error('HOST_TURN: delivery requires an open turn.');
-    let presentation:Presentation=checked.value.presentation??newPresentation(library()?.snapshot().defaultTheme);
+    let view=checked.value;const source=currentHostSource(ctx,exec);let sourceDelivery:SourceDelivery;
+    if(source.ok&&source.snapshot.kind==='permissions-zh'){
+      const bound=bindPermissionView(source.snapshot,view);if(!bound.ok)return reject(bound.issues);view=bound.view;
+      const meta=sourceDeliverySchema.safeParse({version:1,status:'bound',kind:'permissions-zh',explanation:bound.explanation,sourceRef:{textSha256:source.snapshot.textSha256,hostContext:source.snapshot.hostContext},viewIdentity:{displayId:view.displayId,revision:view.revision,component:view.component},sourceFactsVerified:false,identityVerified:false});
+      if(!meta.success)return reject([{code:'SOURCE_DELIVERY_LIMIT',path:'$.source',reason:'The complete source-bound explanation or reference exceeds the delivery contract.',hint:'No partial source approval is delivered.'}]);sourceDelivery=meta.data;
+    }else sourceDelivery={version:1,status:'unverified',code:source.ok?'SOURCE_RENDER_SCOPE':source.result.issues[0].code,reason:source.ok?'本次普通渲染未绑定该来源语法；结构化数据、模型摘要和注释均未作独立来源核对。':'当前来源不可用或不唯一；本次仅按通用结构合同显示，模型内容未核。',identityVerified:false,sourceFactsVerified:false};
+    let presentation:Presentation=view.presentation??newPresentation(library()?.snapshot().defaultTheme);
     if(args.templateId){
       if(!Number.isSafeInteger(args.templateVersion))throw Error('TEMPLATE_VERSION: Render requires the exact version returned by action=template.');
       const store=library();if(!store)throw Error('LIBRARY_UNAVAILABLE');
-      const template=store.get(args.templateId,args.templateVersion);matchTemplate(template,checked.value);
+      const template=store.get(args.templateId,args.templateVersion);matchTemplate(template,view);
       presentation={version:1,theme:template.theme,layout:template.layout,template:{id:args.templateId,version:template.version,name:template.name}};
     }else if(args.templateVersion!==undefined)throw Error('TEMPLATE_ID: A version also requires templateId.');
     else if(presentation.template)throw Error('TEMPLATE_ID: Use templateId and templateVersion to claim template provenance.');
-    return {status:'delivered',turn:boundary.lastTurn,displayId:checked.value.displayId,revision:checked.value.revision,summary:checked.value.summary,presentation,...analyzeValidated(checked.value)};
+    const final=validateEnvelope({...view,presentation});if(!final.ok)return reject(final.issues);
+    const checkpoint:Checkpoint={turn:boundary.lastTurn,view:final.value,sourceDelivery};
+    return {status:'delivered',turn:boundary.lastTurn,displayId:final.value.displayId,revision:final.value.revision,summary:final.value.summary,presentation,...analyzeValidated(final.value),...(sourceDelivery.status==='bound'?{summarySource:'source-derived bounded projection',canonicalExplanation:sourceDelivery.explanation}:{}),sourceDeliveryStatus:sourceDelivery.status,identityVerified:false,deliveryId:channel.remember(checkpoint)};
   }}));
 }

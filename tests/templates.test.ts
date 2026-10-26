@@ -6,7 +6,8 @@ import {defaultTheme,defaultLayout,themeTokens} from '../src/theme';
 import {validateEnvelope} from '../src/protocol';
 import {chartFacts,decisionFacts} from '../src/facts';
 import {profileDomainName,libraryResponse} from '../src/dsh/library';
-import {presentationMeta,apply} from '../src/dsh/host';
+import {apply} from '../src/dsh/host';
+import {createPresentationChannel} from '../src/dsh/presentation';
 import {checkpointOf} from '../src/dsh/definition';
 
 function setup(){let data=emptyLibrary();const storage={get:()=>data,set:vi.fn(async(next:Library)=>{data=structuredClone(next);})};return {storage,library:new TemplateLibrary(storage,randomUUID)};}
@@ -81,7 +82,8 @@ describe('fresh-data reuse and appearance snapshots',()=>{
   it('stores concrete appearance and exact version in metadata; deletion/default changes cannot rewrite it',async()=>{
     const {library}=setup();const first=await save(library),id=first.templates[0].id;
     const appearance={version:1,theme:{...defaultTheme,mode:'dark' as const},layout:defaultLayout,template:{id,version:1,name:'Daily chart'}};
-    const meta=presentationMeta({view:chart},{status:'delivered',turn:1,presentation:appearance});
+    const channel=createPresentationChannel(),view=validatedView({...chart,protocolVersion:'1.1',presentation:appearance}),deliveryId=channel.remember({turn:1,view});
+    const meta=channel.presentationMeta({}, {status:'delivered',turn:1,displayId:view.displayId,revision:view.revision,deliveryId});
     await library.request({action:'delete',expectedRevision:1,id});await library.request({action:'default',expectedRevision:2,theme:{...defaultTheme,palette:'berry'}});
     for(const type of ['tool/result','tool/ptc-dispatch']){const view=checkpointOf({type,data:{meta}})?.view;expect(view?.presentation).toEqual(appearance);expect(view?.protocolVersion).toBe('1.1');expect(view?.payload).toEqual(chart.payload);}
     expect(validateEnvelope(chart).ok).toBe(true);expect(validateEnvelope({...chart,presentation:appearance}).ok).toBe(false);
@@ -100,12 +102,12 @@ describe('fresh-data reuse and appearance snapshots',()=>{
     for(const mode of ['light','dark']as const)for(const palette of ['ocean','forest','berry']as const){const t=themeTokens({...defaultTheme,mode,palette});for(const bg of [t.background,t.surface,t.tint]){expect(ratio(t.text,bg)).toBeGreaterThanOrEqual(4.5);expect(ratio(t.muted,bg)).toBeGreaterThanOrEqual(4.5);for(const color of t.colors)expect(ratio(color,bg)).toBeGreaterThanOrEqual(3);}}
   });
   it('uses the real tool to pin a template and returns only compact facts to the model',async()=>{
-    const {storage}=setup();let handler:any;const pending:Promise<unknown>[]=[];const ctx:any={profileContext:{name:'web'},storageDomain:{open:async()=>({global:storage,close:async()=>{}})},effect:(cb:any)=>cb(),connection:{fetch:{register:(route:any)=>{handler=async(_endpoint:string,payload:unknown)=>{const response=await route.fetch(new Request('http://fixture/api/dsh-semantic-ui/library',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:randomUUID(),method:'dsh-semantic-ui/library',payload})}));return (await response.json()).result;};return async()=>{};}}},inject:(names:string[],cb:any)=>{if(names.includes('storageDomain'))pending.push(cb(ctx));},systemPrompt:{section:vi.fn()},tools:{register:vi.fn()},sessionProjections:{stateOf:()=>({lastTurn:1,openTurnStartSeq:1})}};
+    const {storage}=setup();let handler:any;const pending:Promise<unknown>[]=[];const ctx:any={profileContext:{name:'web'},storageDomain:{open:async()=>({global:storage,close:async()=>{}})},effect:(cb:any)=>cb(),connection:{fetch:{register:(route:any)=>{handler=async(_endpoint:string,payload:unknown)=>{const response=await route.fetch(new Request('http://fixture/api/dsh-semantic-ui/library',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:randomUUID(),method:'dsh-semantic-ui/library',payload})}));return (await response.json()).result;};return async()=>{};}}},inject:(names:string[],cb:any)=>{if(names.includes('storageDomain'))pending.push(cb(ctx));},systemPrompt:{section:vi.fn()},tools:{register:vi.fn()},sessionProjections:{register:vi.fn(),stateOf:()=>({lastTurn:1,openTurnStartSeq:1})}};
     apply(ctx);await Promise.all(pending);const signal=new AbortController().signal;
     const saved=await handler('library',{action:'save',expectedRevision:0,name:'Native chart',definition:extractDefinition(validatedView(chart)),theme:{...defaultTheme,mode:'dark'},layout:defaultLayout},signal,{principal:{kind:'owner'}});expect(saved.ok).toBe(true);
     const t=saved.value.templates[0],tool=ctx.tools.register.mock.calls[0][0],exec={signal,agent:{session:{}},callId:'test'};
-    const checkedOnly=await tool.execute({action:'check',view:chart},{signal});expect(checkedOnly.status).toBe('validated');expect(checkedOnly).toHaveProperty('dataFacts');expect(presentationMeta({view:chart},checkedOnly)).toBe(null);
-    const args={action:'render',view:chart,templateId:t.id,templateVersion:1},result=await tool.execute(args,exec);expect(result).not.toHaveProperty('view');expect(result.presentation.template).toEqual({id:t.id,version:1,name:'Native chart'});expect(checkpointOf({type:'tool/result',data:{meta:presentationMeta(args,result)}})?.view?.payload).toEqual(chart.payload);
+    const checkedOnly=await tool.execute({action:'check',view:chart},{signal});expect(checkedOnly.status).toBe('validated');expect(checkedOnly).toHaveProperty('dataFacts');expect(tool.output.presentationMeta({view:chart},checkedOnly)).toBe(null);
+    const args={action:'render',view:chart,templateId:t.id,templateVersion:1},result=await tool.execute(args,exec);expect(result).not.toHaveProperty('view');expect(result.presentation.template).toEqual({id:t.id,version:1,name:'Native chart'});expect(checkpointOf({type:'tool/result',data:{meta:tool.output.presentationMeta(args,result)}})?.view?.payload).toEqual(chart.payload);
     const {templateVersion:_,...missingVersion}=args;await expect(tool.execute(missingVersion,exec)).rejects.toThrow('TEMPLATE_VERSION');
   });
 });
