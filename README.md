@@ -30,6 +30,8 @@ Preview.9 uses **protocol1.3** to distinguish resource availability from capabil
 
 **Preview.11 / protocol1.4** packages executable declaration checks: capability/resource roles must agree with boolean relations, and each input’s expected hard/preference effect must match its dependency graph. Contradictions are rejected without rewriting policy;1.0–1.3 histories retain their meanings and source verification stays false. See the [declaration guide](docs/DECLARATION-CHECKS.zh-CN.md) and [version-specific archive installation, MCP and Linux receipts](docs/evidence/preview11.json).
 
+Preview.13 candidate adds MCP initialization workflow instructions after a real Codex CLI D1 attempt initialized the preview.12 server but used no tools and failed the frozen prose criteria. That first failure is retained; guidance is not proof that D1 or desktop UI is fixed. See [Codex acceptance](docs/CODEX.zh-CN.md#preview13初始化时提供检查工作流).
+
 ## Install
 
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:

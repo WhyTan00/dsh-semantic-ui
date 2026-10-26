@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.13候选推进真实Codex按次接入：preview.12的D1首次MCP初始化成功但0次工具调用，正文有无据优先推荐，实际失败保留于 [原回答](evidence/codex-cli/c1-D1-preview12.json)。据此为MCP初始化补充正常检查工作流，未重试D1或改判旧DSH六题。新版本归档和至多第二题N2尚待实际验收；已发布preview.12四资产不变。
+
 preview.12已实际发布为 [个人预览Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.12)，冻结源码/tag为629b7bacc2793f49bba62d66d758c25bd4518178。完整decision-zh接入同一个普通render/最终快照；未知不补值、本地假设不重写来源。28项窄单元/工具检查通过；实际运行归档正常装入全新profile，293文件逐字节核对，Native/PTC各6项必要验证及独立进程恢复通过，360px无溢出、pageerror=0。仓库外独立MCP与Linux CI通过，CI四份产物与本地完全同字节。安装、CI、匿名HTTPS及全部失败/边界按 [本版回执](evidence/preview12.json) 分开记录；补充回执为后续文档commit，不重打包或修改冻结版本。原六题仍0/6/18、sourceFacts/identity均false，零新自然模型请求；不冒称当前Codex客户端采用或真机验收。下文dev.0–5保留为历史源码阶段。
 
 源码/构建候选 `0.1.0-preview.12-dev.5` 将 [来源绑定接入普通render](SOURCE-DELIVERY.zh-CN.md)：对当前permissions完整源重新核本次view，匹配后由来源声明重建展示及有限说明；原模型摘要/注释/路径说法不进入有据部分。不匹配/别名不明/全文不支持则真实拒绝；其它来源通用渲染明确未核。一次性宿主快照消除presentationMeta重读args.view的差异，新增来源meta恢复校验保持旧1.0–1.4及模板合同。实际修正、最终/前期构建、窄测试与Native/PTC/恢复分别见 [证据](evidence/source-delivery.json)。原0/6/18、身份/自由正文/世界事实未认证和当前Codex未采用保持，无新Release/安装/业务模型调用。

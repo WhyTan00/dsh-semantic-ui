@@ -1,0 +1,10 @@
+import{readFile,mkdtemp,rm,mkdir,writeFile}from'node:fs/promises';import{resolve,join,basename}from'node:path';import{tmpdir}from'node:os';import{execFileSync,spawn}from'node:child_process';import{createHash}from'node:crypto';
+const version=JSON.parse(await readFile('package.json','utf8')).version,dir=resolve('artifacts/releases',version),manifest=JSON.parse(await readFile(join(dir,'package-manifest.json'),'utf8'));
+if(manifest.version!==version||basename(manifest.filename)!==manifest.filename||manifest.sourceCommit!==execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim())throw Error('Frozen source identity mismatch');
+const archive=join(dir,manifest.filename);if(createHash('sha256').update(await readFile(archive)).digest('hex')!==manifest.sha256)throw Error('Archive SHA mismatch');
+const target=await mkdtemp(join(tmpdir(),'semantic-archive-mcp-'));
+try{
+ execFileSync('tar',['-xzf',archive,'-C',target]);const entry=join(target,'package/dist/mcp.js'),sha256=createHash('sha256').update(await readFile(entry)).digest('hex');if(sha256!==manifest.runtimeEntrypoints['dist/mcp.js'])throw Error('Archived MCP entry mismatch');
+ const child=spawn('pnpm',['exec','vitest','run','tests/mcp.test.ts','tests/mcp-instructions.test.ts'],{env:{...process.env,SEMANTIC_MCP_ENTRY:entry,SEMANTIC_MCP_CWD:target},stdio:'inherit'});const code=await new Promise(r=>child.once('exit',r));if(code!==0)throw Error('Standalone archived MCP contracts failed');
+ await mkdir('artifacts/local',{recursive:true});const result={version,sourceCommit:manifest.sourceCommit,archiveSha256:manifest.sha256,mcpEntrySha256:sha256,extractedOutsideRepository:true,serverWithoutNodeModules:true,defaultStdioContracts:3,initializationContracts:4,realModelRequests:0};await writeFile('artifacts/local/mcp-'+Date.now()+'.json',JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result));
+}finally{await rm(target,{recursive:true,force:true});}

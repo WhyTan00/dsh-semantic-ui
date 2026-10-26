@@ -1,0 +1,46 @@
+{
+  "case": "C1-D1",
+  "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+  "source": {
+    "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+    "recordPath": "docs/evidence/natural/r9-D1.json",
+    "recordSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1"
+  },
+  "pluginVersion": "0.1.0-preview.12",
+  "archiveSha256": "b0e0bf25090a535ba12548268c109cdced1ed00e4b1bd46d329931dd02e640f6",
+  "client": "codex-cli0.164.0",
+  "model": "gpt-6.1-sol",
+  "reasoning": "max",
+  "authentication": "existing normal ChatGPT login; no API key copied",
+  "explicitToolPrompt": false,
+  "serverInstructions": null,
+  "catalog": [
+    "semantic_ui_schema",
+    "semantic_ui_check",
+    "semantic_ui_template_check",
+    "semantic_ui_source_check"
+  ],
+  "actualToolCalls": [],
+  "finalAnswer": "**现阶段可以优先考虑托管平台，但保留条件。** 供应商负责更新能减少当前的维护负担；私网暂时用不到，它的价值主要取决于未来需求。\n\n重点比较三件事：\n\n- **总成本**：拿到报价后，把平台费用和团队维护工时一起算。目前不能判断哪边更便宜。\n- **私网需求的时间与概率**：近期确定需要，就提高虚拟机的权重；只是未来可能需要，当前权重可以较低。\n- **迁移成本**：确认以后从托管迁走的难度。切换容易，就更适合先满足当前需求；切换很难，就需要提前考虑未来限制。\n\n如果其他需求都满足、迁移也可接受，可以先选托管；若虚拟机的价格优势足以覆盖维护投入，或私网需求变得明确，再倾向虚拟机。",
+  "rawSha256": "d57f2f3f86d0fa6ddef99c8ac125b74a8407edeb598304a3a1ead19e42c1179b",
+  "finalSha256": "f3c8257c3b6376713cba43ab5bb0678f539d7926d5d218c8def1523642750d45",
+  "wireSha256": "ef60fab4e5abbce992ceaa61976f8ea93669042754ca72d3700a4f3072382485",
+  "exitCode": 0,
+  "modelBackendRequestCount": "unknown",
+  "observedModelTurns": 1,
+  "result": {
+    "mcpInitialization": "passed",
+    "actualToolAdoption": "not-used",
+    "sourceComparison": "not-run",
+    "proseSemantics": "fail",
+    "reason": "Directly prioritizes hosted platform without a supplied preference policy; supplier updates are used to infer lower current maintenance burden despite unspecified opposite maintenance facts. No independent source check ran."
+  },
+  "startupWarning": "Under-development feature warning; no fatal client error. Full original JSONL and process identities retained privately.",
+  "boundaries": [
+    "CLI text, not desktop rich UI",
+    "sourceFactsVerified=false and identityVerified=false",
+    "single case, not a controlled model benchmark",
+    "original DSH run9 unchanged"
+  ]
+}

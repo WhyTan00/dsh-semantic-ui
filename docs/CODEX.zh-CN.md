@@ -66,3 +66,11 @@ preview.10继续只分发同一检查核心与便携skill，不增加renderer。
 preview.11将同一1.4核心与只读MCP归档交付；归档入口的独立协议验证见 [本版回执](evidence/preview11.json)，没有全局注册或当前会话已加载声明。
 
 preview.12已把同一只读核心与有限来源检查实际归档发布，仓库外独立入口验证见 [回执](evidence/preview12/standalone-mcp.json)。正常来源绑定render仅在DSH；未修改当前Codex配置、未提供新UI资源或宣称当前对话已加载。
+
+## preview.13：初始化时提供检查工作流
+
+真实个人Codex CLI的第一次D1验收已完成：preview.12的MCP成功初始化并返回四工具目录，但模型未调用任何工具，正文还优先推荐托管；按事前预期判定失败，见 [完整首次回答](evidence/codex-cli/c1-D1-preview12.json)。不能把工具目录存在写成模型已采用，更不能由它证明正文或桌面富UI。
+
+preview.13候选将现有只读工作流放入MCP初始化的 `instructions`：先schema后check处理数值计算，有独立来源时先检查其有限语法，再对照新view。前512字符独立交代范围；来源内容绝不拼入指令。未配置来源时不宣称有来源工具，源kind/文件、事实与身份边界仍由原合同维护。实现使用MCP SDK公开ServerOptions，没有第二套模型/renderer或全局配置。官方合同见 [MCP初始化指引](https://learn.chatgpt.com/docs/extend/mcp)。指引帮助采用，并不能强制模型正确或证明D1已修好。
+
+真实验收只使用单次 `codex exec --ephemeral --ignore-user-config` 配置，显式保持原默认模型、推理和正常登录入口；read-only、禁shell/浏览器及其它MCP/apps/plugins/记忆/Goal/hooks，仅暴露本包只读工具。期望与原source先冻结，普通问题不含正确view、工具名或预期答案。JSONL、MCP原始报文与正文分别留存，后台推理请求数若未暴露则记unknown。`--ignore-user-config`不是更换账户；没有复制凭据或修改全局配置。官方入口见 [非交互模式](https://learn.chatgpt.com/docs/non-interactive-mode)。
