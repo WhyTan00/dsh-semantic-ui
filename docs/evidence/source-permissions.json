@@ -1,0 +1,751 @@
+{
+  "candidate": "0.1.0-preview.12-dev.4",
+  "baseCommit": "1aadd3577791038121f751a8ced0e2063ba18794",
+  "protocolVersion": "1.4",
+  "sourceCheckVersion": "1.0",
+  "scope": "Finite explicit permissions-zh source content; positive projection/typed claims only. Not arbitrary annotations/prose, real-world permissions or independent human authentication.",
+  "source": {
+    "path": "docs/evidence/natural/r9-A3.json",
+    "sha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+    "jsonPointer": "/question"
+  },
+  "expectations": {
+    "path": "fixtures/source-permissions-expectations.json",
+    "sha256": "c9b6bd0b08a01d486cfb4d886cb24353d99048f64b2f1cb7167c70154a6d3724",
+    "frozenBeforeImplementation": true
+  },
+  "sourceFacts": {
+    "context": "虚构服务",
+    "nodes": [
+      "客户端",
+      "Gateway",
+      "Search",
+      "Account",
+      "Index",
+      "Store"
+    ],
+    "accesses": [
+      {
+        "from": "客户端",
+        "to": "Gateway",
+        "mode": "access",
+        "spans": [
+          {
+            "textByteStart": 18,
+            "textByteEnd": 47
+          }
+        ]
+      },
+      {
+        "from": "Gateway",
+        "to": "Search",
+        "mode": "access",
+        "spans": [
+          {
+            "textByteStart": 50,
+            "textByteEnd": 83
+          }
+        ]
+      },
+      {
+        "from": "Gateway",
+        "to": "Account",
+        "mode": "access",
+        "spans": [
+          {
+            "textByteStart": 50,
+            "textByteEnd": 83
+          }
+        ]
+      },
+      {
+        "from": "Search",
+        "to": "Index",
+        "mode": "read-only",
+        "spans": [
+          {
+            "textByteStart": 86,
+            "textByteEnd": 105
+          }
+        ]
+      },
+      {
+        "from": "Account",
+        "to": "Store",
+        "mode": "read-write",
+        "spans": [
+          {
+            "textByteStart": 108,
+            "textByteEnd": 128
+          }
+        ]
+      }
+    ],
+    "prohibitions": [
+      {
+        "from": "Search",
+        "to": "Store",
+        "spans": [
+          {
+            "textByteStart": 131,
+            "textByteEnd": 157
+          }
+        ]
+      }
+    ],
+    "onlyTargets": [
+      {
+        "from": "客户端",
+        "targets": [
+          "Gateway"
+        ],
+        "spans": [
+          {
+            "textByteStart": 18,
+            "textByteEnd": 47
+          }
+        ]
+      }
+    ]
+  },
+  "examples": {
+    "execution": "Offline pure file core results, not additional model runs",
+    "originalView": {
+      "comparison": {
+        "status": "not-assessed",
+        "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+        "nodeChecks": [
+          {
+            "nodeId": "client",
+            "label": "Client",
+            "status": "not-assessed"
+          },
+          {
+            "nodeId": "gateway",
+            "label": "Gateway",
+            "status": "matched"
+          },
+          {
+            "nodeId": "search",
+            "label": "Search",
+            "status": "matched"
+          },
+          {
+            "nodeId": "account",
+            "label": "Account",
+            "status": "matched"
+          },
+          {
+            "nodeId": "index",
+            "label": "Index",
+            "status": "matched"
+          },
+          {
+            "nodeId": "store",
+            "label": "Store",
+            "status": "matched"
+          }
+        ],
+        "edgeChecks": [
+          {
+            "edgeId": "e-client-gw",
+            "from": "Client",
+            "to": "Gateway",
+            "status": "not-assessed"
+          },
+          {
+            "edgeId": "e-gw-search",
+            "from": "Gateway",
+            "to": "Search",
+            "status": "matched",
+            "expectedMode": "access",
+            "sourceSpans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "edgeId": "e-gw-account",
+            "from": "Gateway",
+            "to": "Account",
+            "status": "matched",
+            "expectedMode": "access",
+            "sourceSpans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "edgeId": "e-search-index",
+            "from": "Search",
+            "to": "Index",
+            "status": "matched",
+            "expectedMode": "read-only",
+            "sourceSpans": [
+              {
+                "textByteStart": 86,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "edgeId": "e-account-store",
+            "from": "Account",
+            "to": "Store",
+            "status": "matched",
+            "expectedMode": "read-write",
+            "sourceSpans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 128
+              }
+            ]
+          }
+        ],
+        "viewAnnotations": "not-verified"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_BINDING_UNVERIFIED",
+          "path": "$.view.payload.nodes.0.label",
+          "reason": "No unique exact source label establishes this correspondence. Translation/aliases are not inferred; this does not prove the entity or its relations false."
+        },
+        {
+          "code": "SOURCE_NODE_MISSING",
+          "path": "$.view.payload.nodes",
+          "reason": "Source entity \"客户端\" is not represented by an exact label."
+        },
+        {
+          "code": "SOURCE_ACCESS_MISSING",
+          "path": "$.view.payload.edges",
+          "reason": "The declared positive access \"客户端\" → \"Gateway\" is missing or unbound."
+        }
+      ],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": true,
+        "characters": 897
+      },
+      "note": "Client literal binding is unverified in this new path; it is not a retrospective cause assigned to the old natural failure."
+    },
+    "explicitProjectionFixture": {
+      "comparison": {
+        "status": "matched",
+        "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+        "nodeChecks": [
+          {
+            "nodeId": "client",
+            "label": "客户端",
+            "status": "matched"
+          },
+          {
+            "nodeId": "gateway",
+            "label": "Gateway",
+            "status": "matched"
+          },
+          {
+            "nodeId": "search",
+            "label": "Search",
+            "status": "matched"
+          },
+          {
+            "nodeId": "account",
+            "label": "Account",
+            "status": "matched"
+          },
+          {
+            "nodeId": "index",
+            "label": "Index",
+            "status": "matched"
+          },
+          {
+            "nodeId": "store",
+            "label": "Store",
+            "status": "matched"
+          }
+        ],
+        "edgeChecks": [
+          {
+            "edgeId": "e-client-gw",
+            "from": "客户端",
+            "to": "Gateway",
+            "status": "matched",
+            "expectedMode": "access",
+            "sourceSpans": [
+              {
+                "textByteStart": 18,
+                "textByteEnd": 47
+              }
+            ]
+          },
+          {
+            "edgeId": "e-gw-search",
+            "from": "Gateway",
+            "to": "Search",
+            "status": "matched",
+            "expectedMode": "access",
+            "sourceSpans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "edgeId": "e-gw-account",
+            "from": "Gateway",
+            "to": "Account",
+            "status": "matched",
+            "expectedMode": "access",
+            "sourceSpans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "edgeId": "e-search-index",
+            "from": "Search",
+            "to": "Index",
+            "status": "matched",
+            "expectedMode": "read-only",
+            "sourceSpans": [
+              {
+                "textByteStart": 86,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "edgeId": "e-account-store",
+            "from": "Account",
+            "to": "Store",
+            "status": "matched",
+            "expectedMode": "read-write",
+            "sourceSpans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 128
+              }
+            ]
+          }
+        ],
+        "viewAnnotations": "not-verified"
+      },
+      "claimChecks": [
+        {
+          "index": 0,
+          "kind": "write",
+          "from": "Search",
+          "to": "Index",
+          "expected": false,
+          "actual": false,
+          "status": "supported",
+          "sourceSpans": [
+            {
+              "textByteStart": 86,
+              "textByteEnd": 105
+            }
+          ]
+        },
+        {
+          "index": 1,
+          "kind": "access",
+          "from": "Search",
+          "to": "Store",
+          "expected": false,
+          "actual": false,
+          "status": "supported",
+          "sourceSpans": [
+            {
+              "textByteStart": 131,
+              "textByteEnd": 157
+            }
+          ]
+        }
+      ],
+      "naturalModelPass": false
+    },
+    "sourceOnlyCanonicalExplanation": {
+      "status": "available",
+      "basis": "bounded explicit source declarations; no global or causal inference",
+      "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+    },
+    "counterexamples": [
+      {
+        "name": "missing-prohibition-does-not-mean-denial",
+        "explicitlyAuthoredSource": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store。请帮我理解边界与耦合。",
+        "textSha256": "9bd891e9b4182f2d714a51e5784e12d08075e631b8c986ca8bb4eb51fb27e1aa",
+        "claimChecks": [
+          {
+            "index": 0,
+            "kind": "access",
+            "from": "Search",
+            "to": "Store",
+            "expected": null,
+            "actual": false,
+            "status": "not-assessed",
+            "sourceSpans": []
+          }
+        ],
+        "naturalModelPass": false
+      },
+      {
+        "name": "ordinary-target-list-does-not-mean-only",
+        "explicitlyAuthoredSource": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Search 访问 Store。请帮我理解边界与耦合。",
+        "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "claimChecks": [
+          {
+            "index": 0,
+            "kind": "only-targets",
+            "from": "Gateway",
+            "expected": null,
+            "actual": [
+              "Search",
+              "Account"
+            ],
+            "status": "not-assessed",
+            "sourceSpans": []
+          }
+        ],
+        "naturalModelPass": false
+      },
+      {
+        "name": "reverse-prohibition-does-not-deny-original-direction",
+        "explicitlyAuthoredSource": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Store 访问 Search。请帮我理解边界与耦合。",
+        "textSha256": "12b4c5d97c5ceac0326943613921c8cedc215562b13def4e99276710eb934c19",
+        "claimChecks": [
+          {
+            "index": 0,
+            "kind": "access",
+            "from": "Search",
+            "to": "Store",
+            "expected": null,
+            "actual": false,
+            "status": "not-assessed",
+            "sourceSpans": []
+          },
+          {
+            "index": 1,
+            "kind": "access",
+            "from": "Store",
+            "to": "Search",
+            "expected": false,
+            "actual": false,
+            "status": "supported",
+            "sourceSpans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 157
+              }
+            ]
+          }
+        ],
+        "naturalModelPass": false
+      },
+      {
+        "name": "another-pair-can-write",
+        "explicitlyAuthoredSource": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Search 访问 Store；Search读写Archive。请帮我理解边界与耦合。",
+        "textSha256": "43d69ab3573621f9217b1bc8fb8f8fe2e3e45348734d5cdae3fda215efbb1097",
+        "claimChecks": [
+          {
+            "index": 0,
+            "kind": "write",
+            "from": "Search",
+            "to": "Index",
+            "expected": false,
+            "actual": false,
+            "status": "supported",
+            "sourceSpans": [
+              {
+                "textByteStart": 86,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "index": 1,
+            "kind": "write",
+            "from": "Search",
+            "to": "Archive",
+            "expected": true,
+            "actual": true,
+            "status": "supported",
+            "sourceSpans": [
+              {
+                "textByteStart": 160,
+                "textByteEnd": 179
+              }
+            ]
+          }
+        ],
+        "naturalModelPass": false
+      }
+    ]
+  },
+  "verification": {
+    "newUnitTests": 13,
+    "compiledMcpTests": 2,
+    "oldModeRegression": {
+      "tests": 2,
+      "skippedUnrelated": 5,
+      "modes": [
+        "arrows",
+        "decision-zh"
+      ]
+    },
+    "currentInputGuardRegression": {
+      "tests": 2,
+      "skippedUnrelated": 4
+    },
+    "typecheck": "passed",
+    "build": "passed",
+    "nativePtc": [
+      {
+        "mode": "native",
+        "passed": 4,
+        "pageErrors": [],
+        "cases": [
+          {
+            "kind": "native-permissions-source-only",
+            "comparison": "not-requested",
+            "canonicalStatus": "available",
+            "issues": [],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "89da4d2349a363e4e563af7de031b19803772373120d5aad973848749732c3a4",
+              "messageIdSha256": "8cbe55d260611b28b20998e773c4b91d7d8706d9768d6eadbf7890421902601b",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "native-permissions-projection",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "103bb14d63e5af022bd987ac3936361097defad091399dbf5b612d7f80f508e9",
+              "messageIdSha256": "9b06016dcbd76bfa53a7e61ed423d55368254aafa840b845096ce7c684a4c099",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "native-permissions-negative",
+            "comparison": "mismatch",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_ACCESS_MODE",
+              "SOURCE_ACCESS_PROHIBITED"
+            ],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "d22f9d406a263bf913306f84b8446275946d925b863a1e4769a6791b7fe40a94",
+              "messageIdSha256": "f0f0062b14e20acba428b550cd49d40086baca47801055a2def1a6231363044d",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "native-permissions-unsupported",
+            "comparison": "not-assessed",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_REFERENCE"
+            ],
+            "textSha256": "0aef597885eca83144faae809f9468282b20429a04a36d80c3e1a87feb093a67",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "b20a4828c967fe2c17326bda587b8fd6be40c46df2b320050917ca013d8031f3",
+              "messageIdSha256": "fcf5bf7be1bafe39fe0be3d60ed0e52d4cf905a1186ea61276dd322e03939611",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          }
+        ]
+      },
+      {
+        "mode": "ptc",
+        "passed": 4,
+        "pageErrors": [],
+        "cases": [
+          {
+            "kind": "ptc-permissions-source-only",
+            "comparison": "not-requested",
+            "canonicalStatus": "available",
+            "issues": [],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "a02c4ff416cd781a6762d066215d27d33e40b940f7c11ad68d3ff0f741ca42db",
+              "messageIdSha256": "34594cc8c39596b1306fc847c06f82bde827eee2d0ac52bbf3336e12970a0957",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "ptc-permissions-projection",
+            "comparison": "matched",
+            "canonicalStatus": "available",
+            "issues": [],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "59bc99adbd86416fa323207410a87646bebaea4878c806b530d63e36df74ce22",
+              "messageIdSha256": "4b09945813042ae266e9431d5f09b36cdd4720e6b48a0ec76689cc5bf043ebdc",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "ptc-permissions-negative",
+            "comparison": "mismatch",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_ACCESS_MODE",
+              "SOURCE_ACCESS_PROHIBITED"
+            ],
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "6f08b227a92cbc8e4959a3e0634812f8e09b2371a5fb11ed2258b01fcb090b65",
+              "messageIdSha256": "e312658668f0edb03acdcc139d7d6084e1d788e37662cd5c5ed4536907394708",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          },
+          {
+            "kind": "ptc-permissions-unsupported",
+            "comparison": "not-assessed",
+            "canonicalStatus": "withheld",
+            "issues": [
+              "SOURCE_REFERENCE"
+            ],
+            "textSha256": "0aef597885eca83144faae809f9468282b20429a04a36d80c3e1a87feb093a67",
+            "identityVerified": false,
+            "sourceFactsVerified": false,
+            "hostContext": {
+              "sessionIdSha256": "4dcafd03abea564620181bef21bb203ace490c1bae7ac31403815e2f860850ee",
+              "messageIdSha256": "bbf29745ff1a3ebd88dfddd26fe575a967ad98db3cfa005c6ae300e78ee3afee",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "sessionMatchesCreatedSession": true
+            },
+            "promptAccepted": true
+          }
+        ]
+      }
+    ],
+    "mcpProcessCwdOutsideRepository": true,
+    "hostEntry": "Existing isolated DSH0.2.1-rc.2 using normal session/prompt, actual tool dispatch and final dist/host.js; local deterministic transport",
+    "realModelRequestsAdded": 0,
+    "archiveInstallation": false,
+    "currentCodexClientLoaded": false,
+    "linuxCi": "not run"
+  },
+  "builtEntrypoints": {
+    "dist/host.js": "f4ccf2f2c24d8b1932932fa5572bbf9ad7c9e9e2c15d040a29120744b8cf3289",
+    "dist/core.js": "cb4e8eddcb5e6f90a5485d69a795133ca9a41ad10800ff72405c03958a67ed3b",
+    "dist/mcp.js": "9d2a0859e949f06c4a0040076d9c22dac6b620e2f75c34830ead525aee74ee30"
+  },
+  "sourceSha256": {
+    "src/source-permissions.ts": "2f639cf9e19904f973ceb822e2c647e193fad93f65b1ba804afa79e0e315c5e1",
+    "src/source-graph.ts": "d083b63160d9e4b7f8a37f284c5a15dc3681535a6b6ee77330310264c8cae413",
+    "src/source-input.ts": "59df0d70767fc0d339b559b4acb2a0fd3f9b98f9cf6415e9404a93f871dbad60",
+    "src/dsh/source.ts": "87832b17f05021c2dd95c31a173c969db34056333cb0e9e3b27313761c978d0b",
+    "src/dsh/host.ts": "3f6b78a5dbfd5917c2aceb9c08c2647e1b5a5e42e0b784f22744d68b82acc462",
+    "src/mcp.ts": "1e398339dd4065be73ab5537a43b8917a53071256d2afa419f9ea763343a091b",
+    "tests/source-permissions.test.ts": "e968bbfb4b19b22819bb76844b17a9e2c2a3e13e4774fc3e8606b45069123d33",
+    "tests/source-permissions-mcp.test.ts": "74bff77d1e99bfbffddc85d96eeb62ba7389baee0d0d5e303f57051228f223be",
+    "tests/source-host-browser.mjs": "466db64e2a8ab66fa37f6188b6c58ab96760ca0f731427db9e86516a52fe417b",
+    "fixtures/source-permissions-expectations.json": "c9b6bd0b08a01d486cfb4d886cb24353d99048f64b2f1cb7167c70154a6d3724"
+  },
+  "developmentCorrections": [
+    "Review found that negation/modality could otherwise be consumed as part of an entity label; reserved-name rejection and whole-source counterexamples were tightened before the accepted build."
+  ],
+  "preserved": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "arbitraryProseVerified": false,
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "rawChanged": false,
+    "oldProtocolMigration": false,
+    "newRelease": false,
+    "newArchive": false,
+    "newInstall": false,
+    "newCi": false,
+    "globalConfigurationChanges": false
+  },
+  "cleanup": {
+    "isolatedHarnessExited": true,
+    "taskHostAndFixturePortsClosed": true
+  }
+}

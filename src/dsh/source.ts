@@ -4,6 +4,7 @@ import type {Context} from '@deepseek-ai/cordis';
 import type {ToolExecution} from '@deepseek-ai/dsh-tools';
 import type {ProjectionDefinition} from '@deepseek-ai/dsh-session-projection';
 import {SOURCE_LIMITS,type SourceSnapshot} from '../source-graph';
+import {permissionsSourcePrefix} from '../source-permissions';
 
 const candidateSchema=z.strictObject({id:z.string().min(1).max(160),seq:z.number().int().nonnegative(),text:z.string().max(SOURCE_LIMITS.excerptBytes)});
 export const currentSourceSchema=z.strictObject({sessionId:z.string(),inheritedRemaining:z.number().int().nonnegative(),open:z.boolean(),turn:z.number().int().nullable(),startSeq:z.number().int().nullable(),candidate:candidateSchema.nullable(),userCount:z.number().int().min(0).max(2),excludedSyntheticContexts:z.number().int().nonnegative(),blocked:z.string().nullable(),unknownProducerKinds:z.array(z.string().max(80)).max(4)});
@@ -44,7 +45,7 @@ export function snapshotCurrentSource(state:CurrentSourceState|undefined,boundar
  if(state.userCount!==1||!state.candidate)return unavailable(state.excludedSyntheticContexts?'HOST_SOURCE_SYNTHETIC_ONLY':'HOST_SOURCE_NO_USER');
  const c=state.candidate;if(c.seq<=state.startSeq)return unavailable('HOST_SOURCE_NOT_CURRENT');
  const sha=createHash('sha256').update(c.text).digest('hex'),textBytes=Buffer.byteLength(c.text);
- const snapshot:SourceSnapshot={kind:'decision-zh',textSha256:sha,excerptSha256:sha,textBytes,textByteStart:0,textByteEnd:textBytes,excerpt:c.text,hostContext:{sessionId,turn:state.turn!,turnStartSeq:state.startSeq,messageId:c.id,messageSeq:c.seq,producerSourceKind:'user',inherited:false,excludedSyntheticContexts:state.excludedSyntheticContexts}};
+ const snapshot:SourceSnapshot={kind:permissionsSourcePrefix(c.text)?'permissions-zh':'decision-zh',textSha256:sha,excerptSha256:sha,textBytes,textByteStart:0,textByteEnd:textBytes,excerpt:c.text,hostContext:{sessionId,turn:state.turn!,turnStartSeq:state.startSeq,messageId:c.id,messageSeq:c.seq,producerSourceKind:'user',inherited:false,excludedSyntheticContexts:state.excludedSyntheticContexts}};
  return {ok:true as const,snapshot};
 }
 export function currentHostSource(ctx:Context,exec:Pick<ToolExecution,'agent'>){

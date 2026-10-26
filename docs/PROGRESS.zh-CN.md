@@ -1,5 +1,7 @@
 # 实际进度
 
+源码/构建候选 `0.1.0-preview.12-dev.4` 增加 [A3访问/权限来源核对](SOURCE-PERMISSIONS.zh-CN.md)：完整有限语法解析正向访问、方向性禁止、pair-bound只读/读写与subject-local只能目标，提供出处与有据说明；不从注释/角色/别名生真值，不用缺边证明禁止或全局独占。正向投影和typed claims分开核对，原Client翻译与任意正文仍未核。新Native/PTC各4项及必要单元/MCP/旧模式窄回归通过，具体命令/编译身份见 [证据](evidence/source-permissions.json)。零新模型请求，原0/6/18与raw不变，未新归档/Release/安装/CI或当前Codex加载。
+
 源码/构建候选 `0.1.0-preview.12-dev.3` 仅修正 `sourceMetadata.scope` 按来源kind给出准确文案：decision-zh为有限双方案条件/责任语法，缺省/arrows保持原字面箭头范围。上层比较返回原已有正确覆盖，本段不改选源/判定/协议；文件与宿主投影夹具的叶子结果4项、新编译MCP的两种文件模式2项及类型/构建通过。没有新真实宿主或模型运行，dev.2的Native/PTC12项仍只对应旧字节；身份/自由正文未认证，原0/6/18及raw不变。见 [窄检查证据](evidence/source-scope.json)，未新CI/Release/归档/安装。
 
 源码/构建候选 `0.1.0-preview.12-dev.2` 新增 [DSH当前输入来源适配](HOST-SOURCE.zh-CN.md)：公开host-only投影读取当前own-turn单一user-source文本，实际Session/turn/message标识与文本摘要独立列出，合成上下文排除，未知/歧义/历史/非文本/超限等拒绝；工具参数不能换源。Native/PTC各6项、定向单元/回放12项、文件回归4项与最终编译MCP回归2项通过，类型/构建通过。仅宿主收到的内容，不是独立真人身份、任意正文或世界事实认证；原六题0/6/18不变，没有新模型调用/归档/Release/当前Codex加载。见 [证据](evidence/host-source.json)。

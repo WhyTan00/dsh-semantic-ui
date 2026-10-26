@@ -16,12 +16,13 @@ import {matchTemplate,newPresentation} from '../templates';
 import type {Presentation} from '../theme';
 import {currentHostSource,currentSourceProjection} from './source';
 import {checkSourceDecision} from '../source-decision';
+import {checkSourcePermissions} from '../source-permissions';
 export const name='dsh-semantic-ui';
 export interface Config {generation:boolean}
 export const Config:Schema<Config>=Schema.object({generation:Schema.boolean().default(true)});
 export const inject=['tools','systemPrompt','sessionProjections'];
 export const parameters={
-  action:{type:'string',enum:['catalog','describe','templates','template','check','source-check','render'],required:true,description:'Discover capabilities/fields, inspect templates, check current host source or deliver data. source-check uses only the current own-turn user-source text, never a source supplied as arguments. Identity/prose remain unverified.'},
+  action:{type:'string',enum:['catalog','describe','templates','template','check','source-check','render'],required:true,description:'Discover fields/templates, check current host source or deliver data. source-check uses the current own-turn user-source text, selecting finite decision-zh or permissions-zh by its actual syntax; arguments cannot supply source/kind/identity. Prose remains unverified.'},
   component:{type:'string',enum:['ArchitectureExplorer','DecisionExplorer','DataChart'],description:'Required for describe.'},
   view:{type:'object',additionalProperties:true,description:'Required for check or render. Versioned view with component payload; get fields via describe first.'},
   mapping:{type:'object',additionalProperties:true,description:'For source-check of DecisionExplorer: explicit dimensions/inputs source coordinates; inspect the source first without view. Does not provide source facts.'},
@@ -57,9 +58,10 @@ export function apply(ctx:Context,config:Config={generation:true}){
     if(args.action==='source-check'){
       if(Object.entries(args).some(([k,v])=>v!==undefined&&!['action','view','mapping','claims','prose'].includes(k)))return {status:'source-unavailable',sourceFactsVerified:false,identityVerified:false,issues:[{code:'HOST_SOURCE_OVERRIDE',path:'$',reason:'Source text, file, mode, message IDs and authority cannot be supplied or replaced through tool arguments.'}]};
       const source=currentHostSource(ctx,exec);if(!source.ok)return source.result;
-      return checkSourceDecision(source.snapshot,{...(args.view!==undefined?{view:args.view}:{}),...(args.mapping!==undefined?{mapping:args.mapping}:{}),...(args.claims!==undefined?{claims:args.claims}:{}),...(args.prose!==undefined?{prose:args.prose}:{})});
+      const check=source.snapshot.kind==='permissions-zh'?checkSourcePermissions:checkSourceDecision;
+      return check(source.snapshot,{...(args.view!==undefined?{view:args.view}:{}),...(args.mapping!==undefined?{mapping:args.mapping}:{}),...(args.claims!==undefined?{claims:args.claims}:{}),...(args.prose!==undefined?{prose:args.prose}:{})});
     }
-    if(args.action==='catalog')return {...capabilityCatalog(),personalLibraryAvailable:!!library(),hostSourceComparison:{action:'source-check',kind:'decision-zh',source:'single current own-turn user-source text via public projection',identityVerified:false}};
+    if(args.action==='catalog')return {...capabilityCatalog(),personalLibraryAvailable:!!library(),hostSourceComparison:{action:'source-check',kinds:['decision-zh','permissions-zh'],source:'single current own-turn user-source text via public projection; finite syntax chooses grammar',identityVerified:false}};
     if(args.action==='templates'||args.action==='template'){
       const store=library();if(!store)throw Error('LIBRARY_UNAVAILABLE: Personal storage is not ready. Retry later.');
       if(args.action==='templates')return {templates:store.snapshot().templates.map(t=>{const head=t.versions.find(v=>v.version===t.head)!;return {id:t.id,version:t.head,name:head.name,component:head.definition.component};}),usage:'Inspect action=template with templateId; supply fresh full view, templateId and exact templateVersion to render. Existing data, conclusions and rules are never reused.'};

@@ -4,6 +4,8 @@
 
 后续 `0.1.0-preview.12-dev.3` 仅修正共用元数据叶子的 `scope` 文案，按 `decision-zh` 与缺省/arrows区分；比较返回层原已有正确覆盖。文件/宿主投影夹具的叶子结果和新编译MCP入口见 [窄检查](evidence/source-scope.json)。下文实际Native/PTC各6项仍对应dev.2及其原构建摘要，不宣称旧run测试了新字节。
 
+dev.4复用同一选源门禁，另支持 [permissions-zh](SOURCE-PERMISSIONS.zh-CN.md)：实际文本以有限场景 `中，` 开头选择访问/权限解析，其它仍走decision-zh；参数不能选择或替换模式。新模式和实际Native/PTC各4项的证据单列，不覆盖下文dev.2矩阵。
+
 ## 正常入口
 
 在锁定的 DSH `0.2.1-rc.2` 中启用本插件，用户通过普通 `session/prompt` 发送符合已公布有限语法的比较问题。调用现有唯一工具：

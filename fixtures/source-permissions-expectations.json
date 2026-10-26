@@ -1,0 +1,16 @@
+{
+  "frozenBeforeImplementation": "2026-10-26T19:28:11.088014+00:00",
+  "source": {"path":"docs/evidence/natural/r9-A3.json","sha256":"2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481","textSha256":"05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8","jsonPointer":"/question"},
+  "accesses": [
+    {"from":"客户端","to":"Gateway","mode":"access"},
+    {"from":"Gateway","to":"Search","mode":"access"},
+    {"from":"Gateway","to":"Account","mode":"access"},
+    {"from":"Search","to":"Index","mode":"read-only"},
+    {"from":"Account","to":"Store","mode":"read-write"}
+  ],
+  "prohibitions": [{"from":"Search","to":"Store"}],
+  "onlyTargets": [{"from":"客户端","targets":["Gateway"]}],
+  "boundaries": ["Read/write applies to a specific subject-target pair; a second legal accessor is not contradictory.","Only-targets restricts the named subject, not all callers or a global entry point.","Missing relations are unknown unless an explicit prohibition or subject-local only-targets rule applies.","The old Client label is not a verified alias of 客户端; a new finite binding rule is not a retrospective explanation of the original failure.","Arbitrary annotations, exclusivity, failure propagation and prose remain unverified."],
+  "counterexamples": ["rename entities and IDs, reorder clauses and view rows","reverse an access or prohibition","swap allowed and forbidden","swap read-only and read-write","add another legal accessor/writer","omit a condition, use contradictory access or unclear pronouns","unsupported causal/exclusive claims and request-side source replacement"],
+  "preserve": {"sourceFactsVerified":false,"identityVerified":false,"originalRun9":{"pass":0,"fail":6,"requests":18},"newModelRequests":0,"rawChanged":false}
+}

@@ -3,7 +3,7 @@ import {open} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {SOURCE_LIMITS,type SourceSnapshot} from './source-graph';
 
-export interface SourceFileOptions{file:string;jsonPointer?:string;excerpt?:string;kind?:'arrows'|'decision-zh'}
+export interface SourceFileOptions{file:string;jsonPointer?:string;excerpt?:string;kind?:SourceSnapshot['kind']}
 const sha=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
 /** One explicit local file, once, before accepting tool requests. Never reloads. */
 export async function readSourceSnapshot(options:SourceFileOptions):Promise<SourceSnapshot>{
@@ -51,6 +51,6 @@ export function sourceOptions(argv:string[]):SourceFileOptions|undefined{
  for(let i=0;i<argv.length;i+=2){const flag=argv[i],value=argv[i+1];if(!['--source-file','--source-json-pointer','--source-excerpt','--source-kind'].includes(flag)||value===undefined||flags.has(flag))throw Error('SOURCE_CONFIG: Use one --source-file with optional --source-json-pointer, --source-excerpt and --source-kind; unknown or duplicate options are rejected.');flags.set(flag,value);}
  const file=flags.get('--source-file');
  if(!file){if(flags.size)throw Error('SOURCE_CONFIG: Source selection requires an explicit --source-file.');return undefined;}
- const kind=flags.get('--source-kind');if(kind!==undefined&&kind!=='arrows'&&kind!=='decision-zh')throw Error('SOURCE_CONFIG: Source kind must be arrows or decision-zh.');
+ const kind=flags.get('--source-kind');if(kind!==undefined&&kind!=='arrows'&&kind!=='decision-zh'&&kind!=='permissions-zh')throw Error('SOURCE_CONFIG: Source kind must be arrows, decision-zh or permissions-zh.');
  return {file,...(flags.has('--source-json-pointer')?{jsonPointer:flags.get('--source-json-pointer')}:{}),...(flags.has('--source-excerpt')?{excerpt:flags.get('--source-excerpt')}: {}),...(kind?{kind}: {})};
 }
