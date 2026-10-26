@@ -5,6 +5,7 @@ export const SOURCE_LIMITS={fileBytes:1_048_576,textBytes:32768,excerptBytes:163
 export interface SourceSnapshot{
  documentSha256:string;textSha256:string;excerptSha256:string;jsonPointer:string|null;
  textBytes:number;textByteStart:number;textByteEnd:number;excerpt:string;
+ kind?:'arrows'|'decision-zh';
 }
 export interface SourceIssue{code:string;path:string;reason:string}
 type Span={textByteStart:number;textByteEnd:number};
@@ -43,7 +44,7 @@ export function parseExplicitRelations(text:string,offset=0):{status:'ready';nod
  return {status:'ready',nodes:[...nodes],relations:[...relations.values()]};
 }
 
-function sourceMetadata(s:SourceSnapshot){return {
+export function sourceMetadata(s:SourceSnapshot){return {
  input:'caller-configured startup file snapshot; separate from tool arguments',
  documentSha256:s.documentSha256,textSha256:s.textSha256,excerptSha256:s.excerptSha256,jsonPointer:s.jsonPointer,
  selection:{textUTF8ByteStart:s.textByteStart,textUTF8ByteEnd:s.textByteEnd,textUTF8Bytes:s.textBytes},

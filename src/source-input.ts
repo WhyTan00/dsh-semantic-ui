@@ -3,7 +3,7 @@ import {open} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
 import {SOURCE_LIMITS,type SourceSnapshot} from './source-graph';
 
-export interface SourceFileOptions{file:string;jsonPointer?:string;excerpt?:string}
+export interface SourceFileOptions{file:string;jsonPointer?:string;excerpt?:string;kind?:'arrows'|'decision-zh'}
 const sha=(value:Uint8Array|string)=>createHash('sha256').update(value).digest('hex');
 /** One explicit local file, once, before accepting tool requests. Never reloads. */
 export async function readSourceSnapshot(options:SourceFileOptions):Promise<SourceSnapshot>{
@@ -39,7 +39,7 @@ export async function readSourceSnapshot(options:SourceFileOptions):Promise<Sour
   if(index<0)throw Error('SOURCE_EXCERPT_MISSING');
   if(value.indexOf(excerpt,index+1)>=0)throw Error('SOURCE_EXCERPT_AMBIGUOUS');
   const textByteStart=Buffer.byteLength(value.slice(0,index));
-  return {documentSha256:sha(document),textSha256:sha(value),excerptSha256:sha(excerpt),jsonPointer:options.jsonPointer??null,textBytes,textByteStart,textByteEnd:textByteStart+Buffer.byteLength(excerpt),excerpt};
+  return {documentSha256:sha(document),textSha256:sha(value),excerptSha256:sha(excerpt),jsonPointer:options.jsonPointer??null,textBytes,textByteStart,textByteEnd:textByteStart+Buffer.byteLength(excerpt),excerpt,...(options.kind?{kind:options.kind}:{})};
  }catch(error){
   const code=error instanceof Error&&/^SOURCE_[A-Z_]+$/u.test(error.message)?error.message:'SOURCE_FILE_UNAVAILABLE';
   throw Error(code+': The configured local source could not be captured. No fallback file or source from tool arguments was used.');
@@ -48,8 +48,9 @@ export async function readSourceSnapshot(options:SourceFileOptions):Promise<Sour
 
 export function sourceOptions(argv:string[]):SourceFileOptions|undefined{
  const flags=new Map<string,string>();
- for(let i=0;i<argv.length;i+=2){const flag=argv[i],value=argv[i+1];if(!['--source-file','--source-json-pointer','--source-excerpt'].includes(flag)||value===undefined||flags.has(flag))throw Error('SOURCE_CONFIG: Use one --source-file with optional --source-json-pointer and --source-excerpt; unknown or duplicate options are rejected.');flags.set(flag,value);}
+ for(let i=0;i<argv.length;i+=2){const flag=argv[i],value=argv[i+1];if(!['--source-file','--source-json-pointer','--source-excerpt','--source-kind'].includes(flag)||value===undefined||flags.has(flag))throw Error('SOURCE_CONFIG: Use one --source-file with optional --source-json-pointer, --source-excerpt and --source-kind; unknown or duplicate options are rejected.');flags.set(flag,value);}
  const file=flags.get('--source-file');
  if(!file){if(flags.size)throw Error('SOURCE_CONFIG: Source selection requires an explicit --source-file.');return undefined;}
- return {file,...(flags.has('--source-json-pointer')?{jsonPointer:flags.get('--source-json-pointer')}:{}),...(flags.has('--source-excerpt')?{excerpt:flags.get('--source-excerpt')}: {})};
+ const kind=flags.get('--source-kind');if(kind!==undefined&&kind!=='arrows'&&kind!=='decision-zh')throw Error('SOURCE_CONFIG: Source kind must be arrows or decision-zh.');
+ return {file,...(flags.has('--source-json-pointer')?{jsonPointer:flags.get('--source-json-pointer')}:{}),...(flags.has('--source-excerpt')?{excerpt:flags.get('--source-excerpt')}: {}),...(kind?{kind}: {})};
 }

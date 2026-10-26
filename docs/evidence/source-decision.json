@@ -1,0 +1,575 @@
+{
+  "date": "2026-10-27",
+  "version": "0.1.0-preview.12-dev.1",
+  "protocolVersion": "1.4",
+  "sourceCheckKind": "decision-zh",
+  "sourceCheckVersion": "1.0",
+  "sourceBaseCommit": "7c7aea8fd1220b103dc3bf4c016f7d47588de95b",
+  "sourceContentSha256": {
+    "src/source-decision.ts": "96adf60b337938b467d145a1fb4ba2eb3263f36e4661d0f8b12020df0cd74ac8",
+    "src/source-input.ts": "d1b6300084f51c679ce53fc4e574cf7a08fbd4e9bebbffe38baa6d254d02db9f",
+    "src/source-graph.ts": "b1df08212c2c89d6ff9549e2876189c2e30040e5462faa99ff3c2d5eae705b75",
+    "src/mcp.ts": "9b44156bc9ca5e408e4366dfe53abcfe3acb0a29a452b4649251b78d67e779dc",
+    "src/mcp-main.ts": "a9009503aabdd5725b17838cb11ee36c09e43bee8dbac2b4b0bab117b5740b98",
+    "src/core.ts": "9a83c3cf4f7ffd612c820e06ed73f2d85d079edf36e3f00d288c24ed31ffff86"
+  },
+  "independentExpectations": "fixtures/source-decision-expectations.json",
+  "source": {
+    "path": "docs/evidence/natural/r9-D1.json",
+    "pointer": "/question",
+    "sha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+    "sourceIdentityVerified": false
+  },
+  "sourceFactsVerified": false,
+  "sourceAuthorshipVerified": false,
+  "arbitraryProseVerified": false,
+  "sample": {
+    "evaluation": "offline pure core on retained source; actual stdio validation recorded separately",
+    "sourceDecision": {
+      "options": [
+        "\u6258\u7ba1\u5e73\u53f0",
+        "\u865a\u62df\u673a"
+      ],
+      "facts": [
+        {
+          "kind": "actor-updates",
+          "option": "\u6258\u7ba1\u5e73\u53f0",
+          "name": null,
+          "actor": "\u4f9b\u5e94\u5546",
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 45,
+              "textByteEnd": 69
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "\u6258\u7ba1\u5e73\u53f0",
+          "name": "\u79c1\u7f51",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 72,
+              "textByteEnd": 84
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "\u865a\u62df\u673a",
+          "name": "\u79c1\u7f51",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 87,
+              "textByteEnd": 105
+            }
+          ]
+        },
+        {
+          "kind": "maintenance-need",
+          "option": "\u865a\u62df\u673a",
+          "name": null,
+          "actor": "\u56e2\u961f",
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 108,
+              "textByteEnd": 126
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "\u6258\u7ba1\u5e73\u53f0",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "\u865a\u62df\u673a",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "\u79c1\u7f51",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 153,
+              "textByteEnd": 180
+            }
+          ]
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 42
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 45,
+            "textByteEnd": 69
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 72,
+            "textByteEnd": 84
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 87,
+            "textByteEnd": 105
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 108,
+            "textByteEnd": 126
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 129,
+            "textByteEnd": 150
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 153,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "comparison-request",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 198
+          }
+        }
+      ]
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "\u6258\u7ba1\u5e73\u53f0\uff1a\u7531\u4f9b\u5e94\u5546\u66f4\u65b0=true\uff1b\u79c1\u7f51\u652f\u6301=false\uff1b\u4ef7\u683c\u58f0\u660e\u672a\u77e5\u3002\n\u865a\u62df\u673a\uff1a\u79c1\u7f51\u652f\u6301=true\uff1b\u9700\u8981\u56e2\u961f\u7ef4\u62a4=true\uff1b\u4ef7\u683c\u58f0\u660e\u672a\u77e5\u3002\n\u6258\u7ba1\u5e73\u53f0\u662f\u5426\u9700\u8981\u56e2\u961f\u7ef4\u62a4\u672a\u58f0\u660e\uff1b\u4e0d\u80fd\u7531\u5176\u5b83\u66f4\u65b0\u8d23\u4efb\u63a8\u5b9a\u9700\u8981\u6216\u4e0d\u9700\u8981\u3002\n\u865a\u62df\u673a\u662f\u5426\u7531\u4f9b\u5e94\u5546\u66f4\u65b0\u672a\u58f0\u660e\uff0c\u4e0d\u80fd\u81ea\u52a8\u53d6\u53cd\u3002\n\u5f53\u524d\u9700\u8981\u79c1\u7f51=false\uff08\u4e0d\u636e\u6b64\u6392\u9664\u7f3a\u5c11\u8be5\u80fd\u529b\u7684\u65b9\u6848\uff09\u3002\n\u56e2\u961f\u7ef4\u62a4\u4f59\u529b\u672a\u58f0\u660e\uff0c\u4fdd\u6301\u672a\u77e5\u3002\n\u4ee5\u4e0a\u53ea\u5bf9\u5e94\u6765\u6e90\u4e2d\u7684\u6709\u9650\u58f0\u660e\uff1b\u672a\u7ed9\u53cd\u9762\u4fdd\u6301\u672a\u77e5\uff0c\u4e0d\u63d0\u4f9b\u6210\u672c\u6392\u5e8f\u3001\u63a8\u8350\u6216\u4efb\u610f\u6b63\u6587\u8ba4\u8bc1\u3002"
+    },
+    "originalFirstComparison": {
+      "comparison": {
+        "status": "mismatch",
+        "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_VALUE",
+          "path": "$.view.payload.options.1.values.vendor_managed",
+          "reason": "The value differs from the source. A missing fact remains null; a stated responsibility does not establish its opposite."
+        },
+        {
+          "code": "SOURCE_VALUE",
+          "path": "$.view.payload.options.0.values.team_maint",
+          "reason": "The value differs from the source. A missing fact remains null; a stated responsibility does not establish its opposite."
+        },
+        {
+          "code": "SOURCE_FIELD_LABEL",
+          "path": "$.mapping.dimensions.3",
+          "reason": "The literal field label does not express the selected bounded source concept; no synonym or role guess was made."
+        },
+        {
+          "code": "SOURCE_FIELD_TYPE",
+          "path": "$.mapping.dimensions.3",
+          "reason": "Boolean facts are unitless; an unknown price does not establish a currency, billing period or numeric type."
+        },
+        {
+          "code": "SOURCE_REQUIREMENT_ROLE",
+          "path": "$.view.payload.requirements.1",
+          "reason": "Source capability support pairs with need; an actor maintenance burden pairs with that actor availability via requires-availability."
+        }
+      ],
+      "fieldChecks": [
+        {
+          "optionId": "hosted",
+          "sourceOption": "\u6258\u7ba1\u5e73\u53f0",
+          "dimensionId": "private_net",
+          "sourceKind": "capability",
+          "expected": false,
+          "actual": false,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 72,
+              "textByteEnd": 84
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "vm",
+          "sourceOption": "\u865a\u62df\u673a",
+          "dimensionId": "private_net",
+          "sourceKind": "capability",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 87,
+              "textByteEnd": 105
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "\u6258\u7ba1\u5e73\u53f0",
+          "dimensionId": "vendor_managed",
+          "sourceKind": "actor-updates",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 45,
+              "textByteEnd": 69
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "vm",
+          "sourceOption": "\u865a\u62df\u673a",
+          "dimensionId": "vendor_managed",
+          "sourceKind": "actor-updates",
+          "expected": null,
+          "actual": false,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "mismatch"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "\u6258\u7ba1\u5e73\u53f0",
+          "dimensionId": "team_maint",
+          "sourceKind": "maintenance-need",
+          "expected": null,
+          "actual": false,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "mismatch"
+        },
+        {
+          "optionId": "vm",
+          "sourceOption": "\u865a\u62df\u673a",
+          "dimensionId": "team_maint",
+          "sourceKind": "maintenance-need",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 108,
+              "textByteEnd": 126
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "\u6258\u7ba1\u5e73\u53f0",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ],
+          "status": "declared-unknown"
+        },
+        {
+          "optionId": "vm",
+          "sourceOption": "\u865a\u62df\u673a",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ],
+          "status": "declared-unknown"
+        }
+      ],
+      "inputChecks": [
+        {
+          "inputId": "need_private_net",
+          "sourceKind": "capability-need",
+          "expected": false,
+          "actual": false,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 153,
+              "textByteEnd": 180
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "inputId": "team_capacity",
+          "sourceKind": "actor-available",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "unknown"
+        }
+      ],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": true,
+        "characters": 227
+      }
+    },
+    "explicitlyAuthoredAlignedFixture": {
+      "comparison": {
+        "status": "matched",
+        "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+      },
+      "computedDecision": {
+        "scope": "declared-policy-under-original-conditions",
+        "status": "no-match",
+        "strictPolicy": true,
+        "inputEffects": [
+          {
+            "inputId": "need_private_net",
+            "requirementIds": [
+              "rq-private"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          },
+          {
+            "inputId": "team_capacity",
+            "requirementIds": [
+              "rq-maint"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          }
+        ],
+        "unusedInputIds": [],
+        "requiresPolicyReview": false,
+        "preferenceMode": "withheld-pending-local-review",
+        "eligibilityOnly": true,
+        "eligibilityAssessed": true,
+        "eligibleOptionIds": [],
+        "excludedOptionIds": [],
+        "unknownFeasibilityIds": [
+          "hosted",
+          "vm"
+        ],
+        "requirements": [
+          {
+            "requirementId": "rq-private",
+            "optionId": "hosted",
+            "dimensionId": "private_net",
+            "inputId": "need_private_net",
+            "unit": null,
+            "actual": false,
+            "needed": false,
+            "relation": "supports",
+            "active": true,
+            "status": "inactive"
+          },
+          {
+            "requirementId": "rq-private",
+            "optionId": "vm",
+            "dimensionId": "private_net",
+            "inputId": "need_private_net",
+            "unit": null,
+            "actual": true,
+            "needed": false,
+            "relation": "supports",
+            "active": true,
+            "status": "inactive"
+          },
+          {
+            "requirementId": "rq-maint",
+            "optionId": "hosted",
+            "dimensionId": "team_maint",
+            "inputId": "team_capacity",
+            "unit": null,
+            "actual": null,
+            "needed": null,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "rq-maint",
+            "optionId": "vm",
+            "dimensionId": "team_maint",
+            "inputId": "team_capacity",
+            "unit": null,
+            "actual": true,
+            "needed": null,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "unknown"
+          }
+        ],
+        "unknownComparisonCells": [
+          {
+            "optionId": "hosted",
+            "dimensionId": "team_maint"
+          },
+          {
+            "optionId": "hosted",
+            "dimensionId": "price"
+          },
+          {
+            "optionId": "vm",
+            "dimensionId": "vendor_managed"
+          },
+          {
+            "optionId": "vm",
+            "dimensionId": "price"
+          }
+        ],
+        "proposalWithMissingFacts": false,
+        "resultBasis": null,
+        "sourceFactsVerified": false,
+        "recommendedOptionIds": [],
+        "matchedRuleIds": [],
+        "pendingRuleIds": [],
+        "missingInputs": [
+          {
+            "id": "team_capacity",
+            "label": "\u56e2\u961f\u6709\u7ef4\u62a4\u4f59\u529b"
+          }
+        ],
+        "activeConstraintIds": [],
+        "unknownConstraintIds": [],
+        "declaredOriginCounts": {
+          "given": 0,
+          "modelJudgment": 0
+        },
+        "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": true,
+        "characters": 227
+      },
+      "naturalModelPass": false
+    }
+  },
+  "verification": {
+    "targetedTests": 34,
+    "testFiles": 6,
+    "newSourceTests": 15,
+    "result": "passed",
+    "typecheck": "passed",
+    "build": "passed",
+    "finalBuiltEntrypoint": {
+      "path": "dist/mcp.js",
+      "sha256": "a1000ee2988453956018e87f9f1624ba98e88d68b7780cf9416f515ba5e584e2",
+      "actualJsonRpcStdioTests": 4,
+      "skippedUnrelatedTests": 3,
+      "result": "passed",
+      "entryInRepository": true,
+      "processCwdOutsideRepository": true,
+      "archiveInstallation": false,
+      "currentClientLoaded": false
+    },
+    "lastSourceOnlyRecheck": {
+      "tests": 12,
+      "result": "passed",
+      "purpose": "ID/row order and preference-only positive path"
+    },
+    "linuxCI": "not run for this development increment"
+  },
+  "developmentCorrections": [
+    "Initial policy counterexample first hit the existing INPUT_EFFECT gate; its declared hard-and-preference effect was corrected before checking the source policy.",
+    "New typed requirements are not valid 1.0/1.1, and requires-availability is not valid 1.2; tests now verify actual old contracts without migrating them.",
+    "An extra test initially assumed known actor availability resolved an unknown option burden; the existing conservative null contract remains unknown.",
+    "A test loop initially inferred string rather than the protocol literal union; type annotation corrected."
+  ],
+  "counterexamples": [
+    "original unsupported opposite facts and invented billing unit",
+    "reversed capability and true need",
+    "need false vs preference-only",
+    "explicit maintenance negation and updater/maintenance actor direction",
+    "availability true/false/unknown",
+    "missing capability/price/availability",
+    "contradiction, ambiguous actor/reference, unsupported conjunction or clause",
+    "unsupported recommendation, cost or explanation text on a boolean claim",
+    "request source/kind/authority replacement",
+    "source field/input/requirement omitted or unmapped",
+    "arbitrary entity/actor/ID and view-row-order changes"
+  ],
+  "preserved": {
+    "originalRun9": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "modelRequestsAdded": 0,
+    "oldRawChanged": false,
+    "protocolMigrations": false,
+    "defaultMcp": "three tools unchanged",
+    "oldArrowsMode": "narrow pure and final built stdio check passed",
+    "dshIndependentOriginalSource": "not implemented",
+    "humanIdentity": "unverified",
+    "newArchive": false,
+    "newRelease": false,
+    "newGlobalRegistration": false
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "frozenBeforeImplementation": "2026-10-26T18:07:16.469289+00:00",
+  "scope": "Independent expectations for a bounded source-to-decision comparison, not natural-model acceptance or author authentication.",
+  "source": {
+    "path": "docs/evidence/natural/r9-D1.json",
+    "sha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "pointer": "/question",
+    "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1"
+  },
+  "originalExpectations": [
+    "托管平台由供应商更新，私网不支持。",
+    "虚拟机支持私网，需要团队维护；负担与资源可用性是不同语义方向。",
+    "当前不需要私网，不据此排除缺少该能力的方案。",
+    "价格都未知，没有币种、月费或成本排序的来源证据。",
+    "团队维护余力未声明，不能填true或false。",
+    "供应商更新不穷尽维护分工：托管平台是否需要团队维护未给出；虚拟机是否由供应商更新也未给出，两个反面都不能自动填false。",
+    "不能认证原finalAnswer或任意自由正文，有限说明应保留出处和unknown。"
+  ],
+  "counterexamples": [
+    "改实体、责任人和输出ID后关系不变，应按真实绑定处理。",
+    "交换两边能力并把当前需求改为需要：缺能力应被当前硬要求排除。",
+    "需要/不需要维护、供应商/团队、资源可用/不可用/未知须分别处理。",
+    "偏好不是硬需求，缺能力/价格/资源字段不能补false、available或cheap。",
+    "同一支持/需求的矛盾以及不明前后者指代应拒绝或明确不支持，不可跳句。",
+    "来源之外的成本、推荐、维护能力或自由正文不能自证；请求不能替换启动来源。"
+  ],
+  "preserve": {"originalRun9Pass":0,"originalRun9Fail":6,"originalRequests":18,"sourceFactsVerified":false,"sourceIdentityVerified":false,"arbitraryProseVerified":false}
+}

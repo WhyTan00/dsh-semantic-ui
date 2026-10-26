@@ -1,6 +1,6 @@
 {
   "name": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.12-dev.0",
+  "version": "0.1.0-preview.12-dev.1",
   "description": "Bounded semantic UI for native DeepSeek Harness conversations, powered by json-render.",
   "type": "module",
   "license": "MIT",
@@ -65,7 +65,8 @@
     "docs/GROUNDING-FOLLOWUP.zh-CN.md",
     "docs/CHART-COMPARISON.zh-CN.md",
     "docs/DECLARATION-CHECKS.zh-CN.md",
-    "docs/SOURCE-CHECKS.zh-CN.md"
+    "docs/SOURCE-CHECKS.zh-CN.md",
+    "docs/SOURCE-DECISION.zh-CN.md"
   ],
   "dsh": {
     "client": {

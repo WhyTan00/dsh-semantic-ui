@@ -34,6 +34,8 @@ codex mcp remove semantic-ui-checks
 
 仅在 preview.12-dev.0 的调用者启动配置提供 `--source-file` 时，增加 `semantic_ui_source_check`：对照已固定文件片段中的字面箭头、覆盖与方向，拒绝请求侧替换来源；作者身份、自由正文与因果仍未认证。已发布 preview.11 的默认三个工具和旧归档不改变，当前 Codex 客户端加载新候选仍未验证。
 
+dev.1另提供显式 `--source-kind decision-zh` 的 [普通比较来源核对](SOURCE-DECISION.zh-CN.md)：区分能力、维护责任/资源余力、未知价格与当前条件，核对字段和有据说明。它仍是同一可选只读工具，没有新增Codex renderer、全局配置或当前会话加载声明。
+
 有可用原生可视化时，用这些确定性结果约束展示；CLI/IDE 使用相同工具返回的数据与文字。工具不会自己请求模型。`./core` 是无宿主依赖的程序入口，便于其它适配器复用。
 
 根 `plugin.json` 和 `skills/semantic-ui-checks/` 提供可分发的技能包。这个最小包只含 skill；MCP 通过上述公开 CLI 显式注册。未修改用户的全局配置，也未自动添加到共享 AI 工作区或重启桌面程序。安装到新会话后才可声称该会话已加载；当前包的协议测试与宿主实际加载是两项独立证据。
