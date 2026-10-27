@@ -1,5 +1,7 @@
 # 安装、隔离验证和回退
 
+当前可下载版本为[preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，317文件归档已在本机/Linux定向安装验收，四份资产匿名回验一致；[新证据](evidence/source-update.json)随仓库单列。18候选因真实安装失败未发行。
+
 preview.19新增[单个未知当前事实补充](SOURCE-UPDATE.zh-CN.md)：owner明确提交走正常prompt，accepted、持久新消息和新来源checkpoint分层；不明/重复只核原ID，不重发。新metadata带可选requestId，严格旧17 reader不承诺读取；旧历史仍可由18读取。最终归档验收单独记录，不回灌不可变包。
 
 本预览支持 **DSH 0.2.1-rc.2、Node 24+、pnpm**。已有其他 DSH 安装并不需要重装；使用公开发行版的准确可执行路径即可。不要修改正在运行的实例。

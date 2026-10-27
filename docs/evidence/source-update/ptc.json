@@ -1,0 +1,650 @@
+{
+  "mode": "ptc",
+  "base": {
+    "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+    "turn": 1,
+    "turnStartSeq": 6,
+    "messageId": "8a43137c-cfc9-4935-aa95-6847ab06706d",
+    "messageSeq": 10,
+    "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+    "displayId": "condition-source-before",
+    "revision": 1
+  },
+  "original": {
+    "text": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务未知。两边价格都未知。",
+    "sha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+    "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=未知。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=未知（来源明确声明），所以当前需要审计=未知；条件未定，不能按false或不需要处理。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+  },
+  "updated": {
+    "text": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务为是。两边价格都未知。",
+    "sha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+  },
+  "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+  "immediate": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+    "base": {
+      "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "8a43137c-cfc9-4935-aa95-6847ab06706d",
+      "messageSeq": 10,
+      "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+      "displayId": "condition-source-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "公开服务",
+      "from": null,
+      "to": true,
+      "textByteStart": 153,
+      "textByteEnd": 177,
+      "before": "当前公开服务未知",
+      "after": "当前公开服务为是"
+    },
+    "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "durable": true,
+    "message": {
+      "id": "df2a4eff-664d-47f2-b6b0-1685ef30813a",
+      "seq": 40,
+      "turn": 2,
+      "turnStartSeq": 37,
+      "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+    },
+    "status": "message-persisted",
+    "asOfSeq": 40
+  },
+  "duplicate": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+    "base": {
+      "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "8a43137c-cfc9-4935-aa95-6847ab06706d",
+      "messageSeq": 10,
+      "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+      "displayId": "condition-source-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "公开服务",
+      "from": null,
+      "to": true,
+      "textByteStart": 153,
+      "textByteEnd": 177,
+      "before": "当前公开服务未知",
+      "after": "当前公开服务为是"
+    },
+    "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "durable": true,
+    "message": {
+      "id": "df2a4eff-664d-47f2-b6b0-1685ef30813a",
+      "seq": 40,
+      "turn": 2,
+      "turnStartSeq": 37,
+      "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+    },
+    "status": "message-persisted",
+    "asOfSeq": 40
+  },
+  "adopted": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+    "base": {
+      "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "8a43137c-cfc9-4935-aa95-6847ab06706d",
+      "messageSeq": 10,
+      "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+      "displayId": "condition-source-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "公开服务",
+      "from": null,
+      "to": true,
+      "textByteStart": 153,
+      "textByteEnd": 177,
+      "before": "当前公开服务未知",
+      "after": "当前公开服务为是"
+    },
+    "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "durable": true,
+    "message": {
+      "id": "df2a4eff-664d-47f2-b6b0-1685ef30813a",
+      "seq": 40,
+      "turn": 2,
+      "turnStartSeq": 37,
+      "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+    },
+    "checkpoint": {
+      "seq": 51,
+      "displayId": "condition-source-after",
+      "revision": 1,
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted",
+    "asOfSeq": 57
+  },
+  "withheld": [
+    "UPDATE_REQUEST",
+    "UPDATE_REQUEST",
+    "UPDATE_STALE_BASE",
+    "UPDATE_STALE_BASE",
+    "UPDATE_SESSION",
+    "UPDATE_FIELD"
+  ],
+  "stale": {
+    "status": "withheld",
+    "code": "UPDATE_ALREADY_REQUESTED",
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce"
+  },
+  "conflict": {
+    "status": "withheld",
+    "code": "UPDATE_REQUEST_CONFLICT",
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false
+  },
+  "acceptedNativeMessage": {
+    "type": "user/message",
+    "seq": 40,
+    "time": 1793080955087,
+    "data": {
+      "content": [
+        {
+          "type": "text",
+          "text": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务为是。两边价格都未知。"
+        }
+      ],
+      "source": {
+        "kind": "user",
+        "rpcId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+        "clientTimeZone": "UTC"
+      },
+      "role": "user",
+      "id": "df2a4eff-664d-47f2-b6b0-1685ef30813a"
+    },
+    "surfaceOp": "append"
+  },
+  "sourceCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "DSH current own-turn message content snapshot; not a file",
+      "hostContext": {
+        "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+        "turn": 2,
+        "turnStartSeq": 37,
+        "messageId": "df2a4eff-664d-47f2-b6b0-1685ef30813a",
+        "messageSeq": 40,
+        "producerSourceKind": "user",
+        "inherited": false,
+        "excludedSyntheticContexts": 0,
+        "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce"
+      },
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "excerptSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 204,
+        "textUTF8Bytes": 204
+      },
+      "identityVerified": false,
+      "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "海棠",
+        "梧桐"
+      ],
+      "facts": [
+        {
+          "kind": "capability",
+          "option": "海棠",
+          "name": "审计",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 36,
+              "textByteEnd": 54
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "梧桐",
+          "name": "审计",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 57,
+              "textByteEnd": 78
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "海棠",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 180,
+              "textByteEnd": 201
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "梧桐",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 180,
+              "textByteEnd": 201
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "审计",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 81,
+              "textByteEnd": 96
+            },
+            {
+              "textByteStart": 99,
+              "textByteEnd": 120
+            },
+            {
+              "textByteStart": 123,
+              "textByteEnd": 150
+            },
+            {
+              "textByteStart": 153,
+              "textByteEnd": 177
+            }
+          ],
+          "derivation": {
+            "condition": "公开服务",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": true
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 33
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 36,
+            "textByteEnd": 54
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 57,
+            "textByteEnd": 78
+          }
+        },
+        {
+          "kind": "condition",
+          "span": {
+            "textByteStart": 81,
+            "textByteEnd": 96
+          }
+        },
+        {
+          "kind": "condition-true-branch",
+          "span": {
+            "textByteStart": 99,
+            "textByteEnd": 120
+          }
+        },
+        {
+          "kind": "condition-false-branch",
+          "span": {
+            "textByteStart": 123,
+            "textByteEnd": 150
+          }
+        },
+        {
+          "kind": "current-condition",
+          "span": {
+            "textByteStart": 153,
+            "textByteEnd": 177
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 180,
+            "textByteEnd": 201
+          }
+        }
+      ],
+      "conditionalNeeds": [
+        {
+          "name": "审计",
+          "condition": "公开服务",
+          "whenTrue": true,
+          "whenFalse": false,
+          "current": true,
+          "currentSpans": [
+            {
+              "textByteStart": 153,
+              "textByteEnd": 177
+            }
+          ],
+          "spans": {
+            "condition": {
+              "textByteStart": 81,
+              "textByteEnd": 96
+            },
+            "whenTrue": {
+              "textByteStart": 99,
+              "textByteEnd": 120
+            },
+            "whenFalse": {
+              "textByteStart": 123,
+              "textByteEnd": 150
+            }
+          },
+          "derivedNeed": true
+        }
+      ]
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "fieldChecks": [],
+    "inputChecks": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "delivery": {
+    "status": "delivered",
+    "turn": 2,
+    "displayId": "condition-source-after",
+    "revision": 1,
+    "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+    "presentation": {
+      "version": 1,
+      "theme": {
+        "mode": "light",
+        "palette": "ocean",
+        "font": "system",
+        "density": "comfortable",
+        "textSize": "standard"
+      },
+      "layout": {
+        "direction": "auto"
+      }
+    },
+    "protocolVersion": "1.4",
+    "component": "DecisionExplorer",
+    "summarySource": "source-derived bounded projection",
+    "sourceFactsVerified": false,
+    "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+    "decisionFacts": {
+      "scope": "declared-policy-under-original-conditions",
+      "status": "no-match",
+      "strictPolicy": true,
+      "inputEffects": [
+        {
+          "inputId": "need-source-after",
+          "requirementIds": [
+            "requirement-source-after"
+          ],
+          "constraintIds": [],
+          "ruleIds": [],
+          "affectsEligibility": true,
+          "affectsPreference": false,
+          "scope": "hard"
+        }
+      ],
+      "unusedInputIds": [],
+      "requiresPolicyReview": false,
+      "preferenceMode": "withheld-pending-local-review",
+      "eligibilityOnly": true,
+      "eligibilityAssessed": true,
+      "eligibleOptionIds": [
+        "option-0-source-after"
+      ],
+      "excludedOptionIds": [
+        "option-1-source-after"
+      ],
+      "unknownFeasibilityIds": [],
+      "requirements": [
+        {
+          "requirementId": "requirement-source-after",
+          "optionId": "option-0-source-after",
+          "dimensionId": "cap-source-after",
+          "inputId": "need-source-after",
+          "unit": null,
+          "actual": true,
+          "needed": true,
+          "relation": "supports",
+          "active": true,
+          "status": "pass"
+        },
+        {
+          "requirementId": "requirement-source-after",
+          "optionId": "option-1-source-after",
+          "dimensionId": "cap-source-after",
+          "inputId": "need-source-after",
+          "unit": null,
+          "actual": false,
+          "needed": true,
+          "relation": "supports",
+          "active": true,
+          "status": "fail"
+        }
+      ],
+      "unknownComparisonCells": [
+        {
+          "optionId": "option-0-source-after",
+          "dimensionId": "price-source-after"
+        },
+        {
+          "optionId": "option-1-source-after",
+          "dimensionId": "price-source-after"
+        }
+      ],
+      "proposalWithMissingFacts": false,
+      "resultBasis": null,
+      "sourceFactsVerified": false,
+      "recommendedOptionIds": [],
+      "matchedRuleIds": [],
+      "pendingRuleIds": [],
+      "missingInputs": [],
+      "activeConstraintIds": [],
+      "unknownConstraintIds": [],
+      "declaredOriginCounts": {
+        "given": 0,
+        "modelJudgment": 0
+      },
+      "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+    },
+    "declarationMapping": {
+      "scope": "declared-fields-and-dependencies",
+      "sourceFactsVerified": false,
+      "requirements": [
+        {
+          "requirementId": "requirement-source-after",
+          "dimensionId": "cap-source-after",
+          "dimensionRole": "capability-support",
+          "inputId": "need-source-after",
+          "inputRole": "capability-need",
+          "relation": "supports",
+          "unit": null
+        }
+      ],
+      "inputs": [
+        {
+          "inputId": "need-source-after",
+          "scope": "hard",
+          "expectedEffect": "hard"
+        }
+      ],
+      "dependencyLinks": "decisionFacts.inputEffects",
+      "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+    },
+    "canonicalSummary": "Declared comparison: 2 options, 2 dimensions. Meets declared hard requirements: 海棠. Unknown feasibility: none. No preference established.",
+    "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+    "canonicalExplanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+    "sourceDeliveryStatus": "bound",
+    "identityVerified": false,
+    "deliveryId": "2102fa6c-81b7-4c3d-95d0-6a4b8d2c3eda"
+  },
+  "localNeedDoesNotEditSource": true,
+  "cancelAndUnknownNoSubmission": true,
+  "duplicateDidNotStartExtraTurn": true,
+  "refreshOldAndNewRestored": true,
+  "pageErrors": [],
+  "newObservedModelTurns": 0,
+  "fixtureOnly": true,
+  "priorHostReceipt": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+    "base": {
+      "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "cda34694-c085-4c13-92bb-0a445b0445b1",
+      "messageSeq": 10,
+      "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+      "displayId": "condition-source-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "公开服务",
+      "from": null,
+      "to": true,
+      "textByteStart": 153,
+      "textByteEnd": 177,
+      "before": "当前公开服务未知",
+      "after": "当前公开服务为是"
+    },
+    "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "durable": true,
+    "message": {
+      "id": "649037bf-ccf9-46ae-b483-2304cfc98001",
+      "seq": 36,
+      "turn": 2,
+      "turnStartSeq": 33,
+      "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+    },
+    "checkpoint": {
+      "seq": 44,
+      "displayId": "condition-source-after",
+      "revision": 1,
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted"
+  },
+  "lostResponse": {
+    "type": "server-response",
+    "rpcId": "7bb1fd1b-15e1-4470-862a-029d24a48fc1",
+    "result": {
+      "ok": true,
+      "value": {
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "requestId": "d261c751-2206-486d-afb4-9c9d72d538ce",
+        "base": {
+          "sessionId": "session-1c349154-5e78-4e7d-8fff-7df04ab62380",
+          "turn": 1,
+          "turnStartSeq": 6,
+          "messageId": "8a43137c-cfc9-4935-aa95-6847ab06706d",
+          "messageSeq": 10,
+          "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+          "displayId": "condition-source-before",
+          "revision": 1
+        },
+        "change": {
+          "condition": "公开服务",
+          "from": null,
+          "to": true,
+          "textByteStart": 153,
+          "textByteEnd": 177,
+          "before": "当前公开服务未知",
+          "after": "当前公开服务为是"
+        },
+        "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+        "durable": true,
+        "status": "unknown",
+        "asOfSeq": 38,
+        "admission": "accepted"
+      }
+    }
+  },
+  "submitTransports": 1,
+  "noOp": {
+    "status": "withheld",
+    "code": "UPDATE_FIELD",
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "a9baac67-4721-4290-8558-11d63021d3ad"
+  },
+  "privateRawReceiptSha256": "c2caf719f2c3832c1344db63df6c667d9b3bec88cf28b06054f96ea2dc8d81ad",
+  "fullNativeJournalPublic": false
+}

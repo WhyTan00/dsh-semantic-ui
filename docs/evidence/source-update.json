@@ -1,0 +1,134 @@
+{
+  "version": "0.1.0-preview.19",
+  "sourceCommit": "87e56ecfcff6fbf35622c14ac6130cb004c76ac5",
+  "tag": "v0.1.0-preview.19",
+  "scope": "one exact declared-unknown current boolean source supplement through normal DSH prompt",
+  "independentFreezeSha256": "a81945b18855a476ac91d8a8430866c9f15265f7016c3a40ef348f4844f586c5",
+  "originalSourceSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+  "updatedSourceSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+  "checks": {
+    "targetedFiles": 5,
+    "targetedChecks": 30,
+    "suspendedFlushInterleaving": "unknown at intent prefix; message-persisted after next prefix; adopted only after checkpoint captured before another flush",
+    "schemaTypes": "passed",
+    "sourceLogRawSha256": "f7700aa28ed0dcf512b56944b15eb30160c3cda7a5ab68485e17b0fe2a45a1d5",
+    "ordinaryNaturalQuestionRun": false
+  },
+  "acceptance": {
+    "macOS": {
+      "installedPackagedFiles": 317,
+      "nativeCases": 1,
+      "ptcCases": 1,
+      "normalAdmission": "accepted",
+      "exactNativeNewMessage": "persisted",
+      "freshSnapshotAndCheckpoint": "adopted",
+      "hostCanonicalExplanation": "updated",
+      "oldUnknownView": "preserved and restored",
+      "localNeed": "assumption only",
+      "lostReply": "original requestId reconciliation; no resend",
+      "duplicateAndStale": "withheld or original receipt; no extra turn",
+      "restart": "cold receipt recovered from same native log",
+      "pageErrors": 0
+    },
+    "linux": {
+      "ciRun": 40458705531,
+      "conclusion": "success",
+      "nativeCases": 1,
+      "ptcCases": 1,
+      "archiveFiles": 317,
+      "sameFourReleaseFiles": true
+    },
+    "model": {
+      "newObservedTurns": 0,
+      "rawModelExplanationUpdated": "not-verified",
+      "fixtureAssistantText": "explicitly deterministic, not model acceptance",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    }
+  },
+  "failedCandidate18": {
+    "sourceCommit": "b352242a7379f936f1e4298046d10b6e0d58ae9c",
+    "runtimeSha256": "81e487e961f636893eb936fb3849d42f037a4b927bbd6d7f172efff050680f9d",
+    "installedFiles": 315,
+    "result": "initial submit failed on actual installation; never released or tagged",
+    "linuxCi": 40457376833,
+    "linuxConclusion": "failure",
+    "reproduction": "actual installed plugin and host resolve separate Session classes; exported experimental appendPluginRecord rejects the cross-module receiver",
+    "fix": "use injected CommandRuntime command/run and command/done through its public execute method, followed by normal peer-preserving session/prompt; no custom append or private module bypass"
+  },
+  "earlierFailures": {
+    "hostTest": "first read a prior source-check from current request history; corrected selection by new hash; expectations unchanged",
+    "revisionTest": "binder normalized a changed title; corrected fixture to change actual recorded view; expectation unchanged",
+    "flushRace": "code review finding fixed and checked with suspended flush and real projection events"
+  },
+  "publication": {
+    "releaseId": 425087240,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19",
+    "tag": "v0.1.0-preview.19",
+    "tagTarget": "87e56ecfcff6fbf35622c14ac6130cb004c76ac5",
+    "author": "WhyTan00",
+    "prerelease": true,
+    "assets": [
+      {
+        "filename": "package-manifest.json",
+        "bytes": 27981,
+        "sha256": "c48fa5d637e58e7f8f2055ad08679ce1ef088aad8e26d5ee80530836998e8dc2",
+        "httpStatus": 200,
+        "anonymous": true,
+        "identicalLocalAndLinux": true
+      },
+      {
+        "filename": "SHA256SUMS",
+        "bytes": 229,
+        "sha256": "7caebfd453739c73dc8a5702a4ed059738666467115afcf53a2f698ad8bae2c1",
+        "httpStatus": 200,
+        "anonymous": true,
+        "identicalLocalAndLinux": true
+      },
+      {
+        "filename": "whytan-dsh-semantic-ui-0.1.0-preview.19.tgz",
+        "bytes": 2590802,
+        "sha256": "e3912c33cd0aab2d46c2f20c20b6cb1f6ba243a5b69c7cafc6fb82dc1c26a46f",
+        "httpStatus": 200,
+        "anonymous": true,
+        "identicalLocalAndLinux": true
+      },
+      {
+        "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.19.tgz",
+        "bytes": 30199599,
+        "sha256": "e1a5fc75f32eeddd72a5be615bad76d62275228febf01e6b4e02d6c38564d094",
+        "httpStatus": 200,
+        "anonymous": true,
+        "identicalLocalAndLinux": true
+      }
+    ]
+  },
+  "packagedRuntime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.19.tgz",
+    "sha256": "e3912c33cd0aab2d46c2f20c20b6cb1f6ba243a5b69c7cafc6fb82dc1c26a46f",
+    "entrypoints": {
+      "dist/host.js": "568b0b07010ed35ba288917007a29dc3ef692bff78c5b7827f75fb1d3fe9b2a9",
+      "dist/client.js": "3ba07192a519ca045d44f16c4e632ba8ce071faf4ed449503e08211798f95856",
+      "dist/core.js": "272c19b6c4cc63ae937e20cd8b7f7e31968bc37af3bc71c24946ef6878533682",
+      "dist/mcp.js": "e26dd6cabd0a90c5a78f5eb0c836640bec7264dbe75195984e4da4b828b86164",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    }
+  },
+  "limits": [
+    "one declared-unknown current boolean only; no implicit current/duplicate declaration/general forms",
+    "cold historical receipts are read-only; cold source editing needs a new normal current full-source binding",
+    "success certifies a stored declaration and its bounded projection, not source author/world facts/free prose",
+    "no new real-model observations, old natural question matrices or GenUI co-existence matrix",
+    "no Codex desktop/global install, npm publication, shared service/model/account/route changes"
+  ],
+  "history": "17 assets, unreleased18 candidate and all prior failures remain unchanged; original0/6/18 not rerun",
+  "evidenceFiles": [
+    "source-update/native.json",
+    "source-update/ptc.json",
+    "source-update/independent-expectations.json",
+    "source-update/source-tests.txt",
+    "source-update/byte-comparison.json",
+    "source-update/publication.json"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "results": {
+    "native": {
+      "admission": "accepted",
+      "adopted": "adopted",
+      "messageSeq": 36,
+      "checkpointSeq": 44,
+      "durableAsOfSeq": 49,
+      "sourceHash": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "priorHostReceipt": null,
+      "pageErrors": []
+    },
+    "ptc": {
+      "admission": "accepted",
+      "adopted": "adopted",
+      "messageSeq": 40,
+      "checkpointSeq": 51,
+      "durableAsOfSeq": 57,
+      "sourceHash": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "priorHostReceipt": "adopted",
+      "pageErrors": []
+    }
+  },
+  "processes": [
+    {
+      "kind": "fixture",
+      "pid": 8865,
+      "alive": false
+    },
+    {
+      "kind": "native",
+      "pid": 8866,
+      "alive": false
+    },
+    {
+      "kind": "ptc",
+      "pid": 9041,
+      "alive": false
+    }
+  ],
+  "portsClosed": true
+}

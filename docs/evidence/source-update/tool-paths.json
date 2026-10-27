@@ -1,0 +1,16 @@
+[
+  {
+    "mode": "native",
+    "actualAssistantToolNames": [
+      "dsh_semantic_ui"
+    ],
+    "fixtureOnly": true
+  },
+  {
+    "mode": "ptc",
+    "actualAssistantToolNames": [
+      "run_code"
+    ],
+    "fixtureOnly": true
+  }
+]

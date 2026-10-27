@@ -1,0 +1,44 @@
+{
+  "frozenAt": "2026-10-27T05:25:07.784891+00:00",
+  "kind": "independent-controlled-synthetic-source-update",
+  "original": {
+    "source": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务未知。两边价格都未知。",
+    "sourceSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+    "question": "请按资料比较两种方案，说明目前能确定什么、还缺什么。",
+    "questionSha256": "cc06f05579b76cbf60fc74c4960e7c8d06df292590e83c8ee9bb67b6a4e9a8e5"
+  },
+  "authorizedSupplement": {
+    "kind": "declared-source-revision",
+    "condition": "公开服务",
+    "expectedCurrentValue": null,
+    "newValue": true,
+    "scope": "Only the current boolean declaration for this literal condition; not capability, options, prices, branches or identity.",
+    "ordinarySupplementText": "补充来源：公开服务为是。请按这条补充更新判断。"
+  },
+  "updated": {
+    "source": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务为是。两边价格都未知。",
+    "sourceSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "question": "请依据最新已接收的资料说明两种方案是否满足要求，并区分确定与未知。",
+    "questionSha256": "3c37e23baf856d408df6aa1481d0e851d6ddb7fd18228f55d4ec23483d078fab"
+  },
+  "independentCriteria": [
+    "Original source has current condition/need unknown, support 海棠=true and 梧桐=false, prices unknown. Original snapshot/view/history remains unchanged.",
+    "The normal host submission is correlated with actual base source hash, session/message/turn/view identity, allowed field, old/new value and requestId if supported. accepted is only admission, never proof of changed source or rendered adoption.",
+    "After genuine supported normal prompt/update admission, host event/current source must contain the exact revised source (only 当前公开服务未知 -> 当前公开服务为是); other source bytes/facts/branches unchanged. Do not manually mint producer=user or claim authenticated human/world facts.",
+    "New accepted source snapshot/checkpoint/explanation must bind its own new hash and current true -> need true. 海棠 satisfies this audit item, 梧桐 does not; no complete viability/price ranking/winner, and no transfer of old result as new result.",
+    "Cancel/unknown/no-op, invalid value, unauthorized field/multiple fields, wrong or stale base/view/session, ambiguous or expired submission must not claim updated/adopted. A local need toggle never updates source.",
+    "Duplicate/uncertain submit must reconcile the original requestId and durable accepted event; never replay with another ID or manufacture update success. Old source and view remain readable after new view/refresh."
+  ],
+  "meaningfulCounterexamples": [
+    "Choose unknown or cancel: no source update success and original unknown unchanged.",
+    "Use stale base after accepted revision or a wrong base hash: rejected/withheld without new claimed source adoption.",
+    "Attempt to change capability or a branch while supplementing current condition: outside precise scope, rejected.",
+    "Present a local need=true switch without supported source revision: original unknown source must remain unknown."
+  ],
+  "modelBoundary": {
+    "defaultObservedTurns": 0,
+    "maximumNewObservedTurns": 2,
+    "onlyIfNeeded": "Only after normal host end-to-end and offline contracts stable; separately justify actual new-snapshot/raw prose adoption evidence. No evaluator criteria in prompt/skill/workspace, no repeated E/F or old18."
+  },
+  "scopeBoundary": "One minimal source-update flow in the existing personal host; no global registration/main workstation/second ledger, no claim arbitrary prose or human/world verification."
+}

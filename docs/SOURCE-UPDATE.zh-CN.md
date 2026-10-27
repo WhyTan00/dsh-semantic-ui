@@ -1,5 +1,7 @@
 # 单个未知当前事实的正常补充
 
+**正式交付：** [preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，冻结源码 `87e56ecfcff6fbf35622c14ac6130cb004c76ac5`。最终317文件实际归档在本机与 [Linux CI40458705531](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40458705531) 的Native/PTC均通过，四份资产本机/Linux/匿名HTTPS下载字节一致。新增真实模型观察0；原始模型正文更新未核。完整[分层接受与首次失败](evidence/source-update.json)后补在仓库，不重包已发行归档。
+
 preview.19 / DSH `0.2.1-rc.2`。这是一个有界的来源修订流程：在最新的、来源已绑定的 DecisionExplorer 中，明确补充一个原本声明为 unknown 的当前布尔条件，经正常聊天入口生成新的完整来源消息，再用新的来源检查与 render 形成新视图。它不是通用 RequestForm、任意来源编辑器或世界事实认证。
 
 ## 使用
@@ -40,7 +42,7 @@ preview.19 / DSH `0.2.1-rc.2`。这是一个有界的来源修订流程：在最
 
 源码30项定向检查通过，含暂停 flush 时先后到达消息/新 checkpoint 的交错反例：第一次 unknown、下一次仅 message-persisted、再次 flush 才 adopted；开发树真实隔离 DSH 的 Native/PTC 各一个完整新补充，覆盖6类拒绝、unknown/取消、本地试算边界、重复/冲突、结果不明、刷新和原历史。另实际模拟提交已 accepted 后丢失浏览器回执，用原 ID 查询恢复；模式切换时重启宿主，冷收据从原日志恢复。首次测试误取历史旧 source-check 的断言失败保留，修正选择当前新哈希的检查，没有修改独立预期。
 
-最终不可变归档安装、Linux、资产 SHA 与发布结果应读取后补的 `docs/evidence/source-update.json`；它们不回灌或重打冻结包。开发树结果不代替归档接受。新增真实模型观察默认0，本轮宿主测试的 provider 明确是确定性夹具，模型自然采用和原始自由正文仍未验证；不重跑旧题或改写原0/6/18、首次失败及旧发行证据。
+最终不可变归档安装、Linux、资产 SHA 与发布结果见[本版分层接受](evidence/source-update.json)；它们不回灌或重打冻结包。开发树结果不代替归档接受。新增真实模型观察默认0，本轮宿主测试的 provider 明确是确定性夹具，模型自然采用和原始自由正文仍未验证；不重跑旧题或改写原0/6/18、首次失败及旧发行证据。
 
 ## 未发布的18候选与修复
 
