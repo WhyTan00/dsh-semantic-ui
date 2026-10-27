@@ -8,10 +8,11 @@ export {validateEnvelope,VERSION} from './protocol';
 export {extractDefinition,exportSchema,matchTemplate} from './templates';
 export {checkSourceGraph,parseExplicitRelations,sourceCheckRequestSchema} from './source-graph';
 export {checkSourceWorkflow,parseWorkflowSource,sourceWorkflowRequestSchema} from './source-workflow';
+export {checkSourceCapacity,parseCapacitySource,sourceCapacityRequestSchema} from './source-capacity';
 export {checkSourceDecision,parseDecisionSource,sourceDecisionRequestSchema} from './source-decision';
 export {checkSourcePermissions,parsePermissionSource,sourcePermissionsRequestSchema} from './source-permissions';
 export {checkSourceNumeric,parseNumericSource,sourceNumericRequestSchema} from './source-numeric';
-export {bindWorkflowView,bindPermissionView,bindDecisionView,bindNumericView} from './source-delivery';
+export {bindCapacityView,bindWorkflowView,bindPermissionView,bindDecisionView,bindNumericView} from './source-delivery';
 
 /** A new request cannot select historical behavior to bypass current policy. */
 export function validateForDelivery(input:unknown):Validation{

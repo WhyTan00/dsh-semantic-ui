@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.23开发候选新增[完整容量来源](SOURCE-CAPACITY.zh-CN.md)：原D2的上限/精确单位/当前需求与未来可能点接现有数字at-least硬条件，部署/维护分别保留未知。本地需求真正影响容量；仅新绑定控件限制容量域，负数/超界无效、清空/非有限未知，0有效。开发Native/PTC各6例通过，包括300/550假设、当前初值错误、维护混同、同会话源变值拒绝、旧1.2与刷新；首次行定位器失败保留，实际容量结果已正确。最终归档、正常安装/Linux/CLI/发行另验，新增模型0，不改原自然结果。
+
 22发行后另完成[G/H两个独立引导观察](CODEX-WORKFLOW-OBSERVATION.zh-CN.md)：正常个人CLI/default与原归档、技能、客户端均未变。G只读取来源，raw保留明确局部规则与校对策略未知，附加次数/身份等边界未逐项明说，记partial；H实际4次语义调用，新图首次来源比较matched，raw不补重试/回滚/补偿，有限判据met。两题共2/2新观察，backend请求数未知；宿主各3次显式调用与最终canonical另记。两次0model预检和两次观察均终态、临时根/extraRoots清理、全局配置摘要未变。没有运行代码、技能或协议变更，不新发包/重跑矩阵；下方22发行接受的0模型和旧自然0/6/18保持原范围。见[新分层记录](evidence/workflow-observation.json)。
 
 preview.22已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.22)：源/tag a0ca980884adbc21d476ffcf92133e3305df67cc，运行SHA ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e。完整workflow-zh将四拓扑与通知失败的仅重试通知/不回滚支付分别核对，库存策略和未给执行保证保持未知。52项8文件+10伴随离线检查通过；最终371文件实际安装先全核，macOS/Linux Native/PTC各6例、旧1.0图/正常消息/刷新历史/360px通过，pageerror0。普通--answer正例delivered、错误支付回滚withheld，双层wire一致，2appserver exit0/tap终态，0turn/start/global配置摘要不变。CI40479181323 success，四资产Mac/Linux/匿名HTTPS200同字节。源后补的几何等待验证及只读侧栏补页另核，稳定后五节点全在图框内；不冒原Linux新断言或改包。首次旧receipt选择失败和3次附加侧栏诊断保留，独立预期未改。原A2 raw/共享payment→notify勘误/0pass6fail18requests保持，sourceFacts/identity/freeProse认证false，新模型0。见[最终分层接受](evidence/source-workflow.json)；以下候选段保留冻结前范围，不当最终归档接受。

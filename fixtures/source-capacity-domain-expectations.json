@@ -1,0 +1,15 @@
+{
+  "frozenAt": "2026-10-27T10:43:47.484591+00:00",
+  "basis": "Independent static path review before final freeze; not a prior observed UI reproduction.",
+  "scope": "New source-bound capacity control only, no generic negative-number ban",
+  "invalid": [
+    "negative",
+    "over domain bound",
+    "nonfinite"
+  ],
+  "expectedInvalid": "Explicit invalid/unknown; no capacity pass, no clamping to zero or reuse of initial demand",
+  "empty": "unknown",
+  "zero": "valid zero demand",
+  "positive": "existing at-least hard requirement",
+  "resetAndReload": "restore original source demand; local edits are hypotheses"
+}

@@ -582,7 +582,7 @@ def main():
                         help='Select a text field in --question-file; requires that file')
     parser.add_argument('--source-excerpt',
                         help='Exact selected source text; passed unchanged to the existing source reader')
-    parser.add_argument('--source-kind', choices=['arrows','workflow-zh','decision-zh','permissions-zh','observations-zh'],
+    parser.add_argument('--source-kind', choices=['arrows','capacity-zh','workflow-zh','decision-zh','permissions-zh','observations-zh'],
                         default='decision-zh')
     parser.add_argument('--component', choices=['ArchitectureExplorer','DecisionExplorer','DataChart'],
                         default='DecisionExplorer')

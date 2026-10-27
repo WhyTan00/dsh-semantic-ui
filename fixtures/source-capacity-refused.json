@@ -1,0 +1,79 @@
+[
+  {
+    "view": {
+      "protocolVersion": "1.4",
+      "component": "DecisionExplorer",
+      "displayId": "capacity-fixture",
+      "revision": 1,
+      "summary": "UNVERIFIED_MODEL_SUMMARY",
+      "payload": {
+        "title": "UNVERIFIED_MODEL_TITLE",
+        "dimensions": [
+          {
+            "id": "limit-fixture",
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GB"
+          }
+        ],
+        "options": [
+          {
+            "id": "option-fixture-0",
+            "label": "A",
+            "values": {
+              "limit-fixture": 100
+            },
+            "advantages": [
+              "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+            ],
+            "disadvantages": [
+              "UNVERIFIED_COST"
+            ],
+            "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+            "evidence": []
+          },
+          {
+            "id": "option-fixture-1",
+            "label": "B",
+            "values": {
+              "limit-fixture": 1000
+            },
+            "advantages": [
+              "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+            ],
+            "disadvantages": [
+              "UNVERIFIED_COST"
+            ],
+            "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+            "evidence": []
+          }
+        ],
+        "inputs": [
+          {
+            "id": "quantity-fixture",
+            "label": "需求容量",
+            "type": "number",
+            "unit": "GB",
+            "initial": 300,
+            "expectedEffect": "hard"
+          }
+        ],
+        "requirements": [
+          {
+            "id": "cover-fixture",
+            "dimension": "limit-fixture",
+            "input": "quantity-fixture",
+            "relation": "at-least"
+          }
+        ],
+        "rules": [],
+        "constraints": []
+      }
+    },
+    "mapping": {
+      "capacityDimensionId": "limit-fixture",
+      "demandInputId": "quantity-fixture",
+      "requirementId": "cover-fixture"
+    }
+  }
+]

@@ -4,6 +4,25 @@ import {checkSourceDecision,sourceDecisionRequestSchema} from './source-decision
 import {checkSourceNumeric,parseNumericSource,sourceNumericRequestSchema} from './source-numeric';
 import type {SourceSnapshot} from './source-graph';
 import {checkSourceWorkflow,parseWorkflowSource} from './source-workflow';
+import {checkSourceCapacity,parseCapacitySource,sourceCapacityRequestSchema,capacityDecision} from './source-capacity';
+
+/** Reject incoming numeric mismatches; replace annotations with a fresh source projection. */
+export function bindCapacityView(snapshot:SourceSnapshot,input:Envelope,mapping:unknown,claims?:unknown):{ok:true;view:Envelope;explanation:string}|{ok:false;issues:Issue[]}{
+ const request={view:input,...(mapping===undefined?{}:{mapping}),...(claims===undefined?{}:{claims})};
+ const first=checkSourceCapacity(snapshot,request),parsed=parseCapacitySource(snapshot.excerpt,snapshot.textByteStart),coordinates=sourceCapacityRequestSchema.safeParse(request);
+ const failed=(result:Record<string,unknown>)=>{
+  const issues=[...((result.issues as {code:string;path:string;reason:string}[]|undefined)??[])];
+  for(const c of (result.claimChecks as {index:number;status:string}[]|undefined)??[])if(!['supported','unknown'].includes(c.status))issues.push({code:'SOURCE_CAPACITY_CLAIM',path:`$.claims.${c.index}`,reason:'This claim is not established by the complete current capacity source.'});
+  if(!issues.length)issues.push({code:'SOURCE_CAPACITY_BINDING',path:'$.view',reason:'Complete capacity, current-demand and requirement coordinates are required.'});
+  return {ok:false as const,issues:issues.map(i=>({...i,hint:'Inspect source-check. Preserve exact ceilings/unit/current demand, an unconditional at-least requirement and unknown cross attributes. Local changes are hypotheses.'}))};
+ };
+ if((first.comparison as {status?:string}|undefined)?.status!=='matched'||(first.canonicalExplanation as {status?:string}|undefined)?.status!=='available'||parsed.status!=='ready'||!coordinates.success||!coordinates.data.mapping||input.component!=='DecisionExplorer')return failed(first);
+ const view:Envelope={...input,protocolVersion:VERSION,summary:'来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。',payload:capacityDecision(parsed.value,coordinates.data.mapping,parsed.value.options.map(s=>input.payload.options.find(o=>o.label===s.label)!.id))};
+ const checked=validateEnvelope(view);if(!checked.ok)return {ok:false,issues:checked.issues};
+ const final=checkSourceCapacity(snapshot,{...request,view:checked.value}),explanation=final.canonicalExplanation as {status?:string;text?:string}|undefined;
+ if((final.comparison as {status?:string}|undefined)?.status!=='matched'||explanation?.status!=='available'||!explanation.text)return failed(final);
+ return {ok:true,view:checked.value,explanation:explanation.text};
+}
 
 /** A complete workflow is projected afresh; model annotations never become rules. */
 export function bindWorkflowView(snapshot:SourceSnapshot,input:Envelope,mapping:unknown,claims?:unknown):{ok:true;view:Envelope;explanation:string}|{ok:false;issues:Issue[]}{

@@ -1,0 +1,78 @@
+{
+  "frozenAt": "2026-10-27T10:30:11.183269+00:00",
+  "independentPrivateReceiptSha256": "0981d6b6307e4c0f32171a3b2c2b2771b23b6f1af394bc51f05f8c53548bc090",
+  "scope": "capacity declarations and existing hard numeric requirement; no natural model acceptance",
+  "cases": [
+    {
+      "source": "虚构存储选项 A 上限 100GB、部署简单，B 上限 1000GB、维护复杂。现在需求 80GB，以后可能到 300GB。不同需求下该如何选？",
+      "options": [
+        "A",
+        "B"
+      ],
+      "ceilings": [
+        100,
+        1000
+      ],
+      "current": 80,
+      "possible": 300,
+      "unit": "GB",
+      "currentCapacityOnly": [
+        true,
+        true
+      ],
+      "possibleHypothesisCapacityOnly": [
+        false,
+        true
+      ],
+      "deployment": [
+        "simple",
+        null
+      ],
+      "maintenance": [
+        null,
+        "complex"
+      ]
+    },
+    {
+      "source": "虚构存储选项 甲 上限 200GB、部署简单，乙 上限 700GB、维护复杂。现在需求 150GB，以后可能到 550GB。不同需求下该如何选？",
+      "options": [
+        "甲",
+        "乙"
+      ],
+      "ceilings": [
+        200,
+        700
+      ],
+      "current": 150,
+      "possible": 550,
+      "unit": "GB",
+      "currentCapacityOnly": [
+        true,
+        true
+      ],
+      "possibleHypothesisCapacityOnly": [
+        false,
+        true
+      ],
+      "deployment": [
+        "simple",
+        null
+      ],
+      "maintenance": [
+        null,
+        "complex"
+      ]
+    }
+  ],
+  "negativeCases": [
+    "swapped capacity values",
+    "exact unit changed in view",
+    "current initial changed to possible point",
+    "deployment treated as maintenance",
+    "invented recommendation or reserve policy",
+    "source changed after prior match",
+    "unknown unit or unsupported complete source clause",
+    "missing hard requirement or reversed relation",
+    "future possible is not confirmed current plan"
+  ]
+}
