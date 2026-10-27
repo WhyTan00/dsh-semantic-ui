@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+preview.18的[单个来源事实补充](SOURCE-UPDATE.zh-CN.md)只接入个人DSH正常会话；Codex伴随CLI/MCP仍只读，不因此获得宿主提交、桌面控件或当前聊天全局安装能力。本轮新模型观察0。
+
 preview.17的[条件来源](SOURCE-CONDITIONAL.zh-CN.md)已进入同一普通答复入口：先固定源与问题，25项定向检查及归档入口通过；两个新合成模型回合均实际source-check、首次当前view比较matched，原始正文按独立判据评读通过，模型调用5/4，后台请求数unknown。候选与宿主canonical分开；可选typed分支claim API本段未被模型选择，其核对另有离线/stdio证据，不冒自然采用。
 
 全缺失假设的[后续小修复](CODEX-ZERO-FILL.zh-CN.md)已通过D失败回归：独立假设副本由同一16核心算出0，原source观测/完整未知不变；16项离线、0新模型，初次partial保留。没有新runtime或桌面/DSH UI接入。

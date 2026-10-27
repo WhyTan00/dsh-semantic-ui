@@ -1,5 +1,7 @@
 # 典型开源项目采用复核
 
+后续preview.18开始落实提交/接收分层：[单未知当前事实补充](../SOURCE-UPDATE.zh-CN.md)经正常prompt产生新来源，关联持久requestId、消息和新checkpoint；unknown/取消、本地试算、重复及不明结果分开。仍无通用RequestForm或可迁移结果；原preview.11矩阵保持，不把此窄流程写成全部提交闭环已完成。
+
 后续preview.17已把[明确两分支硬需求](../SOURCE-CONDITIONAL.zh-CN.md)接入既有来源/普通答复/原生交付，当前条件与局部假设分层；新包、模型候选及宿主接受分开留证。这个增量补有界解释，不把研究覆盖面当功能完成率，下表原preview.11基线保持。
 
 复核日期：2026-10-27。实现基线为 `0.1.0-preview.11 / 协议1.4`，源码 commit `ec7cf58f920e5578f8b38719095d49dba6d15220`。

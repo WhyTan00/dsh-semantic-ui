@@ -20,6 +20,7 @@ import {checkSourceNumeric} from '../source-numeric';
 import {bindPermissionView,bindDecisionView,bindNumericView} from '../source-delivery';
 import {sourceDeliverySchema,type SourceDelivery} from '../source-delivery-meta';
 import {createPresentationChannel} from './presentation';
+import {mountSourceUpdates} from './source-update';
 export const name='dsh-semantic-ui';
 export interface Config {generation:boolean}
 export const Config:Schema<Config>=Schema.object({generation:Schema.boolean().default(true)});
@@ -40,6 +41,7 @@ export function apply(ctx:Context,config:Config={generation:true}){
   if(config.generation===false)return;
   const channel=createPresentationChannel();
   ctx.sessionProjections.register(currentSourceProjection);
+  mountSourceUpdates(ctx);
   ctx.inject(['skills'],skillCtx=>{skillCtx.skills.register({name:'dsh-semantic-ui',source:'runtime',description:'Explain relationships, tradeoffs and numbers through the semantic UI tool when useful.',content:GUIDANCE+'\n\nThe only delivery entry for these semantic components is dsh_semantic_ui. Get the chosen component fields with action=describe, then deliver action=render. Display IDs are turn-scoped; revisions increase for updates. Runtime checks enforce structure and declared graph, comparison and numeric consistency; they cannot establish that model claims or rules follow the user facts.'});});
   ctx.systemPrompt.section({name:'dsh-semantic-ui:delivery',order:850,text:GUIDANCE});
   ctx.tools.register(defineTool({name:'dsh_semantic_ui',description:TOOL_DESCRIPTION,parameters,output:{schema:{type:'object',additionalProperties:true},render:(_args,value)=>[{type:'text',text:JSON.stringify(value)}],presentationMeta:channel.presentationMeta},async execute(args,exec){

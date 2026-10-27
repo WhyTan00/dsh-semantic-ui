@@ -29,6 +29,10 @@ on:
         description: Validate normalized conditional source delivery from a frozen archive
         type: boolean
         default: false
+      source_update_only:
+        description: Validate a single unknown boolean supplement through normal prompt and durable source adoption
+        type: boolean
+        default: false
 permissions:
   contents: read
 jobs:
@@ -48,15 +52,15 @@ jobs:
       - run: git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json
       - run: pnpm research:check
       - run: pnpm check
-        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only)
+        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only || inputs.source_update_only)
       - name: Check declaration source
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
         run: |
           pnpm typecheck
           pnpm exec vitest run tests/decision-consistency.test.ts tests/grounding.test.ts tests/grounding-direction.test.ts tests/mcp.test.ts
           pnpm build
       - name: Check source-bound delivery
-        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
         run: |
           pnpm typecheck
           pnpm exec vitest run tests/decision-delivery.test.ts tests/source-delivery.test.ts tests/replay.test.ts tests/host-source.test.ts tests/mcp.test.ts
@@ -77,12 +81,17 @@ jobs:
         run: |
           pnpm typecheck
           pnpm exec vitest run tests/source-condition.test.ts tests/source-decision.test.ts tests/decision-delivery.test.ts
+      - name: Check source supplementation contracts
+        if: github.event_name == 'workflow_dispatch' && inputs.source_update_only
+        run: |
+          pnpm typecheck
+          pnpm exec vitest run tests/source-update.test.ts tests/host-source.test.ts tests/source-condition.test.ts tests/decision-delivery.test.ts tests/replay.test.ts
       - run: pnpm exec playwright install --with-deps chromium
         if: github.event_name != 'workflow_dispatch' || !inputs.mcp_only
       - run: pnpm test:host
-        if: github.event_name != 'workflow_dispatch' || !(inputs.chart_only || inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only)
+        if: github.event_name != 'workflow_dispatch' || !(inputs.chart_only || inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only || inputs.source_update_only)
       - run: pnpm test:chart-host
-        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only)
+        if: github.event_name != 'workflow_dispatch' || !(inputs.consistency_only || inputs.source_only || inputs.mcp_only || inputs.numeric_delivery_only || inputs.conditional_only || inputs.source_update_only)
       - run: pnpm test:consistency-host
         if: github.event_name != 'workflow_dispatch'
       - uses: actions/upload-artifact@v4
@@ -95,6 +104,19 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
       - run: pnpm release:pack
+      - run: node tests/installed-source-update.mjs
+        if: github.event_name == 'workflow_dispatch' && inputs.source_update_only
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'workflow_dispatch' && inputs.source_update_only
+        with:
+          name: source-update-install-receipts
+          path: |
+            artifacts/local/host-*/install.json
+            artifacts/local/host-*/installed-byte-check.json
+            artifacts/local/host-*/native/evidence/source-update.json
+            artifacts/local/host-*/ptc/evidence/source-update.json
+            artifacts/local/host-*/cleanup.json
+          if-no-files-found: error
       - run: node tests/installed-condition.mjs
         if: github.event_name == 'workflow_dispatch' && inputs.conditional_only
       - uses: actions/upload-artifact@v4
@@ -128,9 +150,9 @@ jobs:
           path: artifacts/local/mcp-*.json
           if-no-files-found: error
       - run: pnpm test:installed-source
-        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
         with:
           name: source-install-receipts
           path: |
@@ -140,9 +162,9 @@ jobs:
             artifacts/local/host-*/ptc/evidence/decision-delivery.json
           if-no-files-found: error
       - run: pnpm test:installed-consistency
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
       - uses: actions/upload-artifact@v4
-        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only
+        if: github.event_name == 'workflow_dispatch' && inputs.consistency_only && !inputs.source_only && !inputs.mcp_only && !inputs.numeric_delivery_only && !inputs.conditional_only && !inputs.source_update_only
         with:
           name: declaration-install-receipts
           path: |

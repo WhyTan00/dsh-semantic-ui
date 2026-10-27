@@ -6,6 +6,8 @@ A personal, independently written **preview** plugin for native [DeepSeek Harnes
 - **DecisionExplorer** aligns common dimensions, preserves unknowns and explains finite conditional rules and hard constraints.
 - **DataChart** supports lines, category bars and real histograms, with explicit missing values, units, bin rules, filters and source tables.
 
+**Preview.18** adds [one explicit unknown-fact supplement](docs/SOURCE-UPDATE.zh-CN.md) in the DSH owner UI. The normal authenticated prompt creates a new full-source user message; admission, durable message and a fresh source-bound checkpoint are verified separately. Cancel/unknown, stale identities and out-of-scope edits cannot claim adoption; lost replies and duplicates reconcile the same request without resending. Original unknown history and local need assumptions stay separate. This remains a bounded source-revision flow, not a general form engine, world-fact certification or a new natural-model acceptance result.
+
 **Preview.17** adds [explicit two-branch source conditions](docs/SOURCE-CONDITIONAL.zh-CN.md). The original condition, both branches and current false/unknown retain byte-level provenance; current needs are normalized to the existing boolean `supports` contract. Missing current facts stay unknown, an implicit else or only-if sufficiency is refused, and local needs remain assumptions. The [versioned acceptance](docs/evidence/source-condition.json) separates 25 targeted checks, real archive-installed Native/PTC delivery on macOS/Linux, and two guided personal Codex observations with preserved original prose. No new protocol or renderer, and no source-author/world/free-prose certification.
 
 **Preview.16** adds [normal DSH numeric-source delivery](docs/NUMERIC-DELIVERY.zh-CN.md): current own-turn readings are rechecked before a fresh source-derived DataChart projection and bounded explanation are checkpointed. Null masks, exact units and observed/complete mean ranges stay distinct; treating imputation as observed source data and conflicting typed means are refused. Saved source scope restores independently of later inputs. No arbitrary prose, source author or world-fact certification.
@@ -18,7 +20,7 @@ The explicit [`--answer --hypothesis zero-fill`](docs/CODEX-ZERO-FILL.zh-CN.md) 
 
 Plain text remains appropriate for simple questions. No model-generated JavaScript, JSX, HTML, callbacks, arbitrary ECharts options or network resources are accepted.
 
-The [interactive UI ecosystem study](docs/research/README.md) curates 35 public projects with immutable source pins, licenses, actual chart dependencies and adoption decisions. It replaces a blanket GenUI fallback with capability-based selection. Preview.5 adds a read-only `action=catalog`, initial-policy `decisionFacts`, and working ECharts ARIA descriptions. Future form submission and application state remain explicitly unimplemented; see the [adoption record](docs/research/ADOPTION.zh-CN.md).
+The [interactive UI ecosystem study](docs/research/README.md) curates 35 public projects with immutable source pins, licenses, actual chart dependencies and adoption decisions. It replaces a blanket GenUI fallback with capability-based selection. Preview.5 adds a read-only `action=catalog`, initial-policy `decisionFacts`, and working ECharts ARIA descriptions. General form submission and portable application state remain unimplemented; the later preview.18 source supplement is deliberately narrower. see the [adoption record](docs/research/ADOPTION.zh-CN.md).
 
 The [GenUI absorption map](docs/research/GENUI-ABSORPTION.zh-CN.md) distinguishes researched patterns from implemented features. The [model-progress strategy](docs/research/MODEL-PROGRESS.zh-CN.md) proposes measurable workflow value and criteria for retiring redundant features. Their proposed integrations remain separate from delivered features.
 
@@ -51,7 +53,7 @@ The [grounded answer companion](docs/CODEX-GROUNDED.zh-CN.md) adds zero-inferenc
 Requires Node 24+, pnpm, and DSH **0.2.1-rc.2**. Other versions, including 0.1.x, have not been certified. Download the versioned `.tgz` and `SHA256SUMS` from [Releases](https://github.com/WhyTan00/dsh-semantic-ui/releases), verify the checksum, then install into your chosen personal profile:
 
 ```sh
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.18.tgz
 ```
 
 Reload the DSH page after installation. See [installation, isolation and rollback](docs/INSTALL.zh-CN.md). A normal personal model authorization is required for natural-question use; this plugin does not supply a model, copy credentials, or turn a Codex login into an API key.

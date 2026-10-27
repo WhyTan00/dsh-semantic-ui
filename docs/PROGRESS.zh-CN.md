@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.18已实现[单个未知当前事实补充](SOURCE-UPDATE.zh-CN.md)，开发树30项定向检查和真实Native/PTC的正常prompt、新消息/新哈希/新checkpoint、丢失回执与重启收据、刷新旧新视图通过。正式归档安装/Linux/发布分别后补证据，不把开发树验收当发行完成；新模型观察0、自由正文未核，长期目标开放。
+
 preview.17扩展[显式两分支来源](SOURCE-CONDITIONAL.zh-CN.md)：若/则/否则及当前条件真假/未知有UTF8出处，派生当前需求进入现有布尔supports输入；没有组件when或新协议。25定向source/旧合同/stdio检查，309文件实际归档安装，本机/Linux Native/PTC各2源条件例、local假设/刷新及pageerror0通过。真实工具路径另核Native dsh_semantic_ui/PTC run_code，不只凭mode标签。两次新增个人Codex typed skill观察completed，各5/4实际语义调用，首次当前view来源比较matched，原始候选按实现前独立E/F判据评读通过，最终source canonical单列；未观察到可选分支claim API自然调用，后台请求unknown，无第三轮或旧题重跑。冻结源8930fb1/runtime c42b8a2…，CI40450864557成功且四资产同字节，版本发布身份和实际匿名接受见[回执](evidence/source-condition.json)。单元初夹具多余reason/非ASCII ID及一次下载未终态前比较的失败留私有原件，未改独立预期/重派CI。来源/世界/任意正文、当前主桌面/手机仍未认证，旧0/6/18及全部资产不覆。
 
 全缺失D已在伴随源码7422467/脚本4de061d8…修复：原source完整匹配且原视图全部null后，另建有明确标签的假设副本，仅替换副本null为0，调用16已有core取得0毫安/分母3；副本未冒source matched，其complete-known及内部差值不覆盖原始完整/观测均值和观测差未知。仅回归先前失败D一次，正常stdout delivered、5次宿主调用、0模型；16项离线检查通过，错误/不完整回执及非全缺失不可得不回退。原partial/预期0/C成功入口/A-B自然原件不动，runtime/core/归档不改不重包。纠正上轮必须核心改版的过早判断，完整新旧范围见[修复回执](evidence/zero-fill-all-missing.json)。

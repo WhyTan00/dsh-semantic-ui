@@ -6,7 +6,7 @@ export interface SourceSnapshot{
  documentSha256?:string;textSha256:string;excerptSha256:string;jsonPointer?:string|null;
  textBytes:number;textByteStart:number;textByteEnd:number;excerpt:string;
  kind?:'arrows'|'decision-zh'|'permissions-zh'|'observations-zh';
- hostContext?:{sessionId:string;turn:number;turnStartSeq:number;messageId:string;messageSeq:number;producerSourceKind:'user';inherited:false;excludedSyntheticContexts:number};
+ hostContext?:{sessionId:string;turn:number;turnStartSeq:number;messageId:string;messageSeq:number;producerSourceKind:'user';inherited:false;excludedSyntheticContexts:number;requestId?:string};
 }
 export interface SourceIssue{code:string;path:string;reason:string}
 type Span={textByteStart:number;textByteEnd:number};
