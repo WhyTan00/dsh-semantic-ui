@@ -6,6 +6,7 @@ import {sourceUpdateProjection,flushSourceUpdateReceipt,SOURCE_UPDATE_COMMAND} f
 import {conditionRequest} from '../fixtures/source-condition';
 import {bindDecisionView} from '../src/source-delivery';
 import type {SourceSnapshot} from '../src/source-graph';
+import legacy from '../fixtures/source-update-preview19.json';
 
 const text='测试小组在选甲方与乙方。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务未知。两边价格都未知。';
 const snapshot=(excerpt=text):SourceSnapshot=>({kind:'decision-zh',textSha256:sourceTextSha(excerpt),excerptSha256:sourceTextSha(excerpt),textBytes:Buffer.byteLength(excerpt),textByteStart:0,textByteEnd:Buffer.byteLength(excerpt),excerpt,hostContext:{sessionId:'session-test',turn:0,turnStartSeq:0,messageId:'m-original',messageSeq:1,producerSourceKind:'user',inherited:false,excludedSyntheticContexts:0}});
@@ -15,6 +16,15 @@ function intend(s:ReturnType<typeof initial>,data:any){s=fold(s,'command/run',5,
 function original(close=true){let s=fold(initial(),'turn/start',0,{turn:0});s=fold(s,'user/message',1,{role:'user',id:'m-original',source:{kind:'user'},content:[{type:'text',text}]});const {view,mapping}=conditionRequest(['甲方','乙方'],'审计',null,[true,false],'test');const b=bindDecisionView(snapshot(),view,mapping);if(!b.ok)throw Error('Fixture binding');s=fold(s,'tool/result',3,{meta:{dshSemanticUi:{turn:0,view:b.view,sourceDelivery:{version:1,status:'bound',kind:'decision-zh',explanation:b.explanation,sourceRef:{textSha256:snapshot().textSha256,hostContext:snapshot().hostContext},viewIdentity:{displayId:b.view.displayId,revision:1,component:'DecisionExplorer'},identityVerified:false,sourceFactsVerified:false}}}});return close?fold(s,'turn/end',4,{}):s;}
 
 describe('one explicit unknown current boolean declaration',()=>{
+ it('rebuilds an actual preview19 native receipt and both historical sources under projection v4',()=>{
+  let s=sourceUpdateProjection.init({id:legacy.sessionId} as any,0 as any);
+  for(const e of legacy.events)s=sourceUpdateProjection.apply(s,e as any);
+  const r=s.receipts.find(r=>r.intent.requestId===legacy.requestId)!;
+  expect(s.blocked).toBe(false);expect(s.ordinary).toBe(true);expect(s.automationRecorded).toBe(false);
+  expect(r.message).toEqual(legacy.expected.message);expect(r.checkpoint).toEqual(legacy.expected.checkpoint);expect(r.settled).toBe(true);
+  expect(s.base?.identity.textSha256).toBe(legacy.expected.nextTextSha256);
+  expect(sourceUpdateFields(s.base!.source)).toEqual([]);expect(sourceUpdateProjection.wire.view(s).offer).toBeNull();
+ });
  it('changes only the exact UTF8 range and preserves both branches/support/prices',()=>{
   for(const value of [true,false]){const r=reviseUnknownCondition(snapshot(),'公开服务',value);expect(r.text).toBe(text.replace('当前公开服务未知','当前公开服务为'+(value?'是':'否')));expect(r.change.from).toBeNull();expect(sourceUpdateFields(snapshot(r.text))).toHaveLength(0);}
   expect(reviseUnknownCondition(snapshot(text.replace('公开服务未知','公开服务为未知')),'公开服务',true).text).toBe(text.replace('公开服务未知','公开服务为是'));

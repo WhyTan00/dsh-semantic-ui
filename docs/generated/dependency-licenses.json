@@ -1,5 +1,21 @@
 [
   {
+    "name": "@babel/code-frame",
+    "version": "7.29.7",
+    "license": "MIT",
+    "files": [
+      "licenses/babel__code-frame@7.29.7/LICENSE"
+    ]
+  },
+  {
+    "name": "@babel/helper-validator-identifier",
+    "version": "7.29.7",
+    "license": "MIT",
+    "files": [
+      "licenses/babel__helper-validator-identifier@7.29.7/LICENSE"
+    ]
+  },
+  {
     "name": "@dagrejs/dagre",
     "version": "3.1.1",
     "license": "MIT",
@@ -40,6 +56,14 @@
     ]
   },
   {
+    "name": "@deepseek-ai/cordis-plugin-timer",
+    "version": "1.1.7",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__cordis-plugin-timer@1.1.7/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/cordis",
     "version": "4.0.5",
     "license": "MIT",
@@ -56,11 +80,43 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-agent-default-model",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-agent-default-model@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-agent-preset-registry",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-agent-preset-registry@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-agent",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-agent@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-api-gateway",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-api-gateway@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-api-session-controller",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-api-session-controller@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -96,11 +152,35 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-chunked-list",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-chunked-list@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-client-connection",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-client-file-upload",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-client-file-upload@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-cmdline",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-cmdline@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -112,11 +192,51 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-compaction-image-offload",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-compaction-image-offload@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-compaction",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-compaction@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-config-editor",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-config-editor@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-credentials",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-credentials@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-deque",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-deque@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-file-reference",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-file-reference@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -128,11 +248,27 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-hmr",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-hmr@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-home-paths",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-home-paths@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-http-proxy",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-http-proxy@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -152,11 +288,27 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-native-command",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-native-command@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-package-manifest",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-package-manifest@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-permission-presets",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-permission-presets@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -192,11 +344,67 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-session-format-catalog",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format-catalog@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-format-v0-to-v1",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format-v0-to-v1@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-format-v1-to-v2",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format-v1-to-v2@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-format-v2-to-v3",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format-v2-to-v3@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-format-v3-to-v4",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format-v3-to-v4@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-format",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-format@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-session-persistence",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-session-persistence@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-projection-cache",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-projection-cache@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -208,11 +416,43 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-session-query",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-query@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-session-title",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-session-title@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-session",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-session@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-settings",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-settings@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-shell",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-shell@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -240,6 +480,22 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-subagent",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-subagent@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-subprocess",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-subprocess@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-system-prompt",
     "version": "0.2.1-rc.2",
     "license": "MIT",
@@ -253,6 +509,14 @@
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-timeout@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-tool-todo",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-tool-todo@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -272,6 +536,14 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-typert-registry",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-typert-registry@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-user-approval",
     "version": "0.2.1-rc.2",
     "license": "MIT",
@@ -288,11 +560,27 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-util-time",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-util-time@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-util-values",
     "version": "0.2.1-rc.2",
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-util-values@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-util-workspace-path",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-util-workspace-path@0.2.1-rc.2/LICENSE"
     ]
   },
   {
@@ -509,6 +797,14 @@
     "license": "MIT",
     "files": [
       "licenses/call-bound@1.0.4/LICENSE"
+    ]
+  },
+  {
+    "name": "chokidar",
+    "version": "5.0.0",
+    "license": "MIT",
+    "files": [
+      "licenses/chokidar@5.0.0/LICENSE"
     ]
   },
   {
@@ -938,6 +1234,14 @@
     ]
   },
   {
+    "name": "js-tokens",
+    "version": "4.0.0",
+    "license": "MIT",
+    "files": [
+      "licenses/js-tokens@4.0.0/LICENSE"
+    ]
+  },
+  {
     "name": "js-yaml",
     "version": "4.3.2",
     "license": "MIT",
@@ -1098,6 +1402,22 @@
     ]
   },
   {
+    "name": "picocolors",
+    "version": "1.1.1",
+    "license": "ISC",
+    "files": [
+      "licenses/picocolors@1.1.1/LICENSE"
+    ]
+  },
+  {
+    "name": "picomatch",
+    "version": "4.0.7",
+    "license": "MIT",
+    "files": [
+      "licenses/picomatch@4.0.7/LICENSE"
+    ]
+  },
+  {
     "name": "pkce-challenge",
     "version": "5.0.1",
     "license": "MIT",
@@ -1151,6 +1471,14 @@
     "license": "MIT",
     "files": [
       "licenses/react@19.3.1/LICENSE"
+    ]
+  },
+  {
+    "name": "readdirp",
+    "version": "5.1.1",
+    "license": "MIT",
+    "files": [
+      "licenses/readdirp@5.1.1/LICENSE"
     ]
   },
   {
@@ -1306,6 +1634,14 @@
     ]
   },
   {
+    "name": "undici",
+    "version": "8.11.2",
+    "license": "MIT",
+    "files": [
+      "licenses/undici@8.11.2/LICENSE"
+    ]
+  },
+  {
     "name": "unpipe",
     "version": "1.0.0",
     "license": "MIT",
@@ -1343,6 +1679,22 @@
     "license": "ISC",
     "files": [
       "licenses/wrappy@1.0.2/LICENSE"
+    ]
+  },
+  {
+    "name": "ws",
+    "version": "8.22.0",
+    "license": "MIT",
+    "files": [
+      "licenses/ws@8.22.0/LICENSE"
+    ]
+  },
+  {
+    "name": "yaml",
+    "version": "2.9.1",
+    "license": "ISC",
+    "files": [
+      "licenses/yaml@2.9.1/LICENSE"
     ]
   },
   {

@@ -1,5 +1,7 @@
 # 典型开源项目采用复核
 
+后续preview.20源码候选进一步落实生命周期与提交分层：[冷来源offer/status只读、明确submit恢复、原ID去重](../COLD-SOURCE-UPDATE.zh-CN.md)。归档/排队/自动任务和跨await来源变化有具体门禁，开发Native/PTC重启通过；最终归档另验。它继续缩小P1缺口，没有把通用表单、结果迁移或上游协议兼容标成完成；本页原35项目复核基线不改。
+
 后续[新来源快照的两个真实模型观察](../CODEX-SOURCE-UPDATE.zh-CN.md)分别核工具采用和原始正文：unknown保留，新false选择反向else→need true，首次view比较matched，raw有限判据评读met。来源/宿主/模型仍分层，静态导入不冒实时回调或通用提交完成；没有新上游复制、runtime依赖或发行，原矩阵不回写。
 
 后续preview.19开始落实提交/接收分层：[单未知当前事实补充](../SOURCE-UPDATE.zh-CN.md)经正常prompt产生新来源，关联持久requestId、消息和新checkpoint；unknown/取消、本地试算、重复及不明结果分开。仍无通用RequestForm或可迁移结果；原preview.11矩阵保持，不把此窄流程写成全部提交闭环已完成。

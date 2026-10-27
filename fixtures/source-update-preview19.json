@@ -1,0 +1,407 @@
+{
+  "provenance": {
+    "version": "0.1.0-preview.19",
+    "sourceCommit": "87e56ecfcff6fbf35622c14ac6130cb004c76ac5",
+    "archiveSha256": "e3912c33cd0aab2d46c2f20c20b6cb1f6ba243a5b69c7cafc6fb82dc1c26a46f",
+    "originalEvidenceSha256": "13fffbb2d127f0a778ca5a35916c6bc4c6933872684b6df21a8263e1a4445c8f",
+    "scope": "Selected actual native user, turn, intent and checkpoint events for a synthetic source; system, runtime and synthetic contexts omitted; final read ends at checkpoint during an open turn. No saved journal edited."
+  },
+  "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+  "base": {
+    "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+    "turn": 1,
+    "turnStartSeq": 6,
+    "messageId": "cda34694-c085-4c13-92bb-0a445b0445b1",
+    "messageSeq": 10,
+    "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+    "displayId": "condition-source-before",
+    "revision": 1
+  },
+  "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+  "expected": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+    "base": {
+      "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "cda34694-c085-4c13-92bb-0a445b0445b1",
+      "messageSeq": 10,
+      "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+      "displayId": "condition-source-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "公开服务",
+      "from": null,
+      "to": true,
+      "textByteStart": 153,
+      "textByteEnd": 177,
+      "before": "当前公开服务未知",
+      "after": "当前公开服务为是"
+    },
+    "nextTextSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+    "durable": true,
+    "message": {
+      "id": "649037bf-ccf9-46ae-b483-2304cfc98001",
+      "seq": 36,
+      "turn": 2,
+      "turnStartSeq": 33,
+      "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920"
+    },
+    "checkpoint": {
+      "seq": 44,
+      "displayId": "condition-source-after",
+      "revision": 1,
+      "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+      "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted",
+    "asOfSeq": 49
+  },
+  "events": [
+    {
+      "type": "turn/start",
+      "seq": 6,
+      "time": 1793080938164,
+      "data": {
+        "turn": 1
+      }
+    },
+    {
+      "type": "user/message",
+      "seq": 10,
+      "time": 1793080938279,
+      "data": {
+        "content": [
+          {
+            "type": "text",
+            "text": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务未知。两边价格都未知。"
+          }
+        ],
+        "source": {
+          "kind": "user",
+          "rpcId": "d2f787ef-c205-409a-b705-3212aa497f43",
+          "clientTimeZone": "UTC"
+        },
+        "role": "user",
+        "id": "cda34694-c085-4c13-92bb-0a445b0445b1"
+      },
+      "surfaceOp": "append"
+    },
+    {
+      "type": "tool/result",
+      "seq": 24,
+      "time": 1793080941558,
+      "sourceEventSeqs": [
+        23
+      ],
+      "surfaceOp": "append",
+      "data": {
+        "meta": {
+          "dshSemanticUi": {
+            "turn": 1,
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "condition-source-before",
+              "revision": 1,
+              "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+              "presentation": {
+                "version": 1,
+                "theme": {
+                  "mode": "light",
+                  "palette": "ocean",
+                  "font": "system",
+                  "density": "comfortable",
+                  "textSize": "standard"
+                },
+                "layout": {
+                  "direction": "auto"
+                }
+              },
+              "component": "DecisionExplorer",
+              "payload": {
+                "title": "来源声明的条件与取舍",
+                "dimensions": [
+                  {
+                    "id": "cap-source-before",
+                    "label": "审计",
+                    "kind": "boolean",
+                    "semanticRole": "capability-support"
+                  },
+                  {
+                    "id": "price-source-before",
+                    "label": "价格"
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "option-0-source-before",
+                    "label": "海棠",
+                    "values": {
+                      "cap-source-before": true,
+                      "price-source-before": null
+                    },
+                    "advantages": [],
+                    "disadvantages": [],
+                    "suitableWhen": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。",
+                    "evidence": []
+                  },
+                  {
+                    "id": "option-1-source-before",
+                    "label": "梧桐",
+                    "values": {
+                      "cap-source-before": false,
+                      "price-source-before": null
+                    },
+                    "advantages": [],
+                    "disadvantages": [],
+                    "suitableWhen": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。",
+                    "evidence": []
+                  }
+                ],
+                "inputs": [
+                  {
+                    "id": "need-source-before",
+                    "label": "当前需要审计",
+                    "type": "boolean",
+                    "initial": null,
+                    "semanticRole": "capability-need",
+                    "expectedEffect": "hard"
+                  }
+                ],
+                "rules": [],
+                "constraints": [],
+                "requirements": [
+                  {
+                    "id": "requirement-source-before",
+                    "dimension": "cap-source-before",
+                    "input": "need-source-before",
+                    "relation": "supports"
+                  }
+                ]
+              }
+            },
+            "sourceDelivery": {
+              "version": 1,
+              "identityVerified": false,
+              "sourceFactsVerified": false,
+              "status": "bound",
+              "kind": "decision-zh",
+              "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=未知。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=未知（来源明确声明），所以当前需要审计=未知；条件未定，不能按false或不需要处理。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+              "sourceRef": {
+                "textSha256": "821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683",
+                "hostContext": {
+                  "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+                  "turn": 1,
+                  "turnStartSeq": 6,
+                  "messageId": "cda34694-c085-4c13-92bb-0a445b0445b1",
+                  "messageSeq": 10,
+                  "producerSourceKind": "user",
+                  "inherited": false,
+                  "excludedSyntheticContexts": 4,
+                  "requestId": "d2f787ef-c205-409a-b705-3212aa497f43"
+                }
+              },
+              "viewIdentity": {
+                "displayId": "condition-source-before",
+                "revision": 1,
+                "component": "DecisionExplorer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "turn/end",
+      "seq": 29,
+      "time": 1793080941643,
+      "data": {
+        "turn": 1,
+        "reason": {
+          "kind": "completed"
+        }
+      }
+    },
+    {
+      "type": "command/run",
+      "seq": 30,
+      "time": 1793080942537,
+      "data": {
+        "commandId": "cmd-8eadb180-1",
+        "name": "dsh-semantic-ui-source-update",
+        "args": " {\"version\":1,\"requestId\":\"23c3d50a-94dc-4d49-b64e-1152a5378c43\",\"base\":{\"sessionId\":\"session-5a726a36-9f58-41a0-ab80-994220e31a38\",\"turn\":1,\"turnStartSeq\":6,\"messageId\":\"cda34694-c085-4c13-92bb-0a445b0445b1\",\"messageSeq\":10,\"textSha256\":\"821078ca9b3bf0ed405cf51667f452ca21f4f6921248f74e5819301c270ae683\",\"displayId\":\"condition-source-before\",\"revision\":1},\"condition\":\"公开服务\",\"value\":true,\"nextTextSha256\":\"b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920\",\"change\":{\"condition\":\"公开服务\",\"from\":null,\"to\":true,\"textByteStart\":153,\"textByteEnd\":177,\"before\":\"当前公开服务未知\",\"after\":\"当前公开服务为是\"}}",
+        "source": {
+          "kind": "user"
+        }
+      }
+    },
+    {
+      "type": "command/done",
+      "seq": 31,
+      "time": 1793080942538,
+      "data": {
+        "commandId": "cmd-8eadb180-1",
+        "kind": "success",
+        "text": "Source-update intent recorded. Not prompt admission, message persistence or new view adoption."
+      }
+    },
+    {
+      "type": "turn/start",
+      "seq": 33,
+      "time": 1793080942550,
+      "data": {
+        "turn": 2
+      }
+    },
+    {
+      "type": "user/message",
+      "seq": 36,
+      "time": 1793080942571,
+      "data": {
+        "content": [
+          {
+            "type": "text",
+            "text": "合成小组在选海棠与梧桐。前者支持审计；后者不支持审计。若公开服务，则我们需要审计；否则我们不需要审计。当前公开服务为是。两边价格都未知。"
+          }
+        ],
+        "source": {
+          "kind": "user",
+          "rpcId": "23c3d50a-94dc-4d49-b64e-1152a5378c43",
+          "clientTimeZone": "UTC"
+        },
+        "role": "user",
+        "id": "649037bf-ccf9-46ae-b483-2304cfc98001"
+      },
+      "surfaceOp": "append"
+    },
+    {
+      "type": "tool/result",
+      "seq": 44,
+      "time": 1793080945646,
+      "sourceEventSeqs": [
+        43
+      ],
+      "surfaceOp": "append",
+      "data": {
+        "meta": {
+          "dshSemanticUi": {
+            "turn": 2,
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "condition-source-after",
+              "revision": 1,
+              "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+              "presentation": {
+                "version": 1,
+                "theme": {
+                  "mode": "light",
+                  "palette": "ocean",
+                  "font": "system",
+                  "density": "comfortable",
+                  "textSize": "standard"
+                },
+                "layout": {
+                  "direction": "auto"
+                }
+              },
+              "component": "DecisionExplorer",
+              "payload": {
+                "title": "来源声明的条件与取舍",
+                "dimensions": [
+                  {
+                    "id": "cap-source-after",
+                    "label": "审计",
+                    "kind": "boolean",
+                    "semanticRole": "capability-support"
+                  },
+                  {
+                    "id": "price-source-after",
+                    "label": "价格"
+                  }
+                ],
+                "options": [
+                  {
+                    "id": "option-0-source-after",
+                    "label": "海棠",
+                    "values": {
+                      "cap-source-after": true,
+                      "price-source-after": null
+                    },
+                    "advantages": [],
+                    "disadvantages": [],
+                    "suitableWhen": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。",
+                    "evidence": []
+                  },
+                  {
+                    "id": "option-1-source-after",
+                    "label": "梧桐",
+                    "values": {
+                      "cap-source-after": false,
+                      "price-source-after": null
+                    },
+                    "advantages": [],
+                    "disadvantages": [],
+                    "suitableWhen": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。",
+                    "evidence": []
+                  }
+                ],
+                "inputs": [
+                  {
+                    "id": "need-source-after",
+                    "label": "当前需要审计",
+                    "type": "boolean",
+                    "initial": true,
+                    "semanticRole": "capability-need",
+                    "expectedEffect": "hard"
+                  }
+                ],
+                "rules": [],
+                "constraints": [],
+                "requirements": [
+                  {
+                    "id": "requirement-source-after",
+                    "dimension": "cap-source-after",
+                    "input": "need-source-after",
+                    "relation": "supports"
+                  }
+                ]
+              }
+            },
+            "sourceDelivery": {
+              "version": 1,
+              "identityVerified": false,
+              "sourceFactsVerified": false,
+              "status": "bound",
+              "kind": "decision-zh",
+              "explanation": "海棠：审计支持=true；价格声明未知。\n梧桐：审计支持=false；价格声明未知。\n当前需要审计=true。\n来源两分支：若公开服务=true，则需要审计=true；否则需要审计=false。\n当前公开服务=true（来源明确声明），所以当前需要审计=true；海棠满足本项；梧桐不满足本项。\n若本地假设公开服务=true：海棠满足本项；梧桐不满足本项；若本地假设公开服务=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+              "sourceRef": {
+                "textSha256": "b96e143236025724e989e32c5ffdfe59e29a7c3ac76f2cd24431c27bdfbbe920",
+                "hostContext": {
+                  "sessionId": "session-5a726a36-9f58-41a0-ab80-994220e31a38",
+                  "turn": 2,
+                  "turnStartSeq": 33,
+                  "messageId": "649037bf-ccf9-46ae-b483-2304cfc98001",
+                  "messageSeq": 36,
+                  "producerSourceKind": "user",
+                  "inherited": false,
+                  "excludedSyntheticContexts": 0,
+                  "requestId": "23c3d50a-94dc-4d49-b64e-1152a5378c43"
+                }
+              },
+              "viewIdentity": {
+                "displayId": "condition-source-after",
+                "revision": 1,
+                "component": "DecisionExplorer"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

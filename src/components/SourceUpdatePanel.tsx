@@ -1,5 +1,15 @@
 import {useRef,useState} from 'react';
 import type {SourceUpdateBase,SourceUpdateBridge,SourceUpdateResult} from '../source-update-contract';
+const updateReason:Record<string,string>={
+ UPDATE_SESSION_ARCHIVED:'会话已归档；此入口不会恢复归档会话。',
+ UPDATE_SESSION_BUSY:'会话有正在执行或排队的工作；等其结束后可重新查看。',
+ UPDATE_SESSION_AUTOMATION:'此入口仅支持没有目标或排程记录的普通会话，请从原任务入口继续。',
+ UPDATE_SESSION_OWNERSHIP:'会话由其他执行入口持有，无法在这里补充。',
+ UPDATE_GUARD_UNAVAILABLE:'无法读取完整的原生状态；本次没有确认提交。',
+ UPDATE_STALE_BASE:'这份视图已不是当前来源，请查看会话中的最新视图。',
+ UPDATE_RESUME_REJECTED:'宿主未允许恢复此会话，请检查原会话的状态。',
+ UPDATE_SUBMIT_PENDING:'原请求仍在处理；请核对同一个请求 ID。',
+};
 
 /** Source edits are explicit submissions; DecisionExplorer controls remain local. */
 export function SourceUpdatePanel({base,bridge}:{base:SourceUpdateBase;bridge?:SourceUpdateBridge}){
@@ -28,7 +38,8 @@ export function SourceUpdatePanel({base,bridge}:{base:SourceUpdateBase;bridge?:S
     <button disabled={busy} onClick={()=>{setResult(undefined);setValue('unknown');}}>取消补充</button>
    </>:<p>本版本没有可补充的单个未知当前条件。</p>):null}
    {result&&result.status!=='available'?<div role="status" aria-live="polite">
-    <p>{result.status==='adopted'?'已核实：新来源消息已持久化，新的语义视图已采用。':result.status==='message-persisted'?'已核实新来源消息持久化；尚未核实新的语义视图。':result.admission==='accepted'?'宿主已接收请求；消息持久化和新视图仍待核对。':result.status==='unknown'?'提交结果未明；只能核对原请求，不会自动重发。':'本次未确认来源更新。'} {result.code}</p>
+    <p>{result.status==='adopted'?'已核实：新来源消息已持久化，新的语义视图已采用。':result.status==='message-persisted'?'已核实新来源消息持久化；尚未核实新的语义视图。':result.admission==='accepted'?'宿主已接收请求；消息持久化和新视图仍待核对。':result.status==='unknown'?'提交结果未明；只能核对原请求，不会自动重发。':'本次未确认来源更新。'} {result.code&&updateReason[result.code]||result.code}</p>
+    {result.status==='withheld'&&!result.requestId?<button disabled={busy} onClick={()=>{requestId.current=undefined;setValue('unknown');void invoke('offer');}}>重新查看可补充条件</button>:null}
     {result.requestId?<><p>请求 ID：{result.requestId}</p><button disabled={busy} onClick={()=>void invoke('status')}>核对原请求状态</button></>:null}
     {result.message?<p>新来源 SHA-256：{result.message.textSha256} · 回合 {result.message.turn} · 消息序号 {result.message.seq}</p>:null}
     {result.status==='adopted'&&result.checkpoint?<p>新视图：{result.checkpoint.displayId} · revision {result.checkpoint.revision}。这里只核实来源采用；模型自由正文未认证。</p>:null}

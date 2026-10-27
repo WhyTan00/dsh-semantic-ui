@@ -1,5 +1,8 @@
 # 采用记录与后续实现合同
 
+preview.20源码候选吸收“只读状态与明确执行分开”的生命周期原则：[冷来源补充](../COLD-SOURCE-UPDATE.zh-CN.md)复用原生投影、Session resolver、命令/Peer/prompt与原ID收据；归档、排队和有自动任务历史的会话不会由此入口恢复。开发构建和最终归档分开记录。未引入AG-UI/A2UI适配器、新图表引擎或第二会话库，不把这项窄闭环算作通用表单完成。
+
+
 后续[新来源快照的两个真实模型观察](../CODEX-SOURCE-UPDATE.zh-CN.md)分别核工具采用和原始正文：unknown保留，新false选择反向else→need true，首次view比较matched，raw有限判据评读met。来源/宿主/模型仍分层，静态导入不冒实时回调或通用提交完成；没有新上游复制、runtime依赖或发行，原矩阵不回写。
 
 preview.19把此前A2UI/assistant-ui/Tambo启发的本地编辑、明确提交、接收与采用分层落实到[一个未知布尔事实补充](../SOURCE-UPDATE.zh-CN.md)。复用原DSH日志/Peer/正常prompt，不新建会话库；实际能力仍窄于候选RequestForm合同，任意字段/通用表单/结果迁移不宣称完成。

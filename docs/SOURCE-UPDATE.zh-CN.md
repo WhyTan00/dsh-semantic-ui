@@ -1,5 +1,7 @@
 # 单个未知当前事实的正常补充
 
+后续preview.20源码候选补齐[冷会话来源入口](COLD-SOURCE-UPDATE.zh-CN.md)：offer/status不激活，明确submit使用公开Session resolver，恢复后复查并保留原ID收据；归档、排队与自动任务受约束。开发证据不等于最终归档接受。下文19历史发行不重包。
+
 19发行后另完成[来源补充后的Codex快照采用](CODEX-SOURCE-UPDATE.zh-CN.md)：一个新反向分支场景经正常DSH19控件保存unknown→false的新声明，原生消息与导入文件hash逐项关联；两份独立guided回合各4次模型语义调用，首个view比较matched，raw final按独立判据评读met。新false按else推出need=true，价格/整体未知。它是文件快照导入，不是实时回调/主客户端安装；backend请求数unknown，任意正文仍未认证。没有新runtime或发行，原19的0模型接受不改。
 
 **正式交付：** [preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，冻结源码 `87e56ecfcff6fbf35622c14ac6130cb004c76ac5`。最终317文件实际归档在本机与 [Linux CI40458705531](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40458705531) 的Native/PTC均通过，四份资产本机/Linux/匿名HTTPS下载字节一致。新增真实模型观察0；原始模型正文更新未核。完整[分层接受与首次失败](evidence/source-update.json)后补在仓库，不重包已发行归档。

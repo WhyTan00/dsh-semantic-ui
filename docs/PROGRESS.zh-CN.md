@@ -1,5 +1,8 @@
 # 实际进度
 
+preview.20源码候选完成[冷会话受约束补充](COLD-SOURCE-UPDATE.zh-CN.md)：公开sessionController恢复同ID，offer/status冷读不激活，恢复/命令/flush边界复查来源、原生inbox、归档与activity，目标/排程历史保守拒绝。38定向测试和开发Native/PTC两次宿主重启路径通过；false按else导出need=false，本项不排除两方案，原unknown/新false及原ID收据独立恢复。首次实际测试暴露DSH点击树自行恢复Agent，保留失败并将冷API测试与原生UI恢复分层，没有伪装不激活。真实推理0，旧19/18及全部原件不变。最终归档安装/Linux/公开资产另验后补，不冒当前已发行。
+
+
 19发行后另完成[来源补充后的Codex快照采用](CODEX-SOURCE-UPDATE.zh-CN.md)：一个新反向分支场景经正常DSH19控件保存unknown→false的新声明，原生消息与导入文件hash逐项关联；两份独立guided回合各4次模型语义调用，首个view比较matched，raw final按独立判据评读met。新false按else推出need=true，价格/整体未知。它是文件快照导入，不是实时回调/主客户端安装；backend请求数unknown，任意正文仍未认证。没有新runtime或发行，原19的0模型接受不改。
 
 当前交付preview.19已完成正规开源：[Release425087240](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，source87e56ec。30项检查、最终317文件真实安装、本机/Linux Native/PTC单字段新源采用、丢失回执/重复/冷收据/刷新通过；CI40458705531 success，四份资产匿名下载与本机/Linux一致。18候选失败不发布，原包/CI保留。模型观察0，raw正文仍未核、cold历史直接编辑未实现；长期Goal开放。实际范围与恢复入口见[分层回执](evidence/source-update.json)。
