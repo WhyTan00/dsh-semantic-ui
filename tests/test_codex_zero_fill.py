@@ -41,7 +41,15 @@ class ZeroFillAnswerContracts(unittest.TestCase):
                                               'directionRelativeToObservedMean': z['directionRelativeToObservedMean'],
                                               'completeDataMeanKnown': False}}]}}
 
-    def run_answer(self, source=None, core=None, mutate_bound=None):
+    def assumed_core(self, core=None):
+        alternate = copy.deepcopy(core if core is not None else self.core('D'))
+        s = alternate['dataFacts']['series'][0]
+        s.update({'valid': alternate['dataFacts']['rows'], 'missing': 0, 'mean': 0})
+        s['zeroFillIllustration'].update({'mean': 0, 'differenceFromObservedMean': 0,
+            'directionRelativeToObservedMean': 'same', 'completeDataMeanKnown': True})
+        return alternate
+
+    def run_answer(self, source=None, core=None, mutate_bound=None, alternate_core=None):
         source = source or self.source()
         core = core or self.core()
         original = copy.deepcopy(source)
@@ -55,8 +63,17 @@ class ZeroFillAnswerContracts(unittest.TestCase):
                     mutate_bound(bound)
                 return {'structuredContent': bound}
             self.assertEqual(name, 'semantic_ui_check')
-            self.assertEqual(args['view'], calls[0][1]['view'])
-            return {'structuredContent': core}
+            if len(calls) == 2:
+                self.assertEqual(args['view'], calls[0][1]['view'])
+                return {'structuredContent': core}
+            self.assertEqual(len(calls), 3)
+            self.assertNotEqual(args['view']['displayId'], calls[0][1]['view']['displayId'])
+            self.assertIn('假设', args['view']['payload']['title'])
+            if alternate_core is None:
+                alternate = self.assumed_core(core)
+            else:
+                alternate = alternate_core
+            return {'structuredContent': alternate}
         identity = {k: v for k, v in source['source'].items() if k != 'identityVerified'}
         with tempfile.TemporaryDirectory() as directory:
             answer = client.zero_fill_answer(source, original['source']['textSha256'], identity, tool, Path(directory))
@@ -110,17 +127,45 @@ class ZeroFillAnswerContracts(unittest.TestCase):
             self.assertEqual(answer['hypothesis']['status'], 'withheld')
             self.assertNotIn('补零假设平均值：', answer['text'])
 
-    def test_all_missing_or_unavailable_core_stays_unknown_without_guessing_zero(self):
+    def test_all_missing_uses_separate_assumed_copy_and_keeps_original_unknowns(self):
         answer, calls = self.run_answer(source=self.source('D'), core=self.core('D'))
-        self.assertEqual(len(calls), 2)
-        self.assertEqual(answer['status'], 'partial')
-        self.assertEqual(answer['hypothesis']['status'], 'unknown')
-        self.assertIsNone(answer['hypothesis']['mean'])
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(answer['status'], 'delivered')
+        self.assertEqual(answer['hypothesis']['status'], 'available')
+        self.assertEqual(answer['hypothesis']['mean'], 0)
         self.assertIsNone(answer['hypothesis']['differenceFromObservedMean'])
         self.assertFalse(answer['hypothesis']['completeDataMeanKnown'])
-        self.assertIn('现有核心未提供有限计算值', answer['text'])
-        self.assertNotIn('补零假设平均值：0', answer['text'])
+        self.assertEqual(answer['hypothesis']['directionRelativeToObservedMean'], 'unknown')
+        self.assertEqual(answer['hypothesis']['calculationSource'], 'separate-zero-filled-copy')
+        self.assertIn('补零假设平均值：0', answer['text'])
+        self.assertIn('没有有效实测均值', answer['text'])
+        self.assertTrue(all(r['values']['source-readings'] is None for r in calls[0][1]['view']['payload']['rows']))
+        self.assertTrue(all(r['values']['source-readings'] == 0 for r in calls[2][1]['view']['payload']['rows']))
+        self.assertEqual(calls[0][1]['view']['payload']['unit'], calls[2][1]['view']['payload']['unit'])
         self.assertFalse(client.finite_number(10**1000))
+
+    def test_invalid_original_or_copy_results_never_gain_a_fallback_zero(self):
+        bad = self.core('D');bad['dataFacts']['series'][0]['zeroFillIllustration'].pop('mean')
+        answer, calls = self.run_answer(source=self.source('D'), core=bad)
+        self.assertEqual(answer['status'], 'withheld');self.assertEqual(len(calls), 2)
+        for mutate in [lambda r: r['dataFacts'].update({'unit': 'mA'}),
+                       lambda r: r['dataFacts']['series'][0].update({'mean': float('inf')}),
+                       lambda r: r['dataFacts']['series'][0]['zeroFillIllustration'].pop('count')]:
+            alternate = self.assumed_core();mutate(alternate)
+            answer, calls = self.run_answer(source=self.source('D'), core=self.core('D'), alternate_core=alternate)
+            self.assertEqual(len(calls), 3)
+            self.assertEqual(answer['status'], 'withheld')
+            self.assertNotIn('补零假设平均值：0', answer['text'])
+
+    def test_non_all_missing_unavailable_result_remains_unknown_without_copy(self):
+        source = self.source();source['sourceStatistics']['observed']['mean'] = None
+        core = self.core();s = core['dataFacts']['series'][0];s['mean'] = None
+        s['zeroFillIllustration'].update({'mean': None, 'differenceFromObservedMean': None,
+                                         'directionRelativeToObservedMean': 'unknown'})
+        answer, calls = self.run_answer(source=source, core=core)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(answer['status'], 'partial')
+        self.assertIsNone(answer['hypothesis']['mean'])
 
 
 if __name__ == '__main__':

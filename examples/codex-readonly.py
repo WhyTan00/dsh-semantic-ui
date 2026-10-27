@@ -9,6 +9,7 @@ The supplied manifest authenticates bytes only, not its author or source facts.
 """
 import argparse
 import base64
+import copy
 import hashlib
 import json
 import math
@@ -378,6 +379,34 @@ def checked_zero_fill(receipt, bound, projection):
                 'completeDataMeanKnown']}, 'sourceFact': False}
 
 
+def checked_hypothetical_copy(receipt, view):
+    """Read the core result for a separate assumed dataset, never original facts."""
+    facts = receipt['dataFacts']
+    series = facts['series']
+    count = len(view['payload']['rows'])
+    if (receipt.get('status') != 'validated' or receipt.get('component') != 'DataChart'
+            or receipt.get('sourceFactsVerified') is not False
+            or facts.get('scope') != 'original-full-data' or facts.get('chartType') != 'bar'
+            or facts.get('order') != 'input' or facts.get('unit') != view['payload']['unit']
+            or type(facts.get('rows')) is not int or facts['rows'] != count
+            or not isinstance(series, list) or len(series) != 1):
+        raise ValueError('HYPOTHESIS_COPY_SCOPE')
+    s = series[0]
+    z = s['zeroFillIllustration']
+    if (s.get('id') != view['payload']['series'][0]['id']
+            or type(s.get('valid')) is not int or s['valid'] != count
+            or type(s.get('missing')) is not int or s['missing'] != 0
+            or not finite_number(s.get('mean')) or not finite_number(z.get('mean'))
+            or z['mean'] != s['mean']
+            or type(z.get('count')) is not int or z['count'] != count
+            or z.get('completeDataMeanKnown') is not True
+            or not finite_number(z.get('differenceFromObservedMean'))
+            or z['differenceFromObservedMean'] != 0
+            or z.get('directionRelativeToObservedMean') != 'same'):
+        raise ValueError('HYPOTHESIS_COPY_RESULT')
+    return z['mean']
+
+
 def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
     delivery = grounded_delivery(inspection, source_sha, source_identity)
     delivery.update({'kind': 'host-source-zero-fill-hypothesis',
@@ -404,6 +433,28 @@ def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
         if computed.get('isError'):
             raise ValueError('HYPOTHESIS_CORE_TOOL_ERROR')
         hypothesis = checked_zero_fill(computed['structuredContent'], bound, projection)
+        if (hypothesis['status'] == 'unknown'
+                and bound['sourceStatistics']['observed']['count'] == 0
+                and all(row['values'][projection['mapping']['seriesId']] is None
+                        for row in projection['view']['payload']['rows'])):
+            assumed = copy.deepcopy(projection['view'])
+            assumed['displayId'] += '-zero-fill'
+            assumed['summary'] = 'Host zero-fill hypothesis copy; not original or source-matched observations.'
+            assumed['payload']['title'] = '明确补零假设（非实测数据）'
+            for row in assumed['payload']['rows']:
+                if row['values'][projection['mapping']['seriesId']] is None:
+                    row['values'][projection['mapping']['seriesId']] = 0
+            write_json(logs/'hypothesis-zero-filled-copy.json', {
+                'view': assumed, 'mapping': projection['mapping'],
+                'originalSourceTextSha256': source_sha,
+                'sourceComparison': 'not requested: this is a separate assumed dataset, not the source'})
+            alternate = tool('semantic_ui_check', {'view': assumed})
+            write_json(logs/'hypothesis-zero-filled-core-check.json', alternate)
+            if alternate.get('isError'):
+                raise ValueError('HYPOTHESIS_COPY_TOOL_ERROR')
+            hypothesis.update({'mean': checked_hypothetical_copy(alternate['structuredContent'], assumed),
+                               'status': 'available', 'calculationSource': 'separate-zero-filled-copy'})
+            # Keep original complete-known/difference/direction, never the copy's fields.
     except (RpcError, ValueError, KeyError, TypeError, AttributeError) as error:
         write_json(logs/'hypothesis-error.json', {'error': str(error)})
         delivery['status'] = 'withheld'
@@ -415,7 +466,7 @@ def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
     unit = hypothesis['unit']
     delivery['text'] += ('\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。'
         + f"\n补零假设平均值：{number(hypothesis['mean'])} {unit}；分母为{hypothesis['count']}个原始位置。"
-        + f"\n相对已观测均值的差（假设减实测）：{number(hypothesis['differenceFromObservedMean'])} {unit}；方向：{direction[hypothesis['directionRelativeToObservedMean']]}。"
+        + f"\n相对已观测均值的差（假设减实测）：{'未知（没有有效实测均值）' if bound['sourceStatistics']['observed']['mean'] is None else number(hypothesis['differenceFromObservedMean'])} {unit}；方向：{direction[hypothesis['directionRelativeToObservedMean']]}。"
         + '\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值的偏差方向。'
         + '\n原始完整均值及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。')
     delivery['hypothesis'] = hypothesis
