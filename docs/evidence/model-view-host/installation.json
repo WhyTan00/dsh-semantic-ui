@@ -1,0 +1,35 @@
+{
+  "check": {
+    "method": "normal dsh plugin add local tgz into a new private profile",
+    "version": "0.1.0-preview.26",
+    "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+    "runtimeEntrypoints": {
+      "dist/host.js": "affa76cd9264dd2764c038d987913ad29dfa052e7b78be20bd87604eb6a7ab71",
+      "dist/client.js": "af6ba04d26e64b007717b29fa6eb860b56bad15ae5d7670ecdc933ffc03f6176",
+      "dist/core.js": "2a729ccc7ceba5f87cac3b8883bee5353749ec5ba7b8d729a31007c4a7ff48ec",
+      "dist/mcp.js": "67073960357ef7ed27b1ca7a9c36b0627526fc9f7cd3a0d071147029de6ea3d8",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    },
+    "all388FilesRechecked": false,
+    "semanticSourceOverlay": false,
+    "downloadedArchive": false
+  },
+  "serve": {
+    "method": "normal dsh plugin add local tgz into a new private profile",
+    "version": "0.1.0-preview.26",
+    "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+    "runtimeEntrypoints": {
+      "dist/host.js": "affa76cd9264dd2764c038d987913ad29dfa052e7b78be20bd87604eb6a7ab71",
+      "dist/client.js": "af6ba04d26e64b007717b29fa6eb860b56bad15ae5d7670ecdc933ffc03f6176",
+      "dist/core.js": "2a729ccc7ceba5f87cac3b8883bee5353749ec5ba7b8d729a31007c4a7ff48ec",
+      "dist/mcp.js": "67073960357ef7ed27b1ca7a9c36b0627526fc9f7cd3a0d071147029de6ea3d8",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    },
+    "all388FilesRechecked": false,
+    "semanticSourceOverlay": false,
+    "downloadedArchive": false
+  },
+  "existingArchiveReused": true,
+  "newRuntimeRelease": false,
+  "newAll388FileMatrix": false
+}

@@ -1,0 +1,275 @@
+{
+  "schema": "semantic-ui-saved-model-native-replay-v1",
+  "recordedAt": "2026-10-27T16:49:24.160307+00:00",
+  "scope": "Zero-model on-demand replay of two saved real model views through normal isolated DSH Native source-check/render; original render view and safety projection separated.",
+  "runtimeVersion": "0.1.0-preview.26",
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "originEvidenceCommit": "2d303c877ec59bfa44fde77b5ab7fdef685a7ae0",
+  "originThreadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+  "originTurns": [
+    "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+    "01a17e17-68d2-7c83-b578-df88a1b1db2c"
+  ],
+  "privateIndependentCriteriaSha256": "618c850b3136ff2a0a996fc3992782bd55ae8c28ccf53537673b673ee77d4bbf",
+  "criteriaFrozenAt": "2026-10-27T16:25:04.944572+00:00",
+  "newModelMaximum": 0,
+  "newRealModelStarts": 0,
+  "fixtureAgentTurns": 4,
+  "localTransportPosts": 20,
+  "mode": "native",
+  "claimedNewPtcAcceptance": false,
+  "phases": [
+    {
+      "phase": 1,
+      "origin": {
+        "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+        "turnId": "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+        "phase": 1,
+        "evidenceFile": "docs/evidence/source-history/phase-1.json",
+        "evidenceFileSha256": "1991b70a2d380326183aa4ea40529558909db5b01705aed19dbe96cef8200c69",
+        "modelToolItemIndex": 8,
+        "modelToolName": "semantic_ui_source_check",
+        "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+        "rawFinalSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+        "selectedArgumentsJsonSha256": "5f029d7c03bae8dbf6d763e733dc22d14813b9a0e6a7ca15ccea1130c175f762",
+        "selectedViewJsonSha256": "d5d66e81297982d85c5624c3e5f80380e5d9b8cb6f2cbbdae670b76ae751ecbb",
+        "serialization": "UTF-8 JSON.stringify of the parsed original value; not original wire whitespace",
+        "renderViewJsonSha256": "d5d66e81297982d85c5624c3e5f80380e5d9b8cb6f2cbbdae670b76ae751ecbb",
+        "renderAdapterChanges": [
+          {
+            "path": "$.claims",
+            "before": [
+              {
+                "kind": "condition",
+                "name": "原始记录禁止外传",
+                "value": true
+              },
+              {
+                "kind": "conditional-need",
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false
+              }
+            ],
+            "after": {
+              "absent": true
+            }
+          },
+          {
+            "path": "$.action",
+            "before": {
+              "absent": true
+            },
+            "after": "render"
+          }
+        ]
+      },
+      "replaySessionId": "session-2ef62610-1799-455f-89d1-eaf30ca67afd",
+      "inputMessageId": "deda423e-7362-42ac-9762-75c7c4e7c550",
+      "inputSeq": 10,
+      "replayRequestId": "f90caec4-a81b-4fc3-ba60-42e07a35196f",
+      "checkpointSeq": 29,
+      "replayTurn": 1,
+      "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "initials": [
+        true,
+        true
+      ],
+      "normalRenderViewEqualsOriginalModelView": true,
+      "projectionDiffPaths": [
+        "$.summary",
+        "$.payload.title",
+        "$.payload.options.0.suitableWhen",
+        "$.payload.options.1.suitableWhen",
+        "$.presentation"
+      ]
+    },
+    {
+      "phase": 2,
+      "origin": {
+        "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+        "turnId": "01a17e17-68d2-7c83-b578-df88a1b1db2c",
+        "phase": 2,
+        "evidenceFile": "docs/evidence/source-history/phase-2.json",
+        "evidenceFileSha256": "326e2eb94c4184b7ce712f39297da4c01aac6c62a2e0a05ea1944b4cd2a41573",
+        "modelToolItemIndex": 2,
+        "modelToolName": "semantic_ui_source_check",
+        "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+        "rawFinalSha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+        "selectedArgumentsJsonSha256": "fad712e0f0c836a54994d349ae4abf91c6802aa45437a2139bcce4a69f0d8ba3",
+        "selectedViewJsonSha256": "cc4b77b9b20b8bba02f825d91e864daea19fd0548f4d01d2990bb261e1692c90",
+        "serialization": "UTF-8 JSON.stringify of the parsed original value; not original wire whitespace",
+        "renderViewJsonSha256": "cc4b77b9b20b8bba02f825d91e864daea19fd0548f4d01d2990bb261e1692c90",
+        "renderAdapterChanges": [
+          {
+            "path": "$.claims",
+            "before": [
+              {
+                "kind": "condition",
+                "name": "原始记录禁止外传",
+                "value": false
+              },
+              {
+                "kind": "conditional-need",
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false
+              },
+              {
+                "kind": "actor-available",
+                "actor": "小组",
+                "value": null
+              }
+            ],
+            "after": {
+              "absent": true
+            }
+          },
+          {
+            "path": "$.action",
+            "before": {
+              "absent": true
+            },
+            "after": "render"
+          }
+        ]
+      },
+      "replaySessionId": "session-2ef62610-1799-455f-89d1-eaf30ca67afd",
+      "inputMessageId": "cf182d77-071c-4a5b-a282-c3335e7d620b",
+      "inputSeq": 39,
+      "replayRequestId": "161967c6-32fa-4bf0-9fab-992120c5f8bf",
+      "checkpointSeq": 62,
+      "replayTurn": 2,
+      "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "initials": [
+        false,
+        null
+      ],
+      "normalRenderViewEqualsOriginalModelView": true,
+      "projectionDiffPaths": [
+        "$.summary",
+        "$.payload.title",
+        "$.payload.options.0.suitableWhen",
+        "$.payload.options.1.suitableWhen",
+        "$.presentation"
+      ]
+    }
+  ],
+  "offlineContracts": 3,
+  "actualDefaultServeAndSigintTested": true,
+  "fourMeaningfulLocalInteractions": true,
+  "sourceAndHistoryUnchanged": true,
+  "refreshRestoresBothHistoricalInitials": true,
+  "actual640And360Screenshots": true,
+  "pageErrors": [],
+  "graphicalDshNativeObserved": true,
+  "allOriginalModelBytesRenderedUnchanged": false,
+  "originalViewAndMappingUnchangedOnNormalRenderInput": true,
+  "sourceCheckOnlyClaimsOmittedFromRender": true,
+  "mainCodexGraphicalUiObserved": false,
+  "liveCrossClientStreaming": false,
+  "newNaturalSemanticAcceptance": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "runtimeOrProtocolOrSkillChanged": false,
+  "newRelease": false,
+  "oldBudgetsAndFailures": "All previous 2/2, independent 1/1 and original 0 pass / 6 fail / 18 requests unchanged.",
+  "assets": [
+    {
+      "path": "model-view-host/acceptance.json",
+      "sha256": "8cb343c60cbdd77c8d00248ea61dc481f18de12f966b8591e370acb311b4e907",
+      "bytes": 2417
+    },
+    {
+      "path": "model-view-host/cleanup.json",
+      "sha256": "485d6fdd1db5c0fbb6c6b97877483a02dc73b14bbc0191ee5b12e12362cb9ed1",
+      "bytes": 1958
+    },
+    {
+      "path": "model-view-host/commands.json",
+      "sha256": "f9fa1ba7279bef5547e21448116cd2562c900caf4caacc50709be2ef59ebc0a8",
+      "bytes": 1272
+    },
+    {
+      "path": "model-view-host/input-to-checkpoint-diff.json",
+      "sha256": "86ff10e8e367df320c842aca3f14e75b57fbbf295228a9725fb7f8fef9bf3af8",
+      "bytes": 31951
+    },
+    {
+      "path": "model-view-host/installation.json",
+      "sha256": "fe57c21810fd077a3e2cb1a801e46c75cbe4d92b1e8769bdb673d5f7b43934c9",
+      "bytes": 1716
+    },
+    {
+      "path": "model-view-host/native.json",
+      "sha256": "7c5e0c5f9472317aaf4193f33a0a79a628a7b96d7fbc8720693d012b74f0aa20",
+      "bytes": 164934
+    },
+    {
+      "path": "model-view-host/phase-1-360.png",
+      "sha256": "a3e1f89da4c257b28d2827346d0aace566bed9c0b5177d6911c11cd36025cbb1",
+      "bytes": 308248
+    },
+    {
+      "path": "model-view-host/phase-1-640.png",
+      "sha256": "40b4c64e1b7265d4fe32d69a138f27d46f1d28349c5df7c34925a3534f61e7fc",
+      "bytes": 325921
+    },
+    {
+      "path": "model-view-host/phase-2-360.png",
+      "sha256": "f8ba79f7f6716b5b8994db43abc85c1050b7de1a1fa2d3493cda42f696691ebd",
+      "bytes": 317681
+    },
+    {
+      "path": "model-view-host/phase-2-640.png",
+      "sha256": "89128f505e13089d7e043a120d1ad06c76ed95fff1588a6b7b29d48a90cd5bca",
+      "bytes": 334369
+    },
+    {
+      "path": "model-view-host/serve.json",
+      "sha256": "cf90eb7c90efbc3b92d401ad89302cd78a019674cff8c9a7b72a105d1da84bdb",
+      "bytes": 10032
+    },
+    {
+      "path": "model-view-host/validation.json",
+      "sha256": "80bd8308d9a121862f2ef80c4958cc044f39c0cd7009076ecb565556cee24735",
+      "bytes": 1666
+    }
+  ],
+  "implementationFiles": [
+    {
+      "path": "examples/dsh-model-history.mjs",
+      "sha256": "6bf82dee91d3d6c5bca101cb4866e76df3e8c4a306b2afb1139031a3b79a6408",
+      "bytes": 8709
+    },
+    {
+      "path": "examples/dsh-model-history-browser.mjs",
+      "sha256": "6ee6cb579b227f483ef4414b438ec7067f425684a40e013a1a887a0bbfdb9a5a",
+      "bytes": 13463
+    },
+    {
+      "path": "examples/saved-model-history.mjs",
+      "sha256": "40e38164ad118fb1eb82d1e693ca6d094fed076b6860c2109131e8056d83b8f5",
+      "bytes": 4363
+    },
+    {
+      "path": "examples/saved-model-replay-server.mjs",
+      "sha256": "7f3f713ff162faf425002f6b8ec0b2e67b9499afb34ee2f8a081cdf6bfca9709",
+      "bytes": 3024
+    },
+    {
+      "path": "tests/saved-model-history-contracts.mjs",
+      "sha256": "147df3ee96f053cb07f7f9725e4cfcf6ab9985cf6695a88b79bc3432407e61d0",
+      "bytes": 2621
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "0a28ce4cf8609828e9d0ccebfb6e4d9de7b7ad65ef0cf1edc9f566328ba91e43",
+      "bytes": 19073
+    }
+  ]
+}

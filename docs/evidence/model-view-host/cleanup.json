@@ -1,0 +1,90 @@
+{
+  "runs": [
+    {
+      "run": "saved-model-view-native-20261027",
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "installer",
+            "pid": 16825,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "native",
+            "pid": 16908,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "browser-seed",
+            "pid": 16922,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 52474,
+        "fixturePort": 52473,
+        "localTransportRequests": 10,
+        "newRealModelStarts": 0,
+        "replayServerClosed": true
+      },
+      "pidsAbsent": true,
+      "ports": [
+        {
+          "port": 52474,
+          "listening": false
+        },
+        {
+          "port": 52473,
+          "listening": false
+        }
+      ]
+    },
+    {
+      "run": "saved-model-view-serve-20261027",
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "installer",
+            "pid": 18451,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "native",
+            "pid": 18551,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "browser-seed",
+            "pid": 18567,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 53789,
+        "fixturePort": 53788,
+        "localTransportRequests": 10,
+        "newRealModelStarts": 0,
+        "replayServerClosed": true
+      },
+      "pidsAbsent": true,
+      "ports": [
+        {
+          "port": 53789,
+          "listening": false
+        },
+        {
+          "port": 53788,
+          "listening": false
+        }
+      ]
+    }
+  ],
+  "totalLocalTransportRequests": 20,
+  "fixtureAgentTurns": 4,
+  "newRealModelStarts": 0,
+  "sharedServicesChanged": false
+}

@@ -1,0 +1,59 @@
+{
+  "offlineNodeContractsPassed": 3,
+  "syntaxChecksPassed": 4,
+  "newGraphicalHostMode": "native",
+  "newPtcRun": false,
+  "newLinuxHostRun": false,
+  "newPhoneRun": false,
+  "checkRun": {
+    "normalSourcePrompts": 2,
+    "modelCandidateViews": 2,
+    "localInteractions": 4,
+    "journalEventsAndCutsUnchangedDuringInteractions": true,
+    "refreshRestoresEachOriginalInitial": true,
+    "oldViewOnNewSource": "source-check and render refuse two SOURCE_INITIAL",
+    "pageErrors": [],
+    "screenshots": [
+      {
+        "file": "saved-model-1-640.png",
+        "width": 640,
+        "actualWidth": 640,
+        "noRootOverflow": true
+      },
+      {
+        "file": "saved-model-1-360.png",
+        "width": 360,
+        "actualWidth": 360,
+        "noRootOverflow": true
+      },
+      {
+        "file": "saved-model-2-640.png",
+        "width": 640,
+        "actualWidth": 640,
+        "noRootOverflow": true
+      },
+      {
+        "file": "saved-model-2-360.png",
+        "width": 360,
+        "actualWidth": 360,
+        "noRootOverflow": true
+      }
+    ]
+  },
+  "defaultServeRunReadyAndClosed": true,
+  "totalFixtureAgentTurns": 4,
+  "totalLocalTransportPosts": 20,
+  "newRealModelStarts": 0,
+  "newRealModelRaw": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "liveCrossClientStreaming": false,
+  "mainCodexGraphicalUi": false,
+  "allOldModelBudgetsUnchanged": true,
+  "codexGlobalConfigMatchesPreviousAcceptedBaseline": true,
+  "runtimeOrSkillOrProtocolChanged": false,
+  "newReleaseRepackOrOldArchiveDownload": false,
+  "ciStepAddedForFutureRuns": true,
+  "newCiInvokedForThisEvidence": false
+}

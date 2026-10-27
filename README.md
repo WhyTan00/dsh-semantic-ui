@@ -57,5 +57,6 @@ pnpm build
 - [协议](docs/PROTOCOL.md)与[语义校验](docs/SEMANTICS.zh-CN.md)
 - [个人模板](docs/TEMPLATES.zh-CN.md)与[语言实现](docs/LANGUAGE.zh-CN.md)
 - [Codex 只读伴随入口](docs/CODEX.zh-CN.md)
+- [零模型启动：在真实DSH中交互查看已保存模型结果](docs/SAVED-MODEL-HOST-REPLAY.zh-CN.md)
 - [实际进度](docs/PROGRESS.zh-CN.md)、[成熟度](docs/MATURITY.zh-CN.md)与[验证](docs/VALIDATION.zh-CN.md)
 - [第三方说明](THIRD_PARTY_NOTICES.md)与 [MIT 许可证](LICENSE)

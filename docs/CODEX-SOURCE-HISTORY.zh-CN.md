@@ -82,3 +82,5 @@ candidate-budget.json在首次app-server启动前计第一attempt，因此启动
 上述6个零模型探针/入口与1个两回合模型进程均已终态，app-server exit0、自有MCP进程不存在、runtime目录移除、extra skill根撤回。最终修订入口、原单来源入口和真实两回合的全局配置字节均相等，早期两条临时信任记录的清理另记，没有覆盖其它设置。见[零模型与纠正记录](evidence/source-history/zero-probes.json)和[实际模型进程清理](evidence/source-history/cleanup.json)。
 
 这是macOS个人官方CLI0.164.0/default路径的新伴随能力，本段未新跑Linux、DSH Native/PTC或主客户端图形UI。实际可见输出是[终端两版宿主文字](evidence/source-history/terminal-answer.md)，stdout与保存文字只相差一个print换行。MCP只读view没有在本段渲染为图形界面，不能由matched推断已显示富UI或接收了DSH控件反馈；原26的宿主与中文接受各自保持。世界事实、作者身份和任意自由正文认证继续为false，有限两回合正确不变成普遍正确率。
+
+后续单独交付[既有真实模型view的DSH Native呈现回放](SAVED-MODEL-HOST-REPLAY.zh-CN.md)：原view/mapping实际进入正常render，来源安全投影与checkpoint差异留证，四次本地交互及刷新通过，并有可按需打开的正常宿主示例。该后续段0新模型，不重写本段原始结果，也不冒同轮跨客户端实时流或Codex主界面富UI。

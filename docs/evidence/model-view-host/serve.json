@@ -1,0 +1,265 @@
+{
+  "actualDefaultServeReady": true,
+  "openedUserEdgeDuringAcceptance": false,
+  "readyReceipt": {
+    "actualDefaultServeReady": true,
+    "twoGraphicalViewsSeeded": true,
+    "sourceHashes": [
+      "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7"
+    ],
+    "privateUrlFileExists": true,
+    "localTransportRequests": 10,
+    "newRealModelStarts": 0,
+    "stoppedYet": false
+  },
+  "mode": "native",
+  "sessionId": "session-19c893c0-6415-4caf-a668-73ba893936da",
+  "replayOfSavedRealModelResults": true,
+  "pageErrors": [],
+  "newRealModelStarts": 0,
+  "steps": [
+    {
+      "phase": 1,
+      "origin": {
+        "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+        "turnId": "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+        "phase": 1,
+        "evidenceFile": "docs/evidence/source-history/phase-1.json",
+        "evidenceFileSha256": "1991b70a2d380326183aa4ea40529558909db5b01705aed19dbe96cef8200c69",
+        "modelToolItemIndex": 8,
+        "modelToolName": "semantic_ui_source_check",
+        "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+        "rawFinalSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+        "selectedArgumentsJsonSha256": "5f029d7c03bae8dbf6d763e733dc22d14813b9a0e6a7ca15ccea1130c175f762",
+        "selectedViewJsonSha256": "d5d66e81297982d85c5624c3e5f80380e5d9b8cb6f2cbbdae670b76ae751ecbb",
+        "serialization": "UTF-8 JSON.stringify of the parsed original value; not original wire whitespace",
+        "renderViewJsonSha256": "d5d66e81297982d85c5624c3e5f80380e5d9b8cb6f2cbbdae670b76ae751ecbb",
+        "renderAdapterChanges": [
+          {
+            "path": "$.claims",
+            "before": [
+              {
+                "kind": "condition",
+                "name": "原始记录禁止外传",
+                "value": true
+              },
+              {
+                "kind": "conditional-need",
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false
+              }
+            ],
+            "after": {
+              "absent": true
+            }
+          },
+          {
+            "path": "$.action",
+            "before": {
+              "absent": true
+            },
+            "after": "render"
+          }
+        ]
+      },
+      "requestId": "d87973b5-e23f-4799-b0ea-20199f8a7ca5",
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 10,
+        "time": 1793119256582,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "虚构校对组在选在线批注与本地批注。前者由服务方更新、不支持离线；后者支持离线、需要小组维护。两边价格都未知。若原始记录禁止外传，则我们需要离线；否则我们不需要离线。当前原始记录禁止外传为是。小组有维护余力。该怎样权衡？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "d87973b5-e23f-4799-b0ea-20199f8a7ca5",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "2a2d04e1-ba00-45d1-90e8-9e7707944783"
+        },
+        "surfaceOp": "append"
+      },
+      "checkpointSeq": 29,
+      "checkpointTurn": 1,
+      "checkpointSourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "checkpointInitials": [
+        true,
+        true
+      ],
+      "originalRenderViewJsonSha256": "d5d66e81297982d85c5624c3e5f80380e5d9b8cb6f2cbbdae670b76ae751ecbb",
+      "incomingViewToCheckpointChanges": [
+        {
+          "path": "$.summary",
+          "before": "逐项比较离线需求与维护余力，未声明的职责及价格保持未知。",
+          "after": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。"
+        },
+        {
+          "path": "$.payload.title",
+          "before": "在线批注与本地批注的条件比较",
+          "after": "来源声明的条件与取舍"
+        },
+        {
+          "path": "$.payload.options.0.suitableWhen",
+          "before": "逐项检查离线需求与小组维护余力。",
+          "after": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。"
+        },
+        {
+          "path": "$.payload.options.1.suitableWhen",
+          "before": "逐项检查离线需求与小组维护余力。",
+          "after": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。"
+        },
+        {
+          "path": "$.presentation",
+          "before": {
+            "absent": true
+          },
+          "after": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "phase": 2,
+      "origin": {
+        "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+        "turnId": "01a17e17-68d2-7c83-b578-df88a1b1db2c",
+        "phase": 2,
+        "evidenceFile": "docs/evidence/source-history/phase-2.json",
+        "evidenceFileSha256": "326e2eb94c4184b7ce712f39297da4c01aac6c62a2e0a05ea1944b4cd2a41573",
+        "modelToolItemIndex": 2,
+        "modelToolName": "semantic_ui_source_check",
+        "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+        "rawFinalSha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+        "selectedArgumentsJsonSha256": "fad712e0f0c836a54994d349ae4abf91c6802aa45437a2139bcce4a69f0d8ba3",
+        "selectedViewJsonSha256": "cc4b77b9b20b8bba02f825d91e864daea19fd0548f4d01d2990bb261e1692c90",
+        "serialization": "UTF-8 JSON.stringify of the parsed original value; not original wire whitespace",
+        "renderViewJsonSha256": "cc4b77b9b20b8bba02f825d91e864daea19fd0548f4d01d2990bb261e1692c90",
+        "renderAdapterChanges": [
+          {
+            "path": "$.claims",
+            "before": [
+              {
+                "kind": "condition",
+                "name": "原始记录禁止外传",
+                "value": false
+              },
+              {
+                "kind": "conditional-need",
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false
+              },
+              {
+                "kind": "actor-available",
+                "actor": "小组",
+                "value": null
+              }
+            ],
+            "after": {
+              "absent": true
+            }
+          },
+          {
+            "path": "$.action",
+            "before": {
+              "absent": true
+            },
+            "after": "render"
+          }
+        ]
+      },
+      "requestId": "42dfdfd1-cc0f-4c1f-9e12-12d6effa038e",
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 39,
+        "time": 1793119257102,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "虚构校对组在选在线批注与本地批注。前者由服务方更新、不支持离线；后者支持离线、需要小组维护。两边价格都未知。若原始记录禁止外传，则我们需要离线；否则我们不需要离线。当前原始记录禁止外传为否。小组维护余力未知。该怎样权衡？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "42dfdfd1-cc0f-4c1f-9e12-12d6effa038e",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "9f416197-9d49-4bed-9895-6812819ac54d"
+        },
+        "surfaceOp": "append"
+      },
+      "checkpointSeq": 62,
+      "checkpointTurn": 2,
+      "checkpointSourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "checkpointInitials": [
+        false,
+        null
+      ],
+      "originalRenderViewJsonSha256": "cc4b77b9b20b8bba02f825d91e864daea19fd0548f4d01d2990bb261e1692c90",
+      "incomingViewToCheckpointChanges": [
+        {
+          "path": "$.summary",
+          "before": "当前离线需求为否，小组维护余力未知；仅逐项比较声明条件。",
+          "after": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。"
+        },
+        {
+          "path": "$.payload.title",
+          "before": "修订来源后的批注方案比较",
+          "after": "来源声明的条件与取舍"
+        },
+        {
+          "path": "$.payload.options.0.suitableWhen",
+          "before": "按离线需求与维护余力逐项比较。",
+          "after": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。"
+        },
+        {
+          "path": "$.payload.options.1.suitableWhen",
+          "before": "按离线需求与维护余力逐项比较。",
+          "after": "来源未提供成本排序、迁移优势或推荐策略；原始条件与本地假设分别查看。"
+        },
+        {
+          "path": "$.presentation",
+          "before": {
+            "absent": true
+          },
+          "after": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "shutdown": "SIGINT on the owned invocation after ready; all resources ended, see cleanup.json"
+}

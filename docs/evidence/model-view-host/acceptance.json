@@ -1,0 +1,23 @@
+{
+  "frozenAt": "2026-10-27T16:25:04.944572+00:00",
+  "scope": "zero-model display replay of existing real source-history model views through a personal isolated normal host",
+  "originThreadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+  "originTurns": [
+    "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+    "01a17e17-68d2-7c83-b578-df88a1b1db2c"
+  ],
+  "evidenceCommit": "2d303c877ec59bfa44fde77b5ab7fdef685a7ae0",
+  "existingRuntime": "0.1.0-preview.26",
+  "newObservedModelsMaximum": 0,
+  "criteria": [
+    "Incoming replay view/mapping must be selected from each actual matched model source_check event, with original call/phase/source identity and exact original-byte hashes. No reconstructed canonical view or manually relabeled producer as model origin.",
+    "Real host normal render must receive these original candidate fields; any normal safety projection, annotation removal or view metadata adaptation is recorded as an input-to-checkpoint/display diff. Do not claim model prose or the full original payload was rendered unchanged if it was not.",
+    "Both original source versions and historical views remain distinct: old true/true, current false/null; original matched views, source hashes and raw finals retained. Old matched view on new source must still be refused for two stale initial values.",
+    "Actual graphical component rendering and meaningful local input interaction are observed in the claimed personal host mode. Local hypotheses change the displayed local result without modifying source identity, source text, original view or historical checkpoint; refresh restores each original state.",
+    "Deliver a documented normal example/companion entry usable on demand with existing personal local runtime; label it replay of saved real model results, not live cross-client streaming or main Codex graphical adoption. Reproduction cannot require new model calls or private originals.",
+    "Zero new model starts/attempts/API/entitlement calls, no new global configuration/trust/registration or runtime release solely for evidence. Preserve all old budgets and failures, own temporary resource closure and external task outcomes."
+  ],
+  "projection": "Selected safe independent acceptance; published after replay, not a model prompt.",
+  "privateOriginalSha256": "618c850b3136ff2a0a996fc3992782bd55ae8c28ccf53537673b673ee77d4bbf",
+  "publicProjectionByteIdenticalToPrivateOriginal": false
+}

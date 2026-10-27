@@ -1,0 +1,42 @@
+{
+  "cwd": "personal repository root",
+  "commands": [
+    {
+      "kind": "check",
+      "argv": [
+        "node",
+        "examples/dsh-model-history.mjs",
+        "--archive",
+        "artifacts/releases/0.1.0-preview.26/whytan-dsh-semantic-ui-0.1.0-preview.26.tgz",
+        "--manifest",
+        "artifacts/releases/0.1.0-preview.26/package-manifest.json",
+        "--check",
+        "--output",
+        "artifacts/local/saved-model-view-native-20261027"
+      ],
+      "newModelStarts": 0,
+      "localTransportRequests": 10,
+      "fixtureAgentTurns": 2
+    },
+    {
+      "kind": "default-serve",
+      "argv": [
+        "node",
+        "examples/dsh-model-history.mjs",
+        "--archive",
+        "artifacts/releases/0.1.0-preview.26/whytan-dsh-semantic-ui-0.1.0-preview.26.tgz",
+        "--manifest",
+        "artifacts/releases/0.1.0-preview.26/package-manifest.json",
+        "--output",
+        "artifacts/local/saved-model-view-serve-20261027"
+      ],
+      "newModelStarts": 0,
+      "localTransportRequests": 10,
+      "fixtureAgentTurns": 2
+    }
+  ],
+  "actualSystemBrowserOpenInvoked": false,
+  "defaultServeStoppedWithOwnedSigint": true,
+  "requiresPrivateOriginals": false,
+  "reproductionUsesOnlyPublicSavedEvidenceAndLocalAcceptedArchive": true
+}
