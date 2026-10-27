@@ -3,10 +3,11 @@ import {bounded,validateEnvelope,usesReviewedPolicy,type Decision} from './proto
 import {decisionFacts} from './facts';
 import {sourceMetadata,SOURCE_LIMITS,type SourceSnapshot,type SourceIssue} from './source-graph';
 
-type Kind='capability'|'actor-updates'|'maintenance-need'|'price'|'capability-need'|'actor-available'|'preference';
+type Kind='capability'|'actor-updates'|'maintenance-need'|'price'|'capability-need'|'actor-available'|'preference'|'condition';
 type Span={textByteStart:number;textByteEnd:number};
-export interface DecisionSourceFact{kind:Kind;option:string|null;name:string|null;actor:string|null;value:boolean|null;spans:Span[]}
-export interface DecisionSource{options:[string,string];facts:DecisionSourceFact[];clauses:{kind:string;span:Span}[]}
+export interface DecisionConditionalNeed{name:string;condition:string;whenTrue:boolean;whenFalse:boolean;current:boolean|null;currentSpans:Span[];spans:{condition:Span;whenTrue:Span;whenFalse:Span};derivedNeed:boolean|null}
+export interface DecisionSourceFact{kind:Kind;option:string|null;name:string|null;actor:string|null;value:boolean|null;spans:Span[];derivation?:{condition:string;whenTrue:boolean;whenFalse:boolean;current:boolean|null}}
+export interface DecisionSource{options:[string,string];facts:DecisionSourceFact[];clauses:{kind:string;span:Span}[];conditionalNeeds?:DecisionConditionalNeed[]}
 const label=z.string().min(1).max(80),id=z.string().min(1).max(80);
 const literal=(s:string)=>/^[\p{L}\p{N}][\p{L}\p{N}_ -]{0,79}$/u.test(s)&&!['它','他们','其','我们','前者','后者'].includes(s)&&!/(需要|支持|没有|未知|负责|如果|但是|但|且|以及|或者|因为|因此|可能|以后|只要|只由|同时|不由|是否|与|和)/u.test(s);
 const key=(kind:Kind,option:string|null,name:string|null,actor:string|null)=>JSON.stringify([kind,option,name,actor]);
@@ -24,6 +25,8 @@ export function parseDecisionSource(text:string,offset=0):{status:'ready';value:
  const options=first?.[2].split(/[与和]/u).map(s=>s.trim());
  if(!options||options.length!==2||options[0]===options[1]||!options.every(literal))return fail('SOURCE_REFERENCE','Start with a literal subject 在选/在选择/在比较 two distinct named options separated by 与/和. Former/latter references require this order.');
  const source:DecisionSource={options:options as [string,string],facts:[],clauses:[]},facts=new Map<string,DecisionSourceFact>();let subject:string|null=null;
+ const conditional:DecisionConditionalNeed[]=[],currents=new Map<string,{value:boolean|null;spans:Span[]}>(),consumed=new Set<number>();
+ const spanOf=(chunk:typeof chunks[number]):Span=>({textByteStart:offset+bytes(text.slice(0,chunk.index)),textByteEnd:offset+bytes(text.slice(0,chunk.index+chunk[0].length))});
  const put=(kind:Kind,option:string|null,name:string|null,actor:string|null,value:boolean|null,span:Span)=>{
   if(name&&!literal(name)||actor&&!literal(actor))throw Error('SOURCE_REFERENCE');
   const k=key(kind,option,name,actor),old=facts.get(k);
@@ -31,10 +34,28 @@ export function parseDecisionSource(text:string,offset=0):{status:'ready';value:
   if(old)old.spans.push(span);else facts.set(k,{kind,option,name,actor,value,spans:[span]});
  };
  try{for(const [i,chunk] of chunks.entries()){
-  let clause=chunk[0].trim();const span={textByteStart:offset+bytes(text.slice(0,chunk.index)),textByteEnd:offset+bytes(text.slice(0,chunk.index+chunk[0].length))};
+  let clause=chunk[0].trim();const span=spanOf(chunk);
+  if(consumed.has(i))continue;
   if(i&&/[。！？?!；;\r\n]/u.test(text.slice(chunks[i-1].index+chunks[i-1][0].length,chunk.index)))subject=null;
   if(i===0){source.clauses.push({kind:'selection',span});continue;}
+  const explicitOption=options.some(o=>clause.startsWith(o));
   let m:RegExpMatchArray|null;
+  if(!explicitOption&&clause.startsWith('只有'))throw Error('SOURCE_CONDITION_DIRECTION');
+  if(!explicitOption&&(m=clause.match(/^若(.+)$/u))){
+   subject=null;const condition=m[1],yes=chunks[i+1],no=chunks[i+2];
+   const a=yes?.[0].trim().match(/^则我们(不需要|需要)(.+)$/u),b=no?.[0].trim().match(/^否则我们(不需要|需要)(.+)$/u);
+   if(!literal(condition)||/若|则|否则|当前/u.test(condition)||!a||!b||a[2]!==b[2]||!literal(a[2]))throw Error('SOURCE_CONDITION_BRANCH');
+   if(conditional.some(c=>c.name===a[2]))throw Error('SOURCE_CONDITION_DUPLICATE');
+   conditional.push({name:a[2],condition,whenTrue:a[1]==='需要',whenFalse:b[1]==='需要',current:null,currentSpans:[],spans:{condition:span,whenTrue:spanOf(yes),whenFalse:spanOf(no)},derivedNeed:null});
+   source.clauses.push({kind:'condition',span},{kind:'condition-true-branch',span:spanOf(yes)},{kind:'condition-false-branch',span:spanOf(no)});consumed.add(i+1);consumed.add(i+2);continue;
+  }
+  if(!explicitOption&&(m=clause.match(/^当前(.+?)(?:为(是|否|未知)|(未知))$/u))&&literal(m[1])){
+   subject=null;const name=m[1],value=(m[2]??m[3])==='未知'?null:m[2]==='是',old=currents.get(name);
+   if(!literal(name))throw Error('SOURCE_REFERENCE');
+   if(old&&old.value!==value)throw Error('SOURCE_CONTRADICTION');
+   if(old)old.spans.push(span);else currents.set(name,{value,spans:[span]});
+   source.clauses.push({kind:'current-condition',span});continue;
+  }
   if(['该怎样权衡','如何权衡','该如何权衡','应该怎样选择','该怎样选择','怎么选','请比较'].includes(clause)){subject=null;source.clauses.push({kind:'comparison-request',span});continue;}
   if(/^(两边|两者)价格都?未知$/u.test(clause)){subject=null;for(const o of options)put('price',o,null,null,null,span);source.clauses.push({kind:'fact',span});continue;}
   if((m=clause.match(/^我们(?:暂时|目前|现在)?(不需要|需要)(.+)$/u))){subject=null;put('capability-need',null,m[2],null,m[1]==='需要',span);}
@@ -57,7 +78,17 @@ export function parseDecisionSource(text:string,offset=0):{status:'ready';value:
    else throw Error('SOURCE_SYNTAX');
   }
   source.clauses.push({kind:'fact',span});
- }}catch(error){return fail(error instanceof Error?error.message:'SOURCE_SYNTAX','A contradictory fact, unresolved subject/actor or unsupported clause prevents complete parsing. No clause was silently skipped.');}
+ }
+ for(const name of currents.keys())if(!conditional.some(c=>c.condition===name))throw Error('SOURCE_CONDITION_REFERENCE');
+ for(const c of conditional){
+  if(facts.has(key('capability-need',null,c.name,null)))throw Error('SOURCE_CONDITION_OVERLAP');
+  const current=currents.get(c.condition);c.current=current?.value??null;c.currentSpans=current?.spans??[];
+  c.derivedNeed=c.current===null?(c.whenTrue===c.whenFalse?c.whenTrue:null):c.current?c.whenTrue:c.whenFalse;
+  for(const span of [...Object.values(c.spans),...c.currentSpans])put('capability-need',null,c.name,null,c.derivedNeed,span);
+  facts.get(key('capability-need',null,c.name,null))!.derivation={condition:c.condition,whenTrue:c.whenTrue,whenFalse:c.whenFalse,current:c.current};
+ }
+ if(conditional.length)source.conditionalNeeds=conditional;
+ }catch(error){return fail(error instanceof Error?error.message:'SOURCE_SYNTAX','A contradictory fact, unresolved subject/actor or unsupported/incomplete conditional clause prevents complete parsing. Both branches must be explicit; only-if is not if-and-only-if. No clause was silently skipped.');}
  source.facts=[...facts.values()];
  if(!source.facts.length)return fail('SOURCE_EMPTY','The comparison contains no supported facts or conditions.');
  return {status:'ready',value:source};
@@ -65,9 +96,13 @@ export function parseDecisionSource(text:string,offset=0):{status:'ready';value:
 
 const dimensionBinding=z.strictObject({id,kind:z.enum(['capability','actor-updates','maintenance-need','price']),name:label.optional(),actor:label.optional()}).superRefine((b,ctx)=>{if(!(b.kind==='capability'?!!b.name&&!b.actor:b.kind==='price'?!b.name&&!b.actor:!!b.actor&&!b.name))ctx.addIssue({code:'custom',message:'Bind capability by name, responsibility by actor, and price without a name or actor.'});});
 const inputBinding=z.strictObject({id,kind:z.enum(['capability-need','actor-available']),name:label.optional(),actor:label.optional()}).superRefine((b,ctx)=>{if(!(b.kind==='capability-need'?!!b.name&&!b.actor:!!b.actor&&!b.name))ctx.addIssue({code:'custom',message:'Bind a capability need by name or actor availability by actor.'});});
-const knownKinds=new Set(['capability','actor-updates','maintenance-need','price','capability-need','actor-available','preference']);
-const claim=z.strictObject({kind:label,option:label.optional(),name:label.optional(),actor:label.optional(),value:z.boolean().nullable().optional(),text:z.string().max(1200).optional()}).superRefine((c,ctx)=>{
+const knownKinds=new Set(['capability','actor-updates','maintenance-need','price','capability-need','actor-available','preference','condition','conditional-need']);
+const claim=z.strictObject({kind:label,option:label.optional(),name:label.optional(),actor:label.optional(),value:z.boolean().nullable().optional(),text:z.string().max(1200).optional(),condition:label.optional(),whenTrue:z.boolean().optional(),whenFalse:z.boolean().optional()}).superRefine((c,ctx)=>{
+ if(c.kind==='conditional-need'){
+  if(!c.name||!c.condition||c.whenTrue===undefined||c.whenFalse===undefined||c.option!==undefined||c.actor!==undefined||c.value!==undefined||c.text!==undefined)ctx.addIssue({code:'custom',message:'A conditional-need claim names its capability, literal condition and both boolean branches; no missing/implicit else branch.'});return;
+ }
  let valid=!knownKinds.has(c.kind)?!!c.text&&c.option===undefined&&c.name===undefined&&c.actor===undefined&&c.value===undefined:c.text===undefined&&c.value!==undefined;
+ valid&&=c.condition===undefined&&c.whenTrue===undefined&&c.whenFalse===undefined;
  if(knownKinds.has(c.kind))valid&&=c.kind==='capability'?!!c.option&&!!c.name&&!c.actor:c.kind==='price'?!!c.option&&!c.name&&!c.actor:c.kind==='actor-updates'||c.kind==='maintenance-need'?!!c.option&&!!c.actor&&!c.name:c.kind==='actor-available'?!!c.actor&&!c.option&&!c.name:!!c.name&&!c.option&&!c.actor;
  if(!valid)ctx.addIssue({code:'custom',message:'Known claims contain only their literal source coordinates and boolean/null value. Unsupported prose claims contain only kind/text.'});
 });
@@ -75,7 +110,10 @@ export const sourceDecisionRequestSchema=z.strictObject({view:z.unknown().option
 type DimensionBinding=z.infer<typeof dimensionBinding>;
 type InputBinding=z.infer<typeof inputBinding>;
 const concept=(b:{kind:string;name?:string;actor?:string})=>JSON.stringify([b.kind,b.name??null,b.actor??null]);
-const getFact=(s:DecisionSource,kind:Kind,option:string|null,name:string|null,actor:string|null)=>s.facts.find(f=>key(f.kind,f.option,f.name,f.actor)===key(kind,option,name,actor))??{kind,option,name,actor,value:null,spans:[]};
+const getFact=(s:DecisionSource,kind:Kind,option:string|null,name:string|null,actor:string|null):DecisionSourceFact=>{
+ if(kind==='condition'){const c=s.conditionalNeeds?.find(c=>c.condition===name);return {kind,option:null,name,actor:null,value:c?.current??null,spans:c?.currentSpans??[]};}
+ return s.facts.find(f=>key(f.kind,f.option,f.name,f.actor)===key(kind,option,name,actor))??{kind,option,name,actor,value:null,spans:[]};
+};
 function expectedLabels(b:DimensionBinding|InputBinding):string[]{
  const n=b.name,a=b.actor;
  switch(b.kind){
@@ -95,6 +133,13 @@ function canonical(s:DecisionSource):string{
  for(const o of s.options)for(const actor of actors)if(!getFact(s,'maintenance-need',o,null,actor).spans.length)lines.push(`${o}是否需要${actor}维护未声明；不能由其它更新责任推定需要或不需要。`);
  for(const o of s.options)for(const actor of updaters)if(!getFact(s,'actor-updates',o,null,actor).spans.length)lines.push(`${o}是否由${actor}更新未声明，不能自动取反。`);
  lines.push(...s.facts.filter(f=>f.option===null).map(f=>words(f)+'。'));
+ for(const c of s.conditionalNeeds??[]){
+  const branch=(need:boolean)=>!need?'本项不排除两种方案':s.options.map(o=>{const support=getFact(s,'capability',o,c.name,null).value;return `${o}${support===true?'满足本项':support===false?'不满足本项':'该能力未知，能否满足本项未知'}`;}).join('；');
+  lines.push(`来源两分支：若${c.condition}=true，则需要${c.name}=${c.whenTrue}；否则需要${c.name}=${c.whenFalse}。`,
+   `当前${c.condition}=${c.current===null?'未知':c.current}${c.currentSpans.length?'（来源明确声明）':'（来源未声明）'}，所以当前需要${c.name}=${c.derivedNeed===null?'未知':c.derivedNeed}；${c.derivedNeed===null?'条件未定，不能按false或不需要处理':branch(c.derivedNeed)}。`,
+   `若本地假设${c.condition}=true：${branch(c.whenTrue)}；若本地假设${c.condition}=false：${branch(c.whenFalse)}。`,
+   '这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。');
+ }
  for(const actor of actors)if(!getFact(s,'actor-available',null,null,actor).spans.length)lines.push(`${actor}维护余力未声明，保持未知。`);
  lines.push('以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。');
  return lines.join('\n');
@@ -128,7 +173,7 @@ export function checkSourceDecision(snapshot:SourceSnapshot,input:unknown):Recor
    if(field.semanticRole!==undefined&&field.semanticRole!==role)add('SOURCE_ROLE',path,'The declared role conflicts with the source concept.');
    for(const [j,o] of p.options.entries())if(source.options.includes(o.label)){
     const expected=getFact(source,d.kind,o.label,d.name??null,d.actor??null),actual=o.values[d.id];
-    fieldChecks.push({optionId:o.id,sourceOption:o.label,dimensionId:d.id,sourceKind:d.kind,expected:expected.value,actual,sourceDeclared:!!expected.spans.length,sourceSpans:expected.spans,status:actual!==expected.value?'mismatch':expected.value===null?(expected.spans.length?'declared-unknown':'unknown'):'matched'});
+    fieldChecks.push({optionId:o.id,sourceOption:o.label,dimensionId:d.id,sourceKind:d.kind,expected:expected.value,actual,sourceDeclared:!!expected.spans.length,sourceSpans:expected.spans,status:actual!==expected.value?'mismatch':expected.value===null?(expected.derivation?'derived-unknown':expected.spans.length?'declared-unknown':'unknown'):'matched'});
     if(actual!==expected.value)add('SOURCE_VALUE',`$.view.payload.options.${j}.values.${d.id}`,'The value differs from the source. A missing fact remains null; a stated responsibility does not establish its opposite.');
    }
   }
@@ -144,7 +189,7 @@ export function checkSourceDecision(snapshot:SourceSnapshot,input:unknown):Recor
    if(!expectedLabels(b).includes(field.label))add('SOURCE_FIELD_LABEL',path,'Input label does not match the explicit source role.');
    if(field.type!=='boolean'||field.unit!==undefined||field.choices!==undefined)add('SOURCE_FIELD_TYPE',path,'Only unitless boolean conditions are supported here.');
    const expected=getFact(source,b.kind,null,b.name??null,b.actor??null);
-   inputChecks.push({inputId:field.id,sourceKind:b.kind,expected:expected.value,actual:field.initial,sourceDeclared:!!expected.spans.length,sourceSpans:expected.spans,status:field.initial!==expected.value?'mismatch':expected.value===null?(expected.spans.length?'declared-unknown':'unknown'):'matched'});
+   inputChecks.push({inputId:field.id,sourceKind:b.kind,expected:expected.value,actual:field.initial,sourceDeclared:!!expected.spans.length,sourceSpans:expected.spans,...(expected.derivation?{sourceDerivation:expected.derivation}:{}),status:field.initial!==expected.value?'mismatch':expected.value===null?(expected.derivation?'derived-unknown':expected.spans.length?'declared-unknown':'unknown'):'matched'});
    if(field.initial!==expected.value)add('SOURCE_INITIAL',`$.view.payload.inputs.${p.inputs.indexOf(field)}.initial`,'Initial conditions must match the source; an unstated availability/need is null.');
    const role=b.kind==='capability-need'?'capability-need':'resource-available';if(field.semanticRole!==undefined&&field.semanticRole!==role)add('SOURCE_ROLE',path,'Input role contradicts the source condition.');
   }
@@ -157,7 +202,7 @@ export function checkSourceDecision(snapshot:SourceSnapshot,input:unknown):Recor
    if(!valid)add('SOURCE_REQUIREMENT_ROLE',path,'Source capability support pairs with need; an actor maintenance burden pairs with that actor availability via requires-availability.');
    if(d?.kind==='capability'&&!source.facts.some(f=>f.kind==='capability-need'&&f.name===d.name))add('SOURCE_NEED_NOT_DECLARED',path,'Capability support or preference does not itself establish a hard need.');
    if(d?.kind==='maintenance-need'&&!source.facts.some(f=>f.kind==='maintenance-need'&&f.actor===d.actor))add('SOURCE_BURDEN_NOT_DECLARED',path,'Actor availability or updating responsibility alone does not establish a maintenance burden.');
-   if(r.when)add('SOURCE_CONDITION_UNSUPPORTED',path+'.when','Conditional requirements are outside this finite source grammar.');
+   if(r.when)add('SOURCE_CONDITION_UNSUPPORTED',path+'.when','Use the source-derived current need as a normal supports input; source two-branch conditions are normalized, not arbitrary component when policies.');
    if(d?.kind==='capability'&&source.facts.some(f=>f.kind==='preference'&&f.name===d.name)&&!source.facts.some(f=>f.kind==='capability-need'&&f.name===d.name))add('SOURCE_PREFERENCE_AS_REQUIREMENT',path,'A preference alone does not establish a hard capability need.');
   }
   for(const b of neededInputs){const i=ins.find(x=>concept(x)===concept(b)),d=ds.find(x=>b.kind==='capability-need'?x.kind==='capability'&&x.name===('name'in b?b.name:undefined):x.kind==='maintenance-need'&&x.actor===('actor'in b?b.actor:undefined));if(!i||!d||!(p.requirements??[]).some(r=>r.dimension===d.id&&r.input===i.id))add('SOURCE_REQUIREMENT_MISSING','$.view.payload.requirements','A declared need/burden condition lacks its corresponding requirement.');}
@@ -168,10 +213,14 @@ export function checkSourceDecision(snapshot:SourceSnapshot,input:unknown):Recor
  }else if(mapping)add('SOURCE_VIEW_REQUIRED','$.view','A mapping without a view cannot verify a generated comparison.');
  const claimChecks=claims.map((c,i)=>{
   if(!knownKinds.has(c.kind))return {index:i,kind:c.kind,status:'not-assessed',code:'SOURCE_CLAIM_UNSUPPORTED'};
-  if(c.option&&!source.options.includes(c.option)||c.name&&!capabilities.has(c.name)||c.actor&&!actors.has(c.actor))return {index:i,kind:c.kind,status:'not-assessed',code:'SOURCE_BINDING_UNKNOWN'};
+  if(c.kind==='conditional-need'){
+   const rule=source.conditionalNeeds?.find(r=>r.name===c.name&&r.condition===c.condition);
+   return rule?{index:i,kind:c.kind,status:c.whenTrue===rule.whenTrue&&c.whenFalse===rule.whenFalse?'supported':'unsupported-by-source',expected:{whenTrue:rule.whenTrue,whenFalse:rule.whenFalse},sourceSpans:Object.values(rule.spans)}:{index:i,kind:c.kind,status:'not-assessed',code:'SOURCE_BINDING_UNKNOWN'};
+  }
+  if(c.option&&!source.options.includes(c.option)||c.name&&!(c.kind==='condition'?source.conditionalNeeds?.some(r=>r.condition===c.name):capabilities.has(c.name))||c.actor&&!actors.has(c.actor))return {index:i,kind:c.kind,status:'not-assessed',code:'SOURCE_BINDING_UNKNOWN'};
   const fact=getFact(source,c.kind as Kind,c.option??null,c.name??null,c.actor??null);
-  return {index:i,kind:c.kind,status:c.value!==fact.value?'unsupported-by-source':fact.value===null?(fact.spans.length?'declared-unknown':'unknown'):'supported',expected:fact.value,sourceSpans:fact.spans};
+  return {index:i,kind:c.kind,status:c.value!==fact.value?'unsupported-by-source':fact.value===null?(fact.derivation?'derived-unknown':fact.spans.length?'declared-unknown':'unknown'):'supported',expected:fact.value,sourceSpans:fact.spans,...(fact.derivation?{sourceDerivation:fact.derivation}:{})};
  });
- const explain=!issues.length&&claimChecks.every(c=>['supported','declared-unknown','unknown'].includes(c.status));
+ const explain=!issues.length&&claimChecks.every(c=>['supported','declared-unknown','derived-unknown','unknown'].includes(c.status));
  return finish({...common,status:'compared',sourceDecision:source,comparison,issues,fieldChecks,inputChecks,claimChecks,...(computed?{computedDecision:computed}:{}),freeProse:{status:'not-verified',provided:prose!==undefined,characters:prose?.length??0},canonicalExplanation:explain?{status:'available',basis:'bounded parsed source declarations; not general natural-language certification',text:canonical(source)}:{status:'withheld',reason:'Resolve unsupported mappings, policies or source claims first.'}});
 }
