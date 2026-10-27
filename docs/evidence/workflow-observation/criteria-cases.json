@@ -1,0 +1,33 @@
+{
+  "kind": "selected safe case fields from privately frozen original; not a byte-identical copy",
+  "frozenAt": "2026-10-27T09:24:09.275201+00:00",
+  "originalPrivateReceiptSha256": "e2ff1f242b339fc2b53e56a57bf5e5ebf7ee116bb82587123238ef769420e6e5",
+  "cases": [
+    {
+      "id": "G-workflow-explicit",
+      "source": "合成作业流程为收件→校对→存档，存档→回条；回条出错仅重试回条，不回滚存档。回条出错与校对出错分别会影响哪里？",
+      "question": "回条出错与校对出错分别会影响哪里？",
+      "expected": [
+        "模型实际读取/调用来源相关工具；最终原始正文明确这是给定声明的范围",
+        "回条失败分支仅重试回条，不回滚存档；不说重试整个作业",
+        "校对失败异常策略/补偿未知；可说给定正向连接，不能保证执行阻断/上游已完成/反向回传",
+        "重试次数/必成功/世界事实与作者身份未认证"
+      ],
+      "risk": "明确给定异常规则是否被模型正确采用，而非只在宿主canonical里存在",
+      "sourceSha256": "97c6414f081220bcd171a3fc61b52fd0d6ceda339b7159992510a9bdbad5dbaf"
+    },
+    {
+      "id": "H-workflow-unknown",
+      "source": "合成作业流程为登记→核验→留档，留档→回执。回执出错与核验出错分别会影响哪里？",
+      "question": "回执出错与核验出错分别会影响哪里？",
+      "expected": [
+        "独立冷会话，模型实际查同一有限工具的当前来源",
+        "可以描述给定拓扑；来源未提供任何失败策略，明确重试/回滚/补偿未知",
+        "不从前题借只重试或不回滚策略，不从位置造反向传播/执行状态保证",
+        "合法的显式假设可条件化讨论，但不能假设冒来源规则"
+      ],
+      "risk": "未给异常策略时是否保留unknown，不借默认或上一题答案",
+      "sourceSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6"
+    }
+  ]
+}

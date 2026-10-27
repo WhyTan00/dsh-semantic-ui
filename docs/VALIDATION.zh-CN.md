@@ -1,5 +1,7 @@
 # 验证证据与未通过项
 
+后续[G/H独立观察](CODEX-WORKFLOW-OBSERVATION.zh-CN.md)单列于[新证据](evidence/workflow-observation.json)：原22包/技能/客户端不改，G关键规则正确但附加边界覆盖partial；H未知策略与首次新图来源比较met/matched。模型语义调用分别1/4，内置发现各2，宿主显式调用各3；原文没有用宿主答案替换。2/2新观察均completed、无重试，backend请求数未知，sourceFacts/identity/freeProse认证false。两层参数/structured response核对、stdout与宿主文本、四次进程终态/临时根清理通过。无新runtime、发行或旧矩阵重演；以下22发行接受的0模型与旧自然0/6/18不变。
+
 preview.22已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.22)：源/tag a0ca980884adbc21d476ffcf92133e3305df67cc，运行SHA ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e。完整workflow-zh将四拓扑与通知失败的仅重试通知/不回滚支付分别核对，库存策略和未给执行保证保持未知。52项8文件+10伴随离线检查通过；最终371文件实际安装先全核，macOS/Linux Native/PTC各6例、旧1.0图/正常消息/刷新历史/360px通过，pageerror0。普通--answer正例delivered、错误支付回滚withheld，双层wire一致，2appserver exit0/tap终态，0turn/start/global配置摘要不变。CI40479181323 success，四资产Mac/Linux/匿名HTTPS200同字节。源后补的几何等待验证及只读侧栏补页另核，稳定后五节点全在图框内；不冒原Linux新断言或改包。首次旧receipt选择失败和3次附加侧栏诊断保留，独立预期未改。原A2 raw/共享payment→notify勘误/0pass6fail18requests保持，sourceFacts/identity/freeProse认证false，新模型0。见[最终分层接受](evidence/source-workflow.json)；以下候选段保留冻结前范围，不当最终归档接受。
 
 冻结前开发记录（22）：[完整异常规则合同](SOURCE-WORKFLOW.zh-CN.md)区分给定规则、纯拓扑、typed矛盾/未知与原始模型正文。52项/8文件、10伴随离线检查和开发Native/PTC各6例通过；最终归档安装/Linux/实际普通答复与匿名下载另记。原0/6/18和A2首次错误不回写，当前没有新增真实模型。

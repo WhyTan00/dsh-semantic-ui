@@ -1,5 +1,7 @@
 # 明确失败规则的来源核对
 
+冻结发行后另有[两个真实模型引导观察](CODEX-WORKFLOW-OBSERVATION.zh-CN.md)，复用下述22运行字节：G的明确规则与未知分支正确，附加边界覆盖partial；H未知策略保持、首次新图比较matched。该2次观察独立于下面0模型发行接受，不更新旧自然题结果或归档。
+
 [preview.22已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.22)，冻结源码/tag `a0ca980884adbc21d476ffcf92133e3305df67cc`。组件协议仍为1.4，DSH0.2.1-rc.2。371文件最终归档在macOS/Linux的Native/PTC各6例及旧1.0图恢复通过；正常`--answer`正例delivered、错误支付回滚withheld，双层wire一致、0新模型。CI40479181323成功且四资产与匿名HTTPS200下载同字节，完整[分层接受](evidence/source-workflow.json)为冻结后的独立提交，不回灌或重打归档。
 
 原问题在[首次A2记录](evidence/natural/r9-A2.json)的`/question`，全文SHA-256 `aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0`。原文件SHA `17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e`。本次[独立事前判据](https://github.com/WhyTan00/dsh-semantic-ui/blob/main/fixtures/source-workflow-expectations.json)在实现前固定，不从结果改预期。原[共享支付→通知的归因勘误](GROUNDING-FOLLOWUP.zh-CN.md)和首次模型正文/0通过6失败18请求保持；本有限修复不把旧自然A2判通过。

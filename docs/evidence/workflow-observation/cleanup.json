@@ -1,0 +1,95 @@
+{
+  "checkedAt": "2026-10-27T10:16:10.575195+00:00",
+  "runs": [
+    {
+      "run": "G-preflight",
+      "appServerExit": 0,
+      "modelTurnRequests": 0,
+      "observedModelTurns": 0,
+      "globalConfigShaUnchanged": true,
+      "temporaryRootRemoved": true,
+      "tapProcessCount": 2,
+      "allTapExitsRecorded": true,
+      "tapExits": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "ownPidsStillAlive": []
+    },
+    {
+      "run": "H-preflight",
+      "appServerExit": 0,
+      "modelTurnRequests": 0,
+      "observedModelTurns": 0,
+      "globalConfigShaUnchanged": true,
+      "temporaryRootRemoved": true,
+      "tapProcessCount": 2,
+      "allTapExitsRecorded": true,
+      "tapExits": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "ownPidsStillAlive": []
+    },
+    {
+      "run": "G-model",
+      "appServerExit": 0,
+      "modelTurnRequests": 1,
+      "observedModelTurns": 1,
+      "globalConfigShaUnchanged": true,
+      "temporaryRootRemoved": true,
+      "tapProcessCount": 2,
+      "allTapExitsRecorded": true,
+      "tapExits": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "ownPidsStillAlive": []
+    },
+    {
+      "run": "H-model",
+      "appServerExit": 0,
+      "modelTurnRequests": 1,
+      "observedModelTurns": 1,
+      "globalConfigShaUnchanged": true,
+      "temporaryRootRemoved": true,
+      "tapProcessCount": 2,
+      "allTapExitsRecorded": true,
+      "tapExits": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "ownPidsStillAlive": []
+    }
+  ],
+  "newObservedTurns": 2,
+  "separateParent0520ObservedTurns": 2,
+  "separate721ImplementationTurns": 0,
+  "backendRequestCount": "unknown",
+  "noOwnedPendingCommands": true,
+  "noNewHostOrPortStarted": true
+}

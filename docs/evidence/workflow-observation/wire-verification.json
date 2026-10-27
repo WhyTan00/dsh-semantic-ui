@@ -1,0 +1,123 @@
+{
+  "checkedAt": "2026-10-27T10:17:13.500499+00:00",
+  "method": "Host request/response time interval first; model-completed item and remaining MCP requests second. Identical {} calls are not distinguished by value equality alone.",
+  "cases": [
+    {
+      "case": "G",
+      "hostToolCalls": 3,
+      "modelSemanticToolCalls": 1,
+      "allActualMcpToolRequestsAccountedFor": true,
+      "checks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "codexRequestId": 5,
+          "mcpRequestId": 2,
+          "observerPid": 34228,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "codexRequestId": 6,
+          "mcpRequestId": 3,
+          "observerPid": 34228,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "codexRequestId": 12,
+          "mcpRequestId": 7,
+          "observerPid": 34228,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "completedItemId": "exec-c50d0326-c5cb-4d18-9fd4-dab2df0d6bf1",
+          "mcpRequestId": 5,
+          "observerPid": 34228,
+          "outsideHostToolRequestIntervals": true,
+          "requestAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true
+    },
+    {
+      "case": "H",
+      "hostToolCalls": 3,
+      "modelSemanticToolCalls": 4,
+      "allActualMcpToolRequestsAccountedFor": true,
+      "checks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "codexRequestId": 5,
+          "mcpRequestId": 2,
+          "observerPid": 38190,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "codexRequestId": 6,
+          "mcpRequestId": 3,
+          "observerPid": 38190,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "codexRequestId": 12,
+          "mcpRequestId": 10,
+          "observerPid": 38190,
+          "withinHostRequestResponseInterval": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "completedItemId": "exec-504b4cf2-10c4-4161-b8b6-2c7803862bfb",
+          "mcpRequestId": 6,
+          "observerPid": 38190,
+          "outsideHostToolRequestIntervals": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_schema",
+          "completedItemId": "exec-1c01b84b-8939-4cd9-9fe5-b2f740a5d1b5",
+          "mcpRequestId": 7,
+          "observerPid": 38190,
+          "outsideHostToolRequestIntervals": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "completedItemId": "exec-e3926e5e-0739-470b-a9a7-8c61690f2e37",
+          "mcpRequestId": 8,
+          "observerPid": 38190,
+          "outsideHostToolRequestIntervals": true,
+          "requestAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "completedItemId": "exec-d7c32ea4-4669-4f59-a341-41ae3e418b21",
+          "mcpRequestId": 9,
+          "observerPid": 38190,
+          "outsideHostToolRequestIntervals": true,
+          "requestAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true
+    }
+  ]
+}

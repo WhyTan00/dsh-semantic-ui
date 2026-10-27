@@ -1,0 +1,1191 @@
+{
+  "case": "H",
+  "threadId": "01a17cda-944c-78d0-85d1-dd39b42284dd",
+  "turnId": "01a17cda-9a44-7b53-90bd-79a178547106",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "max",
+  "modelProvider": "openai",
+  "serviceTier": "default",
+  "identity": {
+    "archiveSha256": "ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e",
+    "mcpEntrySha256": "18dbeeb49f4c392eb9e24370bc830154c625ff77961a9b38b903683f600267e5",
+    "sourceCommit": "a0ca980884adbc21d476ffcf92133e3305df67cc",
+    "clientSha256": "f1bc5634178da8269ab67d836f1744920ccdac89740992addcf544715e7fd5d2",
+    "skillSha256": "3e39d0250d31de95bc608261d4c4be2b537b264c90b4c0ada87e281295dd244f",
+    "archivedCoreSha256": "8c79e5b40602d6f1c27541601ad8d359acd601e2c61f29a5addc332fd7147c1d",
+    "archivedProtocolSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+    "defaultModel": "gpt-6.1-sol",
+    "defaultReasoning": "max"
+  },
+  "newObservedModelTurns": 1,
+  "backendModelRequestCount": "unknown",
+  "status": "completed",
+  "candidateStatus": "unverified",
+  "candidateSha256": "3d7930b7c17f31728426c71755cfd2ec611fb9ca0d3a8be7dc7d185bb7eeccab",
+  "typedSkillItemAccepted": true,
+  "skill": {
+    "name": "semantic-ui-checks",
+    "scope": "user",
+    "sha256": "3e39d0250d31de95bc608261d4c4be2b537b264c90b4c0ada87e281295dd244f",
+    "discoveredAndRead": true,
+    "absentBeforeAndAfterTemporaryRoot": true
+  },
+  "modelSelectedSemanticCalls": [
+    {
+      "id": "exec-504b4cf2-10c4-4161-b8b6-2c7803862bfb",
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"workflow-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"jsonPointer\":null,\"textSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"excerptSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":117,\"textUTF8Bytes\":117},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified\"},\"identityVerified\":false,\"sourceFactsVerified\":false,\"freeProseVerified\":false,\"status\":\"compared\",\"sourceWorkflow\":{\"nodes\":[\"登记\",\"核验\",\"留档\",\"回执\"],\"relations\":[{\"from\":\"登记\",\"to\":\"核验\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"核验\",\"to\":\"留档\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"留档\",\"to\":\"回执\",\"spans\":[{\"textByteStart\":48,\"textByteEnd\":63}]}],\"failurePolicies\":[],\"questions\":[{\"triggers\":[\"回执\",\"核验\"],\"span\":{\"textByteStart\":66,\"textByteEnd\":114}}]},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[],\"conclusion\":{\"selectedSource\":\"not-requested\",\"structuredClaims\":\"not-requested\",\"sourceIdentity\":\"unverified\",\"freeProse\":\"not-verified\"},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"reason\":\"No keyword removal or arbitrary prose certification.\"},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete finite workflow syntax only\",\"text\":\"来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\\n回执失败的重试、回滚或补偿策略未声明，保持未知。\\n核验失败的重试、回滚或补偿策略未声明，保持未知。\\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "workflow-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "jsonPointer": null,
+            "textSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "excerptSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 117,
+              "textUTF8Bytes": 117
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+          },
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceWorkflow": {
+            "nodes": [
+              "登记",
+              "核验",
+              "留档",
+              "回执"
+            ],
+            "relations": [
+              {
+                "from": "登记",
+                "to": "核验",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "核验",
+                "to": "留档",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "留档",
+                "to": "回执",
+                "spans": [
+                  {
+                    "textByteStart": 48,
+                    "textByteEnd": 63
+                  }
+                ]
+              }
+            ],
+            "failurePolicies": [],
+            "questions": [
+              {
+                "triggers": [
+                  "回执",
+                  "核验"
+                ],
+                "span": {
+                  "textByteStart": 66,
+                  "textByteEnd": 114
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "conclusion": {
+            "selectedSource": "not-requested",
+            "structuredClaims": "not-requested",
+            "sourceIdentity": "unverified",
+            "freeProse": "not-verified"
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "reason": "No keyword removal or arbitrary prose certification."
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete finite workflow syntax only",
+            "text": "来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\n回执失败的重试、回滚或补偿策略未声明，保持未知。\n核验失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+          }
+        },
+        "_meta": null
+      },
+      "error": null,
+      "durationMs": 3
+    },
+    {
+      "id": "exec-1c01b84b-8939-4cd9-9fe5-b2f740a5d1b5",
+      "tool": "semantic_ui_schema",
+      "status": "completed",
+      "arguments": {
+        "component": "ArchitectureExplorer"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"component\":\"ArchitectureExplorer\",\"protocolVersion\":\"1.4\",\"payloadSchema\":{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"nodes\":{\"maxItems\":80,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"responsibility\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"constraints\":{\"default\":[],\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"label\",\"responsibility\",\"constraints\",\"evidence\"],\"additionalProperties\":false}},\"edges\":{\"maxItems\":240,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"source\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"target\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"directed\":{\"type\":\"boolean\"},\"type\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"source\",\"target\",\"directed\",\"type\",\"evidence\"],\"additionalProperties\":false}},\"scenarios\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"nodeIds\":{\"minItems\":1,\"maxItems\":80,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"edgeIds\":{\"maxItems\":79,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"explanation\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"required\":[\"id\",\"label\",\"nodeIds\",\"edgeIds\",\"explanation\"],\"additionalProperties\":false}}},\"required\":[\"title\",\"nodes\",\"edges\",\"scenarios\"],\"additionalProperties\":false},\"envelope\":{\"protocolVersion\":\"1.4\",\"displayId\":\"stable-subject-id\",\"revision\":1,\"component\":\"ArchitectureExplorer\",\"summary\":\"A short readable conclusion.\",\"payload\":\"Follow payloadSchema.\"},\"delivery\":\"Validate structured data before using the host rendering channel. Validation does not itself display a component.\",\"semantics\":\"The receipt contains computed graphFacts, shared targets and scenario intersections. Check every statement against these fields and the original user facts. Graph absence does not imply a ban or exclusive ownership; shared Gateway prevents a blanket fault-independence claim. Do not invent Search-to-Gateway or other reverse edges/routes. A path beginning at the same API shares that API as well as its end node. Every edge and scenario path must reference existing IDs and preserve direction. A scenario is one continuous directed path: edgeIds.length = nodeIds.length - 1, with each edge joining adjacent nodes. A single-node failure has no edges. Branches are separate scenarios; unrelated affected nodes are not a path. Flat graph only; cycles are retained. A forbidden relation is not an actual edge: put prohibitions in node constraints, never in edges or scenario paths. Count nodes and allowed edges from the actual arrays. Preserve only supplied relationships, roles and constraints; no mandatory hidden links, replication, ordering or isolation mechanisms may be invented. State failure-propagation assumptions conditionally; a forward edge alone proves no rollback policy.\",\"hostRendering\":\"Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.\"}"
+          }
+        ],
+        "structuredContent": {
+          "component": "ArchitectureExplorer",
+          "protocolVersion": "1.4",
+          "payloadSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "nodes": {
+                "maxItems": 80,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "responsibility": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    },
+                    "constraints": {
+                      "default": [],
+                      "maxItems": 8,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    },
+                    "evidence": {
+                      "default": [],
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "responsibility",
+                    "constraints",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "edges": {
+                "maxItems": 240,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "source": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "target": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "directed": {
+                      "type": "boolean"
+                    },
+                    "type": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "evidence": {
+                      "default": [],
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "source",
+                    "target",
+                    "directed",
+                    "type",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "scenarios": {
+                "default": [],
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "nodeIds": {
+                      "minItems": 1,
+                      "maxItems": 80,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      }
+                    },
+                    "edgeIds": {
+                      "maxItems": 79,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      }
+                    },
+                    "explanation": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "nodeIds",
+                    "edgeIds",
+                    "explanation"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "title",
+              "nodes",
+              "edges",
+              "scenarios"
+            ],
+            "additionalProperties": false
+          },
+          "envelope": {
+            "protocolVersion": "1.4",
+            "displayId": "stable-subject-id",
+            "revision": 1,
+            "component": "ArchitectureExplorer",
+            "summary": "A short readable conclusion.",
+            "payload": "Follow payloadSchema."
+          },
+          "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+          "semantics": "The receipt contains computed graphFacts, shared targets and scenario intersections. Check every statement against these fields and the original user facts. Graph absence does not imply a ban or exclusive ownership; shared Gateway prevents a blanket fault-independence claim. Do not invent Search-to-Gateway or other reverse edges/routes. A path beginning at the same API shares that API as well as its end node. Every edge and scenario path must reference existing IDs and preserve direction. A scenario is one continuous directed path: edgeIds.length = nodeIds.length - 1, with each edge joining adjacent nodes. A single-node failure has no edges. Branches are separate scenarios; unrelated affected nodes are not a path. Flat graph only; cycles are retained. A forbidden relation is not an actual edge: put prohibitions in node constraints, never in edges or scenario paths. Count nodes and allowed edges from the actual arrays. Preserve only supplied relationships, roles and constraints; no mandatory hidden links, replication, ordering or isolation mechanisms may be invented. State failure-propagation assumptions conditionally; a forward edge alone proves no rollback policy.",
+          "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+        },
+        "_meta": null
+      },
+      "error": null,
+      "durationMs": 5
+    },
+    {
+      "id": "exec-e3926e5e-0739-470b-a9a7-8c61690f2e37",
+      "tool": "semantic_ui_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "workflow-error-scope",
+          "revision": 1,
+          "component": "ArchitectureExplorer",
+          "summary": "来源声明登记、核验、留档、回执的正向连接；出错影响范围及处理规则未知。",
+          "payload": {
+            "title": "流程连接与出错规则",
+            "nodes": [
+              {
+                "id": "register",
+                "label": "登记",
+                "responsibility": "来源中的登记节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "verify",
+                "label": "核验",
+                "responsibility": "来源中的核验节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "archive",
+                "label": "留档",
+                "responsibility": "来源中的留档节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "receipt",
+                "label": "回执",
+                "responsibility": "来源中的回执节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "register-verify",
+                "source": "register",
+                "target": "verify",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              },
+              {
+                "id": "verify-archive",
+                "source": "verify",
+                "target": "archive",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              },
+              {
+                "id": "archive-receipt",
+                "source": "archive",
+                "target": "receipt",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              }
+            ],
+            "scenarios": []
+          }
+        }
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"ArchitectureExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"graphFacts\":{\"scope\":\"declared-graph-only\",\"sourceFactsVerified\":false,\"nodeCount\":4,\"edgeCount\":3,\"directedEdgeCount\":3,\"directedEdges\":[{\"id\":\"register-verify\",\"source\":\"register\",\"target\":\"verify\"},{\"id\":\"verify-archive\",\"source\":\"verify\",\"target\":\"archive\"},{\"id\":\"archive-receipt\",\"source\":\"archive\",\"target\":\"receipt\"}],\"directedEdgesOmitted\":0,\"sharedTargets\":[],\"sharedTargetsOmitted\":0,\"scenarioIntersections\":[],\"scenarioIntersectionsOmitted\":0,\"boundary\":\"Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route.\"},\"canonicalSummary\":\"Declared graph: 4 nodes, 3 relationships.\",\"canonicalSummarySource\":\"computed from the supplied graph; not independent verification\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "ArchitectureExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "graphFacts": {
+            "scope": "declared-graph-only",
+            "sourceFactsVerified": false,
+            "nodeCount": 4,
+            "edgeCount": 3,
+            "directedEdgeCount": 3,
+            "directedEdges": [
+              {
+                "id": "register-verify",
+                "source": "register",
+                "target": "verify"
+              },
+              {
+                "id": "verify-archive",
+                "source": "verify",
+                "target": "archive"
+              },
+              {
+                "id": "archive-receipt",
+                "source": "archive",
+                "target": "receipt"
+              }
+            ],
+            "directedEdgesOmitted": 0,
+            "sharedTargets": [],
+            "sharedTargetsOmitted": 0,
+            "scenarioIntersections": [],
+            "scenarioIntersectionsOmitted": 0,
+            "boundary": "Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route."
+          },
+          "canonicalSummary": "Declared graph: 4 nodes, 3 relationships.",
+          "canonicalSummarySource": "computed from the supplied graph; not independent verification",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        },
+        "_meta": null
+      },
+      "error": null,
+      "durationMs": 4
+    },
+    {
+      "id": "exec-d7c32ea4-4669-4f59-a341-41ae3e418b21",
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "workflow-error-scope",
+          "revision": 1,
+          "component": "ArchitectureExplorer",
+          "summary": "来源声明登记、核验、留档、回执的正向连接；出错影响范围及处理规则未知。",
+          "payload": {
+            "title": "流程连接与出错规则",
+            "nodes": [
+              {
+                "id": "register",
+                "label": "登记",
+                "responsibility": "来源中的登记节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "verify",
+                "label": "核验",
+                "responsibility": "来源中的核验节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "archive",
+                "label": "留档",
+                "responsibility": "来源中的留档节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "receipt",
+                "label": "回执",
+                "responsibility": "来源中的回执节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "register-verify",
+                "source": "register",
+                "target": "verify",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              },
+              {
+                "id": "verify-archive",
+                "source": "verify",
+                "target": "archive",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              },
+              {
+                "id": "archive-receipt",
+                "source": "archive",
+                "target": "receipt",
+                "directed": true,
+                "type": "来源声明的有向连接",
+                "evidence": []
+              }
+            ],
+            "scenarios": []
+          }
+        },
+        "mapping": {
+          "failurePolicies": []
+        }
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"workflow-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"jsonPointer\":null,\"textSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"excerptSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":117,\"textUTF8Bytes\":117},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified\"},\"identityVerified\":false,\"sourceFactsVerified\":false,\"freeProseVerified\":false,\"status\":\"compared\",\"sourceWorkflow\":{\"nodes\":[\"登记\",\"核验\",\"留档\",\"回执\"],\"relations\":[{\"from\":\"登记\",\"to\":\"核验\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"核验\",\"to\":\"留档\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"留档\",\"to\":\"回执\",\"spans\":[{\"textByteStart\":48,\"textByteEnd\":63}]}],\"failurePolicies\":[],\"questions\":[{\"triggers\":[\"回执\",\"核验\"],\"span\":{\"textByteStart\":66,\"textByteEnd\":114}}]},\"comparison\":{\"status\":\"matched\",\"coverage\":\"all explicit topology and failure policies in the complete selected workflow source\",\"edgeChecks\":[{\"edgeId\":\"register-verify\",\"from\":\"登记\",\"to\":\"核验\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"edgeId\":\"verify-archive\",\"from\":\"核验\",\"to\":\"留档\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"edgeId\":\"archive-receipt\",\"from\":\"留档\",\"to\":\"回执\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":48,\"textByteEnd\":63}]}],\"missingRelations\":[],\"policyChecks\":[],\"missingPolicies\":[]},\"issues\":[],\"claimChecks\":[],\"conclusion\":{\"selectedSource\":\"matched\",\"structuredClaims\":\"not-requested\",\"sourceIdentity\":\"unverified\",\"freeProse\":\"not-verified\"},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"reason\":\"No keyword removal or arbitrary prose certification.\"},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete finite workflow syntax only\",\"text\":\"来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\\n回执失败的重试、回滚或补偿策略未声明，保持未知。\\n核验失败的重试、回滚或补偿策略未声明，保持未知。\\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "workflow-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "jsonPointer": null,
+            "textSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "excerptSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 117,
+              "textUTF8Bytes": 117
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+          },
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceWorkflow": {
+            "nodes": [
+              "登记",
+              "核验",
+              "留档",
+              "回执"
+            ],
+            "relations": [
+              {
+                "from": "登记",
+                "to": "核验",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "核验",
+                "to": "留档",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "留档",
+                "to": "回执",
+                "spans": [
+                  {
+                    "textByteStart": 48,
+                    "textByteEnd": 63
+                  }
+                ]
+              }
+            ],
+            "failurePolicies": [],
+            "questions": [
+              {
+                "triggers": [
+                  "回执",
+                  "核验"
+                ],
+                "span": {
+                  "textByteStart": 66,
+                  "textByteEnd": 114
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "matched",
+            "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+            "edgeChecks": [
+              {
+                "edgeId": "register-verify",
+                "from": "登记",
+                "to": "核验",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "edgeId": "verify-archive",
+                "from": "核验",
+                "to": "留档",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "edgeId": "archive-receipt",
+                "from": "留档",
+                "to": "回执",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 48,
+                    "textByteEnd": 63
+                  }
+                ]
+              }
+            ],
+            "missingRelations": [],
+            "policyChecks": [],
+            "missingPolicies": []
+          },
+          "issues": [],
+          "claimChecks": [],
+          "conclusion": {
+            "selectedSource": "matched",
+            "structuredClaims": "not-requested",
+            "sourceIdentity": "unverified",
+            "freeProse": "not-verified"
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "reason": "No keyword removal or arbitrary prose certification."
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete finite workflow syntax only",
+            "text": "来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\n回执失败的重试、回滚或补偿策略未声明，保持未知。\n核验失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+          }
+        },
+        "_meta": null
+      },
+      "error": null,
+      "durationMs": 2
+    }
+  ],
+  "modelBuiltInDiscoveryCalls": [
+    {
+      "id": "exec-027ea2ff-e040-41cb-ac7d-7db464e6ccc0",
+      "tool": "list_mcp_resources",
+      "status": "completed",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"resources\":[]}"
+          }
+        ],
+        "structuredContent": null,
+        "_meta": null
+      },
+      "error": null
+    },
+    {
+      "id": "exec-bf5db996-5b6d-4168-bb13-df3f73c0a7c8",
+      "tool": "list_mcp_resource_templates",
+      "status": "completed",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"resourceTemplates\":[]}"
+          }
+        ],
+        "structuredContent": null,
+        "_meta": null
+      },
+      "error": null
+    }
+  ],
+  "hostExplicitCalls": {
+    "count": 3,
+    "schema": {
+      "content": [
+        {
+          "type": "text",
+          "text": "{\"component\":\"ArchitectureExplorer\",\"protocolVersion\":\"1.4\",\"payloadSchema\":{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"nodes\":{\"maxItems\":80,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"responsibility\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"constraints\":{\"default\":[],\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"label\",\"responsibility\",\"constraints\",\"evidence\"],\"additionalProperties\":false}},\"edges\":{\"maxItems\":240,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"source\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"target\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"directed\":{\"type\":\"boolean\"},\"type\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"source\",\"target\",\"directed\",\"type\",\"evidence\"],\"additionalProperties\":false}},\"scenarios\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"nodeIds\":{\"minItems\":1,\"maxItems\":80,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"edgeIds\":{\"maxItems\":79,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"explanation\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"required\":[\"id\",\"label\",\"nodeIds\",\"edgeIds\",\"explanation\"],\"additionalProperties\":false}}},\"required\":[\"title\",\"nodes\",\"edges\",\"scenarios\"],\"additionalProperties\":false},\"envelope\":{\"protocolVersion\":\"1.4\",\"displayId\":\"stable-subject-id\",\"revision\":1,\"component\":\"ArchitectureExplorer\",\"summary\":\"A short readable conclusion.\",\"payload\":\"Follow payloadSchema.\"},\"delivery\":\"Validate structured data before using the host rendering channel. Validation does not itself display a component.\",\"semantics\":\"The receipt contains computed graphFacts, shared targets and scenario intersections. Check every statement against these fields and the original user facts. Graph absence does not imply a ban or exclusive ownership; shared Gateway prevents a blanket fault-independence claim. Do not invent Search-to-Gateway or other reverse edges/routes. A path beginning at the same API shares that API as well as its end node. Every edge and scenario path must reference existing IDs and preserve direction. A scenario is one continuous directed path: edgeIds.length = nodeIds.length - 1, with each edge joining adjacent nodes. A single-node failure has no edges. Branches are separate scenarios; unrelated affected nodes are not a path. Flat graph only; cycles are retained. A forbidden relation is not an actual edge: put prohibitions in node constraints, never in edges or scenario paths. Count nodes and allowed edges from the actual arrays. Preserve only supplied relationships, roles and constraints; no mandatory hidden links, replication, ordering or isolation mechanisms may be invented. State failure-propagation assumptions conditionally; a forward edge alone proves no rollback policy.\",\"hostRendering\":\"Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.\"}"
+        }
+      ],
+      "structuredContent": {
+        "component": "ArchitectureExplorer",
+        "protocolVersion": "1.4",
+        "payloadSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "nodes": {
+              "maxItems": 80,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "responsibility": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  },
+                  "constraints": {
+                    "default": [],
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  },
+                  "evidence": {
+                    "default": [],
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "responsibility",
+                  "constraints",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "edges": {
+              "maxItems": 240,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "source": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "target": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "directed": {
+                    "type": "boolean"
+                  },
+                  "type": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "evidence": {
+                    "default": [],
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "source",
+                  "target",
+                  "directed",
+                  "type",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "scenarios": {
+              "default": [],
+              "maxItems": 12,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "nodeIds": {
+                    "minItems": 1,
+                    "maxItems": 80,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    }
+                  },
+                  "edgeIds": {
+                    "maxItems": 79,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    }
+                  },
+                  "explanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "nodeIds",
+                  "edgeIds",
+                  "explanation"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "nodes",
+            "edges",
+            "scenarios"
+          ],
+          "additionalProperties": false
+        },
+        "envelope": {
+          "protocolVersion": "1.4",
+          "displayId": "stable-subject-id",
+          "revision": 1,
+          "component": "ArchitectureExplorer",
+          "summary": "A short readable conclusion.",
+          "payload": "Follow payloadSchema."
+        },
+        "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+        "semantics": "The receipt contains computed graphFacts, shared targets and scenario intersections. Check every statement against these fields and the original user facts. Graph absence does not imply a ban or exclusive ownership; shared Gateway prevents a blanket fault-independence claim. Do not invent Search-to-Gateway or other reverse edges/routes. A path beginning at the same API shares that API as well as its end node. Every edge and scenario path must reference existing IDs and preserve direction. A scenario is one continuous directed path: edgeIds.length = nodeIds.length - 1, with each edge joining adjacent nodes. A single-node failure has no edges. Branches are separate scenarios; unrelated affected nodes are not a path. Flat graph only; cycles are retained. A forbidden relation is not an actual edge: put prohibitions in node constraints, never in edges or scenario paths. Count nodes and allowed edges from the actual arrays. Preserve only supplied relationships, roles and constraints; no mandatory hidden links, replication, ordering or isolation mechanisms may be invented. State failure-propagation assumptions conditionally; a forward edge alone proves no rollback policy.",
+        "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+      }
+    },
+    "preSource": {
+      "request": {},
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"workflow-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"jsonPointer\":null,\"textSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"excerptSha256\":\"de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":117,\"textUTF8Bytes\":117},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified\"},\"identityVerified\":false,\"sourceFactsVerified\":false,\"freeProseVerified\":false,\"status\":\"compared\",\"sourceWorkflow\":{\"nodes\":[\"登记\",\"核验\",\"留档\",\"回执\"],\"relations\":[{\"from\":\"登记\",\"to\":\"核验\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"核验\",\"to\":\"留档\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":45}]},{\"from\":\"留档\",\"to\":\"回执\",\"spans\":[{\"textByteStart\":48,\"textByteEnd\":63}]}],\"failurePolicies\":[],\"questions\":[{\"triggers\":[\"回执\",\"核验\"],\"span\":{\"textByteStart\":66,\"textByteEnd\":114}}]},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[],\"conclusion\":{\"selectedSource\":\"not-requested\",\"structuredClaims\":\"not-requested\",\"sourceIdentity\":\"unverified\",\"freeProse\":\"not-verified\"},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"reason\":\"No keyword removal or arbitrary prose certification.\"},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete finite workflow syntax only\",\"text\":\"来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\\n回执失败的重试、回滚或补偿策略未声明，保持未知。\\n核验失败的重试、回滚或补偿策略未声明，保持未知。\\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "workflow-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "jsonPointer": null,
+            "textSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "excerptSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 117,
+              "textUTF8Bytes": 117
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+          },
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceWorkflow": {
+            "nodes": [
+              "登记",
+              "核验",
+              "留档",
+              "回执"
+            ],
+            "relations": [
+              {
+                "from": "登记",
+                "to": "核验",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "核验",
+                "to": "留档",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 45
+                  }
+                ]
+              },
+              {
+                "from": "留档",
+                "to": "回执",
+                "spans": [
+                  {
+                    "textByteStart": 48,
+                    "textByteEnd": 63
+                  }
+                ]
+              }
+            ],
+            "failurePolicies": [],
+            "questions": [
+              {
+                "triggers": [
+                  "回执",
+                  "核验"
+                ],
+                "span": {
+                  "textByteStart": 66,
+                  "textByteEnd": 114
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "conclusion": {
+            "selectedSource": "not-requested",
+            "structuredClaims": "not-requested",
+            "sourceIdentity": "unverified",
+            "freeProse": "not-verified"
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "reason": "No keyword removal or arbitrary prose certification."
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete finite workflow syntax only",
+            "text": "来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\n回执失败的重试、回滚或补偿策略未声明，保持未知。\n核验失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+          }
+        }
+      }
+    },
+    "postSource": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "workflow-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+        "jsonPointer": null,
+        "textSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+        "excerptSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 117,
+          "textUTF8Bytes": 117
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "status": "compared",
+      "sourceWorkflow": {
+        "nodes": [
+          "登记",
+          "核验",
+          "留档",
+          "回执"
+        ],
+        "relations": [
+          {
+            "from": "登记",
+            "to": "核验",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 45
+              }
+            ]
+          },
+          {
+            "from": "核验",
+            "to": "留档",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 45
+              }
+            ]
+          },
+          {
+            "from": "留档",
+            "to": "回执",
+            "spans": [
+              {
+                "textByteStart": 48,
+                "textByteEnd": 63
+              }
+            ]
+          }
+        ],
+        "failurePolicies": [],
+        "questions": [
+          {
+            "triggers": [
+              "回执",
+              "核验"
+            ],
+            "span": {
+              "textByteStart": 66,
+              "textByteEnd": 114
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "claimChecks": [],
+      "conclusion": {
+        "selectedSource": "not-requested",
+        "structuredClaims": "not-requested",
+        "sourceIdentity": "unverified",
+        "freeProse": "not-verified"
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "reason": "No keyword removal or arbitrary prose certification."
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete finite workflow syntax only",
+        "text": "来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\n回执失败的重试、回滚或补偿策略未声明，保持未知。\n核验失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+      }
+    }
+  },
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n来源明确给出的有向拓扑：登记 → 核验；核验 → 留档；留档 → 回执。\n来源未声明异常重试或回滚规则；不能从箭头补出策略。\n回执失败的重试、回滚或补偿策略未声明，保持未知。\n核验失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+    "sourceTextSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+    "sourceDocumentSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "review": {
+    "reviewedAt": "2026-10-27T10:16:10.574725+00:00",
+    "case": "H-workflow-unknown",
+    "criteriaSha256": "e2ff1f242b339fc2b53e56a57bf5e5ebf7ee116bb82587123238ef769420e6e5",
+    "candidateSha256": "3d7930b7c17f31728426c71755cfd2ec611fb9ca0d3a8be7dc7d185bb7eeccab",
+    "result": "met for the frozen finite criteria",
+    "judgments": [
+      {
+        "criterionIndex": 0,
+        "status": "met",
+        "evidence": "与G不同thread及临时cwd；模型实际读取当前source SHA。"
+      },
+      {
+        "criterionIndex": 1,
+        "status": "met",
+        "evidence": "raw先限定来源仅声明拓扑；明确重试、回滚、补偿规则均未声明。"
+      },
+      {
+        "criterionIndex": 2,
+        "status": "met",
+        "evidence": "raw不确定影响/阻塞；没有借G的局部重试和不回滚规则。"
+      },
+      {
+        "criterionIndex": 3,
+        "status": "met",
+        "evidence": "raw没有引入额外假设，更没有假设冒充来源。"
+      }
+    ],
+    "modelSelectedSemanticToolCalls": 4,
+    "modelBuiltInDiscoveryCalls": 2,
+    "firstFreshViewComparison": "matched",
+    "typedWorkflowClaimsRequested": false,
+    "freeProseRuntimeVerified": false,
+    "noFurtherModelTurns": true
+  }
+}

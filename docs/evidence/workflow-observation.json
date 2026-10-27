@@ -1,0 +1,132 @@
+{
+  "schema": "semantic-ui-workflow-observation-v1",
+  "recordedAt": "2026-10-27T10:17:54.934703+00:00",
+  "scope": "Two new independent skill/workflow-guided observations of synthetic workflow-zh file snapshots; no unguided selection, arbitrary prose certification or new native UI acceptance.",
+  "independentOriginalPrivateCriteriaSha256": "e2ff1f242b339fc2b53e56a57bf5e5ebf7ee116bb82587123238ef769420e6e5",
+  "publicCriteria": "Selected safe fields; private handoff receipt is not published or claimed byte-identical.",
+  "runtimeVersion": "0.1.0-preview.22",
+  "sourceCommit": "a0ca980884adbc21d476ffcf92133e3305df67cc",
+  "archiveSha256": "ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e",
+  "clientSha256": "f1bc5634178da8269ab67d836f1744920ccdac89740992addcf544715e7fd5d2",
+  "codexCli": "0.164.0",
+  "guidedInputs": "Ordinary question plus official typed archived skill; existing generic developer workflow; tool reads configured source. No frozen criteria, hand-crafted expected view, host canonical text or G context inserted into H. The source tool itself returns its normal bounded canonical explanation.",
+  "unchangedBetweenCases": [
+    "runtime archive",
+    "client",
+    "skill",
+    "developer workflow",
+    "default model/provider/reasoning/tier"
+  ],
+  "cases": [
+    {
+      "case": "G",
+      "sourceTextSha256": "97c6414f081220bcd171a3fc61b52fd0d6ceda339b7159992510a9bdbad5dbaf",
+      "questionSha256": "ea1361baa9da5ec5ae62d1dbfa573051803e868dc11854fb70104a3fc7c2f131",
+      "candidateSha256": "ecd4661550455a326408141bb07bc5843390e40c78b5b3cca76ad9adb797be49",
+      "threadId": "01a17cd9-28c2-7df0-91b3-acec14fc97cc",
+      "turnId": "01a17cd9-2f37-7e91-bece-ddcb0fdbf3cb",
+      "newObservedTurns": 1,
+      "modelSemanticCalls": 1,
+      "modelBuiltInDiscoveryCalls": 2,
+      "hostExplicitCalls": 3,
+      "firstFreshViewComparison": "not-requested",
+      "typedWorkflowClaims": "not-requested",
+      "rawReview": "bounded semantic clauses met; explicit extra-boundary coverage partial",
+      "hostDelivery": "delivered"
+    },
+    {
+      "case": "H",
+      "sourceTextSha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+      "questionSha256": "c6f7cbd5b908566caf3c5d9723fc2fc1efd3382543d13ffd0dc9296de27607e5",
+      "candidateSha256": "3d7930b7c17f31728426c71755cfd2ec611fb9ca0d3a8be7dc7d185bb7eeccab",
+      "threadId": "01a17cda-944c-78d0-85d1-dd39b42284dd",
+      "turnId": "01a17cda-9a44-7b53-90bd-79a178547106",
+      "newObservedTurns": 1,
+      "modelSemanticCalls": 4,
+      "modelBuiltInDiscoveryCalls": 2,
+      "hostExplicitCalls": 3,
+      "firstFreshViewComparison": "matched",
+      "typedWorkflowClaims": "not-requested",
+      "rawReview": "met for the frozen finite criteria",
+      "hostDelivery": "delivered"
+    }
+  ],
+  "newObservedModelTurns": 2,
+  "maximumNewObservedModelTurns": 2,
+  "backendModelRequestCount": "unknown",
+  "separatePrior0520ObservedTurns": 2,
+  "separateA2ImplementationObservedTurns": 0,
+  "freeProseRuntimeVerified": false,
+  "sourceIdentityVerified": false,
+  "sourceWorldFactsVerified": false,
+  "runtimeOrSkillChanges": false,
+  "newReleaseOrRepack": false,
+  "previousNaturalResults": "Unchanged 0 pass / 6 fail / 18 requests; original A2 raw and erratum retained.",
+  "assets": [
+    {
+      "path": "workflow-observation/criteria-cases.json",
+      "sha256": "11f5f0c7592c6eb0d9cc443d89221d796b5d0fe36a973b64bc26744cb3da4954",
+      "bytes": 2039
+    },
+    {
+      "path": "workflow-observation/wire-verification.json",
+      "sha256": "4c9f677e9731fddd27656c33b0591749a25d47848adaa66c2150f9c2312910f7",
+      "bytes": 4166
+    },
+    {
+      "path": "workflow-observation/cleanup.json",
+      "sha256": "fb30b33f9405b844b380e6df088469ad862d7fe7612c359def53e42a27d522b7",
+      "bytes": 2170
+    },
+    {
+      "path": "workflow-observation/g-source.txt",
+      "sha256": "97c6414f081220bcd171a3fc61b52fd0d6ceda339b7159992510a9bdbad5dbaf",
+      "bytes": 165
+    },
+    {
+      "path": "workflow-observation/g-question.txt",
+      "sha256": "ea1361baa9da5ec5ae62d1dbfa573051803e868dc11854fb70104a3fc7c2f131",
+      "bytes": 51
+    },
+    {
+      "path": "workflow-observation/g-candidate.md",
+      "sha256": "ecd4661550455a326408141bb07bc5843390e40c78b5b3cca76ad9adb797be49",
+      "bytes": 371
+    },
+    {
+      "path": "workflow-observation/g-host-answer.md",
+      "sha256": "a14d4e6ea611db2e8de0b7554643fb1e083a88faebfc395650a988489db2b44a",
+      "bytes": 758
+    },
+    {
+      "path": "workflow-observation/g.json",
+      "sha256": "d97117b99c592e510b6a491d139bdcf0a137a1aba0265a81f0515db8c1459eba",
+      "bytes": 36685
+    },
+    {
+      "path": "workflow-observation/h-source.txt",
+      "sha256": "de763a31aebed632edefb3ee4a19a76e8c1ad33bc2c1e298f2e04a01c95a9cc6",
+      "bytes": 117
+    },
+    {
+      "path": "workflow-observation/h-question.txt",
+      "sha256": "c6f7cbd5b908566caf3c5d9723fc2fc1efd3382543d13ffd0dc9296de27607e5",
+      "bytes": 51
+    },
+    {
+      "path": "workflow-observation/h-candidate.md",
+      "sha256": "3d7930b7c17f31728426c71755cfd2ec611fb9ca0d3a8be7dc7d185bb7eeccab",
+      "bytes": 384
+    },
+    {
+      "path": "workflow-observation/h-host-answer.md",
+      "sha256": "c6cde87fb40364267f66ea0814489c46d9fdb7e16436bad0147a8d19c18c290c",
+      "bytes": 774
+    },
+    {
+      "path": "workflow-observation/h.json",
+      "sha256": "ae1ddd5dc80e62a73df2e06e45a2eceed24e0c3555c68a43c2004fab48735c13",
+      "bytes": 63120
+    }
+  ]
+}
