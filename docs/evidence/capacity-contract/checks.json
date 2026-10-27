@@ -1,0 +1,11 @@
+{
+  "typecheck": "passed",
+  "targetedTests": {
+    "files": 4,
+    "tests": 19,
+    "status": "passed"
+  },
+  "normalMacLinuxNativePTC": "one explicit reject-then-caller-repair sequence per mode, final installed archive",
+  "modelsDuringDeterministicRepair": 0,
+  "noFactsOrLabelAcceptanceRelaxed": true
+}

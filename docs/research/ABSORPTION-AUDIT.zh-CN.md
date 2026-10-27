@@ -1,5 +1,7 @@
 # 典型开源项目采用复核
 
+[两个新容量模型观察](../CODEX-CAPACITY-OBSERVATION.zh-CN.md)带来实际采用缺口：23首题原文正确但7次view未matched。24已补[可发现字段合同/精确诊断](../CAPACITY-CONTRACT.zh-CN.md)，最终正常归档/CLI/宿主接受，另一独立对照当前view首次matched。题目/版本不同，不推因果基准或全面采用；没有新上游依赖/图种/目录扩张。
+
 23已交付[容量来源到真实数值硬条件](../SOURCE-CAPACITY.zh-CN.md)，继续采用来源、计算、解释分层：当前与未来可能分开，部署/维护不混同，合法本地需求确实重算容量、无效值保持未知。最终归档的macOS/Linux Native/PTC、旧1.2/刷新、CLI及匿名资产[单独接受](../evidence/source-capacity.json)；没有扩大上游清单、图种或协议兼容，也不把原D2模型正文判通过。
 
 22后的[G/H原文观察](../CODEX-WORKFLOW-OBSERVATION.zh-CN.md)进一步检查来源/拓扑/解释分层：G实际读源后保留明确规则与未知分支，但额外边界只部分覆盖；H完成4次语义调用、新图比较matched，原文不造异常策略。两次guided观察没有增加上游依赖或协议兼容，不能把原35项目覆盖数变成采用完成率；G也不能概括为完整建图流程已采用。

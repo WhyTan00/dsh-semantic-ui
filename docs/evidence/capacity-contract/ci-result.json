@@ -1,0 +1,420 @@
+{
+  "conclusion": "success",
+  "databaseId": 40500985324,
+  "headSha": "780328056294060d79d7f89372ab87b312a982fb",
+  "jobs": [
+    {
+      "completedAt": "2026-10-27T12:06:40Z",
+      "conclusion": "success",
+      "databaseId": 122178317740,
+      "name": "verify",
+      "startedAt": "2026-10-27T12:05:02Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-27T12:05:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-27T12:05:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:07Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-27T12:05:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:08Z",
+          "conclusion": "success",
+          "name": "Run pnpm/action-setup@v4",
+          "number": 3,
+          "startedAt": "2026-10-27T12:05:07Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:16Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-node@v4",
+          "number": 4,
+          "startedAt": "2026-10-27T12:05:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:18Z",
+          "conclusion": "success",
+          "name": "Run pnpm install --frozen-lockfile",
+          "number": 5,
+          "startedAt": "2026-10-27T12:05:16Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:19Z",
+          "conclusion": "success",
+          "name": "Run pnpm docs:generate",
+          "number": 6,
+          "startedAt": "2026-10-27T12:05:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:19Z",
+          "conclusion": "success",
+          "name": "Run git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json",
+          "number": 7,
+          "startedAt": "2026-10-27T12:05:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "success",
+          "name": "Run pnpm research:check",
+          "number": 8,
+          "startedAt": "2026-10-27T12:05:19Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm check",
+          "number": 9,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check declaration source",
+          "number": 10,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check source-bound delivery",
+          "number": 11,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check read-only MCP workflow",
+          "number": 12,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check numeric source delivery",
+          "number": 13,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check conditional source contracts",
+          "number": 14,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check source supplementation contracts",
+          "number": 15,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:20Z",
+          "conclusion": "skipped",
+          "name": "Check cold source contracts",
+          "number": 16,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:27Z",
+          "conclusion": "success",
+          "name": "Check capacity representation diagnostics",
+          "number": 17,
+          "startedAt": "2026-10-27T12:05:20Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:27Z",
+          "conclusion": "skipped",
+          "name": "Check capacity source contracts",
+          "number": 18,
+          "startedAt": "2026-10-27T12:05:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:27Z",
+          "conclusion": "skipped",
+          "name": "Check complete workflow contracts",
+          "number": 19,
+          "startedAt": "2026-10-27T12:05:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:47Z",
+          "conclusion": "success",
+          "name": "Run pnpm exec playwright install --with-deps chromium",
+          "number": 20,
+          "startedAt": "2026-10-27T12:05:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:47Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:host",
+          "number": 21,
+          "startedAt": "2026-10-27T12:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:47Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:chart-host",
+          "number": 22,
+          "startedAt": "2026-10-27T12:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:47Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:consistency-host",
+          "number": 23,
+          "startedAt": "2026-10-27T12:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:47Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 24,
+          "startedAt": "2026-10-27T12:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:05:58Z",
+          "conclusion": "success",
+          "name": "Run pnpm release:pack",
+          "number": 25,
+          "startedAt": "2026-10-27T12:05:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:32Z",
+          "conclusion": "success",
+          "name": "Run node tests/installed-capacity-contract.mjs",
+          "number": 26,
+          "startedAt": "2026-10-27T12:05:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 27,
+          "startedAt": "2026-10-27T12:06:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run node tests/installed-capacity.mjs",
+          "number": 28,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 29,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run node tests/installed-workflow.mjs",
+          "number": 30,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 31,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run node tests/installed-cold-source.mjs",
+          "number": 32,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 33,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run node tests/installed-source-update.mjs",
+          "number": 34,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 35,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run node tests/installed-condition.mjs",
+          "number": 36,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 37,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:installed-numeric",
+          "number": 38,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 39,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:installed-mcp",
+          "number": 40,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 41,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:installed-source",
+          "number": 42,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 43,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run pnpm test:installed-consistency",
+          "number": 44,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:33Z",
+          "conclusion": "skipped",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 45,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:37Z",
+          "conclusion": "success",
+          "name": "Run actions/upload-artifact@v4",
+          "number": 46,
+          "startedAt": "2026-10-27T12:06:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:37Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-node@v4",
+          "number": 90,
+          "startedAt": "2026-10-27T12:06:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:37Z",
+          "conclusion": "success",
+          "name": "Post Run pnpm/action-setup@v4",
+          "number": 91,
+          "startedAt": "2026-10-27T12:06:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:37Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 92,
+          "startedAt": "2026-10-27T12:06:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-27T12:06:37Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 93,
+          "startedAt": "2026-10-27T12:06:37Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40500985324/job/122178317740"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40500985324"
+}

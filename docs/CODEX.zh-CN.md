@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+[容量来源两次实际模型观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)保留23首题raw正确但新view未匹配的事实，并据此交付24的可发现字段合同/精确诊断。第二个原冻结GiB对照在24上当前view首次matched，原文有限met；192假设来源拒绝不等于禁合法假设。2/2回合，无第三次；普通CLI宿主说明与raw分开，不代表当前客户端UI/实时回传。
+
 23新增显式 `--source-kind capacity-zh` 的[容量来源核对](SOURCE-CAPACITY.zh-CN.md)，仍沿同一MCP/core和正常 `--answer` 入口。最终归档的正确请求delivered、错误当前初值withheld，原D2来源身份与两层wire分别核验，0turn/start；[接受](evidence/source-capacity.json)不等于当前桌面富UI或模型自然采用。没有全局MCP注册、模型配置或客户端安装。
 
 19发行后另完成[来源补充后的Codex快照采用](CODEX-SOURCE-UPDATE.zh-CN.md)：一个新反向分支场景经正常DSH19控件保存unknown→false的新声明，原生消息与导入文件hash逐项关联；两份独立guided回合各4次模型语义调用，首个view比较matched，raw final按独立判据评读met。新false按else推出need=true，价格/整体未知。它是文件快照导入，不是实时回调/主客户端安装；backend请求数unknown，任意正文仍未认证。没有新runtime或发行，原19的0模型接受不改。

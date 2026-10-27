@@ -1,0 +1,62 @@
+[
+  {
+    "run": "host-1793102693315",
+    "cleanup": {
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 371,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 372,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 553,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "port": 57917,
+      "fixturePort": 57916
+    },
+    "portsObservedClosed": true,
+    "allOwnPidsGone": true,
+    "installedArchive": true
+  },
+  {
+    "run": "host-1793102335532",
+    "cleanup": {
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 97272,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 97273,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 97405,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "port": 55935,
+      "fixturePort": 55934
+    },
+    "portsObservedClosed": true,
+    "allOwnPidsGone": true,
+    "installedArchive": false
+  }
+]

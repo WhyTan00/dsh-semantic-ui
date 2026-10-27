@@ -1,0 +1,178 @@
+{
+  "schema": "semantic-ui-capacity-contract-acceptance-v1",
+  "acceptedAt": "2026-10-27T12:33:12.061535+00:00",
+  "version": "0.1.0-preview.24",
+  "sourceCommit": "780328056294060d79d7f89372ab87b312a982fb",
+  "sourceTag": "v0.1.0-preview.24",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.24.tgz",
+    "bytes": 2667742,
+    "files": 382,
+    "sha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70"
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.24.tgz",
+    "bytes": 31759520,
+    "sha256": "a4f611b150e602f8ef40c29e6c56a4716026ab545fa2a398f9a204e61ee7b270",
+    "files": 680
+  },
+  "release": {
+    "id": 425429555,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24",
+    "public": true,
+    "prerelease": true,
+    "draft": false,
+    "author": "WhyTan00",
+    "fourAnonymousHTTP200MatchLocalAndLinux": true
+  },
+  "ci": {
+    "id": 40500985324,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40500985324",
+    "headSha": "780328056294060d79d7f89372ab87b312a982fb",
+    "conclusion": "success",
+    "scope": "capacity_contract_only"
+  },
+  "problem": "A wrong display label was bundled into SOURCE_CURRENT_DEMAND despite correct quantity/unit. First real23 view attempts are preserved in capacity-observation/current-mb.json.",
+  "change": "Expose existing finite numeric representation constraints in source-check.viewContract; distinct field label/type/unit/current/effect diagnostics. No label aliases, hidden repairs or relaxed source facts. MCP, normal DSH and archived skill advertise the same contract.",
+  "componentProtocol": "1.4 unchanged; checkpoint/sourceDelivery structure unchanged",
+  "checks": {
+    "targeted": {
+      "tests": 19,
+      "files": 4,
+      "passed": true
+    },
+    "normalFinalArchive": {
+      "allFilesComparedBeforeHost": 382,
+      "platforms": [
+        "macOS",
+        "Linux CI"
+      ],
+      "modes": [
+        "Native",
+        "PTC"
+      ],
+      "sequencesPerMode": 1,
+      "sequence": "wrong label source-check/render refused, caller explicitly changes existing allowed label, new source-check/render matches and checkpoint refreshes",
+      "pageErrors": []
+    },
+    "normalCLI": {
+      "wrongLabel": "withheld/SOURCE_INPUT_LABEL",
+      "sameCurrent180StillMatched": true,
+      "explicitlyRepairedLabel": "delivered",
+      "newModelTurns": 0
+    }
+  },
+  "modelsDuringDeterministicRepair": 0,
+  "separateModelObservations": "capacity-observation.json; only the second new model turn used this archive",
+  "oldVersionsAndNaturalFailures": "23/22/21 and all prior assets immutable; old0pass/6fail/18requests unchanged",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "assets": [
+    {
+      "path": "capacity-contract/macos-native.json",
+      "bytes": 22570,
+      "sha256": "1a26fd0125dd22eb79185fccb56f898dfcf610a30caf019bf266a5a46f6c866d"
+    },
+    {
+      "path": "capacity-contract/macos-ptc.json",
+      "bytes": 22561,
+      "sha256": "1716ac4990293271949fcb0cad680ec1ffb63637fc927de6b4927876e9f1104c"
+    },
+    {
+      "path": "capacity-contract/macos-install.json",
+      "bytes": 609,
+      "sha256": "38c410e6186efce34e9db4b3517a00a01912b12b07464c0fa95c694cbdadb148"
+    },
+    {
+      "path": "capacity-contract/macos-installed-byte-check.json",
+      "bytes": 68,
+      "sha256": "0898e752e882731829eff201dd3196dded6a131197dcd6768c7e09501fd1c6d6"
+    },
+    {
+      "path": "capacity-contract/linux-native.json",
+      "bytes": 22570,
+      "sha256": "a5637ba4d40364d154d0663eeaddff22570bdbb88da8b07acbea1cd977f01e48"
+    },
+    {
+      "path": "capacity-contract/linux-ptc.json",
+      "bytes": 22561,
+      "sha256": "eb0e2f82382b9ac851b526221dd6b3c00a6174482925ae6ae79ee6f831899301"
+    },
+    {
+      "path": "capacity-contract/linux-install.json",
+      "bytes": 609,
+      "sha256": "38c410e6186efce34e9db4b3517a00a01912b12b07464c0fa95c694cbdadb148"
+    },
+    {
+      "path": "capacity-contract/linux-installed-byte-check.json",
+      "bytes": 68,
+      "sha256": "0898e752e882731829eff201dd3196dded6a131197dcd6768c7e09501fd1c6d6"
+    },
+    {
+      "path": "capacity-contract/host-cleanup.json",
+      "bytes": 1238,
+      "sha256": "38dea1b9a208d6f50fcdfd09c7d765b9255672265eafcb84d43fdd1801938420"
+    },
+    {
+      "path": "capacity-contract/linux-cleanup.json",
+      "bytes": 377,
+      "sha256": "ec6aae823b22444eaefd618a5f3619369c271c6d9427f217853d67a68f64e1dd"
+    },
+    {
+      "path": "capacity-contract/diagnostic-fix-expectations.json",
+      "bytes": 984,
+      "sha256": "2ad67f22003de7019fd8b49346a31396c4f026aa030e53e45bbeba8d1e4b1912"
+    },
+    {
+      "path": "capacity-contract/label-bad24.json",
+      "bytes": 14904,
+      "sha256": "0a3b5918c7273eee145f2fed63a0a09dc05755fb446fd710e7ab45831e9843db"
+    },
+    {
+      "path": "capacity-contract/label-bad24.md",
+      "bytes": 167,
+      "sha256": "3639962bd0662d078da0424f0e7a07ef90450662581c5d0f7f27dc5cadf32a4d"
+    },
+    {
+      "path": "capacity-contract/label-good24.json",
+      "bytes": 23461,
+      "sha256": "4d8807f427afc380c947ad72844324827a217a5a6a60e78b5960be920c03aee6"
+    },
+    {
+      "path": "capacity-contract/label-good24.md",
+      "bytes": 1068,
+      "sha256": "a4078f4e2e992a86ba5ea7386395ef0847a9ea30884d913d144622bdaceec2fb"
+    },
+    {
+      "path": "capacity-contract/checks.json",
+      "bytes": 307,
+      "sha256": "7f10e40ab62581ee08fd8a3bb90f9a3d970d7d81e47cbf555d2e98943174e827"
+    },
+    {
+      "path": "capacity-contract/frozen-package-manifest.json",
+      "bytes": 34307,
+      "sha256": "deb0129ee2ca0b03716668bd449903a33b298f8e64395b796bdd26cb4e0fb6a8"
+    },
+    {
+      "path": "capacity-contract/ci-byte-verification.json",
+      "bytes": 948,
+      "sha256": "94965bad0f50e97b81769ba514355bdb0a553e78962f061d43fb7e4adced97b2"
+    },
+    {
+      "path": "capacity-contract/ci-result.json",
+      "bytes": 13637,
+      "sha256": "d261bc095e12e493cc5d9e9e088737e0cd0a8fb7239dbfe49ef5c89de55e969d"
+    },
+    {
+      "path": "capacity-contract/public-downloads.json",
+      "bytes": 2630,
+      "sha256": "13bc60e4c6c6ad834937a7849f8c6c368e16628bb82d580aca93364be1c14cdc"
+    },
+    {
+      "path": "capacity-contract/release-publication.json",
+      "bytes": 1797,
+      "sha256": "5e8f5ad0a15a8e7f7ee554ffeb3f9b953f0b646de13318efa5c341e0a0491043"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 # 可发现的容量字段合同与精确诊断
 
-preview.24 候选修复的是工具合同的可发现性和诊断，容量来源、算术、允许标签和正常投影规则保持原边界。最终归档安装/CI/公开交付另记，不能由开发检查推定。
+[preview.24已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)，source/tag `780328056294060d79d7f89372ab87b312a982fb`。382文件最终归档的正常macOS/Linux Native/PTC诊断序列、CLI正反、19项检查及四匿名资产已[分别接受](evidence/capacity-contract.json)。容量来源、算术、允许标签和正常投影规则未放松；组件协议/checkpoint仍1.4。冻结后接受记录不回灌归档，模型采用另按[原文观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)读取。
 
 23上的一个新受控合成模型观察，原始答复正确区分当前和未来可能需求，但其7次新view来源比较没有matched。实际初值、单位和at-least方向正确时，“需求”“本地容量需求”等标签仍被有限合同拒绝；旧错误将标签、类型、单位、初值等合成一个 `SOURCE_CURRENT_DEMAND`，没有给出允许标签，模型因此反复猜字段。首次原文与全部拒绝保留，不能因正文正确或宿主canonical完整而补记新view通过。
 

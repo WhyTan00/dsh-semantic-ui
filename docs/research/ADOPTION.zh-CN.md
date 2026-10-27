@@ -1,5 +1,7 @@
 # 采用记录与后续实现合同
 
+24进一步把可发现的受限合同落到[容量field contract与精确反馈](../CAPACITY-CONTRACT.zh-CN.md)：新真实观察暴露标签错误误报为量值错误，已有字段约束现可读取，错误逐字段定位，仍须明确修正。19项与最终正常归档/CLI/宿主[分层接受](../evidence/capacity-contract.json)；[2次原文观察](../CODEX-CAPACITY-OBSERVATION.zh-CN.md)不改旧自然失败、35项目覆盖数或协议兼容结论。
+
 后续23已把来源/计算/解释分层交付到[容量与当前需求](../SOURCE-CAPACITY.zh-CN.md)：精确量值/单位/spans绑定已有硬条件，未来可能点不冒计划，部署与维护不造对偶。最终379文件归档、macOS/Linux Native/PTC真实本地容量与无效域、刷新/旧1.2、CLI和四匿名资产已[分层接受](../evidence/source-capacity.json)；没有新图表依赖、组件协议字段、通用表单或原文认证。
 
 后续[G/H独立引导观察](../CODEX-WORKFLOW-OBSERVATION.zh-CN.md)把上述来源分层落实到真实工具采用与raw评读：明确规则题保留关键含义但附加边界partial，无策略题保持未知且首次新图比较matched。模型自己的1/4次语义调用与宿主说明分开；没有新代码、技能或上游依赖，不重写原自然失败或把两题当全面采用完成。

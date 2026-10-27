@@ -1,0 +1,455 @@
+{
+  "checkedAt": "2026-10-27T12:21:18.983746+00:00",
+  "method": "Host request/response time intervals first; remaining model-completed argument/response multiset second.",
+  "runs": [
+    {
+      "run": "current-mb-preflight",
+      "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+      "entrySha256": "4fce71aa102e805633c5f1d6ba8de17fa7ba948bdcc447f70c0b8dde32de6e73",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "a6b35e2a99076e7c6462a04f894dcad2efe8a2584c83ae8fb091f33d9d442e2d",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelBuiltInDiscoveryCalls": 0,
+      "modelTurnRequests": 0,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 2,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [],
+      "missingExitCauses": null,
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "boundary-gib-preflight",
+      "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+      "entrySha256": "4fce71aa102e805633c5f1d6ba8de17fa7ba948bdcc447f70c0b8dde32de6e73",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "a6b35e2a99076e7c6462a04f894dcad2efe8a2584c83ae8fb091f33d9d442e2d",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelBuiltInDiscoveryCalls": 0,
+      "modelTurnRequests": 0,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 1,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [
+        90256
+      ],
+      "missingExitCauses": "unknown; not inferred from absent PID",
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "current-mb-model",
+      "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+      "entrySha256": "4fce71aa102e805633c5f1d6ba8de17fa7ba948bdcc447f70c0b8dde32de6e73",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "a6b35e2a99076e7c6462a04f894dcad2efe8a2584c83ae8fb091f33d9d442e2d",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 3,
+      "modelSemanticCalls": 12,
+      "modelBuiltInDiscoveryCalls": 2,
+      "modelTurnRequests": 1,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_schema",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 2,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [],
+      "missingExitCauses": null,
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "label-bad24",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "entrySha256": "8ce17c33aa631914d449120f27d9119223198af91a64409f2a6eb7dc01b8e589",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelBuiltInDiscoveryCalls": 0,
+      "modelTurnRequests": 0,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 2,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [],
+      "missingExitCauses": null,
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "label-good24",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "entrySha256": "8ce17c33aa631914d449120f27d9119223198af91a64409f2a6eb7dc01b8e589",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelBuiltInDiscoveryCalls": 0,
+      "modelTurnRequests": 0,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 1,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [
+        1278
+      ],
+      "missingExitCauses": "unknown; not inferred from absent PID",
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "boundary-gib-preflight24",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "entrySha256": "8ce17c33aa631914d449120f27d9119223198af91a64409f2a6eb7dc01b8e589",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelBuiltInDiscoveryCalls": 0,
+      "modelTurnRequests": 0,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 1,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [
+        1304
+      ],
+      "missingExitCauses": "unknown; not inferred from absent PID",
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "run": "boundary-gib-model",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "entrySha256": "8ce17c33aa631914d449120f27d9119223198af91a64409f2a6eb7dc01b8e589",
+      "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+      "skillSha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+      "loadedEntryPathSuffix": "package/dist/mcp.js",
+      "actualLoadedPathRetainedPrivately": true,
+      "hostCalls": 3,
+      "modelSemanticCalls": 6,
+      "modelBuiltInDiscoveryCalls": 2,
+      "modelTurnRequests": 1,
+      "wireChecks": [
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_schema",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "host-explicit",
+          "tool": "semantic_ui_source_check",
+          "withinHostInterval": true,
+          "argumentsAndStructuredResponseEqual": true
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_schema",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        },
+        {
+          "origin": "model-selected",
+          "tool": "semantic_ui_source_check",
+          "argumentsAndStructuredResponseEqual": true,
+          "identicalRemainingCallsPairedAsMultiset": false
+        }
+      ],
+      "stdoutEqualsHostAnswer": true,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "tapExitLogCount": 2,
+      "tapProcessCount": 2,
+      "tapMissingExitLogPids": [],
+      "missingExitCauses": null,
+      "allOwnPidsObservedGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    }
+  ],
+  "actualTurnStartRequests": 2,
+  "developerInstructionsUnchanged": true,
+  "independentColdWorkspaces": true,
+  "backendModelRequestCount": "unknown",
+  "furtherModelAttemptsAllowed": false,
+  "traceCoverageLimit": "Three non-model preflight/check taps have no child-exit event. All their actual tap/child PIDs were separately observed absent. Both model runs have full tap-exit records; no exit cause was invented."
+}

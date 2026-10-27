@@ -1,0 +1,139 @@
+{
+  "schema": "semantic-ui-capacity-observation-v1",
+  "recordedAt": "2026-10-27T12:33:12.062204+00:00",
+  "independentPrivateExpectationsSha256": "c1578cc573c0432b70e6c2a81106a55caee3b2c6a441ab6531981508f00265f8",
+  "publicCriteria": "Safe selected cases, not a byte-identical copy of private handoff",
+  "entry": "Official personal CLI0.164.0/app-server/existing login; unchanged client671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe and generic developer guidance; defaultgpt-6.1-sol max/openai/default",
+  "cases": [
+    {
+      "id": "current-mb",
+      "archiveVersion": "0.1.0-preview.23",
+      "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+      "candidateSha256": "fa938b29cf82ca7e7e95e53bf324b140cdb2125513a7b0d6b9f959ae37beb6d4",
+      "rawFiniteReview": "met",
+      "firstViewComparison": "mismatch",
+      "allViewComparisons": [
+        "mismatch",
+        "mismatch",
+        "mismatch",
+        "mismatch",
+        "not-assessed",
+        "mismatch",
+        "mismatch"
+      ],
+      "currentViewAdoption": "unmet",
+      "modelSemanticCalls": 12,
+      "builtInDiscoveryCalls": 2,
+      "hostExplicitCalls": 3
+    },
+    {
+      "id": "boundary-gib",
+      "archiveVersion": "0.1.0-preview.24",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "candidateSha256": "90c14521cc9f75be2dbf49b75374c5f09c5ec86540a139ef3816bd432b3a93a5",
+      "rawFiniteReview": "met",
+      "firstCurrentViewComparison": "matched",
+      "hypothesis192ViewAsOriginal64Source": "mismatch/SOURCE_CURRENT_DEMAND retained; legal conditional arithmetic remains allowed",
+      "currentViewAdoption": "met for finite current source contract",
+      "modelSemanticCalls": 6,
+      "builtInDiscoveryCalls": 2,
+      "hostExplicitCalls": 3
+    }
+  ],
+  "genericRepair": {
+    "evidence": "capacity-contract.json",
+    "version": "0.1.0-preview.24",
+    "sourceCommit": "780328056294060d79d7f89372ab87b312a982fb",
+    "releaseId": 425429555,
+    "firstRawAndAllRejectsPreserved": true,
+    "newModelsDuringRepair": 0
+  },
+  "actualObservedModelTurns": 2,
+  "maximumAttempts": 2,
+  "actualTurnStartRequests": 2,
+  "retries": 0,
+  "thirdAttempt": false,
+  "backendModelRequestCount": "unknown",
+  "separateOlder0520Turns": 2,
+  "separateOlderGHTurns": 2,
+  "guided": true,
+  "independentColdWorkspaces": true,
+  "criteriaOrExpectedViewInsertedIntoPrompt": false,
+  "sourceToolMayReturnNormalCanonicalAndViewContract": true,
+  "hostDeliveredCanonicalSeparateFromRaw": true,
+  "currentCLIUIRendered": false,
+  "causalBenchmark": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "traceCoverageLimit": "Three non-model taps lack an exit event; exit causes unknown, actual tap/child PIDs observed gone. Both model tap-exit traces complete.",
+  "oldNaturalResults": "0pass/6fail/18requests, A2, D2raw/preference-only and all older first attempts unchanged",
+  "longGoalComplete": false,
+  "assets": [
+    {
+      "path": "capacity-observation/criteria-cases.json",
+      "bytes": 4400,
+      "sha256": "f86cc767f62c089e17b2d861ec92c32a881c28fd3beaa513a52578bdec3d3baf"
+    },
+    {
+      "path": "capacity-observation/wire-and-cli-cleanup.json",
+      "bytes": 15860,
+      "sha256": "ca9146985b04f6eea740c32d5a6914ca51757ffdd3596edcbb1a7d3938e77a18"
+    },
+    {
+      "path": "capacity-observation/budget.json",
+      "bytes": 1558,
+      "sha256": "b5a4062eff52d8ca8b0c29d56c0f1db071d50413d565d1a5875e1ea8559c2b4c"
+    },
+    {
+      "path": "capacity-observation/current-mb-source.txt",
+      "bytes": 168,
+      "sha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f"
+    },
+    {
+      "path": "capacity-observation/current-mb-question.txt",
+      "bytes": 135,
+      "sha256": "7574fa87b2d7617c655288ee09139eb8fda06c8d58e9f9aeeb2711755e181b73"
+    },
+    {
+      "path": "capacity-observation/current-mb-candidate.md",
+      "bytes": 865,
+      "sha256": "fa938b29cf82ca7e7e95e53bf324b140cdb2125513a7b0d6b9f959ae37beb6d4"
+    },
+    {
+      "path": "capacity-observation/current-mb-host-answer.md",
+      "bytes": 1068,
+      "sha256": "a4078f4e2e992a86ba5ea7386395ef0847a9ea30884d913d144622bdaceec2fb"
+    },
+    {
+      "path": "capacity-observation/current-mb.json",
+      "bytes": 148346,
+      "sha256": "51508eae6acfa6e88b28ee9a9d934005850faa2afbdb2c7bcfd9388fb16d58eb"
+    },
+    {
+      "path": "capacity-observation/boundary-gib-source.txt",
+      "bytes": 170,
+      "sha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e"
+    },
+    {
+      "path": "capacity-observation/boundary-gib-question.txt",
+      "bytes": 195,
+      "sha256": "c32b4eddacbb31a44a12e6e41cc58b39c535bd05808935750cf2ecbf8c23116d"
+    },
+    {
+      "path": "capacity-observation/boundary-gib-candidate.md",
+      "bytes": 682,
+      "sha256": "90c14521cc9f75be2dbf49b75374c5f09c5ec86540a139ef3816bd432b3a93a5"
+    },
+    {
+      "path": "capacity-observation/boundary-gib-host-answer.md",
+      "bytes": 1077,
+      "sha256": "4dcc8a228ef5006822d681bc525e9b5e0fc1762d4b638572fcfc7ca326f302d4"
+    },
+    {
+      "path": "capacity-observation/boundary-gib.json",
+      "bytes": 117682,
+      "sha256": "8fa794a1751bf98649241036e7f5b98014de1c3f0089702b6526177e6ad6e9d9"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "frozenAt": "2026-10-27T11:57:02.766146+00:00",
+  "scope": "Generic discoverability/diagnostic repair before code; existing capacity facts and label acceptance unchanged",
+  "expected": [
+    "Source inspection exposes bounded field contract including literal labels and numeric role omission.",
+    "A wrong input label receives a label-specific path/code, not an incorrect-current-quantity error when180MB is already correct.",
+    "Caller explicitly changes only label to a documented existing label; source comparison may then match. Checker never silently repairs input.",
+    "Wrong quantity/unit/direction/roles and extra qualitative columns remain refused. Unknown labels remain refused, no new synonyms/case IDs.",
+    "Normal MCP and DSH source-check/render use the same core; final installed archive, not source overlay."
+  ],
+  "newModelTurnsDuringRepair": 0,
+  "remainingObservation": "Only the previously frozen boundary-gib; no retry of current-mb or third turn"
+}

@@ -1,0 +1,446 @@
+{
+  "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+  "sourceChecks": [
+    {
+      "request": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "storage-capacity-comparison",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "当前需求为 180MB；本地按 600MB 探索时只改变容量条件的计算。",
+          "payload": {
+            "title": "当前容量需求与未来可能需求",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "MB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "雾汀",
+                "values": {
+                  "ceiling": 240
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "杉海",
+                "values": {
+                  "ceiling": 900
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量",
+                "type": "number",
+                "unit": "MB",
+                "initial": 180,
+                "expectedEffect": "hard"
+              }
+            ],
+            "rules": [],
+            "constraints": [],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "ceiling",
+          "demandInputId": "demand",
+          "requirementId": "capacity"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"capacity-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"jsonPointer\":null,\"textSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"excerptSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":168,\"textUTF8Bytes\":168},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations\"},\"sourceFactsVerified\":false,\"identityVerified\":false,\"freeProseVerified\":false,\"viewContract\":{\"version\":\"1.0\",\"component\":\"DecisionExplorer\",\"protocolVersion\":\"1.4\",\"mapping\":{\"capacityDimensionId\":\"actual numeric dimension ID\",\"demandInputId\":\"actual numeric input ID\",\"requirementId\":\"actual hard requirement ID\"},\"dimensions\":{\"count\":1,\"label\":\"容量上限\",\"kind\":\"number\",\"unit\":\"MB\",\"omittedFields\":[\"semanticRole\"]},\"inputs\":{\"count\":1,\"labels\":[\"需求容量\",\"需求容量（本地假设）\"],\"type\":\"number\",\"unit\":\"MB\",\"initial\":180,\"expectedEffect\":\"hard\",\"omittedFields\":[\"semanticRole\",\"choices\"]},\"requirements\":{\"count\":1,\"relation\":\"at-least\",\"direction\":\"capacityDimensionId >= demandInputId\",\"omittedFields\":[\"when\"]},\"policies\":{\"rules\":\"empty\",\"constraints\":\"empty\"},\"qualitativeAttributes\":\"Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.\",\"boundary\":\"These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified.\"},\"status\":\"compared\",\"sourceCapacity\":{\"options\":[{\"label\":\"雾汀\",\"ceiling\":{\"value\":240,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":33,\"textByteEnd\":38}]},\"deployment\":{\"value\":\"simple\",\"spans\":[{\"textByteStart\":41,\"textByteEnd\":53}]},\"maintenance\":{\"value\":null,\"spans\":[]}},{\"label\":\"杉海\",\"ceiling\":{\"value\":900,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":70,\"textByteEnd\":75}]},\"deployment\":{\"value\":null,\"spans\":[]},\"maintenance\":{\"value\":\"complex\",\"spans\":[{\"textByteStart\":78,\"textByteEnd\":90}]}}],\"current\":{\"value\":180,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":106,\"textByteEnd\":111}]},\"possibleFuture\":{\"value\":600,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":130,\"textByteEnd\":135}]},\"confirmedFuturePlan\":null},\"comparison\":{\"status\":\"matched\"},\"issues\":[],\"fieldChecks\":[{\"optionId\":\"option-0\",\"sourceOption\":\"雾汀\",\"kind\":\"capacity-limit\",\"dimensionId\":\"ceiling\",\"role\":\"provided-capacity\",\"expected\":240,\"actual\":240,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":33,\"textByteEnd\":38}],\"status\":\"matched\"},{\"optionId\":\"option-1\",\"sourceOption\":\"杉海\",\"kind\":\"capacity-limit\",\"dimensionId\":\"ceiling\",\"role\":\"provided-capacity\",\"expected\":900,\"actual\":900,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":70,\"textByteEnd\":75}],\"status\":\"matched\"}],\"inputChecks\":[{\"inputId\":\"demand\",\"role\":\"required-capacity\",\"expected\":180,\"actual\":180,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":106,\"textByteEnd\":111}],\"status\":\"matched\"}],\"claimChecks\":[],\"computedCapacity\":{\"current\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"demand\",\"requirementIds\":[\"capacity\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"option-0\",\"option-1\"],\"excludedOptionIds\":[],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"capacity\",\"optionId\":\"option-0\",\"dimensionId\":\"ceiling\",\"inputId\":\"demand\",\"unit\":\"MB\",\"actual\":240,\"needed\":180,\"relation\":\"at-least\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"capacity\",\"optionId\":\"option-1\",\"dimensionId\":\"ceiling\",\"inputId\":\"demand\",\"unit\":\"MB\",\"actual\":900,\"needed\":180,\"relation\":\"at-least\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"possibleFutureHypothesis\":{\"demand\":600,\"unit\":\"MB\",\"scope\":\"explicit local hypothesis, not current source demand or confirmed plan\",\"eligibleOptionIds\":[\"option-1\"],\"excludedOptionIds\":[\"option-0\"],\"requirements\":[{\"requirementId\":\"capacity\",\"optionId\":\"option-0\",\"dimensionId\":\"ceiling\",\"inputId\":\"demand\",\"unit\":\"MB\",\"actual\":240,\"needed\":600,\"relation\":\"at-least\",\"active\":true,\"status\":\"fail\"},{\"requirementId\":\"capacity\",\"optionId\":\"option-1\",\"dimensionId\":\"ceiling\",\"inputId\":\"demand\",\"unit\":\"MB\",\"actual\":900,\"needed\":600,\"relation\":\"at-least\",\"active\":true,\"status\":\"pass\"}]}},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete finite capacity source and existing numeric hard-requirement core\",\"text\":\"雾汀容量上限 240MB；部署：简单；维护：未声明。\\n杉海容量上限 900MB；部署：未声明；维护：复杂。\\n来源当前需求 180MB：仅容量满足的方案为雾汀、杉海；容量不足的方案为无。\\n来源仅说以后可能到 600MB，不是已确认的当前需求或未来计划。若显式按 600MB 作本地需求假设：仅容量满足的方案为杉海；容量不足的方案为雾汀。\\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "capacity-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "jsonPointer": null,
+            "textSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "excerptSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 168,
+              "textUTF8Bytes": 168
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+          },
+          "sourceFactsVerified": false,
+          "identityVerified": false,
+          "freeProseVerified": false,
+          "viewContract": {
+            "version": "1.0",
+            "component": "DecisionExplorer",
+            "protocolVersion": "1.4",
+            "mapping": {
+              "capacityDimensionId": "actual numeric dimension ID",
+              "demandInputId": "actual numeric input ID",
+              "requirementId": "actual hard requirement ID"
+            },
+            "dimensions": {
+              "count": 1,
+              "label": "容量上限",
+              "kind": "number",
+              "unit": "MB",
+              "omittedFields": [
+                "semanticRole"
+              ]
+            },
+            "inputs": {
+              "count": 1,
+              "labels": [
+                "需求容量",
+                "需求容量（本地假设）"
+              ],
+              "type": "number",
+              "unit": "MB",
+              "initial": 180,
+              "expectedEffect": "hard",
+              "omittedFields": [
+                "semanticRole",
+                "choices"
+              ]
+            },
+            "requirements": {
+              "count": 1,
+              "relation": "at-least",
+              "direction": "capacityDimensionId >= demandInputId",
+              "omittedFields": [
+                "when"
+              ]
+            },
+            "policies": {
+              "rules": "empty",
+              "constraints": "empty"
+            },
+            "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+            "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+          },
+          "status": "compared",
+          "sourceCapacity": {
+            "options": [
+              {
+                "label": "雾汀",
+                "ceiling": {
+                  "value": 240,
+                  "unit": "MB",
+                  "spans": [
+                    {
+                      "textByteStart": 33,
+                      "textByteEnd": 38
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": "simple",
+                  "spans": [
+                    {
+                      "textByteStart": 41,
+                      "textByteEnd": 53
+                    }
+                  ]
+                },
+                "maintenance": {
+                  "value": null,
+                  "spans": []
+                }
+              },
+              {
+                "label": "杉海",
+                "ceiling": {
+                  "value": 900,
+                  "unit": "MB",
+                  "spans": [
+                    {
+                      "textByteStart": 70,
+                      "textByteEnd": 75
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": null,
+                  "spans": []
+                },
+                "maintenance": {
+                  "value": "complex",
+                  "spans": [
+                    {
+                      "textByteStart": 78,
+                      "textByteEnd": 90
+                    }
+                  ]
+                }
+              }
+            ],
+            "current": {
+              "value": 180,
+              "unit": "MB",
+              "spans": [
+                {
+                  "textByteStart": 106,
+                  "textByteEnd": 111
+                }
+              ]
+            },
+            "possibleFuture": {
+              "value": 600,
+              "unit": "MB",
+              "spans": [
+                {
+                  "textByteStart": 130,
+                  "textByteEnd": 135
+                }
+              ]
+            },
+            "confirmedFuturePlan": null
+          },
+          "comparison": {
+            "status": "matched"
+          },
+          "issues": [],
+          "fieldChecks": [
+            {
+              "optionId": "option-0",
+              "sourceOption": "雾汀",
+              "kind": "capacity-limit",
+              "dimensionId": "ceiling",
+              "role": "provided-capacity",
+              "expected": 240,
+              "actual": 240,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 33,
+                  "textByteEnd": 38
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "option-1",
+              "sourceOption": "杉海",
+              "kind": "capacity-limit",
+              "dimensionId": "ceiling",
+              "role": "provided-capacity",
+              "expected": 900,
+              "actual": 900,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 70,
+                  "textByteEnd": 75
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "demand",
+              "role": "required-capacity",
+              "expected": 180,
+              "actual": 180,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 106,
+                  "textByteEnd": 111
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "claimChecks": [],
+          "computedCapacity": {
+            "current": {
+              "scope": "declared-policy-under-original-conditions",
+              "status": "no-match",
+              "strictPolicy": true,
+              "inputEffects": [
+                {
+                  "inputId": "demand",
+                  "requirementIds": [
+                    "capacity"
+                  ],
+                  "constraintIds": [],
+                  "ruleIds": [],
+                  "affectsEligibility": true,
+                  "affectsPreference": false,
+                  "scope": "hard"
+                }
+              ],
+              "unusedInputIds": [],
+              "requiresPolicyReview": false,
+              "preferenceMode": "withheld-pending-local-review",
+              "eligibilityOnly": true,
+              "eligibilityAssessed": true,
+              "eligibleOptionIds": [
+                "option-0",
+                "option-1"
+              ],
+              "excludedOptionIds": [],
+              "unknownFeasibilityIds": [],
+              "requirements": [
+                {
+                  "requirementId": "capacity",
+                  "optionId": "option-0",
+                  "dimensionId": "ceiling",
+                  "inputId": "demand",
+                  "unit": "MB",
+                  "actual": 240,
+                  "needed": 180,
+                  "relation": "at-least",
+                  "active": true,
+                  "status": "pass"
+                },
+                {
+                  "requirementId": "capacity",
+                  "optionId": "option-1",
+                  "dimensionId": "ceiling",
+                  "inputId": "demand",
+                  "unit": "MB",
+                  "actual": 900,
+                  "needed": 180,
+                  "relation": "at-least",
+                  "active": true,
+                  "status": "pass"
+                }
+              ],
+              "unknownComparisonCells": [],
+              "proposalWithMissingFacts": false,
+              "resultBasis": null,
+              "sourceFactsVerified": false,
+              "recommendedOptionIds": [],
+              "matchedRuleIds": [],
+              "pendingRuleIds": [],
+              "missingInputs": [],
+              "activeConstraintIds": [],
+              "unknownConstraintIds": [],
+              "declaredOriginCounts": {
+                "given": 0,
+                "modelJudgment": 0
+              },
+              "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+            },
+            "possibleFutureHypothesis": {
+              "demand": 600,
+              "unit": "MB",
+              "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+              "eligibleOptionIds": [
+                "option-1"
+              ],
+              "excludedOptionIds": [
+                "option-0"
+              ],
+              "requirements": [
+                {
+                  "requirementId": "capacity",
+                  "optionId": "option-0",
+                  "dimensionId": "ceiling",
+                  "inputId": "demand",
+                  "unit": "MB",
+                  "actual": 240,
+                  "needed": 600,
+                  "relation": "at-least",
+                  "active": true,
+                  "status": "fail"
+                },
+                {
+                  "requirementId": "capacity",
+                  "optionId": "option-1",
+                  "dimensionId": "ceiling",
+                  "inputId": "demand",
+                  "unit": "MB",
+                  "actual": 900,
+                  "needed": 600,
+                  "relation": "at-least",
+                  "active": true,
+                  "status": "pass"
+                }
+              ]
+            }
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete finite capacity source and existing numeric hard-requirement core",
+            "text": "雾汀容量上限 240MB；部署：简单；维护：未声明。\n杉海容量上限 900MB；部署：未声明；维护：复杂。\n来源当前需求 180MB：仅容量满足的方案为雾汀、杉海；容量不足的方案为无。\n来源仅说以后可能到 600MB，不是已确认的当前需求或未来计划。若显式按 600MB 作本地需求假设：仅容量满足的方案为杉海；容量不足的方案为雾汀。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+          }
+        }
+      }
+    }
+  ],
+  "answer": {
+    "observedModelTurns": 0,
+    "status": "host-only",
+    "delivery": {
+      "kind": "host-source-canonical",
+      "status": "delivered",
+      "text": "来源内的有限说明（宿主保障）\n\n雾汀容量上限 240MB；部署：简单；维护：未声明。\n杉海容量上限 900MB；部署：未声明；维护：复杂。\n来源当前需求 180MB：仅容量满足的方案为雾汀、杉海；容量不足的方案为无。\n来源仅说以后可能到 600MB，不是已确认的当前需求或未来计划。若显式按 600MB 作本地需求假设：仅容量满足的方案为杉海；容量不足的方案为雾汀。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+      "sourceTextSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+      "sourceDocumentSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+      "modelCandidateUsed": false,
+      "freeProseVerified": false,
+      "sourceFactsVerified": false,
+      "identityVerified": false
+    }
+  },
+  "newModelTurns": 0,
+  "terminal": {
+    "appServerPid": 1277,
+    "exitCode": 0,
+    "sentMethods": [
+      "initialize",
+      "thread/start",
+      "mcpServerStatus/list",
+      "mcpServerStatus/list",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "skills/list",
+      "skills/extraRoots/set",
+      "skills/list",
+      "fs/readFile",
+      "skills/extraRoots/set",
+      "skills/list",
+      "skills/extraRoots/set",
+      "thread/unsubscribe"
+    ],
+    "modelTurnRequests": 0,
+    "newModelTurns": 0,
+    "globalConfigShaUnchanged": true
+  }
+}

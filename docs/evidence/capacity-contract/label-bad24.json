@@ -1,0 +1,341 @@
+{
+  "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+  "sourceChecks": [
+    {
+      "request": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "storage-capacity-comparison",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "当前需求为 180MB；本地按 600MB 探索时只改变容量条件的计算。",
+          "payload": {
+            "title": "当前容量需求与未来可能需求",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "MB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "雾汀",
+                "values": {
+                  "ceiling": 240
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "杉海",
+                "values": {
+                  "ceiling": 900
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求",
+                "type": "number",
+                "unit": "MB",
+                "initial": 180,
+                "expectedEffect": "hard"
+              }
+            ],
+            "rules": [],
+            "constraints": [],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "ceiling",
+          "demandInputId": "demand",
+          "requirementId": "capacity"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"capacity-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"jsonPointer\":null,\"textSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"excerptSha256\":\"1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":168,\"textUTF8Bytes\":168},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations\"},\"sourceFactsVerified\":false,\"identityVerified\":false,\"freeProseVerified\":false,\"viewContract\":{\"version\":\"1.0\",\"component\":\"DecisionExplorer\",\"protocolVersion\":\"1.4\",\"mapping\":{\"capacityDimensionId\":\"actual numeric dimension ID\",\"demandInputId\":\"actual numeric input ID\",\"requirementId\":\"actual hard requirement ID\"},\"dimensions\":{\"count\":1,\"label\":\"容量上限\",\"kind\":\"number\",\"unit\":\"MB\",\"omittedFields\":[\"semanticRole\"]},\"inputs\":{\"count\":1,\"labels\":[\"需求容量\",\"需求容量（本地假设）\"],\"type\":\"number\",\"unit\":\"MB\",\"initial\":180,\"expectedEffect\":\"hard\",\"omittedFields\":[\"semanticRole\",\"choices\"]},\"requirements\":{\"count\":1,\"relation\":\"at-least\",\"direction\":\"capacityDimensionId >= demandInputId\",\"omittedFields\":[\"when\"]},\"policies\":{\"rules\":\"empty\",\"constraints\":\"empty\"},\"qualitativeAttributes\":\"Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.\",\"boundary\":\"These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified.\"},\"status\":\"compared\",\"sourceCapacity\":{\"options\":[{\"label\":\"雾汀\",\"ceiling\":{\"value\":240,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":33,\"textByteEnd\":38}]},\"deployment\":{\"value\":\"simple\",\"spans\":[{\"textByteStart\":41,\"textByteEnd\":53}]},\"maintenance\":{\"value\":null,\"spans\":[]}},{\"label\":\"杉海\",\"ceiling\":{\"value\":900,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":70,\"textByteEnd\":75}]},\"deployment\":{\"value\":null,\"spans\":[]},\"maintenance\":{\"value\":\"complex\",\"spans\":[{\"textByteStart\":78,\"textByteEnd\":90}]}}],\"current\":{\"value\":180,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":106,\"textByteEnd\":111}]},\"possibleFuture\":{\"value\":600,\"unit\":\"MB\",\"spans\":[{\"textByteStart\":130,\"textByteEnd\":135}]},\"confirmedFuturePlan\":null},\"comparison\":{\"status\":\"mismatch\"},\"issues\":[{\"code\":\"SOURCE_INPUT_LABEL\",\"path\":\"$.view.payload.inputs.0.label\",\"reason\":\"Use an existing literal input label from viewContract: 需求容量 or 需求容量（本地假设）. A label mismatch does not mean the current quantity is wrong.\"}],\"fieldChecks\":[{\"optionId\":\"option-0\",\"sourceOption\":\"雾汀\",\"kind\":\"capacity-limit\",\"dimensionId\":\"ceiling\",\"role\":\"provided-capacity\",\"expected\":240,\"actual\":240,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":33,\"textByteEnd\":38}],\"status\":\"matched\"},{\"optionId\":\"option-1\",\"sourceOption\":\"杉海\",\"kind\":\"capacity-limit\",\"dimensionId\":\"ceiling\",\"role\":\"provided-capacity\",\"expected\":900,\"actual\":900,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":70,\"textByteEnd\":75}],\"status\":\"matched\"}],\"inputChecks\":[{\"inputId\":\"demand\",\"role\":\"required-capacity\",\"expected\":180,\"actual\":180,\"unit\":\"MB\",\"sourceSpans\":[{\"textByteStart\":106,\"textByteEnd\":111}],\"status\":\"matched\"}],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false},\"canonicalExplanation\":{\"status\":\"withheld\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "capacity-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "jsonPointer": null,
+            "textSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "excerptSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 168,
+              "textUTF8Bytes": 168
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+          },
+          "sourceFactsVerified": false,
+          "identityVerified": false,
+          "freeProseVerified": false,
+          "viewContract": {
+            "version": "1.0",
+            "component": "DecisionExplorer",
+            "protocolVersion": "1.4",
+            "mapping": {
+              "capacityDimensionId": "actual numeric dimension ID",
+              "demandInputId": "actual numeric input ID",
+              "requirementId": "actual hard requirement ID"
+            },
+            "dimensions": {
+              "count": 1,
+              "label": "容量上限",
+              "kind": "number",
+              "unit": "MB",
+              "omittedFields": [
+                "semanticRole"
+              ]
+            },
+            "inputs": {
+              "count": 1,
+              "labels": [
+                "需求容量",
+                "需求容量（本地假设）"
+              ],
+              "type": "number",
+              "unit": "MB",
+              "initial": 180,
+              "expectedEffect": "hard",
+              "omittedFields": [
+                "semanticRole",
+                "choices"
+              ]
+            },
+            "requirements": {
+              "count": 1,
+              "relation": "at-least",
+              "direction": "capacityDimensionId >= demandInputId",
+              "omittedFields": [
+                "when"
+              ]
+            },
+            "policies": {
+              "rules": "empty",
+              "constraints": "empty"
+            },
+            "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+            "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+          },
+          "status": "compared",
+          "sourceCapacity": {
+            "options": [
+              {
+                "label": "雾汀",
+                "ceiling": {
+                  "value": 240,
+                  "unit": "MB",
+                  "spans": [
+                    {
+                      "textByteStart": 33,
+                      "textByteEnd": 38
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": "simple",
+                  "spans": [
+                    {
+                      "textByteStart": 41,
+                      "textByteEnd": 53
+                    }
+                  ]
+                },
+                "maintenance": {
+                  "value": null,
+                  "spans": []
+                }
+              },
+              {
+                "label": "杉海",
+                "ceiling": {
+                  "value": 900,
+                  "unit": "MB",
+                  "spans": [
+                    {
+                      "textByteStart": 70,
+                      "textByteEnd": 75
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": null,
+                  "spans": []
+                },
+                "maintenance": {
+                  "value": "complex",
+                  "spans": [
+                    {
+                      "textByteStart": 78,
+                      "textByteEnd": 90
+                    }
+                  ]
+                }
+              }
+            ],
+            "current": {
+              "value": 180,
+              "unit": "MB",
+              "spans": [
+                {
+                  "textByteStart": 106,
+                  "textByteEnd": 111
+                }
+              ]
+            },
+            "possibleFuture": {
+              "value": 600,
+              "unit": "MB",
+              "spans": [
+                {
+                  "textByteStart": 130,
+                  "textByteEnd": 135
+                }
+              ]
+            },
+            "confirmedFuturePlan": null
+          },
+          "comparison": {
+            "status": "mismatch"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_INPUT_LABEL",
+              "path": "$.view.payload.inputs.0.label",
+              "reason": "Use an existing literal input label from viewContract: 需求容量 or 需求容量（本地假设）. A label mismatch does not mean the current quantity is wrong."
+            }
+          ],
+          "fieldChecks": [
+            {
+              "optionId": "option-0",
+              "sourceOption": "雾汀",
+              "kind": "capacity-limit",
+              "dimensionId": "ceiling",
+              "role": "provided-capacity",
+              "expected": 240,
+              "actual": 240,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 33,
+                  "textByteEnd": 38
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "option-1",
+              "sourceOption": "杉海",
+              "kind": "capacity-limit",
+              "dimensionId": "ceiling",
+              "role": "provided-capacity",
+              "expected": 900,
+              "actual": 900,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 70,
+                  "textByteEnd": 75
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "demand",
+              "role": "required-capacity",
+              "expected": 180,
+              "actual": 180,
+              "unit": "MB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 106,
+                  "textByteEnd": 111
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false
+          },
+          "canonicalExplanation": {
+            "status": "withheld"
+          }
+        }
+      }
+    }
+  ],
+  "answer": {
+    "observedModelTurns": 0,
+    "status": "host-only",
+    "delivery": {
+      "kind": "host-source-canonical",
+      "status": "withheld",
+      "text": "当前来源或比较请求未通过完整核对，未交付已核答复。\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。",
+      "sourceTextSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+      "sourceDocumentSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+      "modelCandidateUsed": false,
+      "freeProseVerified": false,
+      "sourceFactsVerified": false,
+      "identityVerified": false
+    }
+  },
+  "newModelTurns": 0,
+  "terminal": {
+    "appServerPid": 1210,
+    "exitCode": 0,
+    "sentMethods": [
+      "initialize",
+      "thread/start",
+      "mcpServerStatus/list",
+      "mcpServerStatus/list",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "skills/list",
+      "skills/extraRoots/set",
+      "skills/list",
+      "fs/readFile",
+      "skills/extraRoots/set",
+      "skills/list",
+      "skills/extraRoots/set",
+      "thread/unsubscribe"
+    ],
+    "modelTurnRequests": 0,
+    "newModelTurns": 0,
+    "globalConfigShaUnchanged": true
+  }
+}

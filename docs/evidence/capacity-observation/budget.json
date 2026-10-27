@@ -1,0 +1,45 @@
+{
+  "maximumAttempts": 2,
+  "attempts": [
+    {
+      "attemptOrdinal": 1,
+      "case": "current-mb",
+      "attemptId": "b806b289-106e-48ef-aad7-073959330cc8",
+      "startedAt": "2026-10-27T11:42:29.148376+00:00",
+      "maximumAttempts": 2,
+      "criteriaExcluded": true,
+      "runtimeArchive": "0.1.0-preview.23",
+      "entry": "official existing --answer --model-candidate",
+      "threadId": "01a17d2b-437b-7291-9563-b3ae5c477fce",
+      "turnId": "01a17d2b-597c-7951-8bc8-e4dae4a65c95",
+      "status": "completed",
+      "rawFiniteReview": "met",
+      "viewAdoption": "unmet",
+      "archive": "0.1.0-preview.23"
+    },
+    {
+      "attemptOrdinal": 2,
+      "case": "boundary-gib",
+      "attemptId": "af549ee6-6a4e-4529-8d4d-e2b981ec2240",
+      "startedAt": "2026-10-27T12:13:26.777887+00:00",
+      "maximumAttempts": 2,
+      "runtimeArchive": "0.1.0-preview.24",
+      "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+      "genericFixAndOfflineRegressionBeforeSecond": true,
+      "caseSourceQuestionCriteriaUnchanged": true,
+      "coldIndependentThread": true,
+      "noThirdAttempt": true,
+      "threadId": "01a17d47-9bcd-7fe1-9617-fb2746b4d15b",
+      "turnId": "01a17d47-b15e-7ef1-91de-bdf1d184968f",
+      "status": "completed",
+      "rawFiniteReview": "met",
+      "currentViewAdoption": "met"
+    }
+  ],
+  "prior0520TurnsUnchanged": 2,
+  "priorGHTurnsUnchanged": 2,
+  "usedAttempts": 2,
+  "actualObservedTurns": 2,
+  "backendModelRequestCount": "unknown",
+  "furtherAttemptsAllowed": false
+}

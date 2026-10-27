@@ -1,0 +1,95 @@
+{
+  "kind": "safe selected fields, not a byte-identical copy of private handoff",
+  "frozenAt": "2026-10-27T11:40:47.536601+00:00",
+  "originalPrivateReceiptSha256": "c1578cc573c0432b70e6c2a81106a55caee3b2c6a441ab6531981508f00265f8",
+  "cases": [
+    {
+      "id": "current-mb",
+      "source": "合成存储选项 雾汀 上限 240MB、部署简单，杉海 上限 900MB、维护复杂。现在需求 180MB，以后可能到 600MB。不同需求下该如何选？",
+      "question": "现在和未来可能的需求下，应怎样看待这两个选项？如果把本地需求调整到未来可能值，会改变什么？",
+      "independentExpected": {
+        "unit": "MB",
+        "options": [
+          "雾汀",
+          "杉海"
+        ],
+        "ceilings": [
+          240,
+          900
+        ],
+        "sourceCurrent": 180,
+        "sourcePossibleFuture": 600,
+        "currentCapacityOnly": [
+          true,
+          true
+        ],
+        "explicitFutureHypothesisCapacityOnly": [
+          false,
+          true
+        ],
+        "deployment": [
+          "simple",
+          null
+        ],
+        "maintenance": [
+          null,
+          "complex"
+        ],
+        "confirmedFuturePlan": null
+      },
+      "rawCriteria": [
+        "Actual model-selected source-related tool read uses this snapshot; prose identifies conclusions as supplied/source-bounded.",
+        "Current180MB capacity meets both; future600MB only as an explicit local hypothesis excludes雾汀 and leaves杉海 capacity-eligible.",
+        "Deployment/maintenance stay distinct:雾汀 maintenance unknown;杉海 deployment unknown. No implied monetary cost, migration ease, prices or overall winner.",
+        "Changing a local numeric need may recompute the declared hard at-least condition; it does not update source, confirm future plan or start model feedback. Do not claim an actual UI rendered/clicked in a tools-only CLI."
+      ],
+      "sourceSha256": "1fa41e00eeaa55e10d1d8ae382290861fa4507be42190c09fb0832421729645f",
+      "questionSha256": "7574fa87b2d7617c655288ee09139eb8fda06c8d58e9f9aeeb2711755e181b73"
+    },
+    {
+      "id": "boundary-gib",
+      "source": "合成存储选项 澄泉 上限 64GiB、维护简单，岚峰 上限 160GiB、部署复杂。现在需求 64GiB，以后可能到 192GiB。不同需求下该如何选？",
+      "question": "当前需求恰好等于其中一个容量上限时该怎样判断？如果明确按未来可能的需求量作本地假设，还有容量满足的选项吗？这能否直接决定整体选型？",
+      "independentExpected": {
+        "unit": "GiB",
+        "options": [
+          "澄泉",
+          "岚峰"
+        ],
+        "ceilings": [
+          64,
+          160
+        ],
+        "sourceCurrent": 64,
+        "sourcePossibleFuture": 192,
+        "currentCapacityOnly": [
+          true,
+          true
+        ],
+        "explicitFutureHypothesisCapacityOnly": [
+          false,
+          false
+        ],
+        "deployment": [
+          null,
+          "complex"
+        ],
+        "maintenance": [
+          "simple",
+          null
+        ],
+        "confirmedFuturePlan": null
+      },
+      "rawCriteria": [
+        "Independent cold thread; actual model source read has this GiB snapshot, not earlier case data.",
+        "At64GiB both capacities meet, including equality; do not use strict greater-than or silently convert GB/GiB.",
+        "Under explicit192GiB local hypothesis neither meets capacity; do not force a winner or treat merely possible future as confirmed current demand.",
+        "澄泉 maintenance simple does not establish deployment;岚峰 deployment complex does not establish maintenance. Capacity scope does not decide overall choice, costs, migration or a confirmed plan."
+      ],
+      "sourceSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+      "questionSha256": "c32b4eddacbb31a44a12e6e41cc58b39c535bd05808935750cf2ecbf8c23116d"
+    }
+  ],
+  "legitimateHypotheses": "Explicitly labelled conditional reasoning and arithmetic over the provided quantities is allowed. Do not reject a legal local-demand hypothesis merely because it differs from current source; never certify it as a changed source fact or confirmed plan. Hypothetical preferences may be discussed only as assumptions, not declared source policy.",
+  "maximumNewObservedTurns": 2
+}

@@ -1,0 +1,3185 @@
+{
+  "case": "boundary-gib",
+  "threadId": "01a17d47-9bcd-7fe1-9617-fb2746b4d15b",
+  "turnId": "01a17d47-b15e-7ef1-91de-bdf1d184968f",
+  "status": "completed",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "max",
+  "modelProvider": "openai",
+  "serviceTier": "default",
+  "newObservedTurns": 1,
+  "backendModelRequestCount": "unknown",
+  "candidateStatus": "unverified",
+  "candidateSha256": "90c14521cc9f75be2dbf49b75374c5f09c5ec86540a139ef3816bd432b3a93a5",
+  "identity": {
+    "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+    "mcpEntrySha256": "8ce17c33aa631914d449120f27d9119223198af91a64409f2a6eb7dc01b8e589",
+    "sourceCommit": "780328056294060d79d7f89372ab87b312a982fb",
+    "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+    "skillSha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+    "archivedCoreSha256": "00218364bf8b94284c5004aa579ebe124001d5840419b915adc33b9b3e8e200b",
+    "archivedProtocolSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "developerInstructionsSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "typedSkillItemAccepted": true,
+  "skill": {
+    "name": "semantic-ui-checks",
+    "scope": "user",
+    "sha256": "38e2a82e1659d8d503cc5e156b17401f1339035cd560b04006677286b658be45",
+    "discoveredAndRead": true,
+    "absentBeforeAndAfterTemporaryRoot": true
+  },
+  "runtimeLoading": "Actual verified frozen tgz entry under a temporary package root; actual path retained in private invocation/tap config, no repository source overlay.",
+  "modelSelectedSemanticCalls": [
+    {
+      "id": "exec-7faec516-060c-41cf-a72e-c672feb440fc",
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {},
+      "error": null,
+      "durationMs": 3,
+      "structuredContent": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "jsonPointer": null,
+          "textSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "excerptSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 170,
+            "textUTF8Bytes": 170
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GiB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GiB",
+            "initial": 64,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "澄泉",
+              "ceiling": {
+                "value": 64,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 33,
+                    "textByteEnd": 38
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 41,
+                    "textByteEnd": 53
+                  }
+                ]
+              }
+            },
+            {
+              "label": "岚峰",
+              "ceiling": {
+                "value": 160,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 70,
+                    "textByteEnd": 76
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 79,
+                    "textByteEnd": 91
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            }
+          ],
+          "current": {
+            "value": 64,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 112
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 192,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 137
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "fieldChecks": [],
+        "inputChecks": [],
+        "claimChecks": [],
+        "computedCapacity": {
+          "current": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "demand",
+                "requirementIds": [
+                  "capacity"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 64,
+                "needed": 64,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 160,
+                "needed": 64,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "possibleFutureHypothesis": {
+            "demand": 192,
+            "unit": "GiB",
+            "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+            "eligibleOptionIds": [],
+            "excludedOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 64,
+                "needed": 192,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 160,
+                "needed": 192,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              }
+            ]
+          }
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite capacity source and existing numeric hard-requirement core",
+          "text": "澄泉容量上限 64GiB；部署：未声明；维护：简单。\n岚峰容量上限 160GiB；部署：复杂；维护：未声明。\n来源当前需求 64GiB：仅容量满足的方案为澄泉、岚峰；容量不足的方案为无。\n来源仅说以后可能到 192GiB，不是已确认的当前需求或未来计划。若显式按 192GiB 作本地需求假设：仅容量满足的方案为无；容量不足的方案为澄泉、岚峰。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+        }
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "b6908360c153dbb56746abc32f3fccd95ae3c5d80ef9585b6f74d0886414fb00"
+    },
+    {
+      "id": "exec-1611c37e-7961-4577-bc15-681615fdff29",
+      "tool": "semantic_ui_schema",
+      "status": "completed",
+      "arguments": {
+        "component": "DecisionExplorer"
+      },
+      "error": null,
+      "durationMs": 1,
+      "structuredContent": {
+        "component": "DecisionExplorer",
+        "protocolVersion": "1.4",
+        "payloadSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 80
+            },
+            "dimensions": {
+              "minItems": 1,
+              "maxItems": 12,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "kind": {
+                    "type": "string",
+                    "enum": [
+                      "number",
+                      "boolean"
+                    ]
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "semanticRole": {
+                    "type": "string",
+                    "enum": [
+                      "capability-support",
+                      "resource-need"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "label"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "options": {
+              "minItems": 2,
+              "maxItems": 8,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "values": {
+                    "type": "object",
+                    "propertyNames": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "additionalProperties": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "type": "string",
+                              "minLength": 1,
+                              "maxLength": 1200
+                            },
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "boolean"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    }
+                  },
+                  "advantages": {
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  },
+                  "disadvantages": {
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  },
+                  "suitableWhen": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  },
+                  "evidence": {
+                    "default": [],
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "values",
+                  "advantages",
+                  "disadvantages",
+                  "suitableWhen",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "inputs": {
+              "default": [],
+              "maxItems": 12,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "label": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "number",
+                      "boolean",
+                      "choice"
+                    ]
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "choices": {
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    }
+                  },
+                  "initial": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "string",
+                            "maxLength": 120
+                          }
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "semanticRole": {
+                    "type": "string",
+                    "enum": [
+                      "capability-need",
+                      "resource-available"
+                    ]
+                  },
+                  "expectedEffect": {
+                    "type": "string",
+                    "enum": [
+                      "hard",
+                      "preference-only",
+                      "hard-and-preference"
+                    ]
+                  }
+                },
+                "required": [
+                  "id",
+                  "label",
+                  "type",
+                  "initial",
+                  "expectedEffect"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "rules": {
+              "default": [],
+              "maxItems": 24,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "priority": {
+                    "type": "integer",
+                    "minimum": 0,
+                    "maximum": 100
+                  },
+                  "when": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "any"
+                        ]
+                      },
+                      "clauses": {
+                        "minItems": 1,
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "input": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "eq",
+                                "ne",
+                                "gt",
+                                "gte",
+                                "lt",
+                                "lte"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "string",
+                                  "maxLength": 120
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "input",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "mode",
+                      "clauses"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "recommend": {
+                    "minItems": 1,
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    }
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  },
+                  "origin": {
+                    "type": "string",
+                    "enum": [
+                      "given",
+                      "model-judgment"
+                    ]
+                  },
+                  "evidence": {
+                    "default": [],
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "priority",
+                  "when",
+                  "recommend",
+                  "reason",
+                  "origin",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "constraints": {
+              "default": [],
+              "maxItems": 24,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "optionId": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "when": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "any"
+                        ]
+                      },
+                      "clauses": {
+                        "minItems": 1,
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "input": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "eq",
+                                "ne",
+                                "gt",
+                                "gte",
+                                "lt",
+                                "lte"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "string",
+                                  "maxLength": 120
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "input",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "mode",
+                      "clauses"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "reason": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  },
+                  "evidence": {
+                    "default": [],
+                    "maxItems": 12,
+                    "type": "array",
+                    "items": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    }
+                  }
+                },
+                "required": [
+                  "id",
+                  "optionId",
+                  "when",
+                  "reason",
+                  "evidence"
+                ],
+                "additionalProperties": false
+              }
+            },
+            "requirements": {
+              "maxItems": 24,
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "dimension": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "input": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "relation": {
+                    "type": "string",
+                    "enum": [
+                      "at-least",
+                      "at-most",
+                      "supports",
+                      "requires-availability"
+                    ]
+                  },
+                  "when": {
+                    "type": "object",
+                    "properties": {
+                      "mode": {
+                        "type": "string",
+                        "enum": [
+                          "all",
+                          "any"
+                        ]
+                      },
+                      "clauses": {
+                        "minItems": 1,
+                        "maxItems": 12,
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "input": {
+                              "type": "string",
+                              "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                            },
+                            "op": {
+                              "type": "string",
+                              "enum": [
+                                "eq",
+                                "ne",
+                                "gt",
+                                "gte",
+                                "lt",
+                                "lte"
+                              ]
+                            },
+                            "value": {
+                              "anyOf": [
+                                {
+                                  "type": "number"
+                                },
+                                {
+                                  "type": "boolean"
+                                },
+                                {
+                                  "type": "string",
+                                  "maxLength": 120
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "input",
+                            "op",
+                            "value"
+                          ],
+                          "additionalProperties": false
+                        }
+                      }
+                    },
+                    "required": [
+                      "mode",
+                      "clauses"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "required": [
+                  "id",
+                  "dimension",
+                  "input",
+                  "relation"
+                ],
+                "additionalProperties": false
+              }
+            }
+          },
+          "required": [
+            "title",
+            "dimensions",
+            "options",
+            "inputs",
+            "rules",
+            "constraints"
+          ],
+          "additionalProperties": false
+        },
+        "envelope": {
+          "protocolVersion": "1.4",
+          "displayId": "stable-subject-id",
+          "revision": 1,
+          "component": "DecisionExplorer",
+          "summary": "A short readable conclusion.",
+          "payload": "Follow payloadSchema."
+        },
+        "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+        "semantics": "Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.",
+        "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "5499a6f59d2faeaee71e865d18a6a89aa0dfcda44595df206b7c77f83720b987"
+    },
+    {
+      "id": "exec-65c7f0d3-81d6-471a-b361-7d986c9c5f83",
+      "tool": "semantic_ui_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "capacity-comparison",
+          "revision": 1,
+          "component": "DecisionExplorer",
+          "summary": "同单位按容量上限大于或等于需求判断容量硬条件。",
+          "payload": {
+            "title": "当前需求：64 GiB",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GiB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "澄泉",
+                "values": {
+                  "ceiling": 64
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "岚峰",
+                "values": {
+                  "ceiling": 160
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量",
+                "type": "number",
+                "unit": "GiB",
+                "initial": 64,
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "error": null,
+      "durationMs": 4,
+      "structuredContent": {
+        "status": "validated",
+        "protocolVersion": "1.4",
+        "component": "DecisionExplorer",
+        "summarySource": "model-authored; not independently verified",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "decisionFacts": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "declarationMapping": {
+          "scope": "declared-fields-and-dependencies",
+          "sourceFactsVerified": false,
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "dimensionId": "ceiling",
+              "dimensionRole": null,
+              "inputId": "demand",
+              "inputRole": null,
+              "relation": "at-least",
+              "unit": "GiB"
+            }
+          ],
+          "inputs": [
+            {
+              "inputId": "demand",
+              "scope": "hard",
+              "expectedEffect": "hard"
+            }
+          ],
+          "dependencyLinks": "decisionFacts.inputEffects",
+          "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+        },
+        "canonicalSummary": "Declared comparison: 2 options, 1 dimensions. Meets declared hard requirements: 澄泉, 岚峰. Unknown feasibility: none. No preference established.",
+        "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+        "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "cbad681d118b5449733af24708c86715d93ba87c7c6b10faa070fa9e032a9d87"
+    },
+    {
+      "id": "exec-bf498d90-438a-4319-8aaa-64177f7deb8e",
+      "tool": "semantic_ui_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "capacity-comparison",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "按未来可能需求作显式本地假设，仅判断容量硬条件。",
+          "payload": {
+            "title": "本地假设：需求 192 GiB",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GiB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "澄泉",
+                "values": {
+                  "ceiling": 64
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "岚峰",
+                "values": {
+                  "ceiling": 160
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量（本地假设）",
+                "type": "number",
+                "unit": "GiB",
+                "initial": 192,
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "error": null,
+      "durationMs": 4,
+      "structuredContent": {
+        "status": "validated",
+        "protocolVersion": "1.4",
+        "component": "DecisionExplorer",
+        "summarySource": "model-authored; not independently verified",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "decisionFacts": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [],
+          "excludedOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "declarationMapping": {
+          "scope": "declared-fields-and-dependencies",
+          "sourceFactsVerified": false,
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "dimensionId": "ceiling",
+              "dimensionRole": null,
+              "inputId": "demand",
+              "inputRole": null,
+              "relation": "at-least",
+              "unit": "GiB"
+            }
+          ],
+          "inputs": [
+            {
+              "inputId": "demand",
+              "scope": "hard",
+              "expectedEffect": "hard"
+            }
+          ],
+          "dependencyLinks": "decisionFacts.inputEffects",
+          "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+        },
+        "canonicalSummary": "Declared comparison: 2 options, 1 dimensions. Meets declared hard requirements: none. Unknown feasibility: none. No preference established.",
+        "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+        "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "53632df03c4f461b5bfeecc4a3eb61b240a2592d66233f7625dc6c435a644b19"
+    },
+    {
+      "id": "exec-fdee70f1-5835-45dd-878e-c1d7fa6d183a",
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "capacity-comparison",
+          "revision": 1,
+          "component": "DecisionExplorer",
+          "summary": "同单位按容量上限大于或等于需求判断容量硬条件。",
+          "payload": {
+            "title": "当前需求：64 GiB",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GiB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "澄泉",
+                "values": {
+                  "ceiling": 64
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "岚峰",
+                "values": {
+                  "ceiling": 160
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量",
+                "type": "number",
+                "unit": "GiB",
+                "initial": 64,
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "ceiling",
+          "demandInputId": "demand",
+          "requirementId": "capacity"
+        }
+      },
+      "error": null,
+      "durationMs": 2,
+      "structuredContent": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "jsonPointer": null,
+          "textSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "excerptSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 170,
+            "textUTF8Bytes": 170
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GiB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GiB",
+            "initial": 64,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "澄泉",
+              "ceiling": {
+                "value": 64,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 33,
+                    "textByteEnd": 38
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 41,
+                    "textByteEnd": 53
+                  }
+                ]
+              }
+            },
+            {
+              "label": "岚峰",
+              "ceiling": {
+                "value": 160,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 70,
+                    "textByteEnd": 76
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 79,
+                    "textByteEnd": 91
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            }
+          ],
+          "current": {
+            "value": 64,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 112
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 192,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 137
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "matched"
+        },
+        "issues": [],
+        "fieldChecks": [
+          {
+            "optionId": "option-0",
+            "sourceOption": "澄泉",
+            "kind": "capacity-limit",
+            "dimensionId": "ceiling",
+            "role": "provided-capacity",
+            "expected": 64,
+            "actual": 64,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 33,
+                "textByteEnd": 38
+              }
+            ],
+            "status": "matched"
+          },
+          {
+            "optionId": "option-1",
+            "sourceOption": "岚峰",
+            "kind": "capacity-limit",
+            "dimensionId": "ceiling",
+            "role": "provided-capacity",
+            "expected": 160,
+            "actual": 160,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 70,
+                "textByteEnd": 76
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "inputChecks": [
+          {
+            "inputId": "demand",
+            "role": "required-capacity",
+            "expected": 64,
+            "actual": 64,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 112
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "claimChecks": [],
+        "computedCapacity": {
+          "current": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "demand",
+                "requirementIds": [
+                  "capacity"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 64,
+                "needed": 64,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 160,
+                "needed": 64,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "possibleFutureHypothesis": {
+            "demand": 192,
+            "unit": "GiB",
+            "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+            "eligibleOptionIds": [],
+            "excludedOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 64,
+                "needed": 192,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GiB",
+                "actual": 160,
+                "needed": 192,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              }
+            ]
+          }
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite capacity source and existing numeric hard-requirement core",
+          "text": "澄泉容量上限 64GiB；部署：未声明；维护：简单。\n岚峰容量上限 160GiB；部署：复杂；维护：未声明。\n来源当前需求 64GiB：仅容量满足的方案为澄泉、岚峰；容量不足的方案为无。\n来源仅说以后可能到 192GiB，不是已确认的当前需求或未来计划。若显式按 192GiB 作本地需求假设：仅容量满足的方案为无；容量不足的方案为澄泉、岚峰。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+        }
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "a8eb826a891579498bdfafef4eac13e3059f9d00cd2755cc9db447d99c1d64a9"
+    },
+    {
+      "id": "exec-cb515216-fe7b-4c31-9093-f2c1c5269dff",
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "capacity-comparison",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "按未来可能需求作显式本地假设，仅判断容量硬条件。",
+          "payload": {
+            "title": "本地假设：需求 192 GiB",
+            "dimensions": [
+              {
+                "id": "ceiling",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GiB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "澄泉",
+                "values": {
+                  "ceiling": 64
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "岚峰",
+                "values": {
+                  "ceiling": 160
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "仅按容量上限与需求比较。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量（本地假设）",
+                "type": "number",
+                "unit": "GiB",
+                "initial": 192,
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "capacity",
+                "dimension": "ceiling",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "ceiling",
+          "demandInputId": "demand",
+          "requirementId": "capacity"
+        }
+      },
+      "error": null,
+      "durationMs": 3,
+      "structuredContent": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "jsonPointer": null,
+          "textSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "excerptSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 170,
+            "textUTF8Bytes": 170
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GiB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GiB",
+            "initial": 64,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "澄泉",
+              "ceiling": {
+                "value": 64,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 33,
+                    "textByteEnd": 38
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 41,
+                    "textByteEnd": 53
+                  }
+                ]
+              }
+            },
+            {
+              "label": "岚峰",
+              "ceiling": {
+                "value": 160,
+                "unit": "GiB",
+                "spans": [
+                  {
+                    "textByteStart": 70,
+                    "textByteEnd": 76
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 79,
+                    "textByteEnd": 91
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            }
+          ],
+          "current": {
+            "value": 64,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 112
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 192,
+            "unit": "GiB",
+            "spans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 137
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "mismatch"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_CURRENT_DEMAND",
+            "path": "$.view.payload.inputs.0.initial",
+            "reason": "Initial demand must match the current source quantity 64GiB, not the possible future point. Local edits are separate hypotheses."
+          }
+        ],
+        "fieldChecks": [
+          {
+            "optionId": "option-0",
+            "sourceOption": "澄泉",
+            "kind": "capacity-limit",
+            "dimensionId": "ceiling",
+            "role": "provided-capacity",
+            "expected": 64,
+            "actual": 64,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 33,
+                "textByteEnd": 38
+              }
+            ],
+            "status": "matched"
+          },
+          {
+            "optionId": "option-1",
+            "sourceOption": "岚峰",
+            "kind": "capacity-limit",
+            "dimensionId": "ceiling",
+            "role": "provided-capacity",
+            "expected": 160,
+            "actual": 160,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 70,
+                "textByteEnd": 76
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "inputChecks": [
+          {
+            "inputId": "demand",
+            "role": "required-capacity",
+            "expected": 64,
+            "actual": 192,
+            "unit": "GiB",
+            "sourceSpans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 112
+              }
+            ],
+            "status": "mismatch"
+          }
+        ],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "withheld"
+        }
+      },
+      "duplicateTextCopyOmitted": true,
+      "originalTextSha256": "f8efcbdd7c14bcf1d53eb7e181dc9bf18fd6a398648d87232ad87a20a147a67a"
+    }
+  ],
+  "builtInDiscoveryCalls": [
+    {
+      "id": "exec-653aeb47-9166-4cdb-ac7c-d2757fcc2bb0",
+      "tool": "list_mcp_resource_templates",
+      "status": "completed",
+      "arguments": {},
+      "error": null,
+      "durationMs": 4,
+      "structuredContent": null,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"resourceTemplates\":[]}"
+          }
+        ],
+        "structuredContent": null,
+        "_meta": null
+      }
+    },
+    {
+      "id": "exec-b448c369-54bd-4acd-978d-42be6e8dda11",
+      "tool": "list_mcp_resources",
+      "status": "completed",
+      "arguments": {},
+      "error": null,
+      "durationMs": 4,
+      "structuredContent": null,
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"resources\":[]}"
+          }
+        ],
+        "structuredContent": null,
+        "_meta": null
+      }
+    }
+  ],
+  "hostExplicitCalls": {
+    "count": 3,
+    "schema": {
+      "component": "DecisionExplorer",
+      "protocolVersion": "1.4",
+      "payloadSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "dimensions": {
+            "minItems": 1,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "semanticRole": {
+                  "type": "string",
+                  "enum": [
+                    "capability-support",
+                    "resource-need"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "options": {
+            "minItems": 2,
+            "maxItems": 8,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "values": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 1200
+                          },
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "boolean"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "advantages": {
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "disadvantages": {
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "suitableWhen": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "values",
+                "advantages",
+                "disadvantages",
+                "suitableWhen",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "inputs": {
+            "default": [],
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "number",
+                    "boolean",
+                    "choice"
+                  ]
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "choices": {
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "initial": {
+                  "anyOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        }
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "semanticRole": {
+                  "type": "string",
+                  "enum": [
+                    "capability-need",
+                    "resource-available"
+                  ]
+                },
+                "expectedEffect": {
+                  "type": "string",
+                  "enum": [
+                    "hard",
+                    "preference-only",
+                    "hard-and-preference"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "type",
+                "initial",
+                "expectedEffect"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "rules": {
+            "default": [],
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "priority": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                },
+                "recommend": {
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  }
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "origin": {
+                  "type": "string",
+                  "enum": [
+                    "given",
+                    "model-judgment"
+                  ]
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "priority",
+                "when",
+                "recommend",
+                "reason",
+                "origin",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "constraints": {
+            "default": [],
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "optionId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "optionId",
+                "when",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "requirements": {
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "dimension": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "input": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "relation": {
+                  "type": "string",
+                  "enum": [
+                    "at-least",
+                    "at-most",
+                    "supports",
+                    "requires-availability"
+                  ]
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "dimension",
+                "input",
+                "relation"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "title",
+          "dimensions",
+          "options",
+          "inputs",
+          "rules",
+          "constraints"
+        ],
+        "additionalProperties": false
+      },
+      "envelope": {
+        "protocolVersion": "1.4",
+        "displayId": "stable-subject-id",
+        "revision": 1,
+        "component": "DecisionExplorer",
+        "summary": "A short readable conclusion.",
+        "payload": "Follow payloadSchema."
+      },
+      "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+      "semantics": "Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.",
+      "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+    },
+    "sourcePre": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "capacity-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "jsonPointer": null,
+        "textSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "excerptSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 170,
+          "textUTF8Bytes": 170
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+      },
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false,
+      "viewContract": {
+        "version": "1.0",
+        "component": "DecisionExplorer",
+        "protocolVersion": "1.4",
+        "mapping": {
+          "capacityDimensionId": "actual numeric dimension ID",
+          "demandInputId": "actual numeric input ID",
+          "requirementId": "actual hard requirement ID"
+        },
+        "dimensions": {
+          "count": 1,
+          "label": "容量上限",
+          "kind": "number",
+          "unit": "GiB",
+          "omittedFields": [
+            "semanticRole"
+          ]
+        },
+        "inputs": {
+          "count": 1,
+          "labels": [
+            "需求容量",
+            "需求容量（本地假设）"
+          ],
+          "type": "number",
+          "unit": "GiB",
+          "initial": 64,
+          "expectedEffect": "hard",
+          "omittedFields": [
+            "semanticRole",
+            "choices"
+          ]
+        },
+        "requirements": {
+          "count": 1,
+          "relation": "at-least",
+          "direction": "capacityDimensionId >= demandInputId",
+          "omittedFields": [
+            "when"
+          ]
+        },
+        "policies": {
+          "rules": "empty",
+          "constraints": "empty"
+        },
+        "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+        "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+      },
+      "status": "compared",
+      "sourceCapacity": {
+        "options": [
+          {
+            "label": "澄泉",
+            "ceiling": {
+              "value": 64,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 33,
+                  "textByteEnd": 38
+                }
+              ]
+            },
+            "deployment": {
+              "value": null,
+              "spans": []
+            },
+            "maintenance": {
+              "value": "simple",
+              "spans": [
+                {
+                  "textByteStart": 41,
+                  "textByteEnd": 53
+                }
+              ]
+            }
+          },
+          {
+            "label": "岚峰",
+            "ceiling": {
+              "value": 160,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 70,
+                  "textByteEnd": 76
+                }
+              ]
+            },
+            "deployment": {
+              "value": "complex",
+              "spans": [
+                {
+                  "textByteStart": 79,
+                  "textByteEnd": 91
+                }
+              ]
+            },
+            "maintenance": {
+              "value": null,
+              "spans": []
+            }
+          }
+        ],
+        "current": {
+          "value": 64,
+          "unit": "GiB",
+          "spans": [
+            {
+              "textByteStart": 107,
+              "textByteEnd": 112
+            }
+          ]
+        },
+        "possibleFuture": {
+          "value": 192,
+          "unit": "GiB",
+          "spans": [
+            {
+              "textByteStart": 131,
+              "textByteEnd": 137
+            }
+          ]
+        },
+        "confirmedFuturePlan": null
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "fieldChecks": [],
+      "inputChecks": [],
+      "claimChecks": [],
+      "computedCapacity": {
+        "current": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "possibleFutureHypothesis": {
+          "demand": 192,
+          "unit": "GiB",
+          "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+          "eligibleOptionIds": [],
+          "excludedOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete finite capacity source and existing numeric hard-requirement core",
+        "text": "澄泉容量上限 64GiB；部署：未声明；维护：简单。\n岚峰容量上限 160GiB；部署：复杂；维护：未声明。\n来源当前需求 64GiB：仅容量满足的方案为澄泉、岚峰；容量不足的方案为无。\n来源仅说以后可能到 192GiB，不是已确认的当前需求或未来计划。若显式按 192GiB 作本地需求假设：仅容量满足的方案为无；容量不足的方案为澄泉、岚峰。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+      }
+    },
+    "sourcePost": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "capacity-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "jsonPointer": null,
+        "textSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "excerptSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 170,
+          "textUTF8Bytes": 170
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+      },
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false,
+      "viewContract": {
+        "version": "1.0",
+        "component": "DecisionExplorer",
+        "protocolVersion": "1.4",
+        "mapping": {
+          "capacityDimensionId": "actual numeric dimension ID",
+          "demandInputId": "actual numeric input ID",
+          "requirementId": "actual hard requirement ID"
+        },
+        "dimensions": {
+          "count": 1,
+          "label": "容量上限",
+          "kind": "number",
+          "unit": "GiB",
+          "omittedFields": [
+            "semanticRole"
+          ]
+        },
+        "inputs": {
+          "count": 1,
+          "labels": [
+            "需求容量",
+            "需求容量（本地假设）"
+          ],
+          "type": "number",
+          "unit": "GiB",
+          "initial": 64,
+          "expectedEffect": "hard",
+          "omittedFields": [
+            "semanticRole",
+            "choices"
+          ]
+        },
+        "requirements": {
+          "count": 1,
+          "relation": "at-least",
+          "direction": "capacityDimensionId >= demandInputId",
+          "omittedFields": [
+            "when"
+          ]
+        },
+        "policies": {
+          "rules": "empty",
+          "constraints": "empty"
+        },
+        "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+        "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+      },
+      "status": "compared",
+      "sourceCapacity": {
+        "options": [
+          {
+            "label": "澄泉",
+            "ceiling": {
+              "value": 64,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 33,
+                  "textByteEnd": 38
+                }
+              ]
+            },
+            "deployment": {
+              "value": null,
+              "spans": []
+            },
+            "maintenance": {
+              "value": "simple",
+              "spans": [
+                {
+                  "textByteStart": 41,
+                  "textByteEnd": 53
+                }
+              ]
+            }
+          },
+          {
+            "label": "岚峰",
+            "ceiling": {
+              "value": 160,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 70,
+                  "textByteEnd": 76
+                }
+              ]
+            },
+            "deployment": {
+              "value": "complex",
+              "spans": [
+                {
+                  "textByteStart": 79,
+                  "textByteEnd": 91
+                }
+              ]
+            },
+            "maintenance": {
+              "value": null,
+              "spans": []
+            }
+          }
+        ],
+        "current": {
+          "value": 64,
+          "unit": "GiB",
+          "spans": [
+            {
+              "textByteStart": 107,
+              "textByteEnd": 112
+            }
+          ]
+        },
+        "possibleFuture": {
+          "value": 192,
+          "unit": "GiB",
+          "spans": [
+            {
+              "textByteStart": 131,
+              "textByteEnd": 137
+            }
+          ]
+        },
+        "confirmedFuturePlan": null
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "fieldChecks": [],
+      "inputChecks": [],
+      "claimChecks": [],
+      "computedCapacity": {
+        "current": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 64,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "possibleFutureHypothesis": {
+          "demand": 192,
+          "unit": "GiB",
+          "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+          "eligibleOptionIds": [],
+          "excludedOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 64,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GiB",
+              "actual": 160,
+              "needed": 192,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            }
+          ]
+        }
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete finite capacity source and existing numeric hard-requirement core",
+        "text": "澄泉容量上限 64GiB；部署：未声明；维护：简单。\n岚峰容量上限 160GiB；部署：复杂；维护：未声明。\n来源当前需求 64GiB：仅容量满足的方案为澄泉、岚峰；容量不足的方案为无。\n来源仅说以后可能到 192GiB，不是已确认的当前需求或未来计划。若显式按 192GiB 作本地需求假设：仅容量满足的方案为无；容量不足的方案为澄泉、岚峰。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+      }
+    }
+  },
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n澄泉容量上限 64GiB；部署：未声明；维护：简单。\n岚峰容量上限 160GiB；部署：复杂；维护：未声明。\n来源当前需求 64GiB：仅容量满足的方案为澄泉、岚峰；容量不足的方案为无。\n来源仅说以后可能到 192GiB，不是已确认的当前需求或未来计划。若显式按 192GiB 作本地需求假设：仅容量满足的方案为无；容量不足的方案为澄泉、岚峰。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+    "sourceTextSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+    "sourceDocumentSha256": "203fdcae467dc9894bc481c0aeefb11041d1b9cd09983d180fe6dd1249d3398e",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "review": {
+    "reviewedAt": "2026-10-27T12:17:41.873858+00:00",
+    "criteriaSha256": "c1578cc573c0432b70e6c2a81106a55caee3b2c6a441ab6531981508f00265f8",
+    "case": "boundary-gib",
+    "candidateSha256": "90c14521cc9f75be2dbf49b75374c5f09c5ec86540a139ef3816bd432b3a93a5",
+    "rawFiniteReview": "met",
+    "rawCriteria": [
+      {
+        "index": 0,
+        "status": "met",
+        "evidence": "独立冷thread实际读取当前GiB来源；203fdc...正确，无前题MB事实。"
+      },
+      {
+        "index": 1,
+        "status": "met",
+        "evidence": "64GiB等于澄泉上限也满足，两者当前容量满足，未换成GB。"
+      },
+      {
+        "index": 2,
+        "status": "met",
+        "evidence": "明确192GiB本地假设两者均不满足，未强选赢家/确认未来计划。"
+      },
+      {
+        "index": 3,
+        "status": "met",
+        "evidence": "维护简单与部署复杂分别陈述，交叉属性、价格迁移偏好未知，容量不建立整体选型。"
+      }
+    ],
+    "modelSemanticCalls": 6,
+    "modelBuiltInDiscoveryCalls": 2,
+    "hostExplicitCalls": 3,
+    "firstCurrentViewComparison": "matched",
+    "hypotheticalInitialViewSourceComparison": {
+      "status": "mismatch",
+      "codes": [
+        "SOURCE_CURRENT_DEMAND"
+      ],
+      "meaning": "192GiB is a legal local hypothesis, but not the original64GiB source initial. Separate core checks compute it; source-check must not certify a source update. This refusal is not a ban on the hypothetical intent."
+    },
+    "version": "0.1.0-preview.24",
+    "currentViewAdoption": "met within this structured finite contract",
+    "freeProseRuntimeVerified": false,
+    "noLiveUIAcceptance": true,
+    "noThirdTurn": true,
+    "comparisonCaveat": "Different case and archive/skill version from first; observed adoption is not a controlled same-question causal benchmark or universal reliability claim."
+  },
+  "worldFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "currentCLIUIRendered": false
+}
