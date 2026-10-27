@@ -1,6 +1,6 @@
 # 实际进度
 
-preview.26开发阶段完成[默认中文与中英文选择](LANGUAGE.zh-CN.md)：三类组件、直方图、模板/主题、状态及可读说明同步切换并记忆，不修改来源和模型正文、不因切换请求模型。245项单元检查和类型检查通过，开发Native/PTC各4类视图完成语言/刷新/存储降级/360px验证，pageerror0；最终归档另验，见[本版回执](evidence/language.json)。
+preview.26已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)，完成[默认中文与中英文选择](LANGUAGE.zh-CN.md)：三类组件、直方图、模板/主题、状态及可读说明同步切换并记忆，不修改来源和模型正文、不因切换请求模型。245项单元检查和类型检查通过，388文件最终归档正常安装，macOS/Linux Native/PTC各4类视图完成语言/刷新/存储降级/360px验证，pageerror0，CI40515658647成功，见[本版回执](evidence/language.json)。
 
 preview.25开发阶段补[普通数值解释的均值/合计基准](NUMERIC-BASELINE.zh-CN.md)：读数记录与问题独立输入；缺失mask、已观测小计、补零合计和未知真实完整范围分别保留。32项6文件和18项离线检查通过；最终归档、宿主、模型与发行另验，见[分层回执](evidence/numeric-baseline.json)。
 

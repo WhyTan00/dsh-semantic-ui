@@ -1,0 +1,42 @@
+[
+  {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.26.tgz",
+    "method": "GET",
+    "status": 200,
+    "finalHost": "release-assets.githubusercontent.com",
+    "anonymous": true,
+    "bodyCompared": true,
+    "sameBytes": true,
+    "evidenceArchiveIntegrity": null
+  },
+  {
+    "filename": "SHA256SUMS",
+    "method": "GET",
+    "status": 200,
+    "finalHost": "release-assets.githubusercontent.com",
+    "anonymous": true,
+    "bodyCompared": true,
+    "sameBytes": true,
+    "evidenceArchiveIntegrity": null
+  },
+  {
+    "filename": "package-manifest.json",
+    "method": "GET",
+    "status": 200,
+    "finalHost": "release-assets.githubusercontent.com",
+    "anonymous": true,
+    "bodyCompared": true,
+    "sameBytes": true,
+    "evidenceArchiveIntegrity": null
+  },
+  {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.26.tgz",
+    "method": "HEAD",
+    "status": 200,
+    "finalHost": "release-assets.githubusercontent.com",
+    "anonymous": true,
+    "bodyCompared": false,
+    "sameBytes": null,
+    "evidenceArchiveIntegrity": "matched GitHub server SHA-256 and Linux-generated manifest"
+  }
+]

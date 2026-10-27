@@ -1,0 +1,17 @@
+{
+  "mode": "native",
+  "default": "zh-CN",
+  "components": 4,
+  "selectorInEveryView": true,
+  "samePageSync": true,
+  "englishAndChineseReloadPersistence": true,
+  "localSelectionNotResetByLanguage": true,
+  "noRequestOnLanguageOrReload": true,
+  "blockedStorageStillSwitches": true,
+  "sourceAndModelTextPreserved": true,
+  "pageErrors": [],
+  "narrowWidth": 360,
+  "noRootOverflow": true,
+  "fixtureOnly": true,
+  "newRealModelTurns": 0
+}

@@ -1,8 +1,6 @@
 # 安装、隔离验证和回退
 
-preview.26默认简体中文；组件顶部可选择「简体中文 / English」并记住选择。最终安装接受见[语言回执](evidence/language.json)。
-preview.25源码候选新增均值/合计基准与独立读数记录入口，最终归档接受另见[数值基准回执](evidence/numeric-baseline.json)；下文24为此前已公开安装接受。
-当前推荐[preview.24](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)：382文件归档在macOS/Linux Native/PTC正常安装，字段合同可发现、标签错误精确定位、显式修正后交付/刷新与普通CLI已[单独接受](evidence/capacity-contract.json)，四匿名资产同字节。容量/无效域/旧1.2的完整23接受仍见[原回执](evidence/source-capacity.json)，不重跑或扩称本次窄验。组件协议和checkpoint不变，旧23/22/21资产不覆盖。
+当前推荐[preview.26](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)：默认简体中文，组件顶部可切换「简体中文 / English」并记忆选择。388文件最终归档在macOS/Linux正常安装，Native/PTC各4类视图验证语言/刷新/存储降级/360px与pageerror0，245项单元检查和CI通过，见[语言回执](evidence/language.json)。此前[24容量合同](evidence/capacity-contract.json)、[25数值解释](evidence/numeric-baseline.json)保持各自版本证据。
 
 历史已核版本[preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，317文件归档已在本机/Linux定向安装验收，四份资产匿名回验一致；[新证据](evidence/source-update.json)随仓库单列。18候选因真实安装失败未发行。
 
@@ -25,12 +23,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.24.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.26.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.24.tgz`。本版归档的后补接受另存仓库[本版回执](evidence/capacity-contract.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
+运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.26.tgz`。本版归档的后补接受另存仓库[本版回执](evidence/language.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 

@@ -1,27 +1,171 @@
 {
-  "phase": "development-source",
+  "phase": "published-final-archive-accepted",
   "version": "0.1.0-preview.26",
-  "defaultLocale": "zh-CN",
-  "supported": [
-    "zh-CN",
-    "en"
-  ],
-  "unitTests": 245,
-  "developmentDsh": {
-    "native": {
-      "groups": 1,
-      "components": 4,
-      "pageErrors": 0
+  "sourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "protocolVersion": "1.4",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.26.tgz",
+    "sha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+    "bytes": 2693139,
+    "files": 388
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.26.tgz",
+    "bytes": 32770210,
+    "sha256": "b310e346aa5c2dd47fca7fef068b08d13f9c8d0b0add2e5e73fde788035fa5fd",
+    "files": 754
+  },
+  "localization": {
+    "default": "zh-CN",
+    "supported": [
+      "zh-CN",
+      "en"
+    ],
+    "samePageSync": true,
+    "reloadPersistence": true,
+    "blockedStoragePageFallback": true,
+    "userDataSourceAndModelProseTranslated": false,
+    "machineIdsChanged": false,
+    "modelRequestOnSwitch": false
+  },
+  "sourceChecks": {
+    "typecheck": "passed",
+    "unitTests": 245,
+    "testFiles": 36,
+    "releaseIsolation": "passed",
+    "researchInventory": {
+      "projects": 35,
+      "pinnedFiles": 139,
+      "status": "unchanged-consistent"
+    }
+  },
+  "finalInstall": {
+    "normalDshAdd": true,
+    "semanticSourceOverlay": false,
+    "allPackagedFilesVerifiedBeforeStart": 388,
+    "macos": {
+      "nativeGroups": 1,
+      "ptcGroups": 1,
+      "componentsPerGroup": 4,
+      "pageErrors": 0,
+      "narrowContainer": 360
     },
-    "ptc": {
-      "groups": 1,
-      "components": 4,
+    "linux": {
+      "nativeGroups": 1,
+      "ptcGroups": 1,
+      "componentsPerGroup": 4,
       "pageErrors": 0
     },
     "fixtureOnly": true
   },
-  "finalArchive": "pending",
+  "initialFailures": {
+    "legacyEnglishAssertions": "explicit English locale added to legacy tests; default product remains Chinese",
+    "oldProjectionCountAssertion": "registers two existing projections, test now verifies their actual keys; no new runtime registration added",
+    "developmentDecisionFixture": "legacy fixture failed existing1.4 expectedEffect guard; preserved, then existing compliant declaredResource fixture used; no gate relaxation"
+  },
+  "ci": {
+    "id": 40515658647,
+    "conclusion": "success",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40515658647",
+    "downloadedBodies": [
+      "runtime",
+      "SHA256SUMS",
+      "package-manifest.json"
+    ],
+    "evidenceArchive": "local file hash matches byte-identical Linux-generated manifest; large CI body not downloaded"
+  },
+  "release": {
+    "status": "published",
+    "id": 425531255,
+    "tag": "v0.1.0-preview.26",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26",
+    "allFourGitHubServerSha256DigestsEqualLocal": true,
+    "anonymous": {
+      "runtimeManifestChecksumsGetBodies": "all HTTP200 and same bytes",
+      "evidenceArchive": "HTTP200 HEAD; integrity checked using GitHub server digest and identical Linux manifest; body not downloaded"
+    }
+  },
   "newModelTurns": 0,
+  "priorNumericObservations": "I/J2of2 belong only to frozen preview.25; no retry/reset",
+  "originalNaturalResults": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18
+  },
   "sourceFactsVerified": false,
-  "freeProseVerified": false
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "notClaimed": [
+    "arbitrary source or model prose translation",
+    "full GenUI replacement",
+    "new natural-model acceptance",
+    "physical phone or screen-reader acceptance",
+    "installation into the user shared runtime"
+  ],
+  "files": {
+    "ci-byte-and-digest-comparison.json": {
+      "bytes": 843,
+      "sha256": "5e74ad79e8b23bd94a30d773c3a87bd401a4b9dc91b63c39f9ad304b58ae2353"
+    },
+    "macos-installed-byte-check.json": {
+      "bytes": 68,
+      "sha256": "10ee27e9285a7f615ccbe1104f1d8ad5918bb949f73cdd660910aaad94227fa0"
+    },
+    "linux-cleanup.json": {
+      "bytes": 376,
+      "sha256": "626739de9833e7f4022020ef790887754eabea454a22ba1df0a913fb29a1d17d"
+    },
+    "release-digests.json": {
+      "bytes": 996,
+      "sha256": "c3a8ea7f73b0d567e9d95af2975af6607521f19772fe1fbea6eaea77e8a3bd1b"
+    },
+    "linux-native.json": {
+      "bytes": 443,
+      "sha256": "08115d4ecf3c239432f05f77dc4060a2b890dfde4192aa7ae3eef331185133fd"
+    },
+    "macos-native.json": {
+      "bytes": 443,
+      "sha256": "08115d4ecf3c239432f05f77dc4060a2b890dfde4192aa7ae3eef331185133fd"
+    },
+    "linux-installed-byte-check.json": {
+      "bytes": 68,
+      "sha256": "10ee27e9285a7f615ccbe1104f1d8ad5918bb949f73cdd660910aaad94227fa0"
+    },
+    "anonymous-downloads.json": {
+      "bytes": 1127,
+      "sha256": "c9f28ecf6c459bea75c279aed15dfeec17b92e187728f67183e12c0b962771f0"
+    },
+    "linux-ptc.json": {
+      "bytes": 440,
+      "sha256": "965a0fd7b93a97f8d5c52eaae8205f197bfdd943e55834f610bf386ab72960ef"
+    },
+    "linux-install.json": {
+      "bytes": 641,
+      "sha256": "e57bc4c90ff08bf51d0525727890e0c7dfac6a6bf611d4be7f8711aa84bfdb51"
+    },
+    "macos-ptc.json": {
+      "bytes": 440,
+      "sha256": "965a0fd7b93a97f8d5c52eaae8205f197bfdd943e55834f610bf386ab72960ef"
+    },
+    "native-chinese.png": {
+      "bytes": 228917,
+      "sha256": "af3852012be88dd74de4deef0080c756072a18fd078b7cca1ccb4f02e7b8d20e"
+    },
+    "cleanup.json": {
+      "bytes": 1958,
+      "sha256": "6309a80b5b45436312ff4a9a430e133d3da3c49d7b3e03183ef0152b6545c0a3"
+    },
+    "macos-install.json": {
+      "bytes": 641,
+      "sha256": "e57bc4c90ff08bf51d0525727890e0c7dfac6a6bf611d4be7f8711aa84bfdb51"
+    },
+    "ptc-chinese.png": {
+      "bytes": 228917,
+      "sha256": "af3852012be88dd74de4deef0080c756072a18fd078b7cca1ccb4f02e7b8d20e"
+    },
+    "macos-cleanup.json": {
+      "bytes": 379,
+      "sha256": "d8868c1b2308a6b6c51ee7fa4d9616f2193746bd11aeefd5129e55f2247aa47a"
+    }
+  }
 }

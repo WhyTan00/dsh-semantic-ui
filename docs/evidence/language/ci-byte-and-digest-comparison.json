@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.26.tgz",
+    "bytes": 2693139,
+    "sha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+    "sameBytes": true
+  },
+  {
+    "filename": "SHA256SUMS",
+    "bytes": 229,
+    "sha256": "f25b664ceb69532dab00ec6b0739d08d3b3d18787e8f518bd5aaa8cc50fbca2d",
+    "sameBytes": true
+  },
+  {
+    "filename": "package-manifest.json",
+    "bytes": 34796,
+    "sha256": "354f1a770a4649bc881ecf417704f4f9f78d143f041ca8d7255bad5385c5ba79",
+    "sameBytes": true
+  },
+  {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.26.tgz",
+    "sha256": "b310e346aa5c2dd47fca7fef068b08d13f9c8d0b0add2e5e73fde788035fa5fd",
+    "verification": "Linux generated manifest hash equals local file SHA; evidence archive body not downloaded from CI",
+    "sameDigest": true
+  }
+]

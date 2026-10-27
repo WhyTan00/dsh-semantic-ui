@@ -11,3 +11,7 @@ preview.26 默认使用简体中文。每个语义组件顶部都有「界面语
 开发阶段类型检查及245项单元检查通过；隔离真实DSH的Native/PTC各1组、每组4类视图已验证默认中文、整页同步切换、中英文刷新记忆、保留筛选、存储失败降级、360px无根溢出且pageerror0。第一次测试使用旧协议决策夹具，被现有1.4声明门禁正确拒绝；原失败保留，改用既有合规声明夹具后通过，没有放松运行门禁。旧英文文案测试显式选择English，产品默认仍是中文。
 
 最终不可变归档、正常安装、Linux CI及个人公开发行的状态另见 [本版回执](evidence/language.json)，开发版不冒充最终包验收。原数值解释I/J的2/2新观察仍只对应preview.25字节，语言改动0次新模型，不重测、不改写原自然题结果。
+
+最终preview.26已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)。388文件实际归档在macOS/Linux正常安装，Native/PTC每组4类视图通过，pageerror0，CI40515658647成功。冻结后的接受记录另存仓库，不重包。下面为隔离DSH最终归档的360px组件截图，不是真机证据。
+
+![默认中文与语言选择](evidence/language/native-chinese.png)

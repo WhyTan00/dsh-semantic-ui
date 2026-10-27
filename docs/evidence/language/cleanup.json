@@ -1,0 +1,102 @@
+{
+  "ownedHosts": [
+    {
+      "run": "host-1793108516724",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 41505,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 41506,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "allPidsAbsent": true,
+      "ports": [
+        {
+          "port": 57768,
+          "listening": false
+        },
+        {
+          "port": 57767,
+          "listening": false
+        }
+      ]
+    },
+    {
+      "run": "host-1793108673375",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 42746,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 42747,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 43014,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "allPidsAbsent": true,
+      "ports": [
+        {
+          "port": 58677,
+          "listening": false
+        },
+        {
+          "port": 58676,
+          "listening": false
+        }
+      ]
+    },
+    {
+      "run": "host-1793109033457",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 46252,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 46253,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 46396,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "allPidsAbsent": true,
+      "ports": [
+        {
+          "port": 60683,
+          "listening": false
+        },
+        {
+          "port": 60682,
+          "listening": false
+        }
+      ]
+    }
+  ],
+  "sharedServicesChanged": false,
+  "newModelTurns": 0
+}
