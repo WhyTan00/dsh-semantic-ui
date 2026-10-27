@@ -1,0 +1,365 @@
+{
+  "date": "2026-10-27",
+  "scope": "two additional host-only answer source kinds; not new natural-model acceptance",
+  "sourceClient": "examples/codex-readonly.py",
+  "testedClientSha256": "76f19a221387a7582e6b27b8aca113bdef4fe643e1810058adcc3f9e14e13c74",
+  "sourceBaseCommit": "ad50685faef8c646a41161dc254e1b4003fbeb14",
+  "runtimeSourceCommit": "373106e31e2e31867a46c7ed3279ed3c63942d81",
+  "runtimeArchiveSha256": "e4c48bb860b36604d1cad1dff0c21692b6be867aeda06aeb955c49b3f6e65e5b",
+  "mcpEntrySha256": "f61d40a9531d47a4c6cfb17c8df4f223df920c7824172c2fd65701e31806f2c0",
+  "runtimeChanged": false,
+  "newRelease": false,
+  "newModelTurns": 0,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "expectationsFrozenBeforeClientChange": true,
+  "existingExpectations": [
+    {
+      "path": "docs/evidence/source-check.json",
+      "sha256": "4c4c7aa37879b740987fba38f1378716312047df7e26fe56c2dd43168b78a1ac"
+    },
+    {
+      "path": "fixtures/source-permissions-expectations.json",
+      "sha256": "c9b6bd0b08a01d486cfb4d886cb24353d99048f64b2f1cb7167c70154a6d3724"
+    }
+  ],
+  "cases": [
+    {
+      "sourceKind": "arrows",
+      "source": {
+        "path": "docs/evidence/natural/r9-A2.json",
+        "sha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+        "jsonPointer": "/question",
+        "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "excerpt": "入口→鉴权→库存→支付，支付→通知",
+        "expectedRelations": [
+          [
+            "入口",
+            "鉴权"
+          ],
+          [
+            "鉴权",
+            "库存"
+          ],
+          [
+            "库存",
+            "支付"
+          ],
+          [
+            "支付",
+            "通知"
+          ]
+        ],
+        "originalFirstGraph": "selected relation set matches",
+        "originalProse": "unverified; original failure retained"
+      },
+      "sourceCheck": {
+        "sourceCheckVersion": "1.0",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+          "jsonPointer": "/question",
+          "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+          "excerptSha256": "8ebd62442fc54be3a6ed583e71400c7725c7a090956d61909b779232d49e55db",
+          "selection": {
+            "textUTF8ByteStart": 21,
+            "textUTF8ByteEnd": 72,
+            "textUTF8Bytes": 174
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity/authorship",
+          "unselected source text",
+          "node responsibilities/constraints/evidence",
+          "edge type/label/evidence",
+          "scenario explanations",
+          "summary and free prose",
+          "causality, retry, rollback, exclusivity and operational guarantees"
+        ],
+        "status": "compared",
+        "sourceRelations": [
+          {
+            "from": "入口",
+            "to": "鉴权",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "鉴权",
+            "to": "库存",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "库存",
+            "to": "支付",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "支付",
+            "to": "通知",
+            "spans": [
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ]
+          }
+        ],
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "conclusion": {
+          "selectedRelations": "not-requested",
+          "structuredClaims": "not-requested",
+          "sourceIdentity": "unverified",
+          "freeProse": "not-verified"
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0,
+          "reason": "No keyword filtering or natural-language truth judgement was performed; a matched graph does not verify its prose."
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "computed only from the selected source syntax",
+          "text": "Selected source directed relations: \"入口\" → \"鉴权\"; \"鉴权\" → \"库存\"; \"库存\" → \"支付\"; \"支付\" → \"通知\". This establishes literal topology only; causal, retry, rollback and free-prose claims are not verified."
+        }
+      },
+      "hostDelivery": {
+        "kind": "host-source-canonical",
+        "status": "delivered",
+        "text": "来源内的有限说明（宿主保障）\n\nSelected source directed relations: \"入口\" → \"鉴权\"; \"鉴权\" → \"库存\"; \"库存\" → \"支付\"; \"支付\" → \"通知\". This establishes literal topology only; causal, retry, rollback and free-prose claims are not verified.\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+        "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "sourceDocumentSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+        "modelCandidateUsed": false,
+        "freeProseVerified": false,
+        "sourceFactsVerified": false,
+        "identityVerified": false
+      },
+      "answerSha256": "77c71e1e8c1a5a89a5536575714f09c781a9cd3e2380c58b489d2c5ad72c5f77",
+      "newModelTurns": 0,
+      "turnStartRequests": 0,
+      "explicitToolCalls": 2,
+      "crossLayerRequestsAndResponsesEqual": true,
+      "appServerExitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "rawSha256": {
+        "codex-wire.jsonl": "a20f94897c8ca390aee3ab827a9e237897bffada8e8be02b1ece9d0f57ae21d8",
+        "mcp-wire.jsonl": "a49067eb1a36b2bd16b0d13af3c8382d1c372a75b9901bea630ca61598dc20a2",
+        "result.json": "d43185a9957cfb3dc505e3d9a100d0b0537ec63b5b939a3cfc966f5d4bf0a162",
+        "terminal.json": "ef3966f158b7fa75dd955eb6b06c81e45520fe3a718c646d4327bb51eec7968d"
+      }
+    },
+    {
+      "sourceKind": "permissions-zh",
+      "source": {
+        "path": "docs/evidence/natural/r9-A3.json",
+        "sha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+        "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "jsonPointer": "/question"
+      },
+      "sourceCheck": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "permissions-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+          "jsonPointer": "/question",
+          "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+          "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 193,
+            "textUTF8Bytes": 193
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source author/human identity",
+          "unselected context and general natural-language meaning",
+          "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+          "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+        ],
+        "status": "compared",
+        "sourcePermissions": {
+          "context": "虚构服务",
+          "nodes": [
+            "客户端",
+            "Gateway",
+            "Search",
+            "Account",
+            "Index",
+            "Store"
+          ],
+          "accesses": [
+            {
+              "from": "客户端",
+              "to": "Gateway",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 47
+                }
+              ]
+            },
+            {
+              "from": "Gateway",
+              "to": "Search",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 50,
+                  "textByteEnd": 83
+                }
+              ]
+            },
+            {
+              "from": "Gateway",
+              "to": "Account",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 50,
+                  "textByteEnd": 83
+                }
+              ]
+            },
+            {
+              "from": "Search",
+              "to": "Index",
+              "mode": "read-only",
+              "spans": [
+                {
+                  "textByteStart": 86,
+                  "textByteEnd": 105
+                }
+              ]
+            },
+            {
+              "from": "Account",
+              "to": "Store",
+              "mode": "read-write",
+              "spans": [
+                {
+                  "textByteStart": 108,
+                  "textByteEnd": 128
+                }
+              ]
+            }
+          ],
+          "prohibitions": [
+            {
+              "from": "Search",
+              "to": "Store",
+              "spans": [
+                {
+                  "textByteStart": 131,
+                  "textByteEnd": 157
+                }
+              ]
+            }
+          ],
+          "onlyTargets": [
+            {
+              "from": "客户端",
+              "targets": [
+                "Gateway"
+              ],
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 47
+                }
+              ]
+            }
+          ]
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "bounded explicit source declarations; no global or causal inference",
+          "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+        }
+      },
+      "hostDelivery": {
+        "kind": "host-source-canonical",
+        "status": "delivered",
+        "text": "来源内的有限说明（宿主保障）\n\n客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+        "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "sourceDocumentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+        "modelCandidateUsed": false,
+        "freeProseVerified": false,
+        "sourceFactsVerified": false,
+        "identityVerified": false
+      },
+      "answerSha256": "7681ed2faecdf6e0714d05a8aed25cb67794d3836a16088ef638ba5920475d49",
+      "newModelTurns": 0,
+      "turnStartRequests": 0,
+      "explicitToolCalls": 2,
+      "crossLayerRequestsAndResponsesEqual": true,
+      "appServerExitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "rawSha256": {
+        "codex-wire.jsonl": "13b73d59a490fc925955af360fcb246b514583bbd75afef1a726a2e5ce817aea",
+        "mcp-wire.jsonl": "d5ad4a410502074ba2a5ec46b9c809f28ab5d6942c58c851af8e4830ec3eb50f",
+        "result.json": "c2209a6a4d704d221c5b7146c14a2ae7c4028b6f97bbb474c1cb0babce48d68c",
+        "terminal.json": "9fed88b592d37be2d4dd64284b4acf5539f0259ad1e449c631b92c160d257e63"
+      }
+    }
+  ],
+  "remainingOwnedProcesses": 0,
+  "originalRun9": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18,
+    "rawChanged": false
+  },
+  "boundaries": [
+    "Only the exact original A2 arrow excerpt is assessed; causal/failure/retry/rollback text outside it is not assessed.",
+    "The full original A3 is supported by the existing finite permissions grammar; no global exclusivity or real-world fact certification.",
+    "No view or typed-claim comparison was requested; this is source inspection and canonical text delivery.",
+    "Decision answer and optional guided model turns retain their previous separate byte identity and acceptance; not rerun here.",
+    "Companion source only; frozen preview13 runtime, package assets and old natural records are unchanged.",
+    "CLI text, not current desktop rich UI, MCP Apps UI, universal semantic acceptance or GenUI replacement."
+  ],
+  "verification": {
+    "offlineContractTestsPassed": 4,
+    "researchIndexCheck": "35 projects,139 pinned source files; passed",
+    "newRuntimeTestsOrBuilds": 0
+  }
+}

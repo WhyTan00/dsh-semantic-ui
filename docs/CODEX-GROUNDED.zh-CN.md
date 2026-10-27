@@ -20,7 +20,32 @@ python3 examples/codex-readonly.py --answer \
   --source-json-pointer /question
 ```
 
-这条已验证的命令输出普通可读答复，保留价格、反面责任和团队余力的未知。可换成自己的明确来源；现有三种有限语法和输入合同沿 [来源说明](SOURCE-CHECKS.zh-CN.md) / [decision-zh](SOURCE-DECISION.zh-CN.md)。不支持的完整来源会得到拒绝，未默默跳过难句。
+这条已验证的命令输出普通可读答复，保留价格、反面责任和团队余力的未知。可换成自己的明确来源；现有三种有限语法和输入合同沿 [箭头选段](SOURCE-CHECKS.zh-CN.md)、[decision-zh](SOURCE-DECISION.zh-CN.md)、[permissions-zh](SOURCE-PERMISSIONS.zh-CN.md)。不支持的完整来源会得到拒绝，未默默跳过难句。
+
+另两种来源各完成了一次真实零推理答复验收，复用原A2/A3来源和先前独立预期。关系题仅选定原文中的箭头片段：
+
+```sh
+python3 examples/codex-readonly.py --answer \
+  --archive artifacts/releases/0.1.0-preview.13/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz \
+  --manifest artifacts/releases/0.1.0-preview.13/package-manifest.json \
+  --source-file docs/evidence/natural/r9-A2.json --source-json-pointer /question \
+  --source-kind arrows --source-excerpt '入口→鉴权→库存→支付，支付→通知' \
+  --component ArchitectureExplorer
+```
+
+`--source-excerpt`逐字透传给包中已有的选源逻辑。来源摘要绑定完整所选字符串，同时另记选段摘要和UTF-8字节范围；这里输出四条有向关系，**不回答原题中片段之外的通知重试、支付回滚或故障影响**。这是调用者明确选段，没有把完整自然问题宣称为支持。
+
+权限题可直接读取原A3完整问题：
+
+```sh
+python3 examples/codex-readonly.py --answer \
+  --archive artifacts/releases/0.1.0-preview.13/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz \
+  --manifest artifacts/releases/0.1.0-preview.13/package-manifest.json \
+  --source-file docs/evidence/natural/r9-A3.json --source-json-pointer /question \
+  --source-kind permissions-zh --component ArchitectureExplorer
+```
+
+实际输出区分访问、主体与目标之间的只读/读写、方向性禁止和仅限该主体的目标；没有声明的权限保持未知，不推成全局独占或故障保证。两项都是来源读取与有限说明，未请求view/claims比较，不能写成模型生成视图已匹配。见 [本次独立回执](evidence/grounded-answer-source-kinds.json)。本次客户端摘要为`76f19a221387a7582e6b27b8aca113bdef4fe643e1810058adcc3f9e14e13c74`，只增加选段透传；下节两次模型回归仍对应此前客户端摘要，未重跑或混算。
 
 仅当你需要生成和检查模型候选时，再加 `--model-candidate`。这显式使用本机正常登录、默认模型/推理/provider/service tier；没有API备用或账户切换。程序在相同临时进程中保留技能额外根，发送官方 `UserInput {type:'skill',name,path}` 和普通原问题，附加通用developer workflow。主问题没有手工view、正确答案或验收预期。这是宿主选择的有指引路径，不冒称模型无指引自然选择。
 

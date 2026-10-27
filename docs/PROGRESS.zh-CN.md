@@ -1,5 +1,7 @@
 # 实际进度
 
+伴随CLI补齐既有`--source-excerpt`透传；`arrows`原A2箭头选段、`permissions-zh`原A3全文各一次真实`--answer`完成，两项均为0模型回合，实际schema/source双层请求与响应一致、自有进程已退出、全局配置摘要未变。四条有向边及五项访问/一项禁止/主体局部目标限制与既有独立预期相同；没有view/claims比较或新自然模型验收，A2片段外故障/回滚/重试未核。可运行命令见 [普通答复](CODEX-GROUNDED.zh-CN.md)，新字节身份及完整结果见 [来源种类回执](evidence/grounded-answer-source-kinds.json)。只更新伴随源码与文档，未重打或重发preview.13；此前decision/模型结果继续按原字节单列。
+
 新增 [来源保障普通答复](CODEX-GROUNDED.zh-CN.md)：默认只读及`--answer`均0推理，只有明确`--model-candidate`启用单次有指引候选回合。原D1和独立名称/条件对照共2个新observed turns完成，本包模型调用4/5次，完整source比较最终matched；对照首次字面标签拒绝后同回合修正，原件保留。两候选按冻结预期逐项评读通过，产品仍标未核；最终正文仅用既有canonical，来源/世界/任意正文不认证。4离线合同、默认0/host-only/前置来源拒绝0均通过。模型后台请求数unknown；旧两题和DSH0/6/18不改。runtime13及资产保持，只提交伴随源码/文档/证据；见 [本段回执](evidence/grounded-answer.json)。
 
 现成preview.13的 [显式Codex只读入口](CODEX-EXPLICIT.zh-CN.md) 已验证：官方独立STDIO/临时线程实际调用schema/source_check，正常入口2项、定向正反例4项，双层请求/返回一致。未知/不支持/换源拒绝保留；自包skill经临时extraRoots被发现、读取且清除后消失。默认模型/推理与全局配置保持，新增推理0；两题自然工具调用仍0、正文结论及旧DSH0/6/18不变。仅新增源码伴随客户端、输入快照和文档/回执，不改runtime、不新发行或重打12/13。见 [本段回执](evidence/codex-explicit-route.json)。

@@ -283,6 +283,8 @@ def main():
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--source-file', type=Path, required=True)
     parser.add_argument('--source-json-pointer')
+    parser.add_argument('--source-excerpt',
+                        help='Exact selected source text; passed unchanged to the existing source reader')
     parser.add_argument('--source-kind', choices=['arrows','decision-zh','permissions-zh'],
                         default='decision-zh')
     parser.add_argument('--component', choices=['ArchitectureExplorer','DecisionExplorer','DataChart'],
@@ -338,6 +340,8 @@ def main():
                        '--source-kind',args.source_kind]
         if args.source_json_pointer is not None:
             source_args += ['--source-json-pointer',args.source_json_pointer]
+        if args.source_excerpt is not None:
+            source_args += ['--source-excerpt',args.source_excerpt]
         tap = logs/'stdio-tap.mjs'
         tap.write_text(TAP)
         tap_config = logs/'tap-config.json'
