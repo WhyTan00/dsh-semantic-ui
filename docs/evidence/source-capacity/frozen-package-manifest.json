@@ -1,0 +1,1539 @@
+{
+  "version": "0.1.0-preview.23",
+  "sourceCommit": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+  "sourceTag": "v0.1.0-preview.23",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.23.tgz",
+  "sha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+  "runtimeEntrypoints": {
+    "dist/host.js": "6f3eb34ccd54334b88a5f3b0edcb6655d8fb1484074722a388cd811ab9e17f56",
+    "dist/client.js": "648164476a6694975a8b99e493c2bec246733a13f3a038a952e8e2f606d963df",
+    "dist/core.js": "7da51e61ec60df5033889de0f542b9ff251333a540ca81103dddcdb647410c0a",
+    "dist/mcp.js": "4fce71aa102e805633c5f1d6ba8de17fa7ba948bdcc447f70c0b8dde32de6e73",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "files": [
+    {
+      "path": "LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "README.md",
+      "size": 20951
+    },
+    {
+      "path": "SKILL.md",
+      "size": 5768
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 21028
+    },
+    {
+      "path": "cordis.patch.yml",
+      "size": 74
+    },
+    {
+      "path": "dist/client.js",
+      "size": 1874337
+    },
+    {
+      "path": "dist/client.js.LEGAL.txt",
+      "size": 2736
+    },
+    {
+      "path": "dist/core.js",
+      "size": 174360
+    },
+    {
+      "path": "dist/host.js",
+      "size": 234439
+    },
+    {
+      "path": "dist/mcp.js",
+      "size": 734722
+    },
+    {
+      "path": "dist/protocol.js",
+      "size": 21170
+    },
+    {
+      "path": "dist/types/capabilities.d.ts",
+      "size": 1028
+    },
+    {
+      "path": "dist/types/capacity-domain.d.ts",
+      "size": 266
+    },
+    {
+      "path": "dist/types/core.d.ts",
+      "size": 22147
+    },
+    {
+      "path": "dist/types/decision-mapping.d.ts",
+      "size": 1000
+    },
+    {
+      "path": "dist/types/dsh/definition.d.ts",
+      "size": 444
+    },
+    {
+      "path": "dist/types/dsh/events.d.ts",
+      "size": 442
+    },
+    {
+      "path": "dist/types/dsh/guidance.d.ts",
+      "size": 5204
+    },
+    {
+      "path": "dist/types/dsh/host.d.ts",
+      "size": 14992
+    },
+    {
+      "path": "dist/types/dsh/library.d.ts",
+      "size": 589
+    },
+    {
+      "path": "dist/types/dsh/presentation.d.ts",
+      "size": 510
+    },
+    {
+      "path": "dist/types/dsh/source-update.d.ts",
+      "size": 5660
+    },
+    {
+      "path": "dist/types/dsh/source.d.ts",
+      "size": 2195
+    },
+    {
+      "path": "dist/types/facts.d.ts",
+      "size": 4276
+    },
+    {
+      "path": "dist/types/math.d.ts",
+      "size": 4293
+    },
+    {
+      "path": "dist/types/mcp.d.ts",
+      "size": 299
+    },
+    {
+      "path": "dist/types/protocol.d.ts",
+      "size": 29228
+    },
+    {
+      "path": "dist/types/source-capacity.d.ts",
+      "size": 2624
+    },
+    {
+      "path": "dist/types/source-decision.d.ts",
+      "size": 3195
+    },
+    {
+      "path": "dist/types/source-delivery-meta.d.ts",
+      "size": 2088
+    },
+    {
+      "path": "dist/types/source-delivery.d.ts",
+      "size": 1769
+    },
+    {
+      "path": "dist/types/source-graph.d.ts",
+      "size": 3901
+    },
+    {
+      "path": "dist/types/source-numeric.d.ts",
+      "size": 1734
+    },
+    {
+      "path": "dist/types/source-permissions.d.ts",
+      "size": 1897
+    },
+    {
+      "path": "dist/types/source-update-contract.d.ts",
+      "size": 2931
+    },
+    {
+      "path": "dist/types/source-update.d.ts",
+      "size": 1182
+    },
+    {
+      "path": "dist/types/source-workflow.d.ts",
+      "size": 1844
+    },
+    {
+      "path": "dist/types/templates.d.ts",
+      "size": 26366
+    },
+    {
+      "path": "dist/types/theme.d.ts",
+      "size": 2557
+    },
+    {
+      "path": "docs/CHART-COMPARISON.zh-CN.md",
+      "size": 3541
+    },
+    {
+      "path": "docs/CODEX.zh-CN.md",
+      "size": 13789
+    },
+    {
+      "path": "docs/COLD-SOURCE-UPDATE.zh-CN.md",
+      "size": 7163
+    },
+    {
+      "path": "docs/DECLARATION-CHECKS.zh-CN.md",
+      "size": 4722
+    },
+    {
+      "path": "docs/evidence/architecture-360.png",
+      "size": 58867
+    },
+    {
+      "path": "docs/evidence/architecture-640.png",
+      "size": 62927
+    },
+    {
+      "path": "docs/evidence/architecture-large-neighborhood-360.png",
+      "size": 68228
+    },
+    {
+      "path": "docs/evidence/architecture-large-overview-360.png",
+      "size": 59680
+    },
+    {
+      "path": "docs/evidence/chart-360.png",
+      "size": 64327
+    },
+    {
+      "path": "docs/evidence/chart-640.png",
+      "size": 81160
+    },
+    {
+      "path": "docs/evidence/chart-comparison.json",
+      "size": 1883
+    },
+    {
+      "path": "docs/evidence/checks.json",
+      "size": 4926
+    },
+    {
+      "path": "docs/evidence/codex-cli.json",
+      "size": 913
+    },
+    {
+      "path": "docs/evidence/codex-explicit-route.json",
+      "size": 28509
+    },
+    {
+      "path": "docs/evidence/codex-mcp.json",
+      "size": 302
+    },
+    {
+      "path": "docs/evidence/codex-numeric-observation.json",
+      "size": 3759
+    },
+    {
+      "path": "docs/evidence/cold-source-update.json",
+      "size": 9715
+    },
+    {
+      "path": "docs/evidence/cold-source-update20.json",
+      "size": 1011
+    },
+    {
+      "path": "docs/evidence/decision-360.png",
+      "size": 95237
+    },
+    {
+      "path": "docs/evidence/decision-640.png",
+      "size": 86647
+    },
+    {
+      "path": "docs/evidence/decision-delivery-native.json",
+      "size": 2614
+    },
+    {
+      "path": "docs/evidence/decision-delivery-native.png",
+      "size": 252149
+    },
+    {
+      "path": "docs/evidence/decision-delivery-ptc.json",
+      "size": 2593
+    },
+    {
+      "path": "docs/evidence/decision-delivery-ptc.png",
+      "size": 252149
+    },
+    {
+      "path": "docs/evidence/decision-delivery.json",
+      "size": 2323
+    },
+    {
+      "path": "docs/evidence/declaration-consistency.json",
+      "size": 5439
+    },
+    {
+      "path": "docs/evidence/dsh-genui-LICENSE.txt",
+      "size": 1069
+    },
+    {
+      "path": "docs/evidence/ecosystem-adoption.json",
+      "size": 6509
+    },
+    {
+      "path": "docs/evidence/genui-compatibility.json",
+      "size": 1202
+    },
+    {
+      "path": "docs/evidence/genui-history.png",
+      "size": 12143
+    },
+    {
+      "path": "docs/evidence/genui-model-coexistence.json",
+      "size": 6403
+    },
+    {
+      "path": "docs/evidence/grounded-answer-source-kinds.json",
+      "size": 15073
+    },
+    {
+      "path": "docs/evidence/grounded-answer.json",
+      "size": 2748
+    },
+    {
+      "path": "docs/evidence/grounding-followup.json",
+      "size": 2086
+    },
+    {
+      "path": "docs/evidence/histogram-360.png",
+      "size": 73477
+    },
+    {
+      "path": "docs/evidence/histogram-640.png",
+      "size": 79090
+    },
+    {
+      "path": "docs/evidence/host-source.json",
+      "size": 18873
+    },
+    {
+      "path": "docs/evidence/linux-ci.json",
+      "size": 3917
+    },
+    {
+      "path": "docs/evidence/model-authorization.json",
+      "size": 1198
+    },
+    {
+      "path": "docs/evidence/native-lifecycle.json",
+      "size": 3232
+    },
+    {
+      "path": "docs/evidence/native-pagination.json",
+      "size": 927
+    },
+    {
+      "path": "docs/evidence/natural/README.md",
+      "size": 2737
+    },
+    {
+      "path": "docs/evidence/numeric-delivery.json",
+      "size": 4245
+    },
+    {
+      "path": "docs/evidence/packaging-validation.json",
+      "size": 221
+    },
+    {
+      "path": "docs/evidence/preview9.json",
+      "size": 2696
+    },
+    {
+      "path": "docs/evidence/preview10.json",
+      "size": 1831
+    },
+    {
+      "path": "docs/evidence/preview11.json",
+      "size": 1027
+    },
+    {
+      "path": "docs/evidence/preview12.json",
+      "size": 1292
+    },
+    {
+      "path": "docs/evidence/preview13.json",
+      "size": 1324
+    },
+    {
+      "path": "docs/evidence/prompt-size.json",
+      "size": 858
+    },
+    {
+      "path": "docs/evidence/ptc-lifecycle.json",
+      "size": 3232
+    },
+    {
+      "path": "docs/evidence/ptc-pagination.json",
+      "size": 927
+    },
+    {
+      "path": "docs/evidence/quality-natural-extra.json",
+      "size": 1925
+    },
+    {
+      "path": "docs/evidence/quality.json",
+      "size": 5243
+    },
+    {
+      "path": "docs/evidence/refusal-details.json",
+      "size": 1624
+    },
+    {
+      "path": "docs/evidence/release-preview6.json",
+      "size": 1405
+    },
+    {
+      "path": "docs/evidence/scale.json",
+      "size": 256
+    },
+    {
+      "path": "docs/evidence/semantic-grounding.json",
+      "size": 1580
+    },
+    {
+      "path": "docs/evidence/semantic-natural-extra.json",
+      "size": 34878
+    },
+    {
+      "path": "docs/evidence/source-check.json",
+      "size": 2949
+    },
+    {
+      "path": "docs/evidence/source-condition.json",
+      "size": 3982
+    },
+    {
+      "path": "docs/evidence/source-decision.json",
+      "size": 18551
+    },
+    {
+      "path": "docs/evidence/source-delivery-native.png",
+      "size": 158378
+    },
+    {
+      "path": "docs/evidence/source-delivery-ptc.png",
+      "size": 158642
+    },
+    {
+      "path": "docs/evidence/source-delivery.json",
+      "size": 12073
+    },
+    {
+      "path": "docs/evidence/source-numeric.json",
+      "size": 4682
+    },
+    {
+      "path": "docs/evidence/source-permissions.json",
+      "size": 25136
+    },
+    {
+      "path": "docs/evidence/source-scope.json",
+      "size": 3582
+    },
+    {
+      "path": "docs/evidence/source-update-adoption.json",
+      "size": 5642
+    },
+    {
+      "path": "docs/evidence/source-update.json",
+      "size": 6103
+    },
+    {
+      "path": "docs/evidence/source-workflow.json",
+      "size": 8073
+    },
+    {
+      "path": "docs/evidence/templates.json",
+      "size": 3634
+    },
+    {
+      "path": "docs/evidence/THIRD_PARTY_NOTICES.md",
+      "size": 705
+    },
+    {
+      "path": "docs/evidence/workflow-observation.json",
+      "size": 5515
+    },
+    {
+      "path": "docs/evidence/zero-fill-all-missing.json",
+      "size": 2509
+    },
+    {
+      "path": "docs/evidence/zero-fill-answer.json",
+      "size": 3514
+    },
+    {
+      "path": "docs/generated/dependency-licenses.json",
+      "size": 35351
+    },
+    {
+      "path": "docs/generated/protocol.schema.json",
+      "size": 46374
+    },
+    {
+      "path": "docs/generated/template.schema.json",
+      "size": 11268
+    },
+    {
+      "path": "docs/GENUI.zh-CN.md",
+      "size": 5976
+    },
+    {
+      "path": "docs/GROUNDING-FOLLOWUP.zh-CN.md",
+      "size": 7264
+    },
+    {
+      "path": "docs/HOST-SOURCE.zh-CN.md",
+      "size": 7440
+    },
+    {
+      "path": "docs/INSTALL.zh-CN.md",
+      "size": 9617
+    },
+    {
+      "path": "docs/MATURITY.zh-CN.md",
+      "size": 8507
+    },
+    {
+      "path": "docs/natural-question-results.json",
+      "size": 130409
+    },
+    {
+      "path": "docs/NUMERIC-DELIVERY.zh-CN.md",
+      "size": 4198
+    },
+    {
+      "path": "docs/OVERVIEW.zh-CN.md",
+      "size": 2793
+    },
+    {
+      "path": "docs/PROTOCOL.md",
+      "size": 11265
+    },
+    {
+      "path": "docs/QUALITY.zh-CN.md",
+      "size": 4356
+    },
+    {
+      "path": "docs/research/absorption-audit.json",
+      "size": 10567
+    },
+    {
+      "path": "docs/research/ABSORPTION-AUDIT.zh-CN.md",
+      "size": 19469
+    },
+    {
+      "path": "docs/research/ADOPTION.zh-CN.md",
+      "size": 18908
+    },
+    {
+      "path": "docs/research/GENUI-ABSORPTION.zh-CN.md",
+      "size": 7713
+    },
+    {
+      "path": "docs/research/MODEL-PROGRESS.zh-CN.md",
+      "size": 10106
+    },
+    {
+      "path": "docs/research/projects.json",
+      "size": 94124
+    },
+    {
+      "path": "docs/research/PROJECTS.md",
+      "size": 18753
+    },
+    {
+      "path": "docs/research/README.md",
+      "size": 10974
+    },
+    {
+      "path": "docs/SEMANTICS.zh-CN.md",
+      "size": 5420
+    },
+    {
+      "path": "docs/SOURCE-CAPACITY.zh-CN.md",
+      "size": 6046
+    },
+    {
+      "path": "docs/SOURCE-CHECKS.zh-CN.md",
+      "size": 6666
+    },
+    {
+      "path": "docs/SOURCE-CONDITIONAL.zh-CN.md",
+      "size": 4795
+    },
+    {
+      "path": "docs/SOURCE-DECISION.zh-CN.md",
+      "size": 9628
+    },
+    {
+      "path": "docs/SOURCE-DELIVERY.zh-CN.md",
+      "size": 8026
+    },
+    {
+      "path": "docs/SOURCE-NUMERIC.zh-CN.md",
+      "size": 6037
+    },
+    {
+      "path": "docs/SOURCE-PERMISSIONS.zh-CN.md",
+      "size": 7289
+    },
+    {
+      "path": "docs/SOURCE-UPDATE.zh-CN.md",
+      "size": 9944
+    },
+    {
+      "path": "docs/SOURCE-WORKFLOW.zh-CN.md",
+      "size": 8260
+    },
+    {
+      "path": "docs/TEMPLATES.zh-CN.md",
+      "size": 6080
+    },
+    {
+      "path": "docs/UPSTREAM.zh-CN.md",
+      "size": 4821
+    },
+    {
+      "path": "docs/VALIDATION.zh-CN.md",
+      "size": 25167
+    },
+    {
+      "path": "fixtures/capacity-source.json",
+      "size": 175
+    },
+    {
+      "path": "fixtures/questions.json",
+      "size": 3814
+    },
+    {
+      "path": "fixtures/source-capacity-refused.json",
+      "size": 1990
+    },
+    {
+      "path": "fixtures/source-capacity-request.json",
+      "size": 1989
+    },
+    {
+      "path": "fixtures/source-workflow-refused.json",
+      "size": 2814
+    },
+    {
+      "path": "fixtures/source-workflow-request.json",
+      "size": 2668
+    },
+    {
+      "path": "fixtures/template-questions.json",
+      "size": 1367
+    },
+    {
+      "path": "fixtures/workflow-source.json",
+      "size": 373
+    },
+    {
+      "path": "licenses/accepts@2.0.0/LICENSE",
+      "size": 1167
+    },
+    {
+      "path": "licenses/ajv-formats@3.0.1/LICENSE",
+      "size": 1074
+    },
+    {
+      "path": "licenses/ajv@8.20.0/LICENSE",
+      "size": 1090
+    },
+    {
+      "path": "licenses/argparse@2.0.1/LICENSE",
+      "size": 12775
+    },
+    {
+      "path": "licenses/babel__code-frame@7.29.7/LICENSE",
+      "size": 1106
+    },
+    {
+      "path": "licenses/babel__helper-validator-identifier@7.29.7/LICENSE",
+      "size": 1106
+    },
+    {
+      "path": "licenses/body-parser@2.4.0/LICENSE",
+      "size": 1172
+    },
+    {
+      "path": "licenses/bytes@3.1.2/LICENSE",
+      "size": 1153
+    },
+    {
+      "path": "licenses/call-bind-apply-helpers@1.0.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/call-bound@1.0.4/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/chokidar@5.0.0/LICENSE",
+      "size": 1124
+    },
+    {
+      "path": "licenses/classcat@5.0.5/LICENSE.md",
+      "size": 1080
+    },
+    {
+      "path": "licenses/content-disposition@2.0.1/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/content-type@1.0.5/LICENSE",
+      "size": 1089
+    },
+    {
+      "path": "licenses/content-type@2.1.0/LICENSE",
+      "size": 1089
+    },
+    {
+      "path": "licenses/cookie-signature@1.2.2/LICENSE",
+      "size": 1124
+    },
+    {
+      "path": "licenses/cookie@0.7.2/LICENSE",
+      "size": 1175
+    },
+    {
+      "path": "licenses/cors@2.8.6/LICENSE",
+      "size": 1095
+    },
+    {
+      "path": "licenses/cross-spawn@7.0.6/LICENSE",
+      "size": 1105
+    },
+    {
+      "path": "licenses/csstype@3.2.3/LICENSE",
+      "size": 1062
+    },
+    {
+      "path": "licenses/d3-color@3.1.0/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-dispatch@3.0.1/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-drag@3.0.0/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-ease@3.0.1/LICENSE",
+      "size": 1504
+    },
+    {
+      "path": "licenses/d3-interpolate@3.0.1/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-selection@3.0.0/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-timer@3.0.1/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-transition@3.0.1/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/d3-zoom@3.0.0/LICENSE",
+      "size": 731
+    },
+    {
+      "path": "licenses/dagrejs__dagre@3.1.1/LICENSE",
+      "size": 1062
+    },
+    {
+      "path": "licenses/dagrejs__graphlib@4.0.5/LICENSE",
+      "size": 1062
+    },
+    {
+      "path": "licenses/debug@4.4.3/LICENSE",
+      "size": 1139
+    },
+    {
+      "path": "licenses/deepseek-ai__cordis-plugin-group@1.0.5/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__cordis-plugin-include@1.0.10/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__cordis-plugin-loader@1.0.6/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__cordis-plugin-timer@1.1.7/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__cordis@4.0.5/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__cosmokit@1.8.6/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-agent-default-model@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-agent-preset-registry@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-agent@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-api-gateway@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-api-session-controller@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-app-boot@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-atomic-write@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-attachment@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-brand@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-chunked-list@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-client-file-upload@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-cmdline@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-commands@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-compaction-image-offload@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-compaction@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-config-editor@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-credentials@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-deque@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-file-reference@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-fs@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-hmr@0.2.1-rc.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-home-paths@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-http-proxy@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-launch-environment@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-llm@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-native-command@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-package-manifest@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-permission-presets@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-ptc-runtime@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-sandbox-policy@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-sandbox@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-scope@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format-catalog@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format-v0-to-v1@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format-v1-to-v2@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format-v2-to-v3@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format-v3-to-v4@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-format@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-persistence@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-projection-cache@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-projection@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-query@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session-title@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-session@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-settings@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-shell@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-skill@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-storage-domain@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-storage@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-subagent@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-subprocess@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-system-prompt@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-timeout@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-tool-todo@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-tools@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-typert-protocol@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-typert-registry@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-user-approval@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-util-crypto@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-util-time@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-util-values@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-util-workspace-path@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-working-directory@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__dsh-workspace@0.2.1-rc.2/LICENSE",
+      "size": 1065
+    },
+    {
+      "path": "licenses/deepseek-ai__schemastery@3.18.5/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/depd@2.0.0/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/dunder-proto@1.0.1/LICENSE",
+      "size": 1073
+    },
+    {
+      "path": "licenses/echarts@6.1.0/LICENSE",
+      "size": 11990
+    },
+    {
+      "path": "licenses/echarts@6.1.0/licenses/LICENSE-d3",
+      "size": 1475
+    },
+    {
+      "path": "licenses/echarts@6.1.0/NOTICE",
+      "size": 168
+    },
+    {
+      "path": "licenses/ee-first@1.1.1/LICENSE",
+      "size": 1099
+    },
+    {
+      "path": "licenses/encodeurl@2.0.0/LICENSE",
+      "size": 1089
+    },
+    {
+      "path": "licenses/es-define-property@1.0.1/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/es-errors@1.3.0/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/es-object-atoms@1.1.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/escape-html@1.0.3/LICENSE",
+      "size": 1157
+    },
+    {
+      "path": "licenses/eslint-community__regexpp@4.12.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/etag@1.8.1/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/eventsource-parser@3.1.1/LICENSE",
+      "size": 1098
+    },
+    {
+      "path": "licenses/eventsource@3.0.7/LICENSE",
+      "size": 1087
+    },
+    {
+      "path": "licenses/express-rate-limit@8.7.1/license",
+      "size": 1077
+    },
+    {
+      "path": "licenses/express@5.3.0/LICENSE",
+      "size": 1249
+    },
+    {
+      "path": "licenses/fast-deep-equal@3.1.3/LICENSE",
+      "size": 1074
+    },
+    {
+      "path": "licenses/fast-uri@3.1.9/LICENSE",
+      "size": 1813
+    },
+    {
+      "path": "licenses/finalhandler@2.1.1/LICENSE",
+      "size": 1119
+    },
+    {
+      "path": "licenses/forwarded@0.2.0/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/fresh@2.0.0/LICENSE",
+      "size": 1174
+    },
+    {
+      "path": "licenses/function-bind@1.1.2/LICENSE",
+      "size": 1052
+    },
+    {
+      "path": "licenses/get-intrinsic@1.3.0/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/get-proto@1.0.1/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/gopd@1.2.0/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/has-symbols@1.1.0/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/hasown@2.0.4/LICENSE",
+      "size": 1083
+    },
+    {
+      "path": "licenses/hono__node-server@2.1.5/LICENSE",
+      "size": 1101
+    },
+    {
+      "path": "licenses/hono@4.13.13/LICENSE",
+      "size": 1101
+    },
+    {
+      "path": "licenses/http-errors@2.0.1/LICENSE",
+      "size": 1168
+    },
+    {
+      "path": "licenses/iconv-lite@0.7.3/LICENSE",
+      "size": 1064
+    },
+    {
+      "path": "licenses/inherits@2.0.4/LICENSE",
+      "size": 749
+    },
+    {
+      "path": "licenses/ip-address@10.7.5/LICENSE",
+      "size": 1061
+    },
+    {
+      "path": "licenses/ipaddr.js@1.9.1/LICENSE",
+      "size": 1087
+    },
+    {
+      "path": "licenses/is-promise@4.0.0/LICENSE",
+      "size": 1058
+    },
+    {
+      "path": "licenses/isexe@2.0.0/LICENSE",
+      "size": 765
+    },
+    {
+      "path": "licenses/jose@6.2.13/LICENSE.md",
+      "size": 1079
+    },
+    {
+      "path": "licenses/js-tokens@4.0.0/LICENSE",
+      "size": 1103
+    },
+    {
+      "path": "licenses/js-yaml@4.3.2/LICENSE",
+      "size": 1084
+    },
+    {
+      "path": "licenses/json-render__core@0.21.1/LICENSE",
+      "size": 10931
+    },
+    {
+      "path": "licenses/json-render__react@0.21.1/LICENSE",
+      "size": 10931
+    },
+    {
+      "path": "licenses/json-schema-traverse@1.0.0/LICENSE",
+      "size": 1074
+    },
+    {
+      "path": "licenses/json-schema-typed@8.0.2/LICENSE.md",
+      "size": 2859
+    },
+    {
+      "path": "licenses/math-intrinsics@1.1.0/LICENSE",
+      "size": 1073
+    },
+    {
+      "path": "licenses/media-typer@1.1.1/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/merge-descriptors@2.0.0/license",
+      "size": 1231
+    },
+    {
+      "path": "licenses/mime-db@1.54.0/LICENSE",
+      "size": 1172
+    },
+    {
+      "path": "licenses/mime-types@3.0.2/LICENSE",
+      "size": 1167
+    },
+    {
+      "path": "licenses/modelcontextprotocol__sdk@1.32.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/ms@2.1.3/license.md",
+      "size": 1079
+    },
+    {
+      "path": "licenses/negotiator@1.1.0/LICENSE",
+      "size": 1177
+    },
+    {
+      "path": "licenses/node-addon-native-custom-loader@0.1.9/LICENSE",
+      "size": 1096
+    },
+    {
+      "path": "licenses/node-addon-require-builtin-darwin-arm64@0.1.9/LICENSE",
+      "size": 1096
+    },
+    {
+      "path": "licenses/node-addon-require-builtin@0.1.9/LICENSE",
+      "size": 1096
+    },
+    {
+      "path": "licenses/object-assign@4.1.1/license",
+      "size": 1119
+    },
+    {
+      "path": "licenses/object-inspect@1.13.4/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/on-finished@2.4.2/LICENSE",
+      "size": 1167
+    },
+    {
+      "path": "licenses/once@1.4.0/LICENSE",
+      "size": 765
+    },
+    {
+      "path": "licenses/parseurl@1.3.3/LICENSE",
+      "size": 1173
+    },
+    {
+      "path": "licenses/path-key@3.1.1/license",
+      "size": 1109
+    },
+    {
+      "path": "licenses/path-to-regexp@8.4.2/LICENSE",
+      "size": 1103
+    },
+    {
+      "path": "licenses/picocolors@1.1.1/LICENSE",
+      "size": 787
+    },
+    {
+      "path": "licenses/picomatch@4.0.7/LICENSE",
+      "size": 1091
+    },
+    {
+      "path": "licenses/pkce-challenge@5.0.1/LICENSE",
+      "size": 1057
+    },
+    {
+      "path": "licenses/proxy-addr@2.0.8/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/qs@6.16.1/LICENSE.md",
+      "size": 1600
+    },
+    {
+      "path": "licenses/range-parser@1.3.0/LICENSE",
+      "size": 1178
+    },
+    {
+      "path": "licenses/raw-body@3.0.2/LICENSE",
+      "size": 1181
+    },
+    {
+      "path": "licenses/react-dom@19.3.1/LICENSE",
+      "size": 1088
+    },
+    {
+      "path": "licenses/react@19.3.1/LICENSE",
+      "size": 1088
+    },
+    {
+      "path": "licenses/readdirp@5.1.1/LICENSE",
+      "size": 1114
+    },
+    {
+      "path": "licenses/require-from-string@2.0.2/license",
+      "size": 1128
+    },
+    {
+      "path": "licenses/resolve.exports@2.0.4/license",
+      "size": 1114
+    },
+    {
+      "path": "licenses/router@2.2.0/LICENSE",
+      "size": 1128
+    },
+    {
+      "path": "licenses/safer-buffer@2.1.2/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/scheduler@0.28.0/LICENSE",
+      "size": 1088
+    },
+    {
+      "path": "licenses/semver@7.8.5/LICENSE",
+      "size": 765
+    },
+    {
+      "path": "licenses/send@1.2.1/LICENSE",
+      "size": 1128
+    },
+    {
+      "path": "licenses/serve-static@2.2.1/LICENSE",
+      "size": 1189
+    },
+    {
+      "path": "licenses/setprototypeof@1.2.0/LICENSE",
+      "size": 727
+    },
+    {
+      "path": "licenses/shebang-command@2.0.0/license",
+      "size": 1116
+    },
+    {
+      "path": "licenses/shebang-regex@3.0.0/license",
+      "size": 1109
+    },
+    {
+      "path": "licenses/side-channel-list@1.0.1/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/side-channel-map@1.0.1/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/side-channel-weakmap@1.0.2/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/side-channel@1.1.1/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/standard-schema__spec@1.1.0/LICENSE",
+      "size": 1071
+    },
+    {
+      "path": "licenses/statuses@2.0.2/LICENSE",
+      "size": 1172
+    },
+    {
+      "path": "licenses/toidentifier@1.0.1/LICENSE",
+      "size": 1108
+    },
+    {
+      "path": "licenses/tslib@2.3.0/LICENSE.txt",
+      "size": 655
+    },
+    {
+      "path": "licenses/type-is@2.1.0/LICENSE",
+      "size": 1172
+    },
+    {
+      "path": "licenses/types__d3-color@3.1.3/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__d3-drag@3.0.7/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__d3-interpolate@3.0.4/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__d3-selection@3.0.12/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__d3-transition@3.0.9/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__d3-zoom@3.0.9/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__react-dom@19.2.3/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/types__react@19.2.14/LICENSE",
+      "size": 1141
+    },
+    {
+      "path": "licenses/undici@8.11.2/LICENSE",
+      "size": 1090
+    },
+    {
+      "path": "licenses/unpipe@1.0.0/LICENSE",
+      "size": 1114
+    },
+    {
+      "path": "licenses/use-sync-external-store@1.7.0/LICENSE",
+      "size": 1088
+    },
+    {
+      "path": "licenses/vary@1.1.2/LICENSE",
+      "size": 1094
+    },
+    {
+      "path": "licenses/which@2.0.2/LICENSE",
+      "size": 765
+    },
+    {
+      "path": "licenses/wrappy@1.0.2/LICENSE",
+      "size": 765
+    },
+    {
+      "path": "licenses/ws@8.22.0/LICENSE",
+      "size": 1183
+    },
+    {
+      "path": "licenses/xyflow__react@12.12.0/LICENSE",
+      "size": 1073
+    },
+    {
+      "path": "licenses/xyflow__system@0.0.83/LICENSE",
+      "size": 1073
+    },
+    {
+      "path": "licenses/yaml@2.9.1/LICENSE",
+      "size": 738
+    },
+    {
+      "path": "licenses/zod-to-json-schema@3.25.2/LICENSE",
+      "size": 745
+    },
+    {
+      "path": "licenses/zod@4.4.3/LICENSE",
+      "size": 1072
+    },
+    {
+      "path": "licenses/zod@4.6.7/LICENSE",
+      "size": 1072
+    },
+    {
+      "path": "licenses/zrender@6.1.0/LICENSE",
+      "size": 1509
+    },
+    {
+      "path": "licenses/zustand@4.5.7/LICENSE",
+      "size": 1070
+    },
+    {
+      "path": "package.json",
+      "size": 6341
+    },
+    {
+      "path": "plugin.json",
+      "size": 243
+    },
+    {
+      "path": "skills/semantic-ui-checks/SKILL.md",
+      "size": 5252
+    }
+  ],
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.23.tgz",
+    "bytes": 30976735,
+    "sha256": "8d641094fccdbab3cad8507ee70e95ed5ec1f74365dd17be3342b714c588374c",
+    "files": 650
+  },
+  "status": "preview; see validation evidence"
+}

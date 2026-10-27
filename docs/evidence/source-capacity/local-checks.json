@@ -1,0 +1,26 @@
+{
+  "typecheck": "passed",
+  "targetedTests": {
+    "tests": 55,
+    "files": 8,
+    "status": "passed"
+  },
+  "pythonOffline": {
+    "tests": 16,
+    "status": "passed"
+  },
+  "precisionFollowup": {
+    "tests": 6,
+    "files": 2,
+    "status": "passed",
+    "reason": "reject decimal text that rounds to a different quantity"
+  },
+  "releaseIsolation": "passed",
+  "researchInventory": {
+    "projects": 35,
+    "pinnedFiles": 139,
+    "status": "consistent"
+  },
+  "frozenSource": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+  "newObservedModelTurns": 0
+}

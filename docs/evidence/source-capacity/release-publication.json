@@ -1,0 +1,47 @@
+{
+  "id": 425340528,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.23",
+  "tag": "v0.1.0-preview.23",
+  "targetCommitish": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+  "authorLogin": "WhyTan00",
+  "prerelease": true,
+  "draft": false,
+  "publishedAt": "2026-10-27T11:03:23Z",
+  "tagVerification": {
+    "tag": "v0.1.0-preview.23",
+    "peeledCommit": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+    "expectedSourceCommit": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+    "matches": true
+  },
+  "repositoryPublic": true,
+  "assets": [
+    {
+      "name": "package-manifest.json",
+      "size": 34050,
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.23/package-manifest.json",
+      "digest": "sha256:bafc96094d5ca9a7650586da2e92299e42127ced7309a1bd55aef6749d75465c"
+    },
+    {
+      "name": "SHA256SUMS",
+      "size": 229,
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.23/SHA256SUMS",
+      "digest": "sha256:a9071bc3bf94f9989fb42dbf0c4b3e8e148079838114d43f2f19a321975e9b82"
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.23.tgz",
+      "size": 2656588,
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.23/whytan-dsh-semantic-ui-0.1.0-preview.23.tgz",
+      "digest": "sha256:8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8"
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.23.tgz",
+      "size": 30976735,
+      "state": "uploaded",
+      "browser_download_url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.23/whytan-dsh-semantic-ui-evidence-0.1.0-preview.23.tgz",
+      "digest": "sha256:8d641094fccdbab3cad8507ee70e95ed5ec1f74365dd17be3342b714c588374c"
+    }
+  ]
+}

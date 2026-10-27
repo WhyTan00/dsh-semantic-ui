@@ -1,0 +1,258 @@
+{
+  "checkedAt": "2026-10-27T10:58:15.715549+00:00",
+  "macRuns": [
+    {
+      "run": "host-1793097594635",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 57616,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 57617,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "ports": {
+        "host": 56719,
+        "fixture": 56718
+      },
+      "portsObservedClosed": {
+        "port": true,
+        "fixturePort": true
+      },
+      "allOwnPidsGone": true
+    },
+    {
+      "run": "host-1793097692153",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 58325,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 58326,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 58595,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "ports": {
+        "host": 57488,
+        "fixture": 57487
+      },
+      "portsObservedClosed": {
+        "port": true,
+        "fixturePort": true
+      },
+      "allOwnPidsGone": true
+    },
+    {
+      "run": "host-1793097871568",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 60189,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 60190,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 60482,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "ports": {
+        "host": 58847,
+        "fixture": 58846
+      },
+      "portsObservedClosed": {
+        "port": true,
+        "fixturePort": true
+      },
+      "allOwnPidsGone": true
+    },
+    {
+      "run": "host-1793098258671",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 64230,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 64231,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 64748,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "ports": {
+        "host": 61541,
+        "fixture": 61540
+      },
+      "portsObservedClosed": {
+        "port": true,
+        "fixturePort": true
+      },
+      "allOwnPidsGone": true
+    }
+  ],
+  "linuxCleanup": {
+    "processes": [
+      {
+        "kind": "fixture",
+        "pid": 3260,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      },
+      {
+        "kind": "native",
+        "pid": 3261,
+        "exitCode": 0,
+        "signalCode": null
+      },
+      {
+        "kind": "ptc",
+        "pid": 3633,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "port": 38875,
+    "fixturePort": 35045
+  },
+  "linuxPortsProbedFromMac": false,
+  "cli": {
+    "checkedAt": "2026-10-27T10:52:54.805721+00:00",
+    "cases": [
+      {
+        "case": "answer-good23",
+        "status": "delivered",
+        "checks": [
+          {
+            "tool": "semantic_ui_schema",
+            "codexId": 5,
+            "mcpId": 2,
+            "argumentsAndStructuredResponseEqual": true,
+            "withinHostRequestInterval": true
+          },
+          {
+            "tool": "semantic_ui_source_check",
+            "codexId": 6,
+            "mcpId": 3,
+            "argumentsAndStructuredResponseEqual": true,
+            "withinHostRequestInterval": true
+          }
+        ],
+        "sourceFileAndQuestionHashesMatch": true,
+        "stdoutEqualsAnswer": true,
+        "modelTurnRequests": 0,
+        "appServerExit": 0,
+        "tapExitRecords": [
+          {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          {
+            "code": null,
+            "signal": "SIGTERM"
+          }
+        ],
+        "allOwnPidsGone": true,
+        "temporaryRootRemoved": true,
+        "temporarySkillRootsRemoved": true,
+        "globalConfigShaUnchanged": true
+      },
+      {
+        "case": "answer-refused23",
+        "status": "withheld",
+        "checks": [
+          {
+            "tool": "semantic_ui_schema",
+            "codexId": 5,
+            "mcpId": 2,
+            "argumentsAndStructuredResponseEqual": true,
+            "withinHostRequestInterval": true
+          },
+          {
+            "tool": "semantic_ui_source_check",
+            "codexId": 6,
+            "mcpId": 3,
+            "argumentsAndStructuredResponseEqual": true,
+            "withinHostRequestInterval": true
+          }
+        ],
+        "sourceFileAndQuestionHashesMatch": true,
+        "stdoutEqualsAnswer": true,
+        "modelTurnRequests": 0,
+        "appServerExit": 0,
+        "tapExitRecords": [
+          {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          {
+            "code": null,
+            "signal": "SIGTERM"
+          }
+        ],
+        "allOwnPidsGone": true,
+        "temporaryRootRemoved": true,
+        "temporarySkillRootsRemoved": true,
+        "globalConfigShaUnchanged": true
+      }
+    ]
+  },
+  "newObservedModelTurns": 0,
+  "olderGHTurnsUnchanged": 2,
+  "older0520TurnsUnchanged": 2,
+  "additionalReadOnlyCapture": {
+    "acceptedFinalInstallReused": true,
+    "port": 54527,
+    "fixturePort": 54528,
+    "patchRestored": true,
+    "processes": [
+      {
+        "pid": 75469,
+        "exitCode": null,
+        "signalCode": "SIGTERM"
+      },
+      {
+        "pid": 75470,
+        "exitCode": 0,
+        "signalCode": null
+      }
+    ],
+    "portsObservedClosed": true,
+    "allOwnPidsGone": true,
+    "newFixtureInferenceRequests": 0,
+    "newObservedModelTurns": 0
+  }
+}

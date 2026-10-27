@@ -1,0 +1,68 @@
+{
+  "version": "0.1.0-preview.23",
+  "acceptedArchiveReused": true,
+  "newInstallation": false,
+  "readonlyHistory": true,
+  "newFixtureInferenceRequests": 0,
+  "newObservedModelTurns": 0,
+  "pageErrors": [],
+  "captures": [
+    {
+      "mode": "native",
+      "sidebarPagesLoaded": 1,
+      "widths": [
+        {
+          "width": 640,
+          "height": 1474.21875,
+          "top": 245,
+          "bottom": 1719.21875,
+          "viewportHeight": 7000,
+          "clientWidth": 638,
+          "scrollWidth": 638
+        },
+        {
+          "width": 360,
+          "height": 1858.21875,
+          "top": 245,
+          "bottom": 2103.21875,
+          "viewportHeight": 7000,
+          "clientWidth": 358,
+          "scrollWidth": 358
+        }
+      ],
+      "sourceInitialRestored": 80,
+      "originalHistoryReopened": true,
+      "completeRootWithinViewport": true
+    },
+    {
+      "mode": "ptc",
+      "sidebarPagesLoaded": 0,
+      "widths": [
+        {
+          "width": 640,
+          "height": 1474.21875,
+          "top": 245,
+          "bottom": 1719.21875,
+          "viewportHeight": 7000,
+          "clientWidth": 638,
+          "scrollWidth": 638
+        },
+        {
+          "width": 360,
+          "height": 1858.21875,
+          "top": 245,
+          "bottom": 2103.21875,
+          "viewportHeight": 7000,
+          "clientWidth": 358,
+          "scrollWidth": 358
+        }
+      ],
+      "sourceInitialRestored": 80,
+      "originalHistoryReopened": true,
+      "completeRootWithinViewport": true
+    }
+  ],
+  "postCaptureInstalledPackageFilesCompared": 379,
+  "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+  "noSourceOverlay": true
+}

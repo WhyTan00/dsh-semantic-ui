@@ -1,0 +1,81 @@
+{
+  "checkedAt": "2026-10-27T10:52:54.805721+00:00",
+  "cases": [
+    {
+      "case": "answer-good23",
+      "status": "delivered",
+      "checks": [
+        {
+          "tool": "semantic_ui_schema",
+          "codexId": 5,
+          "mcpId": 2,
+          "argumentsAndStructuredResponseEqual": true,
+          "withinHostRequestInterval": true
+        },
+        {
+          "tool": "semantic_ui_source_check",
+          "codexId": 6,
+          "mcpId": 3,
+          "argumentsAndStructuredResponseEqual": true,
+          "withinHostRequestInterval": true
+        }
+      ],
+      "sourceFileAndQuestionHashesMatch": true,
+      "stdoutEqualsAnswer": true,
+      "modelTurnRequests": 0,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "allOwnPidsGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    },
+    {
+      "case": "answer-refused23",
+      "status": "withheld",
+      "checks": [
+        {
+          "tool": "semantic_ui_schema",
+          "codexId": 5,
+          "mcpId": 2,
+          "argumentsAndStructuredResponseEqual": true,
+          "withinHostRequestInterval": true
+        },
+        {
+          "tool": "semantic_ui_source_check",
+          "codexId": 6,
+          "mcpId": 3,
+          "argumentsAndStructuredResponseEqual": true,
+          "withinHostRequestInterval": true
+        }
+      ],
+      "sourceFileAndQuestionHashesMatch": true,
+      "stdoutEqualsAnswer": true,
+      "modelTurnRequests": 0,
+      "appServerExit": 0,
+      "tapExitRecords": [
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        },
+        {
+          "code": null,
+          "signal": "SIGTERM"
+        }
+      ],
+      "allOwnPidsGone": true,
+      "temporaryRootRemoved": true,
+      "temporarySkillRootsRemoved": true,
+      "globalConfigShaUnchanged": true
+    }
+  ]
+}

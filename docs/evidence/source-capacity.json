@@ -1,0 +1,274 @@
+{
+  "schema": "semantic-ui-source-capacity-acceptance-v1",
+  "acceptedAt": "2026-10-27T11:08:01.310362+00:00",
+  "version": "0.1.0-preview.23",
+  "sourceCommit": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+  "sourceTag": "v0.1.0-preview.23",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.23.tgz",
+    "sha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+    "bytes": 2656588,
+    "files": 379
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.23.tgz",
+    "bytes": 30976735,
+    "sha256": "8d641094fccdbab3cad8507ee70e95ed5ec1f74365dd17be3342b714c588374c",
+    "files": 650
+  },
+  "release": {
+    "id": 425340528,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.23",
+    "public": true,
+    "prerelease": true,
+    "draft": false,
+    "author": "WhyTan00",
+    "allFourAnonymous200MatchLocalAndLinux": true
+  },
+  "ci": {
+    "id": 40491658156,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40491658156",
+    "headSha": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+    "conclusion": "success",
+    "scope": "capacity_only; no old full host matrices"
+  },
+  "independentSources": {
+    "originalD2File": "natural/r9-D2.json",
+    "originalD2FileSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+    "questionSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+    "privateFrozenExpectationsSha256": "0981d6b6307e4c0f32171a3b2c2b2771b23b6f1af394bc51f05f8c53548bc090",
+    "publicExpectations": "../../fixtures/source-capacity-expectations.json",
+    "publicExpectationsSha256": "36fff4b7e8ff4d3a6a2ce57ef11320b6d9cf75c7b8080886c766e2c1567c1e98",
+    "additionalDomainExpectations": "../../fixtures/source-capacity-domain-expectations.json",
+    "additionalDomainExpectationsSha256": "e8863c7b23ae60c1dafe393aa9108daf1b83b7e0175f46b47d393d085b4d7b53"
+  },
+  "newResult": {
+    "sourceKind": "capacity-zh",
+    "component": "DecisionExplorer",
+    "componentProtocol": "1.4 unchanged",
+    "mapping": [
+      "capacityDimensionId",
+      "demandInputId",
+      "requirementId"
+    ],
+    "hardCondition": "provided ceiling >= required local demand in exactly the same unit",
+    "currentVersusPossible": "Current source80GB is initial; possible300GB is only an explicit local hypothesis, never a confirmed plan. Independent renamed150/550GB case also passed.",
+    "qualitativeAttributes": "deployment and maintenance remain separate; unspecified counterparts unknown",
+    "sourceCoverage": "Complete selected text only; unsupported clauses, units or quantities are refused",
+    "projection": "normal render rechecks current source then rebuilds all annotations and numeric requirement; no keyword filtering of prose"
+  },
+  "checks": {
+    "targetedLocal": {
+      "tests": 55,
+      "files": 8
+    },
+    "pythonOffline": 16,
+    "precisionFollowup": 6,
+    "normalCLI": {
+      "matched": "delivered",
+      "wrongCurrentInitial": "withheld",
+      "callsPerRun": 2,
+      "turnStartRequests": 0,
+      "wireRequestAndStructuredResponseEqual": true
+    },
+    "finalArchiveMacAndLinux": {
+      "allFilesComparedBeforeHost": 379,
+      "nativeCasesPerPlatform": 6,
+      "ptcCasesPerPlatform": 6,
+      "legacyRestored": "DecisionExplorer1.2",
+      "localFutureQuantityChangesHardCapacity": true,
+      "negativeAndOverBoundInvalidUnknown": true,
+      "emptyAndNonfiniteUnknown": true,
+      "zeroValid": true,
+      "genericNegativeStillAllowed": true,
+      "localEditingNewFixtureRequests": 0,
+      "refreshRestoresSourceInitial": true,
+      "changedSourceRejectsOldMatchAndRetainsOldHistory": true,
+      "width360NoRootOverflow": true,
+      "pageErrors": []
+    },
+    "additionalReadOnlyCapture": {
+      "acceptedArchiveReused": true,
+      "newInstallation": false,
+      "modes": [
+        "native",
+        "ptc"
+      ],
+      "widths": [
+        640,
+        360
+      ],
+      "completeRootWithinViewport": true,
+      "originalSourceInitialRestored": 80,
+      "newFixtureInferenceRequests": 0,
+      "pageErrors": [],
+      "postCaptureInstalledFilesCompared": 379
+    }
+  },
+  "scopeCorrection": {
+    "file": "source-capacity/install-scope-correction23.json",
+    "rawInstallSummaryLabel": "full / all-four-fixtures was an inherited incorrect summary label",
+    "actual": "6 capacity cases per mode; case records determine scope",
+    "harnessLabelFixedAfterFreeze": true,
+    "originalLinuxRunDidNotIncludeLabelFix": true,
+    "runtimeAndArchivesUnchanged": true,
+    "postFreezeCaptureFix": true,
+    "originalLinuxDoesNotIncludeCaptureFix": true
+  },
+  "newObservedModelTurns": 0,
+  "priorGHTurnsUnchanged": 2,
+  "prior0520TurnsUnchanged": 2,
+  "oldNaturalResults": "0 pass / 6 fail / 18 requests unchanged; original D2 raw, old preference-only control and A2 erratum retained",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "limits": [
+    "Finite storage grammar and exact-unit quantities only; no implicit conversion.",
+    "Capacity eligibility is not overall recommendation, pricing, operating or migration cost.",
+    "No new natural model acceptance, arbitrary prose certification, full GenUI replacement or real-device/screen-reader acceptance.",
+    "New capacity-zh metadata needs23 reader; no promise that22 readers understand it."
+  ],
+  "resources": "Four owned macOS lifecycle runs and one additional read-only capture terminal; own PIDs gone, ports observed closed and private profile patch restored. Two CLI runs and Linux children terminal. CI, both artifact downloads, release upload and four anonymous GETs terminal; no shared/global service changes.",
+  "assets": [
+    {
+      "path": "source-capacity/all-resources-cleanup23.json",
+      "sha256": "2b2b4f5ce2b3ac81899addfd0f44993f36d14619f9ba746bb5cfc6c7604114e4",
+      "bytes": 5853
+    },
+    {
+      "path": "source-capacity/answer-good.json",
+      "sha256": "6439af5714d38b862272522c9e34c6f49eccb5e5ebb6aff907d1e9bc46018498",
+      "bytes": 56617
+    },
+    {
+      "path": "source-capacity/answer-good.md",
+      "sha256": "4487285107a7e0561044134d0fbdce5a95a5a65b90f4feed987aaf445bb1e44c",
+      "bytes": 1038
+    },
+    {
+      "path": "source-capacity/answer-refused.json",
+      "sha256": "ef0cee0b7dc5aa41b3a163122f83bf7c476f29f7aa55c5926da306bf3d946a40",
+      "bytes": 47795
+    },
+    {
+      "path": "source-capacity/answer-refused.md",
+      "sha256": "3639962bd0662d078da0424f0e7a07ef90450662581c5d0f7f27dc5cadf32a4d",
+      "bytes": 167
+    },
+    {
+      "path": "source-capacity/ci-byte-verification.json",
+      "sha256": "4a0aeb810e22df6593beb5c25f2df1c97217dcba13d0ce0cab2c6e00ed0addb6",
+      "bytes": 1007
+    },
+    {
+      "path": "source-capacity/ci-result.json",
+      "sha256": "fa939db76cdd449581d1269edc31a7903b4eb416b8951cf1bac3d0f1f9d095fd",
+      "bytes": 12830
+    },
+    {
+      "path": "source-capacity/cli-verification23.json",
+      "sha256": "572a93d2f5f0d1b3d19710dcb1b357961bb2acf8b767530409fdf616cb27e86b",
+      "bytes": 2045
+    },
+    {
+      "path": "source-capacity/frozen-package-manifest.json",
+      "sha256": "bafc96094d5ca9a7650586da2e92299e42127ced7309a1bd55aef6749d75465c",
+      "bytes": 34050
+    },
+    {
+      "path": "source-capacity/install-scope-correction23.json",
+      "sha256": "b60f5c855924d22c7a184e290781be77bfb864ade3af20edd3823532bbfc7dd0",
+      "bytes": 497
+    },
+    {
+      "path": "source-capacity/linux-install.json",
+      "sha256": "5411ae489752f6ca50c8a54946bc9c2b8847208cfa2d99f304db4df3f433a12c",
+      "bytes": 604
+    },
+    {
+      "path": "source-capacity/linux-installed-byte-check.json",
+      "sha256": "46645787ac34acd695f907d012bc861335f833d3dc9c98d6b94219fd2885ea37",
+      "bytes": 68
+    },
+    {
+      "path": "source-capacity/linux-native.json",
+      "sha256": "9a329a42a1eadde78c62aa6e58fd800f692a53c0bff87b1ab980ffaa2672d0a7",
+      "bytes": 28789
+    },
+    {
+      "path": "source-capacity/linux-ptc.json",
+      "sha256": "fd8c4d254ba8ebd825c07103c46b3db3e9225e76b8d49a41b04616d1772faaba",
+      "bytes": 28576
+    },
+    {
+      "path": "source-capacity/local-checks.json",
+      "sha256": "e00643a3546d7739209e89ca6c0b5e5ef28193a70fa6b12f87f86929f0c2f628",
+      "bytes": 559
+    },
+    {
+      "path": "source-capacity/macos-install.json",
+      "sha256": "5411ae489752f6ca50c8a54946bc9c2b8847208cfa2d99f304db4df3f433a12c",
+      "bytes": 604
+    },
+    {
+      "path": "source-capacity/macos-installed-byte-check.json",
+      "sha256": "46645787ac34acd695f907d012bc861335f833d3dc9c98d6b94219fd2885ea37",
+      "bytes": 68
+    },
+    {
+      "path": "source-capacity/macos-native-360px-first-capture.png",
+      "sha256": "89120a8297a87147af4fd08cc668235f48ec81a2b2c9280e0fe903a641faf3f6",
+      "bytes": 146992
+    },
+    {
+      "path": "source-capacity/macos-native-360px.png",
+      "sha256": "d93bc076ed42df58d1ec864d2a0fcaa85a843236b2f111b31e997333f881821f",
+      "bytes": 227839
+    },
+    {
+      "path": "source-capacity/macos-native.json",
+      "sha256": "faa0dd95406bdc05c10099a4d7c4923b7eead80429148875b08acf3ca0430bfc",
+      "bytes": 28789
+    },
+    {
+      "path": "source-capacity/macos-ptc-360px-first-capture.png",
+      "sha256": "dd17dd3624626021182e443047fafccf0bfa6be7b7b769b39b7bab6c5e9ee770",
+      "bytes": 147169
+    },
+    {
+      "path": "source-capacity/macos-ptc-360px.png",
+      "sha256": "d93bc076ed42df58d1ec864d2a0fcaa85a843236b2f111b31e997333f881821f",
+      "bytes": 227839
+    },
+    {
+      "path": "source-capacity/macos-ptc.json",
+      "sha256": "68f33bdc0ffef3b8df5d0bd3d305b7e3584be3325ce4cbb21524ffe493b0fa97",
+      "bytes": 28576
+    },
+    {
+      "path": "source-capacity/preserved-verification-failures.json",
+      "sha256": "dfd15c908c0a7b6e11163407cca71262ddb3333b773a012a2a0b58e41355be56",
+      "bytes": 2817
+    },
+    {
+      "path": "source-capacity/public-downloads.json",
+      "sha256": "99c3760e0401113c62d7086c28fcf715ca06e4a07598a245162acc1a24f2b572",
+      "bytes": 2630
+    },
+    {
+      "path": "source-capacity/release-publication.json",
+      "sha256": "008073238643bf4880f6f9a18408f36eab886eb81c4b27599db02bdf494a1fbd",
+      "bytes": 1963
+    },
+    {
+      "path": "source-capacity/settled-capture-cleanup.json",
+      "sha256": "b48081080b9012fcb9fbb525eaeb62a1bd8e3b400877786c9a9f7591b997d385",
+      "bytes": 313
+    },
+    {
+      "path": "source-capacity/settled-capture.json",
+      "sha256": "74f17e2708aa26603985b914a16f124fc9a9b2815785aee00c7531901df15811",
+      "bytes": 1706
+    }
+  ]
+}

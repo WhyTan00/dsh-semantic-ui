@@ -1,6 +1,8 @@
 # 容量来源、当前需求与本地假设
 
-这是 preview.23 的有限实现合同；最终归档、正常安装、Linux CI与公开下载接受另记，不能用开发源码检查代替。它复用现有 DecisionExplorer 和数字硬条件，不增加组件协议字段、图引擎或预留开关。
+[preview.23已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.23)，冻结source/tag `6393ec7277beb36e81ac679ebd3ae43966efe56d`。379文件归档正常安装后的macOS/Linux Native/PTC、真实本地容量/无效域、刷新与旧Decision1.2、正常CLI正反例和四匿名资产已[分别接受](evidence/source-capacity.json)。冻结后的接受记录不回灌或重打归档；安装摘要的范围标签更正另记。下述有限合同复用现有DecisionExplorer和数字硬条件，不增加组件协议字段、图引擎或预留开关。
+
+附加只读截图验收复用同一23安装重开Native/PTC历史，640/360容器无根溢出，完整组件处于视口内；0新夹具推理/模型，任务私有patch已还原、进程/端口关闭。首次被宿主固定栏遮挡的截图保留；扩大截图视口和安装摘要标签的测试修订均在源码冻结后，不改运行包，也不冒原Linux已执行这两项修订。见[截图与清理记录](evidence/source-capacity/settled-capture.json)。
 
 原始 D2 的问题是：A 上限100GB、部署简单，B 上限1000GB、维护复杂；现在需求80GB，以后可能到300GB。旧核心已有容量算术，但旧来源合同不能独立核对这些量值，模型又混同部署/维护，并承诺只连偏好的 reserveNow 会改变硬性排除。原 [D2证据](evidence/natural/r9-D2.json)与[旧缺口记录](GROUNDING-FOLLOWUP.zh-CN.md)保留，不修改原 view、正文或测试结果。
 

@@ -1,0 +1,32 @@
+{
+  "checkedAt": "2026-10-27T11:03:10.340718+00:00",
+  "ciRunId": 40491658156,
+  "headSha": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+  "zipDownloadTerminal": true,
+  "assets": [
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.23.tgz",
+      "bytes": 2656588,
+      "sha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+      "sameLocalAndLinux": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.23.tgz",
+      "bytes": 30976735,
+      "sha256": "8d641094fccdbab3cad8507ee70e95ed5ec1f74365dd17be3342b714c588374c",
+      "sameLocalAndLinux": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "a9071bc3bf94f9989fb42dbf0c4b3e8e148079838114d43f2f19a321975e9b82",
+      "sameLocalAndLinux": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 34050,
+      "sha256": "bafc96094d5ca9a7650586da2e92299e42127ced7309a1bd55aef6749d75465c",
+      "sameLocalAndLinux": true
+    }
+  ]
+}

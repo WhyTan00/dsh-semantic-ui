@@ -1,0 +1,19 @@
+{
+  "port": 54527,
+  "fixturePort": 54528,
+  "patchRestored": true,
+  "processes": [
+    {
+      "pid": 75469,
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "pid": 75470,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "portsObservedClosed": true,
+  "allOwnPidsGone": true
+}

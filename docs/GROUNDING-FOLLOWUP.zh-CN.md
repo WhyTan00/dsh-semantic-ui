@@ -1,6 +1,6 @@
 # 来源映射改进与协议1.3验证
 
-后续preview.23候选以[完整容量来源合同](SOURCE-CAPACITY.zh-CN.md)处理D2的新投影：来源上限/单位/当前需求绑定实际数值硬条件；未来可能点作明确假设，部署与维护各自未知保留。它不修改原D2 preference-only控件或raw承诺，下表原冻结结果不升级为自然通过；最终包/宿主接受另记，新增模型0。
+后续preview.23以[完整容量来源合同](SOURCE-CAPACITY.zh-CN.md)交付D2的新投影：上限/精确单位/当前需求绑定实际数值硬条件，未来可能点作明确假设，部署与维护未知分开。最终归档的macOS/Linux正常安装、Native/PTC本地容量/无效域和刷新/旧1.2及CLI正反例已[分层接受](evidence/source-capacity.json)。它不修改原D2 preference-only控件或raw承诺，下表原冻结结果不升级为自然通过；新增模型0。
 
 22的[最终分层接受](evidence/source-workflow.json)已补齐：371文件归档、macOS/Linux Native/PTC与旧图恢复、普通答复正反例及四匿名资产分别核验。明确给定失败规则可核，原始模型正文仍不认证；旧研究与自然失败范围不重写。
 

@@ -1,5 +1,7 @@
 # 从 DSH 当前输入核对比较内容
 
+23新增[完整capacity-zh来源](SOURCE-CAPACITY.zh-CN.md)，由当前唯一用户源的存储语法选择。量值/单位/当前需求/未来可能点分别核对，正常render重核后派生现有Decision数值硬条件和独立属性说明；本地数字是假设，不能更新来源或确认计划。仅绑定容量控件处理非负域，其他数字合同不改；[最终归档接受](evidence/source-capacity.json)包括本机/Linux Native/PTC、无效值、刷新/旧1.2和正常CLI。新kind需23 reader，本段0模型。
+
 22的[最终分层接受](evidence/source-workflow.json)已补齐：371文件归档、macOS/Linux Native/PTC与旧图恢复、普通答复正反例及四匿名资产分别核验。明确给定失败规则可核，原始模型正文仍不认证；旧研究与自然失败范围不重写。
 
 后续22已新增[workflow-zh](SOURCE-WORKFLOW.zh-CN.md)：由完整当前输入的明确流程语法选择，箭头、失败触发、retry-only和no-rollback分别保留来源；tool参数不能换源。新元数据kind需要22兼容reader，旧来源/组件历史保持。最终归档接受另记，不把原先三语法的旧矩阵扩称为新规则已验收。

@@ -1,0 +1,12 @@
+{
+  "rawValidationSuite": "full",
+  "rawClientRenderedAllFourFixtures": true,
+  "actualSuite": "source-bound-capacity",
+  "actualCasesPerMode": 6,
+  "actualLegacyProtocol": "1.2",
+  "reason": "capacity flag was missing only from the generic install summary switch; separate real browser case records are authoritative for scope",
+  "originalReceiptRetained": true,
+  "verificationHarnessLabelFixedAfterFreeze": true,
+  "runtimeArchiveChanged": false,
+  "originalLinuxRunIncludesLabelFix": false
+}

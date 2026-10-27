@@ -1,0 +1,912 @@
+{
+  "mode": "explicit client calls, not model-selected tools",
+  "threadId": "01a17cfc-b7f1-7b22-aad5-c6a5477cd241",
+  "model": "gpt-6.1-sol",
+  "reasoningEffort": "max",
+  "modelProvider": "openai",
+  "serviceTier": "default",
+  "identity": {
+    "archiveSha256": "8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8",
+    "mcpEntrySha256": "4fce71aa102e805633c5f1d6ba8de17fa7ba948bdcc447f70c0b8dde32de6e73",
+    "sourceCommit": "6393ec7277beb36e81ac679ebd3ae43966efe56d",
+    "clientSha256": "671d86e786de910af285916e67cccccdeea56fd33ffdcf0204fc25f777d50cfe",
+    "skillSha256": "a6b35e2a99076e7c6462a04f894dcad2efe8a2584c83ae8fb091f33d9d442e2d",
+    "archivedCoreSha256": "7da51e61ec60df5033889de0f542b9ff251333a540ca81103dddcdb647410c0a",
+    "archivedProtocolSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "toolCatalog": [
+    "semantic_ui_schema",
+    "semantic_ui_source_check"
+  ],
+  "schema": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"component\":\"DecisionExplorer\",\"protocolVersion\":\"1.4\",\"payloadSchema\":{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"dimensions\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"kind\":{\"type\":\"string\",\"enum\":[\"number\",\"boolean\"]},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"semanticRole\":{\"type\":\"string\",\"enum\":[\"capability-support\",\"resource-need\"]}},\"required\":[\"id\",\"label\"],\"additionalProperties\":false}},\"options\":{\"minItems\":2,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"values\":{\"type\":\"object\",\"propertyNames\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"additionalProperties\":{\"anyOf\":[{\"anyOf\":[{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},{\"type\":\"number\"},{\"type\":\"boolean\"}]},{\"type\":\"null\"}]}},\"advantages\":{\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"disadvantages\":{\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"suitableWhen\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"label\",\"values\",\"advantages\",\"disadvantages\",\"suitableWhen\",\"evidence\"],\"additionalProperties\":false}},\"inputs\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"type\":{\"type\":\"string\",\"enum\":[\"number\",\"boolean\",\"choice\"]},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"choices\":{\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80}},\"initial\":{\"anyOf\":[{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]},{\"type\":\"null\"}]},\"semanticRole\":{\"type\":\"string\",\"enum\":[\"capability-need\",\"resource-available\"]},\"expectedEffect\":{\"type\":\"string\",\"enum\":[\"hard\",\"preference-only\",\"hard-and-preference\"]}},\"required\":[\"id\",\"label\",\"type\",\"initial\",\"expectedEffect\"],\"additionalProperties\":false}},\"rules\":{\"default\":[],\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"priority\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":100},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false},\"recommend\":{\"minItems\":1,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"reason\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"origin\":{\"type\":\"string\",\"enum\":[\"given\",\"model-judgment\"]},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"priority\",\"when\",\"recommend\",\"reason\",\"origin\",\"evidence\"],\"additionalProperties\":false}},\"constraints\":{\"default\":[],\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"optionId\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false},\"reason\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"optionId\",\"when\",\"reason\",\"evidence\"],\"additionalProperties\":false}},\"requirements\":{\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"dimension\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"relation\":{\"type\":\"string\",\"enum\":[\"at-least\",\"at-most\",\"supports\",\"requires-availability\"]},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false}},\"required\":[\"id\",\"dimension\",\"input\",\"relation\"],\"additionalProperties\":false}}},\"required\":[\"title\",\"dimensions\",\"options\",\"inputs\",\"rules\",\"constraints\"],\"additionalProperties\":false},\"envelope\":{\"protocolVersion\":\"1.4\",\"displayId\":\"stable-subject-id\",\"revision\":1,\"component\":\"DecisionExplorer\",\"summary\":\"A short readable conclusion.\",\"payload\":\"Follow payloadSchema.\"},\"delivery\":\"Validate structured data before using the host rendering channel. Validation does not itself display a component.\",\"semantics\":\"Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.\",\"hostRendering\":\"Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.\"}"
+      }
+    ],
+    "structuredContent": {
+      "component": "DecisionExplorer",
+      "protocolVersion": "1.4",
+      "payloadSchema": {
+        "$schema": "https://json-schema.org/draft/2020-12/schema",
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
+          },
+          "dimensions": {
+            "minItems": 1,
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "kind": {
+                  "type": "string",
+                  "enum": [
+                    "number",
+                    "boolean"
+                  ]
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "semanticRole": {
+                  "type": "string",
+                  "enum": [
+                    "capability-support",
+                    "resource-need"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "options": {
+            "minItems": 2,
+            "maxItems": 8,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "values": {
+                  "type": "object",
+                  "propertyNames": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  },
+                  "additionalProperties": {
+                    "anyOf": [
+                      {
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "minLength": 1,
+                            "maxLength": 1200
+                          },
+                          {
+                            "type": "number"
+                          },
+                          {
+                            "type": "boolean"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  }
+                },
+                "advantages": {
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "disadvantages": {
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "suitableWhen": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "values",
+                "advantages",
+                "disadvantages",
+                "suitableWhen",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "inputs": {
+            "default": [],
+            "maxItems": 12,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "type": {
+                  "type": "string",
+                  "enum": [
+                    "number",
+                    "boolean",
+                    "choice"
+                  ]
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "choices": {
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  }
+                },
+                "initial": {
+                  "anyOf": [
+                    {
+                      "anyOf": [
+                        {
+                          "type": "number"
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        }
+                      ]
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                },
+                "semanticRole": {
+                  "type": "string",
+                  "enum": [
+                    "capability-need",
+                    "resource-available"
+                  ]
+                },
+                "expectedEffect": {
+                  "type": "string",
+                  "enum": [
+                    "hard",
+                    "preference-only",
+                    "hard-and-preference"
+                  ]
+                }
+              },
+              "required": [
+                "id",
+                "label",
+                "type",
+                "initial",
+                "expectedEffect"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "rules": {
+            "default": [],
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "priority": {
+                  "type": "integer",
+                  "minimum": 0,
+                  "maximum": 100
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                },
+                "recommend": {
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                  }
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "origin": {
+                  "type": "string",
+                  "enum": [
+                    "given",
+                    "model-judgment"
+                  ]
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "priority",
+                "when",
+                "recommend",
+                "reason",
+                "origin",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "constraints": {
+            "default": [],
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "optionId": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                },
+                "reason": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                },
+                "evidence": {
+                  "default": [],
+                  "maxItems": 12,
+                  "type": "array",
+                  "items": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                }
+              },
+              "required": [
+                "id",
+                "optionId",
+                "when",
+                "reason",
+                "evidence"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "requirements": {
+            "maxItems": 24,
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "dimension": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "input": {
+                  "type": "string",
+                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                },
+                "relation": {
+                  "type": "string",
+                  "enum": [
+                    "at-least",
+                    "at-most",
+                    "supports",
+                    "requires-availability"
+                  ]
+                },
+                "when": {
+                  "type": "object",
+                  "properties": {
+                    "mode": {
+                      "type": "string",
+                      "enum": [
+                        "all",
+                        "any"
+                      ]
+                    },
+                    "clauses": {
+                      "minItems": 1,
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "input": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "op": {
+                            "type": "string",
+                            "enum": [
+                              "eq",
+                              "ne",
+                              "gt",
+                              "gte",
+                              "lt",
+                              "lte"
+                            ]
+                          },
+                          "value": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              },
+                              {
+                                "type": "string",
+                                "maxLength": 120
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "input",
+                          "op",
+                          "value"
+                        ],
+                        "additionalProperties": false
+                      }
+                    }
+                  },
+                  "required": [
+                    "mode",
+                    "clauses"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "id",
+                "dimension",
+                "input",
+                "relation"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "title",
+          "dimensions",
+          "options",
+          "inputs",
+          "rules",
+          "constraints"
+        ],
+        "additionalProperties": false
+      },
+      "envelope": {
+        "protocolVersion": "1.4",
+        "displayId": "stable-subject-id",
+        "revision": 1,
+        "component": "DecisionExplorer",
+        "summary": "A short readable conclusion.",
+        "payload": "Follow payloadSchema."
+      },
+      "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+      "semantics": "Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.",
+      "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+    }
+  },
+  "sourceChecks": [
+    {
+      "request": {
+        "view": {
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "displayId": "capacity-fixture",
+          "revision": 1,
+          "summary": "UNVERIFIED_MODEL_SUMMARY",
+          "payload": {
+            "title": "UNVERIFIED_MODEL_TITLE",
+            "dimensions": [
+              {
+                "id": "limit-fixture",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-fixture-0",
+                "label": "A",
+                "values": {
+                  "limit-fixture": 100
+                },
+                "advantages": [
+                  "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+                ],
+                "disadvantages": [
+                  "UNVERIFIED_COST"
+                ],
+                "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+                "evidence": []
+              },
+              {
+                "id": "option-fixture-1",
+                "label": "B",
+                "values": {
+                  "limit-fixture": 1000
+                },
+                "advantages": [
+                  "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+                ],
+                "disadvantages": [
+                  "UNVERIFIED_COST"
+                ],
+                "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "quantity-fixture",
+                "label": "需求容量",
+                "type": "number",
+                "unit": "GB",
+                "initial": 300,
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "cover-fixture",
+                "dimension": "limit-fixture",
+                "input": "quantity-fixture",
+                "relation": "at-least"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "limit-fixture",
+          "demandInputId": "quantity-fixture",
+          "requirementId": "cover-fixture"
+        }
+      },
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"capacity-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24\",\"jsonPointer\":\"/question\",\"textSha256\":\"8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c\",\"excerptSha256\":\"8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":158,\"textUTF8Bytes\":158},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations\"},\"sourceFactsVerified\":false,\"identityVerified\":false,\"freeProseVerified\":false,\"status\":\"compared\",\"sourceCapacity\":{\"options\":[{\"label\":\"A\",\"ceiling\":{\"value\":100,\"unit\":\"GB\",\"spans\":[{\"textByteStart\":28,\"textByteEnd\":33}]},\"deployment\":{\"value\":\"simple\",\"spans\":[{\"textByteStart\":36,\"textByteEnd\":48}]},\"maintenance\":{\"value\":null,\"spans\":[]}},{\"label\":\"B\",\"ceiling\":{\"value\":1000,\"unit\":\"GB\",\"spans\":[{\"textByteStart\":60,\"textByteEnd\":66}]},\"deployment\":{\"value\":null,\"spans\":[]},\"maintenance\":{\"value\":\"complex\",\"spans\":[{\"textByteStart\":69,\"textByteEnd\":81}]}}],\"current\":{\"value\":80,\"unit\":\"GB\",\"spans\":[{\"textByteStart\":97,\"textByteEnd\":101}]},\"possibleFuture\":{\"value\":300,\"unit\":\"GB\",\"spans\":[{\"textByteStart\":120,\"textByteEnd\":125}]},\"confirmedFuturePlan\":null},\"comparison\":{\"status\":\"mismatch\"},\"issues\":[{\"code\":\"SOURCE_CURRENT_DEMAND\",\"path\":\"$.view.payload.inputs\",\"reason\":\"One hard numeric demand input must start at the current source quantity in the exact unit, not the possible future point. Local edits are hypotheses.\"}],\"fieldChecks\":[{\"optionId\":\"option-fixture-0\",\"sourceOption\":\"A\",\"kind\":\"capacity-limit\",\"dimensionId\":\"limit-fixture\",\"role\":\"provided-capacity\",\"expected\":100,\"actual\":100,\"unit\":\"GB\",\"sourceSpans\":[{\"textByteStart\":28,\"textByteEnd\":33}],\"status\":\"matched\"},{\"optionId\":\"option-fixture-1\",\"sourceOption\":\"B\",\"kind\":\"capacity-limit\",\"dimensionId\":\"limit-fixture\",\"role\":\"provided-capacity\",\"expected\":1000,\"actual\":1000,\"unit\":\"GB\",\"sourceSpans\":[{\"textByteStart\":60,\"textByteEnd\":66}],\"status\":\"matched\"}],\"inputChecks\":[{\"inputId\":\"quantity-fixture\",\"role\":\"required-capacity\",\"expected\":80,\"actual\":300,\"unit\":\"GB\",\"sourceSpans\":[{\"textByteStart\":97,\"textByteEnd\":101}],\"status\":\"mismatch\"}],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false},\"canonicalExplanation\":{\"status\":\"withheld\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "capacity-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+            "jsonPointer": "/question",
+            "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 158,
+              "textUTF8Bytes": 158
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+          },
+          "sourceFactsVerified": false,
+          "identityVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceCapacity": {
+            "options": [
+              {
+                "label": "A",
+                "ceiling": {
+                  "value": 100,
+                  "unit": "GB",
+                  "spans": [
+                    {
+                      "textByteStart": 28,
+                      "textByteEnd": 33
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": "simple",
+                  "spans": [
+                    {
+                      "textByteStart": 36,
+                      "textByteEnd": 48
+                    }
+                  ]
+                },
+                "maintenance": {
+                  "value": null,
+                  "spans": []
+                }
+              },
+              {
+                "label": "B",
+                "ceiling": {
+                  "value": 1000,
+                  "unit": "GB",
+                  "spans": [
+                    {
+                      "textByteStart": 60,
+                      "textByteEnd": 66
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": null,
+                  "spans": []
+                },
+                "maintenance": {
+                  "value": "complex",
+                  "spans": [
+                    {
+                      "textByteStart": 69,
+                      "textByteEnd": 81
+                    }
+                  ]
+                }
+              }
+            ],
+            "current": {
+              "value": 80,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 97,
+                  "textByteEnd": 101
+                }
+              ]
+            },
+            "possibleFuture": {
+              "value": 300,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 120,
+                  "textByteEnd": 125
+                }
+              ]
+            },
+            "confirmedFuturePlan": null
+          },
+          "comparison": {
+            "status": "mismatch"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_CURRENT_DEMAND",
+              "path": "$.view.payload.inputs",
+              "reason": "One hard numeric demand input must start at the current source quantity in the exact unit, not the possible future point. Local edits are hypotheses."
+            }
+          ],
+          "fieldChecks": [
+            {
+              "optionId": "option-fixture-0",
+              "sourceOption": "A",
+              "kind": "capacity-limit",
+              "dimensionId": "limit-fixture",
+              "role": "provided-capacity",
+              "expected": 100,
+              "actual": 100,
+              "unit": "GB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 28,
+                  "textByteEnd": 33
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "option-fixture-1",
+              "sourceOption": "B",
+              "kind": "capacity-limit",
+              "dimensionId": "limit-fixture",
+              "role": "provided-capacity",
+              "expected": 1000,
+              "actual": 1000,
+              "unit": "GB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 60,
+                  "textByteEnd": 66
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "quantity-fixture",
+              "role": "required-capacity",
+              "expected": 80,
+              "actual": 300,
+              "unit": "GB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 97,
+                  "textByteEnd": 101
+                }
+              ],
+              "status": "mismatch"
+            }
+          ],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false
+          },
+          "canonicalExplanation": {
+            "status": "withheld"
+          }
+        }
+      }
+    }
+  ],
+  "skill": {
+    "name": "semantic-ui-checks",
+    "scope": "user",
+    "sha256": "a6b35e2a99076e7c6462a04f894dcad2efe8a2584c83ae8fb091f33d9d442e2d",
+    "discoveredAndRead": true,
+    "absentBeforeAndAfterTemporaryRoot": true
+  },
+  "newModelTurns": 0,
+  "answer": {
+    "observedModelTurns": 0,
+    "status": "host-only",
+    "delivery": {
+      "kind": "host-source-canonical",
+      "status": "withheld",
+      "text": "当前来源或比较请求未通过完整核对，未交付已核答复。\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。",
+      "sourceTextSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "sourceDocumentSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+      "modelCandidateUsed": false,
+      "freeProseVerified": false,
+      "sourceFactsVerified": false,
+      "identityVerified": false
+    }
+  },
+  "terminal": {
+    "appServerPid": 64275,
+    "exitCode": 0,
+    "sentMethods": [
+      "initialize",
+      "thread/start",
+      "mcpServerStatus/list",
+      "mcpServerStatus/list",
+      "mcpServer/tool/call",
+      "mcpServer/tool/call",
+      "skills/list",
+      "skills/extraRoots/set",
+      "skills/list",
+      "fs/readFile",
+      "skills/extraRoots/set",
+      "skills/list",
+      "skills/extraRoots/set",
+      "thread/unsubscribe"
+    ],
+    "modelTurnRequests": 0,
+    "newModelTurns": 0,
+    "globalConfigShaUnchanged": true
+  }
+}

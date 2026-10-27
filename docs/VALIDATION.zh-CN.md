@@ -1,6 +1,8 @@
 # 验证证据与未通过项
 
-23开发候选的容量来源核对和正常本地探索单列[SOURCE-CAPACITY](SOURCE-CAPACITY.zh-CN.md)：现有core输入方向、原始/未来分层与两类属性分别处理。开发Native/PTC正反/刷新及容量域通过，首次定位器失败保存；尚不据此接受最终包、Linux、普通CLI或自然模型。原D2 raw、0/6/18及G/H范围不变，新增模型0。
+preview.23已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.23)：源/tag6393ec7277beb36e81ac679ebd3ae43966efe56d，运行SHA8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8，379文件最终归档先逐字节核再正常安装；macOS/Linux Native/PTC各6例、真实300/550本地容量变化、无效/空/非有限/0、原始需求刷新及旧Decision1.2通过，pageerror0。普通CLI正确请求delivered、300冒当前80 withheld，两层wire相同、0turn/start。55项8文件+16离线检查与精度窄回归通过，CI40491658156成功，四份匿名HTTPS200资产与本机/Linux同字节。通用安装摘要曾误标full/all-four，按真实案例更正范围并保留原件；摘要标签修正为冻结后的验证代码，未改包，不冒原Linux已跑该修订。本段新模型0，原D2/raw、0/6/18、A2及G/H保持；见[最终分层接受](evidence/source-capacity.json)。
+
+附加只读截图验收复用同一23安装重开Native/PTC历史，640/360容器无根溢出，完整组件处于视口内；0新夹具推理/模型，任务私有patch已还原、进程/端口关闭。首次被宿主固定栏遮挡的截图保留；扩大截图视口和安装摘要标签的测试修订均在源码冻结后，不改运行包，也不冒原Linux已执行这两项修订。见[截图与清理记录](evidence/source-capacity/settled-capture.json)。
 
 后续[G/H独立观察](CODEX-WORKFLOW-OBSERVATION.zh-CN.md)单列于[新证据](evidence/workflow-observation.json)：原22包/技能/客户端不改，G关键规则正确但附加边界覆盖partial；H未知策略与首次新图来源比较met/matched。模型语义调用分别1/4，内置发现各2，宿主显式调用各3；原文没有用宿主答案替换。2/2新观察均completed、无重试，backend请求数未知，sourceFacts/identity/freeProse认证false。两层参数/structured response核对、stdout与宿主文本、四次进程终态/临时根清理通过。无新runtime、发行或旧矩阵重演；以下22发行接受的0模型与旧自然0/6/18不变。
 

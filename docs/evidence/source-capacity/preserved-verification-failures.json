@@ -1,0 +1,35 @@
+{
+  "firstTypecheck": {
+    "cause": "New capacity source kind was not yet in sourceLabels UI map",
+    "fix": "Added corresponding label before freeze"
+  },
+  "firstBrowserFailure": {
+    "run": "host-1793097594635",
+    "cause": "Nested already-scoped has locator did not resolve the row",
+    "actualFirstDomExcerpt": "not a preferred option or verified source facts.\n    - paragraph: \"Meets active requirements: B. Excluded: A. Unknown: none.\"\n    - region \"Requirement checks\":\n      - table:\n        - rowgroup:\n          - row \"Option / input Current check Status\":\n            - columnheader \"Option / input\"\n            - columnheader \"Current check\"\n            - columnheader \"Status\"\n        - rowgroup:\n          - row \"A / 需求容量（本地假设） 100 ≥ 300 GB fail\":\n            - rowheader \"A / 需求容量（本地假设）\"\n            - cell \"100 ≥ 300 GB\"\n            - cell \"fail\"\n          - row \"B / 需求容量（本地假设） 1000 ≥ 300 GB pass\":\n            - rowheader \"B / 需求容量（本地假设）\"\n            - cell \"1000 ≥ 300 GB\"\n            - cell \"pass\"\n  - strong: No matching rule — no winner inferred\n  - paragraph: Local deterministic rules. No model request. Highest priority wins; tied rules combine recommendations. This evaluates the supplied policy; it does not verify the policy against the source facts.\n  - paragraph: A model-declared origin is not approval. Preference exploratio",
+    "fix": "Locate exact rowheader then its parent row; independent expected capacity values unchanged"
+  },
+  "firstPythonProbe": {
+    "cause": "Wrong test filename pattern selected zero tests",
+    "result": "NO TESTS RAN, not a pass",
+    "fix": "Use actual test_codex_*.py; 16 offline checks passed"
+  },
+  "installSummary": {
+    "raw": "full / clientRenderedAllFourFixtures=true",
+    "actual": "capacity-only six cases per mode, original/renamed positives, three refusals and legacy1.2",
+    "originalReceiptsRetained": true,
+    "postFreezeHarnessLabelFix": true,
+    "doesNotChangeRuntime": true,
+    "originalLinuxDidNotRunLabelFix": true
+  },
+  "firstCapture": {
+    "issue": "Root screenshot exceeded original viewport and was overlaid by fixed host header/composer. Numeric/overflow assertions were valid, but the picture did not show the complete source block.",
+    "originalImagesRetained": [
+      "macos-native-360px-first-capture.png",
+      "macos-ptc-360px-first-capture.png"
+    ],
+    "followup": "One read-only re-open of both saved histories in the same accepted379-file install; whole root within viewport at640/360,0fixture inference, no new installation or runtime change.",
+    "browserCaptureHarnessFixedAfterFreeze": true,
+    "originalLinuxRunDoesNotIncludeCaptureFix": true
+  }
+}
