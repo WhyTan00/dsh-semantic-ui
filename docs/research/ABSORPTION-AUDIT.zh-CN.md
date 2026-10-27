@@ -1,5 +1,7 @@
 # 典型开源项目采用复核
 
+现有26另补[完整来源撤回与同会话历史](../NORMAL-SOURCE-REVISION.zh-CN.md)的实际采用证据：正常新消息使true→unknown→false分别绑定新source/视图，旧初值误用拒绝，局部假设不写源，旧快照保留。0真实模型、运行未改；这检验状态/来源/历史分层，不是模型原文理解、通用表单、增量指代解析或35/139全部采用完成。
+
 25进一步将统计与解释分离落实到[均值和合计的比较基准](../NUMERIC-BASELINE.zh-CN.md)：完整读数记录可与普通问题分开，负均值/零和/全缺失均保留原mask和真实完整范围未知。[两个新引导观察](../CODEX-NUMERIC-BASELINE-OBSERVATION.zh-CN.md)的raw有限met、新图首次matched；原六题与研究35项目/139文件不改写。26按用户新要求补[默认中文和语言选择](../LANGUAGE.zh-CN.md)，继续缩小固定文案本地化缺口，真实读屏/手机仍未据此完成。
 
 [两个新容量模型观察](../CODEX-CAPACITY-OBSERVATION.zh-CN.md)带来实际采用缺口：23首题原文正确但7次view未matched。24已补[可发现字段合同/精确诊断](../CAPACITY-CONTRACT.zh-CN.md)，最终正常归档/CLI/宿主接受，另一独立对照当前view首次matched。题目/版本不同，不推因果基准或全面采用；没有新上游依赖/图种/目录扩张。

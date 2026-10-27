@@ -1,0 +1,8 @@
+{
+  "fixtureRequestsChecked": 42,
+  "privateCriteriaFilePathAbsentFromRequestBodies": true,
+  "criteriaMetadataAbsentFromRequestBodies": true,
+  "modelCalls": 0,
+  "fixtureWorkspaces": "empty task-owned documents directory; source inputs intentionally provided",
+  "sourceAndToolResultsAreExpectedRuntimeData": true
+}

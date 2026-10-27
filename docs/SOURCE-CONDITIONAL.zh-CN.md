@@ -38,3 +38,5 @@ preview.17扩展现有decision-zh来源核对器：完整的“若字面布尔�
 DSH复用现有当前own-turn来源适配及正常render/checkpoint：显式映射必须匹配完整来源，才保存原条件说明和重建的源内视图；后续本地需求假设不改变该快照。协议仍为1.4，未增加身份认证、任意自由正文判真或世界事实认证。`sourceFactsVerified/identityVerified/freeProseVerified`保持既有false边界。没有全局注册、主客户端热切或新renderer。
 
 这是新runtime范围，不能把16旧归档当已支持条件语法；实际归档、普通入口、模型采用、宿主显示/恢复、CI和公开资产分别以17后补回执为准。原自然题/首次失败及旧0/6/18结果不回写。源码合同、确定性宿主验证、有指引模型评读是不同证据，不推普遍准确率。
+
+后续以现有26归档完成[同会话完整来源修订](NORMAL-SOURCE-REVISION.zh-CN.md)：普通完整消息true→unknown→false，各自新source与新checkpoint对应，旧初值误用拒绝，本地试算不写回源，历史刷新保留各版本。Native/PTC各3个确定性回合、0真实模型，没有运行改动或新发行；这不扩成增量指代消息解析或模型原文理解验收。

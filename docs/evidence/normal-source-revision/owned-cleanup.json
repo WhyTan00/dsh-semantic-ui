@@ -1,0 +1,71 @@
+{
+  "observedAt": "2026-10-27T14:48:27.245103+00:00",
+  "runs": [
+    {
+      "run": "host-1793111733736",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 65532,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 65533,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "knownHostAndFixturePidsAbsent": true,
+      "ports": [
+        {
+          "port": 59857,
+          "listening": false
+        },
+        {
+          "port": 59856,
+          "listening": false
+        }
+      ],
+      "fixtureRequests": 10
+    },
+    {
+      "run": "host-1793112012695",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 67350,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 67351,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 67809,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "knownHostAndFixturePidsAbsent": true,
+      "ports": [
+        {
+          "port": 61227,
+          "listening": false
+        },
+        {
+          "port": 61226,
+          "listening": false
+        }
+      ],
+      "fixtureRequests": 32
+    }
+  ],
+  "sharedServicesChanged": false,
+  "newRealModelTurns": 0
+}

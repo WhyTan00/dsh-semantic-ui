@@ -1,0 +1,1593 @@
+{
+  "kind": "verification-receipt-attribution-error",
+  "run": "host-1793111733736",
+  "submittedCompleteSourceTurns": 2,
+  "mode": "native",
+  "ptcStarted": false,
+  "initialWrongSelection": {
+    "actual": "11c32d68547ef0bc8b3f8d5641b49ff092752c5137df0cb5358383b3a514f13d",
+    "expected": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1"
+  },
+  "cause": "Initial collector selected the first source-check in all conversation-history tool messages, not the current input response. Runtime returned the correct new unknown source and refused the stale true view.",
+  "repair": "Select tool responses after the last exact current-source user message before inspecting any result hash; no expected-output hash filter, no runtime change.",
+  "originalUUIDsNotResent": true,
+  "completedCurrentSourceChecks": [
+    {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "decision-zh",
+      "source": {
+        "input": "DSH current own-turn message content snapshot; not a file",
+        "hostContext": {
+          "sessionId": "session-9f9b7937-2b80-4313-9f59-9b134edfca46",
+          "turn": 2,
+          "turnStartSeq": 36,
+          "messageId": "a4442927-eda3-43fd-8931-5bfb7d4998a0",
+          "messageSeq": 39,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 0,
+          "requestId": "3ce3a926-ecdb-4c61-919b-29408c965a17"
+        },
+        "textSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "excerptSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 324,
+          "textUTF8Bytes": 324
+        },
+        "identityVerified": false,
+        "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+        "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source author/original human identity",
+        "general natural-language meaning outside the documented grammar",
+        "component annotations and arbitrary free prose",
+        "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+      ],
+      "status": "compared",
+      "sourceDecision": {
+        "options": [
+          "托管空间",
+          "自建节点"
+        ],
+        "facts": [
+          {
+            "kind": "actor-updates",
+            "option": "托管空间",
+            "name": null,
+            "actor": "供应商",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 51,
+                "textByteEnd": 75
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "托管空间",
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 78,
+                "textByteEnd": 90
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "自建节点",
+            "name": "私网",
+            "actor": null,
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 93,
+                "textByteEnd": 111
+              }
+            ]
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "自建节点",
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 114,
+                "textByteEnd": 132
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "托管空间",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "自建节点",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "actor-available",
+            "option": null,
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 282,
+                "textByteEnd": 303
+              }
+            ]
+          },
+          {
+            "kind": "capability-need",
+            "option": null,
+            "name": "私网",
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              },
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "derivation": {
+              "condition": "资料需在私网流转",
+              "whenTrue": true,
+              "whenFalse": false,
+              "current": null
+            }
+          }
+        ],
+        "clauses": [
+          {
+            "kind": "selection",
+            "span": {
+              "textByteStart": 0,
+              "textByteEnd": 48
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 51,
+              "textByteEnd": 75
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 78,
+              "textByteEnd": 90
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 93,
+              "textByteEnd": 111
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 114,
+              "textByteEnd": 132
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          },
+          {
+            "kind": "condition",
+            "span": {
+              "textByteStart": 159,
+              "textByteEnd": 186
+            }
+          },
+          {
+            "kind": "condition-true-branch",
+            "span": {
+              "textByteStart": 189,
+              "textByteEnd": 210
+            }
+          },
+          {
+            "kind": "condition-false-branch",
+            "span": {
+              "textByteStart": 213,
+              "textByteEnd": 240
+            }
+          },
+          {
+            "kind": "current-condition",
+            "span": {
+              "textByteStart": 243,
+              "textByteEnd": 279
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 282,
+              "textByteEnd": 303
+            }
+          },
+          {
+            "kind": "comparison-request",
+            "span": {
+              "textByteStart": 306,
+              "textByteEnd": 321
+            }
+          }
+        ],
+        "conditionalNeeds": [
+          {
+            "name": "私网",
+            "condition": "资料需在私网流转",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null,
+            "currentSpans": [
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "spans": {
+              "condition": {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              "whenTrue": {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              "whenFalse": {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              }
+            },
+            "derivedNeed": null
+          }
+        ]
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "fieldChecks": [],
+      "inputChecks": [],
+      "claimChecks": [],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "bounded parsed source declarations; not general natural-language certification",
+        "text": "托管空间：由供应商更新=true；私网支持=false；价格声明未知。\n自建节点：私网支持=true；需要团队维护=true；价格声明未知。\n托管空间是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n自建节点是否由供应商更新未声明，不能自动取反。\n团队维护余力=true。\n当前需要私网=未知。\n来源两分支：若资料需在私网流转=true，则需要私网=true；否则需要私网=false。\n当前资料需在私网流转=未知（来源明确声明），所以当前需要私网=未知；条件未定，不能按false或不需要处理。\n若本地假设资料需在私网流转=true：托管空间不满足本项；自建节点满足本项；若本地假设资料需在私网流转=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+      }
+    },
+    {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "decision-zh",
+      "source": {
+        "input": "DSH current own-turn message content snapshot; not a file",
+        "hostContext": {
+          "sessionId": "session-9f9b7937-2b80-4313-9f59-9b134edfca46",
+          "turn": 2,
+          "turnStartSeq": 36,
+          "messageId": "a4442927-eda3-43fd-8931-5bfb7d4998a0",
+          "messageSeq": 39,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 0,
+          "requestId": "3ce3a926-ecdb-4c61-919b-29408c965a17"
+        },
+        "textSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "excerptSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 324,
+          "textUTF8Bytes": 324
+        },
+        "identityVerified": false,
+        "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+        "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source author/original human identity",
+        "general natural-language meaning outside the documented grammar",
+        "component annotations and arbitrary free prose",
+        "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+      ],
+      "status": "compared",
+      "sourceDecision": {
+        "options": [
+          "托管空间",
+          "自建节点"
+        ],
+        "facts": [
+          {
+            "kind": "actor-updates",
+            "option": "托管空间",
+            "name": null,
+            "actor": "供应商",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 51,
+                "textByteEnd": 75
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "托管空间",
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 78,
+                "textByteEnd": 90
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "自建节点",
+            "name": "私网",
+            "actor": null,
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 93,
+                "textByteEnd": 111
+              }
+            ]
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "自建节点",
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 114,
+                "textByteEnd": 132
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "托管空间",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "自建节点",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "actor-available",
+            "option": null,
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 282,
+                "textByteEnd": 303
+              }
+            ]
+          },
+          {
+            "kind": "capability-need",
+            "option": null,
+            "name": "私网",
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              },
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "derivation": {
+              "condition": "资料需在私网流转",
+              "whenTrue": true,
+              "whenFalse": false,
+              "current": null
+            }
+          }
+        ],
+        "clauses": [
+          {
+            "kind": "selection",
+            "span": {
+              "textByteStart": 0,
+              "textByteEnd": 48
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 51,
+              "textByteEnd": 75
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 78,
+              "textByteEnd": 90
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 93,
+              "textByteEnd": 111
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 114,
+              "textByteEnd": 132
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          },
+          {
+            "kind": "condition",
+            "span": {
+              "textByteStart": 159,
+              "textByteEnd": 186
+            }
+          },
+          {
+            "kind": "condition-true-branch",
+            "span": {
+              "textByteStart": 189,
+              "textByteEnd": 210
+            }
+          },
+          {
+            "kind": "condition-false-branch",
+            "span": {
+              "textByteStart": 213,
+              "textByteEnd": 240
+            }
+          },
+          {
+            "kind": "current-condition",
+            "span": {
+              "textByteStart": 243,
+              "textByteEnd": 279
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 282,
+              "textByteEnd": 303
+            }
+          },
+          {
+            "kind": "comparison-request",
+            "span": {
+              "textByteStart": 306,
+              "textByteEnd": 321
+            }
+          }
+        ],
+        "conditionalNeeds": [
+          {
+            "name": "私网",
+            "condition": "资料需在私网流转",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null,
+            "currentSpans": [
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "spans": {
+              "condition": {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              "whenTrue": {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              "whenFalse": {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              }
+            },
+            "derivedNeed": null
+          }
+        ]
+      },
+      "comparison": {
+        "status": "mismatch",
+        "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+      },
+      "issues": [
+        {
+          "code": "SOURCE_INITIAL",
+          "path": "$.view.payload.inputs.0.initial",
+          "reason": "Initial conditions must match the source; an unstated availability/need is null."
+        }
+      ],
+      "fieldChecks": [
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "private",
+          "sourceKind": "capability",
+          "expected": false,
+          "actual": false,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 78,
+              "textByteEnd": 90
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "private",
+          "sourceKind": "capability",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 93,
+              "textByteEnd": 111
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "updates",
+          "sourceKind": "actor-updates",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 51,
+              "textByteEnd": 75
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "updates",
+          "sourceKind": "actor-updates",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "unknown"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "maintenance",
+          "sourceKind": "maintenance-need",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "unknown"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "maintenance",
+          "sourceKind": "maintenance-need",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 114,
+              "textByteEnd": 132
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          ],
+          "status": "declared-unknown"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          ],
+          "status": "declared-unknown"
+        }
+      ],
+      "inputChecks": [
+        {
+          "inputId": "need",
+          "sourceKind": "capability-need",
+          "expected": null,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 159,
+              "textByteEnd": 186
+            },
+            {
+              "textByteStart": 189,
+              "textByteEnd": 210
+            },
+            {
+              "textByteStart": 213,
+              "textByteEnd": 240
+            },
+            {
+              "textByteStart": 243,
+              "textByteEnd": 279
+            }
+          ],
+          "sourceDerivation": {
+            "condition": "资料需在私网流转",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null
+          },
+          "status": "mismatch"
+        },
+        {
+          "inputId": "team",
+          "sourceKind": "actor-available",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 282,
+              "textByteEnd": 303
+            }
+          ],
+          "status": "matched"
+        }
+      ],
+      "claimChecks": [],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "withheld",
+        "reason": "Resolve unsupported mappings, policies or source claims first."
+      }
+    },
+    {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "decision-zh",
+      "source": {
+        "input": "DSH current own-turn message content snapshot; not a file",
+        "hostContext": {
+          "sessionId": "session-9f9b7937-2b80-4313-9f59-9b134edfca46",
+          "turn": 2,
+          "turnStartSeq": 36,
+          "messageId": "a4442927-eda3-43fd-8931-5bfb7d4998a0",
+          "messageSeq": 39,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 0,
+          "requestId": "3ce3a926-ecdb-4c61-919b-29408c965a17"
+        },
+        "textSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "excerptSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 324,
+          "textUTF8Bytes": 324
+        },
+        "identityVerified": false,
+        "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+        "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source author/original human identity",
+        "general natural-language meaning outside the documented grammar",
+        "component annotations and arbitrary free prose",
+        "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+      ],
+      "status": "compared",
+      "sourceDecision": {
+        "options": [
+          "托管空间",
+          "自建节点"
+        ],
+        "facts": [
+          {
+            "kind": "actor-updates",
+            "option": "托管空间",
+            "name": null,
+            "actor": "供应商",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 51,
+                "textByteEnd": 75
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "托管空间",
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 78,
+                "textByteEnd": 90
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "自建节点",
+            "name": "私网",
+            "actor": null,
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 93,
+                "textByteEnd": 111
+              }
+            ]
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "自建节点",
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 114,
+                "textByteEnd": 132
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "托管空间",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "自建节点",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 135,
+                "textByteEnd": 156
+              }
+            ]
+          },
+          {
+            "kind": "actor-available",
+            "option": null,
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 282,
+                "textByteEnd": 303
+              }
+            ]
+          },
+          {
+            "kind": "capability-need",
+            "option": null,
+            "name": "私网",
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              },
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "derivation": {
+              "condition": "资料需在私网流转",
+              "whenTrue": true,
+              "whenFalse": false,
+              "current": null
+            }
+          }
+        ],
+        "clauses": [
+          {
+            "kind": "selection",
+            "span": {
+              "textByteStart": 0,
+              "textByteEnd": 48
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 51,
+              "textByteEnd": 75
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 78,
+              "textByteEnd": 90
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 93,
+              "textByteEnd": 111
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 114,
+              "textByteEnd": 132
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          },
+          {
+            "kind": "condition",
+            "span": {
+              "textByteStart": 159,
+              "textByteEnd": 186
+            }
+          },
+          {
+            "kind": "condition-true-branch",
+            "span": {
+              "textByteStart": 189,
+              "textByteEnd": 210
+            }
+          },
+          {
+            "kind": "condition-false-branch",
+            "span": {
+              "textByteStart": 213,
+              "textByteEnd": 240
+            }
+          },
+          {
+            "kind": "current-condition",
+            "span": {
+              "textByteStart": 243,
+              "textByteEnd": 279
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 282,
+              "textByteEnd": 303
+            }
+          },
+          {
+            "kind": "comparison-request",
+            "span": {
+              "textByteStart": 306,
+              "textByteEnd": 321
+            }
+          }
+        ],
+        "conditionalNeeds": [
+          {
+            "name": "私网",
+            "condition": "资料需在私网流转",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null,
+            "currentSpans": [
+              {
+                "textByteStart": 243,
+                "textByteEnd": 279
+              }
+            ],
+            "spans": {
+              "condition": {
+                "textByteStart": 159,
+                "textByteEnd": 186
+              },
+              "whenTrue": {
+                "textByteStart": 189,
+                "textByteEnd": 210
+              },
+              "whenFalse": {
+                "textByteStart": 213,
+                "textByteEnd": 240
+              }
+            },
+            "derivedNeed": null
+          }
+        ]
+      },
+      "comparison": {
+        "status": "matched",
+        "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+      },
+      "issues": [],
+      "fieldChecks": [
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "private",
+          "sourceKind": "capability",
+          "expected": false,
+          "actual": false,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 78,
+              "textByteEnd": 90
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "private",
+          "sourceKind": "capability",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 93,
+              "textByteEnd": 111
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "updates",
+          "sourceKind": "actor-updates",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 51,
+              "textByteEnd": 75
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "updates",
+          "sourceKind": "actor-updates",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "unknown"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "maintenance",
+          "sourceKind": "maintenance-need",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": false,
+          "sourceSpans": [],
+          "status": "unknown"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "maintenance",
+          "sourceKind": "maintenance-need",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 114,
+              "textByteEnd": 132
+            }
+          ],
+          "status": "matched"
+        },
+        {
+          "optionId": "hosted",
+          "sourceOption": "托管空间",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          ],
+          "status": "declared-unknown"
+        },
+        {
+          "optionId": "self",
+          "sourceOption": "自建节点",
+          "dimensionId": "price",
+          "sourceKind": "price",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 135,
+              "textByteEnd": 156
+            }
+          ],
+          "status": "declared-unknown"
+        }
+      ],
+      "inputChecks": [
+        {
+          "inputId": "need",
+          "sourceKind": "capability-need",
+          "expected": null,
+          "actual": null,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 159,
+              "textByteEnd": 186
+            },
+            {
+              "textByteStart": 189,
+              "textByteEnd": 210
+            },
+            {
+              "textByteStart": 213,
+              "textByteEnd": 240
+            },
+            {
+              "textByteStart": 243,
+              "textByteEnd": 279
+            }
+          ],
+          "sourceDerivation": {
+            "condition": "资料需在私网流转",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null
+          },
+          "status": "derived-unknown"
+        },
+        {
+          "inputId": "team",
+          "sourceKind": "actor-available",
+          "expected": true,
+          "actual": true,
+          "sourceDeclared": true,
+          "sourceSpans": [
+            {
+              "textByteStart": 282,
+              "textByteEnd": 303
+            }
+          ],
+          "status": "matched"
+        }
+      ],
+      "claimChecks": [],
+      "computedDecision": {
+        "scope": "declared-policy-under-original-conditions",
+        "status": "no-match",
+        "strictPolicy": true,
+        "inputEffects": [
+          {
+            "inputId": "need",
+            "requirementIds": [
+              "net"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          },
+          {
+            "inputId": "team",
+            "requirementIds": [
+              "operations"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          }
+        ],
+        "unusedInputIds": [],
+        "requiresPolicyReview": false,
+        "preferenceMode": "withheld-pending-local-review",
+        "eligibilityOnly": true,
+        "eligibilityAssessed": true,
+        "eligibleOptionIds": [],
+        "excludedOptionIds": [],
+        "unknownFeasibilityIds": [
+          "hosted",
+          "self"
+        ],
+        "requirements": [
+          {
+            "requirementId": "net",
+            "optionId": "hosted",
+            "dimensionId": "private",
+            "inputId": "need",
+            "unit": null,
+            "actual": false,
+            "needed": null,
+            "relation": "supports",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "net",
+            "optionId": "self",
+            "dimensionId": "private",
+            "inputId": "need",
+            "unit": null,
+            "actual": true,
+            "needed": null,
+            "relation": "supports",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "operations",
+            "optionId": "hosted",
+            "dimensionId": "maintenance",
+            "inputId": "team",
+            "unit": null,
+            "actual": null,
+            "needed": true,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "operations",
+            "optionId": "self",
+            "dimensionId": "maintenance",
+            "inputId": "team",
+            "unit": null,
+            "actual": true,
+            "needed": true,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "pass"
+          }
+        ],
+        "unknownComparisonCells": [
+          {
+            "optionId": "hosted",
+            "dimensionId": "maintenance"
+          },
+          {
+            "optionId": "hosted",
+            "dimensionId": "price"
+          },
+          {
+            "optionId": "self",
+            "dimensionId": "updates"
+          },
+          {
+            "optionId": "self",
+            "dimensionId": "price"
+          }
+        ],
+        "proposalWithMissingFacts": false,
+        "resultBasis": null,
+        "sourceFactsVerified": false,
+        "recommendedOptionIds": [],
+        "matchedRuleIds": [],
+        "pendingRuleIds": [],
+        "missingInputs": [
+          {
+            "id": "need",
+            "label": "当前需要私网"
+          }
+        ],
+        "activeConstraintIds": [],
+        "unknownConstraintIds": [],
+        "declaredOriginCounts": {
+          "given": 0,
+          "modelJudgment": 0
+        },
+        "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "bounded parsed source declarations; not general natural-language certification",
+        "text": "托管空间：由供应商更新=true；私网支持=false；价格声明未知。\n自建节点：私网支持=true；需要团队维护=true；价格声明未知。\n托管空间是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n自建节点是否由供应商更新未声明，不能自动取反。\n团队维护余力=true。\n当前需要私网=未知。\n来源两分支：若资料需在私网流转=true，则需要私网=true；否则需要私网=false。\n当前资料需在私网流转=未知（来源明确声明），所以当前需要私网=未知；条件未定，不能按false或不需要处理。\n若本地假设资料需在私网流转=true：托管空间不满足本项；自建节点满足本项；若本地假设资料需在私网流转=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+      }
+    }
+  ],
+  "completedCurrentDeliveries": [
+    {
+      "status": "validation-failed",
+      "turn": 2,
+      "displayId": "normal-source-original-known",
+      "issues": [
+        {
+          "code": "SOURCE_INITIAL",
+          "path": "$.view.payload.inputs.0.initial",
+          "reason": "Initial conditions must match the source; an unstated availability/need is null.",
+          "hint": "Inspect source-check and supply a complete field mapping. Unknown facts stay null; no old check or model policy authorizes this render."
+        }
+      ],
+      "deliveryId": "ec0bff56-cd20-4dde-a7f4-2e785f9fede8"
+    },
+    {
+      "status": "delivered",
+      "turn": 2,
+      "displayId": "normal-source-legitimate-retraction",
+      "revision": 1,
+      "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+      "presentation": {
+        "version": 1,
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        }
+      },
+      "protocolVersion": "1.4",
+      "component": "DecisionExplorer",
+      "summarySource": "source-derived bounded projection",
+      "sourceFactsVerified": false,
+      "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+      "decisionFacts": {
+        "scope": "declared-policy-under-original-conditions",
+        "status": "no-match",
+        "strictPolicy": true,
+        "inputEffects": [
+          {
+            "inputId": "need",
+            "requirementIds": [
+              "net"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          },
+          {
+            "inputId": "team",
+            "requirementIds": [
+              "operations"
+            ],
+            "constraintIds": [],
+            "ruleIds": [],
+            "affectsEligibility": true,
+            "affectsPreference": false,
+            "scope": "hard"
+          }
+        ],
+        "unusedInputIds": [],
+        "requiresPolicyReview": false,
+        "preferenceMode": "withheld-pending-local-review",
+        "eligibilityOnly": true,
+        "eligibilityAssessed": true,
+        "eligibleOptionIds": [],
+        "excludedOptionIds": [],
+        "unknownFeasibilityIds": [
+          "hosted",
+          "self"
+        ],
+        "requirements": [
+          {
+            "requirementId": "net",
+            "optionId": "hosted",
+            "dimensionId": "private",
+            "inputId": "need",
+            "unit": null,
+            "actual": false,
+            "needed": null,
+            "relation": "supports",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "net",
+            "optionId": "self",
+            "dimensionId": "private",
+            "inputId": "need",
+            "unit": null,
+            "actual": true,
+            "needed": null,
+            "relation": "supports",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "operations",
+            "optionId": "hosted",
+            "dimensionId": "maintenance",
+            "inputId": "team",
+            "unit": null,
+            "actual": null,
+            "needed": true,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "unknown"
+          },
+          {
+            "requirementId": "operations",
+            "optionId": "self",
+            "dimensionId": "maintenance",
+            "inputId": "team",
+            "unit": null,
+            "actual": true,
+            "needed": true,
+            "relation": "requires-availability",
+            "active": true,
+            "status": "pass"
+          }
+        ],
+        "unknownComparisonCells": [
+          {
+            "optionId": "hosted",
+            "dimensionId": "maintenance"
+          },
+          {
+            "optionId": "hosted",
+            "dimensionId": "price"
+          },
+          {
+            "optionId": "self",
+            "dimensionId": "updates"
+          },
+          {
+            "optionId": "self",
+            "dimensionId": "price"
+          }
+        ],
+        "proposalWithMissingFacts": false,
+        "resultBasis": null,
+        "sourceFactsVerified": false,
+        "recommendedOptionIds": [],
+        "matchedRuleIds": [],
+        "pendingRuleIds": [],
+        "missingInputs": [
+          {
+            "id": "need",
+            "label": "当前需要私网"
+          }
+        ],
+        "activeConstraintIds": [],
+        "unknownConstraintIds": [],
+        "declaredOriginCounts": {
+          "given": 0,
+          "modelJudgment": 0
+        },
+        "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+      },
+      "declarationMapping": {
+        "scope": "declared-fields-and-dependencies",
+        "sourceFactsVerified": false,
+        "requirements": [
+          {
+            "requirementId": "net",
+            "dimensionId": "private",
+            "dimensionRole": "capability-support",
+            "inputId": "need",
+            "inputRole": "capability-need",
+            "relation": "supports",
+            "unit": null
+          },
+          {
+            "requirementId": "operations",
+            "dimensionId": "maintenance",
+            "dimensionRole": "resource-need",
+            "inputId": "team",
+            "inputRole": "resource-available",
+            "relation": "requires-availability",
+            "unit": null
+          }
+        ],
+        "inputs": [
+          {
+            "inputId": "need",
+            "scope": "hard",
+            "expectedEffect": "hard"
+          },
+          {
+            "inputId": "team",
+            "scope": "hard",
+            "expectedEffect": "hard"
+          }
+        ],
+        "dependencyLinks": "decisionFacts.inputEffects",
+        "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+      },
+      "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: none. Unknown feasibility: 托管空间, 自建节点. No preference established.",
+      "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+      "canonicalExplanation": "托管空间：由供应商更新=true；私网支持=false；价格声明未知。\n自建节点：私网支持=true；需要团队维护=true；价格声明未知。\n托管空间是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n自建节点是否由供应商更新未声明，不能自动取反。\n团队维护余力=true。\n当前需要私网=未知。\n来源两分支：若资料需在私网流转=true，则需要私网=true；否则需要私网=false。\n当前资料需在私网流转=未知（来源明确声明），所以当前需要私网=未知；条件未定，不能按false或不需要处理。\n若本地假设资料需在私网流转=true：托管空间不满足本项；自建节点满足本项；若本地假设资料需在私网流转=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+      "sourceDeliveryStatus": "bound",
+      "identityVerified": false,
+      "deliveryId": "fca8490f-fe99-41be-9d6d-c52f31af6ee8"
+    }
+  ],
+  "firstExecutedScriptSha256": "9bb13d3df84fd12318ef463b3d97b2b84d59a9ce247fee5120fbe94a7760a515",
+  "newRealModelTurns": 0
+}

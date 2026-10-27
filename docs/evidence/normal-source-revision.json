@@ -1,0 +1,242 @@
+{
+  "phase": "existing-preview26-normal-source-revision-accepted",
+  "version": "0.1.0-preview.26",
+  "runtimeChanged": false,
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "workingBaseCommit": "40c66937b39b2e018a475bdb42465ab07cb9dc5b",
+  "runtimeSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "runtimeFiles": 388,
+  "normalDshAdd": true,
+  "semanticSourceOverlay": false,
+  "allPackagedFilesEqualBeforeAndAfter": true,
+  "independentCriteriaOriginalSha256": "ebde53c86dc94f207915ff3fa059bc4bbbf5cf666ba19bb8e7b2aafa2bef43e4",
+  "normalSourcePath": "same actual session per mode; complete session/prompt messages through existing public RPC; no source-update UI, producer mutation or source tool argument replacement",
+  "results": [
+    {
+      "mode": "native",
+      "sessionId": "session-21ad167e-a603-464a-88f3-87c8b00954fb",
+      "sameSession": true,
+      "turns": [
+        {
+          "id": "original-known",
+          "sourceSha256": "11c32d68547ef0bc8b3f8d5641b49ff092752c5137df0cb5358383b3a514f13d",
+          "messageId": "8659212c-424d-4ce3-881a-114a430b4c29",
+          "messageSeq": 10,
+          "producerKind": "user",
+          "requestId": "bf04502d-aa0c-456a-a45c-6638ff351865",
+          "turn": 1,
+          "checkpointSeq": 29,
+          "current": true,
+          "derivedNeed": true,
+          "hostedPrivateCheck": "fail"
+        },
+        {
+          "id": "legitimate-retraction",
+          "sourceSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+          "messageId": "06a9709a-c47f-41ea-8ac7-eeae611ca481",
+          "messageSeq": 39,
+          "producerKind": "user",
+          "requestId": "0f9eeea1-283f-454d-a296-cc62f215be07",
+          "turn": 2,
+          "checkpointSeq": 62,
+          "current": null,
+          "derivedNeed": null,
+          "hostedPrivateCheck": "unknown"
+        },
+        {
+          "id": "legitimate-negative",
+          "sourceSha256": "8790c1b79f87754106f35fcc8999f3d3a9cbd00b057e5c2d5753f4fc80c76e3d",
+          "messageId": "b6237150-461e-469b-ae8c-f6c480431890",
+          "messageSeq": 72,
+          "producerKind": "user",
+          "requestId": "e75c43f8-3ce5-4795-85e9-364dd8facee1",
+          "turn": 3,
+          "checkpointSeq": 95,
+          "current": false,
+          "derivedNeed": false,
+          "hostedPrivateCheck": "inactive"
+        }
+      ],
+      "durableSourceBoundCheckpoints": 3,
+      "durableSourceInitialRefusals": 2,
+      "historyRefresh": true,
+      "localChangesDoNotWriteSource": true,
+      "pageErrors": [],
+      "fixtureTransportRequests": 16,
+      "newRealModelTurns": 0
+    },
+    {
+      "mode": "ptc",
+      "sessionId": "session-40528367-3a7c-4d34-ae68-b758a7d5a57e",
+      "sameSession": true,
+      "turns": [
+        {
+          "id": "original-known",
+          "sourceSha256": "11c32d68547ef0bc8b3f8d5641b49ff092752c5137df0cb5358383b3a514f13d",
+          "messageId": "7616136b-206c-458c-b048-79e94c4fa6d1",
+          "messageSeq": 10,
+          "producerKind": "user",
+          "requestId": "1bb8a2fa-eefb-4d4f-8bc2-2196452db480",
+          "turn": 1,
+          "checkpointSeq": 34,
+          "current": true,
+          "derivedNeed": true,
+          "hostedPrivateCheck": "fail"
+        },
+        {
+          "id": "legitimate-retraction",
+          "sourceSha256": "7436ccd38472ea088b808087d90252d758daabdf2d059d3f3f3c0dce820db2b1",
+          "messageId": "04f6691c-499c-48a2-a0bc-cdb67bdca169",
+          "messageSeq": 45,
+          "producerKind": "user",
+          "requestId": "01c894d7-45b6-4dad-a928-de12f17abe5d",
+          "turn": 2,
+          "checkpointSeq": 77,
+          "current": null,
+          "derivedNeed": null,
+          "hostedPrivateCheck": "unknown"
+        },
+        {
+          "id": "legitimate-negative",
+          "sourceSha256": "8790c1b79f87754106f35fcc8999f3d3a9cbd00b057e5c2d5753f4fc80c76e3d",
+          "messageId": "7a58c7b6-07e2-4340-8f2d-ca425123cd28",
+          "messageSeq": 88,
+          "producerKind": "user",
+          "requestId": "af13bd15-488d-415b-af03-e059258d9feb",
+          "turn": 3,
+          "checkpointSeq": 120,
+          "current": false,
+          "derivedNeed": false,
+          "hostedPrivateCheck": "inactive"
+        }
+      ],
+      "durableSourceBoundCheckpoints": 3,
+      "durableSourceInitialRefusals": 2,
+      "historyRefresh": true,
+      "localChangesDoNotWriteSource": true,
+      "pageErrors": [],
+      "fixtureTransportRequests": 16,
+      "newRealModelTurns": 0
+    }
+  ],
+  "verificationRepair": {
+    "initialRun": "host-1793111733736",
+    "submittedFixtureTurns": 2,
+    "fixtureRequests": 10,
+    "failure": "collector selected an earlier history receipt; actual new source/rejection were correct",
+    "repair": "current input boundary first; never filter results by expected source hash",
+    "runtimeRepair": false,
+    "originalUUIDsResent": false
+  },
+  "counts": {
+    "finalPassingFixtureTurns": 6,
+    "finalFixtureHttpRequests": 32,
+    "totalAttemptedFixtureTurns": 8,
+    "totalFixtureHttpRequests": 42,
+    "newRealModelTurns": 0,
+    "newExternalModelRequests": 0,
+    "originalNaturalResults": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "olderIndependentModelBudgets": "all unchanged; no new or third attempt"
+  },
+  "existingExternalResults": {
+    "ci": {
+      "id": 40515658647,
+      "conclusion": "success",
+      "headSha": "2b7cfa14baab942472dc45234b7d1ff912124657",
+      "status": "completed"
+    },
+    "release": {
+      "id": 425531255,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26",
+      "publishedAt": "2026-10-27T13:56:37Z",
+      "isDraft": false
+    },
+    "newCiOrRelease": false,
+    "priorExternalUUIDsPending": false
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "notClaimed": [
+    "independently authenticated human source or world fact",
+    "raw model prose understanding after retraction",
+    "delta-only conversational source revision",
+    "generic source-update forms or live cross-client callback",
+    "full GenUI replacement or physical-device/screen-reader acceptance"
+  ],
+  "verificationSourceHashes": {
+    "tests/normal-source-condition-browser.mjs": "d593aba23e19ccdf4e2eb334d612c42f6f32ff40adadfa320603a73f99dbfc0e",
+    "fixtures/normal-source-condition.ts": "76e1c7d41a505ad8c14b9d1b4fc3484b7c4eace2a75d1ffe841b6c74786b35ab",
+    "tests/host-lifecycle.mjs": "24dcf0cbc9f49ea7f4d8828cae3a1a14f2e3872255af689b5e1ef28acae3c128"
+  },
+  "files": {
+    "cleanup.json": {
+      "bytes": 379,
+      "sha256": "2bcb451d47a0824d0d4d38c50c8809499397c5ff9f9b2a560d13890a65a87397"
+    },
+    "criteria-cases.json": {
+      "bytes": 3214,
+      "sha256": "962707625276acb80a53a3fed3f7a71ad1b9a7397827e8c8919505947c3514ac"
+    },
+    "first-failure.json": {
+      "bytes": 48812,
+      "sha256": "6b66015ee2a3db33098a6a89590d33d2472a946a46c041ea69495359ac10d335"
+    },
+    "install.json": {
+      "bytes": 643,
+      "sha256": "84d2d33903d39addde7fe5e410f0741f1dbf963a046630786a5a25f0fcf60a60"
+    },
+    "installed-byte-check.json": {
+      "bytes": 68,
+      "sha256": "10ee27e9285a7f615ccbe1104f1d8ad5918bb949f73cdd660910aaad94227fa0"
+    },
+    "installed-post-check.json": {
+      "bytes": 159,
+      "sha256": "eedc8763de902ef9f88ede7be56e021d9d49ff5bb47352150d40e822bd34f6dd"
+    },
+    "native-legitimate-negative.png": {
+      "bytes": 313037,
+      "sha256": "9b1e32b9bfa441888cbd042a63839b694f40029d631f4913760b219ce1a5105a"
+    },
+    "native-legitimate-retraction.png": {
+      "bytes": 315392,
+      "sha256": "ec33e332a679e87b1c3374b0e5fa489a4cab0153ec3b3e46cb04677e1089473a"
+    },
+    "native-original-known.png": {
+      "bytes": 309274,
+      "sha256": "909d4aa9114331abfcd422fba93ddf788036be83e7f0d734f7de55be483c8eff"
+    },
+    "native.json": {
+      "bytes": 206664,
+      "sha256": "2813730fb3dc632b8c33e89fa49cba258831b055835a0995f1ea97d95084e8fe"
+    },
+    "owned-cleanup.json": {
+      "bytes": 1431,
+      "sha256": "ec7a68d2aa718f33b00f8f2f16f32689303e451000adcaf40c3e64c3d76c6caa"
+    },
+    "ptc-legitimate-negative.png": {
+      "bytes": 313037,
+      "sha256": "9b1e32b9bfa441888cbd042a63839b694f40029d631f4913760b219ce1a5105a"
+    },
+    "ptc-legitimate-retraction.png": {
+      "bytes": 315392,
+      "sha256": "ec33e332a679e87b1c3374b0e5fa489a4cab0153ec3b3e46cb04677e1089473a"
+    },
+    "ptc-original-known.png": {
+      "bytes": 309274,
+      "sha256": "909d4aa9114331abfcd422fba93ddf788036be83e7f0d734f7de55be483c8eff"
+    },
+    "ptc.json": {
+      "bytes": 219515,
+      "sha256": "217ef2915911956e13d60e89b7b5a8623f7195f40fd017e3a5ffd315a7dd8900"
+    },
+    "request-boundary.json": {
+      "bytes": 318,
+      "sha256": "23c5d26e346c0c8735ce8af920087343f72eb654478b098039a9717a3c419d90"
+    }
+  }
+}
