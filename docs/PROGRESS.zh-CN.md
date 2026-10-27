@@ -2,7 +2,7 @@
 
 preview.26已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)，完成[默认中文与中英文选择](LANGUAGE.zh-CN.md)：三类组件、直方图、模板/主题、状态及可读说明同步切换并记忆，不修改来源和模型正文、不因切换请求模型。245项单元检查和类型检查通过，388文件最终归档正常安装，macOS/Linux Native/PTC各4类视图完成语言/刷新/存储降级/360px验证，pageerror0，CI40515658647成功，见[本版回执](evidence/language.json)。
 
-preview.25开发阶段补[普通数值解释的均值/合计基准](NUMERIC-BASELINE.zh-CN.md)：读数记录与问题独立输入；缺失mask、已观测小计、补零合计和未知真实完整范围分别保留。32项6文件和18项离线检查通过；最终归档、宿主、模型与发行另验，见[分层回执](evidence/numeric-baseline.json)。
+preview.25已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.25)，完成[普通数值解释的均值/合计基准](NUMERIC-BASELINE.zh-CN.md)。32项6文件与18项离线合同通过；386文件归档正常安装，macOS/Linux Native/PTC各2例、刷新/360px、CI40510814087与四匿名HTTP200资产同字节分别核验。[I/J两个新引导观察](CODEX-NUMERIC-BASELINE-OBSERVATION.zh-CN.md)共2/2，raw有限met、新view首次matched，宿主说明单列；旧六题0/6/18、A2及此前计数不改，见[分层接受](evidence/numeric-baseline.json)。
 
 24已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)：源/tag780328056294060d79d7f89372ab87b312a982fb，运行ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70，382文件最终归档正常安装；19项4文件、macOS/Linux Native/PTC各1诊断序列、普通CLI错误标签拒绝/明确修正交付与刷新通过。CI40500985324成功、四匿名HTTP200资产与本机/Linux同字节，见[修复接受](evidence/capacity-contract.json)。[两个新引导观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)共2/2：两raw有限met，但首题23无view matched，第二题24当前view首次matched，假设初值不能冒原来源的拒绝保留；backend请求数unknown，不当同题因果基准或原六题通过。
 
