@@ -1,0 +1,84 @@
+{
+  "frozenAt": "2026-10-27T08:48:05.672772+00:00",
+  "basis": "Agent事前独立期待；非实现结果、非用户世界事实认证；本段0新增模型",
+  "source": {
+    "path": "docs/evidence/natural/r9-A2.json",
+    "pointer": "/question",
+    "questionSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+    "text": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？"
+  },
+  "positive": [
+    {
+      "id": "original-policy",
+      "expected": [
+        "显式给定规则绑定通知失败这一触发分支",
+        "重试的对象仅通知，不扩为整流程",
+        "此分支明确禁止回滚支付",
+        "四条拓扑与规则的出处分别可追溯",
+        "正常宿主有限有据说明包含触发、仅重试对象和不回滚对象"
+      ]
+    },
+    {
+      "id": "reordered-paraphrase",
+      "source": "虚构流程：入口→鉴权→库存→支付；支付→通知。若通知出错，不回滚支付，仅重试通知。",
+      "expected": "在公开支持的有限语法内支持同义失败/出错、分句重排；若不支持须明确整体unsupported，不能静默忽略规则后宣称完整支持"
+    },
+    {
+      "id": "labels-and-ids",
+      "source": "合成处理链为接入→审核→写账，写账→回执；回执失败仅重试回执，不回滚写账。",
+      "expected": "不依赖原订单节点ID/题名/完整原句或最终正文白名单；同结构规则可迁移到不同标签/ID"
+    }
+  ],
+  "negative": [
+    {
+      "id": "rollback",
+      "claim": "通知失败时回滚支付",
+      "expected": "与明确不回滚规则矛盾；不得作为有据结论交付"
+    },
+    {
+      "id": "whole-flow-retry",
+      "claim": "通知失败时重试入口、鉴权、库存、支付和通知整个流程",
+      "expected": "与仅重试通知的范围矛盾；不得通过"
+    },
+    {
+      "id": "dropped-exception",
+      "claim": "图有四条边所以所有异常行为均已核对，未呈现通知异常规则",
+      "expected": "完整规则覆盖缺失，不得宣称该原问题语义核对完毕"
+    },
+    {
+      "id": "other-trigger",
+      "claim": "库存失败也只重试通知且不回滚支付",
+      "expected": "原通知失败规则不能泛用到库存失败，相关异常策略unknown/not-assessed"
+    },
+    {
+      "id": "invented-propagation",
+      "claim": "通知阻碍回传或由箭头保证库存失败使支付和通知绝不执行且上游已完成",
+      "expected": "纯拓扑不证明反向传播/执行状态/补偿保证；保留not-assessed/unknown，不能认证"
+    },
+    {
+      "id": "missing-policy",
+      "source": "虚构流程为入口→鉴权→库存→支付，支付→通知。",
+      "expected": "缺规则不能默认为只重试通知或不回滚支付；箭头仍只核拓扑"
+    },
+    {
+      "id": "opposite-source",
+      "source": "虚构流程为入口→鉴权→库存→支付，支付→通知；通知失败时回滚支付，不重试通知。",
+      "expected": "原no-rollback/notify-only-retry claims不得继续matched；支持此语法时按新源对照，否则明确unsupported，不静默认原规则"
+    },
+    {
+      "id": "unstated-quantifier",
+      "claim": "通知无限重试直到必成功，任何库存故障均不影响支付",
+      "expected": "次数/成功保证/库存策略未给，不补造"
+    }
+  ],
+  "layers": {
+    "sourceRule": "limited finite content mapping only",
+    "core": "explicit branch/scope accepted and contradictions rejected; unsupported remains explicit",
+    "normalHost": "normal isolated personal entry actually shows finite checked rule and bound source snapshot; legacy/history retained",
+    "modelRaw": "unmet/unknown; zero NEW model turns; old0pass6fail18requests and A2 correction retained",
+    "identityVerified": false,
+    "sourceFactsVerified": false,
+    "freeProseVerified": false
+  },
+  "delivery": "唯一原owner实际runtime更改才冻结正确新版本/source/tarball，正常隔离安装、必要Native/PTC/CI/HTTPS身份；不覆盖21，不重放老资产/矩阵；纯文档按最小对应验收"
+}

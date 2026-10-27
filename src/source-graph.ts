@@ -1,16 +1,17 @@
 import {z} from 'zod';
-import {bounded,validateEnvelope} from './protocol';
+import {bounded,validateEnvelope,type Envelope} from './protocol';
 
 export const SOURCE_LIMITS={fileBytes:1_048_576,textBytes:32768,excerptBytes:16384,relations:80,claims:32} as const;
 export interface SourceSnapshot{
  documentSha256?:string;textSha256:string;excerptSha256:string;jsonPointer?:string|null;
  textBytes:number;textByteStart:number;textByteEnd:number;excerpt:string;
- kind?:'arrows'|'decision-zh'|'permissions-zh'|'observations-zh';
+ kind?:'arrows'|'workflow-zh'|'decision-zh'|'permissions-zh'|'observations-zh';
  hostContext?:{sessionId:string;turn:number;turnStartSeq:number;messageId:string;messageSeq:number;producerSourceKind:'user';inherited:false;excludedSyntheticContexts:number;requestId?:string};
 }
 export interface SourceIssue{code:string;path:string;reason:string}
-type Span={textByteStart:number;textByteEnd:number};
-type Relation={from:string;to:string;spans:Span[]};
+export type SourceSpan={textByteStart:number;textByteEnd:number};
+export type SourceRelation={from:string;to:string;spans:SourceSpan[]};
+type Span=SourceSpan;type Relation=SourceRelation;
 const bytes=(s:string)=>new TextEncoder().encode(s).length;
 const pair=(a:string,b:string)=>JSON.stringify([a,b]);
 const name=z.string().min(1).max(80);
@@ -45,34 +46,12 @@ export function parseExplicitRelations(text:string,offset=0):{status:'ready';nod
  return {status:'ready',nodes:[...nodes],relations:[...relations.values()]};
 }
 
-export function sourceMetadata(s:SourceSnapshot){return {
- ...(s.hostContext?{input:'DSH current own-turn message content snapshot; not a file',hostContext:s.hostContext}:{input:s.documentSha256?'caller-configured startup file snapshot; separate from tool arguments':'provided text snapshot; no file identity',documentSha256:s.documentSha256??null,jsonPointer:s.jsonPointer??null}),
- textSha256:s.textSha256,excerptSha256:s.excerptSha256,
- selection:{textUTF8ByteStart:s.textByteStart,textUTF8ByteEnd:s.textByteEnd,textUTF8Bytes:s.textBytes},
- identityVerified:false,authorship:s.hostContext?'unverified; host message IDs and producer source.kind are not an independent human principal or signature':'unverified; a configured file does not certify its author or original user',
- scope:s.kind==='observations-zh'?'bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed':s.kind==='decision-zh'?'bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed':s.kind==='permissions-zh'?'bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed':'literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed',
-};}
-
-/** Cross-document comparison, never a certificate of source identity or prose truth. */
-export function checkSourceGraph(snapshot:SourceSnapshot,input:unknown):Record<string,unknown>{
- const common={sourceCheckVersion:'1.0',source:sourceMetadata(snapshot),sourceFactsVerified:false,
-  unverified:['source identity/authorship','unselected source text','node responsibilities/constraints/evidence','edge type/label/evidence','scenario explanations','summary and free prose','causality, retry, rollback, exclusivity and operational guarantees']};
- const finish=(result:Record<string,unknown>):Record<string,unknown>=>bounded(result)?{...common,status:'check-limit',issues:[{code:'SOURCE_CHECK_LIMIT',path:'$',reason:'The complete source comparison exceeds the JSON receipt budget; no partial success or truncated checks are returned.'}]}:result;
- const inputIssue=bounded(input);if(inputIssue)return {...common,status:'validation-failed',issues:[inputIssue]};
- const request=sourceCheckRequestSchema.safeParse(input);
- if(!request.success)return {...common,status:'validation-failed',issues:request.error.issues.map(i=>({code:'SOURCE_REQUEST',path:'$.'+i.path.join('.'),reason:i.message}))};
- const parsed=parseExplicitRelations(snapshot.excerpt,snapshot.textByteStart);
- if(parsed.status!=='ready')return {...common,status:'source-unsupported',issues:parsed.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
- const sourcePairs=new Map(parsed.relations.map(r=>[pair(r.from,r.to),r]));
- const sourceNames=new Set(parsed.nodes),issues:SourceIssue[]=[];
+/** Shared exact-label topology comparison; callers must parse the complete source
+ * and validate the view first. It provides no source identity or prose proof. */
+export function compareDirectedView(view:Extract<Envelope,{component:'ArchitectureExplorer'}>,parsed:{nodes:string[];relations:SourceRelation[]}){
+ const sourcePairs=new Map(parsed.relations.map(r=>[pair(r.from,r.to),r])),sourceNames=new Set(parsed.nodes),issues:SourceIssue[]=[];
  const add=(code:string,path:string,reason:string)=>issues.push({code,path,reason});
- const {view,claims=[],prose}=request.data;
- let comparison:Record<string,unknown>={status:'not-requested'};
- if(view!==undefined){
-  const checked=validateEnvelope(view);
-  if(!checked.ok)return finish({...common,status:'validation-failed',sourceRelations:parsed.relations,issues:checked.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}});
-  if(checked.value.component!=='ArchitectureExplorer')return {...common,status:'source-unsupported',issues:[{code:'SOURCE_COMPONENT',path:'$.view.component',reason:'This source path compares ArchitectureExplorer only.'}],comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
-  const p=checked.value.payload,labels=new Map(p.nodes.map(n=>[n.id,n.label])),seen=new Set<string>(),covered=new Set<string>();
+ const p=view.payload,labels=new Map(p.nodes.map(n=>[n.id,n.label])),seen=new Set<string>(),covered=new Set<string>();
   p.nodes.forEach((n,i)=>{
    if(seen.has(n.label))add('SOURCE_LABEL_AMBIGUOUS',`$.view.payload.nodes.${i}.label`,'Source correspondence requires unique, exact node labels; IDs or claimed aliases do not establish identity.');
    seen.add(n.label);
@@ -88,7 +67,37 @@ export function checkSourceGraph(snapshot:SourceSnapshot,input:unknown):Record<s
   });
   const missing=parsed.relations.filter(r=>!covered.has(pair(r.from,r.to)));
   for(const r of missing)add('SOURCE_RELATION_MISSING','$.view.payload.edges',`The complete selected relation set requires ${JSON.stringify(r.from)} → ${JSON.stringify(r.to)}.`);
-  comparison={status:issues.length?'mismatch':'matched',coverage:'all directed pairs in the selected excerpt; not all facts in the original document',edgeChecks,missingRelations:missing};
+ const comparison={status:issues.length?'mismatch':'matched',coverage:'all directed pairs in the selected excerpt; not all facts in the original document',edgeChecks,missingRelations:missing};
+ return {issues,comparison};
+}
+
+export function sourceMetadata(s:SourceSnapshot){return {
+ ...(s.hostContext?{input:'DSH current own-turn message content snapshot; not a file',hostContext:s.hostContext}:{input:s.documentSha256?'caller-configured startup file snapshot; separate from tool arguments':'provided text snapshot; no file identity',documentSha256:s.documentSha256??null,jsonPointer:s.jsonPointer??null}),
+ textSha256:s.textSha256,excerptSha256:s.excerptSha256,
+ selection:{textUTF8ByteStart:s.textByteStart,textUTF8ByteEnd:s.textByteEnd,textUTF8Bytes:s.textBytes},
+ identityVerified:false,authorship:s.hostContext?'unverified; host message IDs and producer source.kind are not an independent human principal or signature':'unverified; a configured file does not certify its author or original user',
+ scope:s.kind==='workflow-zh'?'bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified':s.kind==='observations-zh'?'bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed':s.kind==='decision-zh'?'bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed':s.kind==='permissions-zh'?'bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed':'literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed',
+};}
+
+/** Cross-document comparison, never a certificate of source identity or prose truth. */
+export function checkSourceGraph(snapshot:SourceSnapshot,input:unknown):Record<string,unknown>{
+ const common={sourceCheckVersion:'1.0',source:sourceMetadata(snapshot),sourceFactsVerified:false,
+  unverified:['source identity/authorship','unselected source text','node responsibilities/constraints/evidence','edge type/label/evidence','scenario explanations','summary and free prose','causality, retry, rollback, exclusivity and operational guarantees']};
+ const finish=(result:Record<string,unknown>):Record<string,unknown>=>bounded(result)?{...common,status:'check-limit',issues:[{code:'SOURCE_CHECK_LIMIT',path:'$',reason:'The complete source comparison exceeds the JSON receipt budget; no partial success or truncated checks are returned.'}]}:result;
+ const inputIssue=bounded(input);if(inputIssue)return {...common,status:'validation-failed',issues:[inputIssue]};
+ const request=sourceCheckRequestSchema.safeParse(input);
+ if(!request.success)return {...common,status:'validation-failed',issues:request.error.issues.map(i=>({code:'SOURCE_REQUEST',path:'$.'+i.path.join('.'),reason:i.message}))};
+ const parsed=parseExplicitRelations(snapshot.excerpt,snapshot.textByteStart);
+ if(parsed.status!=='ready')return {...common,status:'source-unsupported',issues:parsed.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
+ const sourcePairs=new Map(parsed.relations.map(r=>[pair(r.from,r.to),r]));
+ const sourceNames=new Set(parsed.nodes),issues:SourceIssue[]=[];
+ const {view,claims=[],prose}=request.data;
+ let comparison:Record<string,unknown>={status:'not-requested'};
+ if(view!==undefined){
+  const checked=validateEnvelope(view);
+  if(!checked.ok)return finish({...common,status:'validation-failed',sourceRelations:parsed.relations,issues:checked.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}});
+  if(checked.value.component!=='ArchitectureExplorer')return {...common,status:'source-unsupported',issues:[{code:'SOURCE_COMPONENT',path:'$.view.component',reason:'This source path compares ArchitectureExplorer only.'}],comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
+  const graph=compareDirectedView(checked.value,parsed);issues.push(...graph.issues);comparison=graph.comparison;
  }
  const adjacency=new Map(parsed.nodes.map(n=>[n,parsed.relations.filter(r=>r.from===n).map(r=>r.to)]));
  const pathBetween=(from:string,to:string):string[]|null=>{

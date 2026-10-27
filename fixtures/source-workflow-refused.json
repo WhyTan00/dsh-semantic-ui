@@ -1,0 +1,107 @@
+[
+  {
+    "view": {
+      "protocolVersion": "1.4",
+      "component": "ArchitectureExplorer",
+      "displayId": "workflow-fixture",
+      "revision": 1,
+      "summary": "仅核来源拓扑与明确异常规则；未认证任意正文。",
+      "payload": {
+        "title": "流程与明确异常规则",
+        "nodes": [
+          {
+            "id": "node-fixture-0",
+            "label": "入口",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-1",
+            "label": "鉴权",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-2",
+            "label": "库存",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-3",
+            "label": "支付",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-4",
+            "label": "通知",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-fixture-0",
+            "source": "node-fixture-0",
+            "target": "node-fixture-1",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-1",
+            "source": "node-fixture-1",
+            "target": "node-fixture-2",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-2",
+            "source": "node-fixture-2",
+            "target": "node-fixture-3",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-3",
+            "source": "node-fixture-3",
+            "target": "node-fixture-4",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          }
+        ],
+        "scenarios": []
+      }
+    },
+    "mapping": {
+      "failurePolicies": [
+        {
+          "trigger": "node-fixture-4",
+          "retryOnly": [
+            "node-fixture-4"
+          ],
+          "noRollback": [
+            "node-fixture-3"
+          ]
+        }
+      ]
+    },
+    "claims": [
+      {
+        "kind": "rollback",
+        "trigger": "通知",
+        "target": "支付",
+        "value": true
+      }
+    ]
+  }
+]

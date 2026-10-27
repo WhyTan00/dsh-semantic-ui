@@ -1,5 +1,8 @@
 # Semantic protocol1.4 (reads1.0 /1.1 /1.2 /1.3 history)
 
+Preview22 adds a separate `workflow-zh` source metadata/check contract, documented in [the workflow source guide](SOURCE-WORKFLOW.zh-CN.md). Component protocol remains1.4: no new ArchitectureExplorer payload or executable action. New readers accept prior source kinds; a reader21 does not understand the new metadata kind. A complete node-ID policy mapping is checked before source-derived constraints/explanation are saved; graph topology still certifies no operational guarantees.
+
+
 Preview.11 uses protocol1.4 with [explicit role/effect consistency checks](DECLARATION-CHECKS.zh-CN.md). Published preview.9/10 use protocol1.3. See [source mapping and validation limits](GROUNDING-FOLLOWUP.zh-CN.md). Published preview.8 remains protocol1.2.
 
 The DSH model-facing tool is `dsh_semantic_ui`:

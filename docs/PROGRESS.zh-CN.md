@@ -1,5 +1,8 @@
 # 实际进度
 
+preview.22源码候选实现[A2明确失败规则](SOURCE-WORKFLOW.zh-CN.md)：完整workflow-zh来源的四拓扑、通知失败分支/仅重试通知/不回滚支付各有出处，typed mapping覆盖与claims矛盾/未知分开；MCP、正常render和普通--answer沿同core，节点约束/完整说明重建并存原生checkpoint。52项/8文件+10伴随离线合同、开发Native/PTC各6例和旧1.0图/360px/刷新重开通过；新模型0。首次宿主相反政策已正确拒绝，取数误用同会话旧delivered的失败保留，改为当前源消息后的回执。最终归档/Linux/普通答复与匿名发行另验，不把开发构建当已交付；原A2勘误、0/6/18及全部旧冻结保持。
+
+
 preview.21已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21)，冻结源码2f2cb1908655d4cf2d554b74b9356472339fb44b；运行SHA e0779f6ba59532aa2d003a0645fe84a8b8e17d71a13aa2d87c9ab6086602d46a。最终365文件先逐字节核后正常安装，macOS/Linux Native/PTC的冷只读、明确新来源、原ID与历史恢复通过。正常SourceUpdatePanel每组注入unknown/withheld无ID结果，原ID仍显示、随后三次请求仅同ID status，无offer/submit/新提交ID；错误态不复用旧采用字段，恢复真实原收据后才显示采用。39项定向合同通过、CI40472008667成功，四资产与本机/Linux/匿名HTTPS200同字节；见[最终接受](evidence/cold-source-update.json)。20公开后代码复查发现的原ID界面缺口及原资产保持，21是独立版本。新推理0，0520前段2/2不重置；原0/6/18、身份/世界/自由正文未核保持。以下候选段是冻结前开发证据，不替代本段最终归档接受。
 
 冻结前开发记录（21）完成[冷会话受约束补充](COLD-SOURCE-UPDATE.zh-CN.md)：公开sessionController恢复同ID，offer/status冷读不激活，恢复/命令/flush边界复查来源、原生inbox、归档与activity，目标/排程历史保守拒绝。39定向测试和开发Native/PTC两次宿主重启路径通过；false按else导出need=false，本项不排除两方案，原unknown/新false及原ID收据独立恢复。首次实际测试暴露DSH点击树自行恢复Agent，保留失败并将冷API测试与原生UI恢复分层，没有伪装不激活。真实推理0，旧19/18及全部原件不变。最终归档安装/Linux/公开资产另验后补，不冒当前已发行。

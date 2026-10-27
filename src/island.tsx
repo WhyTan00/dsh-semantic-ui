@@ -16,7 +16,7 @@ import {TemplatePanel} from './components/TemplatePanel';
 import type {LibraryBridge} from './templates';
 import {SourceUpdatePanel} from './components/SourceUpdatePanel';
 import type {SourceUpdateBridge} from './source-update-contract';
-const sourceLabels={'decision-zh':'原始条件与取舍','permissions-zh':'直接访问与权限','observations-zh':'原始读数与统计范围'} as const;
+const sourceLabels={'workflow-zh':'流程与明确异常规则','decision-zh':'原始条件与取舍','permissions-zh':'直接访问与权限','observations-zh':'原始读数与统计范围'} as const;
 const {registry}=defineRegistry(catalog,{components:{ArchitectureExplorer:({props})=><ArchitectureExplorer data={props}/>,DecisionExplorer:({props})=><DecisionExplorer data={props}/>,DataChart:({props})=><DataChart data={props}/>}});
 class Boundary extends Component<{children:ReactNode;summary:string},{error:boolean}>{state={error:false};static getDerivedStateFromError(){return {error:true};}render(){return this.state.error?<div className="status-error" role="alert"><strong>Rendering failed.</strong><p>{this.props.summary}</p><p>Reload this view or inspect the text summary. No content was changed.</p></div>:this.props.children;}}
 export function SemanticView({state,bridge,updateBridge}:{state:ViewState;bridge?:LibraryBridge;updateBridge?:SourceUpdateBridge}){

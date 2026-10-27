@@ -51,6 +51,6 @@ export function sourceOptions(argv:string[]):SourceFileOptions|undefined{
  for(let i=0;i<argv.length;i+=2){const flag=argv[i],value=argv[i+1];if(!['--source-file','--source-json-pointer','--source-excerpt','--source-kind'].includes(flag)||value===undefined||flags.has(flag))throw Error('SOURCE_CONFIG: Use one --source-file with optional --source-json-pointer, --source-excerpt and --source-kind; unknown or duplicate options are rejected.');flags.set(flag,value);}
  const file=flags.get('--source-file');
  if(!file){if(flags.size)throw Error('SOURCE_CONFIG: Source selection requires an explicit --source-file.');return undefined;}
- const kind=flags.get('--source-kind');if(kind!==undefined&&kind!=='arrows'&&kind!=='decision-zh'&&kind!=='permissions-zh'&&kind!=='observations-zh')throw Error('SOURCE_CONFIG: Source kind must be arrows, decision-zh, permissions-zh or observations-zh.');
+ const kind=flags.get('--source-kind');if(kind!==undefined&&kind!=='arrows'&&kind!=='workflow-zh'&&kind!=='decision-zh'&&kind!=='permissions-zh'&&kind!=='observations-zh')throw Error('SOURCE_CONFIG: Source kind must be arrows, workflow-zh, decision-zh, permissions-zh or observations-zh.');
  return {file,...(flags.has('--source-json-pointer')?{jsonPointer:flags.get('--source-json-pointer')}:{}),...(flags.has('--source-excerpt')?{excerpt:flags.get('--source-excerpt')}: {}),...(kind?{kind}: {})};
 }

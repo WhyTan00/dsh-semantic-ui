@@ -1,0 +1,8 @@
+{
+  "source": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？",
+  "sourceSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+  "origin": {
+    "path": "docs/evidence/natural/r9-A2.json",
+    "pointer": "/question"
+  }
+}

@@ -1,5 +1,8 @@
 # 验证证据与未通过项
 
+preview.22候选：[完整异常规则合同](SOURCE-WORKFLOW.zh-CN.md)区分给定规则、纯拓扑、typed矛盾/未知与原始模型正文。52项/8文件、10伴随离线检查和开发Native/PTC各6例通过；最终归档安装/Linux/实际普通答复与匿名下载另记。原0/6/18和A2首次错误不回写，当前没有新增真实模型。
+
+
 preview.21已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21)，冻结源码2f2cb1908655d4cf2d554b74b9356472339fb44b；运行SHA e0779f6ba59532aa2d003a0645fe84a8b8e17d71a13aa2d87c9ab6086602d46a。最终365文件先逐字节核后正常安装，macOS/Linux Native/PTC的冷只读、明确新来源、原ID与历史恢复通过。正常SourceUpdatePanel每组注入unknown/withheld无ID结果，原ID仍显示、随后三次请求仅同ID status，无offer/submit/新提交ID；错误态不复用旧采用字段，恢复真实原收据后才显示采用。39项定向合同通过、CI40472008667成功，四资产与本机/Linux/匿名HTTPS200同字节；见[最终接受](evidence/cold-source-update.json)。20公开后代码复查发现的原ID界面缺口及原资产保持，21是独立版本。新推理0，0520前段2/2不重置；原0/6/18、身份/世界/自由正文未核保持。以下候选段是冻结前开发证据，不替代本段最终归档接受。
 
 冻结前开发记录（21）：[冷会话验证范围](COLD-SOURCE-UPDATE.zh-CN.md)区分开发构建、最终归档和宿主导航行为。39项定向合同与开发Native/PTC重启/冷读/明确补充/原ID恢复通过，0真实推理；最终归档、Linux与匿名下载尚未由这些源码检查证明。旧19及更早矩阵保留原版本。

@@ -1,5 +1,8 @@
 # DSH Semantic UI
 
+**Preview.22 candidate** adds [complete finite workflow rules](docs/SOURCE-WORKFLOW.zh-CN.md): explicit failure trigger, retry-only target and no-rollback target are checked separately from graph topology, mapped to real node IDs and projected through the existing ArchitectureExplorer. Missing policies, wrong branches and unsupported source are explicit; arbitrary prose and execution guarantees remain unverified. The original A2 raw failure is preserved. Development checks pass; final archive acceptance follows a separate freeze.
+
+
 A personal, independently written **preview** plugin for native [DeepSeek Harness](https://github.com/deepseek-ai/deepseek-harness) conversations. It uses [json-render](https://github.com/vercel-labs/json-render) to render three bounded semantic components through one tool, `dsh_semantic_ui`.
 
 - **ArchitectureExplorer** preserves declared relationships and offers scenario highlighting, search, neighborhood focus and an accessible relationship list.

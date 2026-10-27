@@ -3,6 +3,18 @@ import {checkSourcePermissions,parsePermissionSource} from './source-permissions
 import {checkSourceDecision,sourceDecisionRequestSchema} from './source-decision';
 import {checkSourceNumeric,parseNumericSource,sourceNumericRequestSchema} from './source-numeric';
 import type {SourceSnapshot} from './source-graph';
+import {checkSourceWorkflow,parseWorkflowSource} from './source-workflow';
+
+/** A complete workflow is projected afresh; model annotations never become rules. */
+export function bindWorkflowView(snapshot:SourceSnapshot,input:Envelope,mapping:unknown,claims?:unknown):{ok:true;view:Envelope;explanation:string}|{ok:false;issues:Issue[]}{
+ const request={view:input,...(mapping===undefined?{}:{mapping}),...(claims===undefined?{}:{claims})},first=checkSourceWorkflow(snapshot,request),canonical=first.canonicalExplanation as {status?:string;text?:string}|undefined;
+ const failed=()=>{const issues=[...((first.issues as SourceIssueLike[]|undefined)??[]),...((first.claimChecks as {index:number;status:string;code?:string;reason?:string}[]|undefined)??[]).filter(c=>c.status!=='supported').map(c=>({code:c.code??'SOURCE_CLAIM_NOT_ASSESSED',path:`$.claims.${c.index}`,reason:c.reason??'Not established by the finite source.'}))];if(!issues.length)issues.push({code:'SOURCE_WORKFLOW_BINDING',path:'$.view',reason:'Complete topology and failure-policy mapping are required.'});return {ok:false as const,issues:issues.map(i=>({...i,hint:'Inspect source-check; map every explicit failure policy to current node IDs. Do not infer other branches, retries or execution guarantees.'}))};};
+ const parsed=parseWorkflowSource(snapshot.excerpt,snapshot.textByteStart);if((first.comparison as {status?:string}|undefined)?.status!=='matched'||canonical?.status!=='available'||!canonical.text||parsed.status!=='ready'||input.component!=='ArchitectureExplorer')return failed();
+ const source=parsed.value,p=input.payload;
+ const view:Envelope={...input,summary:'来源声明的流程与明确异常规则；拓扑、失败动作范围和未知执行状态分开。',payload:{title:'来源声明的流程与异常规则',nodes:p.nodes.map(n=>({id:n.id,label:n.label,responsibility:'这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。',constraints:source.failurePolicies.flatMap(r=>[...(r.trigger===n.label?[`当${r.trigger}失败时，仅重试${r.retryOnly.join('、')}，不回滚${r.noRollback.join('、')}。`]:[]),...(r.noRollback.includes(n.label)&&r.trigger!==n.label?[`${r.trigger}失败分支明确不回滚${n.label}；不等于该节点已经完成或必成功。`]:[])]),evidence:[]})),edges:p.edges.map(e=>({id:e.id,source:e.source,target:e.target,directed:true,type:'声明的正向流程关系',evidence:[]})),scenarios:p.scenarios.map((s,i)=>({id:s.id,label:`声明的拓扑路径 ${i+1}`,nodeIds:[...s.nodeIds],edgeIds:[...s.edgeIds],explanation:'仅高亮声明的正向拓扑路径；异常规则见来源说明，不保证故障传播、反向回传或实际执行状态。'}))}};
+ const checked=validateEnvelope(view);if(!checked.ok)return {ok:false,issues:checked.issues};return {ok:true,view:checked.value,explanation:canonical.text};
+}
+type SourceIssueLike={code:string;path:string;reason:string};
 
 /** Make a fresh source projection, never a keyword edit of model-authored notes. */
 export function bindPermissionView(snapshot:SourceSnapshot,input:Envelope):{ok:true;view:Envelope;explanation:string}|{ok:false;issues:Issue[]}{

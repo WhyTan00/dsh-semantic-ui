@@ -1,5 +1,7 @@
 # 典型开源项目采用复核
 
+后续preview.22候选把“来源规则与可视图分开核”进一步落实到[完整workflow异常规则](../SOURCE-WORKFLOW.zh-CN.md)：拓扑正确仍不能漏掉显式例外，给定分支和未给执行保证分开；同core贯通检查、普通来源说明与原生交付。新开发证据与最终归档另记，不升级旧自然结果，也不以扩大图种代替语义修复。
+
 后续preview.21已交付，进一步落实生命周期与提交分层：[冷来源offer/status只读、明确submit恢复、原ID去重](../COLD-SOURCE-UPDATE.zh-CN.md)。归档/排队/自动任务和跨await来源变化有具体门禁，最终365文件归档的macOS/Linux Native/PTC通过，正常组件无ID回执反例、原ID保持及四匿名资产[单独接受](../evidence/cold-source-update.json)。它继续缩小P1缺口，没有把通用表单、结果迁移或上游协议兼容标成完成；本页原35项目复核基线不改。
 
 ## 截至preview.21的采用现状
