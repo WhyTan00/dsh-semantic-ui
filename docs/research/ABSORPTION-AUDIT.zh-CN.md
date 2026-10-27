@@ -19,6 +19,8 @@
 
 preview.15的后续 [数值来源交付](../SOURCE-NUMERIC.zh-CN.md) 已把每位置值、null mask、单位、统计范围与DataChart字段绑定，普通`--answer`实测通过/拒绝各一项，新增模型回合0。它补上一段数值来源核对，仍不完成任意正文认证、DSH数值来源或表单提交；下表保留原preview.11基线，各版本不混算。
 
+preview.16已把上述数值约束接入 [DSH正常render/checkpoint](../NUMERIC-DELIVERY.zh-CN.md)，最终归档本机/Linux的Native/PTC各正反例与刷新通过，保留source身份/世界/任意正文未核。该后续实现单列，不改下表原preview.11基线或旧自然题结果。
+
 ## 从上游优点到本项目行为
 
 | 能力与代表项目 | 本项目实际采用 | 仍缺什么 / 验证到哪里 |

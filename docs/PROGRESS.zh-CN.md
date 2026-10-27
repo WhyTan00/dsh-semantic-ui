@@ -1,6 +1,6 @@
 # 实际进度
 
-preview.16源码接入DSH当前own-turn数值来源与正常render/checkpoint：完整核值/null/单位/顺序和typed mean后重建来源投影，原摘要/注释不进入有据显示；不匹配持久化拒绝。新增metadata kind与DataChart对应，历史只恢复原来源范围。7项定向单元、类型/构建及源阶段Native2例已通过；首次AGENTS producer拒绝经锁定公开包核实后将agent-instructions排除为合成上下文，未知producer仍阻断，当前来源缓存版本4，私有harness固定DSH_AGENTS_HOME。最终归档/Native/PTC/CI/发行按 [数值交付回执](evidence/numeric-delivery.json) 补充；源阶段不冒充最终接受，0真实模型，旧0/6/18及资产保持。
+preview.16已 [公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.16)：DSH当前own-turn数值来源经完整值/null/单位/顺序和typed mean核对后，才重建来源投影并正常render/checkpoint；原模型摘要/注释不带入有据显示，拒绝也保存恢复。最终归档启动前305文件核验，本机与Linux Native/PTC各2正反例及刷新均通过、pageerror=0，本地筛选不改原始来源说明/完整均值未知。7项定向单元通过，CI40437924459成功，四资产与本地完全同字节且匿名HTTPS核验。源码/tag a275e0f、runtime55e81da…，完整SHA与范围见 [数值交付回执](evidence/numeric-delivery.json)。首源码例的agent-instructions未知producer拒绝保留，核锁定公开包后排除其合成内容，未知producer仍阻断；来源缓存4及私有AgentsHome保证当前回合选择范围。0真实模型，原0/6/18/旧资产/tag和14失败不改；未做当前主客户端/真机或任意正文认证。
 
 伴随客户端补齐数值拒绝原因：一次真实普通`--answer`明确显示第3位置缺失收到0、观测分母3收到4、完整均值未知收到0，仍withheld；检查器请求/响应与原15案例逐字相同，仅文字呈现改变。6项离线合同通过，不回显prose/身份/路径，长错误有界降级。最终15归档另在隔离DSH实际安装并核302文件，旧协议1.0 DataChart的Native/PTC各1刷新恢复smoke通过，pageerror=0；源码差异为shared模块/reexport初始化而非DSH/React/协议源码变更，故补了真实smoke。没有新数值源接入DSH、完整矩阵、模型/CI/发行或全局变更。原笼统拒绝/14超时全保留；见 [独立回执](evidence/refusal-details.json)。
 

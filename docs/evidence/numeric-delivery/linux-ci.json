@@ -1,0 +1,170 @@
+{
+  "runId": 40437924459,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40437924459",
+  "headSha": "a275e0fd8b6134e100b98056a2590bf6b6abbb4a",
+  "conclusion": "success",
+  "artifactComparison": [
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.16.tgz",
+      "sha256": "55e81da124ae0db8ae2696b58a1349de5b290c558e137f0228f493a0416ec9ae",
+      "identical": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.16.tgz",
+      "sha256": "17cfcf5c8d1db5c624564b2dfb52bc1fd99f262124af29688b8d4bf942151689",
+      "identical": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "sha256": "f9acec4febd4a898b8d6af898ea097f54b0f704d5ad62e64d001e860655844d0",
+      "identical": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "sha256": "33dd935fb1c15baf5f817c0e0f841cb3c5dd50999bafb45149cdc7be6e7a7829",
+      "identical": true
+    }
+  ],
+  "linuxArchiveInstall": {
+    "dsh": "0.2.1-rc.2",
+    "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+    "package": "@whytan/dsh-semantic-ui",
+    "version": "0.1.0-preview.16",
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.16.tgz",
+    "sha256": "55e81da124ae0db8ae2696b58a1349de5b290c558e137f0228f493a0416ec9ae",
+    "hostStarted": true,
+    "allPackagedFilesVerified": 305,
+    "validationSuite": "source-bound-numeric",
+    "casesPerMode": 2,
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "pageErrors": []
+  },
+  "linuxCases": [
+    {
+      "mode": "native",
+      "results": [
+        {
+          "kind": "positive",
+          "status": "bound",
+          "canonicalExplanation": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。",
+          "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+          "currentSessionSourceRefMatches": true,
+          "producerKind": "user",
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "values": [
+            -2,
+            0,
+            null,
+            2
+          ],
+          "missingMask": [
+            false,
+            false,
+            true,
+            false
+          ],
+          "observed": {
+            "count": 3,
+            "missing": 1,
+            "sum": 0,
+            "mean": 0,
+            "denominator": 3,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 4,
+            "mean": null,
+            "denominator": 4,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "sourceScopeFixedDuringLocalFilter": true,
+          "refreshRestoresOriginalDataAndUnknown": true,
+          "noRequestOnRefresh": true,
+          "modelNotesAbsent": true
+        },
+        {
+          "kind": "negative",
+          "status": "refused",
+          "codes": [
+            "SOURCE_MISSINGNESS",
+            "SOURCE_STATISTIC",
+            "SOURCE_STATISTIC"
+          ],
+          "refreshPreservesRefusal": true,
+          "noBadChart": true,
+          "noRequestOnRefresh": true
+        }
+      ],
+      "pageErrors": [],
+      "newRealModelTurns": 0,
+      "archiveInstallation": true
+    },
+    {
+      "mode": "ptc",
+      "results": [
+        {
+          "kind": "positive",
+          "status": "bound",
+          "canonicalExplanation": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。",
+          "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+          "currentSessionSourceRefMatches": true,
+          "producerKind": "user",
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "values": [
+            -2,
+            0,
+            null,
+            2
+          ],
+          "missingMask": [
+            false,
+            false,
+            true,
+            false
+          ],
+          "observed": {
+            "count": 3,
+            "missing": 1,
+            "sum": 0,
+            "mean": 0,
+            "denominator": 3,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 4,
+            "mean": null,
+            "denominator": 4,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "sourceScopeFixedDuringLocalFilter": true,
+          "refreshRestoresOriginalDataAndUnknown": true,
+          "noRequestOnRefresh": true,
+          "modelNotesAbsent": true
+        },
+        {
+          "kind": "negative",
+          "status": "refused",
+          "codes": [
+            "SOURCE_MISSINGNESS",
+            "SOURCE_STATISTIC",
+            "SOURCE_STATISTIC"
+          ],
+          "refreshPreservesRefusal": true,
+          "noBadChart": true,
+          "noRequestOnRefresh": true
+        }
+      ],
+      "pageErrors": [],
+      "newRealModelTurns": 0,
+      "archiveInstallation": true
+    }
+  ],
+  "oldFullMatricesSkipped": true
+}

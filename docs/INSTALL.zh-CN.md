@@ -2,6 +2,8 @@
 
 本预览支持 **DSH 0.2.1-rc.2、Node 24+、pnpm**。已有其他 DSH 安装并不需要重装；使用公开发行版的准确可执行路径即可。不要修改正在运行的实例。
 
+preview.16新增的数值来源交付已在最终归档上完成隔离Native/PTC正反例及刷新检查；其它功能仍按各版本证据读取，不把此定向检查当全矩阵。新来源checkpoint要求16或兼容reader，回退旧15不承诺读取新kind。
+
 ## 使用 Release 包
 
 从个人仓库 Releases 下载运行包、独立证据包与 SHA256SUMS。下面的全量校验需要两个 tgz 都在同一目录；证据包无需安装。只下载运行包时，可单独计算其 SHA-256 与 SHA256SUMS 的对应行比较。
@@ -13,7 +15,7 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.13.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.16.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。

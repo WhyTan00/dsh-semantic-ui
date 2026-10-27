@@ -1,0 +1,61 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "kind": "positive",
+      "status": "bound",
+      "canonicalExplanation": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。",
+      "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "currentSessionSourceRefMatches": true,
+      "producerKind": "user",
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "values": [
+        -2,
+        0,
+        null,
+        2
+      ],
+      "missingMask": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "observed": {
+        "count": 3,
+        "missing": 1,
+        "sum": 0,
+        "mean": 0,
+        "denominator": 3,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 4,
+        "mean": null,
+        "denominator": 4,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "sourceScopeFixedDuringLocalFilter": true,
+      "refreshRestoresOriginalDataAndUnknown": true,
+      "noRequestOnRefresh": true,
+      "modelNotesAbsent": true
+    },
+    {
+      "kind": "negative",
+      "status": "refused",
+      "codes": [
+        "SOURCE_MISSINGNESS",
+        "SOURCE_STATISTIC",
+        "SOURCE_STATISTIC"
+      ],
+      "refreshPreservesRefusal": true,
+      "noBadChart": true,
+      "noRequestOnRefresh": true
+    }
+  ],
+  "pageErrors": [],
+  "newRealModelTurns": 0,
+  "archiveInstallation": true
+}

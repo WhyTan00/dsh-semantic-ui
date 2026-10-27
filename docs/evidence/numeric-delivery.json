@@ -1,7 +1,7 @@
 {
   "date": "2026-10-27",
   "version": "0.1.0-preview.16",
-  "scope": "source-stage numeric host binding; final archive/CI/publication supplemented after freeze",
+  "scope": "released preview16 current own-turn numeric render/checkpoint, final archive installed and verified",
   "source": {
     "path": "docs/evidence/natural/r9-N2.json",
     "jsonPointer": "/question",
@@ -40,7 +40,7 @@
   },
   "currentSourceCacheVersion": 4,
   "isolatedFixtureAgentsHome": true,
-  "archiveAcceptance": "pending at source freeze",
+  "archiveAcceptance": "passed Native/PTC2 each with actual305 file check before startup",
   "newModelAdoption": "not tested; deterministic fixture only",
   "originalRun9": {
     "pass": 0,
@@ -54,5 +54,44 @@
     "Historical source scope restored from saved checkpoint, never recertified against later input",
     "No full historical/GenUI/old 1.0 host matrix or old natural-question replay",
     "15/13 assets and the unpublished14 candidate remain immutable"
-  ]
+  ],
+  "runtimeSourceCommit": "a275e0fd8b6134e100b98056a2590bf6b6abbb4a",
+  "runtimeSha256": "55e81da124ae0db8ae2696b58a1349de5b290c558e137f0228f493a0416ec9ae",
+  "evidenceSha256": "17cfcf5c8d1db5c624564b2dfb52bc1fd99f262124af29688b8d4bf942151689",
+  "runtimeEntries": {
+    "dist/host.js": "e67554302cdb967a50da80c1ca7e6975f62041819f14c48010daeb216079dedb",
+    "dist/client.js": "6b7c199b339d5049cae8e5644beb03694b97ee7b1d79639a401ba399153e94e7",
+    "dist/core.js": "e95a07a981cb3da11961cb8e9246b9d61f43f2b899dc8db464551da6ebabec0e",
+    "dist/mcp.js": "868066b7693fdbbcdb8aeb469e1f26118cb6b43d526553ae1340e314b535a5cf",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "archiveInstall": "numeric-delivery/install.json",
+  "nativeCases": "numeric-delivery/native.json",
+  "ptcCases": "numeric-delivery/ptc.json",
+  "linuxCi": "numeric-delivery/linux-ci.json",
+  "publication": "numeric-delivery/publication.json",
+  "manifest": "numeric-delivery/package-manifest.json",
+  "actualToolPathsObserved": {
+    "native": "dsh_semantic_ui source-check/render",
+    "ptc": "run_code nested dsh_semantic_ui source-check/render"
+  },
+  "remainingOwnedProcesses": 0,
+  "allOwnedPortsClosed": true,
+  "previousFrozenArtifacts": [
+    {
+      "version": "0.1.0-preview.13",
+      "runtimeAndEvidenceStillMatchFrozenManifest": true
+    },
+    {
+      "version": "0.1.0-preview.14",
+      "runtimeAndEvidenceStillMatchFrozenManifest": true
+    },
+    {
+      "version": "0.1.0-preview.15",
+      "runtimeAndEvidenceStillMatchFrozenManifest": true
+    }
+  ],
+  "currentMainClientOrRealDeviceAdoption": "not tested",
+  "arbitrarySourceAndFreeProse": "not certified",
+  "newNumericCheckpointReader": "requires16 or an explicitly compatible reader; no15 downgrade acceptance"
 }
