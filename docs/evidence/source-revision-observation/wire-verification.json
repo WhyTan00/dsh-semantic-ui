@@ -1,0 +1,42 @@
+{
+  "runs": [
+    {
+      "run": "preflight26",
+      "hostExplicitCalls": 2,
+      "modelSemanticCalls": 0,
+      "modelToolsInOrder": [],
+      "builtInDiscoveryCalls": 0,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusOnePrintNewline": true
+    },
+    {
+      "run": "observed26",
+      "hostExplicitCalls": 3,
+      "modelSemanticCalls": 4,
+      "modelToolsInOrder": [
+        "semantic_ui_source_check",
+        "semantic_ui_schema",
+        "semantic_ui_source_check",
+        "semantic_ui_check"
+      ],
+      "builtInDiscoveryCalls": 2,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusOnePrintNewline": true
+    }
+  ],
+  "frozenFingerprintsEqual": true,
+  "sameDefaultSettings": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "genericGuideUnchanged": true,
+  "onlyCurrentQuestionAndTypedSkillInTurnInput": true,
+  "oldControlAndBlindExpectationsNotSupplied": true,
+  "transportMetadata": "content and structuredContent compared in full; transport-only metadata excluded"
+}

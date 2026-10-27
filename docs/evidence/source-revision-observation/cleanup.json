@@ -1,0 +1,73 @@
+{
+  "runs": [
+    {
+      "run": "preflight26",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 0,
+      "processes": [
+        {
+          "observerPid": 76755,
+          "childPid": 76757,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 76760,
+          "childPid": 76761,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "observed26",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 1,
+      "processes": [
+        {
+          "observerPid": 78159,
+          "childPid": 78161,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 78165,
+          "childPid": 78166,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    }
+  ],
+  "ownedHostsStarted": 0,
+  "backendModelRequestCount": "unknown",
+  "noSharedServiceStopped": true
+}

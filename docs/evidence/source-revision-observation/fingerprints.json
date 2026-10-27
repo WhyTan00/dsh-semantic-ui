@@ -1,0 +1,37 @@
+{
+  "frozenAt": "2026-10-27T15:03:48.727679+00:00",
+  "workingHead": "f9700b6f49a9840f22518d73282d41be4b56cce3",
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "manifestSha256": "354f1a770a4649bc881ecf417704f4f9f78d143f041ca8d7255bad5385c5ba79",
+  "clientSha256": "4f6f071e77634e4708a7bbfd22e643cc2987f2520ba9060f9aef670b5e2bd314",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "genericGuideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "runtimeEntrypoints": {
+    "dist/mcp.js": "67073960357ef7ed27b1ca7a9c36b0627526fc9f7cd3a0d071147029de6ea3d8",
+    "dist/core.js": "2a729ccc7ceba5f87cac3b8883bee5353749ec5ba7b8d729a31007c4a7ff48ec",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "sourceFiles": {
+    "src/core.ts": "853cd17afb1e0f299ac70b619d31c1eb715c0a44f67dc35f1383bba8532c6312",
+    "src/source-decision.ts": "475e3a3d54ac0008046dd87ecb092590052c3a80d712367054d4e2eb41b643de",
+    "src/dsh/source.ts": "481a223d366ff0b9ce4b6a61eaced87b93634502eb3d1ae5bd7e298243b4a005",
+    "src/dsh/host.ts": "1503d4724c094dc49b0b24c41fe6d2c7fc59ea0d7b2a15734509b1eadd9dd7d1",
+    "src/mcp.ts": "c36b045a0e34d6c5769b8899d8ad5847d5543f75396cdb779e85a4de5e72028a"
+  },
+  "sourceSha256": "d086ba87551a3529dc6f2a962f7bca119121278ea6fca00a3aa2486d42518102",
+  "questionSha256": "b26187033f5260f6cae5fddc3723b8311a3e7d398909c310d3b9c917abb0b259",
+  "independentCriteriaSha256": "9548ebf19ab3d9be5327d6bdaab354dd268844d29c15a11e566e313c1ae8b74e",
+  "expectedDefaults": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "allowedModelInputs": [
+    "current source via startup source_check",
+    "ordinary question",
+    "original archived typed skill and existing generic guide"
+  ],
+  "oldControlAndBlindExpectedSupplied": false
+}

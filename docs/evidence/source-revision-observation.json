@@ -1,0 +1,128 @@
+{
+  "schema": "semantic-ui-source-revision-observation-v1",
+  "recordedAt": "2026-10-27T15:11:10.630258+00:00",
+  "scope": "One new guided synthetic current-source snapshot observation with two withdrawn declarations; tool adoption, raw semantics and host explanation separately reviewed.",
+  "runtimeVersion": "0.1.0-preview.26",
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "workingHeadBeforeObservation": "f9700b6f49a9840f22518d73282d41be4b56cce3",
+  "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "clientSha256": "4f6f071e77634e4708a7bbfd22e643cc2987f2520ba9060f9aef670b5e2bd314",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "genericGuideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "codexCli": "0.164.0",
+  "defaults": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "independentOriginalPrivateCriteriaSha256": "9548ebf19ab3d9be5327d6bdaab354dd268844d29c15a11e566e313c1ae8b74e",
+  "criteriaFrozenAt": "2026-10-27T14:45:00.335054+00:00",
+  "executionFingerprintsFrozenAt": "2026-10-27T15:03:48.727679+00:00",
+  "currentSourceSha256": "d086ba87551a3529dc6f2a962f7bca119121278ea6fca00a3aa2486d42518102",
+  "questionSha256": "b26187033f5260f6cae5fddc3723b8311a3e7d398909c310d3b9c917abb0b259",
+  "candidateSha256": "75be3d54d703feed13ee727c699a915b0904863058a33349ba22f3be4367c84e",
+  "newZeroModelPreflights": 1,
+  "newUserLevelModelAttempts": 1,
+  "newObservedModelTurns": 1,
+  "thisCanonicalMaximum": 1,
+  "broader1420Used": 1,
+  "broader1420Maximum": 2,
+  "remainingSlotAutomaticallyAuthorized": false,
+  "modelSemanticCalls": 4,
+  "modelBuiltInDiscoveryCalls": 2,
+  "hostExplicitCalls": {
+    "preflight": 2,
+    "observed": 3
+  },
+  "firstFreshViewComparison": "matched",
+  "coreCheck": "validated",
+  "toolAdoptionReview": "met",
+  "rawSemanticReview": "met for frozen finite criteria",
+  "rawRuntimeStatus": "unverified",
+  "hostDelivery": "delivered separately; modelCandidateUsed=false",
+  "backendModelRequestCount": "unknown",
+  "retries": 0,
+  "originalOldModelAnswerObserved": false,
+  "modelReceivesOldControlOrBlindCriteria": false,
+  "liveDSHToCodexCallbackObserved": false,
+  "mainClientRichUiOrPhoneVerified": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "runtimeOrSkillChanges": false,
+  "newReleaseOrRepackOrReinstall": false,
+  "previousNaturalResults": "Unchanged 0 pass / 6 fail / 18 requests; earlier exhausted observation budgets and preview21-26 acceptances preserved.",
+  "assets": [
+    {
+      "path": "source-revision-observation/archived-skill.md",
+      "sha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+      "bytes": 6132
+    },
+    {
+      "path": "source-revision-observation/budget.json",
+      "sha256": "b53a75f085110cbac748eb8e19d2c7cb029bfcd7d63754e6610272081d07e3da",
+      "bytes": 553
+    },
+    {
+      "path": "source-revision-observation/candidate.md",
+      "sha256": "75be3d54d703feed13ee727c699a915b0904863058a33349ba22f3be4367c84e",
+      "bytes": 1068
+    },
+    {
+      "path": "source-revision-observation/cleanup.json",
+      "sha256": "3de4cfad0809fe985f2ee786092d4ab9514d258252c604f51143a2241b49056f",
+      "bytes": 1755
+    },
+    {
+      "path": "source-revision-observation/criteria-cases.json",
+      "sha256": "88ac9c3234e096d6eb1763f634b7c26a70d3ec79f739f5d7df7e4a6a72b39d7c",
+      "bytes": 3425
+    },
+    {
+      "path": "source-revision-observation/current-source.txt",
+      "sha256": "d086ba87551a3529dc6f2a962f7bca119121278ea6fca00a3aa2486d42518102",
+      "bytes": 321
+    },
+    {
+      "path": "source-revision-observation/fingerprints.json",
+      "sha256": "4e238f4c2dcc825aa0ee0a864ec09bdfb04d8ca372fd658b42f2630b0f6e782d",
+      "bytes": 2029
+    },
+    {
+      "path": "source-revision-observation/generic-guide.txt",
+      "sha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+      "bytes": 1002
+    },
+    {
+      "path": "source-revision-observation/host-answer.md",
+      "sha256": "f676e41911e0ea4a4b7d8e041476fdd1d998209a22cf38206ad185173df2fd20",
+      "bytes": 1306
+    },
+    {
+      "path": "source-revision-observation/observation.json",
+      "sha256": "a1f976879fb4780ac6ac59395e3f7bf7c60593e9c7eb348d8bc409d8c3cbc1c9",
+      "bytes": 176464
+    },
+    {
+      "path": "source-revision-observation/preflight.json",
+      "sha256": "95f94184d50837ef4dc9ac5e4a1b70491f5fa33f69be5ce7ddf20f3327778347",
+      "bytes": 55328
+    },
+    {
+      "path": "source-revision-observation/question.txt",
+      "sha256": "b26187033f5260f6cae5fddc3723b8311a3e7d398909c310d3b9c917abb0b259",
+      "bytes": 126
+    },
+    {
+      "path": "source-revision-observation/review.json",
+      "sha256": "8e645078d4766cf01afd73f66cf8831ffc7d98b7a91d32ea922ecbfafe97a494",
+      "bytes": 3136
+    },
+    {
+      "path": "source-revision-observation/wire-verification.json",
+      "sha256": "c90fc449577029a09e969861e46d9f743aa76bf4cc83b0e800850cb604f38df0",
+      "bytes": 1414
+    }
+  ]
+}

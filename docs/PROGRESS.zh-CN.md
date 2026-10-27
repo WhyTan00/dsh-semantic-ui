@@ -1,5 +1,7 @@
 # 实际进度
 
+现有26另完成[当前来源双撤回的一个guided模型观察](CODEX-SOURCE-REVISION-OBSERVATION.zh-CN.md)：模型自己的4次语义调用、新view首次matched、raw按事前有限判据met；公共缓存支持与当前内网需求都保留未知，撤回确定排除且不保证适用。宿主说明独立，1/1新尝试、较大段1/2且不自动续用；原文/工具/计数/清理见[分层回执](evidence/source-revision-observation.json)。没有runtime或新发行，不冒真实旧聊天历史、实时回调、主客户端富UI或普遍正文认证。
+
 在既有26归档上补[同会话完整来源true→unknown→false修订](NORMAL-SOURCE-REVISION.zh-CN.md)：Native/PTC各3个确定性回合，新source/message/turn/checkpoint对账、两旧view拒绝、本地试算不写源及旧史刷新通过，pageerror0。388包文件前后与原归档相同；首次回执历史误选及修正保留，0新增真实模型、无runtime/版本/发行变更，见[独立接受](evidence/normal-source-revision.json)。
 
 preview.26已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)，完成[默认中文与中英文选择](LANGUAGE.zh-CN.md)：三类组件、直方图、模板/主题、状态及可读说明同步切换并记忆，不修改来源和模型正文、不因切换请求模型。245项单元检查和类型检查通过，388文件最终归档正常安装，macOS/Linux Native/PTC各4类视图完成语言/刷新/存储降级/360px验证，pageerror0，CI40515658647成功，见[本版回执](evidence/language.json)。

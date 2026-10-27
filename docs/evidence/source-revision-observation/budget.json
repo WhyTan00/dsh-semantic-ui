@@ -1,0 +1,15 @@
+{
+  "thisCanonicalMaximum": 1,
+  "thisCanonicalUsed": 1,
+  "broader1420Maximum": 2,
+  "broader1420Used": 1,
+  "remainingBroaderSlotAutomaticallyAuthorized": false,
+  "newUserLevelTurnStarts": 1,
+  "newObservedCompletedTurns": 1,
+  "automaticRetry": false,
+  "retries": 0,
+  "failedStartsInterruptionsRetriesCount": true,
+  "backendModelRequestCount": "unknown",
+  "oldObservationBudgets": "All earlier I/J, G/H, capacity and 0520 2-of-2 segments remain separate and exhausted.",
+  "previousNaturalResults": "Unchanged: 0 pass / 6 fail / 18 requests."
+}

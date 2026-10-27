@@ -1,0 +1,69 @@
+{
+  "kind": "finite manual semantic review, separate from runtime certification",
+  "reviewedAt": "2026-10-27T15:11:10.628069+00:00",
+  "candidateSha256": "75be3d54d703feed13ee727c699a915b0904863058a33349ba22f3be4367c84e",
+  "independentCriteriaSha256": "9548ebf19ab3d9be5327d6bdaab354dd268844d29c15a11e566e313c1ae8b74e",
+  "method": "Read full preserved raw final against pre-frozen semantic criteria; no exact-string whitelist and no unrelated disclaimer requirement.",
+  "toolAdoption": {
+    "status": "met",
+    "semanticCalls": 4,
+    "builtInDiscoveryCalls": 2,
+    "ownCurrentSourceRead": true,
+    "firstFreshViewComparison": "matched",
+    "freshViewCurrentNeedInitial": null,
+    "coreCheck": "validated",
+    "actualOrder": [
+      "semantic_ui_source_check",
+      "semantic_ui_schema",
+      "semantic_ui_source_check",
+      "semantic_ui_check"
+    ],
+    "typedClaimsRequested": false,
+    "sourceToolCanonicalExplanationAvailable": true,
+    "qualification": "Guided tool adoption; the source tool supplies its normal bounded explanation. Not unassisted reasoning."
+  },
+  "rawSemanticReview": {
+    "status": "met",
+    "criteria": [
+      {
+        "criterion": "Read current complete source using an actual model source_check call",
+        "status": "met",
+        "evidence": "Own source_check({}) returns current d086ba87 snapshot; fresh view comparison uses the same hash, separately matched from host calls."
+      },
+      {
+        "criterion": "Public cache intranet support remains unknown, neither inherited false nor newly true",
+        "status": "met",
+        "evidence": "Raw final explicitly distinguishes unknown from unsupported and asks to verify support if intranet is required."
+      },
+      {
+        "criterion": "Current condition and derived intranet need remain unknown",
+        "status": "met",
+        "evidence": "Raw final states whether restricted fields exist is unknown, so neither need nor no-need can be assumed."
+      },
+      {
+        "criterion": "Old exclusion is unsupported without guaranteeing present suitability or a winner",
+        "status": "met",
+        "evidence": "Raw final keeps public cache as a pending candidate, explicitly says suitability is unconfirmed, and does not treat isolated cache as the unique choice."
+      },
+      {
+        "criterion": "Preserve branch scope and known facts; invent no prices or opposite responsibilities",
+        "status": "met",
+        "evidence": "Raw final explains both branches, isolated support and maintenance plus available capacity, preserves unknown prices, and does not infer no team maintenance from platform updates."
+      }
+    ]
+  },
+  "hostDelivery": {
+    "status": "delivered",
+    "modelCandidateUsed": false,
+    "separateFromRawReview": true
+  },
+  "originalOldModelAnswerObserved": false,
+  "priorHistorySuppliedToModel": false,
+  "liveDSHToCodexCallbackObserved": false,
+  "mainCodexClientRichUiVerified": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "genericRuntimeDefectObserved": false,
+  "runtimeOrSkillChangesRequired": false
+}
