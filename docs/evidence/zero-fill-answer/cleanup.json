@@ -1,0 +1,13 @@
+{
+  "checkedAt": "2026-10-27T03:38:42.833539+00:00",
+  "ownedRuns": 2,
+  "allExitCodesZero": true,
+  "observedOwnedPidsGone": true,
+  "temporaryRootsAndSkillsRemoved": true,
+  "globalConfigShaUnchanged": true,
+  "newObservedModelTurns": 0,
+  "turnStartRequests": 0,
+  "backendModelRequests": 0,
+  "sharedServiceOrGlobalConfigChanges": false,
+  "rawCleanupSha256": "8b56e59ddd262a74c140162a2a12b4791b72564635ccdad18e2ad0c147457480"
+}

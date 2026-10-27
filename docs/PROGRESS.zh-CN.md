@@ -1,5 +1,7 @@
 # 实际进度
 
+新增[显式宿主补零比较](CODEX-ZERO-FILL.zh-CN.md)，源码93f9d25/脚本74171839…，仅伴随客户端，不改16归档/core/协议/skill。新C/D来源与独立数学实现前冻结，显式`--answer --hypothesis zero-fill`不猜问题关键词；宿主原值/null投影先完整source匹配及独立身份/选段核对，再由已有semantic_ui_check的zeroFillIllustration提供数值，不复制统计公式或使用候选注释。C真实正常stdout输出实测2毫安/4、假设1毫安/8、差−1且完整未知；D数学目标0保留，但旧核心假设mean=null，实际partial/unknown、不补造0，尚未完成该数学目标。14项客户端检查通过（首次1/1.0显示断言失败保留）；两个实际入口各4次宿主工具，0turn/start/0新模型，进程/技能/目录清理且配置不变。原A/B/首次失败/旧0/6/18保持，无新发行/重包或旧DSH/Linux矩阵。完整范围及原件摘要见[本段回执](evidence/zero-fill-answer.json)。
+
 新增[个人Codex数值来源观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)：先冻结两份不同的合成源、普通问题及独立算术判据，再分离伴随客户端的question/source身份；默认用法保留，来源document/text/excerpt/pointer/选段前后严格对应。沿16原归档和包内skill，实际2个有指引observed turns，各6次本包模型工具调用；A实测均值6伏/分母4、完整5未知，B实测12伏/4、合法补零假设8伏/6、完整真实均值未知，原候选逐项评读通过。两次首次坐标/系列比较拒绝均保留并同回合修正；宿主最终仍只保障原来源，未认证B假设或任意正文。两组新反例各正例及三拒绝通过；评读错误码断言修正未改checker。观察后通用坐标指引澄清仅经10项离线检查，未追加第三次模型。后台请求数unknown，五个自有stdio运行均终态/已清理、配置不变；未重包16/发行/下载或重跑DSH/Linux。旧0/6/18不改，完整原文/字节/范围见[本段回执](evidence/codex-numeric-observation.json)。
 
 preview.16已 [公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.16)：DSH当前own-turn数值来源经完整值/null/单位/顺序和typed mean核对后，才重建来源投影并正常render/checkpoint；原模型摘要/注释不带入有据显示，拒绝也保存恢复。最终归档启动前305文件核验，本机与Linux Native/PTC各2正反例及刷新均通过、pageerror=0，本地筛选不改原始来源说明/完整均值未知。7项定向单元通过，CI40437924459成功，四资产与本地完全同字节且匿名HTTPS核验。源码/tag a275e0f、runtime55e81da…，完整SHA与范围见 [数值交付回执](evidence/numeric-delivery.json)。首源码例的agent-instructions未知producer拒绝保留，核锁定公开包后排除其合成内容，未知producer仍阻断；来源缓存4及私有AgentsHome保证当前回合选择范围。0真实模型，原0/6/18/旧资产/tag和14失败不改；未做当前主客户端/真机或任意正文认证。

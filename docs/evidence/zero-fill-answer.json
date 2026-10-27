@@ -1,0 +1,69 @@
+{
+  "schema": "semantic-ui-host-zero-fill-answer-v1",
+  "recordedAt": "2026-10-27T03:41:20.998860+00:00",
+  "sourceClientCommit": "93f9d258c0b79fd7132206fc6286d4b88eeb8b51",
+  "clientSha256": "74171839d9de8b154d54b0dfacfac0330a34ed9180a4aa5e4faef31dbb9ee621",
+  "feature": "Explicit --answer --hypothesis zero-fill in the existing companion client; no question keyword inference, new checker, core formula, renderer or model. Source projection is host-generated, not a natural-model view.",
+  "independentExpectations": {
+    "path": "zero-fill-answer/expectations.json",
+    "sha256": "84f8c33a2a3f5214761b284130a44adcc9c3364402d8e3017ed07c5b421a2b27",
+    "frozenBeforeImplementationAndRuns": true
+  },
+  "archiveVersion": "0.1.0-preview.16",
+  "runtimeCoreProtocolSkillChanged": false,
+  "archiveRepackedOrReleaseCreated": false,
+  "cases": [
+    {
+      "case": "C",
+      "path": "zero-fill-answer/C.json",
+      "sourceSha256": "4eae9dca6890dab8319c2fd63eebbdd1567aac95ed6a38c22d50a68bd41910d6",
+      "questionSha256": "1f5aded83ce4ba6a78f2e68cf4a6027509ffc895d7df493ad2b58843af0dd0ee",
+      "deliveryStatus": "delivered",
+      "hypothesisStatus": "available",
+      "coreHypothesisMean": 1,
+      "independentMathematicalHypothesisMean": 1.0,
+      "mathematicalTargetMet": true,
+      "newModelTurns": 0,
+      "hostMcpToolCalls": 4
+    },
+    {
+      "case": "D",
+      "path": "zero-fill-answer/D.json",
+      "sourceSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "questionSha256": "96dc4728f3018fb2cf92ef121e8a65a2a56c8837d87e2b88d05793e2c22b156c",
+      "deliveryStatus": "partial",
+      "hypothesisStatus": "unknown",
+      "coreHypothesisMean": null,
+      "independentMathematicalHypothesisMean": 0.0,
+      "mathematicalTargetMet": false,
+      "newModelTurns": 0,
+      "hostMcpToolCalls": 4
+    }
+  ],
+  "newObservedModelTurns": 0,
+  "turnStartRequests": 0,
+  "backendModelRequests": 0,
+  "oldModelCasesOrAcceptanceRerun": false,
+  "offlineTests": {
+    "count": 14,
+    "status": "passed",
+    "log": "zero-fill-answer/client-contracts.txt",
+    "rawLogSha256": "b287d0d1d60d3c3d4629e9139a735eefeb89b6d695d48d00e70404daa6a8692a",
+    "firstFailure": "New numeric output test initially expected textual 1 instead of equally valid 1.0 from the independent float fixture. Assertion relaxed to both number spellings; numeric/scope criteria unchanged, original failure retained privately."
+  },
+  "layers": {
+    "explicitModeAndOriginalDefault": "met; opt-in host-only option, original default unchanged",
+    "sourceBindingBeforeCoreUse": "met; exact independent file/text/excerpt/pointer/selection and complete original positional view matched",
+    "reuseExistingStatisticalCore": "met; consume dataFacts.series[].zeroFillIllustration, no client mean/difference formula",
+    "normalFiniteHypothesisAnswer": "met for C",
+    "unknownUnavailableResultHandling": "met for D; partial, no fabricated zero",
+    "allMissingMathematicalZeroTarget": "unmet with unchanged16 core; expected zero retained, actual core mean null",
+    "naturalModelOrCurrentDesktopUI": "not run; no claim"
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "cleanup": "zero-fill-answer/cleanup.json",
+  "preservedHistory": "Original A/B candidates, stdout, first refusals, observed8ade client and postguide e4c5 evidence unchanged; no natural retry or backfill. Old0/6/18 and all releases retained.",
+  "longTermGoalCompleted": false
+}

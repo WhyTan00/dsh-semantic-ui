@@ -1,0 +1,1248 @@
+{
+  "case": "D",
+  "synthetic": true,
+  "notHumanOrWorldFactAuthentication": true,
+  "ordinaryQuestion": "这些读数全部缺失。若明确暂按0作假设，哪些平均值可以算，哪些仍然不知道？",
+  "sourceText": "合成探针丁三次电流读数是 缺失、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？",
+  "sourceKind": "observations-zh",
+  "inputIdentity": {
+    "questionSha256": "96dc4728f3018fb2cf92ef121e8a65a2a56c8837d87e2b88d05793e2c22b156c",
+    "sourceTextSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+    "questionSeparateFromSource": true,
+    "expectedSource": {
+      "documentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "textSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "excerptSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "jsonPointer": null,
+      "selection": {
+        "textUTF8Bytes": 119,
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 119
+      }
+    },
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "invocationOptions": {
+    "answer": true,
+    "hypothesis": "zero-fill",
+    "modelCandidate": false,
+    "sourceKind": "observations-zh",
+    "component": "DataChart",
+    "questionSeparateFromSource": true
+  },
+  "sourceClientCommit": "93f9d258c0b79fd7132206fc6286d4b88eeb8b51",
+  "clientSha256": "74171839d9de8b154d54b0dfacfac0330a34ed9180a4aa5e4faef31dbb9ee621",
+  "archive": {
+    "version": "0.1.0-preview.16",
+    "sha256": "55e81da124ae0db8ae2696b58a1349de5b290c558e137f0228f493a0416ec9ae",
+    "runtimeSourceCommit": "a275e0fd8b6134e100b98056a2590bf6b6abbb4a",
+    "mcpEntrySha256": "868066b7693fdbbcdb8aeb469e1f26118cb6b43d526553ae1340e314b535a5cf",
+    "coreSha256": "e95a07a981cb3da11961cb8e9246b9d61f43f2b899dc8db464551da6ebabec0e",
+    "protocolSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+    "skillSha256": "49f957a187c92e81c0904e167b7fec902d2bf93c758d1c235692d9929979a060",
+    "repacked": false
+  },
+  "hostExplicitToolCalls": [
+    {
+      "tool": "semantic_ui_schema",
+      "arguments": {
+        "component": "DataChart"
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"component\":\"DataChart\",\"protocolVersion\":\"1.4\",\"payloadSchema\":{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"oneOf\":[{\"type\":\"object\",\"properties\":{\"chartType\":{\"type\":\"string\",\"enum\":[\"line\",\"bar\"]},\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"x\":{\"type\":\"object\",\"properties\":{\"kind\":{\"type\":\"string\",\"enum\":[\"time\",\"category\"]},\"timezone\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"granularity\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"order\":{\"type\":\"string\",\"enum\":[\"ascending\",\"input\"]}},\"required\":[\"kind\",\"order\"],\"additionalProperties\":false},\"series\":{\"minItems\":1,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80}},\"required\":[\"id\",\"label\"],\"additionalProperties\":false}},\"rows\":{\"maxItems\":2000,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"x\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"values\":{\"type\":\"object\",\"propertyNames\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"additionalProperties\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]}}},\"required\":[\"id\",\"x\",\"values\"],\"additionalProperties\":false}},\"fullDataExplanation\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"required\":[\"chartType\",\"title\",\"unit\",\"x\",\"series\",\"rows\"],\"additionalProperties\":false},{\"type\":\"object\",\"properties\":{\"chartType\":{\"type\":\"string\",\"const\":\"histogram\"},\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"display\":{\"type\":\"string\",\"enum\":[\"count\",\"proportion\"]},\"source\":{\"oneOf\":[{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"const\":\"observations\"},\"boundaries\":{\"minItems\":2,\"maxItems\":81,\"type\":\"array\",\"items\":{\"type\":\"number\"}},\"groups\":{\"minItems\":1,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"observations\":{\"maxItems\":10000,\"type\":\"array\",\"items\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"null\"}]}}},\"required\":[\"id\",\"label\",\"observations\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"boundaries\",\"groups\"],\"additionalProperties\":false},{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"const\":\"prebinned\"},\"boundaries\":{\"minItems\":2,\"maxItems\":81,\"type\":\"array\",\"items\":{\"type\":\"number\"}},\"groups\":{\"minItems\":1,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"counts\":{\"maxItems\":80,\"type\":\"array\",\"items\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":9007199254740991}},\"missing\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":9007199254740991}},\"required\":[\"id\",\"label\",\"counts\",\"missing\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"boundaries\",\"groups\"],\"additionalProperties\":false}]},\"fullDataExplanation\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"required\":[\"chartType\",\"title\",\"unit\",\"display\",\"source\"],\"additionalProperties\":false}]},\"envelope\":{\"protocolVersion\":\"1.4\",\"displayId\":\"stable-subject-id\",\"revision\":1,\"component\":\"DataChart\",\"summary\":\"A short readable conclusion.\",\"payload\":\"Follow payloadSchema.\"},\"delivery\":\"Validate structured data before using the host rendering channel. Validation does not itself display a component.\",\"semantics\":\"Only fields inside dataFacts are program-computed; summary and fullDataExplanation are echoed model prose, never independently verified. Do not attribute an extra calculation to the program if it is absent from dataFacts. zeroFillIllustration.directionRelativeToObservedMean compares a hypothetical zero-filled mean to the observed-data mean only: signed values can make it higher, lower or the same. It is not bias relative to an unknown complete-data mean. A zero fill can leave the numeric mean unchanged; do not say every imputation changes it. The render receipt returns deterministic full-data dataFacts; check prose against these facts, including endpoints, minimum, maximum and net change. Line/bar rows need explicit null for missing values. Time timestamps need offsets, timezone and granularity; duplicate instants need explicit upstream aggregation. Describe only the observed interval: do not invent irregular spacing, missing causes or trend forecasts. Histograms share increasing equal-width bin boundaries: [lower,upper), last bin includes upper. Unequal-width bins are unsupported; do not invent rebinning from pre-aggregated counts. Ratio denominator is valid observations in each group; missing is excluded. Weighted averages and quantiles are unsupported.\",\"hostRendering\":\"Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.\"}"
+          }
+        ],
+        "structuredContent": {
+          "component": "DataChart",
+          "protocolVersion": "1.4",
+          "payloadSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "oneOf": [
+              {
+                "type": "object",
+                "properties": {
+                  "chartType": {
+                    "type": "string",
+                    "enum": [
+                      "line",
+                      "bar"
+                    ]
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "x": {
+                    "type": "object",
+                    "properties": {
+                      "kind": {
+                        "type": "string",
+                        "enum": [
+                          "time",
+                          "category"
+                        ]
+                      },
+                      "timezone": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      },
+                      "granularity": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      },
+                      "order": {
+                        "type": "string",
+                        "enum": [
+                          "ascending",
+                          "input"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "order"
+                    ],
+                    "additionalProperties": false
+                  },
+                  "series": {
+                    "minItems": 1,
+                    "maxItems": 8,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                        },
+                        "label": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 80
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "label"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "rows": {
+                    "maxItems": 2000,
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                        },
+                        "x": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 1200
+                        },
+                        "values": {
+                          "type": "object",
+                          "propertyNames": {
+                            "type": "string",
+                            "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                          },
+                          "additionalProperties": {
+                            "anyOf": [
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "null"
+                              }
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "id",
+                        "x",
+                        "values"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "fullDataExplanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "required": [
+                  "chartType",
+                  "title",
+                  "unit",
+                  "x",
+                  "series",
+                  "rows"
+                ],
+                "additionalProperties": false
+              },
+              {
+                "type": "object",
+                "properties": {
+                  "chartType": {
+                    "type": "string",
+                    "const": "histogram"
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "unit": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 80
+                  },
+                  "display": {
+                    "type": "string",
+                    "enum": [
+                      "count",
+                      "proportion"
+                    ]
+                  },
+                  "source": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "mode": {
+                            "type": "string",
+                            "const": "observations"
+                          },
+                          "boundaries": {
+                            "minItems": 2,
+                            "maxItems": 81,
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "groups": {
+                            "minItems": 1,
+                            "maxItems": 8,
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                                },
+                                "label": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80
+                                },
+                                "observations": {
+                                  "maxItems": 10000,
+                                  "type": "array",
+                                  "items": {
+                                    "anyOf": [
+                                      {
+                                        "type": "number"
+                                      },
+                                      {
+                                        "type": "null"
+                                      }
+                                    ]
+                                  }
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "label",
+                                "observations"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "mode",
+                          "boundaries",
+                          "groups"
+                        ],
+                        "additionalProperties": false
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "mode": {
+                            "type": "string",
+                            "const": "prebinned"
+                          },
+                          "boundaries": {
+                            "minItems": 2,
+                            "maxItems": 81,
+                            "type": "array",
+                            "items": {
+                              "type": "number"
+                            }
+                          },
+                          "groups": {
+                            "minItems": 1,
+                            "maxItems": 8,
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                                },
+                                "label": {
+                                  "type": "string",
+                                  "minLength": 1,
+                                  "maxLength": 80
+                                },
+                                "counts": {
+                                  "maxItems": 80,
+                                  "type": "array",
+                                  "items": {
+                                    "type": "integer",
+                                    "minimum": 0,
+                                    "maximum": 9007199254740991
+                                  }
+                                },
+                                "missing": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 9007199254740991
+                                }
+                              },
+                              "required": [
+                                "id",
+                                "label",
+                                "counts",
+                                "missing"
+                              ],
+                              "additionalProperties": false
+                            }
+                          }
+                        },
+                        "required": [
+                          "mode",
+                          "boundaries",
+                          "groups"
+                        ],
+                        "additionalProperties": false
+                      }
+                    ]
+                  },
+                  "fullDataExplanation": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 1200
+                  }
+                },
+                "required": [
+                  "chartType",
+                  "title",
+                  "unit",
+                  "display",
+                  "source"
+                ],
+                "additionalProperties": false
+              }
+            ]
+          },
+          "envelope": {
+            "protocolVersion": "1.4",
+            "displayId": "stable-subject-id",
+            "revision": 1,
+            "component": "DataChart",
+            "summary": "A short readable conclusion.",
+            "payload": "Follow payloadSchema."
+          },
+          "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+          "semantics": "Only fields inside dataFacts are program-computed; summary and fullDataExplanation are echoed model prose, never independently verified. Do not attribute an extra calculation to the program if it is absent from dataFacts. zeroFillIllustration.directionRelativeToObservedMean compares a hypothetical zero-filled mean to the observed-data mean only: signed values can make it higher, lower or the same. It is not bias relative to an unknown complete-data mean. A zero fill can leave the numeric mean unchanged; do not say every imputation changes it. The render receipt returns deterministic full-data dataFacts; check prose against these facts, including endpoints, minimum, maximum and net change. Line/bar rows need explicit null for missing values. Time timestamps need offsets, timezone and granularity; duplicate instants need explicit upstream aggregation. Describe only the observed interval: do not invent irregular spacing, missing causes or trend forecasts. Histograms share increasing equal-width bin boundaries: [lower,upper), last bin includes upper. Unequal-width bins are unsupported; do not invent rebinning from pre-aggregated counts. Ratio denominator is valid observations in each group; missing is excluded. Weighted averages and quantiles are unsupported.",
+          "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+        }
+      }
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "arguments": {},
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"jsonPointer\":null,\"textSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"excerptSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":119,\"textUTF8Bytes\":119},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针丁\",\"measurement\":\"电流\",\"unit\":\"毫安\",\"positions\":[{\"index\":0,\"value\":null,\"span\":{\"textByteStart\":37,\"textByteEnd\":43}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":46,\"textByteEnd\":52}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":55,\"textByteEnd\":61}}]},\"sourceStatistics\":{\"unit\":\"毫安\",\"positions\":3,\"values\":[null,null,null],\"missingMask\":[true,true,true],\"observed\":{\"count\":0,\"missing\":3,\"sum\":null,\"mean\":null,\"denominator\":0,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":3,\"mean\":null,\"denominator\":3,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\\n完整3次读数的平均值：未知；完整范围分母为3。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "jsonPointer": null,
+            "textSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "excerptSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 119,
+              "textUTF8Bytes": 119
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "compared",
+          "sourceObservations": {
+            "context": "合成探针丁",
+            "measurement": "电流",
+            "unit": "毫安",
+            "positions": [
+              {
+                "index": 0,
+                "value": null,
+                "span": {
+                  "textByteStart": 37,
+                  "textByteEnd": 43
+                }
+              },
+              {
+                "index": 1,
+                "value": null,
+                "span": {
+                  "textByteStart": 46,
+                  "textByteEnd": 52
+                }
+              },
+              {
+                "index": 2,
+                "value": null,
+                "span": {
+                  "textByteStart": 55,
+                  "textByteEnd": 61
+                }
+              }
+            ]
+          },
+          "sourceStatistics": {
+            "unit": "毫安",
+            "positions": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "missingMask": [
+              true,
+              true,
+              true
+            ],
+            "observed": {
+              "count": 0,
+              "missing": 3,
+              "sum": null,
+              "mean": null,
+              "denominator": 0,
+              "scope": "declared non-missing positions only"
+            },
+            "complete": {
+              "count": 3,
+              "mean": null,
+              "denominator": 3,
+              "known": false,
+              "scope": "all declared positions; missing readings remain unknown"
+            },
+            "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete selected finite source readings and explicit calculation range only",
+            "text": "合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+          }
+        }
+      }
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "host-source-46f2050fa5524237",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Host projection of original source readings; not model output.",
+          "payload": {
+            "chartType": "bar",
+            "title": "原始来源读数",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "source-readings",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "source-position-1",
+                "x": "1",
+                "values": {
+                  "source-readings": null
+                }
+              },
+              {
+                "id": "source-position-2",
+                "x": "2",
+                "values": {
+                  "source-readings": null
+                }
+              },
+              {
+                "id": "source-position-3",
+                "x": "3",
+                "values": {
+                  "source-readings": null
+                }
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "seriesId": "source-readings",
+          "rows": [
+            {
+              "sourceIndex": 0,
+              "rowId": "source-position-1"
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "source-position-2"
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "source-position-3"
+            }
+          ]
+        }
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"jsonPointer\":null,\"textSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"excerptSha256\":\"46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":119,\"textUTF8Bytes\":119},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针丁\",\"measurement\":\"电流\",\"unit\":\"毫安\",\"positions\":[{\"index\":0,\"value\":null,\"span\":{\"textByteStart\":37,\"textByteEnd\":43}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":46,\"textByteEnd\":52}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":55,\"textByteEnd\":61}}]},\"sourceStatistics\":{\"unit\":\"毫安\",\"positions\":3,\"values\":[null,null,null],\"missingMask\":[true,true,true],\"observed\":{\"count\":0,\"missing\":3,\"sum\":null,\"mean\":null,\"denominator\":0,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":3,\"mean\":null,\"denominator\":3,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"matched\",\"scope\":\"all ordered source values, null mask, exact unit and single positional bar representation\",\"rowChecks\":[{\"sourceIndex\":0,\"rowId\":\"source-position-1\",\"seriesId\":\"source-readings\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":37,\"textByteEnd\":43}},{\"sourceIndex\":1,\"rowId\":\"source-position-2\",\"seriesId\":\"source-readings\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":46,\"textByteEnd\":52}},{\"sourceIndex\":2,\"rowId\":\"source-position-3\",\"seriesId\":\"source-readings\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":55,\"textByteEnd\":61}}],\"viewAnnotations\":\"not-verified\"},\"issues\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\\n完整3次读数的平均值：未知；完整范围分母为3。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "jsonPointer": null,
+            "textSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "excerptSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 119,
+              "textUTF8Bytes": 119
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "compared",
+          "sourceObservations": {
+            "context": "合成探针丁",
+            "measurement": "电流",
+            "unit": "毫安",
+            "positions": [
+              {
+                "index": 0,
+                "value": null,
+                "span": {
+                  "textByteStart": 37,
+                  "textByteEnd": 43
+                }
+              },
+              {
+                "index": 1,
+                "value": null,
+                "span": {
+                  "textByteStart": 46,
+                  "textByteEnd": 52
+                }
+              },
+              {
+                "index": 2,
+                "value": null,
+                "span": {
+                  "textByteStart": 55,
+                  "textByteEnd": 61
+                }
+              }
+            ]
+          },
+          "sourceStatistics": {
+            "unit": "毫安",
+            "positions": 3,
+            "values": [
+              null,
+              null,
+              null
+            ],
+            "missingMask": [
+              true,
+              true,
+              true
+            ],
+            "observed": {
+              "count": 0,
+              "missing": 3,
+              "sum": null,
+              "mean": null,
+              "denominator": 0,
+              "scope": "declared non-missing positions only"
+            },
+            "complete": {
+              "count": 3,
+              "mean": null,
+              "denominator": 3,
+              "known": false,
+              "scope": "all declared positions; missing readings remain unknown"
+            },
+            "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+          },
+          "comparison": {
+            "status": "matched",
+            "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+            "rowChecks": [
+              {
+                "sourceIndex": 0,
+                "rowId": "source-position-1",
+                "seriesId": "source-readings",
+                "expected": null,
+                "actual": null,
+                "missing": true,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 37,
+                  "textByteEnd": 43
+                }
+              },
+              {
+                "sourceIndex": 1,
+                "rowId": "source-position-2",
+                "seriesId": "source-readings",
+                "expected": null,
+                "actual": null,
+                "missing": true,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 46,
+                  "textByteEnd": 52
+                }
+              },
+              {
+                "sourceIndex": 2,
+                "rowId": "source-position-3",
+                "seriesId": "source-readings",
+                "expected": null,
+                "actual": null,
+                "missing": true,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 55,
+                  "textByteEnd": 61
+                }
+              }
+            ],
+            "viewAnnotations": "not-verified"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete selected finite source readings and explicit calculation range only",
+            "text": "合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+          }
+        }
+      }
+    },
+    {
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "host-source-46f2050fa5524237",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Host projection of original source readings; not model output.",
+          "payload": {
+            "chartType": "bar",
+            "title": "原始来源读数",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "source-readings",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "source-position-1",
+                "x": "1",
+                "values": {
+                  "source-readings": null
+                }
+              },
+              {
+                "id": "source-position-2",
+                "x": "2",
+                "values": {
+                  "source-readings": null
+                }
+              },
+              {
+                "id": "source-position-3",
+                "x": "3",
+                "values": {
+                  "source-readings": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DataChart\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"dataFacts\":{\"scope\":\"original-full-data\",\"chartType\":\"bar\",\"unit\":\"毫安\",\"order\":\"input\",\"rows\":3,\"firstRow\":{\"id\":\"source-position-1\",\"x\":\"1\",\"xTruncated\":false},\"lastRow\":{\"id\":\"source-position-3\",\"x\":\"3\",\"xTruncated\":false},\"series\":[{\"id\":\"source-readings\",\"valid\":0,\"missing\":3,\"mean\":null,\"zeroFillIllustration\":{\"assumption\":\"Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.\",\"count\":3,\"mean\":null,\"differenceFromObservedMean\":null,\"directionRelativeToObservedMean\":\"unknown\",\"completeDataMeanKnown\":false},\"minimum\":null,\"maximum\":null,\"firstValue\":null,\"lastValue\":null,\"netChange\":null,\"adjacentValidDecreases\":0}]},\"canonicalSummary\":\"Declared bar data in 毫安: source-readings: 0 valid, 3 missing, mean unknown.\",\"canonicalSummarySource\":\"computed from supplied observations; not independent source verification\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DataChart",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "dataFacts": {
+            "scope": "original-full-data",
+            "chartType": "bar",
+            "unit": "毫安",
+            "order": "input",
+            "rows": 3,
+            "firstRow": {
+              "id": "source-position-1",
+              "x": "1",
+              "xTruncated": false
+            },
+            "lastRow": {
+              "id": "source-position-3",
+              "x": "3",
+              "xTruncated": false
+            },
+            "series": [
+              {
+                "id": "source-readings",
+                "valid": 0,
+                "missing": 3,
+                "mean": null,
+                "zeroFillIllustration": {
+                  "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                  "count": 3,
+                  "mean": null,
+                  "differenceFromObservedMean": null,
+                  "directionRelativeToObservedMean": "unknown",
+                  "completeDataMeanKnown": false
+                },
+                "minimum": null,
+                "maximum": null,
+                "firstValue": null,
+                "lastValue": null,
+                "netChange": null,
+                "adjacentValidDecreases": 0
+              }
+            ]
+          },
+          "canonicalSummary": "Declared bar data in 毫安: source-readings: 0 valid, 3 missing, mean unknown.",
+          "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    }
+  ],
+  "modelToolCalls": [],
+  "sourceInspection": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "observations-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "jsonPointer": null,
+      "textSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "excerptSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 119,
+        "textUTF8Bytes": 119
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source identity, authorship and real-world readings",
+      "unselected context, arbitrary prose, chart title and annotations",
+      "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+    ],
+    "status": "compared",
+    "sourceObservations": {
+      "context": "合成探针丁",
+      "measurement": "电流",
+      "unit": "毫安",
+      "positions": [
+        {
+          "index": 0,
+          "value": null,
+          "span": {
+            "textByteStart": 37,
+            "textByteEnd": 43
+          }
+        },
+        {
+          "index": 1,
+          "value": null,
+          "span": {
+            "textByteStart": 46,
+            "textByteEnd": 52
+          }
+        },
+        {
+          "index": 2,
+          "value": null,
+          "span": {
+            "textByteStart": 55,
+            "textByteEnd": 61
+          }
+        }
+      ]
+    },
+    "sourceStatistics": {
+      "unit": "毫安",
+      "positions": 3,
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "missingMask": [
+        true,
+        true,
+        true
+      ],
+      "observed": {
+        "count": 0,
+        "missing": 3,
+        "sum": null,
+        "mean": null,
+        "denominator": 0,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 3,
+        "mean": null,
+        "denominator": 3,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "complete selected finite source readings and explicit calculation range only",
+      "text": "合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+    }
+  },
+  "hostProjection": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "host-source-46f2050fa5524237",
+      "revision": 1,
+      "component": "DataChart",
+      "summary": "Host projection of original source readings; not model output.",
+      "payload": {
+        "chartType": "bar",
+        "title": "原始来源读数",
+        "unit": "毫安",
+        "x": {
+          "kind": "category",
+          "order": "input"
+        },
+        "series": [
+          {
+            "id": "source-readings",
+            "label": "电流"
+          }
+        ],
+        "rows": [
+          {
+            "id": "source-position-1",
+            "x": "1",
+            "values": {
+              "source-readings": null
+            }
+          },
+          {
+            "id": "source-position-2",
+            "x": "2",
+            "values": {
+              "source-readings": null
+            }
+          },
+          {
+            "id": "source-position-3",
+            "x": "3",
+            "values": {
+              "source-readings": null
+            }
+          }
+        ]
+      }
+    },
+    "mapping": {
+      "seriesId": "source-readings",
+      "rows": [
+        {
+          "sourceIndex": 0,
+          "rowId": "source-position-1"
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "source-position-2"
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "source-position-3"
+        }
+      ]
+    }
+  },
+  "sourceComparison": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "observations-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "jsonPointer": null,
+      "textSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "excerptSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 119,
+        "textUTF8Bytes": 119
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source identity, authorship and real-world readings",
+      "unselected context, arbitrary prose, chart title and annotations",
+      "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+    ],
+    "status": "compared",
+    "sourceObservations": {
+      "context": "合成探针丁",
+      "measurement": "电流",
+      "unit": "毫安",
+      "positions": [
+        {
+          "index": 0,
+          "value": null,
+          "span": {
+            "textByteStart": 37,
+            "textByteEnd": 43
+          }
+        },
+        {
+          "index": 1,
+          "value": null,
+          "span": {
+            "textByteStart": 46,
+            "textByteEnd": 52
+          }
+        },
+        {
+          "index": 2,
+          "value": null,
+          "span": {
+            "textByteStart": 55,
+            "textByteEnd": 61
+          }
+        }
+      ]
+    },
+    "sourceStatistics": {
+      "unit": "毫安",
+      "positions": 3,
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "missingMask": [
+        true,
+        true,
+        true
+      ],
+      "observed": {
+        "count": 0,
+        "missing": 3,
+        "sum": null,
+        "mean": null,
+        "denominator": 0,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 3,
+        "mean": null,
+        "denominator": 3,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+    },
+    "comparison": {
+      "status": "matched",
+      "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+      "rowChecks": [
+        {
+          "sourceIndex": 0,
+          "rowId": "source-position-1",
+          "seriesId": "source-readings",
+          "expected": null,
+          "actual": null,
+          "missing": true,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 37,
+            "textByteEnd": 43
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "source-position-2",
+          "seriesId": "source-readings",
+          "expected": null,
+          "actual": null,
+          "missing": true,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 46,
+            "textByteEnd": 52
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "source-position-3",
+          "seriesId": "source-readings",
+          "expected": null,
+          "actual": null,
+          "missing": true,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 55,
+            "textByteEnd": 61
+          }
+        }
+      ],
+      "viewAnnotations": "not-verified"
+    },
+    "issues": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "complete selected finite source readings and explicit calculation range only",
+      "text": "合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+    }
+  },
+  "coreResult": {
+    "status": "validated",
+    "protocolVersion": "1.4",
+    "component": "DataChart",
+    "summarySource": "model-authored; not independently verified",
+    "sourceFactsVerified": false,
+    "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+    "dataFacts": {
+      "scope": "original-full-data",
+      "chartType": "bar",
+      "unit": "毫安",
+      "order": "input",
+      "rows": 3,
+      "firstRow": {
+        "id": "source-position-1",
+        "x": "1",
+        "xTruncated": false
+      },
+      "lastRow": {
+        "id": "source-position-3",
+        "x": "3",
+        "xTruncated": false
+      },
+      "series": [
+        {
+          "id": "source-readings",
+          "valid": 0,
+          "missing": 3,
+          "mean": null,
+          "zeroFillIllustration": {
+            "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+            "count": 3,
+            "mean": null,
+            "differenceFromObservedMean": null,
+            "directionRelativeToObservedMean": "unknown",
+            "completeDataMeanKnown": false
+          },
+          "minimum": null,
+          "maximum": null,
+          "firstValue": null,
+          "lastValue": null,
+          "netChange": null,
+          "adjacentValidDecreases": 0
+        }
+      ]
+    },
+    "canonicalSummary": "Declared bar data in 毫安: source-readings: 0 valid, 3 missing, mean unknown.",
+    "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+    "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+  },
+  "normalStdout": "来源内的有限说明（宿主保障）\n\n合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。\n补零假设平均值：未知（现有核心未提供有限计算值） 毫安；分母为3个原始位置。\n相对已观测均值的差（假设减实测）：未知（现有核心未提供有限计算值） 毫安；方向：未知。\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值的偏差方向。\n原始完整均值及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。\n",
+  "delivery": {
+    "kind": "host-source-zero-fill-hypothesis",
+    "status": "partial",
+    "text": "来源内的有限说明（宿主保障）\n\n合成探针丁的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。\n补零假设平均值：未知（现有核心未提供有限计算值） 毫安；分母为3个原始位置。\n相对已观测均值的差（假设减实测）：未知（现有核心未提供有限计算值） 毫安；方向：未知。\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值的偏差方向。\n原始完整均值及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。",
+    "sourceTextSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+    "sourceDocumentSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "projectionSource": "host-derived original readings, not model output",
+    "hypothesis": {
+      "mode": "zero-fill",
+      "status": "unknown",
+      "unit": "毫安",
+      "count": 3,
+      "mean": null,
+      "differenceFromObservedMean": null,
+      "directionRelativeToObservedMean": "unknown",
+      "completeDataMeanKnown": false,
+      "sourceFact": false
+    }
+  },
+  "acceptance": {
+    "sourceIdentityAndSelectionMatched": true,
+    "completeOriginalValuesAndNullMaskMatched": true,
+    "noSourceImputation": true,
+    "hypothesisValuesFromExistingCoreOnly": true,
+    "originalCompleteMeanUnknownPreserved": true,
+    "normalAnswerDelivered": false,
+    "coreAvailabilityBoundaryExplained": true,
+    "independentMathematicalHypothesisMean": 0.0,
+    "actualCoreHypothesisMean": null,
+    "mathematicalTargetMet": false,
+    "scope": "C complete bounded hypothesis answer; D defensive unknown delivery, not numeric target completion"
+  },
+  "terminal": {
+    "exitCode": 0,
+    "observedModelTurns": 0,
+    "turnStartRequests": 0,
+    "turnStartInSentMethods": false,
+    "globalConfigShaUnchanged": true
+  },
+  "rawEvidenceSha256": {
+    "codex-wire.jsonl": "51a9e44285533a067631ce42ca5efe0560cf4191ef9cdeff39ecacebb5e90dd9",
+    "mcp-wire.jsonl": "69ade043aa745922be370460b34075c2f5922d0d498e7d0ba58bbbee6cc6338a",
+    "invocation.json": "674abc52d78a3389eb43c21c8d04438fa2dab29d64f914eebb405cc6a95ea293",
+    "thread-input.json": "8637fa242ea9467103dec28ced384633a4136c3cfaa4c4e9584f3f5cb9aeaa3d",
+    "answer-input-identities.json": "4461ce6e57873500d5261257f38ed3489c1e68c2b2b419f000eec8f58594a061",
+    "hypothesis-source-projection.json": "b07215a41af3c5e741b6081fb80c91664a11c16234d99a1b87c799c81355589c",
+    "hypothesis-source-check.json": "197a49e6ad8f2354e977e9f39e0e0c4a8b4123d4eb0fffbc875dc0dd42326913",
+    "hypothesis-core-check.json": "78788cbd3e960506b9f20d45bb70b719ff048928afd6692f3254a9e23b13a4c0",
+    "answer.md": "ac96440faf491f93ea966e3954099fcb6adabcc4aaa28a38d8f17c883b9dc6bc",
+    "result.json": "7a093ae3c8ec481f0d4813da17867194a312a2782f80dbec9c69ac07db2aa002",
+    "terminal.json": "a424ede88f5c723227a04461b68f1ea7d9a0c1e44e0d23d0d17de8b3dcf6c8a8"
+  },
+  "privateRawPreserved": true,
+  "publicExport": "temporary Native identifiers, paths and account notifications omitted; actual host tool arguments/results retained"
+}

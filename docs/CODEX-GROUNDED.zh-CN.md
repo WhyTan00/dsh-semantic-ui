@@ -1,5 +1,7 @@
 # 受来源约束的普通答复
 
+显式[补零假设模式](CODEX-ZERO-FILL.zh-CN.md)已进入伴随源码：`--answer --hypothesis zero-fill`完整绑定原来源后复用已有统计核心，另列假设均值与相对观测差；默认用法不变，0模型。正常值与计算不可得边界分别验证，不将未知字段补造0。
+
 后续伴随源码已支持独立`--question-file`及可选`--question-json-pointer`；未传时保留原默认问题。preview.16的两个新合成来源观察、首次拒绝与候选原文见 [数值模型观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)，不要与本页原13的两次模型结果混算。
 
 这是现有 [只读客户端](CODEX-EXPLICIT.zh-CN.md) 的伴随源码增量，复用已发布 preview.13 的MCP/core/skill，不修改或重打归档。默认仍为零推理；最终答复可以直接由现成检查器给出有限说明。
@@ -8,6 +10,7 @@
 |---|---:|---|
 | 原命令，不加选项 | 0 | schema和source_check原结构化结果 |
 | `--answer` | 0 | 宿主交付来源内的有限说明，或明确拒绝 |
+| `--answer --hypothesis zero-fill` | 0 | 来源完整匹配后另列现有核心的补零假设；不可得时明确partial/unknown |
 | `--answer --model-candidate` | 每次最多1个 | 显式skill/工作流指引下的模型候选另存，最终仍由宿主保障 |
 
 ## 正常使用
@@ -57,7 +60,7 @@ preview.15新增`--source-kind observations-zh`，将实际值/缺失mask/单位
 
 ## 最终文字来自哪里
 
-宿主先通过真实Codex线程读取现成 `source_check`，核对独立来源的文本摘要。当前伴随脚本另核document/excerpt SHA、JSON pointer及UTF-8选段范围；问题SHA不替代来源SHA。可选模型回合结束后，再读同一启动快照。只有完整有限说明可用、来源对应且身份/世界事实未认证的边界保持时，才交付检查器原有的 `canonicalExplanation`，加固定范围说明。该canonical只覆盖来源合同；独立问题请求的额外合法假设计算若没有进入该合同，就不能声称宿主已经保障了整个问题。
+宿主先通过真实Codex线程读取现成 `source_check`，核对独立来源的文本摘要。当前伴随脚本另核document/excerpt SHA、JSON pointer及UTF-8选段范围；问题SHA不替代来源SHA。可选模型回合结束后，再读同一启动快照。只有完整有限说明可用、来源对应且身份/世界事实未认证的边界保持时，默认交付检查器原有的 `canonicalExplanation`，加固定范围说明。显式补零模式另经完整来源比较后消费原始view的现有core统计；它没有扩大source canonical的认证范围。独立问题中未被实际计算覆盖的部分，仍不能声称已由宿主保障。
 
 模型正文不会传入这个交付函数。没有任意正文判真、关键词删除、D1固定答案或从模型输出反推source真值。来源不支持或不对应时交付有限拒绝；可选模型回合在前置来源拒绝时不会启动。`sourceFactsVerified=false`、`identityVerified=false`一直保留。
 
