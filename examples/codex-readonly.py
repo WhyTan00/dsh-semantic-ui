@@ -2,6 +2,7 @@
 """Explicit Codex app-server client. Default mode has no model turn.
 Use --answer for zero-inference source-canonical text.
 Add --model-candidate to also run one guided candidate model turn.
+Use --question-file to keep that question separate from the configured source.
 
 Python 3.12+, Node 24+, Codex CLI 0.164.0. A compatible app-server is required.
 The supplied manifest authenticates bytes only, not its author or source facts.
@@ -170,11 +171,39 @@ def selected_question(path, pointer):
     return value
 
 
-def refusal_details(result, question_sha):
+def answer_inputs(args):
+    """Freeze question and source identities separately; neither supplies authority."""
+    source = selected_question(args.source_file, args.source_json_pointer)
+    excerpt = args.source_excerpt if args.source_excerpt is not None else source
+    # The existing reader still refuses absent or ambiguous excerpts.
+    index = source.find(excerpt)
+    start = len(source[:index].encode('utf-8')) if index >= 0 else None
+    source_identity = {
+        'documentSha256': sha(args.source_file.read_bytes()),
+        'textSha256': sha(source.encode('utf-8')),
+        'excerptSha256': sha(excerpt.encode('utf-8')),
+        'jsonPointer': args.source_json_pointer,
+        'selection': {'textUTF8Bytes': len(source.encode('utf-8')),
+                      'textUTF8ByteStart': start,
+                      'textUTF8ByteEnd': start + len(excerpt.encode('utf-8')) if start is not None else None},
+    }
+    question = (selected_question(args.question_file, args.question_json_pointer)
+                if args.question_file is not None
+                else selected_question(args.source_file, args.source_json_pointer))
+    return question, source_identity['textSha256'], {
+        'questionSha256': sha(question.encode('utf-8')),
+        'sourceTextSha256': sha(source.encode('utf-8')),
+        'questionSeparateFromSource': args.question_file is not None,
+        'expectedSource': source_identity,
+        'sourceFactsVerified': False, 'identityVerified': False,
+    }
+
+
+def refusal_details(result, source_sha):
     """Display already rejected typed fields; never decide whether a check passed."""
     source = result.get('source', {})
     if (result.get('sourceCheckKind') != 'observations-zh'
-            or source.get('textSha256') != question_sha
+            or source.get('textSha256') != source_sha
             or source.get('identityVerified') is not False
             or result.get('sourceFactsVerified') is not False):
         return []
@@ -239,20 +268,22 @@ def refusal_details(result, question_sha):
     return details
 
 
-def grounded_delivery(source_result, question_sha):
+def grounded_delivery(source_result, source_sha, source_identity=None):
     canonical = source_result.get('canonicalExplanation',{})
     source = source_result.get('source',{})
     ready = (source_result.get('status') == 'compared'
              and canonical.get('status') == 'available'
              and isinstance(canonical.get('text'),str)
-             and source.get('textSha256') == question_sha
+             and source.get('textSha256') == source_sha
+             and (source_identity is None or all(
+                 source.get(key) == value for key, value in source_identity.items()))
              and source.get('identityVerified') is False
              and source_result.get('sourceFactsVerified') is False)
     if ready:
         text = ('来源内的有限说明（宿主保障）\n\n' + canonical['text'] +
                 '\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。')
     else:
-        details = refusal_details(source_result, question_sha)
+        details = refusal_details(source_result, source_sha)
         text = '当前来源或比较请求未通过完整核对，未交付已核答复。'
         if details:
             text += '\n\n' + '\n'.join(details)
@@ -275,10 +306,11 @@ ANSWER_WORKFLOW = (
 )
 
 
-def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, inspect, tool, logs):
+def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, source_sha, inspect, tool, logs,
+                    source_identity=None):
     question_sha = sha(question.encode('utf-8'))
-    if grounded_delivery(inspect,question_sha)['status'] != 'delivered':
-        delivery = grounded_delivery(inspect,question_sha)
+    if grounded_delivery(inspect,source_sha,source_identity)['status'] != 'delivered':
+        delivery = grounded_delivery(inspect,source_sha,source_identity)
         (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
         (logs/'model-candidate.md').write_text('',encoding='utf-8')
         write_json(logs/'model-terminal.json',{'status':'not-started-source-refused',
@@ -289,6 +321,7 @@ def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, inspect, tool,
         {'type':'text','text':question},
         {'type':'skill','name':'semantic-ui-checks','path':str(skill)}]}
     write_json(logs/'turn-input.json',{'payload':payload,'questionSha256':question_sha,
+                                    'sourceTextSha256':source_sha,
                                     'skillSha256':sha(skill_bytes),
                                     'provision':'host-selected official typed skill item'})
     items = []
@@ -336,7 +369,7 @@ def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, inspect, tool,
     except RpcError as error:
         post = {'status':'source-unavailable','error':error.error}
     write_json(logs/'host-final-source.json',post)
-    delivery = grounded_delivery(post,question_sha)
+    delivery = grounded_delivery(post,source_sha,source_identity)
     (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
     return {'observedModelTurns':1 if turn_id else 0,'turnId':turn_id,
             'status':terminal.get('status'),'candidate':candidate,
@@ -356,6 +389,10 @@ def main():
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--source-file', type=Path, required=True)
     parser.add_argument('--source-json-pointer')
+    parser.add_argument('--question-file', type=Path,
+                        help='Ordinary answer question, separate from the fixed source; default is source text')
+    parser.add_argument('--question-json-pointer',
+                        help='Select a text field in --question-file; requires that file')
     parser.add_argument('--source-excerpt',
                         help='Exact selected source text; passed unchanged to the existing source reader')
     parser.add_argument('--source-kind', choices=['arrows','decision-zh','permissions-zh','observations-zh'],
@@ -375,6 +412,10 @@ def main():
         raise ValueError('Archive differs from the supplied manifest')
     if args.model_candidate and not args.answer:
         raise ValueError('--model-candidate requires --answer')
+    if args.question_json_pointer is not None and args.question_file is None:
+        raise ValueError('--question-json-pointer requires --question-file')
+    if args.question_file is not None and not args.answer:
+        raise ValueError('--question-file requires --answer')
     if args.model_candidate and args.requests_file:
         raise ValueError('A model candidate uses source inspection, not a custom request batch')
     requests = json.loads(args.requests_file.read_text()) if args.requests_file else [{}]
@@ -387,6 +428,9 @@ def main():
     if args.log_dir:
         logs.mkdir(mode=0o700, parents=True, exist_ok=False)
     logs.chmod(0o700)
+    if args.answer:
+        question, source_sha, input_identity = answer_inputs(args)
+        write_json(logs/'answer-input-identities.json', input_identity)
     root = Path(tempfile.mkdtemp(prefix='semantic-codex-route-'))
     root.chmod(0o700)
     config_path = Path(os.environ.get('CODEX_HOME', str(Path.home()/'.codex'))) / 'config.toml'
@@ -447,6 +491,10 @@ def main():
         argv += ['app-server','--stdio']
         write_json(logs/'invocation.json',{'argv':argv,'archiveSha256':manifest['sha256'],
                     'mcpEntrySha256':entry_sha,'sourceCommit':manifest['sourceCommit'],
+                    'clientSha256':sha(Path(__file__).read_bytes()),
+                    'skillSha256':sha(skill_bytes),
+                    'archivedCoreSha256':sha((package/'dist/core.js').read_bytes()),
+                    'archivedProtocolSha256':sha((package/'dist/protocol.js').read_bytes()),
                     'defaultModel':config.get('model'),'defaultReasoning':config.get('model_reasoning_effort')})
         rpc = CodexRpc(argv,logs,allow_answer=args.model_candidate)
         rpc.call('initialize',{'clientInfo':{'name':'semantic_ui_explicit_reader',
@@ -499,13 +547,13 @@ def main():
             raise RuntimeError('Codex skill file bytes differ from the archive')
         answer = None
         if args.answer:
-            question = selected_question(args.source_file,args.source_json_pointer)
             inspection = checks[0].get('response',{}).get('structuredContent',{})
             if args.model_candidate:
                 answer = one_answer_turn(rpc,thread_id,skill,skill_bytes,
-                                         question,inspection,tool,logs)
+                                         question,source_sha,inspection,tool,logs,
+                                         input_identity['expectedSource'])
             else:
-                delivery = grounded_delivery(inspection,sha(question.encode('utf-8')))
+                delivery = grounded_delivery(inspection,source_sha,input_identity['expectedSource'])
                 (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
                 answer = {'observedModelTurns':0,'status':'host-only','delivery':delivery}
         rpc.call('skills/extraRoots/set',{'extraRoots':[]})
