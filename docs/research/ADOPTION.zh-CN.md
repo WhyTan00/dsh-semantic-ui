@@ -1,6 +1,6 @@
 # 采用记录与后续实现合同
 
-preview.18把此前A2UI/assistant-ui/Tambo启发的本地编辑、明确提交、接收与采用分层落实到[一个未知布尔事实补充](../SOURCE-UPDATE.zh-CN.md)。复用原DSH日志/Peer/正常prompt，不新建会话库；实际能力仍窄于候选RequestForm合同，任意字段/通用表单/结果迁移不宣称完成。
+preview.19把此前A2UI/assistant-ui/Tambo启发的本地编辑、明确提交、接收与采用分层落实到[一个未知布尔事实补充](../SOURCE-UPDATE.zh-CN.md)。复用原DSH日志/Peer/正常prompt，不新建会话库；实际能力仍窄于候选RequestForm合同，任意字段/通用表单/结果迁移不宣称完成。
 
 preview.17进一步落实“声明、条件、实际交付分开”：[显式两分支来源](../SOURCE-CONDITIONAL.zh-CN.md)保留条件/分支出处并归一化当前需求，复用同core/renderer；完整普通入口、归档Native/PTC与2次新模型原文分别验证。条件unknown不等false、能力true不等整体推荐，没有新图表引擎或外部依赖。原preview.11矩阵与首次失败不回写，当前采用仍不足以全面替代GenUI的提交闭环/可迁移产物。
 

@@ -1,6 +1,6 @@
 # 安装、隔离验证和回退
 
-preview.18新增[单个未知当前事实补充](SOURCE-UPDATE.zh-CN.md)：owner明确提交走正常prompt，accepted、持久新消息和新来源checkpoint分层；不明/重复只核原ID，不重发。新metadata带可选requestId，严格旧17 reader不承诺读取；旧历史仍可由18读取。最终归档验收单独记录，不回灌不可变包。
+preview.19新增[单个未知当前事实补充](SOURCE-UPDATE.zh-CN.md)：owner明确提交走正常prompt，accepted、持久新消息和新来源checkpoint分层；不明/重复只核原ID，不重发。新metadata带可选requestId，严格旧17 reader不承诺读取；旧历史仍可由18读取。最终归档验收单独记录，不回灌不可变包。
 
 本预览支持 **DSH 0.2.1-rc.2、Node 24+、pnpm**。已有其他 DSH 安装并不需要重装；使用公开发行版的准确可执行路径即可。不要修改正在运行的实例。
 
@@ -19,12 +19,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.18.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.19.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.18.tgz`。本版归档的后补接受另存仓库[本版回执](evidence/source-update.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
+运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.19.tgz`。本版归档的后补接受另存仓库[本版回执](evidence/source-update.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 

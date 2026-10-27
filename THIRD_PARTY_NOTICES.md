@@ -14,8 +14,10 @@ Original project code is MIT. The following exact installed production/peer depe
 | @deepseek-ai/dsh-agent | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-agent@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-app-boot | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-app-boot@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-atomic-write | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-atomic-write@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-attachment | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-attachment@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-brand | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-brand@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-client-connection | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE) |
+| @deepseek-ai/dsh-commands | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-commands@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-credentials | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-credentials@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-fs | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-fs@0.2.1-rc.2/LICENSE) |
 | @deepseek-ai/dsh-home-paths | 0.2.1-rc.2 | MIT | [LICENSE](licenses/deepseek-ai__dsh-home-paths@0.2.1-rc.2/LICENSE) |

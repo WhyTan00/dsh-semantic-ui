@@ -80,6 +80,14 @@
     ]
   },
   {
+    "name": "@deepseek-ai/dsh-attachment",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-attachment@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
     "name": "@deepseek-ai/dsh-brand",
     "version": "0.2.1-rc.2",
     "license": "MIT",
@@ -93,6 +101,14 @@
     "license": "MIT",
     "files": [
       "licenses/deepseek-ai__dsh-client-connection@0.2.1-rc.2/LICENSE"
+    ]
+  },
+  {
+    "name": "@deepseek-ai/dsh-commands",
+    "version": "0.2.1-rc.2",
+    "license": "MIT",
+    "files": [
+      "licenses/deepseek-ai__dsh-commands@0.2.1-rc.2/LICENSE"
     ]
   },
   {

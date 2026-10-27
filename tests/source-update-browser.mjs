@@ -34,7 +34,7 @@ try{
   {action:'submit',base,condition:'审计',value:true,requestId:crypto.randomUUID()},
  ]){const r=await update(req);assert.equal(r.status,'withheld');withheld.push(r.code);}assert.equal(readdirSync(shared+'/requests').length,beforeCount);
  let lostResponse,submitTransports=0;
- await p.route('**/api/dsh-semantic-ui/source-update',async route=>{const body=route.request().postDataJSON();if(body?.payload?.action==='submit'&&!lostResponse){submitTransports++;const response=await route.fetch();lostResponse=await response.json();await route.abort('failed');}else await route.continue();});
+ await p.route('**/api/dsh-semantic-ui/source-update',async route=>{const body=route.request().postDataJSON();if(body?.payload?.action==='submit'&&!lostResponse){submitTransports++;const response=await route.fetch();lostResponse=await response.json();writeFileSync(output+'/source-update-submit-response.json',JSON.stringify(lostResponse,null,2));await route.abort('failed');}else await route.continue();});
  const afterKey=mode+'-update-after';fixture(afterKey,updated,true);await oldFrame.getByRole('button',{name:'查看可补充条件',exact:true}).click();await oldFrame.getByRole('combobox',{name:'当前事实声明',exact:true}).selectOption('true');await oldFrame.getByRole('button',{name:'提交来源补充',exact:true}).click();
  await expect(oldFrame.locator('[data-source-update] [role="status"]')).toContainText('请求 ID：');const immediateText=await oldFrame.locator('[data-source-update] [role="status"]').innerText(),requestId=immediateText.match(/请求 ID：([0-9a-f-]{36})/)[1];
  assert.equal(submitTransports,1);assert.equal(lostResponse.result.value.admission,'accepted');assert(immediateText.includes('提交结果未明'));

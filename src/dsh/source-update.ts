@@ -1,7 +1,8 @@
 import {randomUUID} from 'node:crypto';
 import {z} from 'zod';
 import type {Context} from '@deepseek-ai/cordis';
-import {appendPluginRecord,pluginRecordOf,type Session,type SessionStore} from '@deepseek-ai/dsh-session';
+import type {Session,SessionStore} from '@deepseek-ai/dsh-session';
+import type {} from '@deepseek-ai/dsh-commands';
 import type {ProjectionDefinition} from '@deepseek-ai/dsh-session-projection';
 import {clientRequestSchema} from '@deepseek-ai/dsh-client-connection';
 import {currentSourceProjection,currentSourceSchema,snapshotCurrentSource} from './source';
@@ -12,23 +13,22 @@ import {sourceUpdateBaseSchema,sourceUpdateRequestSchema,SOURCE_UPDATE_ENDPOINT,
 import {reviseUnknownCondition,sameUpdateBase,sourceTextSha,sourceUpdateFields,updateFlags,updateWithheld} from '../source-update';
 import type {SourceSnapshot} from '../source-graph';
 
-const RECORD='plugin:dsh-semantic-ui/source-update-intent';
+export const SOURCE_UPDATE_COMMAND='dsh-semantic-ui-source-update';
 const intentSchema=z.strictObject({version:z.literal(1),requestId:z.uuid(),base:sourceUpdateBaseSchema,condition:z.string().min(1).max(160),value:z.boolean(),nextTextSha256:z.string().regex(/^[a-f0-9]{64}$/),change:z.strictObject({condition:z.string(),from:z.null(),to:z.boolean(),textByteStart:z.number().int().nonnegative(),textByteEnd:z.number().int().nonnegative(),before:z.string(),after:z.string()})});
 type Intent=z.infer<typeof intentSchema>;
-type Receipt={intent:Intent;issue?:string;message?:NonNullable<SourceUpdateResult['message']>;checkpoint?:NonNullable<SourceUpdateResult['checkpoint']>};
+type Receipt={intent:Intent;commandId:string;settled:boolean;issue?:string;message?:NonNullable<SourceUpdateResult['message']>;checkpoint?:NonNullable<SourceUpdateResult['checkpoint']>};
 interface UpdateState{current:z.infer<typeof currentSourceSchema>;base:{identity:SourceUpdateBase;source:SourceSnapshot;checkpointSha256:string}|null;receipts:Receipt[];blocked:boolean}
-declare module '@deepseek-ai/dsh-session/types'{interface PluginRecordMap{'plugin:dsh-semantic-ui/source-update-intent':Intent}}
 declare module '@deepseek-ai/dsh-session-projection/types'{
  interface SessionProjectionStateMap{dshSemanticSourceUpdates:UpdateState}
  interface SessionProjectionMap{dshSemanticSourceUpdates:{receipts:Receipt[];blocked:boolean}}
 }
-const receiptSchema=z.strictObject({intent:intentSchema,issue:z.string().optional(),message:z.strictObject({id:z.string(),seq:z.number(),turn:z.number(),turnStartSeq:z.number(),requestId:z.string(),textSha256:z.string()}).optional(),checkpoint:z.strictObject({seq:z.number(),displayId:z.string(),revision:z.number(),textSha256:z.string(),explanation:z.string()}).optional()});
+const receiptSchema=z.strictObject({intent:intentSchema,commandId:z.string().min(1),settled:z.boolean(),issue:z.string().optional(),message:z.strictObject({id:z.string(),seq:z.number(),turn:z.number(),turnStartSeq:z.number(),requestId:z.string(),textSha256:z.string()}).optional(),checkpoint:z.strictObject({seq:z.number(),displayId:z.string(),revision:z.number(),textSha256:z.string(),explanation:z.string()}).optional()});
 const stateSchema=z.strictObject({current:currentSourceSchema,base:z.strictObject({identity:sourceUpdateBaseSchema,checkpointSha256:z.string().regex(/^[a-f0-9]{64}$/),source:z.strictObject({kind:z.literal('decision-zh'),textSha256:z.string(),excerptSha256:z.string(),textBytes:z.number(),textByteStart:z.literal(0),textByteEnd:z.number(),excerpt:z.string(),hostContext:sourceHostContextSchema})}).nullable(),receipts:z.array(receiptSchema).max(16),blocked:z.boolean()});
 const wireSchema=z.strictObject({receipts:z.array(receiptSchema).max(16),blocked:z.boolean()});
 function receiptResult(r:Receipt,blocked:boolean,durable:boolean):SourceUpdateResult{
  const result={...updateFlags,requestId:r.intent.requestId,base:r.intent.base,change:r.intent.change,nextTextSha256:r.intent.nextTextSha256,durable,...(durable&&r.message?{message:r.message}:{}),...(durable&&r.checkpoint?{checkpoint:r.checkpoint}:{})};
  if(r.issue||blocked)return {...result,status:'withheld',code:r.issue??'UPDATE_HISTORY_INVALID'};
- return {...result,status:durable?(r.checkpoint?'adopted':r.message?'message-persisted':'unknown'):'unknown',...(!durable?{code:'UPDATE_DURABILITY_UNCONFIRMED'}:{})};
+ return {...result,status:durable&&r.settled?(r.checkpoint?'adopted':r.message?'message-persisted':'unknown'):'unknown',...(!durable?{code:'UPDATE_DURABILITY_UNCONFIRMED'}:{})};
 }
 /** Flush promises the pre-existing prefix, not events appended while awaiting it.
  * Capture and detach the exact projection before crossing that async boundary. */
@@ -38,18 +38,20 @@ export async function flushSourceUpdateReceipt(read:()=>{receipt:Receipt|undefin
  return cut.receipt?{...receiptResult(cut.receipt,cut.blocked,durable),asOfSeq:cut.asOfSeq}:{...updateWithheld('UPDATE_REQUEST_UNKNOWN'),requestId,asOfSeq:cut.asOfSeq};
 }
 export const sourceUpdateProjection:ProjectionDefinition<'dshSemanticSourceUpdates'>&{wire:NonNullable<ProjectionDefinition<'dshSemanticSourceUpdates'>['wire']>}={
- key:'dshSemanticSourceUpdates',stateVersion:2,stateSchema:stateSchema as z.ZodType<UpdateState>,
+ key:'dshSemanticSourceUpdates',stateVersion:3,stateSchema:stateSchema as z.ZodType<UpdateState>,
  wire:{viewSchema:wireSchema,view:s=>({receipts:s.receipts,blocked:s.blocked})},
  init:(h,n)=>({current:currentSourceProjection.init(h,n),base:null,receipts:[],blocked:false}),
  apply:(s,event)=>{
   const inherited=s.current.inheritedRemaining>0,current=currentSourceProjection.apply(s.current,event);
   if(inherited)return {...s,current};
-  let next:UpdateState={...s,current};const record=pluginRecordOf(event);
-  if(record?.type===RECORD){
-   const parsed=intentSchema.safeParse(record.data);if(!parsed.success||s.receipts.length>=16)return {...next,blocked:true};
+  let next:UpdateState={...s,current};
+  if(event.type==='command/done')return {...next,receipts:s.receipts.map(r=>r.commandId===event.data.commandId?{...r,settled:event.data.kind==='success',...(event.data.kind!=='success'?{issue:'UPDATE_COMMAND_REJECTED'}:{})}:r)};
+  if(event.type==='command/run'&&event.data.name===SOURCE_UPDATE_COMMAND){
+   let input:unknown;try{input=JSON.parse(event.data.args??'');}catch{return next;}
+   const parsed=intentSchema.safeParse(input);if(!parsed.success)return next;if(s.receipts.length>=16)return {...next,blocked:true};
    const i=parsed.data;if(i.base.sessionId!==current.sessionId||s.receipts.some(r=>r.intent.requestId===i.requestId)||!s.base||!sameUpdateBase(s.base.identity,i.base))return {...next,blocked:true};
    try{const revision=reviseUnknownCondition(s.base.source,i.condition,i.value);if(revision.nextTextSha256!==i.nextTextSha256||JSON.stringify(revision.change)!==JSON.stringify(i.change))return {...next,blocked:true};}catch{return {...next,blocked:true};}
-   return {...next,receipts:[...s.receipts,{intent:i}]};
+   return {...next,receipts:[...s.receipts,{intent:i,commandId:String(event.data.commandId),settled:false}]};
   }
   if(event.type==='turn/start')next={...next,base:null};
   if(event.type==='user/message'&&current.candidate?.seq===Number(event.seq)){
@@ -77,15 +79,24 @@ export const sourceUpdateProjection:ProjectionDefinition<'dshSemanticSourceUpdat
  },
 };
 
-/** The only submission record is an informational intent in DSH's own log.
- * Normal prompt owns the user message; no synthetic user or parallel chat store. */
+/** Intent uses the existing command/run + command/done log via the actual
+ * injected CommandRuntime. No cross-SDK Session class-bound function or custom
+ * append, synthetic user message or parallel conversation store. */
 export function mountSourceUpdates(ctx:Context){
  ctx.sessionProjections.register(sourceUpdateProjection);
- ctx.inject(['sessions','connection'],child=>{
+ ctx.inject(['sessions','connection','commands','agents'],child=>{
   // Host and browser both augment Context.sessions in the shared typecheck.
   // This injected host service is SessionStore, never the browser ISessions.
   const sessions=child.sessions as unknown as SessionStore;
   const shared=child.connection.createSharedFetchHandler('/api');
+  const staged=new Map<string,Intent>();
+  child.commands.register({name:SOURCE_UPDATE_COMMAND,description:'Reserve a bounded source supplement from its explicit owner UI; does not prompt a model.',input:{hint:'Internal source-update intent; use the source supplementation UI.'},handler(invocation){
+   invocation.signal.throwIfAborted();let raw:unknown;try{raw=JSON.parse(invocation.rawInput);}catch{return {kind:'error',text:'UPDATE_INTENT_FORMAT'};}
+   const parsed=intentSchema.safeParse(raw);if(!parsed.success)return {kind:'error',text:'UPDATE_INTENT_FORMAT'};
+   const i=parsed.data,expected=staged.get(i.requestId);
+   if(!expected||JSON.stringify(expected)!==JSON.stringify(i)||String(invocation.agent.session.id)!==i.base.sessionId)return {kind:'error',text:'UPDATE_OWNER_UI_REQUIRED'};
+   return {kind:'success',text:'Source-update intent recorded. Not prompt admission, message persistence or new view adoption.'};
+  }});
   const state=(session:Session)=>child.sessionProjections.stateOf(session,'dshSemanticSourceUpdates');
   async function status(session:Session,id:string):Promise<SourceUpdateResult>{
    return flushSourceUpdateReceipt(()=>{const s=state(session);return {receipt:s?.receipts.find(r=>r.intent.requestId===id),blocked:!!s?.blocked,asOfSeq:Number(session.seq)-1};},()=>sessions.flush(session),id);
@@ -128,7 +139,9 @@ export function mountSourceUpdates(ctx:Context){
     if(p.action==='offer')return reply({status:'available',base:s.base.identity,fields:sourceUpdateFields(s.base.source).map(({span,...f})=>f),...updateFlags});
     if(s.receipts.length>=16)return reply(updateWithheld('UPDATE_CAPACITY'));
     const rev=reviseUnknownCondition(s.base.source,p.condition,p.value),intent:Intent={version:1,requestId:p.requestId,base:p.base,condition:p.condition,value:p.value,nextTextSha256:rev.nextTextSha256,change:rev.change};
-    appendPluginRecord(session,RECORD,intent);
+    const agent=child.agents.get(sessionId as Parameters<typeof child.agents.get>[0]);if(!agent||agent.session!==session)return reply(updateWithheld('UPDATE_AGENT'));
+    staged.set(p.requestId,intent);
+    try{const command=await child.commands.execute(agent,'/'+SOURCE_UPDATE_COMMAND+' '+JSON.stringify(intent),[],request.signal);if(command?.result.kind!=='success')return reply({...updateWithheld('UPDATE_COMMAND_REJECTED'),requestId:p.requestId});}finally{staged.delete(p.requestId);}
     // Persist intent BEFORE dispatch. An uncertain submission is status-only,
     // including after reload/restart; it is never silently reissued.
     if(!await sessions.flush(session))return reply({...updateWithheld('UPDATE_DURABILITY_UNCONFIRMED'),requestId:p.requestId});
