@@ -2,7 +2,7 @@
   "date": "2026-10-27",
   "version": "0.1.0-preview.15",
   "protocolVersion": "1.4",
-  "scope": "source-stage candidate; final archive and normal-client acceptance recorded separately after freeze",
+  "scope": "released preview.15 finite numeric-source binding; real normal-client and final archive acceptance",
   "sourceKind": "observations-zh",
   "source": {
     "path": "docs/evidence/natural/r9-N2.json",
@@ -25,7 +25,7 @@
     "productionPreAcceptanceFix": "compute source span start from parsed prefix fields; no source expectation change",
     "boundedWhitespaceRegression": "child process timeout guard plus actual stdio unsupported long-whitespace source"
   },
-  "normalClientAndArchiveAcceptance": "pending at source freeze",
+  "normalClientAndArchiveAcceptance": "passed for final preview.15 bytes; candidate14 records remain separate",
   "originalRun9": {
     "pass": 0,
     "fail": 6,
@@ -59,6 +59,43 @@
       "ownedChildKilled": true
     },
     "repair": "separate bounded header, final question, reading list and unit; no overlapping whitespace/list backtracking",
-    "frozenCandidateRetained": true
-  }
+    "frozenCandidateRetained": true,
+    "releasePublished": false
+  },
+  "runtimeSourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+  "runtimeSha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+  "evidenceSha256": "5b3da0478b6abf316c8e8fd128425b257398474e68d039cf8cb0645284735107",
+  "mcpEntrySha256": "aff74edf1e5b8e03fd0c1626d05cbecc77f721a2598e67eb4c27b61f5c207867",
+  "sourceClient": "examples/codex-readonly.py",
+  "testedClientSha256": "04d82e9909dedc85ba86bdddf4f14d61ebc0aef228164fb45431dc6e87bf6c88",
+  "normalCases": [
+    {
+      "case": "positive",
+      "delivery": "delivered",
+      "comparison": "matched",
+      "receipt": "source-numeric/positive.json"
+    },
+    {
+      "case": "zero-fill",
+      "delivery": "withheld",
+      "comparison": "mismatch",
+      "receipt": "source-numeric/zero-fill.json"
+    }
+  ],
+  "normalPositiveAndRefusalCases": 2,
+  "priorUnpublished14NormalCases": 2,
+  "normalAppServerTurnStartRequests": 0,
+  "normalRemainingOwnedProcesses": 0,
+  "normalGlobalConfigUnchanged": true,
+  "standaloneMcp": "source-numeric/standalone-mcp.json",
+  "linuxCi": "source-numeric/linux-ci.json",
+  "publication": "source-numeric/publication.json",
+  "manifest": "source-numeric/package-manifest.json",
+  "runtimeByteDiff": "source-numeric/runtime-diff.json",
+  "parserCost": "source-numeric/parser-cost.json",
+  "offlineClientContractTests": 4,
+  "guidedModelAcceptance": "not rerun; previous two guided cases retain preview13/client byte identity",
+  "currentCodexDesktopRichUi": "not tested",
+  "newDshNumericSourceAdapter": "not implemented or validated",
+  "newDshHostLifecycleMatrix": "not run; old matrices retain version scope"
 }

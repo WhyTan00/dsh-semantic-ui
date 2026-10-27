@@ -1,0 +1,352 @@
+{
+  "case": "positive",
+  "runtimeVersion": "0.1.0-preview.15",
+  "runtimeSourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+  "runtimeArchiveSha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+  "mcpEntrySha256": "aff74edf1e5b8e03fd0c1626d05cbecc77f721a2598e67eb4c27b61f5c207867",
+  "clientSha256": "04d82e9909dedc85ba86bdddf4f14d61ebc0aef228164fb45431dc6e87bf6c88",
+  "publicInvocation": [
+    "python3",
+    "examples/codex-readonly.py",
+    "--answer",
+    "--archive",
+    "artifacts/releases/0.1.0-preview.15/whytan-dsh-semantic-ui-0.1.0-preview.15.tgz",
+    "--manifest",
+    "artifacts/releases/0.1.0-preview.15/package-manifest.json",
+    "--source-file",
+    "docs/evidence/natural/r9-N2.json",
+    "--source-json-pointer",
+    "/question",
+    "--source-kind",
+    "observations-zh",
+    "--component",
+    "DataChart",
+    "--requests-file",
+    "fixtures/source-numeric-request.json"
+  ],
+  "request": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "numeric-source-example",
+      "revision": 1,
+      "component": "DataChart",
+      "summary": "Explicit source projection; annotations unverified.",
+      "payload": {
+        "chartType": "bar",
+        "title": "原文读数",
+        "unit": "摄氏度",
+        "x": {
+          "kind": "category",
+          "order": "input"
+        },
+        "series": [
+          {
+            "id": "reading-series",
+            "label": "温度"
+          }
+        ],
+        "rows": [
+          {
+            "id": "reading-1",
+            "x": "1",
+            "values": {
+              "reading-series": -2
+            }
+          },
+          {
+            "id": "reading-2",
+            "x": "2",
+            "values": {
+              "reading-series": 0
+            }
+          },
+          {
+            "id": "reading-3",
+            "x": "3",
+            "values": {
+              "reading-series": null
+            }
+          },
+          {
+            "id": "reading-4",
+            "x": "4",
+            "values": {
+              "reading-series": 2
+            }
+          }
+        ]
+      }
+    },
+    "mapping": {
+      "seriesId": "reading-series",
+      "rows": [
+        {
+          "sourceIndex": 0,
+          "rowId": "reading-1"
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "reading-2"
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "reading-3"
+        },
+        {
+          "sourceIndex": 3,
+          "rowId": "reading-4"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "kind": "mean",
+        "population": "observed",
+        "denominator": 3,
+        "value": 0,
+        "unit": "摄氏度"
+      },
+      {
+        "kind": "mean",
+        "population": "complete",
+        "denominator": 4,
+        "value": null,
+        "unit": "摄氏度"
+      }
+    ]
+  },
+  "sourceCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "observations-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "jsonPointer": "/question",
+      "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "excerptSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 114,
+        "textUTF8Bytes": 114
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source identity, authorship and real-world readings",
+      "unselected context, arbitrary prose, chart title and annotations",
+      "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+    ],
+    "status": "compared",
+    "sourceObservations": {
+      "context": "虚构设备",
+      "measurement": "温度",
+      "unit": "摄氏度",
+      "positions": [
+        {
+          "index": 0,
+          "value": -2,
+          "span": {
+            "textByteStart": 34,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "index": 1,
+          "value": 0,
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 40
+          }
+        },
+        {
+          "index": 2,
+          "value": null,
+          "span": {
+            "textByteStart": 43,
+            "textByteEnd": 49
+          }
+        },
+        {
+          "index": 3,
+          "value": 2,
+          "span": {
+            "textByteStart": 52,
+            "textByteEnd": 53
+          }
+        }
+      ]
+    },
+    "sourceStatistics": {
+      "unit": "摄氏度",
+      "positions": 4,
+      "values": [
+        -2,
+        0,
+        null,
+        2
+      ],
+      "missingMask": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "observed": {
+        "count": 3,
+        "missing": 1,
+        "sum": 0,
+        "mean": 0,
+        "denominator": 3,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 4,
+        "mean": null,
+        "denominator": 4,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+    },
+    "comparison": {
+      "status": "matched",
+      "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+      "rowChecks": [
+        {
+          "sourceIndex": 0,
+          "rowId": "reading-1",
+          "seriesId": "reading-series",
+          "expected": -2,
+          "actual": -2,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 34,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "reading-2",
+          "seriesId": "reading-series",
+          "expected": 0,
+          "actual": 0,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 39,
+            "textByteEnd": 40
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "reading-3",
+          "seriesId": "reading-series",
+          "expected": null,
+          "actual": null,
+          "missing": true,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 43,
+            "textByteEnd": 49
+          }
+        },
+        {
+          "sourceIndex": 3,
+          "rowId": "reading-4",
+          "seriesId": "reading-series",
+          "expected": 2,
+          "actual": 2,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 52,
+            "textByteEnd": 53
+          }
+        }
+      ],
+      "viewAnnotations": "not-verified"
+    },
+    "issues": [],
+    "claimChecks": [
+      {
+        "index": 0,
+        "kind": "mean",
+        "population": "observed",
+        "status": "supported",
+        "expected": {
+          "value": 0,
+          "denominator": 3,
+          "unit": "摄氏度"
+        },
+        "actual": {
+          "kind": "mean",
+          "population": "observed",
+          "denominator": 3,
+          "value": 0,
+          "unit": "摄氏度"
+        },
+        "scopeKnown": true,
+        "reason": "Unweighted arithmetic mean within the explicitly named range."
+      },
+      {
+        "index": 1,
+        "kind": "mean",
+        "population": "complete",
+        "status": "supported",
+        "expected": {
+          "value": null,
+          "denominator": 4,
+          "unit": "摄氏度"
+        },
+        "actual": {
+          "kind": "mean",
+          "population": "complete",
+          "denominator": 4,
+          "value": null,
+          "unit": "摄氏度"
+        },
+        "scopeKnown": false,
+        "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+      }
+    ],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "complete selected finite source readings and explicit calculation range only",
+      "text": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+    }
+  },
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+    "sourceDocumentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "stdout": "来源内的有限说明（宿主保障）\n\n虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n",
+  "newModelTurns": 0,
+  "turnStartRequests": 0,
+  "explicitToolCalls": 2,
+  "crossLayerRequestsAndResponsesEqual": true,
+  "appServerExitCode": 0,
+  "globalConfigShaUnchanged": true,
+  "rawSha256": {
+    "codex-wire.jsonl": "147d5fec944b4f9c2cd98fa8d174f44f7603ff5cf2c4cd6d477210f19529c1f1",
+    "mcp-wire.jsonl": "85f8b759fedb454ebae17ab18c87d4d344924058002fa5aebd7747ebfec748c3",
+    "result.json": "1eefb5a0af7c4ad0c77b0ce7ef64497e929efc3095d0c158bfef77f18181167c",
+    "terminal.json": "eca488b77d2bc4df3f686b9261a8effd65f12554df8a8e634274f57559ef3c47",
+    "answer.md": "06fc1d3f6e71d3795595bfc80be9204a8c477e2d9d4c1237c43b43a1b83211c4"
+  }
+}

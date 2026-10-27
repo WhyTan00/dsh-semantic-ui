@@ -1,0 +1,25 @@
+{
+  "failedCandidate14": {
+    "timedOut": true,
+    "elapsed": 3.0083587169647217,
+    "stdout": null,
+    "stderr": null,
+    "ownedChildKilledBySubprocessTimeout": true
+  },
+  "failedCandidate14Source": "d899ccb01aba0346814e2388dc8f5fd87d97c055",
+  "accepted15": {
+    "runtimeSourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+    "coreSha256": "68ba3382d7c848fc5314851f822cb373fe912585a2cdcd4d18c1ccc3ac1a0579",
+    "timeoutSeconds": 3,
+    "timedOut": false,
+    "exitCode": 0,
+    "result": {
+      "milliseconds": [
+        0.17466699999999946,
+        0.30129200000000367
+      ],
+      "status": "unsupported"
+    }
+  },
+  "scope": "two bounded whitespace examples on this machine; source guard and archive stdio regression cover rejection; not a universal performance benchmark"
+}

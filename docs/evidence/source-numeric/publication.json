@@ -1,0 +1,58 @@
+{
+  "releaseId": 424925040,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.15",
+  "tag": "v0.1.0-preview.15",
+  "tagObject": "af423d7a2ddb1130fd3878671abb1a41793d613a",
+  "sourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+  "prerelease": true,
+  "assets": [
+    {
+      "filename": "package-manifest.json",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.15/package-manifest.json",
+      "exitCode": 0,
+      "assetId": 679996931,
+      "declaredBytes": 26680,
+      "declaredDigest": "sha256:2f7ddf02337f29f500202fc83a3f94e6d2f39b9f8d1c9bfac13c03f3b6d4cdda",
+      "bytes": 26680,
+      "sha256": "2f7ddf02337f29f500202fc83a3f94e6d2f39b9f8d1c9bfac13c03f3b6d4cdda",
+      "identicalToLocal": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.15/SHA256SUMS",
+      "exitCode": 0,
+      "assetId": 679996933,
+      "declaredBytes": 229,
+      "declaredDigest": "sha256:054225b5ddf128fe67802f2952b5d41c6fb7b68e86a57ad8a2f5a6f4a533ef1d",
+      "bytes": 229,
+      "sha256": "054225b5ddf128fe67802f2952b5d41c6fb7b68e86a57ad8a2f5a6f4a533ef1d",
+      "identicalToLocal": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.15.tgz",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.15/whytan-dsh-semantic-ui-0.1.0-preview.15.tgz",
+      "exitCode": 0,
+      "assetId": 679996934,
+      "declaredBytes": 2549195,
+      "declaredDigest": "sha256:b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+      "bytes": 2549195,
+      "sha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+      "identicalToLocal": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.15.tgz",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.15/whytan-dsh-semantic-ui-evidence-0.1.0-preview.15.tgz",
+      "exitCode": 0,
+      "assetId": 679996935,
+      "declaredBytes": 29097363,
+      "declaredDigest": "sha256:5b3da0478b6abf316c8e8fd128425b257398474e68d039cf8cb0645284735107",
+      "bytes": 29097363,
+      "sha256": "5b3da0478b6abf316c8e8fd128425b257398474e68d039cf8cb0645284735107",
+      "identicalToLocal": true
+    }
+  ],
+  "anonymousHttpsBytesVerified": true,
+  "npmPublished": false,
+  "older12And13ArtifactsAndTags": "checked against frozen manifests/checksums/source tags; no download or republish",
+  "candidate14ReleasePublished": false
+}

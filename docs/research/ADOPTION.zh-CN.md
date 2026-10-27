@@ -10,6 +10,8 @@ preview.12-dev.1继续增加 [普通比较来源核对](../SOURCE-DECISION.zh-CN
 
 preview.12继续将完整decision-zh接入同一个 [正常render与保存](../SOURCE-DELIVERY.zh-CN.md)。它吸收“来源、状态与显示分离”的原则，以来源核对后的投影替换模型注释；本地what-if仍是明确假设。只解决有限语法与当前输入，不冒充自由正文认证或P1提交闭环。
 
+preview.15进一步落实统计来源与绘制分离：[数值来源绑定](../SOURCE-NUMERIC.zh-CN.md) 在MCP启动快照上核对每位置值/缺失mask/单位和observed/complete均值分母，并实际进入普通零推理答复。同均值填零也会被拒绝；来源身份、自由正文、新DSH数值源、提交闭环与结果迁移仍未完成。它复用现有统计核心与DataChart，没有新增图表引擎或移植候选项目代码。14候选的空白解析超时及15修复按 [独立证据](../evidence/source-numeric.json) 保留。
+
 ## 已进入本仓库的实现
 
 | 采用点 | 来源启发 | 实际实现 | 验证边界 |

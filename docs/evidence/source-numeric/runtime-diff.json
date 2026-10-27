@@ -1,0 +1,33 @@
+{
+  "from": "0.1.0-preview.13",
+  "to": "0.1.0-preview.15",
+  "entries": {
+    "dist/host.js": {
+      "oldSha256": "b5362b8b6b10f558f7192507e0b83040cf25ac33d02be892d2cb87cae7e1db25",
+      "newSha256": "8077be22e61e9540c5915076384c11cd1cce0a7e0d457588824468c7bc5dd87f",
+      "equal": false
+    },
+    "dist/client.js": {
+      "oldSha256": "d2397c116488e9958dc1ae903119c9f0e7319ae2fa6355908d5845aaff38e6df",
+      "newSha256": "4eb9c5b8df21781d88f2701de1e5311349abcf49e28f3a75ac7f14ac4f035a40",
+      "equal": false
+    },
+    "dist/core.js": {
+      "oldSha256": "385f36a99c5e88203e6d7409e4e96a030c2f3e5cf4a4f45eaab12337f7b8eebc",
+      "newSha256": "68ba3382d7c848fc5314851f822cb373fe912585a2cdcd4d18c1ccc3ac1a0579",
+      "equal": false
+    },
+    "dist/mcp.js": {
+      "oldSha256": "f61d40a9531d47a4c6cfb17c8df4f223df920c7824172c2fd65701e31806f2c0",
+      "newSha256": "aff74edf1e5b8e03fd0c1626d05cbecc77f721a2598e67eb4c27b61f5c207867",
+      "equal": false
+    },
+    "dist/protocol.js": {
+      "oldSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+      "newSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+      "equal": true
+    }
+  },
+  "newDshNativePtcAcceptance": false,
+  "newDesktopRichUiAcceptance": false
+}

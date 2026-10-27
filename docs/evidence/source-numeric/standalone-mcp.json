@@ -1,0 +1,12 @@
+{
+  "version": "0.1.0-preview.15",
+  "sourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+  "archiveSha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+  "mcpEntrySha256": "aff74edf1e5b8e03fd0c1626d05cbecc77f721a2598e67eb4c27b61f5c207867",
+  "extractedOutsideRepository": true,
+  "serverWithoutNodeModules": true,
+  "defaultStdioContracts": 3,
+  "initializationContracts": 4,
+  "numericSourceStdioContracts": 2,
+  "realModelRequests": 0
+}
