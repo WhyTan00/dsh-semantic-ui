@@ -1,0 +1,228 @@
+{
+  "schema": "semantic-ui-real-source-history-v1",
+  "recordedAt": "2026-10-27T16:05:52.364064+00:00",
+  "scope": "One genuine model thread, two sequential real turns, immutable complete source revision via ordinary owned MCP configuration reload, prior actual view and hypothesis history retained.",
+  "clientCommit": "86e8bb51c0648942498be67377d71124ec495797",
+  "clientSha256": "1b8ec271fda208ff4d878bff76a968e0e4aed291f0cb1c9c9d3ca4a3168d5efe",
+  "runtimeVersion": "0.1.0-preview.26",
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "genericGuideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "independentPrivateCriteriaSha256": "4bdf0622634225cad64ce03c01b18702634d71ec16d937c259f535e92088481e",
+  "criteriaFrozenAt": "2026-10-27T15:34:39.331207+00:00",
+  "executionFrozenAt": "2026-10-27T15:58:50.141621+00:00",
+  "defaults": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+  "threadStarts": 1,
+  "modelTurnStarts": 2,
+  "newObservedModelTurns": 2,
+  "maximumNewUserLevelAttempts": 2,
+  "retries": 0,
+  "noThird": true,
+  "old1420UnusedSlotInherited": false,
+  "backendModelRequestCount": "unknown",
+  "phases": [
+    {
+      "phase": 1,
+      "turnId": "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+      "status": "completed",
+      "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "candidateSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+      "modelSemanticCalls": 9,
+      "modelToolsInOrder": [
+        "semantic_ui_schema",
+        "semantic_ui_source_check",
+        "semantic_ui_source_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_source_check"
+      ],
+      "builtInDiscoveryCalls": 0,
+      "freshViewComparisonsInActualOrder": [
+        {
+          "status": "mismatch",
+          "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+          "issues": [
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.0",
+              "reason": "Input label does not match the explicit source role."
+            },
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.1",
+              "reason": "Input label does not match the explicit source role."
+            }
+          ]
+        },
+        {
+          "status": "matched",
+          "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+          "issues": []
+        }
+      ],
+      "hostDelivery": "delivered",
+      "candidateRuntimeStatus": "unverified"
+    },
+    {
+      "phase": 2,
+      "turnId": "01a17e17-68d2-7c83-b578-df88a1b1db2c",
+      "status": "completed",
+      "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "candidateSha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+      "modelSemanticCalls": 8,
+      "modelToolsInOrder": [
+        "semantic_ui_schema",
+        "semantic_ui_source_check",
+        "semantic_ui_source_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check"
+      ],
+      "builtInDiscoveryCalls": 0,
+      "freshViewComparisonsInActualOrder": [
+        {
+          "status": "matched",
+          "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+          "issues": []
+        }
+      ],
+      "hostDelivery": "delivered",
+      "candidateRuntimeStatus": "unverified"
+    }
+  ],
+  "hostExplicitCalls": 7,
+  "sourceReloads": 1,
+  "firstTerminalBeforeReloadAndSecondStart": true,
+  "oldViewOnNewSource": "mismatch; two SOURCE_INITIAL",
+  "rawSemanticReview": "both met for frozen finite criteria",
+  "firstPhaseFirstView": "mismatch then corrected within same turn",
+  "secondPhaseFirstView": "matched",
+  "hostAnswers": "separate; modelCandidateUsed=false",
+  "tests": {
+    "pythonContracts": 26,
+    "zeroModelProbesAndEntries": 6,
+    "observedInvocation": 1,
+    "macosFinalSourceRevisionAndDefaultEntriesPassed": true,
+    "newLinuxClientRun": false
+  },
+  "finalGlobalConfigShaUnchanged": true,
+  "earlyOwnTemporaryTrustEntriesRemoved": 2,
+  "companionClientChanged": true,
+  "coreRuntimeOrSkillOrProtocolChanged": false,
+  "newReleaseRepackReinstallOrOldAssetDownload": false,
+  "ui": {
+    "terminalSourceText": "observed",
+    "graphicalMcpView": "not rendered in this phase",
+    "newDSHNativePtc": "not run; existing preview26 acceptance retained",
+    "mainCodexClient": "unverified",
+    "realPhone": "unverified"
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "originalNaturalResults": "Unchanged 0 pass / 6 fail / 18 requests; prior budgets and preview21-26 acceptance retained.",
+  "assets": [
+    {
+      "path": "source-history/archived-skill.md",
+      "sha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+      "bytes": 6132
+    },
+    {
+      "path": "source-history/budget.json",
+      "sha256": "e1e1598275521d40464f6c26c1f8ba2b486e01c6ff68572755a56ae7df23fa18",
+      "bytes": 742
+    },
+    {
+      "path": "source-history/cleanup.json",
+      "sha256": "963e3e00e876247053304cf0b7e3abe7e027d414606afdd5032a3203e1da5e81",
+      "bytes": 860
+    },
+    {
+      "path": "source-history/criteria-cases.json",
+      "sha256": "7294a9d2e601b1a99c665065d1d7d061ead30f0c0be8629e83fb031b12140085",
+      "bytes": 5066
+    },
+    {
+      "path": "source-history/fingerprints.json",
+      "sha256": "af824005597b2d06b5cd8a467723d61bced123bde7e41251c1145ad666e582e4",
+      "bytes": 2044
+    },
+    {
+      "path": "source-history/generic-guide.txt",
+      "sha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+      "bytes": 1002
+    },
+    {
+      "path": "source-history/host-calls.json",
+      "sha256": "53ea59df8a2822c687d41b97564eb35756f375d163c2b07c8d5acdee71ed5e20",
+      "bytes": 166283
+    },
+    {
+      "path": "source-history/phase-1-candidate.md",
+      "sha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+      "bytes": 1363
+    },
+    {
+      "path": "source-history/phase-1-host.md",
+      "sha256": "d93275624887a5066cc89ff9d3d3be29fb9c884fe3bd901de5932b202f88cd5c",
+      "bytes": 1297
+    },
+    {
+      "path": "source-history/phase-1.json",
+      "sha256": "1991b70a2d380326183aa4ea40529558909db5b01705aed19dbe96cef8200c69",
+      "bytes": 195948
+    },
+    {
+      "path": "source-history/phase-2-candidate.md",
+      "sha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+      "bytes": 1256
+    },
+    {
+      "path": "source-history/phase-2-host.md",
+      "sha256": "5638143c646044e01b493d626d3ee2c0008b2f6870a5381ef24d42ac447e9c62",
+      "bytes": 1320
+    },
+    {
+      "path": "source-history/phase-2.json",
+      "sha256": "326e2eb94c4184b7ce712f39297da4c01aac6c62a2e0a05ea1944b4cd2a41573",
+      "bytes": 168758
+    },
+    {
+      "path": "source-history/review.json",
+      "sha256": "625d4d28edea0ceeba5a1d838518bda725cff1a5f558baf01c01eda430916f64",
+      "bytes": 4150
+    },
+    {
+      "path": "source-history/source-transition.json",
+      "sha256": "08910c5d5e732a774ce344ffd90f8a670485e4803e7d96968dd391b1961b1ecc",
+      "bytes": 37415
+    },
+    {
+      "path": "source-history/terminal-answer.md",
+      "sha256": "1ab906049acfe48b5af596d63a9f2a518b584e16f8cf2a15d236778494795125",
+      "bytes": 2649
+    },
+    {
+      "path": "source-history/wire-verification.json",
+      "sha256": "38bb35099cd573a798af5c160c6636c47d6cf841226ea16ff613e39e623114dc",
+      "bytes": 3781
+    },
+    {
+      "path": "source-history/zero-probes.json",
+      "sha256": "92b9f0d0b4f17b1dacbfb5861e10dd666141b21c5970bf9c0391bd5b6a03eb02",
+      "bytes": 56613
+    }
+  ]
+}

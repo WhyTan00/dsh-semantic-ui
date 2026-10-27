@@ -1,0 +1,67 @@
+{
+  "kind": "manual finite semantic review of complete raw finals, separate from runtime certification",
+  "reviewedAt": "2026-10-27T16:05:52.362283+00:00",
+  "frozenIndependentCriteriaSha256": "4bdf0622634225cad64ce03c01b18702634d71ec16d937c259f535e92088481e",
+  "method": "Read full preserved originals against pre-frozen semantic criteria; no exact-string whitelist, no unrelated engineering disclaimer requirement, no host-canonical replacement.",
+  "phase1": {
+    "candidateSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+    "rawSemanticStatus": "met",
+    "currentFacts": "Need offline=true; online fails that item; local supports offline and its required team maintenance is currently available. Prices and unprovided opposite responsibilities remain unknown; no overall winner asserted.",
+    "explicitHypothesis": "No maintenance capacity is clearly hypothetical. Under unchanged offline need, local maintenance fails and online offline capability still fails. Hypothetical false was not used as the source-bound current initial.",
+    "toolAdoption": "Actual source read; first view mismatched on annotated input labels, corrected within the same real turn to matched true/true. Current and separate hypothesis core checks preserved.",
+    "firstViewComparison": "mismatch",
+    "firstIssueCodes": [
+      "SOURCE_FIELD_LABEL",
+      "SOURCE_FIELD_LABEL"
+    ],
+    "laterViewComparison": "matched",
+    "sourceBoundInitials": [
+      true,
+      true
+    ]
+  },
+  "phase2": {
+    "candidateSha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+    "rawSemanticStatus": "met",
+    "currentFacts": "Explicit false condition selects else and current offline need=false; both options inactive for that item. Team capacity remains unknown, neither old true nor old hypothetical false. Local maintenance fit cannot be determined.",
+    "preservedLimits": "Online still lacks offline capability, but it is not a current exclusion under false need. Online maintenance need, local provider updates, prices and overall suitability/recommendation are not invented.",
+    "historyUse": "Raw explicitly withdraws the prior local-meets-both-current-conditions statement; additional no-capacity table remains hypothetical.",
+    "toolAdoption": "Actual new-source read and new view bound to phase2 snapshot; first fresh comparison matched false/null and typed current-condition/availability claims checked.",
+    "firstViewComparison": "matched",
+    "sourceBoundInitials": [
+      false,
+      null
+    ]
+  },
+  "causalBinding": {
+    "status": "met",
+    "oneThreadTwoRealTurns": true,
+    "firstCompletedBeforeSecondStarted": true,
+    "oldSourceViewAndHypothesisKept": true,
+    "oldViewOnNewSource": "mismatch: two SOURCE_INITIAL",
+    "noHostPrefillForkOrInjectedHistory": true,
+    "sourceNotPassedAsToolArgument": true
+  },
+  "host": {
+    "phase1": "delivered separately",
+    "phase2": "delivered separately",
+    "modelCandidateUsed": false,
+    "terminalAnswerExactBytesPreserved": true
+  },
+  "ui": {
+    "terminalSourceText": "observed",
+    "graphicalMcpView": "not rendered in this phase",
+    "newDSHNativePtc": "not run; existing preview26 acceptance retained",
+    "mainCodexClient": "unverified",
+    "realPhone": "unverified"
+  },
+  "genericRuntimeDefectObserved": false,
+  "firstViewRefusalAssessment": "The model added annotations to labels outside the documented bounded role-label contract. The checker correctly rejected them; later plain labels matched. Not a demonstrated core miscomparison, so no runtime change or new release is justified.",
+  "remainingTaskScope": "Finite two-turn client/history contract delivered. No more model experiments are authorized by this exhausted two-slot segment. Arbitrary prose, additional source grammars, portable results and generic action forms remain separate work with concrete triggers.",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseRuntimeVerified": false,
+  "candidateRuntimeStatus": "unverified",
+  "guidedToolUseNotUnguidedAutonomy": true,
+  "sourceToolBoundedCanonicalExplanationVisible": true
+}

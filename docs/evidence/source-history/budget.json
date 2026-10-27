@@ -1,0 +1,25 @@
+{
+  "maximumUserLevelAttempts": 2,
+  "used": 2,
+  "automaticRetry": false,
+  "failedStartsInterruptionsRetriesCount": true,
+  "attempts": [
+    {
+      "phase": 1,
+      "reservedAt": 1793116730.388412,
+      "reason": "before owned app-server startup; failures count"
+    },
+    {
+      "phase": 2,
+      "reservedAt": 1793116825.8083289,
+      "reason": "before the second owned turn/start; no retry"
+    }
+  ],
+  "newCompletedModelTurns": 2,
+  "sameRealThread": true,
+  "noThird": true,
+  "old1420UnusedSlotInherited": false,
+  "earlierBudgets": "All earlier 2/2 segments and independent 1/1 remain separate and unchanged.",
+  "originalNaturalResults": "Unchanged 0 pass / 6 fail / 18 requests.",
+  "backendModelRequestCount": "unknown"
+}

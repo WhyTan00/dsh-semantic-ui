@@ -42,3 +42,5 @@ DSH复用现有当前own-turn来源适配及正常render/checkpoint：显式映�
 后续以现有26归档完成[同会话完整来源修订](NORMAL-SOURCE-REVISION.zh-CN.md)：普通完整消息true→unknown→false，各自新source与新checkpoint对应，旧初值误用拒绝，本地试算不写回源，历史刷新保留各版本。Native/PTC各3个确定性回合、0真实模型，没有运行改动或新发行；这不扩成增量指代消息解析或模型原文理解验收。
 
 另有[当前来源双撤回的一个新模型观察](CODEX-SOURCE-REVISION-OBSERVATION.zh-CN.md)：公共缓存支持false与当前条件true都在当前快照中变为未知，模型实际读源、新view首次matched，原文有限判据met。旧控制文本仅供离线评审，未给模型；普通问题里的旧排除断言是合成任务，不能当真实旧答复或同会话历史回传。工具、原文和宿主说明分别保留，不改变本合同或既有未知边界。
+
+后续伴随入口支持[同thread完整来源修订](CODEX-SOURCE-HISTORY.zh-CN.md)，以一个真实模型thread的两回合验证：当前条件true→false按else得到need=false，余力true→unknown保持null；旧view两初值拒绝，旧无余力假设未当新事实。首轮首次标签失败与同回合修正、两raw、实际工具和宿主说明分别留证。它是现有26核心之上的客户端增量，不改本有限语法或增加图形交互回传。

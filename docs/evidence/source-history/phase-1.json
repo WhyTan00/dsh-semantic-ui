@@ -1,0 +1,3797 @@
+{
+  "phase": 1,
+  "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+  "turnId": "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+  "status": "completed",
+  "source": "虚构校对组在选在线批注与本地批注。前者由服务方更新、不支持离线；后者支持离线、需要小组维护。两边价格都未知。若原始记录禁止外传，则我们需要离线；否则我们不需要离线。当前原始记录禁止外传为是。小组有维护余力。该怎样权衡？",
+  "question": "请比较当前取舍并给出对应的条件比较；假如小组没有维护余力，结论会怎样变？",
+  "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+  "questionSha256": "10c3f6bbbadba5fad78b3d70a0ebf969bd45c4cfa8b36497a7383107dac1e512",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "typedSkillProvidedAndAccepted": true,
+  "skillInternalTokenConsumption": "not directly observable",
+  "modelCompletedToolItems": [
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_schema",
+      "arguments": {
+        "component": "DecisionExplorer"
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"component\":\"DecisionExplorer\",\"protocolVersion\":\"1.4\",\"payloadSchema\":{\"$schema\":\"https://json-schema.org/draft/2020-12/schema\",\"type\":\"object\",\"properties\":{\"title\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"dimensions\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"kind\":{\"type\":\"string\",\"enum\":[\"number\",\"boolean\"]},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"semanticRole\":{\"type\":\"string\",\"enum\":[\"capability-support\",\"resource-need\"]}},\"required\":[\"id\",\"label\"],\"additionalProperties\":false}},\"options\":{\"minItems\":2,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"values\":{\"type\":\"object\",\"propertyNames\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"additionalProperties\":{\"anyOf\":[{\"anyOf\":[{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},{\"type\":\"number\"},{\"type\":\"boolean\"}]},{\"type\":\"null\"}]}},\"advantages\":{\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"disadvantages\":{\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}},\"suitableWhen\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"label\",\"values\",\"advantages\",\"disadvantages\",\"suitableWhen\",\"evidence\"],\"additionalProperties\":false}},\"inputs\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"label\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"type\":{\"type\":\"string\",\"enum\":[\"number\",\"boolean\",\"choice\"]},\"unit\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80},\"choices\":{\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":80}},\"initial\":{\"anyOf\":[{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]},{\"type\":\"null\"}]},\"semanticRole\":{\"type\":\"string\",\"enum\":[\"capability-need\",\"resource-available\"]},\"expectedEffect\":{\"type\":\"string\",\"enum\":[\"hard\",\"preference-only\",\"hard-and-preference\"]}},\"required\":[\"id\",\"label\",\"type\",\"initial\",\"expectedEffect\"],\"additionalProperties\":false}},\"rules\":{\"default\":[],\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"priority\":{\"type\":\"integer\",\"minimum\":0,\"maximum\":100},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false},\"recommend\":{\"minItems\":1,\"maxItems\":8,\"type\":\"array\",\"items\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"}},\"reason\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"origin\":{\"type\":\"string\",\"enum\":[\"given\",\"model-judgment\"]},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"priority\",\"when\",\"recommend\",\"reason\",\"origin\",\"evidence\"],\"additionalProperties\":false}},\"constraints\":{\"default\":[],\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"optionId\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false},\"reason\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200},\"evidence\":{\"default\":[],\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"string\",\"minLength\":1,\"maxLength\":1200}}},\"required\":[\"id\",\"optionId\",\"when\",\"reason\",\"evidence\"],\"additionalProperties\":false}},\"requirements\":{\"maxItems\":24,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"id\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"dimension\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"relation\":{\"type\":\"string\",\"enum\":[\"at-least\",\"at-most\",\"supports\",\"requires-availability\"]},\"when\":{\"type\":\"object\",\"properties\":{\"mode\":{\"type\":\"string\",\"enum\":[\"all\",\"any\"]},\"clauses\":{\"minItems\":1,\"maxItems\":12,\"type\":\"array\",\"items\":{\"type\":\"object\",\"properties\":{\"input\":{\"type\":\"string\",\"pattern\":\"^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$\"},\"op\":{\"type\":\"string\",\"enum\":[\"eq\",\"ne\",\"gt\",\"gte\",\"lt\",\"lte\"]},\"value\":{\"anyOf\":[{\"type\":\"number\"},{\"type\":\"boolean\"},{\"type\":\"string\",\"maxLength\":120}]}},\"required\":[\"input\",\"op\",\"value\"],\"additionalProperties\":false}}},\"required\":[\"mode\",\"clauses\"],\"additionalProperties\":false}},\"required\":[\"id\",\"dimension\",\"input\",\"relation\"],\"additionalProperties\":false}}},\"required\":[\"title\",\"dimensions\",\"options\",\"inputs\",\"rules\",\"constraints\"],\"additionalProperties\":false},\"envelope\":{\"protocolVersion\":\"1.4\",\"displayId\":\"stable-subject-id\",\"revision\":1,\"component\":\"DecisionExplorer\",\"summary\":\"A short readable conclusion.\",\"payload\":\"Follow payloadSchema.\"},\"delivery\":\"Validate structured data before using the host rendering channel. Validation does not itself display a component.\",\"semantics\":\"Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.\",\"hostRendering\":\"Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.\"}"
+          }
+        ],
+        "structuredContent": {
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "payloadSchema": {
+            "$schema": "https://json-schema.org/draft/2020-12/schema",
+            "type": "object",
+            "properties": {
+              "title": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 80
+              },
+              "dimensions": {
+                "minItems": 1,
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "number",
+                        "boolean"
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "semanticRole": {
+                      "type": "string",
+                      "enum": [
+                        "capability-support",
+                        "resource-need"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "options": {
+                "minItems": 2,
+                "maxItems": 8,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "values": {
+                      "type": "object",
+                      "propertyNames": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "additionalProperties": {
+                        "anyOf": [
+                          {
+                            "anyOf": [
+                              {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 1200
+                              },
+                              {
+                                "type": "number"
+                              },
+                              {
+                                "type": "boolean"
+                              }
+                            ]
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ]
+                      }
+                    },
+                    "advantages": {
+                      "maxItems": 8,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    },
+                    "disadvantages": {
+                      "maxItems": 8,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    },
+                    "suitableWhen": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    },
+                    "evidence": {
+                      "default": [],
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "values",
+                    "advantages",
+                    "disadvantages",
+                    "suitableWhen",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "inputs": {
+                "default": [],
+                "maxItems": 12,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "label": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": [
+                        "number",
+                        "boolean",
+                        "choice"
+                      ]
+                    },
+                    "unit": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "choices": {
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      }
+                    },
+                    "initial": {
+                      "anyOf": [
+                        {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "boolean"
+                            },
+                            {
+                              "type": "string",
+                              "maxLength": 120
+                            }
+                          ]
+                        },
+                        {
+                          "type": "null"
+                        }
+                      ]
+                    },
+                    "semanticRole": {
+                      "type": "string",
+                      "enum": [
+                        "capability-need",
+                        "resource-available"
+                      ]
+                    },
+                    "expectedEffect": {
+                      "type": "string",
+                      "enum": [
+                        "hard",
+                        "preference-only",
+                        "hard-and-preference"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "label",
+                    "type",
+                    "initial",
+                    "expectedEffect"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "rules": {
+                "default": [],
+                "maxItems": 24,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "priority": {
+                      "type": "integer",
+                      "minimum": 0,
+                      "maximum": 100
+                    },
+                    "when": {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "enum": [
+                            "all",
+                            "any"
+                          ]
+                        },
+                        "clauses": {
+                          "minItems": 1,
+                          "maxItems": 12,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "input": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "op": {
+                                "type": "string",
+                                "enum": [
+                                  "eq",
+                                  "ne",
+                                  "gt",
+                                  "gte",
+                                  "lt",
+                                  "lte"
+                                ]
+                              },
+                              "value": {
+                                "anyOf": [
+                                  {
+                                    "type": "number"
+                                  },
+                                  {
+                                    "type": "boolean"
+                                  },
+                                  {
+                                    "type": "string",
+                                    "maxLength": 120
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "input",
+                              "op",
+                              "value"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "clauses"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "recommend": {
+                      "minItems": 1,
+                      "maxItems": 8,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      }
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    },
+                    "origin": {
+                      "type": "string",
+                      "enum": [
+                        "given",
+                        "model-judgment"
+                      ]
+                    },
+                    "evidence": {
+                      "default": [],
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "priority",
+                    "when",
+                    "recommend",
+                    "reason",
+                    "origin",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "constraints": {
+                "default": [],
+                "maxItems": 24,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "optionId": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "when": {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "enum": [
+                            "all",
+                            "any"
+                          ]
+                        },
+                        "clauses": {
+                          "minItems": 1,
+                          "maxItems": 12,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "input": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "op": {
+                                "type": "string",
+                                "enum": [
+                                  "eq",
+                                  "ne",
+                                  "gt",
+                                  "gte",
+                                  "lt",
+                                  "lte"
+                                ]
+                              },
+                              "value": {
+                                "anyOf": [
+                                  {
+                                    "type": "number"
+                                  },
+                                  {
+                                    "type": "boolean"
+                                  },
+                                  {
+                                    "type": "string",
+                                    "maxLength": 120
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "input",
+                              "op",
+                              "value"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "clauses"
+                      ],
+                      "additionalProperties": false
+                    },
+                    "reason": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 1200
+                    },
+                    "evidence": {
+                      "default": [],
+                      "maxItems": 12,
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      }
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "optionId",
+                    "when",
+                    "reason",
+                    "evidence"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "requirements": {
+                "maxItems": 24,
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "dimension": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "input": {
+                      "type": "string",
+                      "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                    },
+                    "relation": {
+                      "type": "string",
+                      "enum": [
+                        "at-least",
+                        "at-most",
+                        "supports",
+                        "requires-availability"
+                      ]
+                    },
+                    "when": {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "enum": [
+                            "all",
+                            "any"
+                          ]
+                        },
+                        "clauses": {
+                          "minItems": 1,
+                          "maxItems": 12,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "input": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "op": {
+                                "type": "string",
+                                "enum": [
+                                  "eq",
+                                  "ne",
+                                  "gt",
+                                  "gte",
+                                  "lt",
+                                  "lte"
+                                ]
+                              },
+                              "value": {
+                                "anyOf": [
+                                  {
+                                    "type": "number"
+                                  },
+                                  {
+                                    "type": "boolean"
+                                  },
+                                  {
+                                    "type": "string",
+                                    "maxLength": 120
+                                  }
+                                ]
+                              }
+                            },
+                            "required": [
+                              "input",
+                              "op",
+                              "value"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "clauses"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "id",
+                    "dimension",
+                    "input",
+                    "relation"
+                  ],
+                  "additionalProperties": false
+                }
+              }
+            },
+            "required": [
+              "title",
+              "dimensions",
+              "options",
+              "inputs",
+              "rules",
+              "constraints"
+            ],
+            "additionalProperties": false
+          },
+          "envelope": {
+            "protocolVersion": "1.4",
+            "displayId": "stable-subject-id",
+            "revision": 1,
+            "component": "DecisionExplorer",
+            "summary": "A short readable conclusion.",
+            "payload": "Follow payloadSchema."
+          },
+          "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+          "semantics": "Protocol 1.4 requires expectedEffect on every input: hard, preference-only or hard-and-preference must match the actual requirement/constraint and preference-rule dependency graph, including when predicates. Boolean requirements also require dimension.semanticRole and input.semanticRole: supports pairs capability-support with capability-need; requires-availability pairs resource-need with resource-available. A contradictory relation, missing role or mismatched expected effect is rejected without rewriting. These declarations do not verify the source or free prose. Use typed numeric dimensions (kind=number, unit, numeric or null option values) and requirements for quantitative hard limits. Use kind=boolean and relation=supports for capability needs such as private networking; option values are true/false/null and the local input is a unitless boolean. Unneeded capability is inactive, not a reason to exclude an option that supports it. For an option that REQUIRES a resource (for example needs team maintenance), use relation=requires-availability: the option dimension means it needs the resource, and the input means the user has it. An option needing no maintenance stays eligible even when team availability is unknown or false; an option requiring it fails when availability is false. Do not use supports for a burden; it reverses that predicate. Provider updates do not establish all maintenance responsibilities. Do not invent a currency or billing period for an unknown price; use a text dimension with null until supplied. Deployment simplicity and maintenance simplicity are separate facts; leave an unspecified counterpart null, not a Boolean opposite. Explicitly check which side means capability versus requirement against the original source. This is a declared mapping, not source certification. Every local input must affect a requirement, constraint or rule; unused controls are rejected. A numeric requirement compares that dimension with a numeric local input in exactly the same unit: at-least means option value >= demand; at-most means option value <= limit. Use an ordinary requirement for current demand, not only a conditionally confirmed future demand. Prefer one required-quantity control to explore 80GB versus 300GB; possible future growth is not an already confirmed plan. Capacity eligibility is not preference. Protocol 1.2 and later withhold ALL preference policies until the human explicitly enables local exploration; even origin=given is only a model-declared label and cannot authorize a recommendation. Unknown comparison cells still block preference. Local demand/limit controls do not fill unknown option facts. Do not promise that entering a budget reveals an unknown price. The render receipt returns decisionFacts evaluated under original conditions. Its inputEffects lists hard requirements, constraints and preference rules affected by every input. A preference-only input cannot change hard eligibility; do not claim that a reserve-growth toggle enforces future capacity unless linked to a capacity requirement. Prefer a single capacity input to inspect 80 versus 300GB. Unknown critical comparison dimensions do not justify a winner. Unless the user explicitly requests a hypothetical policy, leave recommendation rules empty when facts cannot establish a choice. Check prose against its status and recommendedOptionIds; insufficient conditions must not be described as a winner. Declared origins are not independently verified. Rules use all/any clauses, highest priority wins; equal-priority matches combine recommendations. Missing values are unknown. Constraints exclude options. No scores are inferred. Preserve the supplied option set; seeking more information is an action, not an extra supplier or platform. Only explicitly supplied conditions may have non-null initial values; unspecified priorities, certainty and team capacity start null. A known value cannot be called better than an unknown value. A priority alone cannot resolve an unknown comparison: do not automatically prefer the known supplier. A hard constraint excludes its option when its predicate is true; never use it to express permission, a preference, or information-gathering. Its reason must agree with that exclusion. Capacity facts can exclude options, but do not establish costs or a preference. Mark proposed preference rules origin=model-judgment unless the user explicitly supplied that policy.",
+          "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_source_check",
+      "arguments": {},
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"decision-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"jsonPointer\":null,\"textSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"excerptSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":327,\"textUTF8Bytes\":327},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source author/original human identity\",\"general natural-language meaning outside the documented grammar\",\"component annotations and arbitrary free prose\",\"cost ranking, recommendation, exclusivity or inferred opposite responsibilities\"],\"status\":\"compared\",\"sourceDecision\":{\"options\":[\"在线批注\",\"本地批注\"],\"facts\":[{\"kind\":\"actor-updates\",\"option\":\"在线批注\",\"name\":null,\"actor\":\"服务方\",\"value\":true,\"spans\":[{\"textByteStart\":51,\"textByteEnd\":75}]},{\"kind\":\"capability\",\"option\":\"在线批注\",\"name\":\"离线\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":78,\"textByteEnd\":93}]},{\"kind\":\"capability\",\"option\":\"本地批注\",\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":96,\"textByteEnd\":114}]},{\"kind\":\"maintenance-need\",\"option\":\"本地批注\",\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":117,\"textByteEnd\":135}]},{\"kind\":\"price\",\"option\":\"在线批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"price\",\"option\":\"本地批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"actor-available\",\"option\":null,\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":285,\"textByteEnd\":306}]},{\"kind\":\"capability-need\",\"option\":null,\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243},{\"textByteStart\":246,\"textByteEnd\":282}],\"derivation\":{\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true}}],\"clauses\":[{\"kind\":\"selection\",\"span\":{\"textByteStart\":0,\"textByteEnd\":48}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":51,\"textByteEnd\":75}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":78,\"textByteEnd\":93}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":96,\"textByteEnd\":114}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":117,\"textByteEnd\":135}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":138,\"textByteEnd\":159}},{\"kind\":\"condition\",\"span\":{\"textByteStart\":162,\"textByteEnd\":189}},{\"kind\":\"condition-true-branch\",\"span\":{\"textByteStart\":192,\"textByteEnd\":213}},{\"kind\":\"condition-false-branch\",\"span\":{\"textByteStart\":216,\"textByteEnd\":243}},{\"kind\":\"current-condition\",\"span\":{\"textByteStart\":246,\"textByteEnd\":282}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":285,\"textByteEnd\":306}},{\"kind\":\"comparison-request\",\"span\":{\"textByteStart\":309,\"textByteEnd\":324}}],\"conditionalNeeds\":[{\"name\":\"离线\",\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true,\"currentSpans\":[{\"textByteStart\":246,\"textByteEnd\":282}],\"spans\":{\"condition\":{\"textByteStart\":162,\"textByteEnd\":189},\"whenTrue\":{\"textByteStart\":192,\"textByteEnd\":213},\"whenFalse\":{\"textByteStart\":216,\"textByteEnd\":243}},\"derivedNeed\":true}]},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"fieldChecks\":[],\"inputChecks\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"bounded parsed source declarations; not general natural-language certification\",\"text\":\"在线批注：由服务方更新=true；离线支持=false；价格声明未知。\\n本地批注：离线支持=true；需要小组维护=true；价格声明未知。\\n在线批注是否需要小组维护未声明；不能由其它更新责任推定需要或不需要。\\n本地批注是否由服务方更新未声明，不能自动取反。\\n小组维护余力=true。\\n当前需要离线=true。\\n来源两分支：若原始记录禁止外传=true，则需要离线=true；否则需要离线=false。\\n当前原始记录禁止外传=true（来源明确声明），所以当前需要离线=true；在线批注不满足本项；本地批注满足本项。\\n若本地假设原始记录禁止外传=true：在线批注不满足本项；本地批注满足本项；若本地假设原始记录禁止外传=false：本项不排除两种方案。\\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "jsonPointer": null,
+            "textSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "excerptSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 327,
+              "textUTF8Bytes": 327
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "在线批注",
+              "本地批注"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "在线批注",
+                "name": null,
+                "actor": "服务方",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 51,
+                    "textByteEnd": 75
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "在线批注",
+                "name": "离线",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 78,
+                    "textByteEnd": 93
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "本地批注",
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 96,
+                    "textByteEnd": 114
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "本地批注",
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 117,
+                    "textByteEnd": 135
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "在线批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "本地批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "actor-available",
+                "option": null,
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 285,
+                    "textByteEnd": 306
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  },
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "derivation": {
+                  "condition": "原始记录禁止外传",
+                  "whenTrue": true,
+                  "whenFalse": false,
+                  "current": true
+                }
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 48
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 51,
+                  "textByteEnd": 75
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 78,
+                  "textByteEnd": 93
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 96,
+                  "textByteEnd": 114
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 117,
+                  "textByteEnd": 135
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              },
+              {
+                "kind": "condition",
+                "span": {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                }
+              },
+              {
+                "kind": "condition-true-branch",
+                "span": {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                }
+              },
+              {
+                "kind": "condition-false-branch",
+                "span": {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                }
+              },
+              {
+                "kind": "current-condition",
+                "span": {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 285,
+                  "textByteEnd": 306
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 309,
+                  "textByteEnd": 324
+                }
+              }
+            ],
+            "conditionalNeeds": [
+              {
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false,
+                "current": true,
+                "currentSpans": [
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "spans": {
+                  "condition": {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  "whenTrue": {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  "whenFalse": {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  }
+                },
+                "derivedNeed": true
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "fieldChecks": [],
+          "inputChecks": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "bounded parsed source declarations; not general natural-language certification",
+            "text": "在线批注：由服务方更新=true；离线支持=false；价格声明未知。\n本地批注：离线支持=true；需要小组维护=true；价格声明未知。\n在线批注是否需要小组维护未声明；不能由其它更新责任推定需要或不需要。\n本地批注是否由服务方更新未声明，不能自动取反。\n小组维护余力=true。\n当前需要离线=true。\n来源两分支：若原始记录禁止外传=true，则需要离线=true；否则需要离线=false。\n当前原始记录禁止外传=true（来源明确声明），所以当前需要离线=true；在线批注不满足本项；本地批注满足本项。\n若本地假设原始记录禁止外传=true：在线批注不满足本项；本地批注满足本项；若本地假设原始记录禁止外传=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+          }
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options",
+          "revision": 1,
+          "component": "DecisionExplorer",
+          "summary": "逐项比较离线需求与维护余力，未声明的职责及价格保持未知。",
+          "payload": {
+            "title": "在线批注与本地批注的条件比较",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线（初值来自当前条件；改动为本地假设）",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力（改动为本地假设）",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        },
+        "mapping": {
+          "dimensions": [
+            {
+              "id": "offline",
+              "kind": "capability",
+              "name": "离线"
+            },
+            {
+              "id": "provider_updates",
+              "kind": "actor-updates",
+              "actor": "服务方"
+            },
+            {
+              "id": "team_maintenance",
+              "kind": "maintenance-need",
+              "actor": "小组"
+            },
+            {
+              "id": "price",
+              "kind": "price"
+            }
+          ],
+          "inputs": [
+            {
+              "id": "need_offline",
+              "kind": "capability-need",
+              "name": "离线"
+            },
+            {
+              "id": "team_available",
+              "kind": "actor-available",
+              "actor": "小组"
+            }
+          ]
+        },
+        "claims": [
+          {
+            "kind": "condition",
+            "name": "原始记录禁止外传",
+            "value": true
+          },
+          {
+            "kind": "conditional-need",
+            "name": "离线",
+            "condition": "原始记录禁止外传",
+            "whenTrue": true,
+            "whenFalse": false
+          }
+        ]
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"decision-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"jsonPointer\":null,\"textSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"excerptSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":327,\"textUTF8Bytes\":327},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source author/original human identity\",\"general natural-language meaning outside the documented grammar\",\"component annotations and arbitrary free prose\",\"cost ranking, recommendation, exclusivity or inferred opposite responsibilities\"],\"status\":\"compared\",\"sourceDecision\":{\"options\":[\"在线批注\",\"本地批注\"],\"facts\":[{\"kind\":\"actor-updates\",\"option\":\"在线批注\",\"name\":null,\"actor\":\"服务方\",\"value\":true,\"spans\":[{\"textByteStart\":51,\"textByteEnd\":75}]},{\"kind\":\"capability\",\"option\":\"在线批注\",\"name\":\"离线\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":78,\"textByteEnd\":93}]},{\"kind\":\"capability\",\"option\":\"本地批注\",\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":96,\"textByteEnd\":114}]},{\"kind\":\"maintenance-need\",\"option\":\"本地批注\",\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":117,\"textByteEnd\":135}]},{\"kind\":\"price\",\"option\":\"在线批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"price\",\"option\":\"本地批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"actor-available\",\"option\":null,\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":285,\"textByteEnd\":306}]},{\"kind\":\"capability-need\",\"option\":null,\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243},{\"textByteStart\":246,\"textByteEnd\":282}],\"derivation\":{\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true}}],\"clauses\":[{\"kind\":\"selection\",\"span\":{\"textByteStart\":0,\"textByteEnd\":48}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":51,\"textByteEnd\":75}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":78,\"textByteEnd\":93}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":96,\"textByteEnd\":114}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":117,\"textByteEnd\":135}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":138,\"textByteEnd\":159}},{\"kind\":\"condition\",\"span\":{\"textByteStart\":162,\"textByteEnd\":189}},{\"kind\":\"condition-true-branch\",\"span\":{\"textByteStart\":192,\"textByteEnd\":213}},{\"kind\":\"condition-false-branch\",\"span\":{\"textByteStart\":216,\"textByteEnd\":243}},{\"kind\":\"current-condition\",\"span\":{\"textByteStart\":246,\"textByteEnd\":282}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":285,\"textByteEnd\":306}},{\"kind\":\"comparison-request\",\"span\":{\"textByteStart\":309,\"textByteEnd\":324}}],\"conditionalNeeds\":[{\"name\":\"离线\",\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true,\"currentSpans\":[{\"textByteStart\":246,\"textByteEnd\":282}],\"spans\":{\"condition\":{\"textByteStart\":162,\"textByteEnd\":189},\"whenTrue\":{\"textByteStart\":192,\"textByteEnd\":213},\"whenFalse\":{\"textByteStart\":216,\"textByteEnd\":243}},\"derivedNeed\":true}]},\"comparison\":{\"status\":\"mismatch\",\"scope\":\"exact bounded source fields, original conditions and requirement direction; component prose is unverified\"},\"issues\":[{\"code\":\"SOURCE_FIELD_LABEL\",\"path\":\"$.mapping.inputs.0\",\"reason\":\"Input label does not match the explicit source role.\"},{\"code\":\"SOURCE_FIELD_LABEL\",\"path\":\"$.mapping.inputs.1\",\"reason\":\"Input label does not match the explicit source role.\"}],\"fieldChecks\":[{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"offline\",\"sourceKind\":\"capability\",\"expected\":false,\"actual\":false,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":78,\"textByteEnd\":93}],\"status\":\"matched\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"offline\",\"sourceKind\":\"capability\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":96,\"textByteEnd\":114}],\"status\":\"matched\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"provider_updates\",\"sourceKind\":\"actor-updates\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":51,\"textByteEnd\":75}],\"status\":\"matched\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"provider_updates\",\"sourceKind\":\"actor-updates\",\"expected\":null,\"actual\":null,\"sourceDeclared\":false,\"sourceSpans\":[],\"status\":\"unknown\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"team_maintenance\",\"sourceKind\":\"maintenance-need\",\"expected\":null,\"actual\":null,\"sourceDeclared\":false,\"sourceSpans\":[],\"status\":\"unknown\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"team_maintenance\",\"sourceKind\":\"maintenance-need\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":117,\"textByteEnd\":135}],\"status\":\"matched\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"price\",\"sourceKind\":\"price\",\"expected\":null,\"actual\":null,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":138,\"textByteEnd\":159}],\"status\":\"declared-unknown\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"price\",\"sourceKind\":\"price\",\"expected\":null,\"actual\":null,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":138,\"textByteEnd\":159}],\"status\":\"declared-unknown\"}],\"inputChecks\":[{\"inputId\":\"need_offline\",\"sourceKind\":\"capability-need\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243},{\"textByteStart\":246,\"textByteEnd\":282}],\"sourceDerivation\":{\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true},\"status\":\"matched\"},{\"inputId\":\"team_available\",\"sourceKind\":\"actor-available\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":285,\"textByteEnd\":306}],\"status\":\"matched\"}],\"claimChecks\":[{\"index\":0,\"kind\":\"condition\",\"status\":\"supported\",\"expected\":true,\"sourceSpans\":[{\"textByteStart\":246,\"textByteEnd\":282}]},{\"index\":1,\"kind\":\"conditional-need\",\"status\":\"supported\",\"expected\":{\"whenTrue\":true,\"whenFalse\":false},\"sourceSpans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243}]}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve unsupported mappings, policies or source claims first.\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "jsonPointer": null,
+            "textSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "excerptSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 327,
+              "textUTF8Bytes": 327
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "在线批注",
+              "本地批注"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "在线批注",
+                "name": null,
+                "actor": "服务方",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 51,
+                    "textByteEnd": 75
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "在线批注",
+                "name": "离线",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 78,
+                    "textByteEnd": 93
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "本地批注",
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 96,
+                    "textByteEnd": 114
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "本地批注",
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 117,
+                    "textByteEnd": 135
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "在线批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "本地批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "actor-available",
+                "option": null,
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 285,
+                    "textByteEnd": 306
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  },
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "derivation": {
+                  "condition": "原始记录禁止外传",
+                  "whenTrue": true,
+                  "whenFalse": false,
+                  "current": true
+                }
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 48
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 51,
+                  "textByteEnd": 75
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 78,
+                  "textByteEnd": 93
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 96,
+                  "textByteEnd": 114
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 117,
+                  "textByteEnd": 135
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              },
+              {
+                "kind": "condition",
+                "span": {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                }
+              },
+              {
+                "kind": "condition-true-branch",
+                "span": {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                }
+              },
+              {
+                "kind": "condition-false-branch",
+                "span": {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                }
+              },
+              {
+                "kind": "current-condition",
+                "span": {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 285,
+                  "textByteEnd": 306
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 309,
+                  "textByteEnd": 324
+                }
+              }
+            ],
+            "conditionalNeeds": [
+              {
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false,
+                "current": true,
+                "currentSpans": [
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "spans": {
+                  "condition": {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  "whenTrue": {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  "whenFalse": {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  }
+                },
+                "derivedNeed": true
+              }
+            ]
+          },
+          "comparison": {
+            "status": "mismatch",
+            "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.0",
+              "reason": "Input label does not match the explicit source role."
+            },
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.1",
+              "reason": "Input label does not match the explicit source role."
+            }
+          ],
+          "fieldChecks": [
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "offline",
+              "sourceKind": "capability",
+              "expected": false,
+              "actual": false,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 78,
+                  "textByteEnd": 93
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "offline",
+              "sourceKind": "capability",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 114
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "provider_updates",
+              "sourceKind": "actor-updates",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 51,
+                  "textByteEnd": 75
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "provider_updates",
+              "sourceKind": "actor-updates",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "unknown"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "team_maintenance",
+              "sourceKind": "maintenance-need",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "unknown"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "team_maintenance",
+              "sourceKind": "maintenance-need",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 117,
+                  "textByteEnd": 135
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              ],
+              "status": "declared-unknown"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              ],
+              "status": "declared-unknown"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "need_offline",
+              "sourceKind": "capability-need",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                },
+                {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                },
+                {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                },
+                {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              ],
+              "sourceDerivation": {
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false,
+                "current": true
+              },
+              "status": "matched"
+            },
+            {
+              "inputId": "team_available",
+              "sourceKind": "actor-available",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 285,
+                  "textByteEnd": 306
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "claimChecks": [
+            {
+              "index": 0,
+              "kind": "condition",
+              "status": "supported",
+              "expected": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "kind": "conditional-need",
+              "status": "supported",
+              "expected": {
+                "whenTrue": true,
+                "whenFalse": false
+              },
+              "sourceSpans": [
+                {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                },
+                {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                },
+                {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                }
+              ]
+            }
+          ],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "withheld",
+            "reason": "Resolve unsupported mappings, policies or source claims first."
+          }
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options",
+          "revision": 1,
+          "component": "DecisionExplorer",
+          "summary": "逐项比较离线需求与维护余力，未声明的职责及价格保持未知。",
+          "payload": {
+            "title": "在线批注与本地批注的条件比较",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线（初值来自当前条件；改动为本地假设）",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力（改动为本地假设）",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"local\"],\"excludedOptionIds\":[\"online\"],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"fail\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"offline_requirement\",\"dimensionId\":\"offline\",\"dimensionRole\":\"capability-support\",\"inputId\":\"need_offline\",\"inputRole\":\"capability-need\",\"relation\":\"supports\",\"unit\":null},{\"requirementId\":\"maintenance_requirement\",\"dimensionId\":\"team_maintenance\",\"dimensionRole\":\"resource-need\",\"inputId\":\"team_available\",\"inputRole\":\"resource-available\",\"relation\":\"requires-availability\",\"unit\":null}],\"inputs\":[{\"inputId\":\"need_offline\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"},{\"inputId\":\"team_available\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: none. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "decisionFacts": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "local"
+            ],
+            "excludedOptionIds": [
+              "online"
+            ],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "declarationMapping": {
+            "scope": "declared-fields-and-dependencies",
+            "sourceFactsVerified": false,
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "dimensionId": "offline",
+                "dimensionRole": "capability-support",
+                "inputId": "need_offline",
+                "inputRole": "capability-need",
+                "relation": "supports",
+                "unit": null
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "dimensionId": "team_maintenance",
+                "dimensionRole": "resource-need",
+                "inputId": "team_available",
+                "inputRole": "resource-available",
+                "relation": "requires-availability",
+                "unit": null
+              }
+            ],
+            "inputs": [
+              {
+                "inputId": "need_offline",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              }
+            ],
+            "dependencyLinks": "decisionFacts.inputEffects",
+            "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+          },
+          "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: none. No preference established.",
+          "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options-hypothesis_no_maintenance",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "本地条件假设，仅用于逐项比较，不改变来源事实。",
+          "payload": {
+            "title": "本地假设：需要离线、无维护余力",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力",
+                "type": "boolean",
+                "initial": false,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[],\"excludedOptionIds\":[\"online\",\"local\"],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"fail\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":false,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":false,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"fail\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"offline_requirement\",\"dimensionId\":\"offline\",\"dimensionRole\":\"capability-support\",\"inputId\":\"need_offline\",\"inputRole\":\"capability-need\",\"relation\":\"supports\",\"unit\":null},{\"requirementId\":\"maintenance_requirement\",\"dimensionId\":\"team_maintenance\",\"dimensionRole\":\"resource-need\",\"inputId\":\"team_available\",\"inputRole\":\"resource-available\",\"relation\":\"requires-availability\",\"unit\":null}],\"inputs\":[{\"inputId\":\"need_offline\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"},{\"inputId\":\"team_available\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: none. Unknown feasibility: none. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "decisionFacts": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [],
+            "excludedOptionIds": [
+              "online",
+              "local"
+            ],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": false,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": false,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "fail"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "declarationMapping": {
+            "scope": "declared-fields-and-dependencies",
+            "sourceFactsVerified": false,
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "dimensionId": "offline",
+                "dimensionRole": "capability-support",
+                "inputId": "need_offline",
+                "inputRole": "capability-need",
+                "relation": "supports",
+                "unit": null
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "dimensionId": "team_maintenance",
+                "dimensionRole": "resource-need",
+                "inputId": "team_available",
+                "inputRole": "resource-available",
+                "relation": "requires-availability",
+                "unit": null
+              }
+            ],
+            "inputs": [
+              {
+                "inputId": "need_offline",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              }
+            ],
+            "dependencyLinks": "decisionFacts.inputEffects",
+            "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+          },
+          "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: none. Unknown feasibility: none. No preference established.",
+          "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options-current",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "逐项比较离线需求与维护余力，未声明的职责及价格保持未知。",
+          "payload": {
+            "title": "在线批注与本地批注的条件比较",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"local\"],\"excludedOptionIds\":[\"online\"],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"fail\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"offline_requirement\",\"dimensionId\":\"offline\",\"dimensionRole\":\"capability-support\",\"inputId\":\"need_offline\",\"inputRole\":\"capability-need\",\"relation\":\"supports\",\"unit\":null},{\"requirementId\":\"maintenance_requirement\",\"dimensionId\":\"team_maintenance\",\"dimensionRole\":\"resource-need\",\"inputId\":\"team_available\",\"inputRole\":\"resource-available\",\"relation\":\"requires-availability\",\"unit\":null}],\"inputs\":[{\"inputId\":\"need_offline\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"},{\"inputId\":\"team_available\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: none. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "decisionFacts": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "local"
+            ],
+            "excludedOptionIds": [
+              "online"
+            ],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "declarationMapping": {
+            "scope": "declared-fields-and-dependencies",
+            "sourceFactsVerified": false,
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "dimensionId": "offline",
+                "dimensionRole": "capability-support",
+                "inputId": "need_offline",
+                "inputRole": "capability-need",
+                "relation": "supports",
+                "unit": null
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "dimensionId": "team_maintenance",
+                "dimensionRole": "resource-need",
+                "inputId": "team_available",
+                "inputRole": "resource-available",
+                "relation": "requires-availability",
+                "unit": null
+              }
+            ],
+            "inputs": [
+              {
+                "inputId": "need_offline",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              }
+            ],
+            "dependencyLinks": "decisionFacts.inputEffects",
+            "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+          },
+          "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: none. No preference established.",
+          "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options-hypothesis_no_offline_need",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "本地条件假设，仅用于逐项比较，不改变来源事实。",
+          "payload": {
+            "title": "本地假设：不需要离线、有维护余力",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线",
+                "type": "boolean",
+                "initial": false,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"local\"],\"excludedOptionIds\":[],\"unknownFeasibilityIds\":[\"online\"],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":false,\"relation\":\"supports\",\"active\":true,\"status\":\"inactive\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":false,\"relation\":\"supports\",\"active\":true,\"status\":\"inactive\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"offline_requirement\",\"dimensionId\":\"offline\",\"dimensionRole\":\"capability-support\",\"inputId\":\"need_offline\",\"inputRole\":\"capability-need\",\"relation\":\"supports\",\"unit\":null},{\"requirementId\":\"maintenance_requirement\",\"dimensionId\":\"team_maintenance\",\"dimensionRole\":\"resource-need\",\"inputId\":\"team_available\",\"inputRole\":\"resource-available\",\"relation\":\"requires-availability\",\"unit\":null}],\"inputs\":[{\"inputId\":\"need_offline\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"},{\"inputId\":\"team_available\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: 在线批注. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "decisionFacts": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "local"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [
+              "online"
+            ],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": false,
+                "relation": "supports",
+                "active": true,
+                "status": "inactive"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": false,
+                "relation": "supports",
+                "active": true,
+                "status": "inactive"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "declarationMapping": {
+            "scope": "declared-fields-and-dependencies",
+            "sourceFactsVerified": false,
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "dimensionId": "offline",
+                "dimensionRole": "capability-support",
+                "inputId": "need_offline",
+                "inputRole": "capability-need",
+                "relation": "supports",
+                "unit": null
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "dimensionId": "team_maintenance",
+                "dimensionRole": "resource-need",
+                "inputId": "team_available",
+                "inputRole": "resource-available",
+                "relation": "requires-availability",
+                "unit": null
+              }
+            ],
+            "inputs": [
+              {
+                "inputId": "need_offline",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              }
+            ],
+            "dependencyLinks": "decisionFacts.inputEffects",
+            "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+          },
+          "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: 本地批注. Unknown feasibility: 在线批注. No preference established.",
+          "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options-hypothesis_neither",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "本地条件假设，仅用于逐项比较，不改变来源事实。",
+          "payload": {
+            "title": "本地假设：不需要离线、无维护余力",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线",
+                "type": "boolean",
+                "initial": false,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力",
+                "type": "boolean",
+                "initial": false,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        }
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"status\":\"validated\",\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"model-authored; not independently verified\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[],\"excludedOptionIds\":[\"local\"],\"unknownFeasibilityIds\":[\"online\"],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":false,\"relation\":\"supports\",\"active\":true,\"status\":\"inactive\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":false,\"relation\":\"supports\",\"active\":true,\"status\":\"inactive\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":false,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":false,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"fail\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"offline_requirement\",\"dimensionId\":\"offline\",\"dimensionRole\":\"capability-support\",\"inputId\":\"need_offline\",\"inputRole\":\"capability-need\",\"relation\":\"supports\",\"unit\":null},{\"requirementId\":\"maintenance_requirement\",\"dimensionId\":\"team_maintenance\",\"dimensionRole\":\"resource-need\",\"inputId\":\"team_available\",\"inputRole\":\"resource-available\",\"relation\":\"requires-availability\",\"unit\":null}],\"inputs\":[{\"inputId\":\"need_offline\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"},{\"inputId\":\"team_available\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: none. Unknown feasibility: 在线批注. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"nativeRendering\":\"Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.\"}"
+          }
+        ],
+        "structuredContent": {
+          "status": "validated",
+          "protocolVersion": "1.4",
+          "component": "DecisionExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "decisionFacts": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [],
+            "excludedOptionIds": [
+              "local"
+            ],
+            "unknownFeasibilityIds": [
+              "online"
+            ],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": false,
+                "relation": "supports",
+                "active": true,
+                "status": "inactive"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": false,
+                "relation": "supports",
+                "active": true,
+                "status": "inactive"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": false,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": false,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "fail"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "declarationMapping": {
+            "scope": "declared-fields-and-dependencies",
+            "sourceFactsVerified": false,
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "dimensionId": "offline",
+                "dimensionRole": "capability-support",
+                "inputId": "need_offline",
+                "inputRole": "capability-need",
+                "relation": "supports",
+                "unit": null
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "dimensionId": "team_maintenance",
+                "dimensionRole": "resource-need",
+                "inputId": "team_available",
+                "inputRole": "resource-available",
+                "relation": "requires-availability",
+                "unit": null
+              }
+            ],
+            "inputs": [
+              {
+                "inputId": "need_offline",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "scope": "hard",
+                "expectedEffect": "hard"
+              }
+            ],
+            "dependencyLinks": "decisionFacts.inputEffects",
+            "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+          },
+          "canonicalSummary": "Declared comparison: 2 options, 4 dimensions. Meets declared hard requirements: none. Unknown feasibility: 在线批注. No preference established.",
+          "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+          "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+        }
+      }
+    },
+    {
+      "type": "mcpToolCall",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "annotation-options-current",
+          "revision": 2,
+          "component": "DecisionExplorer",
+          "summary": "逐项比较离线需求与维护余力，未声明的职责及价格保持未知。",
+          "payload": {
+            "title": "在线批注与本地批注的条件比较",
+            "dimensions": [
+              {
+                "id": "offline",
+                "label": "离线",
+                "kind": "boolean",
+                "semanticRole": "capability-support"
+              },
+              {
+                "id": "provider_updates",
+                "label": "由服务方更新",
+                "kind": "boolean"
+              },
+              {
+                "id": "team_maintenance",
+                "label": "需要小组维护",
+                "kind": "boolean",
+                "semanticRole": "resource-need"
+              },
+              {
+                "id": "price",
+                "label": "价格"
+              }
+            ],
+            "options": [
+              {
+                "id": "online",
+                "label": "在线批注",
+                "values": {
+                  "offline": false,
+                  "provider_updates": true,
+                  "team_maintenance": null,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              },
+              {
+                "id": "local",
+                "label": "本地批注",
+                "values": {
+                  "offline": true,
+                  "provider_updates": null,
+                  "team_maintenance": true,
+                  "price": null
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "逐项检查离线需求与小组维护余力。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "need_offline",
+                "label": "需要离线",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "capability-need",
+                "expectedEffect": "hard"
+              },
+              {
+                "id": "team_available",
+                "label": "小组维护余力",
+                "type": "boolean",
+                "initial": true,
+                "semanticRole": "resource-available",
+                "expectedEffect": "hard"
+              }
+            ],
+            "requirements": [
+              {
+                "id": "offline_requirement",
+                "dimension": "offline",
+                "input": "need_offline",
+                "relation": "supports"
+              },
+              {
+                "id": "maintenance_requirement",
+                "dimension": "team_maintenance",
+                "input": "team_available",
+                "relation": "requires-availability"
+              }
+            ],
+            "rules": [],
+            "constraints": []
+          }
+        },
+        "mapping": {
+          "dimensions": [
+            {
+              "id": "offline",
+              "kind": "capability",
+              "name": "离线"
+            },
+            {
+              "id": "provider_updates",
+              "kind": "actor-updates",
+              "actor": "服务方"
+            },
+            {
+              "id": "team_maintenance",
+              "kind": "maintenance-need",
+              "actor": "小组"
+            },
+            {
+              "id": "price",
+              "kind": "price"
+            }
+          ],
+          "inputs": [
+            {
+              "id": "need_offline",
+              "kind": "capability-need",
+              "name": "离线"
+            },
+            {
+              "id": "team_available",
+              "kind": "actor-available",
+              "actor": "小组"
+            }
+          ]
+        },
+        "claims": [
+          {
+            "kind": "condition",
+            "name": "原始记录禁止外传",
+            "value": true
+          },
+          {
+            "kind": "conditional-need",
+            "name": "离线",
+            "condition": "原始记录禁止外传",
+            "whenTrue": true,
+            "whenFalse": false
+          }
+        ]
+      },
+      "status": "completed",
+      "result": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"decision-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"jsonPointer\":null,\"textSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"excerptSha256\":\"cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":327,\"textUTF8Bytes\":327},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source author/original human identity\",\"general natural-language meaning outside the documented grammar\",\"component annotations and arbitrary free prose\",\"cost ranking, recommendation, exclusivity or inferred opposite responsibilities\"],\"status\":\"compared\",\"sourceDecision\":{\"options\":[\"在线批注\",\"本地批注\"],\"facts\":[{\"kind\":\"actor-updates\",\"option\":\"在线批注\",\"name\":null,\"actor\":\"服务方\",\"value\":true,\"spans\":[{\"textByteStart\":51,\"textByteEnd\":75}]},{\"kind\":\"capability\",\"option\":\"在线批注\",\"name\":\"离线\",\"actor\":null,\"value\":false,\"spans\":[{\"textByteStart\":78,\"textByteEnd\":93}]},{\"kind\":\"capability\",\"option\":\"本地批注\",\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":96,\"textByteEnd\":114}]},{\"kind\":\"maintenance-need\",\"option\":\"本地批注\",\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":117,\"textByteEnd\":135}]},{\"kind\":\"price\",\"option\":\"在线批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"price\",\"option\":\"本地批注\",\"name\":null,\"actor\":null,\"value\":null,\"spans\":[{\"textByteStart\":138,\"textByteEnd\":159}]},{\"kind\":\"actor-available\",\"option\":null,\"name\":null,\"actor\":\"小组\",\"value\":true,\"spans\":[{\"textByteStart\":285,\"textByteEnd\":306}]},{\"kind\":\"capability-need\",\"option\":null,\"name\":\"离线\",\"actor\":null,\"value\":true,\"spans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243},{\"textByteStart\":246,\"textByteEnd\":282}],\"derivation\":{\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true}}],\"clauses\":[{\"kind\":\"selection\",\"span\":{\"textByteStart\":0,\"textByteEnd\":48}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":51,\"textByteEnd\":75}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":78,\"textByteEnd\":93}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":96,\"textByteEnd\":114}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":117,\"textByteEnd\":135}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":138,\"textByteEnd\":159}},{\"kind\":\"condition\",\"span\":{\"textByteStart\":162,\"textByteEnd\":189}},{\"kind\":\"condition-true-branch\",\"span\":{\"textByteStart\":192,\"textByteEnd\":213}},{\"kind\":\"condition-false-branch\",\"span\":{\"textByteStart\":216,\"textByteEnd\":243}},{\"kind\":\"current-condition\",\"span\":{\"textByteStart\":246,\"textByteEnd\":282}},{\"kind\":\"fact\",\"span\":{\"textByteStart\":285,\"textByteEnd\":306}},{\"kind\":\"comparison-request\",\"span\":{\"textByteStart\":309,\"textByteEnd\":324}}],\"conditionalNeeds\":[{\"name\":\"离线\",\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true,\"currentSpans\":[{\"textByteStart\":246,\"textByteEnd\":282}],\"spans\":{\"condition\":{\"textByteStart\":162,\"textByteEnd\":189},\"whenTrue\":{\"textByteStart\":192,\"textByteEnd\":213},\"whenFalse\":{\"textByteStart\":216,\"textByteEnd\":243}},\"derivedNeed\":true}]},\"comparison\":{\"status\":\"matched\",\"scope\":\"exact bounded source fields, original conditions and requirement direction; component prose is unverified\"},\"issues\":[],\"fieldChecks\":[{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"offline\",\"sourceKind\":\"capability\",\"expected\":false,\"actual\":false,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":78,\"textByteEnd\":93}],\"status\":\"matched\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"offline\",\"sourceKind\":\"capability\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":96,\"textByteEnd\":114}],\"status\":\"matched\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"provider_updates\",\"sourceKind\":\"actor-updates\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":51,\"textByteEnd\":75}],\"status\":\"matched\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"provider_updates\",\"sourceKind\":\"actor-updates\",\"expected\":null,\"actual\":null,\"sourceDeclared\":false,\"sourceSpans\":[],\"status\":\"unknown\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"team_maintenance\",\"sourceKind\":\"maintenance-need\",\"expected\":null,\"actual\":null,\"sourceDeclared\":false,\"sourceSpans\":[],\"status\":\"unknown\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"team_maintenance\",\"sourceKind\":\"maintenance-need\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":117,\"textByteEnd\":135}],\"status\":\"matched\"},{\"optionId\":\"online\",\"sourceOption\":\"在线批注\",\"dimensionId\":\"price\",\"sourceKind\":\"price\",\"expected\":null,\"actual\":null,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":138,\"textByteEnd\":159}],\"status\":\"declared-unknown\"},{\"optionId\":\"local\",\"sourceOption\":\"本地批注\",\"dimensionId\":\"price\",\"sourceKind\":\"price\",\"expected\":null,\"actual\":null,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":138,\"textByteEnd\":159}],\"status\":\"declared-unknown\"}],\"inputChecks\":[{\"inputId\":\"need_offline\",\"sourceKind\":\"capability-need\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243},{\"textByteStart\":246,\"textByteEnd\":282}],\"sourceDerivation\":{\"condition\":\"原始记录禁止外传\",\"whenTrue\":true,\"whenFalse\":false,\"current\":true},\"status\":\"matched\"},{\"inputId\":\"team_available\",\"sourceKind\":\"actor-available\",\"expected\":true,\"actual\":true,\"sourceDeclared\":true,\"sourceSpans\":[{\"textByteStart\":285,\"textByteEnd\":306}],\"status\":\"matched\"}],\"claimChecks\":[{\"index\":0,\"kind\":\"condition\",\"status\":\"supported\",\"expected\":true,\"sourceSpans\":[{\"textByteStart\":246,\"textByteEnd\":282}]},{\"index\":1,\"kind\":\"conditional-need\",\"status\":\"supported\",\"expected\":{\"whenTrue\":true,\"whenFalse\":false},\"sourceSpans\":[{\"textByteStart\":162,\"textByteEnd\":189},{\"textByteStart\":192,\"textByteEnd\":213},{\"textByteStart\":216,\"textByteEnd\":243}]}],\"computedDecision\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"need_offline\",\"requirementIds\":[\"offline_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"},{\"inputId\":\"team_available\",\"requirementIds\":[\"maintenance_requirement\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"local\"],\"excludedOptionIds\":[\"online\"],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"offline_requirement\",\"optionId\":\"online\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":false,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"fail\"},{\"requirementId\":\"offline_requirement\",\"optionId\":\"local\",\"dimensionId\":\"offline\",\"inputId\":\"need_offline\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"supports\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":null,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"unknown\"},{\"requirementId\":\"maintenance_requirement\",\"optionId\":\"local\",\"dimensionId\":\"team_maintenance\",\"inputId\":\"team_available\",\"unit\":null,\"actual\":true,\"needed\":true,\"relation\":\"requires-availability\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[{\"optionId\":\"online\",\"dimensionId\":\"team_maintenance\"},{\"optionId\":\"online\",\"dimensionId\":\"price\"},{\"optionId\":\"local\",\"dimensionId\":\"provider_updates\"},{\"optionId\":\"local\",\"dimensionId\":\"price\"}],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"bounded parsed source declarations; not general natural-language certification\",\"text\":\"在线批注：由服务方更新=true；离线支持=false；价格声明未知。\\n本地批注：离线支持=true；需要小组维护=true；价格声明未知。\\n在线批注是否需要小组维护未声明；不能由其它更新责任推定需要或不需要。\\n本地批注是否由服务方更新未声明，不能自动取反。\\n小组维护余力=true。\\n当前需要离线=true。\\n来源两分支：若原始记录禁止外传=true，则需要离线=true；否则需要离线=false。\\n当前原始记录禁止外传=true（来源明确声明），所以当前需要离线=true；在线批注不满足本项；本地批注满足本项。\\n若本地假设原始记录禁止外传=true：在线批注不满足本项；本地批注满足本项；若本地假设原始记录禁止外传=false：本项不排除两种方案。\\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "jsonPointer": null,
+            "textSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "excerptSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 327,
+              "textUTF8Bytes": 327
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "在线批注",
+              "本地批注"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "在线批注",
+                "name": null,
+                "actor": "服务方",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 51,
+                    "textByteEnd": 75
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "在线批注",
+                "name": "离线",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 78,
+                    "textByteEnd": 93
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "本地批注",
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 96,
+                    "textByteEnd": 114
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "本地批注",
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 117,
+                    "textByteEnd": 135
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "在线批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "本地批注",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 138,
+                    "textByteEnd": 159
+                  }
+                ]
+              },
+              {
+                "kind": "actor-available",
+                "option": null,
+                "name": null,
+                "actor": "小组",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 285,
+                    "textByteEnd": 306
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "离线",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  },
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "derivation": {
+                  "condition": "原始记录禁止外传",
+                  "whenTrue": true,
+                  "whenFalse": false,
+                  "current": true
+                }
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 48
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 51,
+                  "textByteEnd": 75
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 78,
+                  "textByteEnd": 93
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 96,
+                  "textByteEnd": 114
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 117,
+                  "textByteEnd": 135
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              },
+              {
+                "kind": "condition",
+                "span": {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                }
+              },
+              {
+                "kind": "condition-true-branch",
+                "span": {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                }
+              },
+              {
+                "kind": "condition-false-branch",
+                "span": {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                }
+              },
+              {
+                "kind": "current-condition",
+                "span": {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 285,
+                  "textByteEnd": 306
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 309,
+                  "textByteEnd": 324
+                }
+              }
+            ],
+            "conditionalNeeds": [
+              {
+                "name": "离线",
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false,
+                "current": true,
+                "currentSpans": [
+                  {
+                    "textByteStart": 246,
+                    "textByteEnd": 282
+                  }
+                ],
+                "spans": {
+                  "condition": {
+                    "textByteStart": 162,
+                    "textByteEnd": 189
+                  },
+                  "whenTrue": {
+                    "textByteStart": 192,
+                    "textByteEnd": 213
+                  },
+                  "whenFalse": {
+                    "textByteStart": 216,
+                    "textByteEnd": 243
+                  }
+                },
+                "derivedNeed": true
+              }
+            ]
+          },
+          "comparison": {
+            "status": "matched",
+            "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+          },
+          "issues": [],
+          "fieldChecks": [
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "offline",
+              "sourceKind": "capability",
+              "expected": false,
+              "actual": false,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 78,
+                  "textByteEnd": 93
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "offline",
+              "sourceKind": "capability",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 114
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "provider_updates",
+              "sourceKind": "actor-updates",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 51,
+                  "textByteEnd": 75
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "provider_updates",
+              "sourceKind": "actor-updates",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "unknown"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "team_maintenance",
+              "sourceKind": "maintenance-need",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "unknown"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "team_maintenance",
+              "sourceKind": "maintenance-need",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 117,
+                  "textByteEnd": 135
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "online",
+              "sourceOption": "在线批注",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              ],
+              "status": "declared-unknown"
+            },
+            {
+              "optionId": "local",
+              "sourceOption": "本地批注",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 138,
+                  "textByteEnd": 159
+                }
+              ],
+              "status": "declared-unknown"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "need_offline",
+              "sourceKind": "capability-need",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                },
+                {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                },
+                {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                },
+                {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              ],
+              "sourceDerivation": {
+                "condition": "原始记录禁止外传",
+                "whenTrue": true,
+                "whenFalse": false,
+                "current": true
+              },
+              "status": "matched"
+            },
+            {
+              "inputId": "team_available",
+              "sourceKind": "actor-available",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 285,
+                  "textByteEnd": 306
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "claimChecks": [
+            {
+              "index": 0,
+              "kind": "condition",
+              "status": "supported",
+              "expected": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 246,
+                  "textByteEnd": 282
+                }
+              ]
+            },
+            {
+              "index": 1,
+              "kind": "conditional-need",
+              "status": "supported",
+              "expected": {
+                "whenTrue": true,
+                "whenFalse": false
+              },
+              "sourceSpans": [
+                {
+                  "textByteStart": 162,
+                  "textByteEnd": 189
+                },
+                {
+                  "textByteStart": 192,
+                  "textByteEnd": 213
+                },
+                {
+                  "textByteStart": 216,
+                  "textByteEnd": 243
+                }
+              ]
+            }
+          ],
+          "computedDecision": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "need_offline",
+                "requirementIds": [
+                  "offline_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              },
+              {
+                "inputId": "team_available",
+                "requirementIds": [
+                  "maintenance_requirement"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "local"
+            ],
+            "excludedOptionIds": [
+              "online"
+            ],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "online",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": false,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "offline_requirement",
+                "optionId": "local",
+                "dimensionId": "offline",
+                "inputId": "need_offline",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "supports",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "online",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": null,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              {
+                "requirementId": "maintenance_requirement",
+                "optionId": "local",
+                "dimensionId": "team_maintenance",
+                "inputId": "team_available",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [
+              {
+                "optionId": "online",
+                "dimensionId": "team_maintenance"
+              },
+              {
+                "optionId": "online",
+                "dimensionId": "price"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "provider_updates"
+              },
+              {
+                "optionId": "local",
+                "dimensionId": "price"
+              }
+            ],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "bounded parsed source declarations; not general natural-language certification",
+            "text": "在线批注：由服务方更新=true；离线支持=false；价格声明未知。\n本地批注：离线支持=true；需要小组维护=true；价格声明未知。\n在线批注是否需要小组维护未声明；不能由其它更新责任推定需要或不需要。\n本地批注是否由服务方更新未声明，不能自动取反。\n小组维护余力=true。\n当前需要离线=true。\n来源两分支：若原始记录禁止外传=true，则需要离线=true；否则需要离线=false。\n当前原始记录禁止外传=true（来源明确声明），所以当前需要离线=true；在线批注不满足本项；本地批注满足本项。\n若本地假设原始记录禁止外传=true：在线批注不满足本项；本地批注满足本项；若本地假设原始记录禁止外传=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+          }
+        }
+      }
+    }
+  ],
+  "candidateFile": "phase-1-candidate.md",
+  "candidateSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+  "candidateRuntimeStatus": "unverified",
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n在线批注：由服务方更新=true；离线支持=false；价格声明未知。\n本地批注：离线支持=true；需要小组维护=true；价格声明未知。\n在线批注是否需要小组维护未声明；不能由其它更新责任推定需要或不需要。\n本地批注是否由服务方更新未声明，不能自动取反。\n小组维护余力=true。\n当前需要离线=true。\n来源两分支：若原始记录禁止外传=true，则需要离线=true；否则需要离线=false。\n当前原始记录禁止外传=true（来源明确声明），所以当前需要离线=true；在线批注不满足本项；本地批注满足本项。\n若本地假设原始记录禁止外传=true：在线批注不满足本项；本地批注满足本项；若本地假设原始记录禁止外传=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。",
+    "sourceTextSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+    "sourceDocumentSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "newObservedModelTurns": 1,
+  "backendModelRequestCount": "unknown",
+  "graphicalViewRendered": false,
+  "excluded": [
+    "full wire",
+    "reasoning",
+    "local paths",
+    "configuration",
+    "private handoff receipts"
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "frozenAt": "2026-10-27T15:58:50.141621+00:00",
+  "clientCommit": "86e8bb51c0648942498be67377d71124ec495797",
+  "runtimeVersion": "0.1.0-preview.26",
+  "runtimeSourceCommit": "2b7cfa14baab942472dc45234b7d1ff912124657",
+  "clientSha256": "1b8ec271fda208ff4d878bff76a968e0e4aed291f0cb1c9c9d3ca4a3168d5efe",
+  "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+  "manifestSha256": "354f1a770a4649bc881ecf417704f4f9f78d143f041ca8d7255bad5385c5ba79",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "genericGuideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "runtimeEntrypoints": {
+    "dist/mcp.js": "67073960357ef7ed27b1ca7a9c36b0627526fc9f7cd3a0d071147029de6ea3d8",
+    "dist/core.js": "2a729ccc7ceba5f87cac3b8883bee5353749ec5ba7b8d729a31007c4a7ff48ec",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "inputs": [
+    {
+      "phase": 1,
+      "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "questionSha256": "10c3f6bbbadba5fad78b3d70a0ebf969bd45c4cfa8b36497a7383107dac1e512"
+    },
+    {
+      "phase": 2,
+      "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "questionSha256": "523ed7ef3ac2d31268ce620930113deddb3e5e95d19cb5659a6542e67bf9d26f"
+    }
+  ],
+  "independentCriteriaSha256": "4bdf0622634225cad64ce03c01b18702634d71ec16d937c259f535e92088481e",
+  "defaults": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "maximumNewUserLevelAttempts": 2,
+  "old1420UnspentInherited": false,
+  "firstTerminalRequiredBeforeSecondStart": true,
+  "noForkResumeHistoryInjectionOrNewSecondThread": true,
+  "globalTrustDecisionWrittenByFinalClient": false,
+  "allowedModelInputs": "phase-corresponding source snapshot and ordinary question, original typed skill and unchanged generic guide; first real history remains for phase2"
+}

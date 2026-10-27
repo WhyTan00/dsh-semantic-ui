@@ -1,0 +1,74 @@
+{
+  "kind": "safe synthetic selected criteria, published after both real turns completed",
+  "frozenAt": "2026-10-27T15:34:39.331207+00:00",
+  "privateOriginalSha256": "4bdf0622634225cad64ce03c01b18702634d71ec16d937c259f535e92088481e",
+  "publicProjectionByteIdenticalToPrivateOriginal": false,
+  "sourceNature": "新安全合成流程，不是真实业务、用户事实或原六题重播",
+  "selectedGap": "同一实际模型thread先有真实旧判断/view及显式假设，再合法换完整新source，核当前结论与view绑定能否更新",
+  "phases": [
+    {
+      "phase": 1,
+      "source": "虚构校对组在选在线批注与本地批注。前者由服务方更新、不支持离线；后者支持离线、需要小组维护。两边价格都未知。若原始记录禁止外传，则我们需要离线；否则我们不需要离线。当前原始记录禁止外传为是。小组有维护余力。该怎样权衡？",
+      "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "question": "请比较当前取舍并给出对应的条件比较；假如小组没有维护余力，结论会怎样变？",
+      "questionSha256": "10c3f6bbbadba5fad78b3d70a0ebf969bd45c4cfa8b36497a7383107dac1e512"
+    },
+    {
+      "phase": 2,
+      "source": "虚构校对组在选在线批注与本地批注。前者由服务方更新、不支持离线；后者支持离线、需要小组维护。两边价格都未知。若原始记录禁止外传，则我们需要离线；否则我们不需要离线。当前原始记录禁止外传为否。小组维护余力未知。该怎样权衡？",
+      "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "question": "我已把来源修订为新的完整版本。请更新上次的判断和条件比较，说明当前还能确定什么。",
+      "questionSha256": "523ed7ef3ac2d31268ce620930113deddb3e5e95d19cb5659a6542e67bf9d26f",
+      "legitimateChanges": [
+        "原始记录禁止外传当前true→false",
+        "小组维护余力true→unknown"
+      ],
+      "unchanged": [
+        "两分支规则",
+        "两方案能力与维护声明",
+        "未知价格"
+      ]
+    }
+  ],
+  "independentExpected": {
+    "phase1Actual": [
+      "当前离线需求true，在线批注不支持因此不满足本项，本地批注支持且小组有维护余力；不据此造成本或整体唯一最优",
+      "新view初始离线需求true、维护余力true；来源未给的在线维护需求及本地服务方更新仍null"
+    ],
+    "phase1Hypothesis": [
+      "没有维护余力仅是问题明确的假设，须与当前真实来源的有余力分开",
+      "该假设下本地所需维护资源不满足；在线离线能力仍不满足；不能把假设false写成已更新来源/实际初值"
+    ],
+    "phase2Current": [
+      "明确false条件依否则分支得到当前离线需求false，不是unknown；两方案不再因离线这一项被当前排除",
+      "小组维护余力是unknown，不沿用原true或旧假设false；本地维护是否满足不能确定",
+      "在线仍明确不支持离线，但当前不需该能力；不得把不相关能力继续当当前硬筛选",
+      "当前来源不证明在线方案整体可行/无需维护或任何整体最优；费用仍未知"
+    ],
+    "binding": [
+      "两次真实turn/start同一threadId，phase1 completed的真实生成历史先于phase2 start；不fork/host预填/inject history",
+      "第二次实际source_check/当前view引用phase2 source SHA；第一轮source/view与hypothesis历史不改写、不冒为新证据",
+      "当前新view的initial需false、余力null；旧view对新source不能matched",
+      "模型raw、模型tool、host显式、hostcanonical、真实UI分别评估；host补文不算raw"
+    ],
+    "notRequired": [
+      "不要求逐字白名单答案或无关工程免责声明",
+      "不强求付费/主客户端/真实设备或无指引自主"
+    ]
+  },
+  "budget": {
+    "maximumNewUserLevelAttempts": 2,
+    "allFailuresStartsRetriesInterruptionsCount": true,
+    "noThird": true,
+    "old1420UnspentNotInherited": true,
+    "automaticRetry": false,
+    "backendRequests": "unknown without direct evidence; no probes"
+  },
+  "stoppingConditions": [
+    "无合法同thread正常源更新路径时给具体0模型证据，优先修合法个人client适配；不借共享/公司/全局机制绕过",
+    "第一轮异常保留且计数，不重跑凑绿；第二轮仅为原计划真实源修订，不是第一次纠正重试",
+    "用尽两个后仅可0模型通用修复与必要交付，不追加自然模型",
+    "有限合同完成后只接实际具体缺陷；无缺陷不为任意正文普遍保证无限造样本/包"
+  ],
+  "modelInputExclusion": "This review, frozen expectations and private receipt paths were not supplied. Only each corresponding snapshot/question, archived typed skill and existing generic guide were supplied; actual phase1 history remains in the live thread for phase2."
+}

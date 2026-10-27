@@ -1,0 +1,112 @@
+{
+  "threadId": "01a17e15-f5b9-79e2-bea6-b73206aa14d0",
+  "threadStarts": 1,
+  "turnStarts": 2,
+  "phases": [
+    {
+      "phase": 1,
+      "turnId": "01a17e15-fbfc-7662-8329-0ce20c926bd8",
+      "status": "completed",
+      "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "candidateSha256": "9859ebbdd1587d3d9e8fa2e9888cabc4a262846520514b1aca1ac1f2c04d1958",
+      "modelSemanticCalls": 9,
+      "modelToolsInOrder": [
+        "semantic_ui_schema",
+        "semantic_ui_source_check",
+        "semantic_ui_source_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_source_check"
+      ],
+      "builtInDiscoveryCalls": 0,
+      "freshViewComparisonsInActualOrder": [
+        {
+          "status": "mismatch",
+          "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+          "issues": [
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.0",
+              "reason": "Input label does not match the explicit source role."
+            },
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.inputs.1",
+              "reason": "Input label does not match the explicit source role."
+            }
+          ]
+        },
+        {
+          "status": "matched",
+          "sourceSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+          "issues": []
+        }
+      ],
+      "hostDelivery": "delivered",
+      "candidateRuntimeStatus": "unverified"
+    },
+    {
+      "phase": 2,
+      "turnId": "01a17e17-68d2-7c83-b578-df88a1b1db2c",
+      "status": "completed",
+      "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "candidateSha256": "65b453c3b3d0eebb3522310619d368aff0f8ab8ce2f1170e2cef70dac560f3bd",
+      "modelSemanticCalls": 8,
+      "modelToolsInOrder": [
+        "semantic_ui_schema",
+        "semantic_ui_source_check",
+        "semantic_ui_source_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check",
+        "semantic_ui_check"
+      ],
+      "builtInDiscoveryCalls": 0,
+      "freshViewComparisonsInActualOrder": [
+        {
+          "status": "matched",
+          "sourceSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+          "issues": []
+        }
+      ],
+      "hostDelivery": "delivered",
+      "candidateRuntimeStatus": "unverified"
+    }
+  ],
+  "firstTerminalBeforeReloadAndSecondTurn": true,
+  "sameRealThread": true,
+  "historyInjectedForkedOrResumed": false,
+  "reloadParamsNull": true,
+  "hostExplicitCalls": 7,
+  "hostCallsDuringPhase1": 0,
+  "hostCallsDuringPhase2": 0,
+  "hostTimeWindowsMatchedFirst": true,
+  "modelPhaseTimeWindowsAndCompleteSemanticPayloadsMatched": true,
+  "sourceTransitionUsesStartupSnapshotNotToolSourceArgument": true,
+  "oldViewComparisons": [
+    {
+      "status": "mismatch",
+      "issues": [
+        {
+          "code": "SOURCE_INITIAL",
+          "path": "$.view.payload.inputs.0.initial",
+          "reason": "Initial conditions must match the source; an unstated availability/need is null."
+        },
+        {
+          "code": "SOURCE_INITIAL",
+          "path": "$.view.payload.inputs.1.initial",
+          "reason": "Initial conditions must match the source; an unstated availability/need is null."
+        }
+      ]
+    }
+  ],
+  "typedSkillProvidedAndAcceptedBothTurns": true,
+  "genericGuideUnchanged": true,
+  "stdoutExactlyConversationHostAnswerPlusPrintNewline": true,
+  "candidateRuntimeCertification": false,
+  "backendModelRequestCount": "unknown"
+}

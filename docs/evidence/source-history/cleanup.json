@@ -1,0 +1,42 @@
+{
+  "appServerExitCode": 0,
+  "appServerAbsent": true,
+  "runtimeRemoved": true,
+  "extraRootsRemoved": true,
+  "globalConfigShaUnchanged": true,
+  "ownedProcesses": [
+    {
+      "observerPid": 99076,
+      "childPid": 99078,
+      "observerAbsent": true,
+      "childAbsent": true,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "observerPid": 99081,
+      "childPid": 99082,
+      "observerAbsent": true,
+      "childAbsent": true,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    },
+    {
+      "observerPid": 99826,
+      "childPid": 99827,
+      "observerAbsent": true,
+      "childAbsent": true,
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      }
+    }
+  ],
+  "newModelTurnRequests": 2,
+  "ownedHostsOrPortsStarted": 0,
+  "noSharedServiceStopped": true
+}

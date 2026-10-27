@@ -1,5 +1,7 @@
 # 实际进度
 
+伴随客户端已交付[同一真实模型thread的完整来源修订](CODEX-SOURCE-HISTORY.zh-CN.md)，源码86e8bb5：26项Python检查、6个零模型探针/入口及新2/2真实回合终态。源从禁止外传true/维护余力true修订为false/unknown，旧view两初值拒绝，模型新view首次matched，raw保留旧假设与新当前值；首轮首次标签拒绝后同回合修正完整保留，不称首轮首次成功。7宿主显式与9+8模型语义调用分列，最终全局配置字节不变，早期两条本次临时信任记录已清理。原26 runtime/技能不变、无新包/发行，MCP/终端文字不冒图形UI；见[独立接受](evidence/source-history.json)。
+
 现有26另完成[当前来源双撤回的一个guided模型观察](CODEX-SOURCE-REVISION-OBSERVATION.zh-CN.md)：模型自己的4次语义调用、新view首次matched、raw按事前有限判据met；公共缓存支持与当前内网需求都保留未知，撤回确定排除且不保证适用。宿主说明独立，1/1新尝试、较大段1/2且不自动续用；原文/工具/计数/清理见[分层回执](evidence/source-revision-observation.json)。没有runtime或新发行，不冒真实旧聊天历史、实时回调、主客户端富UI或普遍正文认证。
 
 在既有26归档上补[同会话完整来源true→unknown→false修订](NORMAL-SOURCE-REVISION.zh-CN.md)：Native/PTC各3个确定性回合，新source/message/turn/checkpoint对账、两旧view拒绝、本地试算不写源及旧史刷新通过，pageerror0。388包文件前后与原归档相同；首次回执历史误选及修正保留，0新增真实模型、无runtime/版本/发行变更，见[独立接受](evidence/normal-source-revision.json)。
