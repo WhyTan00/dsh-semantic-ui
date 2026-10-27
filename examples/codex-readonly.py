@@ -11,6 +11,7 @@ import argparse
 import base64
 import hashlib
 import json
+import math
 import os
 from pathlib import Path
 import queue
@@ -295,6 +296,134 @@ def grounded_delivery(source_result, source_sha, source_identity=None):
             'sourceFactsVerified':False,'identityVerified':False}
 
 
+def source_chart_projection(inspection):
+    """Project complete checked source readings, without imputation or statistics."""
+    if inspection.get('sourceCheckKind') != 'observations-zh':
+        raise ValueError('HYPOTHESIS_SOURCE_KIND')
+    source = inspection['sourceObservations']
+    positions, unit, measurement = source['positions'], source['unit'], source['measurement']
+    if (not isinstance(positions, list) or not 1 <= len(positions) <= 128
+            or not isinstance(unit, str) or not unit
+            or not isinstance(measurement, str) or not measurement):
+        raise ValueError('HYPOTHESIS_SOURCE_FIELDS')
+    series_id = 'source-readings'
+    rows, mapping = [], []
+    for index, position in enumerate(positions):
+        value = position['value']
+        if (type(position['index']) is not int or position['index'] != index
+                or value is not None and not finite_number(value)):
+            raise ValueError('HYPOTHESIS_SOURCE_POSITION')
+        row_id = 'source-position-' + str(index + 1)
+        rows.append({'id': row_id, 'x': str(index + 1), 'values': {series_id: value}})
+        mapping.append({'sourceIndex': index, 'rowId': row_id})
+    return {'view': {'protocolVersion': '1.4',
+                    'displayId': 'host-source-' + inspection['source']['textSha256'][:16],
+                    'revision': 1, 'component': 'DataChart',
+                    'summary': 'Host projection of original source readings; not model output.',
+                    'payload': {'chartType': 'bar', 'title': '原始来源读数', 'unit': unit,
+                                'x': {'kind': 'category', 'order': 'input'},
+                                'series': [{'id': series_id, 'label': measurement}], 'rows': rows}},
+            'mapping': {'seriesId': series_id, 'rows': mapping}}
+
+
+def finite_number(value):
+    if type(value) not in (int, float):
+        return False
+    try:
+        return math.isfinite(value)
+    except OverflowError:
+        return False
+
+
+def checked_zero_fill(receipt, bound, projection):
+    """Consume the existing core receipt; never recompute a mean or difference."""
+    facts = receipt['dataFacts']
+    stats, series = bound['sourceStatistics'], facts['series']
+    rows = projection['view']['payload']['rows']
+    if (receipt.get('status') != 'validated' or receipt.get('component') != 'DataChart'
+            or receipt.get('sourceFactsVerified') is not False
+            or facts.get('scope') != 'original-full-data' or facts.get('chartType') != 'bar'
+            or facts.get('order') != 'input' or facts.get('unit') != stats['unit']
+            or facts.get('unit') != projection['view']['payload']['unit']
+            or type(facts.get('rows')) is not int or facts['rows'] != len(rows)
+            or not isinstance(series, list) or len(series) != 1):
+        raise ValueError('HYPOTHESIS_CORE_SCOPE')
+    s = series[0]
+    z = s['zeroFillIllustration']
+    if (s.get('id') != projection['mapping']['seriesId']
+            or type(s.get('valid')) is not int or s['valid'] != stats['observed']['count']
+            or type(s.get('missing')) is not int or s['missing'] != stats['observed']['missing']
+            or 'mean' not in s or s['mean'] != stats['observed']['mean']
+            or s['mean'] is not None and not finite_number(s['mean'])
+            or type(z.get('count')) is not int or z['count'] != stats['complete']['count']
+            or z['count'] != len(rows)
+            or type(z.get('completeDataMeanKnown')) is not bool
+            or z['completeDataMeanKnown'] != stats['complete']['known']
+            or not isinstance(z.get('assumption'), str) or not z['assumption']):
+        raise ValueError('HYPOTHESIS_CORE_BINDING')
+    for key in ['mean', 'differenceFromObservedMean']:
+        if key not in z or z[key] is not None and not finite_number(z[key]):
+            raise ValueError('HYPOTHESIS_CORE_NUMBER')
+    direction = z.get('directionRelativeToObservedMean')
+    if direction not in ['lower', 'higher', 'same', 'unknown']:
+        raise ValueError('HYPOTHESIS_CORE_DIRECTION')
+    if ((s['mean'] is None or z['mean'] is None)
+            and (z['differenceFromObservedMean'] is not None or direction != 'unknown')):
+        raise ValueError('HYPOTHESIS_CORE_UNKNOWN')
+    if z['differenceFromObservedMean'] is None and direction != 'unknown':
+        raise ValueError('HYPOTHESIS_CORE_UNKNOWN')
+    return {'mode': 'zero-fill', 'status': 'available' if z['mean'] is not None else 'unknown',
+            'unit': facts['unit'], **{key: z[key] for key in [
+                'count', 'mean', 'differenceFromObservedMean', 'directionRelativeToObservedMean',
+                'completeDataMeanKnown']}, 'sourceFact': False}
+
+
+def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
+    delivery = grounded_delivery(inspection, source_sha, source_identity)
+    delivery.update({'kind': 'host-source-zero-fill-hypothesis',
+                     'projectionSource': 'host-derived original readings, not model output',
+                     'hypothesis': {'mode': 'zero-fill', 'status': 'withheld'}})
+    if delivery['status'] != 'delivered':
+        return delivery
+    try:
+        projection = source_chart_projection(inspection)
+        write_json(logs/'hypothesis-source-projection.json', projection)
+        compared = tool('semantic_ui_source_check', projection)
+        write_json(logs/'hypothesis-source-check.json', compared)
+        if compared.get('isError'):
+            raise ValueError('HYPOTHESIS_SOURCE_TOOL_ERROR')
+        bound = compared['structuredContent']
+        delivery.update(grounded_delivery(bound, source_sha, source_identity))
+        delivery['kind'] = 'host-source-zero-fill-hypothesis'
+        if (delivery['status'] != 'delivered'
+                or bound.get('sourceCheckKind') != 'observations-zh'
+                or bound.get('comparison', {}).get('status') != 'matched'):
+            raise ValueError('HYPOTHESIS_SOURCE_COMPARISON')
+        computed = tool('semantic_ui_check', {'view': projection['view']})
+        write_json(logs/'hypothesis-core-check.json', computed)
+        if computed.get('isError'):
+            raise ValueError('HYPOTHESIS_CORE_TOOL_ERROR')
+        hypothesis = checked_zero_fill(computed['structuredContent'], bound, projection)
+    except (RpcError, ValueError, KeyError, TypeError, AttributeError) as error:
+        write_json(logs/'hypothesis-error.json', {'error': str(error)})
+        delivery['status'] = 'withheld'
+        delivery['text'] += '\n\n补零假设比较未通过完整核对，未交付假设数值。'
+        return delivery
+    def number(value):
+        return '未知（现有核心未提供有限计算值）' if value is None else json.dumps(value, allow_nan=False)
+    direction = {'lower': '较低', 'higher': '较高', 'same': '相同', 'unknown': '未知'}
+    unit = hypothesis['unit']
+    delivery['text'] += ('\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。'
+        + f"\n补零假设平均值：{number(hypothesis['mean'])} {unit}；分母为{hypothesis['count']}个原始位置。"
+        + f"\n相对已观测均值的差（假设减实测）：{number(hypothesis['differenceFromObservedMean'])} {unit}；方向：{direction[hypothesis['directionRelativeToObservedMean']]}。"
+        + '\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值的偏差方向。'
+        + '\n原始完整均值及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。')
+    delivery['hypothesis'] = hypothesis
+    if hypothesis['status'] == 'unknown':
+        delivery['status'] = 'partial'
+    return delivery
+
+
 ANSWER_WORKFLOW = (
     'Use the explicitly attached semantic-ui-checks skill and available read-only MCP tools. '
     'An independent source snapshot is configured. Inspect source_check before a conclusion, '
@@ -390,6 +519,8 @@ def main():
                         help='Print source-canonical text with no model turn')
     parser.add_argument('--model-candidate', action='store_true',
                         help='Also run one guided candidate model turn; requires --answer')
+    parser.add_argument('--hypothesis', choices=['zero-fill'],
+                        help='Explicit host-only comparison using the existing numeric core; requires --answer')
     parser.add_argument('--archive', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--source-file', type=Path, required=True)
@@ -423,6 +554,10 @@ def main():
         raise ValueError('--question-file requires --answer')
     if args.model_candidate and args.requests_file:
         raise ValueError('A model candidate uses source inspection, not a custom request batch')
+    if args.hypothesis and (not args.answer or args.model_candidate or args.requests_file
+                           or args.source_kind != 'observations-zh' or args.component != 'DataChart'):
+        raise ValueError('--hypothesis requires host-only --answer, observations-zh and DataChart, without requests-file')
+    needs_stat_check = bool(args.model_candidate or args.hypothesis)
     requests = json.loads(args.requests_file.read_text()) if args.requests_file else [{}]
     if not isinstance(requests, list) or not 1 <= len(requests) <= 16 or any(
             not isinstance(value, dict) for value in requests):
@@ -490,7 +625,7 @@ def main():
         prefix = 'mcp_servers.'+server+'.'
         for key,value in [('command',node),('args',[str(tap),str(tap_config)]),
                           ('cwd',str(workspace)),('enabled',True),('required',True),
-                          ('enabled_tools',['semantic_ui_schema','semantic_ui_source_check']+(['semantic_ui_check'] if args.model_candidate else [])),
+                          ('enabled_tools',['semantic_ui_schema','semantic_ui_source_check']+(['semantic_ui_check'] if needs_stat_check else [])),
                           ('default_tools_approval_mode','auto')]:
             override(prefix+key,value)
         argv += ['app-server','--stdio']
@@ -526,7 +661,7 @@ def main():
         if len(selected['data']) != 1 or selected['data'][0]['name'] != server:
             raise RuntimeError('Thread-scoped server selection failed')
         tools = selected['data'][0]['tools']
-        expected_tools = {'semantic_ui_schema','semantic_ui_source_check'} | ({'semantic_ui_check'} if args.model_candidate else set())
+        expected_tools = {'semantic_ui_schema','semantic_ui_source_check'} | ({'semantic_ui_check'} if needs_stat_check else set())
         if {v['name'] for v in tools.values()} != expected_tools:
             raise RuntimeError('Unexpected thread tool catalog')
         def tool(name, arguments):
@@ -558,7 +693,8 @@ def main():
                                          question,source_sha,inspection,tool,logs,
                                          input_identity['expectedSource'])
             else:
-                delivery = grounded_delivery(inspection,source_sha,input_identity['expectedSource'])
+                delivery = (zero_fill_answer(inspection,source_sha,input_identity['expectedSource'],tool,logs)
+                            if args.hypothesis else grounded_delivery(inspection,source_sha,input_identity['expectedSource']))
                 (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
                 answer = {'observedModelTurns':0,'status':'host-only','delivery':delivery}
         rpc.call('skills/extraRoots/set',{'extraRoots':[]})

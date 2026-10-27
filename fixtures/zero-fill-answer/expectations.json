@@ -1,0 +1,108 @@
+{
+  "createdAt": "2026-10-27T03:30:47.343513+00:00",
+  "basis": "Independent literal synthetic sources and Python arithmetic before implementation or new runs; no project checker output.",
+  "newModelTurnsAllowed": 0,
+  "mode": "Explicit host zero-fill hypothetical comparison, not question keyword inference",
+  "cases": [
+    {
+      "id": "C",
+      "source": "合成探针丙八次电流读数是 -8、缺失、0、4、缺失、12、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？",
+      "question": "请比较这组读数的实测平均值与缺失暂按0处理的假设平均值，并说明这种假设能否确定原始完整平均值。",
+      "sourceSha256": "4eae9dca6890dab8319c2fd63eebbdd1567aac95ed6a38c22d50a68bd41910d6",
+      "questionSha256": "1f5aded83ce4ba6a78f2e68cf4a6027509ffc895d7df493ad2b58843af0dd0ee",
+      "values": [
+        -8,
+        null,
+        0,
+        4,
+        null,
+        12,
+        null,
+        null
+      ],
+      "missingMask": [
+        false,
+        true,
+        false,
+        false,
+        true,
+        false,
+        true,
+        true
+      ],
+      "unit": "毫安",
+      "measurement": "电流",
+      "observed": {
+        "count": 4,
+        "sum": 8,
+        "mean": 2.0
+      },
+      "complete": {
+        "count": 8,
+        "mean": null,
+        "known": false
+      },
+      "zeroFillHypothesis": {
+        "count": 8,
+        "mean": 1.0,
+        "differenceFromObservedMean": -1.0,
+        "directionRelativeToObservedMean": "lower",
+        "isSourceFact": false
+      },
+      "expectedOutcome": "delivered explicit hypothesis; original complete still unknown"
+    },
+    {
+      "id": "D",
+      "source": "合成探针丁三次电流读数是 缺失、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？",
+      "question": "这些读数全部缺失。若明确暂按0作假设，哪些平均值可以算，哪些仍然不知道？",
+      "sourceSha256": "46f2050fa5524237d653653d007b5d37d6b98f4f18a68b9e1bdb9bb41654069d",
+      "questionSha256": "96dc4728f3018fb2cf92ef121e8a65a2a56c8837d87e2b88d05793e2c22b156c",
+      "values": [
+        null,
+        null,
+        null
+      ],
+      "missingMask": [
+        true,
+        true,
+        true
+      ],
+      "unit": "毫安",
+      "measurement": "电流",
+      "observed": {
+        "count": 0,
+        "sum": 0,
+        "mean": null
+      },
+      "complete": {
+        "count": 3,
+        "mean": null,
+        "known": false
+      },
+      "zeroFillHypothesis": {
+        "count": 3,
+        "mean": 0.0,
+        "differenceFromObservedMean": null,
+        "directionRelativeToObservedMean": "unknown",
+        "isSourceFact": false
+      },
+      "expectedOutcome": "delivered explicit hypothesis; original complete still unknown"
+    }
+  ],
+  "refusalCriteria": [
+    "wrong file/text/excerpt/pointer/selection identity",
+    "source unsupported or full positional source comparison not matched",
+    "wrong unit, source index, series or row mapping",
+    "invalid/unavailable check receipt or missing/nonfinite computed fields",
+    "no default-zero fallback from absent fields",
+    "overflow means remain unknown; no client-side statistical formula"
+  ],
+  "boundaries": [
+    "null mask and actual zero unchanged",
+    "original complete mean stays unknown with missing readings",
+    "hypothesis count is full declared positions",
+    "difference is hypothetical mean minus observed mean, never direction relative to unknown true complete mean",
+    "all-missing can have hypothetical zero but unknown observed mean and difference",
+    "zero turn/start; no model or quota queries"
+  ]
+}
