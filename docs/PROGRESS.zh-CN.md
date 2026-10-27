@@ -1,5 +1,7 @@
 # 实际进度
 
+全缺失D已在伴随源码7422467/脚本4de061d8…修复：原source完整匹配且原视图全部null后，另建有明确标签的假设副本，仅替换副本null为0，调用16已有core取得0毫安/分母3；副本未冒source matched，其complete-known及内部差值不覆盖原始完整/观测均值和观测差未知。仅回归先前失败D一次，正常stdout delivered、5次宿主调用、0模型；16项离线检查通过，错误/不完整回执及非全缺失不可得不回退。原partial/预期0/C成功入口/A-B自然原件不动，runtime/core/归档不改不重包。纠正上轮必须核心改版的过早判断，完整新旧范围见[修复回执](evidence/zero-fill-all-missing.json)。
+
 新增[显式宿主补零比较](CODEX-ZERO-FILL.zh-CN.md)，源码93f9d25/脚本74171839…，仅伴随客户端，不改16归档/core/协议/skill。新C/D来源与独立数学实现前冻结，显式`--answer --hypothesis zero-fill`不猜问题关键词；宿主原值/null投影先完整source匹配及独立身份/选段核对，再由已有semantic_ui_check的zeroFillIllustration提供数值，不复制统计公式或使用候选注释。C真实正常stdout输出实测2毫安/4、假设1毫安/8、差−1且完整未知；D数学目标0保留，但旧核心假设mean=null，实际partial/unknown、不补造0，尚未完成该数学目标。14项客户端检查通过（首次1/1.0显示断言失败保留）；两个实际入口各4次宿主工具，0turn/start/0新模型，进程/技能/目录清理且配置不变。原A/B/首次失败/旧0/6/18保持，无新发行/重包或旧DSH/Linux矩阵。完整范围及原件摘要见[本段回执](evidence/zero-fill-answer.json)。
 
 新增[个人Codex数值来源观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)：先冻结两份不同的合成源、普通问题及独立算术判据，再分离伴随客户端的question/source身份；默认用法保留，来源document/text/excerpt/pointer/选段前后严格对应。沿16原归档和包内skill，实际2个有指引observed turns，各6次本包模型工具调用；A实测均值6伏/分母4、完整5未知，B实测12伏/4、合法补零假设8伏/6、完整真实均值未知，原候选逐项评读通过。两次首次坐标/系列比较拒绝均保留并同回合修正；宿主最终仍只保障原来源，未认证B假设或任意正文。两组新反例各正例及三拒绝通过；评读错误码断言修正未改checker。观察后通用坐标指引澄清仅经10项离线检查，未追加第三次模型。后台请求数unknown，五个自有stdio运行均终态/已清理、配置不变；未重包16/发行/下载或重跑DSH/Linux。旧0/6/18不改，完整原文/字节/范围见[本段回执](evidence/codex-numeric-observation.json)。

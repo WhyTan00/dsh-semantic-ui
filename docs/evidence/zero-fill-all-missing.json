@@ -1,0 +1,52 @@
+{
+  "schema": "semantic-ui-all-missing-hypothesis-fix-v1",
+  "recordedAt": "2026-10-27T03:57:37.630138+00:00",
+  "sourceClientCommit": "742246799ef1689be7ff2611a86e211b27064455",
+  "clientSha256": "4de061d8c9591b2c4e46d34d3820f0dd4ae5c3cf63056404effdb30b513d0262",
+  "independentOriginalExpectation": {
+    "path": "../../fixtures/zero-fill-answer/expectations.json",
+    "sha256": "84f8c33a2a3f5214761b284130a44adcc9c3364402d8e3017ed07c5b421a2b27",
+    "case": "D",
+    "hypotheticalMean": 0,
+    "notChanged": true
+  },
+  "priorPartial": {
+    "path": "zero-fill-answer/D.json",
+    "sha256": "2cd96676fb8dc2b9a342d91189ff25b4824cd76685bc2a611c391ece71c53c48",
+    "unchanged": true,
+    "result": "partial, original-view illustration null"
+  },
+  "newRegression": "zero-fill-all-missing/D.json",
+  "result": {
+    "status": "delivered",
+    "mean": 0,
+    "unit": "毫安",
+    "denominator": 3,
+    "originalObservedMean": null,
+    "originalCompleteMean": null,
+    "differenceFromOriginalObservedMean": null,
+    "directionRelativeToOriginalObservedMean": "unknown",
+    "originalCompleteDataMeanKnown": false
+  },
+  "method": "Original source-bound null-preserving view remains unchanged. A distinctly labelled independent copy replaces only nulls by zero and is computed by the same existing semantic_ui_check. No client sum/mean/difference formula, default zero or source-match claim for the copy.",
+  "guard": "Only valid original receipts with zero original observations and every original value null can use this extra calculation. Source mismatch or malformed original/copy receipt withholds; non-all-missing unavailable calculation remains unknown.",
+  "offlineTests": {
+    "count": 16,
+    "status": "passed",
+    "log": "zero-fill-all-missing/client-contracts.txt",
+    "sha256": "7ec580543a8cc85e0e4d0b04ad949f11eaa519faee1a4fd6b50c59d2916b45ed"
+  },
+  "actualHostToolCalls": 5,
+  "newObservedModelTurns": 0,
+  "turnStartRequests": 0,
+  "backendModelRequests": 0,
+  "successfulCOrOldNaturalCasesRerun": false,
+  "runtimeCoreProtocolArchiveChanged": false,
+  "newReleaseOrRepack": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "cleanup": "zero-fill-all-missing/cleanup.json",
+  "scope": "Fixes the failed D host-only hypothesis delivery. No new natural model, current desktop UI, DSH presentation, arbitrary prose/world/source-author authentication. Old partial and all prior model evidence retained.",
+  "longTermGoalCompleted": false
+}

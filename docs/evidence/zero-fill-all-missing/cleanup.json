@@ -1,0 +1,17 @@
+{
+  "checkedAt": "2026-10-27T03:56:09.913701+00:00",
+  "temporaryRootAndSkillRemoved": true,
+  "globalConfigShaUnchanged": true,
+  "exitCode": 0,
+  "newObservedModelTurns": 0,
+  "turnStartRequests": 0,
+  "backendModelRequests": 0,
+  "actualHostMcpCalls": 5,
+  "priorPartialUnchanged": true,
+  "sourceBindingAndOriginalUnknownPreserved": true,
+  "separateCopyMeanFromExistingCore": 0,
+  "sourceCompleteKnownFalse": true,
+  "copyCompleteKnownNotTransferred": true,
+  "allObservedOwnedPidsGone": true,
+  "rawCleanupSha256": "d749a26c9f5189b485830734891f5f5f28064de572ab7aea63c681bfe3fb4494"
+}
