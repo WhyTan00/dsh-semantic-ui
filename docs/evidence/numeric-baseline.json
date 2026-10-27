@@ -1,20 +1,103 @@
 {
-  "phase": "development-source",
+  "phase": "final-archive-installed-and-guided-observations",
   "version": "0.1.0-preview.25",
   "protocolVersion": "1.4",
-  "recordedAt": "2026-10-27T13:16:21.037589+00:00",
+  "sourceCommit": "48a3105b990b84fef6ea54d4d2b28dff27a5c24c",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.25.tgz",
+    "sha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11"
+  },
+  "runtimeBytes": 2675232,
+  "runtimeFiles": 386,
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.25.tgz",
+    "bytes": 31830945,
+    "sha256": "9cf0b0ea4089ef124dbd6e4634322b63b3fe6c47772646c8017ec6bab88f9cda",
+    "files": 719
+  },
+  "independentCriteriaSha256": "93ff56ca27dd3a1f1300d66716fe4a72e2ba77384e20a7e917cf982176229e6d",
+  "originalT2FileSha256": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2",
   "sourceChecks": {
+    "typecheck": "passed",
     "vitest": {
       "files": 6,
       "passed": 32
     },
     "python": {
       "passed": 18
-    },
-    "typecheck": "passed"
+    }
   },
-  "finalArchive": "pending",
-  "newModelAttempts": 0,
+  "finalInstall": {
+    "normalDshAdd": true,
+    "allFilesVerifiedBeforeStart": 386,
+    "sourceOverlay": false,
+    "macos": {
+      "nativeCases": 2,
+      "ptcCases": 2,
+      "pageErrors": 0
+    },
+    "linux": {
+      "nativeCases": 2,
+      "ptcCases": 2,
+      "pageErrors": 0
+    },
+    "fixtureOnly": true,
+    "newRealModelTurns": 0
+  },
+  "cli": {
+    "zeroModelRuns": 4,
+    "observedModelRuns": 2,
+    "totalRuns": 6,
+    "wireAndArgStructuredResponsesEqual": true,
+    "stdoutEqualsHostTextPlusPrintNewline": true,
+    "globalConfigShaUnchanged": true
+  },
+  "observations": [
+    {
+      "case": "I",
+      "rawSha256": "58751c05894f3dbe0a36a85bcf4b909df8a1a788d6006ec8e45b46b49492547a",
+      "rawVerdict": "met-finite-predeclared-criteria",
+      "actualModelSemanticCalls": 4,
+      "builtInDiscoveryCalls": 2,
+      "hostExplicitCalls": 5,
+      "firstNewViewSourceComparison": "matched",
+      "hostDelivery": "delivered",
+      "candidateStatus": "unverified",
+      "freeProseVerified": false
+    },
+    {
+      "case": "J",
+      "rawSha256": "73c8abc98174e741d587cbdd92cd71ac0a0388a57083047c48f3ed501fb99558",
+      "rawVerdict": "met-finite-predeclared-criteria",
+      "actualModelSemanticCalls": 4,
+      "builtInDiscoveryCalls": 2,
+      "hostExplicitCalls": 5,
+      "firstNewViewSourceComparison": "matched",
+      "hostDelivery": "delivered",
+      "candidateStatus": "unverified",
+      "freeProseVerified": false
+    }
+  ],
+  "newAttemptBudget": {
+    "maximum": 2,
+    "used": 2,
+    "retry": 0,
+    "backendRequests": "unknown",
+    "olderIndependent2of2Budgets": "unchanged"
+  },
+  "ci": {
+    "id": 40510814087,
+    "conclusion": "success",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40510814087"
+  },
+  "release": {
+    "status": "published",
+    "id": 425512477,
+    "tag": "v0.1.0-preview.25",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.25",
+    "fourLocalLinuxOutputsSameBytes": true,
+    "anonymousEvidenceArchiveBody": "existing download in progress; do not duplicate request"
+  },
   "originalNaturalResults": {
     "pass": 0,
     "fail": 6,
@@ -22,5 +105,144 @@
   },
   "sourceFactsVerified": false,
   "identityVerified": false,
-  "freeProseVerified": false
+  "freeProseVerified": false,
+  "unverified": [
+    "original six natural tasks not rerun or marked passed",
+    "unassisted model selection and arbitrary natural-language parsing",
+    "free prose/source identity/world facts",
+    "general GenUI replacement, portable full results, arbitrary forms",
+    "real-time DSH to Codex UI callback and main-client rich renderer",
+    "physical phone or screen-reader acceptance"
+  ],
+  "files": {
+    "I-review.json": {
+      "bytes": 1741,
+      "sha256": "b359d1472b30e986a6b47c56fd9368891aff36bfdc9222861fced830efa892a6"
+    },
+    "J-review.json": {
+      "bytes": 1903,
+      "sha256": "42a05cfdd1cd4499e889ba9c598cd2a0723b559232b75b1b466c5930404ab063"
+    },
+    "all-missing25.json": {
+      "bytes": 10243,
+      "sha256": "d5adff4f34feb0f5d061c0bc8ac9b9bd5a4cab6f2e6115747c262600dd0594eb"
+    },
+    "baseline24.json": {
+      "bytes": 4345,
+      "sha256": "8990cd0a4affa4d638cf8fb29847b013f3640704bf1490cdd189223062e89607"
+    },
+    "budget.json": {
+      "bytes": 793,
+      "sha256": "2525060dc1234f5f50dd37ce006ba1a84705f4842278477dde9df870df009db4"
+    },
+    "cleanup.json": {
+      "bytes": 6383,
+      "sha256": "52a064454d6f6fcba1d3f5b0591ccc2e46cdfa7297af6d261b58028d86b910a7"
+    },
+    "criteria-cases.json": {
+      "bytes": 4115,
+      "sha256": "93ff56ca27dd3a1f1300d66716fe4a72e2ba77384e20a7e917cf982176229e6d"
+    },
+    "i-candidate.md": {
+      "bytes": 1007,
+      "sha256": "58751c05894f3dbe0a36a85bcf4b909df8a1a788d6006ec8e45b46b49492547a"
+    },
+    "i-host-answer.md": {
+      "bytes": 1544,
+      "sha256": "d9c8cb1abfed3a272b6055a2e300ec6d7c9f4608e5c3328204b3473265521086"
+    },
+    "i-preflight25.json": {
+      "bytes": 10572,
+      "sha256": "11e54b721a6b76ec4789a2adb6d7fe4b9b838e5235dbe73246ed8f452aead64f"
+    },
+    "i.json": {
+      "bytes": 33832,
+      "sha256": "67d7210c50306dbc334a4ffe32eb7a282c78759cc509057890f083491b30a9dc"
+    },
+    "j-candidate.md": {
+      "bytes": 1194,
+      "sha256": "73c8abc98174e741d587cbdd92cd71ac0a0388a57083047c48f3ed501fb99558"
+    },
+    "j-host-answer.md": {
+      "bytes": 1548,
+      "sha256": "dfdd3416d32e5a144ce0498859ace7e83e8cfe70c2b39660bbc7c33859ff55fb"
+    },
+    "j-preflight25.json": {
+      "bytes": 10916,
+      "sha256": "78e6265500c1da1d89b6683e5fea3aad21b6d57ea01ef18b8a6e80a10e928ad2"
+    },
+    "j.json": {
+      "bytes": 35301,
+      "sha256": "fea46caf8fbf978fd1f31b2741c20472bf499059ca16d61d69f6e75b4144e8ae"
+    },
+    "linux-cleanup.json": {
+      "bytes": 376,
+      "sha256": "6bcef1680bc06441d6b0a9a82805b87bdaff23971ab7f9af0ada8d7d72272d75"
+    },
+    "linux-install.json": {
+      "bytes": 606,
+      "sha256": "3e5f79aff18d80fbfb3cce2ded4fceeaf7dc0d48d47470655a8571f69295e5b1"
+    },
+    "linux-installed-byte-check.json": {
+      "bytes": 68,
+      "sha256": "c20432fe2830889ba12ebf3956e7e48f2f8beaed93cca8d72333b386b262c406"
+    },
+    "linux-native.json": {
+      "bytes": 3564,
+      "sha256": "c9e4deadc348f5b0f4b297f220b3120faf10e94171a03818392ede7ae6bf1814"
+    },
+    "linux-ptc.json": {
+      "bytes": 3561,
+      "sha256": "31f58761616092dd74dddcb09a063f8813057856da8a70b588ae55212298ebd3"
+    },
+    "macos-cleanup.json": {
+      "bytes": 379,
+      "sha256": "1b8acfa52aaad879613cb3ebd4ac257f1ae286d1f23746e413b4839d8e5a386e"
+    },
+    "macos-install.json": {
+      "bytes": 606,
+      "sha256": "3e5f79aff18d80fbfb3cce2ded4fceeaf7dc0d48d47470655a8571f69295e5b1"
+    },
+    "macos-installed-byte-check.json": {
+      "bytes": 68,
+      "sha256": "c20432fe2830889ba12ebf3956e7e48f2f8beaed93cca8d72333b386b262c406"
+    },
+    "macos-native.json": {
+      "bytes": 3564,
+      "sha256": "c9e4deadc348f5b0f4b297f220b3120faf10e94171a03818392ede7ae6bf1814"
+    },
+    "macos-ptc.json": {
+      "bytes": 3561,
+      "sha256": "31f58761616092dd74dddcb09a063f8813057856da8a70b588ae55212298ebd3"
+    },
+    "native-balanced.png": {
+      "bytes": 232469,
+      "sha256": "f31018b8a312ddb5ee11adcb6e9ca1141570165288553aab11067dab15af0dfa"
+    },
+    "native-negative.png": {
+      "bytes": 233234,
+      "sha256": "8a26228fde4de644abdc4c2f2f76b96c525d614644c62871e20d063ddeefe2e0"
+    },
+    "observation-fingerprints.json": {
+      "bytes": 1032,
+      "sha256": "b09cd56beaecc6f20e20424b808596d407a435eab6d81b67b0822799e3cf251f"
+    },
+    "ptc-balanced.png": {
+      "bytes": 232285,
+      "sha256": "7028d9986bac4e9b9814ea5a11c0628abbcac7f9398edf734d078837834346a3"
+    },
+    "ptc-negative.png": {
+      "bytes": 233248,
+      "sha256": "453191af12743de1a554e2e4bce1069c65d01e4d252964b5eeb3c80efd476943"
+    },
+    "wire-verification.json": {
+      "bytes": 3554,
+      "sha256": "d1cc354c411e5d903e12ea78753fcb785cfd5351b00276af926399f3de1b1e25"
+    },
+    "ci-byte-comparison.json": {
+      "bytes": 784,
+      "sha256": "bdc91580e1b91790d58de23b716cc37b1f506b79c147f4dfeeb4b0b700730a3c"
+    }
+  },
+  "publicPrivacyScan": "passed selected synthetic assets; full wire/reasoning/config/private handoff excluded"
 }

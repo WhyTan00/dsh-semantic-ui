@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync,mkdtempSync}from'node:fs';
 import{tmpdir}from'node:os';import path from'node:path';import assert from'node:assert/strict';import{createHash}from'node:crypto';
@@ -12,7 +13,7 @@ function* objects(value,depth=0){if(depth>20||value===null)return;if(typeof valu
 const receipts=key=>readdirSync(shared+'/requests').filter(f=>f.startsWith(key+'-')).flatMap(f=>JSON.parse(readFileSync(shared+'/requests/'+f)).messages.filter(m=>m.role==='tool').flatMap(m=>[...objects(m.content)]));
 function annotated(revision){const v=permissionProjectionA3();v.revision=revision;v.summary='UNVERIFIED_GLOBAL_SUMMARY_'+revision;v.payload.title='UNVERIFIED_CAUSAL_TITLE';for(const n of v.payload.nodes){n.responsibility='UNVERIFIED_EXCLUSIVE_OWNER';n.constraints=['UNVERIFIED_FAILURE_INDEPENDENCE'];n.evidence=['UNVERIFIED_EVIDENCE'];}v.payload.edges[0].label='UNVERIFIED_GLOBAL_ENTRY';v.payload.scenarios=[{id:'source-path',label:'UNVERIFIED_PATH_NAME',nodeIds:['client','gateway','search','index'],edgeIds:['e-client-gw','e-gw-search','e-search-index'],explanation:'UNVERIFIED_FAULT_PROPAGATION'}];return v;}
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const{workspace}=await rpc('workspace/create',{path:workspacePath}),row=p.getByRole('treeitem',{name:workspace.title,exact:true});await row.waitFor();if(await row.getAttribute('aria-expanded')!=='true')await row.click();
  const bad=annotated(2);bad.payload.edges[3].type='read-write';bad.payload.edges[3].label='读写';bad.payload.edges.push({id:'prohibited-positive',source:'search',target:'store',directed:true,type:'access',evidence:[]});
  const cases=[

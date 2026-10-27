@@ -1,3 +1,4 @@
+import{LocaleContext}from'../src/i18n';
 import{it,expect}from'vitest';
 import{createElement}from'react';import{renderToStaticMarkup}from'react-dom/server';
 import{chart,distribution}from'../fixtures/examples';import{chartView}from'../src/chart-view';import{chartFacts}from'../src/facts';import{defaultTheme,themeTokens}from'../src/theme';import{DataChart}from'../src/components/DataChart';
@@ -18,6 +19,8 @@ it('uses the existing core facts for signed, all-missing and empty comparisons',
  const empty=chartView(p,{...selection,from:2,to:0},tokens).zeroFillComparison!;expect(empty.rowCount).toBe(0);expect(empty.series.every(s=>s.mean===null&&s.zeroFillIllustration.mean===null)).toBe(true);expect(chartView(p,{...selection,enabled:[]},tokens).zeroFillComparison?.series).toEqual([]);
 });
 it('labels fixed model prose as unverified and does not invent histogram means',()=>{
- if(chart.component!=='DataChart'||distribution.component!=='DataChart')throw Error();const before=JSON.stringify(chart.payload);const html=renderToStaticMarkup(createElement(DataChart,{data:chart.payload}));expect(html).toContain('Model explanation — original full data (unverified)');expect(html).toContain('Computed missing-value comparison');expect(html).toContain(chart.payload.fullDataExplanation!);expect(JSON.stringify(chart.payload)).toBe(before);
+ if(chart.component!=='DataChart'||distribution.component!=='DataChart')throw Error();const before=JSON.stringify(chart.payload);const html=renderEnglish(createElement(DataChart,{data:chart.payload}));expect(html).toContain('Model explanation — original full data (unverified)');expect(html).toContain('Computed missing-value comparison');expect(html).toContain(chart.payload.fullDataExplanation!);expect(JSON.stringify(chart.payload)).toBe(before);
  expect(chartView(distribution.payload,selection,tokens).zeroFillComparison).toBeNull();
 });
+
+function renderEnglish(node:Parameters<typeof renderToStaticMarkup>[0]){return renderToStaticMarkup(createElement(LocaleContext.Provider,{value:'en'},node));}

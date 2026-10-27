@@ -1,0 +1,60 @@
+{
+  "frozenAt": "2026-10-27T13:04:33.044383+00:00",
+  "scope": "Independent acceptance, not model-visible instructions or runtime answer whitelist",
+  "maxNewUserLevelModelTurns": 2,
+  "basis": [
+    "docs/evidence/natural/r9-T2.json",
+    "src/facts.ts chartFacts",
+    "src/source-numeric.ts sourceStatistics",
+    "examples/codex-readonly.py checked_zero_fill/zero_fill_answer"
+  ],
+  "caseI": {
+    "source": "岬湾4次净偏移读数是-8、-4、缺失、0 毫米。",
+    "question": "请根据这份记录解释：只用已读到的数据，与把空位暂按零补齐这两种口径，对平均净偏移和总净偏移各有什么影响？能据此说我们低估了真实完整记录吗？请把能判断的和还不知道的分开说清楚。",
+    "independentExpected": {
+      "positions": 4,
+      "observedCount": 3,
+      "missingCount": 1,
+      "observedSum": -12,
+      "observedMean": -4,
+      "zeroFillHypotheticalSum": -12,
+      "zeroFillHypotheticalMean": -3,
+      "directionVsObservedMean": "higher",
+      "meanDifference": 1,
+      "actualCompleteMean": "unknown",
+      "actualCompleteSum": "unknown",
+      "completeComparison": "If missing value x, full mean=(-12+x)/4 and total=-12+x; no evidence fixes x or bias sign."
+    },
+    "sourceSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+    "questionSha256": "3887e4ac88e8da579dd5579a06f48f690f7db8af3ccbbee9f43ab3110866d0b1"
+  },
+  "caseJ": {
+    "source": "鹭岸5次净偏移读数是6、缺失、-6、0、缺失 毫米。",
+    "question": "我们想决定这份记录能否直接作为完整记录使用。有人认为只要补零后的平均值和合计与现有读数一样，缺失就没有影响，可以不用再保留缺失状态。请核对这项解释，说明目前能报告什么、结论还缺什么依据。",
+    "independentExpected": {
+      "positions": 5,
+      "observedCount": 3,
+      "missingCount": 2,
+      "observedSum": 0,
+      "observedMean": 0,
+      "zeroFillHypotheticalSum": 0,
+      "zeroFillHypotheticalMean": 0,
+      "directionVsObservedMean": "same",
+      "actualCompleteMean": "unknown",
+      "actualCompleteSum": "unknown",
+      "completeComparison": "For missing x,y full mean=(x+y)/5 and total=x+y; even if x+y=0, individual missing values need not be zero and missingness remains."
+    },
+    "sourceSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+    "questionSha256": "c8030d50fd5ce1d669d41ba2078329af605a85a6b0bce71c1919701183545915"
+  },
+  "criteria": [
+    "Readable explanation must compare the named baseline/population, count and unit when numeric claims are made; no universal downward-bias claim.",
+    "Replacing only null positions with zero leaves observed sum unchanged, while mean changes only through its denominator; negative observed mean can rise, zero mean can stay equal.",
+    "Unknown true complete data is not identical to the zero-fill hypothetical; observed-only and hypothetical statistics do not establish the direction of true-data error.",
+    "Missingness is preserved even when both calculated values coincide. Measured zero is one actual recorded value, not proof of device health.",
+    "No unprovided missing cause, timing, sensor health, nonnegative domain, world/author truth or alert/trend conclusion may be invented. Explicit assumptions are allowed if labelled, not falsely promoted to source facts.",
+    "Actual tools, source comparison, new view and host final separate from full raw model final. No exact-answer string whitelist, fixture-to-raw substitution or expected-file access by model.",
+    "No unrelated engineering disclaimers required in the ordinary answer; flags and unverified boundaries belong to truthful evidence layers."
+  ],
+  "stop": "All new attempted user-level starts, interrupted/failed/retried turns count, max2; unknown start reconcile, no third; no old-turn reset. First actual generic defect may be fixed with 0-model checks before independent remaining turn. No model without frozen input+source+archive+skill+generic guide and independent expected."
+}

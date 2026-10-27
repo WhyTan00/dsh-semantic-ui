@@ -1,3 +1,4 @@
+import{LocaleContext}from'../src/i18n';
 import {describe,it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
 import {createElement} from 'react';
@@ -73,7 +74,7 @@ describe('declared input effect coverage',()=>{
  });
  it('renders preference-only explanation and explicit mapping, without claiming source verification',()=>{
   const x=saved('D2');if(x.component!=='DecisionExplorer')throw Error();
-  const html=renderToStaticMarkup(createElement(AppearanceContext.Provider,{value:{theme:defaultTheme,layout:defaultLayout,strictPolicy:true}},createElement(DecisionExplorer,{data:x.payload})));
+  const html=renderEnglish(createElement(AppearanceContext.Provider,{value:{theme:defaultTheme,layout:defaultLayout,strictPolicy:true}},createElement(DecisionExplorer,{data:x.payload})));
   expect(html).toContain('Preference exploration only; does not change hard eligibility.');expect(html).toContain('Condition mapping (declared, not source verified)');expect(html).toContain('preference-only');
  });
 });
@@ -93,3 +94,5 @@ it('returns new requirement direction and input effects through actual MCP stdio
   expect(result.structuredContent).toHaveProperty('decisionFacts.requirements.2.relation','requires-availability');expect(result.structuredContent).toHaveProperty('decisionFacts.inputEffects.1.affectsEligibility',true);
  }finally{await client.close();await transport.close();}
 },20000);
+
+function renderEnglish(node:Parameters<typeof renderToStaticMarkup>[0]){return renderToStaticMarkup(createElement(LocaleContext.Provider,{value:'en'},node));}

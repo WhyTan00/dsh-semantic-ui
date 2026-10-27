@@ -1,5 +1,6 @@
 # 安装、隔离验证和回退
 
+preview.26默认简体中文；组件顶部可选择「简体中文 / English」并记住选择。最终安装接受见[语言回执](evidence/language.json)。
 preview.25源码候选新增均值/合计基准与独立读数记录入口，最终归档接受另见[数值基准回执](evidence/numeric-baseline.json)；下文24为此前已公开安装接受。
 当前推荐[preview.24](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)：382文件归档在macOS/Linux Native/PTC正常安装，字段合同可发现、标签错误精确定位、显式修正后交付/刷新与普通CLI已[单独接受](evidence/capacity-contract.json)，四匿名资产同字节。容量/无效域/旧1.2的完整23接受仍见[原回执](evidence/source-capacity.json)，不重跑或扩称本次窄验。组件协议和checkpoint不变，旧23/22/21资产不覆盖。
 

@@ -1,0 +1,27 @@
+{
+  "phase": "development-source",
+  "version": "0.1.0-preview.26",
+  "defaultLocale": "zh-CN",
+  "supported": [
+    "zh-CN",
+    "en"
+  ],
+  "unitTests": 245,
+  "developmentDsh": {
+    "native": {
+      "groups": 1,
+      "components": 4,
+      "pageErrors": 0
+    },
+    "ptc": {
+      "groups": 1,
+      "components": 4,
+      "pageErrors": 0
+    },
+    "fixtureOnly": true
+  },
+  "finalArchive": "pending",
+  "newModelTurns": 0,
+  "sourceFactsVerified": false,
+  "freeProseVerified": false
+}

@@ -9,3 +9,5 @@ preview.25 修正两处通用缺口：完整读数记录可以与普通问题分
 普通伴随入口显式支持 `--answer --hypothesis zero-fill`，可再加 `--model-candidate`。这在模型完成后由宿主独立调用现有来源比较和核心计算，不把宿主结果、评审答案或完整预期提前放入模型prompt。模型自己的工具调用、原文与宿主最终stdout分别保存；没有调用工具的正文不会因此获得认证。没有按问题关键词暗中启用补零。旧归档缺少sum字段时客户端保留unknown，不从均值倒推或重算。
 
 开发阶段32项6文件、18项Python离线合同通过；最终归档、正常隔离安装、Native/PTC、Linux与公开下载需要独立后补回执，开发检查不冒充它们。原T2原文、原六题0 pass / 6 fail / 18 requests、A2勘误及此前各独立2/2观察不改写。新I/J为Agent合成数据、有技能和通用工作流指引的独立观察，不能当成原六题重验或现实数据真实性。
+
+最终preview.25已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.25)，386文件正常安装、macOS/Linux Native/PTC各2例与CI成功；[I/J新观察](CODEX-NUMERIC-BASELINE-OBSERVATION.zh-CN.md)有限判据分别met，首次新图比较matched。公开资产的分层接受见[回执](evidence/numeric-baseline.json)，不是原六题重验。

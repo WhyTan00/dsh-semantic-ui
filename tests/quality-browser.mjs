@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import {chromium,expect} from '@playwright/test';
 import {readFileSync,writeFileSync,readdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
@@ -7,7 +8,7 @@ page.on('pageerror',e=>errors.push(e.message));
 const rpc=(method,request)=>page.evaluate(async({method,request})=>{const r=await fetch('/api/'+method,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:crypto.randomUUID(),method,payload:{args:{request}}})});const j=await r.json();if(!j.result?.ok)throw Error('Fixture RPC failed');return j.result.value;},{method,request});
 const cases=[['irregular','Irregular observation intervals'],['bars','Category comparison with long labels'],['missing','All observations missing'],['prebinned','Pre-aggregated proportions'],['graph','Cycles and parallel relationships']];
 try{
- await page.goto(origin);const {workspace}=await rpc('workspace/create',{path:process.cwd()});const row=page.getByRole('treeitem',{name:workspace.title,exact:true});await row.waitFor();if(await row.getAttribute('aria-expanded')!=='true')await row.click();
+ await page.goto(origin);await englishUI(page);const {workspace}=await rpc('workspace/create',{path:process.cwd()});const row=page.getByRole('treeitem',{name:workspace.title,exact:true});await row.waitFor();if(await row.getAttribute('aria-expanded')!=='true')await row.click();
  for(const [kind,title]of cases){
   const {sessionId}=await rpc('session/create',{workspaceId:workspace.workspaceId}),sessionTitle=`Quality ${kind} ${mode} ${Date.now()}`;await rpc('session/rename',{sessionId,title:sessionTitle});await rpc('session/selectModel',{sessionId,provider:'semantic-fixture',model:'semantic-fixture'});
   await rpc('session/prompt',{sessionId,requestId:crypto.randomUUID(),mode:'queue',content:[{type:'text',text:`Semantic fixture ${kind==='graph'?'architecture':'chart'} QUALITY_FIXTURE=${kind}. Deterministic quality regression, not a natural model test.`}],clientTimeZone:'UTC'});

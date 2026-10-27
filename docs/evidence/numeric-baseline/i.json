@@ -1,0 +1,918 @@
+{
+  "case": "I",
+  "actualModelTools": [
+    {
+      "tool": "semantic_ui_schema",
+      "status": "completed",
+      "arguments": {
+        "component": "DataChart"
+      },
+      "structuredResponse": {
+        "component": "DataChart",
+        "protocolVersion": "1.4",
+        "payloadSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "chartType": {
+                  "type": "string",
+                  "enum": [
+                    "line",
+                    "bar"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "x": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "time",
+                        "category"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "granularity": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "order": {
+                      "type": "string",
+                      "enum": [
+                        "ascending",
+                        "input"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "order"
+                  ],
+                  "additionalProperties": false
+                },
+                "series": {
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "rows": {
+                  "maxItems": 2000,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "x": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      },
+                      "values": {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                        },
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "x",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "fullDataExplanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                }
+              },
+              "required": [
+                "chartType",
+                "title",
+                "unit",
+                "x",
+                "series",
+                "rows"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "chartType": {
+                  "type": "string",
+                  "const": "histogram"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "display": {
+                  "type": "string",
+                  "enum": [
+                    "count",
+                    "proportion"
+                  ]
+                },
+                "source": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "const": "observations"
+                        },
+                        "boundaries": {
+                          "minItems": 2,
+                          "maxItems": 81,
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "groups": {
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "label": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 80
+                              },
+                              "observations": {
+                                "maxItems": 10000,
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "type": "number"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "label",
+                              "observations"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "boundaries",
+                        "groups"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "const": "prebinned"
+                        },
+                        "boundaries": {
+                          "minItems": 2,
+                          "maxItems": 81,
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "groups": {
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "label": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 80
+                              },
+                              "counts": {
+                                "maxItems": 80,
+                                "type": "array",
+                                "items": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 9007199254740991
+                                }
+                              },
+                              "missing": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 9007199254740991
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "label",
+                              "counts",
+                              "missing"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "boundaries",
+                        "groups"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "fullDataExplanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                }
+              },
+              "required": [
+                "chartType",
+                "title",
+                "unit",
+                "display",
+                "source"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "envelope": {
+          "protocolVersion": "1.4",
+          "displayId": "stable-subject-id",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "A short readable conclusion.",
+          "payload": "Follow payloadSchema."
+        },
+        "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+        "semantics": "Only fields inside dataFacts are program-computed; summary and fullDataExplanation are echoed model prose, never independently verified. Do not attribute an extra calculation to the program if it is absent from dataFacts. zeroFillIllustration.directionRelativeToObservedMean compares a hypothetical zero-filled mean to the observed-data mean only: signed values can make it higher, lower or the same. The observed sum and zeroFillIllustration.sum cover their named counts; zero-fill leaves a finite observed subtotal unchanged. Equal statistics do not erase missingness. These comparisons do not establish bias relative to unknown complete-data means or sums. A zero fill can leave the numeric mean unchanged; do not say every imputation changes it. The render receipt returns deterministic full-data dataFacts; check prose against these facts, including endpoints, minimum, maximum and net change. Line/bar rows need explicit null for missing values. Time timestamps need offsets, timezone and granularity; duplicate instants need explicit upstream aggregation. Describe only the observed interval: do not invent irregular spacing, missing causes or trend forecasts. Histograms share increasing equal-width bin boundaries: [lower,upper), last bin includes upper. Unequal-width bins are unsupported; do not invent rebinning from pre-aggregated counts. Ratio denominator is valid observations in each group; missing is excluded. Weighted averages and quantiles are unsupported.",
+        "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+      },
+      "error": null
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {},
+      "structuredResponse": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "jsonPointer": null,
+          "textSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "excerptSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 58,
+            "textUTF8Bytes": 58
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "岬湾",
+          "measurement": "净偏移",
+          "unit": "毫米",
+          "positions": [
+            {
+              "index": 0,
+              "value": -8,
+              "span": {
+                "textByteStart": 28,
+                "textByteEnd": 30
+              }
+            },
+            {
+              "index": 1,
+              "value": -4,
+              "span": {
+                "textByteStart": 33,
+                "textByteEnd": 35
+              }
+            },
+            {
+              "index": 2,
+              "value": null,
+              "span": {
+                "textByteStart": 38,
+                "textByteEnd": 44
+              }
+            },
+            {
+              "index": 3,
+              "value": 0,
+              "span": {
+                "textByteStart": 47,
+                "textByteEnd": 48
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫米",
+          "positions": 4,
+          "values": [
+            -8,
+            -4,
+            null,
+            0
+          ],
+          "missingMask": [
+            false,
+            false,
+            true,
+            false
+          ],
+          "observed": {
+            "count": 3,
+            "missing": 1,
+            "sum": -12,
+            "mean": -4,
+            "denominator": 3,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 4,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 4,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "岬湾的净偏移读数（毫米），按原文位置：1=-8、2=-4、3=缺失、4=0。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：-4 毫米；分母为3个实际观测。\n已观测3项的小计：-12 毫米；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "error": null
+    },
+    {
+      "tool": "semantic_ui_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "jiawan-net-displacement",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "按原文位置保留缺失值；补零仅作为另列假设。",
+          "payload": {
+            "chartType": "bar",
+            "title": "岬湾净偏移记录",
+            "unit": "毫米",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "net",
+                "label": "净偏移"
+              }
+            ],
+            "rows": [
+              {
+                "id": "r1",
+                "x": "1",
+                "values": {
+                  "net": -8
+                }
+              },
+              {
+                "id": "r2",
+                "x": "2",
+                "values": {
+                  "net": -4
+                }
+              },
+              {
+                "id": "r3",
+                "x": "3",
+                "values": {
+                  "net": null
+                }
+              },
+              {
+                "id": "r4",
+                "x": "4",
+                "values": {
+                  "net": 0
+                }
+              }
+            ]
+          }
+        }
+      },
+      "structuredResponse": {
+        "status": "validated",
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "summarySource": "model-authored; not independently verified",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "dataFacts": {
+          "scope": "original-full-data",
+          "chartType": "bar",
+          "unit": "毫米",
+          "order": "input",
+          "rows": 4,
+          "firstRow": {
+            "id": "r1",
+            "x": "1",
+            "xTruncated": false
+          },
+          "lastRow": {
+            "id": "r4",
+            "x": "4",
+            "xTruncated": false
+          },
+          "series": [
+            {
+              "id": "net",
+              "valid": 3,
+              "missing": 1,
+              "sum": -12,
+              "mean": -4,
+              "zeroFillIllustration": {
+                "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                "count": 4,
+                "sum": -12,
+                "differenceFromObservedSum": 0,
+                "directionRelativeToObservedSum": "same",
+                "completeDataSumKnown": false,
+                "mean": -3,
+                "differenceFromObservedMean": 1,
+                "directionRelativeToObservedMean": "higher",
+                "completeDataMeanKnown": false
+              },
+              "minimum": -8,
+              "maximum": 0,
+              "firstValue": -8,
+              "lastValue": 0,
+              "netChange": 8,
+              "adjacentValidDecreases": 0
+            }
+          ]
+        },
+        "canonicalSummary": "Declared bar data in 毫米: net: 3 valid, 1 missing, mean -4.",
+        "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+        "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+      },
+      "error": null
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "completed",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "jiawan-net-displacement",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "按原文位置保留缺失值；补零仅作为另列假设。",
+          "payload": {
+            "chartType": "bar",
+            "title": "岬湾净偏移记录",
+            "unit": "毫米",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "net",
+                "label": "净偏移"
+              }
+            ],
+            "rows": [
+              {
+                "id": "r1",
+                "x": "1",
+                "values": {
+                  "net": -8
+                }
+              },
+              {
+                "id": "r2",
+                "x": "2",
+                "values": {
+                  "net": -4
+                }
+              },
+              {
+                "id": "r3",
+                "x": "3",
+                "values": {
+                  "net": null
+                }
+              },
+              {
+                "id": "r4",
+                "x": "4",
+                "values": {
+                  "net": 0
+                }
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "seriesId": "net",
+          "rows": [
+            {
+              "rowId": "r1",
+              "sourceIndex": 0
+            },
+            {
+              "rowId": "r2",
+              "sourceIndex": 1
+            },
+            {
+              "rowId": "r3",
+              "sourceIndex": 2
+            },
+            {
+              "rowId": "r4",
+              "sourceIndex": 3
+            }
+          ]
+        },
+        "claims": [
+          {
+            "kind": "mean",
+            "population": "observed",
+            "unit": "毫米",
+            "value": -4,
+            "denominator": 3
+          },
+          {
+            "kind": "mean",
+            "population": "complete",
+            "unit": "毫米",
+            "value": null,
+            "denominator": 4
+          }
+        ]
+      },
+      "structuredResponse": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "jsonPointer": null,
+          "textSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "excerptSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 58,
+            "textUTF8Bytes": 58
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "岬湾",
+          "measurement": "净偏移",
+          "unit": "毫米",
+          "positions": [
+            {
+              "index": 0,
+              "value": -8,
+              "span": {
+                "textByteStart": 28,
+                "textByteEnd": 30
+              }
+            },
+            {
+              "index": 1,
+              "value": -4,
+              "span": {
+                "textByteStart": 33,
+                "textByteEnd": 35
+              }
+            },
+            {
+              "index": 2,
+              "value": null,
+              "span": {
+                "textByteStart": 38,
+                "textByteEnd": 44
+              }
+            },
+            {
+              "index": 3,
+              "value": 0,
+              "span": {
+                "textByteStart": 47,
+                "textByteEnd": 48
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫米",
+          "positions": 4,
+          "values": [
+            -8,
+            -4,
+            null,
+            0
+          ],
+          "missingMask": [
+            false,
+            false,
+            true,
+            false
+          ],
+          "observed": {
+            "count": 3,
+            "missing": 1,
+            "sum": -12,
+            "mean": -4,
+            "denominator": 3,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 4,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 4,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "matched",
+          "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+          "rowChecks": [
+            {
+              "sourceIndex": 0,
+              "rowId": "r1",
+              "seriesId": "net",
+              "expected": -8,
+              "actual": -8,
+              "missing": false,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 28,
+                "textByteEnd": 30
+              }
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "r2",
+              "seriesId": "net",
+              "expected": -4,
+              "actual": -4,
+              "missing": false,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 33,
+                "textByteEnd": 35
+              }
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "r3",
+              "seriesId": "net",
+              "expected": null,
+              "actual": null,
+              "missing": true,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 38,
+                "textByteEnd": 44
+              }
+            },
+            {
+              "sourceIndex": 3,
+              "rowId": "r4",
+              "seriesId": "net",
+              "expected": 0,
+              "actual": 0,
+              "missing": false,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 47,
+                "textByteEnd": 48
+              }
+            }
+          ],
+          "viewAnnotations": "not-verified"
+        },
+        "issues": [],
+        "claimChecks": [
+          {
+            "index": 0,
+            "kind": "mean",
+            "population": "observed",
+            "status": "supported",
+            "expected": {
+              "value": -4,
+              "denominator": 3,
+              "unit": "毫米"
+            },
+            "actual": {
+              "kind": "mean",
+              "population": "observed",
+              "denominator": 3,
+              "value": -4,
+              "unit": "毫米"
+            },
+            "scopeKnown": true,
+            "reason": "Unweighted arithmetic mean within the explicitly named range."
+          },
+          {
+            "index": 1,
+            "kind": "mean",
+            "population": "complete",
+            "status": "supported",
+            "expected": {
+              "value": null,
+              "denominator": 4,
+              "unit": "毫米"
+            },
+            "actual": {
+              "kind": "mean",
+              "population": "complete",
+              "denominator": 4,
+              "value": null,
+              "unit": "毫米"
+            },
+            "scopeKnown": false,
+            "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+          }
+        ],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "岬湾的净偏移读数（毫米），按原文位置：1=-8、2=-4、3=缺失、4=0。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：-4 毫米；分母为3个实际观测。\n已观测3项的小计：-12 毫米；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "error": null
+    }
+  ],
+  "builtInDiscoveryCount": 2,
+  "hostExplicitSemanticCallCount": 5,
+  "candidateSha256": "58751c05894f3dbe0a36a85bcf4b909df8a1a788d6006ec8e45b46b49492547a",
+  "candidateStatus": "unverified",
+  "modelTerminal": "completed",
+  "observedModelTurns": 1,
+  "typedSkillItemAccepted": true,
+  "backendModelRequestCount": "unknown",
+  "defaults": {
+    "model": "gpt-6.1-sol",
+    "reasoningEffort": "max",
+    "modelProvider": "openai",
+    "serviceTier": "default"
+  },
+  "hostDelivery": {
+    "kind": "host-source-zero-fill-hypothesis",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n岬湾的净偏移读数（毫米），按原文位置：1=-8、2=-4、3=缺失、4=0。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：-4 毫米；分母为3个实际观测。\n已观测3项的小计：-12 毫米；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。\n补零假设平均值：-3 毫米；分母为4个原始位置。\n相对已观测均值的差（假设减实测）：1 毫米；方向：较高。\n补零假设合计：-12 毫米；覆盖4个假设位置。\n相对已观测小计的差（假设减实测）：0 毫米；方向：相同。\n存在有限已观测小计时，只将缺失位置按零处理不改变该小计；均值还取决于分母。数值碰巧相同也不消除原始缺失状态。\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值或合计的偏差方向。\n原始完整均值、合计及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。",
+    "sourceTextSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+    "sourceDocumentSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "projectionSource": "host-derived original readings, not model output",
+    "hypothesis": {
+      "mode": "zero-fill",
+      "status": "available",
+      "unit": "毫米",
+      "count": 4,
+      "mean": -3,
+      "differenceFromObservedMean": 1,
+      "directionRelativeToObservedMean": "higher",
+      "completeDataMeanKnown": false,
+      "sum": -12,
+      "differenceFromObservedSum": 0,
+      "directionRelativeToObservedSum": "same",
+      "completeDataSumKnown": false,
+      "sourceFact": false
+    }
+  }
+}

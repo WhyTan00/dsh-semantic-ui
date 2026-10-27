@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync}from'node:fs';
 import assert from'node:assert/strict';
@@ -18,7 +19,7 @@ const cases=[
  {key:mode+'-workflow-legacy',source:'PROTOCOL_HISTORY=1.0 Semantic fixture architecture',argsSequence:[{version:'1.0',component:'ArchitectureExplorer'}],expected:'legacy'},
 ];
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const{workspace}=await rpc('workspace/create',{path:process.cwd()}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();let originalSession,originalTitle,originalExplanation;
  for(const c of cases){
   writeFileSync(process.env.SOURCE_HOST_CASE_FILE,JSON.stringify({key:c.key,sourceText:c.source,argsSequence:c.argsSequence}));const{sessionId}=c.reuseOriginal?{sessionId:originalSession}:await rpc('session/create',{workspaceId:workspace.workspaceId}),title=c.reuseOriginal?originalTitle:'Workflow rules '+c.key+' '+Date.now();

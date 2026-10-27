@@ -1,0 +1,274 @@
+{
+  "cliRuns": [
+    {
+      "run": "baseline24",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 0,
+      "processes": [
+        {
+          "observerPid": 25820,
+          "childPid": 25822,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 25825,
+          "childPid": 25826,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "I-preflight25",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 0,
+      "processes": [
+        {
+          "observerPid": 29694,
+          "childPid": 29695,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 29700,
+          "childPid": 29701,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "J-preflight25",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 0,
+      "processes": [
+        {
+          "observerPid": 30514,
+          "childPid": 30515,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 30516,
+          "childPid": 30517,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "all-missing25",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 0,
+      "processes": [
+        {
+          "observerPid": 30919,
+          "childPid": 30922,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 30924,
+          "childPid": 30925,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "I-model25",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 1,
+      "processes": [
+        {
+          "observerPid": 30076,
+          "childPid": 30077,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 30078,
+          "childPid": 30080,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    },
+    {
+      "run": "J-model25",
+      "appServerExitCode": 0,
+      "appServerAbsent": true,
+      "temporaryRootRemoved": true,
+      "extraRootsRemoved": true,
+      "globalConfigShaUnchanged": true,
+      "newModelTurnRequests": 1,
+      "processes": [
+        {
+          "observerPid": 31328,
+          "childPid": 31329,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        },
+        {
+          "observerPid": 31336,
+          "childPid": 31337,
+          "observerAlive": false,
+          "childAlive": false,
+          "exit": {
+            "code": null,
+            "signal": "SIGTERM"
+          },
+          "missingExitCause": null
+        }
+      ]
+    }
+  ],
+  "ownedHosts": [
+    {
+      "run": "host-1793106928493",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 28196,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 28197,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 28441,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "allPidsAbsent": true,
+      "ports": [
+        {
+          "port": 64515,
+          "listening": false
+        },
+        {
+          "port": 64514,
+          "listening": false
+        }
+      ]
+    },
+    {
+      "run": "host-1793107075708",
+      "processes": [
+        {
+          "kind": "fixture",
+          "pid": 30144,
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "pid": 30145,
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "pid": 30357,
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ],
+      "allPidsAbsent": true,
+      "ports": [
+        {
+          "port": 65388,
+          "listening": false
+        },
+        {
+          "port": 65387,
+          "listening": false
+        }
+      ]
+    }
+  ],
+  "noSharedServiceStopped": true,
+  "backendRequestCounts": "unknown for observed model turns"
+}

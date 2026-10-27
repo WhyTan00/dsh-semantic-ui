@@ -1,0 +1,78 @@
+{
+  "runs": [
+    {
+      "run": "baseline24",
+      "hostExplicitCalls": 2,
+      "modelSemanticCalls": 0,
+      "builtInDiscoveryCalls": 0,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    },
+    {
+      "run": "I-preflight25",
+      "hostExplicitCalls": 4,
+      "modelSemanticCalls": 0,
+      "builtInDiscoveryCalls": 0,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    },
+    {
+      "run": "J-preflight25",
+      "hostExplicitCalls": 4,
+      "modelSemanticCalls": 0,
+      "builtInDiscoveryCalls": 0,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    },
+    {
+      "run": "all-missing25",
+      "hostExplicitCalls": 5,
+      "modelSemanticCalls": 0,
+      "builtInDiscoveryCalls": 0,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    },
+    {
+      "run": "I-model25",
+      "hostExplicitCalls": 5,
+      "modelSemanticCalls": 4,
+      "builtInDiscoveryCalls": 2,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    },
+    {
+      "run": "J-model25",
+      "hostExplicitCalls": 5,
+      "modelSemanticCalls": 4,
+      "builtInDiscoveryCalls": 2,
+      "allArgumentsContentAndStructuredResponsesEqual": true,
+      "hostMatchedByRequestResponseTimeIntervalFirst": true,
+      "modelRemainingMatchedByArgumentsAndResponseMultiset": true,
+      "stdoutEqualsHostAnswerPlusPrintNewline": true
+    }
+  ],
+  "sameFrozenObservationFields": {
+    "archiveSha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11",
+    "clientSha256": "4f6f071e77634e4708a7bbfd22e643cc2987f2520ba9060f9aef670b5e2bd314",
+    "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+    "archivedCoreSha256": "2a729ccc7ceba5f87cac3b8883bee5353749ec5ba7b8d729a31007c4a7ff48ec",
+    "archivedProtocolSha256": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6",
+    "defaultModel": "gpt-6.1-sol",
+    "defaultReasoning": "max"
+  },
+  "sameGenericGuideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "fullInvocationObjectsEqual": false,
+  "fullInvocationDifferenceReason": "Case source files, temporary workspaces and per-instance tool IDs differ by design. Component byte fingerprints and default settings above are equal.",
+  "initialProbeErratum": "First verification wrongly required stdout exact bytes without Python print newline; original answer.md and stdout unchanged. This check accounts for exactly one print newline, not general whitespace normalization.",
+  "transportMetadata": "Semantic content and structuredContent compared in full; transport-only metadata is not a semantic field."
+}

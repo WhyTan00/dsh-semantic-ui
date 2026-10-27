@@ -1,3 +1,4 @@
+import{LocaleContext}from'../src/i18n';
 import {it,expect} from 'vitest';
 import {renderToStaticMarkup} from 'react-dom/server';
 import {createElement} from 'react';
@@ -40,7 +41,7 @@ it('preserves all prior protocol payloads and refuses new deliveries that try to
  for(const v of [capability,resource]){expect(validateEnvelope(v).ok).toBe(true);expect(analyzeValidated(v)).not.toHaveProperty('declarationMapping');expect(validateForDelivery(v).ok).toBe(false);}const x=fresh();x.protocolVersion='1.3';expect(issues(x).some(i=>i.code==='UNSUPPORTED_VERSION')).toBe(true);
 });
 it('shows exact fields, roles and expected/actual scope in the existing UI without certifying prose',()=>{
- const x=fresh();const html=renderToStaticMarkup(createElement(AppearanceContext.Provider,{value:{theme:defaultTheme,layout:defaultLayout,strictPolicy:true}},createElement(DecisionExplorer,{data:x.payload})));expect(html).toContain('Declaration checks — source unverified');expect(html).toContain('field maintenance (resource-need, unitless)');expect(html).toContain('input teamAvailable (resource-available)');expect(html).toContain('declared expected effect: hard');expect(html).toContain('do not certify the source or model prose');
+ const x=fresh();const html=renderEnglish(createElement(AppearanceContext.Provider,{value:{theme:defaultTheme,layout:defaultLayout,strictPolicy:true}},createElement(DecisionExplorer,{data:x.payload})));expect(html).toContain('Declaration checks — source unverified');expect(html).toContain('field maintenance (resource-need, unitless)');expect(html).toContain('input teamAvailable (resource-available)');expect(html).toContain('declared expected effect: hard');expect(html).toContain('do not certify the source or model prose');
 });
 
 it('retains 1.0/1.1/1.2/1.3 histories without inserting declarations',()=>{
@@ -61,3 +62,5 @@ it('does not certify a consistently mislabeled source or pretend the original tr
 it('supplies current declared fixtures for future focused host suites without mutating old history sources',()=>{
  for(const view of [declaredDecision,...Object.values(currentGroundingFixtures).filter(Boolean)])expect(analyzeEnvelope(view)).toHaveProperty('status','validated');expect(resource.protocolVersion).toBe('1.3');expect(resource.payload).not.toHaveProperty('inputs.0.expectedEffect');
 });
+
+function renderEnglish(node:Parameters<typeof renderToStaticMarkup>[0]){return renderToStaticMarkup(createElement(LocaleContext.Provider,{value:'en'},node));}

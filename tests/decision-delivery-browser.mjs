@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';import{readFileSync,writeFileSync,readdirSync,mkdtempSync}from'node:fs';import{tmpdir}from'node:os';import path from'node:path';import assert from'node:assert/strict';
 import{d1Record,d1Mapping}from'../fixtures/source-decision';import{annotatedDecision}from'../fixtures/decision-delivery';import{a3Record,permissionProjectionA3}from'../fixtures/source-permissions';
 const output=process.env.HOST_OUTPUT,shared=process.env.HOST_SHARED,mode=process.env.TOOL_MODE;
@@ -7,7 +8,7 @@ const rpc=(method,request)=>p.evaluate(async({method,request})=>{const r=await f
 function* objects(v,n=0){if(n>20||v===null)return;if(typeof v==='object'){yield v;for(const x of Object.values(v))yield*objects(x,n+1);}else if(typeof v==='string'){try{yield*objects(JSON.parse(v),n+1);}catch{const a=v.indexOf('{'),b=v.lastIndexOf('}');if(a>=0&&b>a)try{yield*objects(JSON.parse(v.slice(a,b+1)),n+1);}catch{}}}}
 const receipts=key=>readdirSync(shared+'/requests').filter(f=>f.startsWith(key+'-')).flatMap(f=>JSON.parse(readFileSync(shared+'/requests/'+f)).messages.filter(m=>m.role==='tool').flatMap(m=>[...objects(m.content)]));
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();const{workspace}=await rpc('workspace/create',{path:workspacePath}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();const{workspace}=await rpc('workspace/create',{path:workspacePath}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();
  const bad=annotatedDecision();bad.payload.options[0].values.team_maint=false;bad.payload.options[1].values.vendor_managed=false;bad.payload.dimensions[3].kind='number';bad.payload.dimensions[3].unit='元/月';
  const forbidden=permissionProjectionA3();forbidden.payload.edges.push({id:'forbidden',source:'search',target:'store',directed:true,type:'access',evidence:[]});
  const cases=[

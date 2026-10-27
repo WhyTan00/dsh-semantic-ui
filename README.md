@@ -1,5 +1,9 @@
 # DSH Semantic UI
 
+**默认简体中文，可切换 English。** 每个组件顶部的「界面语言」会同步切换本页界面，并记住选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置。来源原文与数据保持原样。详见[语言设置](docs/LANGUAGE.zh-CN.md)、[中文介绍](docs/OVERVIEW.zh-CN.md)与[安装说明](docs/INSTALL.zh-CN.md)。
+
+preview.26语言界面源码已完成，最终归档与宿主接受状态见[本版回执](docs/evidence/language.json)。
+
 **Preview.25 source** adds [explicit mean and sum baselines](docs/NUMERIC-BASELINE.zh-CN.md), accepts a complete reading record separately from the ordinary question, and keeps complete-data totals unknown when readings are missing. Final archive installation, model observations and release evidence are tracked separately in the [receipt](docs/evidence/numeric-baseline.json).
 
 **[Preview.24](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)** makes the [existing capacity field contract discoverable](docs/CAPACITY-CONTRACT.zh-CN.md) and separates label errors from wrong current quantities. The382-file final archive passed normal macOS/Linux Native/PTC diagnostic repair and refresh,19 targeted checks, CLI refusal/delivery and four anonymous byte comparisons. [Two guided observations](docs/CODEX-CAPACITY-OBSERVATION.zh-CN.md) preserve correct raw prose alongside seven rejected first-case views on23; the independent24 follow-up current view matched first. A hypothetical demand still cannot masquerade as original source data. Different cases/versions are not a causal benchmark or general prose certification.

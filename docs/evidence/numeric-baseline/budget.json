@@ -1,0 +1,26 @@
+{
+  "maximumNewAttempts": 2,
+  "used": 2,
+  "attempts": [
+    {
+      "case": "I",
+      "attempt": 1,
+      "startedAt": "2026-10-27T13:18:40.187908+00:00",
+      "status": "completed",
+      "fingerprintsSha256": "b09cd56beaecc6f20e20424b808596d407a435eab6d81b67b0822799e3cf251f",
+      "observedModelTurns": 1,
+      "rawSha256": "58751c05894f3dbe0a36a85bcf4b909df8a1a788d6006ec8e45b46b49492547a"
+    },
+    {
+      "case": "J",
+      "attempt": 2,
+      "startedAt": "2026-10-27T13:21:07.673949+00:00",
+      "status": "completed",
+      "sameFrozenArchiveClientSkillAndGuide": true,
+      "observedModelTurns": 1,
+      "rawSha256": "73c8abc98174e741d587cbdd92cd71ac0a0388a57083047c48f3ed501fb99558"
+    }
+  ],
+  "closedAt": "2026-10-27T13:22:56.687957+00:00",
+  "noThirdAttempt": true
+}

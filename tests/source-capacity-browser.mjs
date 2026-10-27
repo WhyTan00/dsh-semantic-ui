@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync}from'node:fs';
 import assert from'node:assert/strict';
@@ -20,7 +21,7 @@ const cases=[
  {key:mode+'-capacity-legacy',source:'PROTOCOL_HISTORY=1.2 Semantic fixture decision',argsSequence:[{version:'1.2',component:'DecisionExplorer'}],expected:'legacy'},
 ];
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const{workspace}=await rpc('workspace/create',{path:process.cwd()}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();
  let originalSession,originalTitle,originalExplanation;
  for(const c of cases){

@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync}from'node:fs';
 import assert from'node:assert/strict';
@@ -8,7 +9,7 @@ const browser=await chromium.launch(),context=await browser.newContext({viewport
 p.on('pageerror',e=>errors.push(e.message));
 const rpc=(method,request)=>p.evaluate(async({method,request})=>{const response=await fetch('/api/'+method,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:crypto.randomUUID(),method,payload:{args:{request}}})});const r=(await response.json()).result;if(!r.ok)throw Error('Isolated fixture RPC failed');return r.value;},{method,request});
 try{
- await p.goto(auth);await p.waitForTimeout(700);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(700);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const {workspace}=await rpc('workspace/create',{path:process.cwd()}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();
  const {sessionId}=await rpc('session/create',{workspaceId:workspace.workspaceId}),title='Legacy chart smoke '+mode+' '+Date.now();
  await rpc('session/rename',{sessionId,title});await rpc('session/selectModel',{sessionId,provider:'semantic-fixture',model:'semantic-fixture'});

@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import {chromium,expect} from '@playwright/test';
 import {readFileSync,writeFileSync,existsSync} from 'node:fs';
 import assert from 'node:assert/strict';
@@ -6,7 +7,7 @@ const browser=await chromium.launch(),context=await browser.newContext({storageS
 page.on('pageerror',e=>errors.push(e.message));
 try{
   const denied=await fetch(origin+'/api/dsh-semantic-ui/library',{method:'POST',headers:{'content-type':'application/json'},body:'{}'});assert.equal(denied.status,401,'Unauthenticated callers cannot access personal templates');
-  await page.goto(origin);
+  await page.goto(origin);await englishUI(page);
   const rpc=async(method,request,raw=false)=>page.evaluate(async({method,request,raw})=>{const response=await fetch('/api/'+method,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:crypto.randomUUID(),method,payload:raw?request:{args:{request}}})});const result=(await response.json()).result;if(!result?.ok)throw Error(result?.error?.message??'RPC failed');return result.value;},{method,request,raw});
   const library=request=>rpc('dsh-semantic-ui/library',request,true);
   let snapshot=await library({action:'list'}),restartPersistence=false;

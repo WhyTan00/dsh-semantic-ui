@@ -1,0 +1,68 @@
+{
+  "run": "baseline24",
+  "archiveSha256": "ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70",
+  "newModelTurns": 0,
+  "sourceChecks": [
+    {
+      "request": {},
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15\",\"jsonPointer\":null,\"textSha256\":\"d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15\",\"excerptSha256\":\"d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":58,\"textUTF8Bytes\":58},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"source-unsupported\",\"issues\":[{\"code\":\"SOURCE_SYNTAX\",\"path\":\"$.source.excerpt\",\"reason\":\"Use the complete supported final mean question; no trailing clause is discarded.\"}],\"comparison\":{\"status\":\"not-assessed\"},\"canonicalExplanation\":{\"status\":\"withheld\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+            "jsonPointer": null,
+            "textSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+            "excerptSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 58,
+              "textUTF8Bytes": 58
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "source-unsupported",
+          "issues": [
+            {
+              "code": "SOURCE_SYNTAX",
+              "path": "$.source.excerpt",
+              "reason": "Use the complete supported final mean question; no trailing clause is discarded."
+            }
+          ],
+          "comparison": {
+            "status": "not-assessed"
+          },
+          "canonicalExplanation": {
+            "status": "withheld"
+          }
+        }
+      }
+    }
+  ],
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "withheld",
+    "text": "当前来源或比较请求未通过完整核对，未交付已核答复。\n\n完整来源不符合受限语法；未跳过未支持部分。\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。",
+    "sourceTextSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+    "sourceDocumentSha256": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  }
+}

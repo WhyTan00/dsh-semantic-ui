@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync}from'node:fs';import{createHash,randomUUID}from'node:crypto';import assert from'node:assert/strict';
 import{numericRequest}from'../fixtures/source-numeric';
@@ -7,7 +8,7 @@ const browser=await chromium.launch(),p=await browser.newPage({viewport:{width:1
 const rpc=(method,request)=>p.evaluate(async({method,request})=>{const r=await fetch('/api/'+method,{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:crypto.randomUUID(),method,payload:{args:{request}}})});const j=await r.json();if(!j.result?.ok)throw Error('Owned baseline RPC failed '+method);return j.result.value;},{method,request});
 function* objects(v,n=0){if(n>20||v===null)return;if(typeof v==='object'){yield v;for(const x of Object.values(v))yield*objects(x,n+1);}else if(typeof v==='string'){try{yield*objects(JSON.parse(v),n+1);}catch{const a=v.indexOf('{'),b=v.lastIndexOf('}');if(a>=0&&b>a)try{yield*objects(JSON.parse(v.slice(a,b+1)),n+1);}catch{}}}}
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const{workspace}=await rpc('workspace/create',{path:process.cwd()}),wr=p.getByRole('treeitem',{name:workspace.title,exact:true});await wr.waitFor();if(await wr.getAttribute('aria-expanded')!=='true')await wr.click();
  for(const c of [{id:'negative',values:[-9,null,3],sum:-6,mean:-3,zmean:-2,direction:'higher'},{id:'balanced',values:[7,null,-7],sum:0,mean:0,zmean:0,direction:'same'}]){
   const key='numeric-baseline-'+mode+'-'+c.id,text=`离线样本3次位移读数是${c.values.map(v=>v===null?'缺失':v).join('、')} 厘米。`,request=numericRequest(c.values,'位移','厘米',key),sequence=[{action:'source-check'},{action:'render',...request}];

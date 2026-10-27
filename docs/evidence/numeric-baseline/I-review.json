@@ -1,0 +1,63 @@
+{
+  "reviewedBeforeJ": "2026-10-27T13:21:07.672821+00:00",
+  "case": "I",
+  "rawSha256": "58751c05894f3dbe0a36a85bcf4b909df8a1a788d6006ec8e45b46b49492547a",
+  "verdict": "met-finite-criteria",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "met",
+      "evidence": "Explicit 3 observed versus4 hypothetical positions, exact millimetres and mean denominators; sum named observed subtotal."
+    },
+    {
+      "criterion": 2,
+      "status": "met",
+      "evidence": "Mean -4 to -3 rises1; sum -12 unchanged."
+    },
+    {
+      "criterion": 3,
+      "status": "met",
+      "evidence": "Unknown true complete mean and sum; x expressions preserve unknown bias sign."
+    },
+    {
+      "criterion": 4,
+      "status": "met",
+      "evidence": "Recorded zero separate; missing item stays unknown, no new observation by zero fill."
+    },
+    {
+      "criterion": 5,
+      "status": "met",
+      "evidence": "No cause/time/device-health/domain/alert/trend claim."
+    }
+  ],
+  "actualModelTools": [
+    {
+      "tool": "semantic_ui_schema",
+      "status": null,
+      "comparison": null,
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "compared",
+      "comparison": "not-requested",
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_check",
+      "status": "validated",
+      "comparison": null,
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "compared",
+      "comparison": "matched",
+      "issueCodes": []
+    }
+  ],
+  "hostDelivery": "delivered-separate",
+  "candidateStatus": "unverified",
+  "freeProseVerified": false,
+  "basis": "Manual reading against independently frozen expectations, not runtime certification"
+}

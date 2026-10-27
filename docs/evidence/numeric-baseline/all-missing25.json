@@ -1,0 +1,140 @@
+{
+  "run": "all-missing25",
+  "archiveSha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11",
+  "newModelTurns": 0,
+  "sourceChecks": [
+    {
+      "request": {},
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599\",\"jsonPointer\":null,\"textSha256\":\"6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599\",\"excerptSha256\":\"6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":56,\"textUTF8Bytes\":56},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"离线记录\",\"measurement\":\"位移\",\"unit\":\"厘米\",\"positions\":[{\"index\":0,\"value\":null,\"span\":{\"textByteStart\":31,\"textByteEnd\":37}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":40,\"textByteEnd\":46}}]},\"sourceStatistics\":{\"unit\":\"厘米\",\"positions\":2,\"values\":[null,null],\"missingMask\":[true,true],\"observed\":{\"count\":0,\"missing\":2,\"sum\":null,\"mean\":null,\"denominator\":0,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":2,\"sum\":null,\"sumKnown\":false,\"mean\":null,\"denominator\":2,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"离线记录的位移读数（厘米），按原文位置：1=缺失、2=缺失。\\n共2个位置，0个实际观测、2个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\\n完整2次读数的平均值：未知；完整范围分母为2。\\n完整2次读数的合计：未知。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599",
+            "jsonPointer": null,
+            "textSha256": "6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599",
+            "excerptSha256": "6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 56,
+              "textUTF8Bytes": 56
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "compared",
+          "sourceObservations": {
+            "context": "离线记录",
+            "measurement": "位移",
+            "unit": "厘米",
+            "positions": [
+              {
+                "index": 0,
+                "value": null,
+                "span": {
+                  "textByteStart": 31,
+                  "textByteEnd": 37
+                }
+              },
+              {
+                "index": 1,
+                "value": null,
+                "span": {
+                  "textByteStart": 40,
+                  "textByteEnd": 46
+                }
+              }
+            ]
+          },
+          "sourceStatistics": {
+            "unit": "厘米",
+            "positions": 2,
+            "values": [
+              null,
+              null
+            ],
+            "missingMask": [
+              true,
+              true
+            ],
+            "observed": {
+              "count": 0,
+              "missing": 2,
+              "sum": null,
+              "mean": null,
+              "denominator": 0,
+              "scope": "declared non-missing positions only"
+            },
+            "complete": {
+              "count": 2,
+              "sum": null,
+              "sumKnown": false,
+              "mean": null,
+              "denominator": 2,
+              "known": false,
+              "scope": "all declared positions; missing readings remain unknown"
+            },
+            "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete selected finite source readings and explicit calculation range only",
+            "text": "离线记录的位移读数（厘米），按原文位置：1=缺失、2=缺失。\n共2个位置，0个实际观测、2个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整2次读数的平均值：未知；完整范围分母为2。\n完整2次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+          }
+        }
+      }
+    }
+  ],
+  "hostDelivery": {
+    "kind": "host-source-zero-fill-hypothesis",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n离线记录的位移读数（厘米），按原文位置：1=缺失、2=缺失。\n共2个位置，0个实际观测、2个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整2次读数的平均值：未知；完整范围分母为2。\n完整2次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。\n补零假设平均值：0 厘米；分母为2个原始位置。\n相对已观测均值的差（假设减实测）：未知（没有有效实测均值） 厘米；方向：未知。\n补零假设合计：0 厘米；覆盖2个假设位置。\n相对已观测小计的差（假设减实测）：未知（现有核心未提供有限计算值） 厘米；方向：未知。\n存在有限已观测小计时，只将缺失位置按零处理不改变该小计；均值还取决于分母。数值碰巧相同也不消除原始缺失状态。\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值或合计的偏差方向。\n原始完整均值、合计及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。",
+    "sourceTextSha256": "6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599",
+    "sourceDocumentSha256": "6db9ec69e67c475956275b2f4dcfd160a6f728da143bc5acf6be134a5712c599",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "projectionSource": "host-derived original readings, not model output",
+    "hypothesis": {
+      "mode": "zero-fill",
+      "status": "available",
+      "unit": "厘米",
+      "count": 2,
+      "mean": 0,
+      "differenceFromObservedMean": null,
+      "directionRelativeToObservedMean": "unknown",
+      "completeDataMeanKnown": false,
+      "sum": 0,
+      "differenceFromObservedSum": null,
+      "directionRelativeToObservedSum": "unknown",
+      "completeDataSumKnown": false,
+      "sourceFact": false,
+      "calculationSource": "separate-zero-filled-copy"
+    }
+  }
+}

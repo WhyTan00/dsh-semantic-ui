@@ -1,3 +1,4 @@
+import{translate,type Locale}from'./i18n';
 import type {Chart} from './protocol';
 import {histogram,numericStats,sortedRows} from './math';
 import {chartFacts} from './facts';
@@ -22,7 +23,8 @@ export function axisNumber(value:number){
 }
 
 /** One data transformation feeds the chart, accessible description, table and download. */
-export function chartView(p:Chart,selection:ChartSelection,tokens:Tokens){
+export function chartView(p:Chart,selection:ChartSelection,tokens:Tokens,locale:Locale='en'){
+  const t=(key:string)=>translate(locale,key);
   const {enabled,from,to,scope}=selection;
   const defs=(p.chartType==='histogram'?p.source.groups:p.series).map(({id,label})=>({id,label}));
   const chosen=defs.filter(s=>enabled.includes(s.id));
@@ -35,12 +37,12 @@ export function chartView(p:Chart,selection:ChartSelection,tokens:Tokens){
   const selectedBins=bins.filter(g=>enabled.includes(g.id)).map(g=>{const selected=from>to?[]:g.counts.slice(from,to+1);return {...g,selected,selectedN:selected.reduce((a,c)=>a+c,0)};});
   const visibleStats=p.chartType==='histogram'?[]:chosen.map(s=>({...s,...numericStats(rows.map(r=>r.values[s.id]))}));
   const valid=p.chartType==='histogram'?selectedBins.reduce((n,g)=>n+g.selectedN,0):visibleStats.reduce((n,s)=>n+s.n,0);
-  const emptyReason=!chosen.length||!total||from>to?'No data in the current selection.':!valid?'No valid observations in the current selection. Missing values remain missing.':null;
+  const emptyReason=!chosen.length||!total||from>to?t('No data in the current selection.'):!valid?t('No valid observations in the current selection. Missing values remain missing.'):null;
   const temporal=p.chartType!=='histogram'&&p.x.kind==='time';
   const horizontal=p.chartType==='bar'&&p.x.kind==='category'&&(labels.length>6||labels.some(label=>label.length>18));
-  const formatter=temporal?new Intl.DateTimeFormat('en-GB',{timeZone:p.x.timezone,year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}):undefined;
+  const formatter=temporal?new Intl.DateTimeFormat(locale==='zh-CN'?'zh-CN':'en-GB',{timeZone:p.x.timezone,year:'numeric',month:'short',day:'2-digit',hour:'2-digit',minute:'2-digit',second:'2-digit',hourCycle:'h23'}):undefined;
   const timeLabel=(value:number)=>formatter!.format(new Date(value));
-  const description=`${p.title}. ${p.chartType} chart; unit ${p.unit}. Selected range ${from}–${to}. ${temporal?'Horizontal distances encode elapsed time. ':''}${p.chartType==='histogram'?selectedBins.map(g=>`${g.label}: ${g.selectedN} valid selected observations; ${g.missing} missing in full group, bin unknown.`).join(' '):visibleStats.map(s=>`${s.label}: ${s.n} valid, ${s.missing} missing.`).join(' ')} Equivalent values are available in the source data table.`;
+  const description=locale==='zh-CN'?`${p.title}。${t(p.chartType)}图；单位${p.unit}。选定范围${from}–${to}。${temporal?'横向距离表示经过的时间。':''}${p.chartType==='histogram'?selectedBins.map(g=>`${g.label}：选中${g.selectedN}个有效观测；整组${g.missing}个缺失，所属分箱未知。`).join(''):visibleStats.map(s=>`${s.label}：${s.n}个有效观测，${s.missing}个缺失。`).join('')}等价数值见源数据表。`:`${p.title}. ${p.chartType} chart; unit ${p.unit}. Selected range ${from}–${to}. ${temporal?'Horizontal distances encode elapsed time. ':''}${p.chartType==='histogram'?selectedBins.map(g=>`${g.label}: ${g.selectedN} valid selected observations; ${g.missing} missing in full group, bin unknown.`).join(' '):visibleStats.map(s=>`${s.label}: ${s.n} valid, ${s.missing} missing.`).join(' ')} Equivalent values are available in the source data table.`;
   const series=p.chartType==='histogram'?selectedBins.map(g=>({
     id:g.id,name:g.label,...seriesEncoding(defs.findIndex(d=>d.id===g.id),tokens,true),type:'bar' as const,barCategoryGap:'0%',barGap:'0%',
     data:p.display==='count'?g.selected:g.selected.map(c=>g.selectedN?c/g.selectedN:null),
@@ -56,16 +58,16 @@ export function chartView(p:Chart,selection:ChartSelection,tokens:Tokens){
     grid:{left:12,right:24,top:44,bottom:temporal?18:24,containLabel:true},
     legend:{show:true,top:0,left:'center',selectedMode:false,type:'scroll' as const,textStyle:{fontSize:tokens.size-2,color:tokens.text}},
     tooltip:{trigger:'axis' as const,renderMode:'richText' as const,confine:true,backgroundColor:tokens.surface,borderColor:tokens.border,textStyle:{color:tokens.text,fontFamily:tokens.font},
-      formatter:(params:unknown)=>{const items=(Array.isArray(params)?params:[params])as {dataIndex:number;seriesName:string;value:number|[number,number|null]|null}[];const i=items[0]?.dataIndex??0;return [labels[i]??'',...items.map(item=>`${item.seriesName}: ${Array.isArray(item.value)?item.value[1]??'Missing':item.value??'Missing'} ${p.chartType==='histogram'?(p.display==='count'?'count':'proportion'):p.unit}`)].join('\n');}},
+      formatter:(params:unknown)=>{const items=(Array.isArray(params)?params:[params])as {dataIndex:number;seriesName:string;value:number|[number,number|null]|null}[];const i=items[0]?.dataIndex??0;return [labels[i]??'',...items.map(item=>`${item.seriesName}: ${Array.isArray(item.value)?item.value[1]??t('Missing'):item.value??t('Missing')} ${p.chartType==='histogram'?(p.display==='count'?t('count'):t('proportion')):p.unit}`)].join('\n');}},
     xAxis:horizontal?valueAxis:temporal?{type:'time' as const,min:'dataMin',max:'dataMax',splitNumber:3,axisLine:{lineStyle:{color:tokens.border}},axisLabel:{color:tokens.muted,fontSize:tokens.size-3,hideOverlap:true,formatter:(value:number)=>timeLabel(value).replace(', ','\n')},axisPointer:{label:{formatter:(params:{value:number})=>timeLabel(params.value)}}}:categoryAxis,
     yAxis:horizontal?{...categoryAxis,inverse:true}:valueAxis,series,
   };
   let headers:string[],tableRows:(string|number|null)[][];
   if(p.chartType==='histogram'){
     const visible=scope==='all'?bins:selectedBins;
-    if(scope==='all'&&p.source.mode==='observations'){headers=['Group',`Raw observation (${p.unit})`];tableRows=p.source.groups.flatMap(g=>g.observations.map(v=>[g.label,v]));}
-    else{const indices=binLabels.map((_,i)=>i).filter(i=>scope==='all'||i>=from&&i<=to);headers=['Bin',...visible.map(g=>g.label)];tableRows=indices.map(i=>[binLabels[i],...visible.map(g=>{const n='selectedN'in g&&typeof g.selectedN==='number'?g.selectedN:g.n;return p.display==='count'?g.counts[i]:n?g.counts[i]/n:null;})]);}
-  }else{const tableDefs=scope==='all'?defs:chosen;headers=[`x (${p.x.kind==='time'?`${p.x.timezone}, ${p.x.granularity}`:'category'})`,...tableDefs.map(s=>`${s.label} (${p.unit})`)];tableRows=(scope==='all'?allRows:rows).map(r=>[r.x,...tableDefs.map(s=>r.values[s.id])]);}
+    if(scope==='all'&&p.source.mode==='observations'){headers=[t('Group'),`${locale==='zh-CN'?'原始观测':'Raw observation'} (${p.unit})`];tableRows=p.source.groups.flatMap(g=>g.observations.map(v=>[g.label,v]));}
+    else{const indices=binLabels.map((_,i)=>i).filter(i=>scope==='all'||i>=from&&i<=to);headers=[t('Bin'),...visible.map(g=>g.label)];tableRows=indices.map(i=>[binLabels[i],...visible.map(g=>{const n='selectedN'in g&&typeof g.selectedN==='number'?g.selectedN:g.n;return p.display==='count'?g.counts[i]:n?g.counts[i]/n:null;})]);}
+  }else{const tableDefs=scope==='all'?defs:chosen;headers=[`x (${p.x.kind==='time'?`${p.x.timezone}, ${p.x.granularity}`:t('category')})`,...tableDefs.map(s=>`${s.label} (${p.unit})`)];tableRows=(scope==='all'?allRows:rows).map(r=>[r.x,...tableDefs.map(s=>r.values[s.id])]);}
   const tableScope=p.chartType==='histogram'?(scope==='all'&&p.source.mode==='observations'?'original-observations':scope==='all'?'pre-aggregated-bins':'filtered-derived-bins'):scope==='all'?'all-source-rows':'filtered-source-rows';
   let zeroFillComparison=null;
   if(p.chartType!=='histogram'){

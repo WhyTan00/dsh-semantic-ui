@@ -1,0 +1,169 @@
+{
+  "run": "J-preflight25",
+  "archiveSha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11",
+  "newModelTurns": 0,
+  "sourceChecks": [
+    {
+      "request": {},
+      "response": {
+        "content": [
+          {
+            "type": "text",
+            "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c\",\"jsonPointer\":null,\"textSha256\":\"a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c\",\"excerptSha256\":\"a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":66,\"textUTF8Bytes\":66},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"鹭岸\",\"measurement\":\"净偏移\",\"unit\":\"毫米\",\"positions\":[{\"index\":0,\"value\":6,\"span\":{\"textByteStart\":28,\"textByteEnd\":29}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":32,\"textByteEnd\":38}},{\"index\":2,\"value\":-6,\"span\":{\"textByteStart\":41,\"textByteEnd\":43}},{\"index\":3,\"value\":0,\"span\":{\"textByteStart\":46,\"textByteEnd\":47}},{\"index\":4,\"value\":null,\"span\":{\"textByteStart\":50,\"textByteEnd\":56}}]},\"sourceStatistics\":{\"unit\":\"毫米\",\"positions\":5,\"values\":[6,null,-6,0,null],\"missingMask\":[false,true,false,false,true],\"observed\":{\"count\":3,\"missing\":2,\"sum\":0,\"mean\":0,\"denominator\":3,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":5,\"sum\":null,\"sumKnown\":false,\"mean\":null,\"denominator\":5,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"鹭岸的净偏移读数（毫米），按原文位置：1=6、2=缺失、3=-6、4=0、5=缺失。\\n共5个位置，3个实际观测、2个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：0 毫米；分母为3个实际观测。\\n已观测3项的小计：0 毫米；仅覆盖实际观测。\\n完整5次读数的平均值：未知；完整范围分母为5。\\n完整5次读数的合计：未知。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\"}}"
+          }
+        ],
+        "structuredContent": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+            "jsonPointer": null,
+            "textSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+            "excerptSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 66,
+              "textUTF8Bytes": 66
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "compared",
+          "sourceObservations": {
+            "context": "鹭岸",
+            "measurement": "净偏移",
+            "unit": "毫米",
+            "positions": [
+              {
+                "index": 0,
+                "value": 6,
+                "span": {
+                  "textByteStart": 28,
+                  "textByteEnd": 29
+                }
+              },
+              {
+                "index": 1,
+                "value": null,
+                "span": {
+                  "textByteStart": 32,
+                  "textByteEnd": 38
+                }
+              },
+              {
+                "index": 2,
+                "value": -6,
+                "span": {
+                  "textByteStart": 41,
+                  "textByteEnd": 43
+                }
+              },
+              {
+                "index": 3,
+                "value": 0,
+                "span": {
+                  "textByteStart": 46,
+                  "textByteEnd": 47
+                }
+              },
+              {
+                "index": 4,
+                "value": null,
+                "span": {
+                  "textByteStart": 50,
+                  "textByteEnd": 56
+                }
+              }
+            ]
+          },
+          "sourceStatistics": {
+            "unit": "毫米",
+            "positions": 5,
+            "values": [
+              6,
+              null,
+              -6,
+              0,
+              null
+            ],
+            "missingMask": [
+              false,
+              true,
+              false,
+              false,
+              true
+            ],
+            "observed": {
+              "count": 3,
+              "missing": 2,
+              "sum": 0,
+              "mean": 0,
+              "denominator": 3,
+              "scope": "declared non-missing positions only"
+            },
+            "complete": {
+              "count": 5,
+              "sum": null,
+              "sumKnown": false,
+              "mean": null,
+              "denominator": 5,
+              "known": false,
+              "scope": "all declared positions; missing readings remain unknown"
+            },
+            "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+          },
+          "comparison": {
+            "status": "not-requested"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete selected finite source readings and explicit calculation range only",
+            "text": "鹭岸的净偏移读数（毫米），按原文位置：1=6、2=缺失、3=-6、4=0、5=缺失。\n共5个位置，3个实际观测、2个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫米；分母为3个实际观测。\n已观测3项的小计：0 毫米；仅覆盖实际观测。\n完整5次读数的平均值：未知；完整范围分母为5。\n完整5次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+          }
+        }
+      }
+    }
+  ],
+  "hostDelivery": {
+    "kind": "host-source-zero-fill-hypothesis",
+    "status": "delivered",
+    "text": "来源内的有限说明（宿主保障）\n\n鹭岸的净偏移读数（毫米），按原文位置：1=6、2=缺失、3=-6、4=0、5=缺失。\n共5个位置，3个实际观测、2个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫米；分母为3个实际观测。\n已观测3项的小计：0 毫米；仅覆盖实际观测。\n完整5次读数的平均值：未知；完整范围分母为5。\n完整5次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。\n补零假设平均值：0 毫米；分母为5个原始位置。\n相对已观测均值的差（假设减实测）：0 毫米；方向：相同。\n补零假设合计：0 毫米；覆盖5个假设位置。\n相对已观测小计的差（假设减实测）：0 毫米；方向：相同。\n存在有限已观测小计时，只将缺失位置按零处理不改变该小计；均值还取决于分母。数值碰巧相同也不消除原始缺失状态。\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值或合计的偏差方向。\n原始完整均值、合计及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。",
+    "sourceTextSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+    "sourceDocumentSha256": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "projectionSource": "host-derived original readings, not model output",
+    "hypothesis": {
+      "mode": "zero-fill",
+      "status": "available",
+      "unit": "毫米",
+      "count": 5,
+      "mean": 0,
+      "differenceFromObservedMean": 0,
+      "directionRelativeToObservedMean": "same",
+      "completeDataMeanKnown": false,
+      "sum": 0,
+      "differenceFromObservedSum": 0,
+      "directionRelativeToObservedSum": "same",
+      "completeDataSumKnown": false,
+      "sourceFact": false
+    }
+  }
+}

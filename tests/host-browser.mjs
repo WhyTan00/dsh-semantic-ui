@@ -1,7 +1,8 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';import{readFileSync,writeFileSync,mkdirSync}from'node:fs';import assert from'node:assert/strict';
 const origin=process.env.HOST_ORIGIN;const output=process.env.HOST_OUTPUT;const auth=readFileSync(output+'/dsh-host.log','utf8').match(/http:\/\/127\.0\.0\.1:\d+\/\?token=[^\s]+/)[0];
 const browser=await chromium.launch();const context=await browser.newContext({viewport:{width:1100,height:2300}});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
-await page.goto(auth);await page.waitForTimeout(900);if(await page.getByRole('button',{name:'Continue',exact:true}).isVisible())await page.getByRole('button',{name:'Continue',exact:true}).click();
+await page.goto(auth);await englishUI(page);await page.waitForTimeout(900);if(await page.getByRole('button',{name:'Continue',exact:true}).isVisible())await page.getByRole('button',{name:'Continue',exact:true}).click();
 const rpc=async(method,request)=>page.evaluate(async({method,request})=>{const r=await fetch('/api/'+method,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'client-request',rpcId:crypto.randomUUID(),method,payload:{args:request===undefined?{}:{request}}})});const j=await r.json();if(!j.result?.ok)throw Error(JSON.stringify(j.result));return j.result.value;},{method,request});
 const {workspace}=await rpc('workspace/create',{path:process.cwd()});
 const workspaceRow=page.getByRole('treeitem',{name:workspace.title,exact:true});await workspaceRow.waitFor();if(await workspaceRow.getAttribute('aria-expanded')!=='true')await workspaceRow.click();

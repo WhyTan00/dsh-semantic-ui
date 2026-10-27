@@ -1,0 +1,63 @@
+{
+  "case": "J",
+  "reviewedAt": "2026-10-27T13:22:56.687289+00:00",
+  "rawSha256": "73c8abc98174e741d587cbdd92cd71ac0a0388a57083047c48f3ed501fb99558",
+  "verdict": "met-finite-criteria",
+  "criteria": [
+    {
+      "criterion": 1,
+      "status": "met",
+      "evidence": "3 observed vs5 hypothetical/complete positions, exact millimetres, denominator3 vs5; observed subtotal and hypothetical sum distinguished."
+    },
+    {
+      "criterion": 2,
+      "status": "met",
+      "evidence": "Both means/sums0; equality explained by zero subtotal, not unknown individual readings."
+    },
+    {
+      "criterion": 3,
+      "status": "met",
+      "evidence": "True complete total/mean and bias sign unknown; needs missing values or independently established aggregate."
+    },
+    {
+      "criterion": 4,
+      "status": "met",
+      "evidence": "Preserves positions2/5 missing and recorded0 at4; even zero missing aggregate would not mean each value0 or a complete row-level record."
+    },
+    {
+      "criterion": 5,
+      "status": "met",
+      "evidence": "No invented cause/time/health/domain/world/identity or alert/trend consequence."
+    }
+  ],
+  "actualModelTools": [
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "compared",
+      "comparison": "not-requested",
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_schema",
+      "status": null,
+      "comparison": null,
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_check",
+      "status": "validated",
+      "comparison": null,
+      "issueCodes": []
+    },
+    {
+      "tool": "semantic_ui_source_check",
+      "status": "compared",
+      "comparison": "matched",
+      "issueCodes": []
+    }
+  ],
+  "hostDelivery": "delivered-separate",
+  "candidateStatus": "unverified",
+  "freeProseVerified": false,
+  "basis": "Manual reading against frozen independent criteria, not runtime certification"
+}

@@ -1,0 +1,88 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "case": "negative",
+      "source": "离线样本3次位移读数是-9、缺失、3 厘米。",
+      "sourceTextSha256": "be69181c8ca0e596e79c1e83aa52af340997e728d1040774b505e348c775bd80",
+      "observed": {
+        "count": 2,
+        "missing": 1,
+        "sum": -6,
+        "mean": -3,
+        "denominator": 2,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 3,
+        "sum": null,
+        "sumKnown": false,
+        "mean": null,
+        "denominator": 3,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "canonicalExplanation": "离线样本的位移读数（厘米），按原文位置：1=-9、2=缺失、3=3。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：-3 厘米；分母为2个实际观测。\n已观测2项的小计：-6 厘米；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+      "missingMask": [
+        false,
+        true,
+        false
+      ],
+      "zeroFillHypothesis": {
+        "mean": -2,
+        "sum": -6,
+        "directionRelativeToObservedMean": "higher"
+      },
+      "fixtureOnly": true,
+      "sourceFixedDuringFilter": true,
+      "refreshRestored": true,
+      "noRequestOnRefresh": true,
+      "containerWidth": 360,
+      "noRootOverflow": true,
+      "coincidentZeroRefused": false
+    },
+    {
+      "case": "balanced",
+      "source": "离线样本3次位移读数是7、缺失、-7 厘米。",
+      "sourceTextSha256": "55d3468cff2191161c583535af767b6a58ed15c5b0200adf70ac528cb5add226",
+      "observed": {
+        "count": 2,
+        "missing": 1,
+        "sum": 0,
+        "mean": 0,
+        "denominator": 2,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 3,
+        "sum": null,
+        "sumKnown": false,
+        "mean": null,
+        "denominator": 3,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "canonicalExplanation": "离线样本的位移读数（厘米），按原文位置：1=7、2=缺失、3=-7。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 厘米；分母为2个实际观测。\n已观测2项的小计：0 厘米；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+      "missingMask": [
+        false,
+        true,
+        false
+      ],
+      "zeroFillHypothesis": {
+        "mean": 0,
+        "sum": 0,
+        "directionRelativeToObservedMean": "same"
+      },
+      "fixtureOnly": true,
+      "sourceFixedDuringFilter": true,
+      "refreshRestored": true,
+      "noRequestOnRefresh": true,
+      "containerWidth": 360,
+      "noRootOverflow": true,
+      "coincidentZeroRefused": true
+    }
+  ],
+  "pageErrors": [],
+  "newRealModelTurns": 0,
+  "archiveInstallation": true
+}

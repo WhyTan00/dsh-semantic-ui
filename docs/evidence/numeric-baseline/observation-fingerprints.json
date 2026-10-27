@@ -1,0 +1,18 @@
+{
+  "frozenAt": "2026-10-27T13:18:14.629676+00:00",
+  "version": "0.1.0-preview.25",
+  "sourceCommit": "48a3105b990b84fef6ea54d4d2b28dff27a5c24c",
+  "archiveSha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11",
+  "clientSha256": "4f6f071e77634e4708a7bbfd22e643cc2987f2520ba9060f9aef670b5e2bd314",
+  "skillSha256": "f651e17f9a2ff5a1bb205e9d65b7f909202eee3a101f5949017a7ed60c3beaa3",
+  "guideSha256": "7bc626cb93ca28e9fc92d98b45cef920ecf6aa99807a149bf440d7b6e4e6dd22",
+  "criteriaSha256": "93ff56ca27dd3a1f1300d66716fe4a72e2ba77384e20a7e917cf982176229e6d",
+  "sourceAndQuestionFiles": {
+    "J-source.txt": "a4b5bbd869b9f73cc3c371fee7f8893e47d88c7ce73e0306548c023782cd7b4c",
+    "J-question.txt": "c8030d50fd5ce1d669d41ba2078329af605a85a6b0bce71c1919701183545915",
+    "I-question.txt": "3887e4ac88e8da579dd5579a06f48f690f7db8af3ccbbee9f43ab3110866d0b1",
+    "I-source.txt": "d32826ed2403e48dca0d124d65f37654e01b53825aa1915fd67d97210ac32d15"
+  },
+  "guideChanged": false,
+  "modelReadableExpectedFile": false
+}

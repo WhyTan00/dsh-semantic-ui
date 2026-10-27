@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.25.tgz",
+    "bytes": 2675232,
+    "sha256": "df45cef1d7deaeaaf56dce84a3bc794d788f79077502bbd3574ca885bbb8ea11",
+    "macosLinuxSameBytes": true
+  },
+  {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.25.tgz",
+    "bytes": 31830945,
+    "sha256": "9cf0b0ea4089ef124dbd6e4634322b63b3fe6c47772646c8017ec6bab88f9cda",
+    "macosLinuxSameBytes": true
+  },
+  {
+    "filename": "SHA256SUMS",
+    "bytes": 229,
+    "sha256": "76fff96119fa2cd87ecbc24a5241fdb329be99f7720bc2d3b71c9aef8fbca992",
+    "macosLinuxSameBytes": true
+  },
+  {
+    "filename": "package-manifest.json",
+    "bytes": 34646,
+    "sha256": "8a559663f7073eb2bf58ed6a75e735756e8d84820922c398abfaf1232c003afc",
+    "macosLinuxSameBytes": true
+  }
+]

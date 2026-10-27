@@ -1,3 +1,4 @@
+import{englishUI}from'./fixtures/english-ui.mjs';
 import{chromium,expect}from'@playwright/test';
 import{readFileSync,writeFileSync,readdirSync,mkdtempSync}from'node:fs';
 import{tmpdir}from'node:os';import path from'node:path';import assert from'node:assert/strict';import{createHash}from'node:crypto';
@@ -13,7 +14,7 @@ const rpc=(method,request)=>p.evaluate(async({method,request})=>{const r=await f
 function* objects(value,depth=0){if(depth>20||value===null)return;if(typeof value==='object'){yield value;for(const v of Object.values(value))yield*objects(v,depth+1);}else if(typeof value==='string'){try{yield*objects(JSON.parse(value),depth+1);}catch{const a=value.indexOf('{'),b=value.lastIndexOf('}');if(a>=0&&b>a)try{yield*objects(JSON.parse(value.slice(a,b+1)),depth+1);}catch{}}}}
 const receiptFor=key=>readdirSync(shared+'/requests').filter(f=>f.startsWith(key+'-')).flatMap(f=>JSON.parse(readFileSync(shared+'/requests/'+f)).messages.filter(m=>m.role==='tool').flatMap(m=>[...objects(m.content)]));
 try{
- await p.goto(auth);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
+ await p.goto(auth);await englishUI(p);await p.waitForTimeout(500);if(await p.getByRole('button',{name:'Continue',exact:true}).isVisible())await p.getByRole('button',{name:'Continue',exact:true}).click();
  const{workspace}=await rpc('workspace/create',{path:workspacePath}),row=p.getByRole('treeitem',{name:workspace.title,exact:true});await row.waitFor();if(await row.getAttribute('aria-expanded')!=='true')await row.click();
  const reversed=sourceAlignedD1();if(reversed.component!=='DecisionExplorer')throw Error();reversed.payload.options[0].values.private_net=true;reversed.payload.options[1].values.private_net=false;reversed.payload.inputs[0].initial=true;
  const questionReversed=d1Record.question.replace('没有私网','支持私网').replace('后者支持私网','后者没有私网').replace('暂时不需要私网','现在需要私网');
