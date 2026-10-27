@@ -1,0 +1,76 @@
+{
+  "origin": "Selected actual first-turn failed view, not a model success or expected answer",
+  "source": "合成存储选项 雾汀 上限 240MB、部署简单，杉海 上限 900MB、维护复杂。现在需求 180MB，以后可能到 600MB。不同需求下该如何选？",
+  "request": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "storage-capacity-comparison",
+      "revision": 2,
+      "component": "DecisionExplorer",
+      "summary": "当前需求为 180MB；本地按 600MB 探索时只改变容量条件的计算。",
+      "payload": {
+        "title": "当前容量需求与未来可能需求",
+        "dimensions": [
+          {
+            "id": "ceiling",
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "MB"
+          }
+        ],
+        "options": [
+          {
+            "id": "option-0",
+            "label": "雾汀",
+            "values": {
+              "ceiling": 240
+            },
+            "advantages": [],
+            "disadvantages": [],
+            "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+            "evidence": []
+          },
+          {
+            "id": "option-1",
+            "label": "杉海",
+            "values": {
+              "ceiling": 900
+            },
+            "advantages": [],
+            "disadvantages": [],
+            "suitableWhen": "按容量上限是否达到本地需求判断容量条件。",
+            "evidence": []
+          }
+        ],
+        "inputs": [
+          {
+            "id": "demand",
+            "label": "需求",
+            "type": "number",
+            "unit": "MB",
+            "initial": 180,
+            "expectedEffect": "hard"
+          }
+        ],
+        "rules": [],
+        "constraints": [],
+        "requirements": [
+          {
+            "id": "capacity",
+            "dimension": "ceiling",
+            "input": "demand",
+            "relation": "at-least"
+          }
+        ]
+      }
+    },
+    "mapping": {
+      "capacityDimensionId": "ceiling",
+      "demandInputId": "demand",
+      "requirementId": "capacity"
+    }
+  },
+  "originalIssueCodes": [
+    "SOURCE_CURRENT_DEMAND"
+  ]
+}

@@ -1,5 +1,5 @@
 import {z} from 'zod';
-import {bounded,validateEnvelope,type Decision} from './protocol';
+import {bounded,validateEnvelope,VERSION,type Decision} from './protocol';
 import {decisionFacts} from './facts';
 import {decide} from './math';
 import {CAPACITY_DOMAIN} from './capacity-domain';
@@ -26,6 +26,11 @@ const claim=z.strictObject({kind:name,option:name.optional(),value:z.union([amou
 });
 export const sourceCapacityRequestSchema=z.strictObject({view:z.unknown().optional(),mapping:coordinates.optional(),claims:z.array(claim).max(SOURCE_LIMITS.claims).optional(),prose:z.string().max(20000).optional()});
 export type CapacityCoordinates=z.infer<typeof coordinates>;
+export const CAPACITY_FIELD_LABELS={dimension:'容量上限',inputs:['需求容量','需求容量（本地假设）']} as const;
+/** The finite API's representation constraints are discoverable before a view is authored. */
+export function capacityViewContract(source:CapacitySource){
+ return {version:'1.0',component:'DecisionExplorer',protocolVersion:VERSION,mapping:{capacityDimensionId:'actual numeric dimension ID',demandInputId:'actual numeric input ID',requirementId:'actual hard requirement ID'},dimensions:{count:1,label:CAPACITY_FIELD_LABELS.dimension,kind:'number',unit:source.current.unit,omittedFields:['semanticRole']},inputs:{count:1,labels:[...CAPACITY_FIELD_LABELS.inputs],type:'number',unit:source.current.unit,initial:source.current.value,expectedEffect:'hard',omittedFields:['semanticRole','choices']},requirements:{count:1,relation:'at-least',direction:'capacityDimensionId >= demandInputId',omittedFields:['when']},policies:{rules:'empty',constraints:'empty'},qualitativeAttributes:'Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.',boundary:'These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified.'};
+}
 const bytes=(s:string)=>new TextEncoder().encode(s).length;
 export const capacitySourcePrefix=(text:string)=>/^(?:虚构|合成)?存储选项/u.test(text.trim());
 const literal=(s:string)=>/^[\p{L}\p{N}][\p{L}\p{N}_ -]{0,79}$/u.test(s);
@@ -73,7 +78,7 @@ export function parseCapacitySource(text:string,offset=0):{status:'ready';value:
 const qualityText=(value:Quality)=>value===null?'未声明':value==='simple'?'简单':'复杂';
 /** Existing component fields only. The one numeric input actually drives at-least. */
 export function capacityDecision(source:CapacitySource,c:CapacityCoordinates,optionIds=source.options.map((_,i)=>`option-${i}`)):Decision {
- return {title:'来源声明的容量与本地需求假设',dimensions:[{id:c.capacityDimensionId,label:'容量上限',kind:'number',unit:source.current.unit}],options:source.options.map((o,i)=>({id:optionIds[i],label:o.label,values:{[c.capacityDimensionId]:o.ceiling.value},advantages:[],disadvantages:[],suitableWhen:`来源部署：${qualityText(o.deployment.value)}；维护：${qualityText(o.maintenance.value)}。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。`,evidence:[]})),inputs:[{id:c.demandInputId,label:'需求容量（本地假设）',type:'number',unit:source.current.unit,initial:source.current.value,expectedEffect:'hard'}],requirements:[{id:c.requirementId,dimension:c.capacityDimensionId,input:c.demandInputId,relation:'at-least'}],rules:[],constraints:[]};
+ return {title:'来源声明的容量与本地需求假设',dimensions:[{id:c.capacityDimensionId,label:CAPACITY_FIELD_LABELS.dimension,kind:'number',unit:source.current.unit}],options:source.options.map((o,i)=>({id:optionIds[i],label:o.label,values:{[c.capacityDimensionId]:o.ceiling.value},advantages:[],disadvantages:[],suitableWhen:`来源部署：${qualityText(o.deployment.value)}；维护：${qualityText(o.maintenance.value)}。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。`,evidence:[]})),inputs:[{id:c.demandInputId,label:CAPACITY_FIELD_LABELS.inputs[1],type:'number',unit:source.current.unit,initial:source.current.value,expectedEffect:'hard'}],requirements:[{id:c.requirementId,dimension:c.capacityDimensionId,input:c.demandInputId,relation:'at-least'}],rules:[],constraints:[]};
 }
 function calculations(source:CapacitySource,p:Decision){
  const initial=decisionFacts(p,true);
@@ -97,16 +102,30 @@ export function checkSourceCapacity(snapshot:SourceSnapshot,input:unknown):Recor
  if(budget||!request.success)return finish({...common,status:'validation-failed',issues:budget?[budget]:request.error!.issues.map(i=>({code:'SOURCE_REQUEST',path:'$.'+i.path.join('.'),reason:i.message})),comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}});
  if(snapshot.textByteStart!==0||snapshot.textByteEnd!==snapshot.textBytes||snapshot.excerptSha256!==snapshot.textSha256)return {...common,status:'source-unsupported',issues:[{code:'SOURCE_CAPACITY_COMPLETE',path:'$.source',reason:'The whole selected text is required; an excerpt cannot drop current/future or qualitative declarations.'}],comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
  const parsed=parseCapacitySource(snapshot.excerpt,snapshot.textByteStart);if(parsed.status!=='ready')return {...common,status:'source-unsupported',issues:parsed.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
- const source=parsed.value,issues:SourceIssue[]=[],fieldChecks:Record<string,unknown>[]=[],inputChecks:Record<string,unknown>[]=[],add=(code:string,path:string,reason:string)=>issues.push({code,path,reason});
+ const source=parsed.value,viewContract=capacityViewContract(source),issues:SourceIssue[]=[],fieldChecks:Record<string,unknown>[]=[],inputChecks:Record<string,unknown>[]=[],add=(code:string,path:string,reason:string)=>issues.push({code,path,reason});
  const {view,mapping,claims=[],prose}=request.data;let comparison:{status:string}={status:'not-requested'},p=capacityDecision(source,{capacityDimensionId:'ceiling',demandInputId:'demand',requirementId:'capacity'});
  if(view!==undefined){
-  const validated=validateEnvelope(view);if(!validated.ok)return finish({...common,status:'validation-failed',issues:validated.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}});
-  if(validated.value.component!=='DecisionExplorer')return {...common,status:'source-unsupported',issues:[{code:'SOURCE_COMPONENT',path:'$.view.component',reason:'capacity-zh compares DecisionExplorer only.'}],comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
+  const validated=validateEnvelope(view);if(!validated.ok)return finish({...common,viewContract,status:'validation-failed',issues:validated.issues,comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}});
+  if(validated.value.component!=='DecisionExplorer')return {...common,viewContract,status:'source-unsupported',issues:[{code:'SOURCE_COMPONENT',path:'$.view.component',reason:'capacity-zh compares DecisionExplorer only.'}],comparison:{status:'not-assessed'},canonicalExplanation:{status:'withheld'}};
   p=validated.value.payload;
   if(!mapping)add('SOURCE_MAPPING_REQUIRED','$.mapping','Bind the real capacity dimension, demand input and hard requirement IDs.');
   const d=p.dimensions.find(d=>d.id===mapping?.capacityDimensionId),i=p.inputs.find(i=>i.id===mapping?.demandInputId),r=p.requirements?.find(r=>r.id===mapping?.requirementId);
-  if(p.dimensions.length!==1||!d||d.label!=='容量上限'||d.kind!=='number'||d.unit!==source.current.unit||d.semanticRole!==undefined)add('SOURCE_CAPACITY_DIMENSION','$.view.payload.dimensions','Exactly one numeric 容量上限 column in the source unit; qualitative attributes remain separate source explanations.');
-  if(p.inputs.length!==1||!i||!['需求容量','需求容量（本地假设）'].includes(i.label)||i.type!=='number'||i.unit!==source.current.unit||i.initial!==source.current.value||i.semanticRole!==undefined||i.expectedEffect!=='hard'||i.choices!==undefined)add('SOURCE_CURRENT_DEMAND','$.view.payload.inputs','One hard numeric demand input must start at the current source quantity in the exact unit, not the possible future point. Local edits are hypotheses.');
+  if(p.dimensions.length!==1||!d)add('SOURCE_CAPACITY_DIMENSION','$.view.payload.dimensions','Exactly one mapped capacity column is required; qualitative attributes remain separate source explanations. Read viewContract.');
+  if(d){
+   const path='$.view.payload.dimensions.'+p.dimensions.indexOf(d);
+   if(d.label!==CAPACITY_FIELD_LABELS.dimension)add('SOURCE_CAPACITY_LABEL',path+'.label','Use the literal capacity label '+CAPACITY_FIELD_LABELS.dimension+' from viewContract.');
+   if(d.kind!=='number'||d.semanticRole!==undefined)add('SOURCE_CAPACITY_DIMENSION_TYPE',path,'Use kind=number and omit semanticRole; boolean capability/resource roles do not describe quantities.');
+   if(d.unit!==source.current.unit)add('SOURCE_CAPACITY_UNIT',path+'.unit','Use the exact source unit '+source.current.unit+'; no implicit conversion.');
+  }
+  if(p.inputs.length!==1||!i)add('SOURCE_CAPACITY_INPUT','$.view.payload.inputs','Exactly one mapped numeric demand input is required. Read viewContract.');
+  if(i){
+   const path='$.view.payload.inputs.'+p.inputs.indexOf(i);
+   if(!(CAPACITY_FIELD_LABELS.inputs as readonly string[]).includes(i.label))add('SOURCE_INPUT_LABEL',path+'.label','Use an existing literal input label from viewContract: '+CAPACITY_FIELD_LABELS.inputs.join(' or ')+'. A label mismatch does not mean the current quantity is wrong.');
+   if(i.type!=='number'||i.semanticRole!==undefined||i.choices!==undefined)add('SOURCE_CAPACITY_INPUT_TYPE',path,'Use type=number; omit semanticRole and choices. These are numeric quantities, not boolean capability needs.');
+   if(i.unit!==source.current.unit)add('SOURCE_CAPACITY_UNIT',path+'.unit','Use the exact source unit '+source.current.unit+'; no implicit conversion.');
+   if(i.initial!==source.current.value)add('SOURCE_CURRENT_DEMAND',path+'.initial','Initial demand must match the current source quantity '+source.current.value+source.current.unit+', not the possible future point. Local edits are separate hypotheses.');
+   if(i.expectedEffect!=='hard')add('SOURCE_INPUT_EFFECT',path+'.expectedEffect','The source-bound demand requires expectedEffect=hard, matching its numeric requirement.');
+  }
   if(i)inputChecks.push({inputId:i.id,role:'required-capacity',expected:source.current.value,actual:i.initial,unit:source.current.unit,sourceSpans:source.current.spans,status:i.initial===source.current.value&&i.unit===source.current.unit?'matched':'mismatch'});
   if(p.options.length!==2||p.options.some(o=>!source.options.some(s=>s.label===o.label))||new Set(p.options.map(o=>o.label)).size!==2)add('SOURCE_OPTIONS','$.view.payload.options','Use both exact source option labels; no aliases or extra options.');
   for(const [index,o] of p.options.entries()){
@@ -128,5 +147,5 @@ export function checkSourceCapacity(snapshot:SourceSnapshot,input:unknown):Recor
   return {index,kind:c.kind,status:'not-assessed',code:'SOURCE_CLAIM_UNSUPPORTED'};
  });
  const available=!issues.length&&claimChecks.every(c=>['supported','unknown'].includes(c.status));
- return finish({...common,status:'compared',sourceCapacity:source,comparison,issues,fieldChecks,inputChecks,claimChecks,...(!issues.length?{computedCapacity:calculations(source,p)}:{}),freeProse:{status:'not-verified',provided:prose!==undefined},canonicalExplanation:available?{status:'available',basis:'complete finite capacity source and existing numeric hard-requirement core',text:canonical(source,p)}:{status:'withheld'}});
+ return finish({...common,viewContract,status:'compared',sourceCapacity:source,comparison,issues,fieldChecks,inputChecks,claimChecks,...(!issues.length?{computedCapacity:calculations(source,p)}:{}),freeProse:{status:'not-verified',provided:prose!==undefined},canonicalExplanation:available?{status:'available',basis:'complete finite capacity source and existing numeric hard-requirement core',text:canonical(source,p)}:{status:'withheld'}});
 }
