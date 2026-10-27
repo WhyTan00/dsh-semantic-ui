@@ -1,0 +1,582 @@
+{
+  "mode": "ptc",
+  "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+  "base": {
+    "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+    "turn": 1,
+    "turnStartSeq": 6,
+    "messageId": "0910ddb6-e021-4506-a01b-144ce9407d19",
+    "messageSeq": 10,
+    "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+    "displayId": "condition-ptc-cold-before",
+    "revision": 1
+  },
+  "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+  "before": {
+    "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+    "agentLive": false,
+    "sessionAttached": false,
+    "headSeq": 32,
+    "eventCount": 33,
+    "turnStarts": 1,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "afterReadonly": {
+    "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+    "agentLive": false,
+    "sessionAttached": false,
+    "headSeq": 32,
+    "eventCount": 33,
+    "turnStarts": 1,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "after": {
+    "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+    "agentLive": true,
+    "sessionAttached": true,
+    "headSeq": 58,
+    "eventCount": 59,
+    "turnStarts": 2,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "requestsBefore": 9,
+  "requestsAfterReadonly": 9,
+  "requestsAfter": 12,
+  "readonly": [
+    {
+      "status": "withheld",
+      "code": "UPDATE_REQUEST_UNKNOWN",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "available",
+      "base": {
+        "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+        "turn": 1,
+        "turnStartSeq": 6,
+        "messageId": "0910ddb6-e021-4506-a01b-144ce9407d19",
+        "messageSeq": 10,
+        "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+        "displayId": "condition-ptc-cold-before",
+        "revision": 1
+      },
+      "fields": [
+        {
+          "condition": "离线值守",
+          "capabilities": [
+            "缓存"
+          ],
+          "before": "当前离线值守未知"
+        }
+      ],
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_STALE_BASE",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_STALE_BASE",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_GUARD_UNAVAILABLE",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_REQUEST",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_REQUEST",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_FIELD",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_SESSION_BUSY",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "status": "withheld",
+      "code": "UPDATE_SESSION_ARCHIVED",
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    }
+  ],
+  "previousReceipt": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "1bce2301-a843-43d3-b063-3c80dda9e41e",
+    "base": {
+      "sessionId": "session-da8da995-0bfd-44e8-b1de-093574b7dacf",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "6d376c50-4f5b-4a71-8d3d-ab2d54862a8e",
+      "messageSeq": 10,
+      "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+      "displayId": "condition-native-cold-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "离线值守",
+      "from": null,
+      "to": false,
+      "textByteStart": 156,
+      "textByteEnd": 180,
+      "before": "当前离线值守未知",
+      "after": "当前离线值守为否"
+    },
+    "nextTextSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+    "durable": true,
+    "message": {
+      "id": "2aa4046f-3b23-446c-8250-a907f208b505",
+      "seq": 36,
+      "turn": 2,
+      "turnStartSeq": 33,
+      "requestId": "1bce2301-a843-43d3-b063-3c80dda9e41e",
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099"
+    },
+    "checkpoint": {
+      "seq": 45,
+      "displayId": "condition-native-cold-after",
+      "revision": 1,
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+      "explanation": "杉原：缓存支持=true；价格声明未知。\n松港：缓存支持=false；价格声明未知。\n当前需要缓存=false（不据此排除缺少该能力的方案）。\n来源两分支：若离线值守=true，则需要缓存=true；否则需要缓存=false。\n当前离线值守=false（来源明确声明），所以当前需要缓存=false；本项不排除两种方案。\n若本地假设离线值守=true：杉原满足本项；松港不满足本项；若本地假设离线值守=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted"
+  },
+  "lostResponse": {
+    "type": "server-response",
+    "rpcId": "d3a0dbe5-74b3-40de-8579-c48ba4c2b975",
+    "result": {
+      "ok": true,
+      "value": {
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+        "base": {
+          "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+          "turn": 1,
+          "turnStartSeq": 6,
+          "messageId": "0910ddb6-e021-4506-a01b-144ce9407d19",
+          "messageSeq": 10,
+          "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+          "displayId": "condition-ptc-cold-before",
+          "revision": 1
+        },
+        "change": {
+          "condition": "离线值守",
+          "from": null,
+          "to": false,
+          "textByteStart": 156,
+          "textByteEnd": 180,
+          "before": "当前离线值守未知",
+          "after": "当前离线值守为否"
+        },
+        "nextTextSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+        "durable": true,
+        "status": "unknown",
+        "asOfSeq": 38,
+        "admission": "accepted"
+      }
+    }
+  },
+  "callerOutcome": "transport-rejected",
+  "transports": 1,
+  "duplicate": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+    "base": {
+      "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "0910ddb6-e021-4506-a01b-144ce9407d19",
+      "messageSeq": 10,
+      "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+      "displayId": "condition-ptc-cold-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "离线值守",
+      "from": null,
+      "to": false,
+      "textByteStart": 156,
+      "textByteEnd": 180,
+      "before": "当前离线值守未知",
+      "after": "当前离线值守为否"
+    },
+    "nextTextSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+    "durable": true,
+    "message": {
+      "id": "6e9cca76-e8d7-4fdd-8a2c-577765a33f38",
+      "seq": 40,
+      "turn": 2,
+      "turnStartSeq": 37,
+      "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099"
+    },
+    "status": "message-persisted",
+    "asOfSeq": 41
+  },
+  "adopted": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+    "base": {
+      "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "0910ddb6-e021-4506-a01b-144ce9407d19",
+      "messageSeq": 10,
+      "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+      "displayId": "condition-ptc-cold-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "离线值守",
+      "from": null,
+      "to": false,
+      "textByteStart": 156,
+      "textByteEnd": 180,
+      "before": "当前离线值守未知",
+      "after": "当前离线值守为否"
+    },
+    "nextTextSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+    "durable": true,
+    "message": {
+      "id": "6e9cca76-e8d7-4fdd-8a2c-577765a33f38",
+      "seq": 40,
+      "turn": 2,
+      "turnStartSeq": 37,
+      "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099"
+    },
+    "checkpoint": {
+      "seq": 52,
+      "displayId": "condition-ptc-cold-after",
+      "revision": 1,
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+      "explanation": "杉原：缓存支持=true；价格声明未知。\n松港：缓存支持=false；价格声明未知。\n当前需要缓存=false（不据此排除缺少该能力的方案）。\n来源两分支：若离线值守=true，则需要缓存=true；否则需要缓存=false。\n当前离线值守=false（来源明确声明），所以当前需要缓存=false；本项不排除两种方案。\n若本地假设离线值守=true：杉原满足本项；松港不满足本项；若本地假设离线值守=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted",
+    "asOfSeq": 58
+  },
+  "sourceCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "DSH current own-turn message content snapshot; not a file",
+      "hostContext": {
+        "sessionId": "session-1c2c8940-5d17-4fe5-ad8a-802b7a7e3ded",
+        "turn": 2,
+        "turnStartSeq": 37,
+        "messageId": "6e9cca76-e8d7-4fdd-8a2c-577765a33f38",
+        "messageSeq": 40,
+        "producerSourceKind": "user",
+        "inherited": false,
+        "excludedSyntheticContexts": 0,
+        "requestId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b"
+      },
+      "textSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+      "excerptSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 207,
+        "textUTF8Bytes": 207
+      },
+      "identityVerified": false,
+      "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "杉原",
+        "松港"
+      ],
+      "facts": [
+        {
+          "kind": "capability",
+          "option": "杉原",
+          "name": "缓存",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 39,
+              "textByteEnd": 57
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "松港",
+          "name": "缓存",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 60,
+              "textByteEnd": 81
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "杉原",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "松港",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "缓存",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            {
+              "textByteStart": 102,
+              "textByteEnd": 123
+            },
+            {
+              "textByteStart": 126,
+              "textByteEnd": 153
+            },
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "derivation": {
+            "condition": "离线值守",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": false
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 57
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 60,
+            "textByteEnd": 81
+          }
+        },
+        {
+          "kind": "condition",
+          "span": {
+            "textByteStart": 84,
+            "textByteEnd": 99
+          }
+        },
+        {
+          "kind": "condition-true-branch",
+          "span": {
+            "textByteStart": 102,
+            "textByteEnd": 123
+          }
+        },
+        {
+          "kind": "condition-false-branch",
+          "span": {
+            "textByteStart": 126,
+            "textByteEnd": 153
+          }
+        },
+        {
+          "kind": "current-condition",
+          "span": {
+            "textByteStart": 156,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 204
+          }
+        }
+      ],
+      "conditionalNeeds": [
+        {
+          "name": "缓存",
+          "condition": "离线值守",
+          "whenTrue": true,
+          "whenFalse": false,
+          "current": false,
+          "currentSpans": [
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "spans": {
+            "condition": {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            "whenTrue": {
+              "textByteStart": 102,
+              "textByteEnd": 123
+            },
+            "whenFalse": {
+              "textByteStart": 126,
+              "textByteEnd": 153
+            }
+          },
+          "derivedNeed": false
+        }
+      ]
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "fieldChecks": [],
+    "inputChecks": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "杉原：缓存支持=true；价格声明未知。\n松港：缓存支持=false；价格声明未知。\n当前需要缓存=false（不据此排除缺少该能力的方案）。\n来源两分支：若离线值守=true，则需要缓存=true；否则需要缓存=false。\n当前离线值守=false（来源明确声明），所以当前需要缓存=false；本项不排除两种方案。\n若本地假设离线值守=true：杉原满足本项；松港不满足本项；若本地假设离线值守=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "acceptedNativeMessage": {
+    "type": "user/message",
+    "seq": 40,
+    "time": 1793086848837,
+    "data": {
+      "content": [
+        {
+          "type": "text",
+          "text": "合成训练组在选杉原与松港。前者支持缓存；后者不支持缓存。若离线值守，则我们需要缓存；否则我们不需要缓存。当前离线值守为否。两边价格都未知。"
+        }
+      ],
+      "source": {
+        "kind": "user",
+        "rpcId": "2ef4a91d-ae99-4a06-a25c-05cf9ee15e4b",
+        "clientTimeZone": "UTC"
+      },
+      "role": "user",
+      "id": "6e9cca76-e8d7-4fdd-8a2c-577765a33f38"
+    },
+    "surfaceOp": "append"
+  },
+  "originalNativeMessage": {
+    "type": "user/message",
+    "seq": 10,
+    "time": 1793086839709,
+    "data": {
+      "content": [
+        {
+          "type": "text",
+          "text": "合成训练组在选杉原与松港。前者支持缓存；后者不支持缓存。若离线值守，则我们需要缓存；否则我们不需要缓存。当前离线值守未知。两边价格都未知。"
+        }
+      ],
+      "source": {
+        "kind": "user",
+        "rpcId": "e0b5b546-bac8-4d01-8c01-edd172258758",
+        "clientTimeZone": "UTC"
+      },
+      "role": "user",
+      "id": "0910ddb6-e021-4506-a01b-144ce9407d19"
+    },
+    "surfaceOp": "append"
+  },
+  "refreshOldAndNewRestored": true,
+  "fixtureOnly": true,
+  "newObservedModelTurns": 0,
+  "pageErrors": []
+}

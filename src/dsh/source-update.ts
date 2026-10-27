@@ -176,7 +176,7 @@ export function mountSourceUpdates(ctx:Context){
      };
      const live=child.agents.get(sessionId as Parameters<typeof child.agents.get>[0]);if(live&&p.action==='status')return reply(await status(live.session,p.requestId));
      const previous=prior(v);if(previous)return reply(previous);
-     if(p.action==='status')return reply(updateWithheld('UPDATE_REQUEST_UNKNOWN'));
+     if(p.action==='status')return reply({...updateWithheld('UPDATE_REQUEST_UNKNOWN'),requestId:p.requestId});
      const busy=await activity(sessionId);
      // Activity providers may yield. Re-read the exact native prefix before
      // offering or activating; an earlier snapshot cannot authorize a resume.
@@ -222,7 +222,7 @@ export function mountSourceUpdates(ctx:Context){
     const now=await liveGuard(agent,p.base);if(now)return reply({...updateWithheld(now),requestId:p.requestId});request.signal.throwIfAborted();
     const accepted=await nativeCall(request,'session/prompt',{sessionId:p.base.sessionId,requestId:p.requestId,mode:'queue',content:[{type:'text',text:rev.text}],clientTimeZone:'UTC'});
     return reply({...await status(session,p.requestId),admission:accepted.result?.ok&&(accepted.result.value as {accepted?:boolean})?.accepted===true?'accepted':'not-confirmed'});
-   }catch(error){return reply({...updateWithheld(error instanceof Error&&/^UPDATE_/.test(error.message)?error.message:'UPDATE_UNCERTAIN'),...(p.action==='submit'?{requestId:p.requestId}:{})});}finally{if(ownsSubmit)submitting.delete(sessionId);}
+   }catch(error){return reply({...updateWithheld(error instanceof Error&&/^UPDATE_/.test(error.message)?error.message:'UPDATE_UNCERTAIN'),...(p.action!=='offer'?{requestId:p.requestId}:{})});}finally{if(ownsSubmit)submitting.delete(sessionId);}
   }});
  });
 }

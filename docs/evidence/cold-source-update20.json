@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0-preview.20",
+  "sourceCommit": "496fc8277fca53a01897f90dd58f2b066b842d48",
+  "releaseId": 425154745,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.20",
+  "ciRunId": 40468391653,
+  "runtimeSha256": "7f5e40cc91d8fa9e757255d5f3ba618cadb2bac57557929a30e2f6ecdba6e6c7",
+  "finalInstalledFiles": 364,
+  "nativeAndPtcColdLifecycleAccepted": true,
+  "anonymousAssets200AndEqual": 4,
+  "newObservedModelTurns": 0,
+  "knownLimitation": "UI unknown/withheld status response omitting optional requestId could expose a re-offer button that clears the known caller ID. Original immutable assets retained; correction is a distinct successor version. Cold host acceptance is not proof that this UI edge case passed.",
+  "evidenceDirectory": "cold-source-update20/"
+}

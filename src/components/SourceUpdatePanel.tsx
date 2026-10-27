@@ -1,5 +1,6 @@
 import {useRef,useState} from 'react';
 import type {SourceUpdateBase,SourceUpdateBridge,SourceUpdateResult} from '../source-update-contract';
+import {retainSourceUpdateRequest} from '../source-update-contract';
 const updateReason:Record<string,string>={
  UPDATE_SESSION_ARCHIVED:'会话已归档；此入口不会恢复归档会话。',
  UPDATE_SESSION_BUSY:'会话有正在执行或排队的工作；等其结束后可重新查看。',
@@ -22,7 +23,7 @@ export function SourceUpdatePanel({base,bridge}:{base:SourceUpdateBase;bridge?:S
   try{
    if(action==='submit')requestId.current??=crypto.randomUUID();
    const r=await bridge!(action==='offer'?{action,base}:action==='status'?{action,sessionId:base.sessionId,requestId:requestId.current!}:{action,base,condition,value:value==='true',requestId:requestId.current!});
-   setResult(r);if(r.requestId)requestId.current=r.requestId;if(r.fields?.length)setCondition(r.fields[0].condition);
+   const next=retainSourceUpdateRequest(r,requestId.current);setResult(next);if(next.requestId)requestId.current=next.requestId;if(next.fields?.length)setCondition(next.fields[0].condition);
   }catch{setResult({status:'unknown',code:'UPDATE_TRANSPORT_UNCERTAIN',requestId:requestId.current,sourceFactsVerified:false,identityVerified:false,freeProseVerified:false});}
   finally{sending.current=false;setBusy(false);}
  }
@@ -39,7 +40,7 @@ export function SourceUpdatePanel({base,bridge}:{base:SourceUpdateBase;bridge?:S
    </>:<p>本版本没有可补充的单个未知当前条件。</p>):null}
    {result&&result.status!=='available'?<div role="status" aria-live="polite">
     <p>{result.status==='adopted'?'已核实：新来源消息已持久化，新的语义视图已采用。':result.status==='message-persisted'?'已核实新来源消息持久化；尚未核实新的语义视图。':result.admission==='accepted'?'宿主已接收请求；消息持久化和新视图仍待核对。':result.status==='unknown'?'提交结果未明；只能核对原请求，不会自动重发。':'本次未确认来源更新。'} {result.code&&updateReason[result.code]||result.code}</p>
-    {result.status==='withheld'&&!result.requestId?<button disabled={busy} onClick={()=>{requestId.current=undefined;setValue('unknown');void invoke('offer');}}>重新查看可补充条件</button>:null}
+    {result.status==='withheld'&&!result.requestId&&!requestId.current?<button disabled={busy} onClick={()=>{setValue('unknown');void invoke('offer');}}>重新查看可补充条件</button>:null}
     {result.requestId?<><p>请求 ID：{result.requestId}</p><button disabled={busy} onClick={()=>void invoke('status')}>核对原请求状态</button></>:null}
     {result.message?<p>新来源 SHA-256：{result.message.textSha256} · 回合 {result.message.turn} · 消息序号 {result.message.seq}</p>:null}
     {result.status==='adopted'&&result.checkpoint?<p>新视图：{result.checkpoint.displayId} · revision {result.checkpoint.revision}。这里只核实来源采用；模型自由正文未认证。</p>:null}

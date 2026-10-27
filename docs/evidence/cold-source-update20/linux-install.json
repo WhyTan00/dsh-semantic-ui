@@ -1,0 +1,18 @@
+{
+  "dsh": "0.2.1-rc.2",
+  "package": "@whytan/dsh-semantic-ui",
+  "version": "0.1.0-preview.20",
+  "filename": "whytan-dsh-semantic-ui-0.1.0-preview.20.tgz",
+  "sha256": "7f5e40cc91d8fa9e757255d5f3ba618cadb2bac57557929a30e2f6ecdba6e6c7",
+  "allPackagedFilesVerified": 364,
+  "verifiedBeforeStartingHost": true,
+  "installation": "actual dsh plugin --profile web add into fresh isolated profile; no semantic source overlay; separate read-only observer and synthetic activity fixture",
+  "toolModes": [
+    "native",
+    "ptc"
+  ],
+  "validationSuite": "cold-source-supplement",
+  "fullHostRestartsPerMode": 2,
+  "newObservedModelTurns": 0,
+  "fixtureOnly": true
+}

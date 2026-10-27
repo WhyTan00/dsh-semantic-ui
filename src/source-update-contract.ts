@@ -25,3 +25,7 @@ export interface SourceUpdateResult{
  sourceFactsVerified:false;identityVerified:false;freeProseVerified:false;
 }
 export type SourceUpdateBridge=(request:SourceUpdateRequest)=>Promise<SourceUpdateResult>;
+/** A failed/unknown status response cannot erase the caller's original ID. */
+export function retainSourceUpdateRequest(result:SourceUpdateResult,requestId:string|undefined):SourceUpdateResult{
+ return result.requestId||!requestId?result:{...result,requestId};
+}

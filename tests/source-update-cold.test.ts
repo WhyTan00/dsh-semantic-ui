@@ -1,7 +1,7 @@
 import {describe,it,expect} from 'vitest';
 import {randomUUID} from 'node:crypto';
 import {mountSourceUpdates,sourceUpdateProjection,sourceUpdateGate,SOURCE_UPDATE_COMMAND} from '../src/dsh/source-update';
-import {SOURCE_UPDATE_ENDPOINT} from '../src/source-update-contract';
+import {SOURCE_UPDATE_ENDPOINT,retainSourceUpdateRequest} from '../src/source-update-contract';
 import {sourceTextSha} from '../src/source-update';
 import {conditionRequest} from '../fixtures/source-condition';
 import {bindDecisionView} from '../src/source-delivery';
@@ -42,6 +42,11 @@ function host(){
 }
 
 describe('cold source update admission',()=>{
+ it('keeps the original caller ID when status omits it, including unknown and error results',()=>{
+  const requestId=randomUUID(),flags={sourceFactsVerified:false as const,identityVerified:false as const,freeProseVerified:false as const};
+  for(const status of ['unknown','withheld'] as const){const result={status,code:'UPDATE_REQUEST_UNKNOWN',...flags};expect(retainSourceUpdateRequest(result,requestId).requestId).toBe(requestId);expect(retainSourceUpdateRequest(result,undefined).requestId).toBeUndefined();}
+  const originalId=randomUUID();expect(retainSourceUpdateRequest({status:'unknown',requestId:originalId,...flags},requestId).requestId).toBe(originalId);
+ });
  it('reads an offer, leaves unknown/cancel local and reconciles unknown IDs without activation or events',async()=>{
   const h=host(),before=h.seq;expect((await h.call({action:'offer',base:h.base})).fields).toEqual([{condition:'离线值守',capabilities:['缓存'],before:'当前离线值守未知'}]);
   expect((await h.call({action:'status',sessionId,requestId:randomUUID()})).code).toBe('UPDATE_REQUEST_UNKNOWN');expect(h.counts).toEqual({resolve:0,commands:0,prompt:0,reads:3});expect(h.seq).toBe(before);
