@@ -1,6 +1,8 @@
 # 从 DSH 当前输入核对比较内容
 
-后续22源码候选新增[workflow-zh](SOURCE-WORKFLOW.zh-CN.md)：由完整当前输入的明确流程语法选择，箭头、失败触发、retry-only和no-rollback分别保留来源；tool参数不能换源。新元数据kind需要22兼容reader，旧来源/组件历史保持。最终归档接受另记，不把原先三语法的旧矩阵扩称为新规则已验收。
+22的[最终分层接受](evidence/source-workflow.json)已补齐：371文件归档、macOS/Linux Native/PTC与旧图恢复、普通答复正反例及四匿名资产分别核验。明确给定失败规则可核，原始模型正文仍不认证；旧研究与自然失败范围不重写。
+
+后续22已新增[workflow-zh](SOURCE-WORKFLOW.zh-CN.md)：由完整当前输入的明确流程语法选择，箭头、失败触发、retry-only和no-rollback分别保留来源；tool参数不能换源。新元数据kind需要22兼容reader，旧来源/组件历史保持。最终归档接受另记，不把原先三语法的旧矩阵扩称为新规则已验收。
 
 
 源码/构建候选 `0.1.0-preview.12-dev.2` 将现有 [有限中文比较核对](SOURCE-DECISION.zh-CN.md) 接到真实 DSH 当前回合。工具从执行 Agent 的 Session 和公开投影读取输入；调用参数不能提供、替换或认证来源。本段没有发布新归档、安装到用户工作台或加载到当前 Codex 客户端。

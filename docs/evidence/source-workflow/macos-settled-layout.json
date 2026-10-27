@@ -1,0 +1,109 @@
+{
+  "version": "0.1.0-preview.22",
+  "reusedAcceptedFinalArchive": true,
+  "archiveInstalled": true,
+  "newInstallation": false,
+  "normalNativeHistoryNavigation": true,
+  "containerWidth": 360,
+  "sidebarPagesLoaded": 1,
+  "immediate": {
+    "graph": {
+      "width": 326,
+      "height": 330
+    },
+    "nodes": [
+      {
+        "label": "入口",
+        "x": 10.31243896484375,
+        "y": 20.170654296875,
+        "width": 135.9432373046875,
+        "height": 50.978759765625,
+        "inside": true
+      },
+      {
+        "label": "鉴权",
+        "x": 10.31243896484375,
+        "y": 108.911376953125,
+        "width": 135.9432373046875,
+        "height": 50.978759765625,
+        "inside": true
+      },
+      {
+        "label": "库存",
+        "x": 10.31243896484375,
+        "y": 197.652099609375,
+        "width": 135.9432373046875,
+        "height": 50.978759765625,
+        "inside": true
+      },
+      {
+        "label": "支付",
+        "x": 10.31243896484375,
+        "y": 286.3929443359375,
+        "width": 135.9432373046875,
+        "height": 50.9786376953125,
+        "inside": false
+      },
+      {
+        "label": "通知",
+        "x": 10.31243896484375,
+        "y": 375.1336669921875,
+        "width": 135.9432373046875,
+        "height": 50.9786376953125,
+        "inside": false
+      }
+    ]
+  },
+  "settled": {
+    "graph": {
+      "width": 326,
+      "height": 330
+    },
+    "nodes": [
+      {
+        "label": "入口",
+        "x": 107.49349975585938,
+        "y": 23.293701171875,
+        "width": 97.91958618164062,
+        "height": 36.7198486328125,
+        "inside": true
+      },
+      {
+        "label": "鉴权",
+        "x": 107.49349975585938,
+        "y": 87.21337890625,
+        "width": 97.91958618164062,
+        "height": 36.7198486328125,
+        "inside": true
+      },
+      {
+        "label": "库存",
+        "x": 107.49349975585938,
+        "y": 151.1331787109375,
+        "width": 97.91958618164062,
+        "height": 36.7198486328125,
+        "inside": true
+      },
+      {
+        "label": "支付",
+        "x": 107.49349975585938,
+        "y": 215.0528564453125,
+        "width": 97.91958618164062,
+        "height": 36.7198486328125,
+        "inside": true
+      },
+      {
+        "label": "通知",
+        "x": 107.49349975585938,
+        "y": 278.97265625,
+        "width": 97.91958618164062,
+        "height": 36.7198486328125,
+        "inside": true
+      }
+    ]
+  },
+  "allFiveNodesVisibleAfterSettlement": true,
+  "newFixtureInferenceRequests": 0,
+  "newObservedModelTurns": 0,
+  "pageErrors": []
+}

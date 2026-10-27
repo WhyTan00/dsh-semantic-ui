@@ -1,0 +1,214 @@
+{
+  "schema": "semantic-workflow-source-v1",
+  "version": "0.1.0-preview.22",
+  "sourceCommit": "a0ca980884adbc21d476ffcf92133e3305df67cc",
+  "sourceTag": "v0.1.0-preview.22",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.22.tgz",
+    "sha256": "ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e",
+    "files": 371,
+    "entrypoints": {
+      "dist/host.js": "d470bcc16b12fd68300705f24465553ba4c4351c7819a07a3e767e860a02fb0c",
+      "dist/client.js": "48c09056b807d1737f8f236ecb0f27508eaff4a5b88386411620580ca24d1deb",
+      "dist/core.js": "8c79e5b40602d6f1c27541601ad8d359acd601e2c61f29a5addc332fd7147c1d",
+      "dist/mcp.js": "18dbeeb49f4c392eb9e24370bc830154c625ff77961a9b38b903683f600267e5",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    }
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.22.tgz",
+    "bytes": 30771761,
+    "sha256": "1926e8244bf85c233c7d97a7b3caa70756d41c552780b823641b075b4e4c86d2",
+    "files": 613
+  },
+  "original": {
+    "path": "natural/r9-A2.json",
+    "pointer": "/question",
+    "fileSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+    "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+    "modified": false,
+    "sharedPaymentNotifyCorrectionPreserved": true
+  },
+  "independentExpectations": {
+    "path": "https://github.com/WhyTan00/dsh-semantic-ui/blob/v0.1.0-preview.22/fixtures/source-workflow-expectations.json",
+    "sha256": "7ffcea4aa31c615f5b0fd8e5e70c83637208b7cc87861646eed0d6c3923802b1",
+    "frozenAt": "2026-10-27T08:48:05.672772+00:00"
+  },
+  "scope": {
+    "sourceGrammar": "complete workflow-zh",
+    "componentProtocol": "1.4, unchanged",
+    "sourceMetadataKind": "workflow-zh; reader22 required",
+    "verifiedFiniteContent": [
+      "four directed pairs",
+      "failure trigger=通知失败",
+      "retry-only target=通知",
+      "this branch no-rollback target=支付"
+    ],
+    "notEstablished": [
+      "库存 failure policy",
+      "retry count and success guarantees",
+      "reverse propagation",
+      "upstream completed or actual execution state",
+      "arbitrary prose and world facts"
+    ],
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "newObservedModelTurns": 0,
+    "parent0520UsedObservedTurns": 2,
+    "budgetReset": false,
+    "oldNaturalResults": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18,
+      "changed": false
+    }
+  },
+  "tests": {
+    "sourceFiles": 8,
+    "sourceTests": 52,
+    "companionOfflineTests": 10,
+    "realStdioMcp": true,
+    "finalArchiveMacOS": {
+      "filesVerifiedBeforeHost": 371,
+      "nativeCases": 6,
+      "ptcCases": 6,
+      "oldArchitectureProtocol": "1.0",
+      "refreshAndHistory": true,
+      "narrowContainer": 360,
+      "pageErrors": []
+    },
+    "normalAnswer": {
+      "positive": "delivered",
+      "wrongRollback": "withheld",
+      "topologyCanMatchWhileClaimContradicts": true,
+      "twoCarrierRequestsAndResponsesEqual": true,
+      "modelTurnRequests": 0,
+      "globalConfigShaUnchanged": true
+    },
+    "additionalMacOSReadonlyLayout": {
+      "reusedSameFinalInstallation": true,
+      "allFiveNodesInsideAfterSettlement": true,
+      "fixtureInferenceRequests": 0,
+      "sidebarPagesLoaded": 1,
+      "notClaimedAsLinuxSettlementAssertion": true
+    },
+    "finalArchiveLinux": {
+      "filesVerifiedBeforeHost": 371,
+      "nativeCases": 6,
+      "ptcCases": 6,
+      "oldArchitectureProtocol": "1.0",
+      "refreshAndHistory": true,
+      "narrowContainer": 360,
+      "pageErrors": []
+    }
+  },
+  "preservedFailures": [
+    {
+      "kind": "development test selector",
+      "detail": "Opposite source was correctly refused; test read a previous-turn delivered receipt from model-visible history. Scoped extraction to the latest source user message, without changing runtime/independent expectations."
+    },
+    {
+      "kind": "additional layout diagnostics",
+      "detail": "First three readonly attempts did not expand/page the older Native session. Private logs kept. Fourth used actual Show 5 more sessions and verified geometry; all owned hosts stopped and private patch restored."
+    }
+  ],
+  "verificationAfterSourceFreeze": "Only the new geometry-wait test revision and acceptance docs/evidence follow the frozen source commit. They are not repackaged and not mislabelled as the original Linux assertion.",
+  "publication": {
+    "releaseId": 425264662,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.22",
+    "tag": "v0.1.0-preview.22",
+    "sourceCommit": "a0ca980884adbc21d476ffcf92133e3305df67cc",
+    "prerelease": true,
+    "author": "WhyTan00"
+  },
+  "proofFiles": [
+    {
+      "path": "source-workflow/answer-delivered.json",
+      "sha256": "bced244ee9f8a93daac46c075d4190f8f876922aa8f90071d16bcb31a067e029"
+    },
+    {
+      "path": "source-workflow/answer-delivered.txt",
+      "sha256": "0ed620eb29ce895fde522e864c203ddce0dbd1ba46a830fb21342f9b9ba2213d"
+    },
+    {
+      "path": "source-workflow/answer-withheld.json",
+      "sha256": "8bb24bc3996588f17f94bbd69e016cef07fd0fd9d43009d4b963acdfce3d7f44"
+    },
+    {
+      "path": "source-workflow/answer-withheld.txt",
+      "sha256": "be27cdc4b94ad9b97b37c8939a2cf93cb09389c3937b6242c4cd2efa18a5dc72"
+    },
+    {
+      "path": "source-workflow/ci-byte-comparison.json",
+      "sha256": "d138ac38233572250e779196d6a22566c26399c0197eeab617d29349d9a7b2b6"
+    },
+    {
+      "path": "source-workflow/ci.json",
+      "sha256": "fd41aa3957249eb7f52b4f3a129c63d46ffe895efc8b515a69df7d9be1c2a9ae"
+    },
+    {
+      "path": "source-workflow/layout-cleanup.json",
+      "sha256": "eb1e3f86270c68ff9e13ca143d8c93aeae027e92c4abe9bc981a25e5424e506a"
+    },
+    {
+      "path": "source-workflow/linux-cleanup.json",
+      "sha256": "1e9bd5b6282fa001dfaa8b8933c55b2fb9bcb19ec1ef84027a25c2aedd916ea6"
+    },
+    {
+      "path": "source-workflow/linux-install.json",
+      "sha256": "5725a1cf519d38ac7124fc07b53c789b85efe8e613bf5bb9a4652ffa9c9a6707"
+    },
+    {
+      "path": "source-workflow/linux-installed-byte-check.json",
+      "sha256": "5a302170ab892f99d08acb4be2988984c17ad4a0b3e7000cc973dd9f47876534"
+    },
+    {
+      "path": "source-workflow/linux-native.json",
+      "sha256": "e6c08c84d83e104c28a03535c05f42947c758b2f8ce7a070e30945004250f3c9"
+    },
+    {
+      "path": "source-workflow/linux-ptc.json",
+      "sha256": "c12a0d1a6d8f16220e27cdeeab68bc9b369a520f691f22277d440f721dcd62a5"
+    },
+    {
+      "path": "source-workflow/macos-cleanup.json",
+      "sha256": "be6b4aff1f53af8d323deadea6678a905eca6104f61208f26ef2728b8b0788c1"
+    },
+    {
+      "path": "source-workflow/macos-install.json",
+      "sha256": "5725a1cf519d38ac7124fc07b53c789b85efe8e613bf5bb9a4652ffa9c9a6707"
+    },
+    {
+      "path": "source-workflow/macos-installed-byte-check.json",
+      "sha256": "5a302170ab892f99d08acb4be2988984c17ad4a0b3e7000cc973dd9f47876534"
+    },
+    {
+      "path": "source-workflow/macos-native.json",
+      "sha256": "a53b57d6e9d92dc88cefd1fe6474405a1e80fbc30951c13a08c7dea98bcb92cf"
+    },
+    {
+      "path": "source-workflow/macos-ptc.json",
+      "sha256": "3e6e6280ec77edd7d4e93ce3a41bda56a96ce7c8c62da56e0179ec74be04e854"
+    },
+    {
+      "path": "source-workflow/macos-settled-layout.json",
+      "sha256": "73da59fac8b730f566ea01acbbf113c1aaf8128e958075ecdb295fa515f68e82"
+    },
+    {
+      "path": "source-workflow/public-downloads.json",
+      "sha256": "6159d3991034930b836cd2430866b8f260288d1a19cc166981a589ff94109e9e"
+    },
+    {
+      "path": "source-workflow/workflow-rules-360px.png",
+      "sha256": "59b37155a60a4a91d7263f14b8083a1d3fbefa22fdba8cdc7e34d06bc35893d7"
+    }
+  ],
+  "ci": {
+    "databaseId": 40479181323,
+    "headSha": "a0ca980884adbc21d476ffcf92133e3305df67cc",
+    "status": "completed",
+    "conclusion": "success",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40479181323"
+  }
+}

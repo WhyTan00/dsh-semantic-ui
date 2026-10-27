@@ -1,0 +1,29 @@
+{
+  "attempts": [
+    {
+      "stage": "cleanup-first.json",
+      "patchRestored": true,
+      "childrenTerminal": true,
+      "portsClosed": true
+    },
+    {
+      "stage": "cleanup-second.json",
+      "patchRestored": true,
+      "childrenTerminal": true,
+      "portsClosed": true
+    },
+    {
+      "stage": "cleanup-third.json",
+      "patchRestored": true,
+      "childrenTerminal": true,
+      "portsClosed": true
+    },
+    {
+      "stage": "cleanup.json",
+      "patchRestored": true,
+      "childrenTerminal": true,
+      "portsClosed": true
+    }
+  ],
+  "note": "First three diagnostic UI attempts did not expand/page the sidebar to the older Native session; errors preserved privately; no inference was requested. Fourth follows actual Show more sessions control and then waits for geometry settlement. No renderer or frozen archive changed."
+}

@@ -1,0 +1,456 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "key": "ptc-workflow-original",
+      "sessionId": "session-63f485b6-89c5-4595-a270-9f9e5373e44e",
+      "status": "bound",
+      "sourceSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "canonicalExplanation": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+      "normalNodeConstraintsShown": true,
+      "modelAnnotationsAbsent": true,
+      "refresh": true,
+      "container": {
+        "width": 360,
+        "clientWidth": 358,
+        "scrollWidth": 358
+      },
+      "delivered": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "workflow-ptc-original",
+        "revision": 1,
+        "summary": "来源声明的流程与明确异常规则；拓扑、失败动作范围和未知执行状态分开。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "ArchitectureExplorer",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "graphFacts": {
+          "scope": "declared-graph-only",
+          "sourceFactsVerified": false,
+          "nodeCount": 5,
+          "edgeCount": 4,
+          "directedEdgeCount": 4,
+          "directedEdges": [
+            {
+              "id": "edge-ptc-original-0",
+              "source": "node-ptc-original-0",
+              "target": "node-ptc-original-1"
+            },
+            {
+              "id": "edge-ptc-original-1",
+              "source": "node-ptc-original-1",
+              "target": "node-ptc-original-2"
+            },
+            {
+              "id": "edge-ptc-original-2",
+              "source": "node-ptc-original-2",
+              "target": "node-ptc-original-3"
+            },
+            {
+              "id": "edge-ptc-original-3",
+              "source": "node-ptc-original-3",
+              "target": "node-ptc-original-4"
+            }
+          ],
+          "directedEdgesOmitted": 0,
+          "sharedTargets": [],
+          "sharedTargetsOmitted": 0,
+          "scenarioIntersections": [],
+          "scenarioIntersectionsOmitted": 0,
+          "boundary": "Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route."
+        },
+        "canonicalSummary": "Declared graph: 5 nodes, 4 relationships.",
+        "canonicalSummarySource": "computed from the supplied graph; not independent verification",
+        "canonicalExplanation": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "1a04e637-70da-446a-9d0f-3e24aa92b8f0"
+      },
+      "sourceComparison": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "workflow-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-63f485b6-89c5-4595-a270-9f9e5373e44e",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "13fcd8f1-c969-4676-a8c3-7e938e82c83f",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 4,
+            "requestId": "4b621b8d-33ef-4ea9-8a76-a0157782da3f"
+          },
+          "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+          "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 174,
+            "textUTF8Bytes": 174
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+        },
+        "identityVerified": false,
+        "sourceFactsVerified": false,
+        "freeProseVerified": false,
+        "status": "compared",
+        "sourceWorkflow": {
+          "nodes": [
+            "入口",
+            "鉴权",
+            "库存",
+            "支付",
+            "通知"
+          ],
+          "relations": [
+            {
+              "from": "入口",
+              "to": "鉴权",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "from": "鉴权",
+              "to": "库存",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "from": "库存",
+              "to": "支付",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "from": "支付",
+              "to": "通知",
+              "spans": [
+                {
+                  "textByteStart": 57,
+                  "textByteEnd": 72
+                }
+              ]
+            }
+          ],
+          "failurePolicies": [
+            {
+              "trigger": "通知",
+              "retryOnly": [
+                "通知"
+              ],
+              "noRollback": [
+                "支付"
+              ],
+              "triggerSpans": [
+                {
+                  "textByteStart": 75,
+                  "textByteEnd": 102
+                }
+              ],
+              "retrySpans": [
+                {
+                  "textByteStart": 75,
+                  "textByteEnd": 102
+                }
+              ],
+              "noRollbackSpans": [
+                {
+                  "textByteStart": 105,
+                  "textByteEnd": 120
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "triggers": [
+                "通知",
+                "库存"
+              ],
+              "span": {
+                "textByteStart": 123,
+                "textByteEnd": 171
+              }
+            }
+          ]
+        },
+        "comparison": {
+          "status": "matched",
+          "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+          "edgeChecks": [
+            {
+              "edgeId": "edge-ptc-original-0",
+              "from": "入口",
+              "to": "鉴权",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-ptc-original-1",
+              "from": "鉴权",
+              "to": "库存",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-ptc-original-2",
+              "from": "库存",
+              "to": "支付",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 54
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-ptc-original-3",
+              "from": "支付",
+              "to": "通知",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 57,
+                  "textByteEnd": 72
+                }
+              ]
+            }
+          ],
+          "missingRelations": [],
+          "policyChecks": [
+            {
+              "trigger": "通知",
+              "retryOnly": [
+                "通知"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            }
+          ],
+          "missingPolicies": []
+        },
+        "issues": [],
+        "claimChecks": [],
+        "conclusion": {
+          "selectedSource": "matched",
+          "structuredClaims": "not-requested",
+          "sourceIdentity": "unverified",
+          "freeProse": "not-verified"
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "reason": "No keyword removal or arbitrary prose certification."
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite workflow syntax only",
+          "text": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+        }
+      }
+    },
+    {
+      "key": "ptc-workflow-renamed",
+      "sessionId": "session-0865fe29-6882-4420-aadd-3b5d33a40ed8",
+      "status": "bound",
+      "sourceSha256": "02ae13c9d545103547a00735c235c82263a6d2bae59272ca3fd26ed1df51ff7b",
+      "canonicalExplanation": "来源明确给出的有向拓扑：接入 → 审核；审核 → 写账；写账 → 回执。\n明确异常规则：当回执失败时，仅重试回执；此失败分支不回滚写账。重试范围不扩展到整个流程。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+      "normalNodeConstraintsShown": true,
+      "modelAnnotationsAbsent": true,
+      "refresh": true,
+      "delivered": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "workflow-ptc-renamed",
+        "revision": 1,
+        "summary": "来源声明的流程与明确异常规则；拓扑、失败动作范围和未知执行状态分开。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "ArchitectureExplorer",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "graphFacts": {
+          "scope": "declared-graph-only",
+          "sourceFactsVerified": false,
+          "nodeCount": 4,
+          "edgeCount": 3,
+          "directedEdgeCount": 3,
+          "directedEdges": [
+            {
+              "id": "edge-ptc-renamed-0",
+              "source": "node-ptc-renamed-0",
+              "target": "node-ptc-renamed-1"
+            },
+            {
+              "id": "edge-ptc-renamed-1",
+              "source": "node-ptc-renamed-1",
+              "target": "node-ptc-renamed-2"
+            },
+            {
+              "id": "edge-ptc-renamed-2",
+              "source": "node-ptc-renamed-2",
+              "target": "node-ptc-renamed-3"
+            }
+          ],
+          "directedEdgesOmitted": 0,
+          "sharedTargets": [],
+          "sharedTargetsOmitted": 0,
+          "scenarioIntersections": [],
+          "scenarioIntersectionsOmitted": 0,
+          "boundary": "Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route."
+        },
+        "canonicalSummary": "Declared graph: 4 nodes, 3 relationships.",
+        "canonicalSummarySource": "computed from the supplied graph; not independent verification",
+        "canonicalExplanation": "来源明确给出的有向拓扑：接入 → 审核；审核 → 写账；写账 → 回执。\n明确异常规则：当回执失败时，仅重试回执；此失败分支不回滚写账。重试范围不扩展到整个流程。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "1514347f-d023-43cb-91eb-5882167680d5"
+      }
+    },
+    {
+      "key": "ptc-workflow-dropped",
+      "status": "refused",
+      "codes": [
+        "SOURCE_POLICY_MISSING"
+      ],
+      "sourceSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "priorMatchDidNotAuthorizeRender": true,
+      "oldBoundHistoryRetained": false,
+      "refresh": true,
+      "failed": {
+        "status": "validation-failed",
+        "turn": 1,
+        "displayId": "workflow-ptc-original",
+        "issues": [
+          {
+            "code": "SOURCE_POLICY_MISSING",
+            "path": "$.mapping.failurePolicies",
+            "reason": "Complete coverage includes every explicit failure policy, not just all arrows.",
+            "hint": "Inspect source-check; map every explicit failure policy to current node IDs. Do not infer other branches, retries or execution guarantees."
+          }
+        ],
+        "deliveryId": "165a41e3-9fa7-444f-8275-ee3c24a6fa70"
+      }
+    },
+    {
+      "key": "ptc-workflow-rollback",
+      "status": "refused",
+      "codes": [
+        "SOURCE_RULE_CONTRADICTION"
+      ],
+      "sourceSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "priorMatchDidNotAuthorizeRender": false,
+      "oldBoundHistoryRetained": false,
+      "refresh": true,
+      "failed": {
+        "status": "validation-failed",
+        "turn": 1,
+        "displayId": "workflow-ptc-original",
+        "issues": [
+          {
+            "code": "SOURCE_RULE_CONTRADICTION",
+            "path": "$.claims.0",
+            "reason": "Contradicts the explicit policy on this failure branch.",
+            "hint": "Inspect source-check; map every explicit failure policy to current node IDs. Do not infer other branches, retries or execution guarantees."
+          }
+        ],
+        "deliveryId": "55e73394-095f-4e76-9287-23ecbe3e81fa"
+      }
+    },
+    {
+      "key": "ptc-workflow-opposite",
+      "status": "refused",
+      "codes": [
+        "SOURCE_WORKFLOW_SYNTAX"
+      ],
+      "sourceSha256": "a749c57896b1dc8deee34d7519ae3739a6996da78eb1fd0cdcd5989f86aee8bf",
+      "priorMatchDidNotAuthorizeRender": false,
+      "oldBoundHistoryRetained": true,
+      "refresh": true,
+      "failed": {
+        "status": "validation-failed",
+        "turn": 2,
+        "displayId": "workflow-ptc-original",
+        "issues": [
+          {
+            "code": "SOURCE_WORKFLOW_SYNTAX",
+            "path": "$.source.excerpt",
+            "reason": "The failure policy must explicitly state only-retry and no-rollback; opposite or extra policies are unsupported.",
+            "hint": "Inspect source-check; map every explicit failure policy to current node IDs. Do not infer other branches, retries or execution guarantees."
+          }
+        ],
+        "deliveryId": "3b7511ae-98a7-4bdc-b335-f68386725f01"
+      }
+    },
+    {
+      "key": "ptc-workflow-legacy",
+      "status": "legacy-restored",
+      "protocol": "1.0",
+      "component": "ArchitectureExplorer",
+      "refresh": true
+    }
+  ],
+  "historyReopened": true,
+  "pageErrors": [],
+  "archiveInstalled": true,
+  "fixtureOnly": true,
+  "newObservedModelTurns": 0,
+  "freeProseVerified": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false
+}

@@ -1,0 +1,62 @@
+{
+  "allThreeTaskOwnedRunsTerminal": true,
+  "allTaskOwnedPortsClosed": true,
+  "unrelatedServicesTouched": false,
+  "ownedRunProcessResults": [
+    {
+      "run": "host-1793091839313",
+      "processes": [
+        {
+          "kind": "fixture",
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ]
+    },
+    {
+      "run": "host-1793091954674",
+      "processes": [
+        {
+          "kind": "fixture",
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ]
+    },
+    {
+      "run": "host-1793092416348",
+      "processes": [
+        {
+          "kind": "fixture",
+          "exitCode": null,
+          "signalCode": "SIGTERM"
+        },
+        {
+          "kind": "native",
+          "exitCode": 0,
+          "signalCode": null
+        },
+        {
+          "kind": "ptc",
+          "exitCode": 0,
+          "signalCode": null
+        }
+      ]
+    }
+  ]
+}

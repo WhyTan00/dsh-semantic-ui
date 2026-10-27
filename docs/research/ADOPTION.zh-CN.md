@@ -1,6 +1,8 @@
 # 采用记录与后续实现合同
 
-preview.22候选继续落实来源、结构和解释分离：[完整workflow失败规则](../SOURCE-WORKFLOW.zh-CN.md)要求四拓扑之外的明确失败分支、retry-only与no-rollback完整映射；普通render从同一来源重建约束和说明，不能靠正确箭头认证故障传播。候选开发检查与最终包分层；旧A2自然错误和世界/正文未核保持，没有新上游依赖或协议适配宣称。
+22的[最终分层接受](../evidence/source-workflow.json)已补齐：371文件归档、macOS/Linux Native/PTC与旧图恢复、普通答复正反例及四匿名资产分别核验。明确给定失败规则可核，原始模型正文仍不认证；旧研究与自然失败范围不重写。
+
+preview.22已交付继续落实来源、结构和解释分离：[完整workflow失败规则](../SOURCE-WORKFLOW.zh-CN.md)要求四拓扑之外的明确失败分支、retry-only与no-rollback完整映射；普通render从同一来源重建约束和说明，不能靠正确箭头认证故障传播。候选开发检查与最终包分层；旧A2自然错误和世界/正文未核保持，没有新上游依赖或协议适配宣称。
 
 
 preview.21已交付，进一步吸收“只读状态与明确执行分开”的生命周期原则：[冷来源补充](../COLD-SOURCE-UPDATE.zh-CN.md)复用原生投影、Session resolver、命令/Peer/prompt与原ID收据；归档、排队和有自动任务历史的会话不会由此入口恢复。开发构建和最终归档分开记录；最终365文件归档的macOS/Linux Native/PTC、实际组件无ID反例及四匿名资产已[单独接受](../evidence/cold-source-update.json)。未引入AG-UI/A2UI适配器、新图表引擎或第二会话库，不把这项窄闭环算作通用表单完成。

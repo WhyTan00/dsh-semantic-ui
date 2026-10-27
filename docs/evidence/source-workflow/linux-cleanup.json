@@ -1,0 +1,20 @@
+{
+  "allOwnedChildrenTerminal": true,
+  "processes": [
+    {
+      "kind": "fixture",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "kind": "native",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc",
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ]
+}

@@ -1,0 +1,371 @@
+{
+  "normalEntry": "examples/codex-readonly.py --answer --source-kind workflow-zh; exact archive/manifest and one explicit request file",
+  "archiveSha256": "ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e",
+  "mcpEntrySha256": "18dbeeb49f4c392eb9e24370bc830154c625ff77961a9b38b903683f600267e5",
+  "request": {
+    "view": {
+      "protocolVersion": "1.4",
+      "component": "ArchitectureExplorer",
+      "displayId": "workflow-fixture",
+      "revision": 1,
+      "summary": "仅核来源拓扑与明确异常规则；未认证任意正文。",
+      "payload": {
+        "title": "流程与明确异常规则",
+        "nodes": [
+          {
+            "id": "node-fixture-0",
+            "label": "入口",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-1",
+            "label": "鉴权",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-2",
+            "label": "库存",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-3",
+            "label": "支付",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-fixture-4",
+            "label": "通知",
+            "responsibility": "职责与执行状态未声明。",
+            "constraints": [],
+            "evidence": []
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-fixture-0",
+            "source": "node-fixture-0",
+            "target": "node-fixture-1",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-1",
+            "source": "node-fixture-1",
+            "target": "node-fixture-2",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-2",
+            "source": "node-fixture-2",
+            "target": "node-fixture-3",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          },
+          {
+            "id": "edge-fixture-3",
+            "source": "node-fixture-3",
+            "target": "node-fixture-4",
+            "directed": true,
+            "type": "declared",
+            "evidence": []
+          }
+        ],
+        "scenarios": []
+      }
+    },
+    "mapping": {
+      "failurePolicies": [
+        {
+          "trigger": "node-fixture-4",
+          "retryOnly": [
+            "node-fixture-4"
+          ],
+          "noRollback": [
+            "node-fixture-3"
+          ]
+        }
+      ]
+    },
+    "claims": [
+      {
+        "kind": "rollback",
+        "trigger": "通知",
+        "target": "支付",
+        "value": true
+      }
+    ]
+  },
+  "response": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"workflow-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"9eca85695ab3b13b466a0163de6bc3b182fadd41655db309ef96d034637bbd4b\",\"jsonPointer\":\"/source\",\"textSha256\":\"aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0\",\"excerptSha256\":\"aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":174,\"textUTF8Bytes\":174},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified\"},\"identityVerified\":false,\"sourceFactsVerified\":false,\"freeProseVerified\":false,\"status\":\"compared\",\"sourceWorkflow\":{\"nodes\":[\"入口\",\"鉴权\",\"库存\",\"支付\",\"通知\"],\"relations\":[{\"from\":\"入口\",\"to\":\"鉴权\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"from\":\"鉴权\",\"to\":\"库存\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"from\":\"库存\",\"to\":\"支付\",\"spans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"from\":\"支付\",\"to\":\"通知\",\"spans\":[{\"textByteStart\":57,\"textByteEnd\":72}]}],\"failurePolicies\":[{\"trigger\":\"通知\",\"retryOnly\":[\"通知\"],\"noRollback\":[\"支付\"],\"triggerSpans\":[{\"textByteStart\":75,\"textByteEnd\":102}],\"retrySpans\":[{\"textByteStart\":75,\"textByteEnd\":102}],\"noRollbackSpans\":[{\"textByteStart\":105,\"textByteEnd\":120}]}],\"questions\":[{\"triggers\":[\"通知\",\"库存\"],\"span\":{\"textByteStart\":123,\"textByteEnd\":171}}]},\"comparison\":{\"status\":\"matched\",\"coverage\":\"all explicit topology and failure policies in the complete selected workflow source\",\"edgeChecks\":[{\"edgeId\":\"edge-fixture-0\",\"from\":\"入口\",\"to\":\"鉴权\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"edgeId\":\"edge-fixture-1\",\"from\":\"鉴权\",\"to\":\"库存\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"edgeId\":\"edge-fixture-2\",\"from\":\"库存\",\"to\":\"支付\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":21,\"textByteEnd\":54}]},{\"edgeId\":\"edge-fixture-3\",\"from\":\"支付\",\"to\":\"通知\",\"status\":\"matched\",\"sourceSpans\":[{\"textByteStart\":57,\"textByteEnd\":72}]}],\"missingRelations\":[],\"policyChecks\":[{\"trigger\":\"通知\",\"retryOnly\":[\"通知\"],\"noRollback\":[\"支付\"]}],\"missingPolicies\":[]},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"rollback\",\"status\":\"contradicted\",\"sourceSpans\":[{\"textByteStart\":75,\"textByteEnd\":102},{\"textByteStart\":75,\"textByteEnd\":102},{\"textByteStart\":105,\"textByteEnd\":120}],\"code\":\"SOURCE_RULE_CONTRADICTION\",\"reason\":\"Contradicts the explicit policy on this failure branch.\"}],\"conclusion\":{\"selectedSource\":\"matched\",\"structuredClaims\":\"contradicted\",\"sourceIdentity\":\"unverified\",\"freeProse\":\"not-verified\"},\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"reason\":\"No keyword removal or arbitrary prose certification.\"},\"canonicalExplanation\":{\"status\":\"withheld\"}}"
+      }
+    ],
+    "structuredContent": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "workflow-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "9eca85695ab3b13b466a0163de6bc3b182fadd41655db309ef96d034637bbd4b",
+        "jsonPointer": "/source",
+        "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 174,
+          "textUTF8Bytes": 174
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "status": "compared",
+      "sourceWorkflow": {
+        "nodes": [
+          "入口",
+          "鉴权",
+          "库存",
+          "支付",
+          "通知"
+        ],
+        "relations": [
+          {
+            "from": "入口",
+            "to": "鉴权",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "鉴权",
+            "to": "库存",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "库存",
+            "to": "支付",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "支付",
+            "to": "通知",
+            "spans": [
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ]
+          }
+        ],
+        "failurePolicies": [
+          {
+            "trigger": "通知",
+            "retryOnly": [
+              "通知"
+            ],
+            "noRollback": [
+              "支付"
+            ],
+            "triggerSpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "retrySpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "noRollbackSpans": [
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ]
+          }
+        ],
+        "questions": [
+          {
+            "triggers": [
+              "通知",
+              "库存"
+            ],
+            "span": {
+              "textByteStart": 123,
+              "textByteEnd": 171
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "status": "matched",
+        "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+        "edgeChecks": [
+          {
+            "edgeId": "edge-fixture-0",
+            "from": "入口",
+            "to": "鉴权",
+            "status": "matched",
+            "sourceSpans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "edgeId": "edge-fixture-1",
+            "from": "鉴权",
+            "to": "库存",
+            "status": "matched",
+            "sourceSpans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "edgeId": "edge-fixture-2",
+            "from": "库存",
+            "to": "支付",
+            "status": "matched",
+            "sourceSpans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "edgeId": "edge-fixture-3",
+            "from": "支付",
+            "to": "通知",
+            "status": "matched",
+            "sourceSpans": [
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ]
+          }
+        ],
+        "missingRelations": [],
+        "policyChecks": [
+          {
+            "trigger": "通知",
+            "retryOnly": [
+              "通知"
+            ],
+            "noRollback": [
+              "支付"
+            ]
+          }
+        ],
+        "missingPolicies": []
+      },
+      "issues": [],
+      "claimChecks": [
+        {
+          "index": 0,
+          "kind": "rollback",
+          "status": "contradicted",
+          "sourceSpans": [
+            {
+              "textByteStart": 75,
+              "textByteEnd": 102
+            },
+            {
+              "textByteStart": 75,
+              "textByteEnd": 102
+            },
+            {
+              "textByteStart": 105,
+              "textByteEnd": 120
+            }
+          ],
+          "code": "SOURCE_RULE_CONTRADICTION",
+          "reason": "Contradicts the explicit policy on this failure branch."
+        }
+      ],
+      "conclusion": {
+        "selectedSource": "matched",
+        "structuredClaims": "contradicted",
+        "sourceIdentity": "unverified",
+        "freeProse": "not-verified"
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "reason": "No keyword removal or arbitrary prose certification."
+      },
+      "canonicalExplanation": {
+        "status": "withheld"
+      }
+    }
+  },
+  "delivery": {
+    "kind": "host-source-canonical",
+    "status": "withheld",
+    "text": "当前来源或比较请求未通过完整核对，未交付已核答复。\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。",
+    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+    "sourceDocumentSha256": "9eca85695ab3b13b466a0163de6bc3b182fadd41655db309ef96d034637bbd4b",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "stdoutEqualsDelivery": true,
+  "twoWireLayers": {
+    "codex-wire.jsonl": {
+      "requestMatchesNormalClient": true,
+      "responseMatchesNormalClient": true,
+      "wireSha256": "cb0f5b0b025ed948a906dad7ac89d244d8e1452a1abb080a634999f7f17cf044"
+    },
+    "mcp-wire.jsonl": {
+      "requestMatchesNormalClient": true,
+      "responseMatchesNormalClient": true,
+      "wireSha256": "80a72fa612337d327ca96d4cceb7cf62789ed75baf0d0f06f07175784b08db0c"
+    }
+  },
+  "terminal": {
+    "exitCode": 0,
+    "modelTurnRequests": 0,
+    "newModelTurns": 0,
+    "globalConfigShaUnchanged": true
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false
+}

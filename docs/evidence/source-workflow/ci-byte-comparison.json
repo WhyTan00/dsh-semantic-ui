@@ -1,0 +1,29 @@
+{
+  "runId": 40479181323,
+  "files": [
+    {
+      "name": "package-manifest.json",
+      "sha256": "63d58c46913fadb897b825dddee9eef246ab57c5248e097d08b5f3ea18472d1b",
+      "bytes": 33385,
+      "linuxMatchesMacOS": true
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.22.tgz",
+      "sha256": "ed0187cc5089c9f3c84c3f4eb3d2063856428e2db71f730fe53a170776aadb2e",
+      "bytes": 2630228,
+      "linuxMatchesMacOS": true
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.22.tgz",
+      "sha256": "1926e8244bf85c233c7d97a7b3caa70756d41c552780b823641b075b4e4c86d2",
+      "bytes": 30771761,
+      "linuxMatchesMacOS": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "sha256": "089caa16e019d7d63705aebf994ed01197e5a59419ef2bf250fd05d89257b8e1",
+      "bytes": 229,
+      "linuxMatchesMacOS": true
+    }
+  ]
+}
