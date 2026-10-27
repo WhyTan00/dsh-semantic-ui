@@ -1,5 +1,7 @@
 # 实际进度
 
+19发行后另完成[来源补充后的Codex快照采用](CODEX-SOURCE-UPDATE.zh-CN.md)：一个新反向分支场景经正常DSH19控件保存unknown→false的新声明，原生消息与导入文件hash逐项关联；两份独立guided回合各4次模型语义调用，首个view比较matched，raw final按独立判据评读met。新false按else推出need=true，价格/整体未知。它是文件快照导入，不是实时回调/主客户端安装；backend请求数unknown，任意正文仍未认证。没有新runtime或发行，原19的0模型接受不改。
+
 当前交付preview.19已完成正规开源：[Release425087240](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，source87e56ec。30项检查、最终317文件真实安装、本机/Linux Native/PTC单字段新源采用、丢失回执/重复/冷收据/刷新通过；CI40458705531 success，四份资产匿名下载与本机/Linux一致。18候选失败不发布，原包/CI保留。模型观察0，raw正文仍未核、cold历史直接编辑未实现；长期Goal开放。实际范围与恢复入口见[分层回执](evidence/source-update.json)。
 
 18候选已因SDK类实例边界在实际安装时失败，未发布且原包/CI失败保留。19改用宿主CommandRuntime原生命令日志，预冻结安装Native通过。preview.19已实现[单个未知当前事实补充](SOURCE-UPDATE.zh-CN.md)，开发树30项定向检查和真实Native/PTC的正常prompt、新消息/新哈希/新checkpoint、丢失回执与重启收据、刷新旧新视图通过。正式归档安装/Linux/发布分别后补证据，不把开发树验收当发行完成；新模型观察0、自由正文未核，长期目标开放。

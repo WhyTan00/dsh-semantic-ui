@@ -1,0 +1,19 @@
+{
+  "original": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对未知。两边价格都未知。",
+  "updated": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对为否。两边价格都未知。",
+  "condition": "即时核对",
+  "newValue": false,
+  "updatedNeed": true,
+  "options": [
+    "澄月",
+    "青禾"
+  ],
+  "capability": "回放",
+  "supports": [
+    true,
+    false
+  ],
+  "sourceStatus": "explicit controlled synthetic fixture, not a model answer",
+  "originalQuestion": "请按资料比较两种方案，说明当前要求能否确定，以及还有什么未知。",
+  "updatedQuestion": "请依据最新资料说明两种方案是否满足当前要求，保留资料未说明的部分。"
+}

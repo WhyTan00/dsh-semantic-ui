@@ -1,0 +1,833 @@
+{
+  "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+  "originalRequestId": "97cdaff8-7786-4926-8bf9-2c5c7f17ae8a",
+  "requestId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b",
+  "adopted": {
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "requestId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b",
+    "base": {
+      "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+      "turn": 1,
+      "turnStartSeq": 6,
+      "messageId": "1a116b93-3c30-4fe4-835a-2c673ed1884a",
+      "messageSeq": 10,
+      "textSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+      "displayId": "condition-adoption-before",
+      "revision": 1
+    },
+    "change": {
+      "condition": "即时核对",
+      "from": null,
+      "to": false,
+      "textByteStart": 156,
+      "textByteEnd": 180,
+      "before": "当前即时核对未知",
+      "after": "当前即时核对为否"
+    },
+    "nextTextSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+    "durable": true,
+    "message": {
+      "id": "569b856a-ee4f-4235-840a-a49793e8f3c6",
+      "seq": 36,
+      "turn": 2,
+      "turnStartSeq": 33,
+      "requestId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b",
+      "textSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9"
+    },
+    "checkpoint": {
+      "seq": 44,
+      "displayId": "condition-adoption-after",
+      "revision": 1,
+      "textSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+      "explanation": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=true。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=false（来源明确声明），所以当前需要回放=true；澄月满足本项；青禾不满足本项。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    },
+    "status": "adopted",
+    "asOfSeq": 49
+  },
+  "originalCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "DSH current own-turn message content snapshot; not a file",
+      "hostContext": {
+        "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+        "turn": 1,
+        "turnStartSeq": 6,
+        "messageId": "1a116b93-3c30-4fe4-835a-2c673ed1884a",
+        "messageSeq": 10,
+        "producerSourceKind": "user",
+        "inherited": false,
+        "excludedSyntheticContexts": 4,
+        "requestId": "97cdaff8-7786-4926-8bf9-2c5c7f17ae8a"
+      },
+      "textSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+      "excerptSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 207,
+        "textUTF8Bytes": 207
+      },
+      "identityVerified": false,
+      "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "澄月",
+        "青禾"
+      ],
+      "facts": [
+        {
+          "kind": "capability",
+          "option": "澄月",
+          "name": "回放",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 39,
+              "textByteEnd": 57
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "青禾",
+          "name": "回放",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 60,
+              "textByteEnd": 81
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "澄月",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "青禾",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "回放",
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            {
+              "textByteStart": 102,
+              "textByteEnd": 126
+            },
+            {
+              "textByteStart": 129,
+              "textByteEnd": 153
+            },
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "derivation": {
+            "condition": "即时核对",
+            "whenTrue": false,
+            "whenFalse": true,
+            "current": null
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 57
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 60,
+            "textByteEnd": 81
+          }
+        },
+        {
+          "kind": "condition",
+          "span": {
+            "textByteStart": 84,
+            "textByteEnd": 99
+          }
+        },
+        {
+          "kind": "condition-true-branch",
+          "span": {
+            "textByteStart": 102,
+            "textByteEnd": 126
+          }
+        },
+        {
+          "kind": "condition-false-branch",
+          "span": {
+            "textByteStart": 129,
+            "textByteEnd": 153
+          }
+        },
+        {
+          "kind": "current-condition",
+          "span": {
+            "textByteStart": 156,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 204
+          }
+        }
+      ],
+      "conditionalNeeds": [
+        {
+          "name": "回放",
+          "condition": "即时核对",
+          "whenTrue": false,
+          "whenFalse": true,
+          "current": null,
+          "currentSpans": [
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "spans": {
+            "condition": {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            "whenTrue": {
+              "textByteStart": 102,
+              "textByteEnd": 126
+            },
+            "whenFalse": {
+              "textByteStart": 129,
+              "textByteEnd": 153
+            }
+          },
+          "derivedNeed": null
+        }
+      ]
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "fieldChecks": [],
+    "inputChecks": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=未知。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=未知（来源明确声明），所以当前需要回放=未知；条件未定，不能按false或不需要处理。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "updatedCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "DSH current own-turn message content snapshot; not a file",
+      "hostContext": {
+        "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+        "turn": 2,
+        "turnStartSeq": 33,
+        "messageId": "569b856a-ee4f-4235-840a-a49793e8f3c6",
+        "messageSeq": 36,
+        "producerSourceKind": "user",
+        "inherited": false,
+        "excludedSyntheticContexts": 0,
+        "requestId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b"
+      },
+      "textSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+      "excerptSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 207,
+        "textUTF8Bytes": 207
+      },
+      "identityVerified": false,
+      "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "澄月",
+        "青禾"
+      ],
+      "facts": [
+        {
+          "kind": "capability",
+          "option": "澄月",
+          "name": "回放",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 39,
+              "textByteEnd": 57
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "青禾",
+          "name": "回放",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 60,
+              "textByteEnd": 81
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "澄月",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "青禾",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "回放",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            {
+              "textByteStart": 102,
+              "textByteEnd": 126
+            },
+            {
+              "textByteStart": 129,
+              "textByteEnd": 153
+            },
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "derivation": {
+            "condition": "即时核对",
+            "whenTrue": false,
+            "whenFalse": true,
+            "current": false
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 57
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 60,
+            "textByteEnd": 81
+          }
+        },
+        {
+          "kind": "condition",
+          "span": {
+            "textByteStart": 84,
+            "textByteEnd": 99
+          }
+        },
+        {
+          "kind": "condition-true-branch",
+          "span": {
+            "textByteStart": 102,
+            "textByteEnd": 126
+          }
+        },
+        {
+          "kind": "condition-false-branch",
+          "span": {
+            "textByteStart": 129,
+            "textByteEnd": 153
+          }
+        },
+        {
+          "kind": "current-condition",
+          "span": {
+            "textByteStart": 156,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 204
+          }
+        }
+      ],
+      "conditionalNeeds": [
+        {
+          "name": "回放",
+          "condition": "即时核对",
+          "whenTrue": false,
+          "whenFalse": true,
+          "current": false,
+          "currentSpans": [
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "spans": {
+            "condition": {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            "whenTrue": {
+              "textByteStart": 102,
+              "textByteEnd": 126
+            },
+            "whenFalse": {
+              "textByteStart": 129,
+              "textByteEnd": 153
+            }
+          },
+          "derivedNeed": true
+        }
+      ]
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "fieldChecks": [],
+    "inputChecks": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=true。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=false（来源明确声明），所以当前需要回放=true；澄月满足本项；青禾不满足本项。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "originalDelivery": {
+    "status": "delivered",
+    "turn": 1,
+    "displayId": "condition-adoption-before",
+    "revision": 1,
+    "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+    "presentation": {
+      "version": 1,
+      "theme": {
+        "mode": "light",
+        "palette": "ocean",
+        "font": "system",
+        "density": "comfortable",
+        "textSize": "standard"
+      },
+      "layout": {
+        "direction": "auto"
+      }
+    },
+    "protocolVersion": "1.4",
+    "component": "DecisionExplorer",
+    "summarySource": "source-derived bounded projection",
+    "sourceFactsVerified": false,
+    "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+    "decisionFacts": {
+      "scope": "declared-policy-under-original-conditions",
+      "status": "no-match",
+      "strictPolicy": true,
+      "inputEffects": [
+        {
+          "inputId": "need-adoption-before",
+          "requirementIds": [
+            "requirement-adoption-before"
+          ],
+          "constraintIds": [],
+          "ruleIds": [],
+          "affectsEligibility": true,
+          "affectsPreference": false,
+          "scope": "hard"
+        }
+      ],
+      "unusedInputIds": [],
+      "requiresPolicyReview": false,
+      "preferenceMode": "withheld-pending-local-review",
+      "eligibilityOnly": true,
+      "eligibilityAssessed": true,
+      "eligibleOptionIds": [],
+      "excludedOptionIds": [],
+      "unknownFeasibilityIds": [
+        "option-0-adoption-before",
+        "option-1-adoption-before"
+      ],
+      "requirements": [
+        {
+          "requirementId": "requirement-adoption-before",
+          "optionId": "option-0-adoption-before",
+          "dimensionId": "cap-adoption-before",
+          "inputId": "need-adoption-before",
+          "unit": null,
+          "actual": true,
+          "needed": null,
+          "relation": "supports",
+          "active": true,
+          "status": "unknown"
+        },
+        {
+          "requirementId": "requirement-adoption-before",
+          "optionId": "option-1-adoption-before",
+          "dimensionId": "cap-adoption-before",
+          "inputId": "need-adoption-before",
+          "unit": null,
+          "actual": false,
+          "needed": null,
+          "relation": "supports",
+          "active": true,
+          "status": "unknown"
+        }
+      ],
+      "unknownComparisonCells": [
+        {
+          "optionId": "option-0-adoption-before",
+          "dimensionId": "price-adoption-before"
+        },
+        {
+          "optionId": "option-1-adoption-before",
+          "dimensionId": "price-adoption-before"
+        }
+      ],
+      "proposalWithMissingFacts": false,
+      "resultBasis": null,
+      "sourceFactsVerified": false,
+      "recommendedOptionIds": [],
+      "matchedRuleIds": [],
+      "pendingRuleIds": [],
+      "missingInputs": [
+        {
+          "id": "need-adoption-before",
+          "label": "当前需要回放"
+        }
+      ],
+      "activeConstraintIds": [],
+      "unknownConstraintIds": [],
+      "declaredOriginCounts": {
+        "given": 0,
+        "modelJudgment": 0
+      },
+      "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+    },
+    "declarationMapping": {
+      "scope": "declared-fields-and-dependencies",
+      "sourceFactsVerified": false,
+      "requirements": [
+        {
+          "requirementId": "requirement-adoption-before",
+          "dimensionId": "cap-adoption-before",
+          "dimensionRole": "capability-support",
+          "inputId": "need-adoption-before",
+          "inputRole": "capability-need",
+          "relation": "supports",
+          "unit": null
+        }
+      ],
+      "inputs": [
+        {
+          "inputId": "need-adoption-before",
+          "scope": "hard",
+          "expectedEffect": "hard"
+        }
+      ],
+      "dependencyLinks": "decisionFacts.inputEffects",
+      "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+    },
+    "canonicalSummary": "Declared comparison: 2 options, 2 dimensions. Meets declared hard requirements: none. Unknown feasibility: 澄月, 青禾. No preference established.",
+    "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+    "canonicalExplanation": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=未知。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=未知（来源明确声明），所以当前需要回放=未知；条件未定，不能按false或不需要处理。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+    "sourceDeliveryStatus": "bound",
+    "identityVerified": false,
+    "deliveryId": "1de46786-fd1d-411b-90f0-eb4c78f56fd4"
+  },
+  "updatedDelivery": {
+    "status": "delivered",
+    "turn": 2,
+    "displayId": "condition-adoption-after",
+    "revision": 1,
+    "summary": "来源声明的方案与原始条件；未知保持未知，本地假设不改变来源事实或建立推荐。",
+    "presentation": {
+      "version": 1,
+      "theme": {
+        "mode": "light",
+        "palette": "ocean",
+        "font": "system",
+        "density": "comfortable",
+        "textSize": "standard"
+      },
+      "layout": {
+        "direction": "auto"
+      }
+    },
+    "protocolVersion": "1.4",
+    "component": "DecisionExplorer",
+    "summarySource": "source-derived bounded projection",
+    "sourceFactsVerified": false,
+    "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+    "decisionFacts": {
+      "scope": "declared-policy-under-original-conditions",
+      "status": "no-match",
+      "strictPolicy": true,
+      "inputEffects": [
+        {
+          "inputId": "need-adoption-after",
+          "requirementIds": [
+            "requirement-adoption-after"
+          ],
+          "constraintIds": [],
+          "ruleIds": [],
+          "affectsEligibility": true,
+          "affectsPreference": false,
+          "scope": "hard"
+        }
+      ],
+      "unusedInputIds": [],
+      "requiresPolicyReview": false,
+      "preferenceMode": "withheld-pending-local-review",
+      "eligibilityOnly": true,
+      "eligibilityAssessed": true,
+      "eligibleOptionIds": [
+        "option-0-adoption-after"
+      ],
+      "excludedOptionIds": [
+        "option-1-adoption-after"
+      ],
+      "unknownFeasibilityIds": [],
+      "requirements": [
+        {
+          "requirementId": "requirement-adoption-after",
+          "optionId": "option-0-adoption-after",
+          "dimensionId": "cap-adoption-after",
+          "inputId": "need-adoption-after",
+          "unit": null,
+          "actual": true,
+          "needed": true,
+          "relation": "supports",
+          "active": true,
+          "status": "pass"
+        },
+        {
+          "requirementId": "requirement-adoption-after",
+          "optionId": "option-1-adoption-after",
+          "dimensionId": "cap-adoption-after",
+          "inputId": "need-adoption-after",
+          "unit": null,
+          "actual": false,
+          "needed": true,
+          "relation": "supports",
+          "active": true,
+          "status": "fail"
+        }
+      ],
+      "unknownComparisonCells": [
+        {
+          "optionId": "option-0-adoption-after",
+          "dimensionId": "price-adoption-after"
+        },
+        {
+          "optionId": "option-1-adoption-after",
+          "dimensionId": "price-adoption-after"
+        }
+      ],
+      "proposalWithMissingFacts": false,
+      "resultBasis": null,
+      "sourceFactsVerified": false,
+      "recommendedOptionIds": [],
+      "matchedRuleIds": [],
+      "pendingRuleIds": [],
+      "missingInputs": [],
+      "activeConstraintIds": [],
+      "unknownConstraintIds": [],
+      "declaredOriginCounts": {
+        "given": 0,
+        "modelJudgment": 0
+      },
+      "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+    },
+    "declarationMapping": {
+      "scope": "declared-fields-and-dependencies",
+      "sourceFactsVerified": false,
+      "requirements": [
+        {
+          "requirementId": "requirement-adoption-after",
+          "dimensionId": "cap-adoption-after",
+          "dimensionRole": "capability-support",
+          "inputId": "need-adoption-after",
+          "inputRole": "capability-need",
+          "relation": "supports",
+          "unit": null
+        }
+      ],
+      "inputs": [
+        {
+          "inputId": "need-adoption-after",
+          "scope": "hard",
+          "expectedEffect": "hard"
+        }
+      ],
+      "dependencyLinks": "decisionFacts.inputEffects",
+      "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+    },
+    "canonicalSummary": "Declared comparison: 2 options, 2 dimensions. Meets declared hard requirements: 澄月. Unknown feasibility: none. No preference established.",
+    "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+    "canonicalExplanation": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=true。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=false（来源明确声明），所以当前需要回放=true；澄月满足本项；青禾不满足本项。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+    "sourceDeliveryStatus": "bound",
+    "identityVerified": false,
+    "deliveryId": "bc3f913e-109b-4a6c-a0d5-48041197948c"
+  },
+  "originalEvent": {
+    "type": "user/message",
+    "seq": 10,
+    "time": 1793082405683,
+    "data": {
+      "content": [
+        {
+          "type": "text",
+          "text": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对未知。两边价格都未知。"
+        }
+      ],
+      "source": {
+        "kind": "user",
+        "rpcId": "97cdaff8-7786-4926-8bf9-2c5c7f17ae8a",
+        "clientTimeZone": "UTC"
+      },
+      "role": "user",
+      "id": "1a116b93-3c30-4fe4-835a-2c673ed1884a"
+    },
+    "surfaceOp": "append"
+  },
+  "updatedEvent": {
+    "type": "user/message",
+    "seq": 36,
+    "time": 1793082408882,
+    "data": {
+      "content": [
+        {
+          "type": "text",
+          "text": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对为否。两边价格都未知。"
+        }
+      ],
+      "source": {
+        "kind": "user",
+        "rpcId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b",
+        "clientTimeZone": "UTC"
+      },
+      "role": "user",
+      "id": "569b856a-ee4f-4235-840a-a49793e8f3c6"
+    },
+    "surfaceOp": "append"
+  },
+  "oldExplanation": "澄月：回放支持=true；价格声明未知。\n青禾：回放支持=false；价格声明未知。\n当前需要回放=未知。\n来源两分支：若即时核对=true，则需要回放=false；否则需要回放=true。\n当前即时核对=未知（来源明确声明），所以当前需要回放=未知；条件未定，不能按false或不需要处理。\n若本地假设即时核对=true：本项不排除两种方案；若本地假设即时核对=false：澄月满足本项；青禾不满足本项。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+  "pageErrors": [],
+  "newObservedModelTurns": 0,
+  "fixtureOnly": true
+}

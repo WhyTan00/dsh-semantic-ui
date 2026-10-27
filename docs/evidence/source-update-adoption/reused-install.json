@@ -1,0 +1,13 @@
+{
+  "version": "0.1.0-preview.19",
+  "sourceCommit": "87e56ecfcff6fbf35622c14ac6130cb004c76ac5",
+  "archiveSha256": "e3912c33cd0aab2d46c2f20c20b6cb1f6ba243a5b69c7cafc6fb82dc1c26a46f",
+  "runtimeEntrypoints": {
+    "dist/host.js": "568b0b07010ed35ba288917007a29dc3ef692bff78c5b7827f75fb1d3fe9b2a9",
+    "dist/client.js": "3ba07192a519ca045d44f16c4e632ba8ce071faf4ed449503e08211798f95856",
+    "dist/core.js": "272c19b6c4cc63ae937e20cd8b7f7e31968bc37af3bc71c24946ef6878533682",
+    "dist/mcp.js": "e26dd6cabd0a90c5a78f5eb0c836640bec7264dbe75195984e4da4b828b86164",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "installationRepeated": false
+}

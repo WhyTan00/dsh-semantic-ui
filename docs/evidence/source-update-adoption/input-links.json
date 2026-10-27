@@ -1,0 +1,28 @@
+[
+  {
+    "label": "original",
+    "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+    "messageId": "1a116b93-3c30-4fe4-835a-2c673ed1884a",
+    "messageSeq": 10,
+    "requestId": "97cdaff8-7786-4926-8bf9-2c5c7f17ae8a",
+    "turn": 1,
+    "turnStartSeq": 6,
+    "nativeContentSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+    "codexInputDocumentSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+    "questionSha256": "0e17c9bb9ffa58d78d52cb61fd52bd8ada0c973d8db15d9b696e57fb0559ef6f",
+    "importKind": "immutable captured plain text file; no live callback or author authentication"
+  },
+  {
+    "label": "updated",
+    "sessionId": "session-6e891aef-15a8-4658-af34-263c5840822d",
+    "messageId": "569b856a-ee4f-4235-840a-a49793e8f3c6",
+    "messageSeq": 36,
+    "requestId": "7dc4baf3-ac35-4d0a-aeec-fd51c18e053b",
+    "turn": 2,
+    "turnStartSeq": 33,
+    "nativeContentSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+    "codexInputDocumentSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+    "questionSha256": "bd4620eebb2b93337546f0b889f26ab5122da68fee7e38e8cd6fc864e8c4eba1",
+    "importKind": "immutable captured plain text file; no live callback or author authentication"
+  }
+]

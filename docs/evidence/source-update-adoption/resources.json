@@ -1,0 +1,45 @@
+{
+  "completedAt": "2026-10-27T06:39:11.484966+00:00",
+  "parent0520MaximumObservedTurns": 2,
+  "newObservedTurns": 2,
+  "remaining": 0,
+  "backendModelRequests": "unknown",
+  "observations": [
+    {
+      "label": "original",
+      "sourceSha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+      "turnId": "01a17c0f-19fa-7471-8129-d593c2622f36",
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "max",
+      "modelProvider": "openai",
+      "serviceTier": "default",
+      "observedTurns": 1,
+      "rawReview": "met",
+      "modelSemanticCalls": 4,
+      "builtinDiscoveryCalls": 2,
+      "hostExplicitCalls": 3,
+      "firstViewComparison": "matched",
+      "temporaryRootRemoved": true
+    },
+    {
+      "label": "updated",
+      "sourceSha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+      "turnId": "01a17c12-5f47-7a33-95cc-01380642d96e",
+      "model": "gpt-6.1-sol",
+      "reasoningEffort": "max",
+      "modelProvider": "openai",
+      "serviceTier": "default",
+      "observedTurns": 1,
+      "rawReview": "met",
+      "modelSemanticCalls": 4,
+      "builtinDiscoveryCalls": 2,
+      "hostExplicitCalls": 3,
+      "firstViewComparison": "matched",
+      "temporaryRootRemoved": true
+    }
+  ],
+  "hostPortsClosed": true,
+  "hostOwnedPatchRestored": true,
+  "allTemporaryRootsRemoved": true,
+  "runtimeUnchanged": true
+}

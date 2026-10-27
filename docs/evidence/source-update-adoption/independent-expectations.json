@@ -1,0 +1,45 @@
+{
+  "frozenAt": "2026-10-27T06:19:19.211264+00:00",
+  "kind": "new_independent_safe_synthetic_snapshot_adoption",
+  "sourceStatus": "controlled synthetic declarations, not real business/world facts",
+  "original": {
+    "source": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对未知。两边价格都未知。",
+    "sha256": "3d5cc19fe1de9380c36cd31591d95253ff8a6667c787cd0b3416635f838f5629",
+    "question": "请按资料比较两种方案，说明当前要求能否确定，以及还有什么未知。",
+    "questionSha256": "0e17c9bb9ffa58d78d52cb61fd52bd8ada0c973d8db15d9b696e57fb0559ef6f"
+  },
+  "supplement": {
+    "kind": "declared-source-revision",
+    "condition": "即时核对",
+    "from": null,
+    "to": false,
+    "before": "当前即时核对未知",
+    "after": "当前即时核对为否",
+    "textByteStart": 156,
+    "textByteEnd": 180
+  },
+  "updated": {
+    "source": "合成演练组在选澄月与青禾。前者支持回放；后者不支持回放。若即时核对，则我们不需要回放；否则我们需要回放。当前即时核对为否。两边价格都未知。",
+    "sha256": "78828cde6ded6cf9e05a695cfca01670682bf593362e5536a0cf87b66258aad9",
+    "question": "请依据最新资料说明两种方案是否满足当前要求，保留资料未说明的部分。",
+    "questionSha256": "bd4620eebb2b93337546f0b889f26ab5122da68fee7e38e8cd6fc864e8c4eba1"
+  },
+  "independentExpectations": {
+    "original": "Current 即时核对 unknown implies 回放 need unknown. 澄月 support true, 青禾 support false, both prices unknown. Both explicit branches may be explained as conditional, not current facts. No overall winner/viability or invented costs.",
+    "updated": "The caller-declared current 即时核对=false selects the explicit ELSE branch: 回放 needed=true. 澄月 satisfies this one item, 青禾 does not. This is opposite to a shortcut of current=false meaning no need. Both prices remain unknown; no overall recommendation or world/identity/free-prose certification.",
+    "host": "Normal admitted source-update submits exactly one declared-unknown current boolean, captured true requestId/native user event and full revised content. Original unknown immutable source and view remain. Import each actual captured text into an independent normal personal Codex read-only MCP snapshot, linked in audit metadata without asserting author identity or live callback. No model prompt includes receipt-derived conclusions or reviewer criteria.",
+    "raw": "Each actual raw model final and model tool result must independently match the captured source and its scope. Host canonical is inspected separately, never substitutes for a failing raw final."
+  },
+  "modelBudget": {
+    "maximumNewObservedTurnsThisWhole0520Delegation": 2,
+    "alreadyUsed": 0,
+    "planned": "one original-unknown snapshot and one newly accepted false snapshot, normal typed skill; no third/automatic retry; if first exposes a defect, preserve failure, fix generic cause offline then choose second most valuable independently frozen observation instead of replaying a success."
+  },
+  "noModelCriteria": [
+    "Before any model run stable offline source check must support the new inverted two-branch source, original unknown and updated false. Do not implement sample-name or final-prose white lists.",
+    "Do not replay the 19 acceptance matrix. Use one new normal host supplement for this independent scene, reuse accepted19 install and entry.",
+    "No model in the DSH fixture host; new raw observations only official personal CLI/app-server existing ChatGPT default gpt-6.1-sol max/openai/default, no global/account/tier/provider/routes changes or paid API.",
+    "Do not expose this evaluator file in model cwd/input/skill/MCP resources.",
+    "No runtime change/no new release unless a genuine generic defect is found and repaired. Never cover17/19 assets."
+  ]
+}
