@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.14新增有限`observations-zh`数值来源：原始每位置值/缺失mask/单位与单组类别柱状图显式绑定，observed/complete均值及分母分开；同均值填零、漏行、换单位、时间/排序或错误完整均值均拒绝。普通`--answer`可消费一项显式source请求，最终仍用来源canonical或拒绝。源阶段21项定向测试、类型及发行隔离通过，原测试辅助变量失败保留；最终归档/正常客户端/CI与发行按 [本段回执](evidence/source-numeric.json) 单列，不把源码阶段冒充完成。范围与正常命令见 [数值来源](SOURCE-NUMERIC.zh-CN.md)，无新模型回合或DSH来源适配，原0/6/18不变。
+
 伴随CLI补齐既有`--source-excerpt`透传；`arrows`原A2箭头选段、`permissions-zh`原A3全文各一次真实`--answer`完成，两项均为0模型回合，实际schema/source双层请求与响应一致、自有进程已退出、全局配置摘要未变。四条有向边及五项访问/一项禁止/主体局部目标限制与既有独立预期相同；没有view/claims比较或新自然模型验收，A2片段外故障/回滚/重试未核。可运行命令见 [普通答复](CODEX-GROUNDED.zh-CN.md)，新字节身份及完整结果见 [来源种类回执](evidence/grounded-answer-source-kinds.json)。只更新伴随源码与文档，未重打或重发preview.13；此前decision/模型结果继续按原字节单列。
 
 新增 [来源保障普通答复](CODEX-GROUNDED.zh-CN.md)：默认只读及`--answer`均0推理，只有明确`--model-candidate`启用单次有指引候选回合。原D1和独立名称/条件对照共2个新observed turns完成，本包模型调用4/5次，完整source比较最终matched；对照首次字面标签拒绝后同回合修正，原件保留。两候选按冻结预期逐项评读通过，产品仍标未核；最终正文仅用既有canonical，来源/世界/任意正文不认证。4离线合同、默认0/host-only/前置来源拒绝0均通过。模型后台请求数unknown；旧两题和DSH0/6/18不改。runtime13及资产保持，只提交伴随源码/文档/证据；见 [本段回执](evidence/grounded-answer.json)。

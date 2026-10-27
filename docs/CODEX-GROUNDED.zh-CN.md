@@ -49,6 +49,10 @@ python3 examples/codex-readonly.py --answer \
 
 仅当你需要生成和检查模型候选时，再加 `--model-candidate`。这显式使用本机正常登录、默认模型/推理/provider/service tier；没有API备用或账户切换。程序在相同临时进程中保留技能额外根，发送官方 `UserInput {type:'skill',name,path}` 和普通原问题，附加通用developer workflow。主问题没有手工view、正确答案或验收预期。这是宿主选择的有指引路径，不冒称模型无指引自然选择。
 
+## 数值来源与图表请求
+
+preview.14新增`--source-kind observations-zh`，将实际值/缺失mask/单位与DataChart位置及均值分母逐项绑定。完整正常命令、正例与同均值填零拒绝见 [数值来源](SOURCE-NUMERIC.zh-CN.md)。`--answer --requests-file`可传**一项**完整source_check请求；最终仍仅来自该次来源检查，不把view注释当有据说明。此用法需要14归档，不能外推到13；与`--model-candidate`同时使用请求文件会拒绝。本段零新模型回合，旧模型验收仍按各自版本保留。
+
 ## 最终文字来自哪里
 
 宿主先通过真实Codex线程读取现成 `source_check`，核对选定问题的文本摘要。可选模型回合结束后，再读同一启动快照。只有完整有限说明可用、来源文本相同且身份/世界事实未认证的边界保持时，才交付检查器原有的 `canonicalExplanation`，加固定范围说明。

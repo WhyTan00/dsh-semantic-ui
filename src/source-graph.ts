@@ -5,7 +5,7 @@ export const SOURCE_LIMITS={fileBytes:1_048_576,textBytes:32768,excerptBytes:163
 export interface SourceSnapshot{
  documentSha256?:string;textSha256:string;excerptSha256:string;jsonPointer?:string|null;
  textBytes:number;textByteStart:number;textByteEnd:number;excerpt:string;
- kind?:'arrows'|'decision-zh'|'permissions-zh';
+ kind?:'arrows'|'decision-zh'|'permissions-zh'|'observations-zh';
  hostContext?:{sessionId:string;turn:number;turnStartSeq:number;messageId:string;messageSeq:number;producerSourceKind:'user';inherited:false;excludedSyntheticContexts:number};
 }
 export interface SourceIssue{code:string;path:string;reason:string}
@@ -50,7 +50,7 @@ export function sourceMetadata(s:SourceSnapshot){return {
  textSha256:s.textSha256,excerptSha256:s.excerptSha256,
  selection:{textUTF8ByteStart:s.textByteStart,textUTF8ByteEnd:s.textByteEnd,textUTF8Bytes:s.textBytes},
  identityVerified:false,authorship:s.hostContext?'unverified; host message IDs and producer source.kind are not an independent human principal or signature':'unverified; a configured file does not certify its author or original user',
- scope:s.kind==='decision-zh'?'bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed':s.kind==='permissions-zh'?'bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed':'literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed',
+ scope:s.kind==='observations-zh'?'bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed':s.kind==='decision-zh'?'bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed':s.kind==='permissions-zh'?'bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed':'literal directed relations in the selected excerpt only; text outside the excerpt and natural-language meaning are not assessed',
 };}
 
 /** Cross-document comparison, never a certificate of source identity or prose truth. */

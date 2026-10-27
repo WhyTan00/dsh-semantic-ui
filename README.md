@@ -6,6 +6,8 @@ A personal, independently written **preview** plugin for native [DeepSeek Harnes
 - **DecisionExplorer** aligns common dimensions, preserves unknowns and explains finite conditional rules and hard constraints.
 - **DataChart** supports lines, category bars and real histograms, with explicit missing values, units, bin rules, filters and source tables.
 
+**Preview.14** adds [explicit numeric-source binding](docs/SOURCE-NUMERIC.zh-CN.md) to the optional read-only MCP path: ordered readings, null masks, exact units and observed/complete mean ranges are checked against a separately captured finite source. A missing value changed to zero is rejected even when means happen to coincide. The [normal companion answer](docs/CODEX-GROUNDED.zh-CN.md) can consume one explicit comparison without a model turn. This increment does not claim a new DSH numeric-source adapter, desktop UI or natural-model pass.
+
 Plain text remains appropriate for simple questions. No model-generated JavaScript, JSX, HTML, callbacks, arbitrary ECharts options or network resources are accepted.
 
 The [interactive UI ecosystem study](docs/research/README.md) curates 35 public projects with immutable source pins, licenses, actual chart dependencies and adoption decisions. It replaces a blanket GenUI fallback with capability-based selection. Preview.5 adds a read-only `action=catalog`, initial-policy `decisionFacts`, and working ECharts ARIA descriptions. Future form submission and application state remain explicitly unimplemented; see the [adoption record](docs/research/ADOPTION.zh-CN.md).

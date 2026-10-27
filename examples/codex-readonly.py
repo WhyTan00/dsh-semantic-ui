@@ -285,12 +285,12 @@ def main():
     parser.add_argument('--source-json-pointer')
     parser.add_argument('--source-excerpt',
                         help='Exact selected source text; passed unchanged to the existing source reader')
-    parser.add_argument('--source-kind', choices=['arrows','decision-zh','permissions-zh'],
+    parser.add_argument('--source-kind', choices=['arrows','decision-zh','permissions-zh','observations-zh'],
                         default='decision-zh')
     parser.add_argument('--component', choices=['ArchitectureExplorer','DecisionExplorer','DataChart'],
                         default='DecisionExplorer')
     parser.add_argument('--requests-file', type=Path,
-                        help='Optional JSON array of existing source-check requests; default [{}]')
+                        help='JSON array of source-check requests; answer accepts exactly one; default [{}]')
     parser.add_argument('--log-dir', type=Path,
                         help='New private directory for complete Codex/MCP protocol logs')
     parser.add_argument('--codex', default='codex')
@@ -302,12 +302,14 @@ def main():
         raise ValueError('Archive differs from the supplied manifest')
     if args.model_candidate and not args.answer:
         raise ValueError('--model-candidate requires --answer')
-    if args.answer and args.requests_file:
-        raise ValueError('Answer mode uses source inspection, not a custom request batch')
+    if args.model_candidate and args.requests_file:
+        raise ValueError('A model candidate uses source inspection, not a custom request batch')
     requests = json.loads(args.requests_file.read_text()) if args.requests_file else [{}]
     if not isinstance(requests, list) or not 1 <= len(requests) <= 16 or any(
             not isinstance(value, dict) for value in requests):
         raise ValueError('Supply one to sixteen JSON object requests')
+    if args.answer and len(requests) != 1:
+        raise ValueError('Answer mode requires exactly one source-check request')
     logs = args.log_dir.resolve() if args.log_dir else Path(tempfile.mkdtemp(prefix='semantic-route-logs-'))
     if args.log_dir:
         logs.mkdir(mode=0o700, parents=True, exist_ok=False)

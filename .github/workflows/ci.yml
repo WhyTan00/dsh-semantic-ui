@@ -57,7 +57,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && inputs.mcp_only
         run: |
           pnpm typecheck
-          pnpm exec vitest run tests/mcp.test.ts tests/mcp-instructions.test.ts
+          pnpm exec vitest run tests/mcp.test.ts tests/mcp-instructions.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/source-input.test.ts
           pnpm test:release-isolation
       - run: pnpm exec playwright install --with-deps chromium
         if: github.event_name != 'workflow_dispatch' || !inputs.mcp_only

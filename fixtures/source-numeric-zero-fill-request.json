@@ -1,0 +1,93 @@
+[
+  {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "numeric-source-example",
+      "revision": 1,
+      "component": "DataChart",
+      "summary": "Explicit source projection; annotations unverified.",
+      "payload": {
+        "chartType": "bar",
+        "title": "原文读数",
+        "unit": "摄氏度",
+        "x": {
+          "kind": "category",
+          "order": "input"
+        },
+        "series": [
+          {
+            "id": "reading-series",
+            "label": "温度"
+          }
+        ],
+        "rows": [
+          {
+            "id": "reading-1",
+            "x": "1",
+            "values": {
+              "reading-series": -2
+            }
+          },
+          {
+            "id": "reading-2",
+            "x": "2",
+            "values": {
+              "reading-series": 0
+            }
+          },
+          {
+            "id": "reading-3",
+            "x": "3",
+            "values": {
+              "reading-series": 0
+            }
+          },
+          {
+            "id": "reading-4",
+            "x": "4",
+            "values": {
+              "reading-series": 2
+            }
+          }
+        ]
+      }
+    },
+    "mapping": {
+      "seriesId": "reading-series",
+      "rows": [
+        {
+          "sourceIndex": 0,
+          "rowId": "reading-1"
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "reading-2"
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "reading-3"
+        },
+        {
+          "sourceIndex": 3,
+          "rowId": "reading-4"
+        }
+      ]
+    },
+    "claims": [
+      {
+        "kind": "mean",
+        "population": "observed",
+        "denominator": 4,
+        "value": 0,
+        "unit": "摄氏度"
+      },
+      {
+        "kind": "mean",
+        "population": "complete",
+        "denominator": 4,
+        "value": 0,
+        "unit": "摄氏度"
+      }
+    ]
+  }
+]

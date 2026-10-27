@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-27",
+  "version": "0.1.0-preview.14",
+  "protocolVersion": "1.4",
+  "scope": "source-stage candidate; final archive and normal-client acceptance recorded separately after freeze",
+  "sourceKind": "observations-zh",
+  "source": {
+    "path": "docs/evidence/natural/r9-N2.json",
+    "jsonPointer": "/question",
+    "sha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0"
+  },
+  "expectationsFrozenBeforeImplementation": "2026-10-27T00:17:40.091774+00:00",
+  "expectationsSha256": "839173df5e4c620b11743d6e20103a81a684fcd439fa422d2fa54cd71c06e3ae",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "newModelTurns": 0,
+  "sourceStage": {
+    "targetedTests": 21,
+    "files": 5,
+    "typecheck": "passed",
+    "releaseIsolation": "passed",
+    "firstFailure": "one test helper shadowed the parsed variable; corrected; private original log retained",
+    "productionPreAcceptanceFix": "compute source span start from parsed prefix fields; no source expectation change"
+  },
+  "normalClientAndArchiveAcceptance": "pending at source freeze",
+  "originalRun9": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18,
+    "rawChanged": false
+  },
+  "boundaries": [
+    "Finite complete grammar only; no source/world/author identity certification",
+    "One category bar series, ordered positions, exact labels and unit; other chart representations are not source-certified",
+    "No new DSH numeric-source adapter or desktop rich UI; old DSH matrices retain their version scope",
+    "No model turn, API call, account/route/global-setting change or whole-prose certification"
+  ],
+  "priorPhaseCiCorrection": {
+    "sourceCommit": "c99cad16c5235ce4cd9d81f9dfa15ebf8d07fa7e",
+    "automaticCiRun": 40423962982,
+    "conclusion": "success",
+    "note": "The prior private cleanup recorded zero new CI runs; that omitted the automatic push-triggered run. It is not preview13 release-byte acceptance and did not republish immutable assets."
+  }
+}
