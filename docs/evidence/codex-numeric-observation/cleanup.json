@@ -1,0 +1,15 @@
+{
+  "checkedAt": "2026-10-27T03:16:37.830998+00:00",
+  "ownedStdioRuns": 5,
+  "allExitCodesZero": true,
+  "allObservedOwnedPidsGone": true,
+  "allTemporaryPackageWorkspacesRemoved": true,
+  "allTemporarySkillsRemoved": true,
+  "globalConfigShaUnchangedAllRuns": true,
+  "observedModelTurns": 2,
+  "turnStartRequests": 2,
+  "backendModelRequestCount": "unknown",
+  "globalRegistrationOrModelAccountProviderTierRouteChanges": false,
+  "sharedServicesChanged": false,
+  "rawCleanupSha256": "0eec85f1ba82fab1b34630bc1dd893f9906d172ed6a82fb68b992263ddde1826"
+}

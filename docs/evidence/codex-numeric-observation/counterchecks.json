@@ -1,0 +1,2152 @@
+{
+  "cases": [
+    {
+      "case": "A",
+      "newObservedModelTurns": 0,
+      "sourceSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+      "requestsAndResponses": [
+        {
+          "request": {
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "independent-counter-A",
+              "revision": 1,
+              "component": "DataChart",
+              "summary": "Explicit deterministic countercheck, not model output.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Synthetic readings",
+                "unit": "伏",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "voltage-A",
+                    "label": "电压"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "A-position-1",
+                    "x": "1",
+                    "values": {
+                      "voltage-A": 1
+                    }
+                  },
+                  {
+                    "id": "A-position-2",
+                    "x": "2",
+                    "values": {
+                      "voltage-A": 4
+                    }
+                  },
+                  {
+                    "id": "A-position-3",
+                    "x": "3",
+                    "values": {
+                      "voltage-A": null
+                    }
+                  },
+                  {
+                    "id": "A-position-4",
+                    "x": "4",
+                    "values": {
+                      "voltage-A": 8
+                    }
+                  },
+                  {
+                    "id": "A-position-5",
+                    "x": "5",
+                    "values": {
+                      "voltage-A": 11
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "voltage-A",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "A-position-1"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "A-position-2"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "A-position-3"
+                },
+                {
+                  "sourceIndex": 3,
+                  "rowId": "A-position-4"
+                },
+                {
+                  "sourceIndex": 4,
+                  "rowId": "A-position-5"
+                }
+              ]
+            },
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 6.0,
+                "denominator": 4,
+                "unit": "伏"
+              },
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": null,
+                "denominator": 5,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"jsonPointer\":null,\"textSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"excerptSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":115,\"textUTF8Bytes\":115},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针甲\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":1,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":4,\"span\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"index\":3,\"value\":8,\"span\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"index\":4,\"value\":11,\"span\":{\"textByteStart\":58,\"textByteEnd\":60}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":5,\"values\":[1,4,null,8,11],\"missingMask\":[false,false,true,false,false],\"observed\":{\"count\":4,\"missing\":1,\"sum\":24,\"mean\":6,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":5,\"mean\":null,\"denominator\":5,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"matched\",\"scope\":\"all ordered source values, null mask, exact unit and single positional bar representation\",\"rowChecks\":[{\"sourceIndex\":0,\"rowId\":\"A-position-1\",\"seriesId\":\"voltage-A\",\"expected\":1,\"actual\":1,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"sourceIndex\":1,\"rowId\":\"A-position-2\",\"seriesId\":\"voltage-A\",\"expected\":4,\"actual\":4,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"sourceIndex\":2,\"rowId\":\"A-position-3\",\"seriesId\":\"voltage-A\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"sourceIndex\":3,\"rowId\":\"A-position-4\",\"seriesId\":\"voltage-A\",\"expected\":8,\"actual\":8,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"sourceIndex\":4,\"rowId\":\"A-position-5\",\"seriesId\":\"voltage-A\",\"expected\":11,\"actual\":11,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":58,\"textByteEnd\":60}}],\"viewAnnotations\":\"not-verified\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"supported\",\"expected\":{\"value\":6,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":4,\"value\":6,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"},{\"index\":1,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"supported\",\"expected\":{\"value\":null,\"denominator\":5,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":5,\"value\":null,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"合成探针甲的电压读数（伏），按原文位置：1=1、2=4、3=缺失、4=8、5=11。\\n共5个位置，4个实际观测、1个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：6 伏；分母为4个实际观测。\\n完整5次读数的平均值：未知；完整范围分母为5。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "jsonPointer": null,
+                "textSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "excerptSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 115,
+                  "textUTF8Bytes": 115
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针甲",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 1,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": 4,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 8,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": 11,
+                    "span": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 5,
+                "values": [
+                  1,
+                  4,
+                  null,
+                  8,
+                  11
+                ],
+                "missingMask": [
+                  false,
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 1,
+                  "sum": 24,
+                  "mean": 6,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 5,
+                  "mean": null,
+                  "denominator": 5,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "matched",
+                "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+                "rowChecks": [
+                  {
+                    "sourceIndex": 0,
+                    "rowId": "A-position-1",
+                    "seriesId": "voltage-A",
+                    "expected": 1,
+                    "actual": 1,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "rowId": "A-position-2",
+                    "seriesId": "voltage-A",
+                    "expected": 4,
+                    "actual": 4,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "rowId": "A-position-3",
+                    "seriesId": "voltage-A",
+                    "expected": null,
+                    "actual": null,
+                    "missing": true,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "rowId": "A-position-4",
+                    "seriesId": "voltage-A",
+                    "expected": 8,
+                    "actual": 8,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "sourceIndex": 4,
+                    "rowId": "A-position-5",
+                    "seriesId": "voltage-A",
+                    "expected": 11,
+                    "actual": 11,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ],
+                "viewAnnotations": "not-verified"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "supported",
+                  "expected": {
+                    "value": 6,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 4,
+                    "value": 6,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                },
+                {
+                  "index": 1,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "supported",
+                  "expected": {
+                    "value": null,
+                    "denominator": 5,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 5,
+                    "value": null,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "available",
+                "basis": "complete selected finite source readings and explicit calculation range only",
+                "text": "合成探针甲的电压读数（伏），按原文位置：1=1、2=4、3=缺失、4=8、5=11。\n共5个位置，4个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：6 伏；分母为4个实际观测。\n完整5次读数的平均值：未知；完整范围分母为5。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "independent-counter-A",
+              "revision": 1,
+              "component": "DataChart",
+              "summary": "Explicit deterministic countercheck, not model output.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Synthetic readings",
+                "unit": "伏",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "voltage-A",
+                    "label": "电压"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "A-position-1",
+                    "x": "1",
+                    "values": {
+                      "voltage-A": 1
+                    }
+                  },
+                  {
+                    "id": "A-position-2",
+                    "x": "2",
+                    "values": {
+                      "voltage-A": 4
+                    }
+                  },
+                  {
+                    "id": "A-position-3",
+                    "x": "3",
+                    "values": {
+                      "voltage-A": 0
+                    }
+                  },
+                  {
+                    "id": "A-position-4",
+                    "x": "4",
+                    "values": {
+                      "voltage-A": 8
+                    }
+                  },
+                  {
+                    "id": "A-position-5",
+                    "x": "5",
+                    "values": {
+                      "voltage-A": 11
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "voltage-A",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "A-position-1"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "A-position-2"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "A-position-3"
+                },
+                {
+                  "sourceIndex": 3,
+                  "rowId": "A-position-4"
+                },
+                {
+                  "sourceIndex": 4,
+                  "rowId": "A-position-5"
+                }
+              ]
+            },
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 6.0,
+                "denominator": 4,
+                "unit": "伏"
+              },
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": null,
+                "denominator": 5,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"jsonPointer\":null,\"textSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"excerptSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":115,\"textUTF8Bytes\":115},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针甲\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":1,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":4,\"span\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"index\":3,\"value\":8,\"span\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"index\":4,\"value\":11,\"span\":{\"textByteStart\":58,\"textByteEnd\":60}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":5,\"values\":[1,4,null,8,11],\"missingMask\":[false,false,true,false,false],\"observed\":{\"count\":4,\"missing\":1,\"sum\":24,\"mean\":6,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":5,\"mean\":null,\"denominator\":5,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"mismatch\",\"scope\":\"all ordered source values, null mask, exact unit and single positional bar representation\",\"rowChecks\":[{\"sourceIndex\":0,\"rowId\":\"A-position-1\",\"seriesId\":\"voltage-A\",\"expected\":1,\"actual\":1,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"sourceIndex\":1,\"rowId\":\"A-position-2\",\"seriesId\":\"voltage-A\",\"expected\":4,\"actual\":4,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"sourceIndex\":2,\"rowId\":\"A-position-3\",\"seriesId\":\"voltage-A\",\"expected\":null,\"actual\":0,\"missing\":true,\"status\":\"mismatch\",\"sourceSpan\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"sourceIndex\":3,\"rowId\":\"A-position-4\",\"seriesId\":\"voltage-A\",\"expected\":8,\"actual\":8,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"sourceIndex\":4,\"rowId\":\"A-position-5\",\"seriesId\":\"voltage-A\",\"expected\":11,\"actual\":11,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":58,\"textByteEnd\":60}}],\"viewAnnotations\":\"not-verified\"},\"issues\":[{\"code\":\"SOURCE_MISSINGNESS\",\"path\":\"$.view.payload.rows.2.values.voltage-A\",\"reason\":\"A missing source reading and an observed zero are different even when the computed means coincide.\"}],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"supported\",\"expected\":{\"value\":6,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":4,\"value\":6,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"},{\"index\":1,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"supported\",\"expected\":{\"value\":null,\"denominator\":5,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":5,\"value\":null,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "jsonPointer": null,
+                "textSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "excerptSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 115,
+                  "textUTF8Bytes": 115
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针甲",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 1,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": 4,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 8,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": 11,
+                    "span": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 5,
+                "values": [
+                  1,
+                  4,
+                  null,
+                  8,
+                  11
+                ],
+                "missingMask": [
+                  false,
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 1,
+                  "sum": 24,
+                  "mean": 6,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 5,
+                  "mean": null,
+                  "denominator": 5,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "mismatch",
+                "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+                "rowChecks": [
+                  {
+                    "sourceIndex": 0,
+                    "rowId": "A-position-1",
+                    "seriesId": "voltage-A",
+                    "expected": 1,
+                    "actual": 1,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "rowId": "A-position-2",
+                    "seriesId": "voltage-A",
+                    "expected": 4,
+                    "actual": 4,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "rowId": "A-position-3",
+                    "seriesId": "voltage-A",
+                    "expected": null,
+                    "actual": 0,
+                    "missing": true,
+                    "status": "mismatch",
+                    "sourceSpan": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "rowId": "A-position-4",
+                    "seriesId": "voltage-A",
+                    "expected": 8,
+                    "actual": 8,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "sourceIndex": 4,
+                    "rowId": "A-position-5",
+                    "seriesId": "voltage-A",
+                    "expected": 11,
+                    "actual": 11,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ],
+                "viewAnnotations": "not-verified"
+              },
+              "issues": [
+                {
+                  "code": "SOURCE_MISSINGNESS",
+                  "path": "$.view.payload.rows.2.values.voltage-A",
+                  "reason": "A missing source reading and an observed zero are different even when the computed means coincide."
+                }
+              ],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "supported",
+                  "expected": {
+                    "value": 6,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 4,
+                    "value": 6,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                },
+                {
+                  "index": 1,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "supported",
+                  "expected": {
+                    "value": null,
+                    "denominator": 5,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 5,
+                    "value": null,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": 4.8,
+                "denominator": 5,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"jsonPointer\":null,\"textSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"excerptSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":115,\"textUTF8Bytes\":115},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针甲\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":1,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":4,\"span\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"index\":3,\"value\":8,\"span\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"index\":4,\"value\":11,\"span\":{\"textByteStart\":58,\"textByteEnd\":60}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":5,\"values\":[1,4,null,8,11],\"missingMask\":[false,false,true,false,false],\"observed\":{\"count\":4,\"missing\":1,\"sum\":24,\"mean\":6,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":5,\"mean\":null,\"denominator\":5,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"mismatch\",\"expected\":{\"value\":null,\"denominator\":5,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":5,\"value\":4.8,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "jsonPointer": null,
+                "textSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "excerptSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 115,
+                  "textUTF8Bytes": 115
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针甲",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 1,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": 4,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 8,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": 11,
+                    "span": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 5,
+                "values": [
+                  1,
+                  4,
+                  null,
+                  8,
+                  11
+                ],
+                "missingMask": [
+                  false,
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 1,
+                  "sum": 24,
+                  "mean": 6,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 5,
+                  "mean": null,
+                  "denominator": 5,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "not-requested"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "mismatch",
+                  "expected": {
+                    "value": null,
+                    "denominator": 5,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 5,
+                    "value": 4.8,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 6.0,
+                "denominator": 5,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"jsonPointer\":null,\"textSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"excerptSha256\":\"d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":115,\"textUTF8Bytes\":115},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针甲\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":1,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":4,\"span\":{\"textByteStart\":41,\"textByteEnd\":42}},{\"index\":2,\"value\":null,\"span\":{\"textByteStart\":45,\"textByteEnd\":51}},{\"index\":3,\"value\":8,\"span\":{\"textByteStart\":54,\"textByteEnd\":55}},{\"index\":4,\"value\":11,\"span\":{\"textByteStart\":58,\"textByteEnd\":60}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":5,\"values\":[1,4,null,8,11],\"missingMask\":[false,false,true,false,false],\"observed\":{\"count\":4,\"missing\":1,\"sum\":24,\"mean\":6,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":5,\"mean\":null,\"denominator\":5,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"mismatch\",\"expected\":{\"value\":6,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":5,\"value\":6,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "jsonPointer": null,
+                "textSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "excerptSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 115,
+                  "textUTF8Bytes": 115
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针甲",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 1,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": 4,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 42
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 45,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 8,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 55
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": 11,
+                    "span": {
+                      "textByteStart": 58,
+                      "textByteEnd": 60
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 5,
+                "values": [
+                  1,
+                  4,
+                  null,
+                  8,
+                  11
+                ],
+                "missingMask": [
+                  false,
+                  false,
+                  true,
+                  false,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 1,
+                  "sum": 24,
+                  "mean": 6,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 5,
+                  "mean": null,
+                  "denominator": 5,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "not-requested"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "mismatch",
+                  "expected": {
+                    "value": 6,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 5,
+                    "value": 6,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        }
+      ]
+    },
+    {
+      "case": "B",
+      "newObservedModelTurns": 0,
+      "sourceSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+      "requestsAndResponses": [
+        {
+          "request": {
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "independent-counter-B",
+              "revision": 1,
+              "component": "DataChart",
+              "summary": "Explicit deterministic countercheck, not model output.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Synthetic readings",
+                "unit": "伏",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "voltage-B",
+                    "label": "电压"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "B-position-1",
+                    "x": "1",
+                    "values": {
+                      "voltage-B": 0
+                    }
+                  },
+                  {
+                    "id": "B-position-2",
+                    "x": "2",
+                    "values": {
+                      "voltage-B": null
+                    }
+                  },
+                  {
+                    "id": "B-position-3",
+                    "x": "3",
+                    "values": {
+                      "voltage-B": 6
+                    }
+                  },
+                  {
+                    "id": "B-position-4",
+                    "x": "4",
+                    "values": {
+                      "voltage-B": 18
+                    }
+                  },
+                  {
+                    "id": "B-position-5",
+                    "x": "5",
+                    "values": {
+                      "voltage-B": null
+                    }
+                  },
+                  {
+                    "id": "B-position-6",
+                    "x": "6",
+                    "values": {
+                      "voltage-B": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "voltage-B",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "B-position-1"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "B-position-2"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "B-position-3"
+                },
+                {
+                  "sourceIndex": 3,
+                  "rowId": "B-position-4"
+                },
+                {
+                  "sourceIndex": 4,
+                  "rowId": "B-position-5"
+                },
+                {
+                  "sourceIndex": 5,
+                  "rowId": "B-position-6"
+                }
+              ]
+            },
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 12.0,
+                "denominator": 4,
+                "unit": "伏"
+              },
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": null,
+                "denominator": 6,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"jsonPointer\":null,\"textSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"excerptSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":125,\"textUTF8Bytes\":125},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针乙\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":0,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"index\":2,\"value\":6,\"span\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"index\":3,\"value\":18,\"span\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"index\":4,\"value\":null,\"span\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"index\":5,\"value\":24,\"span\":{\"textByteStart\":68,\"textByteEnd\":70}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":6,\"values\":[0,null,6,18,null,24],\"missingMask\":[false,true,false,false,true,false],\"observed\":{\"count\":4,\"missing\":2,\"sum\":48,\"mean\":12,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":6,\"mean\":null,\"denominator\":6,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"matched\",\"scope\":\"all ordered source values, null mask, exact unit and single positional bar representation\",\"rowChecks\":[{\"sourceIndex\":0,\"rowId\":\"B-position-1\",\"seriesId\":\"voltage-B\",\"expected\":0,\"actual\":0,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"sourceIndex\":1,\"rowId\":\"B-position-2\",\"seriesId\":\"voltage-B\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"sourceIndex\":2,\"rowId\":\"B-position-3\",\"seriesId\":\"voltage-B\",\"expected\":6,\"actual\":6,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"sourceIndex\":3,\"rowId\":\"B-position-4\",\"seriesId\":\"voltage-B\",\"expected\":18,\"actual\":18,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"sourceIndex\":4,\"rowId\":\"B-position-5\",\"seriesId\":\"voltage-B\",\"expected\":null,\"actual\":null,\"missing\":true,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"sourceIndex\":5,\"rowId\":\"B-position-6\",\"seriesId\":\"voltage-B\",\"expected\":24,\"actual\":24,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":68,\"textByteEnd\":70}}],\"viewAnnotations\":\"not-verified\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"supported\",\"expected\":{\"value\":12,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":4,\"value\":12,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"},{\"index\":1,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"supported\",\"expected\":{\"value\":null,\"denominator\":6,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":6,\"value\":null,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"available\",\"basis\":\"complete selected finite source readings and explicit calculation range only\",\"text\":\"合成探针乙的电压读数（伏），按原文位置：1=0、2=缺失、3=6、4=18、5=缺失、6=24。\\n共6个位置，4个实际观测、2个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：12 伏；分母为4个实际观测。\\n完整6次读数的平均值：未知；完整范围分母为6。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "jsonPointer": null,
+                "textSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "excerptSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 125,
+                  "textUTF8Bytes": 125
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针乙",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 0,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": 6,
+                    "span": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 18,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "value": 24,
+                    "span": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 6,
+                "values": [
+                  0,
+                  null,
+                  6,
+                  18,
+                  null,
+                  24
+                ],
+                "missingMask": [
+                  false,
+                  true,
+                  false,
+                  false,
+                  true,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 2,
+                  "sum": 48,
+                  "mean": 12,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 6,
+                  "mean": null,
+                  "denominator": 6,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "matched",
+                "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+                "rowChecks": [
+                  {
+                    "sourceIndex": 0,
+                    "rowId": "B-position-1",
+                    "seriesId": "voltage-B",
+                    "expected": 0,
+                    "actual": 0,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "rowId": "B-position-2",
+                    "seriesId": "voltage-B",
+                    "expected": null,
+                    "actual": null,
+                    "missing": true,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "rowId": "B-position-3",
+                    "seriesId": "voltage-B",
+                    "expected": 6,
+                    "actual": 6,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "rowId": "B-position-4",
+                    "seriesId": "voltage-B",
+                    "expected": 18,
+                    "actual": 18,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "sourceIndex": 4,
+                    "rowId": "B-position-5",
+                    "seriesId": "voltage-B",
+                    "expected": null,
+                    "actual": null,
+                    "missing": true,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "sourceIndex": 5,
+                    "rowId": "B-position-6",
+                    "seriesId": "voltage-B",
+                    "expected": 24,
+                    "actual": 24,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ],
+                "viewAnnotations": "not-verified"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "supported",
+                  "expected": {
+                    "value": 12,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 4,
+                    "value": 12,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                },
+                {
+                  "index": 1,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "supported",
+                  "expected": {
+                    "value": null,
+                    "denominator": 6,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 6,
+                    "value": null,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "available",
+                "basis": "complete selected finite source readings and explicit calculation range only",
+                "text": "合成探针乙的电压读数（伏），按原文位置：1=0、2=缺失、3=6、4=18、5=缺失、6=24。\n共6个位置，4个实际观测、2个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：12 伏；分母为4个实际观测。\n完整6次读数的平均值：未知；完整范围分母为6。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。"
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "independent-counter-B",
+              "revision": 1,
+              "component": "DataChart",
+              "summary": "Explicit deterministic countercheck, not model output.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Synthetic readings",
+                "unit": "伏",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "voltage-B",
+                    "label": "电压"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "B-position-1",
+                    "x": "1",
+                    "values": {
+                      "voltage-B": 0
+                    }
+                  },
+                  {
+                    "id": "B-position-2",
+                    "x": "2",
+                    "values": {
+                      "voltage-B": 0
+                    }
+                  },
+                  {
+                    "id": "B-position-3",
+                    "x": "3",
+                    "values": {
+                      "voltage-B": 6
+                    }
+                  },
+                  {
+                    "id": "B-position-4",
+                    "x": "4",
+                    "values": {
+                      "voltage-B": 18
+                    }
+                  },
+                  {
+                    "id": "B-position-5",
+                    "x": "5",
+                    "values": {
+                      "voltage-B": 0
+                    }
+                  },
+                  {
+                    "id": "B-position-6",
+                    "x": "6",
+                    "values": {
+                      "voltage-B": 24
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "voltage-B",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "B-position-1"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "B-position-2"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "B-position-3"
+                },
+                {
+                  "sourceIndex": 3,
+                  "rowId": "B-position-4"
+                },
+                {
+                  "sourceIndex": 4,
+                  "rowId": "B-position-5"
+                },
+                {
+                  "sourceIndex": 5,
+                  "rowId": "B-position-6"
+                }
+              ]
+            },
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 12.0,
+                "denominator": 4,
+                "unit": "伏"
+              },
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": null,
+                "denominator": 6,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"jsonPointer\":null,\"textSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"excerptSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":125,\"textUTF8Bytes\":125},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针乙\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":0,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"index\":2,\"value\":6,\"span\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"index\":3,\"value\":18,\"span\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"index\":4,\"value\":null,\"span\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"index\":5,\"value\":24,\"span\":{\"textByteStart\":68,\"textByteEnd\":70}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":6,\"values\":[0,null,6,18,null,24],\"missingMask\":[false,true,false,false,true,false],\"observed\":{\"count\":4,\"missing\":2,\"sum\":48,\"mean\":12,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":6,\"mean\":null,\"denominator\":6,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"mismatch\",\"scope\":\"all ordered source values, null mask, exact unit and single positional bar representation\",\"rowChecks\":[{\"sourceIndex\":0,\"rowId\":\"B-position-1\",\"seriesId\":\"voltage-B\",\"expected\":0,\"actual\":0,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"sourceIndex\":1,\"rowId\":\"B-position-2\",\"seriesId\":\"voltage-B\",\"expected\":null,\"actual\":0,\"missing\":true,\"status\":\"mismatch\",\"sourceSpan\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"sourceIndex\":2,\"rowId\":\"B-position-3\",\"seriesId\":\"voltage-B\",\"expected\":6,\"actual\":6,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"sourceIndex\":3,\"rowId\":\"B-position-4\",\"seriesId\":\"voltage-B\",\"expected\":18,\"actual\":18,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"sourceIndex\":4,\"rowId\":\"B-position-5\",\"seriesId\":\"voltage-B\",\"expected\":null,\"actual\":0,\"missing\":true,\"status\":\"mismatch\",\"sourceSpan\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"sourceIndex\":5,\"rowId\":\"B-position-6\",\"seriesId\":\"voltage-B\",\"expected\":24,\"actual\":24,\"missing\":false,\"status\":\"matched\",\"sourceSpan\":{\"textByteStart\":68,\"textByteEnd\":70}}],\"viewAnnotations\":\"not-verified\"},\"issues\":[{\"code\":\"SOURCE_MISSINGNESS\",\"path\":\"$.view.payload.rows.1.values.voltage-B\",\"reason\":\"A missing source reading and an observed zero are different even when the computed means coincide.\"},{\"code\":\"SOURCE_MISSINGNESS\",\"path\":\"$.view.payload.rows.4.values.voltage-B\",\"reason\":\"A missing source reading and an observed zero are different even when the computed means coincide.\"}],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"supported\",\"expected\":{\"value\":12,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":4,\"value\":12,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"},{\"index\":1,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"supported\",\"expected\":{\"value\":null,\"denominator\":6,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":6,\"value\":null,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "jsonPointer": null,
+                "textSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "excerptSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 125,
+                  "textUTF8Bytes": 125
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针乙",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 0,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": 6,
+                    "span": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 18,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "value": 24,
+                    "span": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 6,
+                "values": [
+                  0,
+                  null,
+                  6,
+                  18,
+                  null,
+                  24
+                ],
+                "missingMask": [
+                  false,
+                  true,
+                  false,
+                  false,
+                  true,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 2,
+                  "sum": 48,
+                  "mean": 12,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 6,
+                  "mean": null,
+                  "denominator": 6,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "mismatch",
+                "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+                "rowChecks": [
+                  {
+                    "sourceIndex": 0,
+                    "rowId": "B-position-1",
+                    "seriesId": "voltage-B",
+                    "expected": 0,
+                    "actual": 0,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "sourceIndex": 1,
+                    "rowId": "B-position-2",
+                    "seriesId": "voltage-B",
+                    "expected": null,
+                    "actual": 0,
+                    "missing": true,
+                    "status": "mismatch",
+                    "sourceSpan": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "sourceIndex": 2,
+                    "rowId": "B-position-3",
+                    "seriesId": "voltage-B",
+                    "expected": 6,
+                    "actual": 6,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "sourceIndex": 3,
+                    "rowId": "B-position-4",
+                    "seriesId": "voltage-B",
+                    "expected": 18,
+                    "actual": 18,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "sourceIndex": 4,
+                    "rowId": "B-position-5",
+                    "seriesId": "voltage-B",
+                    "expected": null,
+                    "actual": 0,
+                    "missing": true,
+                    "status": "mismatch",
+                    "sourceSpan": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "sourceIndex": 5,
+                    "rowId": "B-position-6",
+                    "seriesId": "voltage-B",
+                    "expected": 24,
+                    "actual": 24,
+                    "missing": false,
+                    "status": "matched",
+                    "sourceSpan": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ],
+                "viewAnnotations": "not-verified"
+              },
+              "issues": [
+                {
+                  "code": "SOURCE_MISSINGNESS",
+                  "path": "$.view.payload.rows.1.values.voltage-B",
+                  "reason": "A missing source reading and an observed zero are different even when the computed means coincide."
+                },
+                {
+                  "code": "SOURCE_MISSINGNESS",
+                  "path": "$.view.payload.rows.4.values.voltage-B",
+                  "reason": "A missing source reading and an observed zero are different even when the computed means coincide."
+                }
+              ],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "supported",
+                  "expected": {
+                    "value": 12,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 4,
+                    "value": 12,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                },
+                {
+                  "index": 1,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "supported",
+                  "expected": {
+                    "value": null,
+                    "denominator": 6,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 6,
+                    "value": null,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "complete",
+                "value": 8.0,
+                "denominator": 6,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"jsonPointer\":null,\"textSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"excerptSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":125,\"textUTF8Bytes\":125},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针乙\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":0,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"index\":2,\"value\":6,\"span\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"index\":3,\"value\":18,\"span\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"index\":4,\"value\":null,\"span\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"index\":5,\"value\":24,\"span\":{\"textByteStart\":68,\"textByteEnd\":70}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":6,\"values\":[0,null,6,18,null,24],\"missingMask\":[false,true,false,false,true,false],\"observed\":{\"count\":4,\"missing\":2,\"sum\":48,\"mean\":12,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":6,\"mean\":null,\"denominator\":6,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"complete\",\"status\":\"mismatch\",\"expected\":{\"value\":null,\"denominator\":6,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"complete\",\"denominator\":6,\"value\":8,\"unit\":\"伏\"},\"scopeKnown\":false,\"reason\":\"The mean in this range is unknown; a numeric assertion is unsupported.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "jsonPointer": null,
+                "textSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "excerptSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 125,
+                  "textUTF8Bytes": 125
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针乙",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 0,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": 6,
+                    "span": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 18,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "value": 24,
+                    "span": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 6,
+                "values": [
+                  0,
+                  null,
+                  6,
+                  18,
+                  null,
+                  24
+                ],
+                "missingMask": [
+                  false,
+                  true,
+                  false,
+                  false,
+                  true,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 2,
+                  "sum": 48,
+                  "mean": 12,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 6,
+                  "mean": null,
+                  "denominator": 6,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "not-requested"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "complete",
+                  "status": "mismatch",
+                  "expected": {
+                    "value": null,
+                    "denominator": 6,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "complete",
+                    "denominator": 6,
+                    "value": 8,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": false,
+                  "reason": "The mean in this range is unknown; a numeric assertion is unsupported."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        },
+        {
+          "request": {
+            "claims": [
+              {
+                "kind": "mean",
+                "population": "observed",
+                "value": 12.0,
+                "denominator": 6,
+                "unit": "伏"
+              }
+            ]
+          },
+          "response": {
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"sourceCheckVersion\":\"1.0\",\"sourceCheckKind\":\"observations-zh\",\"source\":{\"input\":\"caller-configured startup file snapshot; separate from tool arguments\",\"documentSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"jsonPointer\":null,\"textSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"excerptSha256\":\"4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4\",\"selection\":{\"textUTF8ByteStart\":0,\"textUTF8ByteEnd\":125,\"textUTF8Bytes\":125},\"identityVerified\":false,\"authorship\":\"unverified; a configured file does not certify its author or original user\",\"scope\":\"bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed\"},\"sourceFactsVerified\":false,\"unverified\":[\"source identity, authorship and real-world readings\",\"unselected context, arbitrary prose, chart title and annotations\",\"time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations\"],\"status\":\"compared\",\"sourceObservations\":{\"context\":\"合成探针乙\",\"measurement\":\"电压\",\"unit\":\"伏\",\"positions\":[{\"index\":0,\"value\":0,\"span\":{\"textByteStart\":37,\"textByteEnd\":38}},{\"index\":1,\"value\":null,\"span\":{\"textByteStart\":41,\"textByteEnd\":47}},{\"index\":2,\"value\":6,\"span\":{\"textByteStart\":50,\"textByteEnd\":51}},{\"index\":3,\"value\":18,\"span\":{\"textByteStart\":54,\"textByteEnd\":56}},{\"index\":4,\"value\":null,\"span\":{\"textByteStart\":59,\"textByteEnd\":65}},{\"index\":5,\"value\":24,\"span\":{\"textByteStart\":68,\"textByteEnd\":70}}]},\"sourceStatistics\":{\"unit\":\"伏\",\"positions\":6,\"values\":[0,null,6,18,null,24],\"missingMask\":[false,true,false,false,true,false],\"observed\":{\"count\":4,\"missing\":2,\"sum\":48,\"mean\":12,\"denominator\":4,\"scope\":\"declared non-missing positions only\"},\"complete\":{\"count\":6,\"mean\":null,\"denominator\":6,\"known\":false,\"scope\":\"all declared positions; missing readings remain unknown\"},\"method\":\"unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference\"},\"comparison\":{\"status\":\"not-requested\"},\"issues\":[],\"claimChecks\":[{\"index\":0,\"kind\":\"mean\",\"population\":\"observed\",\"status\":\"mismatch\",\"expected\":{\"value\":12,\"denominator\":4,\"unit\":\"伏\"},\"actual\":{\"kind\":\"mean\",\"population\":\"observed\",\"denominator\":6,\"value\":12,\"unit\":\"伏\"},\"scopeKnown\":true,\"reason\":\"Unweighted arithmetic mean within the explicitly named range.\"}],\"freeProse\":{\"status\":\"not-verified\",\"provided\":false,\"characters\":0},\"canonicalExplanation\":{\"status\":\"withheld\",\"reason\":\"Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered.\"}}"
+              }
+            ],
+            "structuredContent": {
+              "sourceCheckVersion": "1.0",
+              "sourceCheckKind": "observations-zh",
+              "source": {
+                "input": "caller-configured startup file snapshot; separate from tool arguments",
+                "documentSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "jsonPointer": null,
+                "textSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "excerptSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+                "selection": {
+                  "textUTF8ByteStart": 0,
+                  "textUTF8ByteEnd": 125,
+                  "textUTF8Bytes": 125
+                },
+                "identityVerified": false,
+                "authorship": "unverified; a configured file does not certify its author or original user",
+                "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+              },
+              "sourceFactsVerified": false,
+              "unverified": [
+                "source identity, authorship and real-world readings",
+                "unselected context, arbitrary prose, chart title and annotations",
+                "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+              ],
+              "status": "compared",
+              "sourceObservations": {
+                "context": "合成探针乙",
+                "measurement": "电压",
+                "unit": "伏",
+                "positions": [
+                  {
+                    "index": 0,
+                    "value": 0,
+                    "span": {
+                      "textByteStart": 37,
+                      "textByteEnd": 38
+                    }
+                  },
+                  {
+                    "index": 1,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 41,
+                      "textByteEnd": 47
+                    }
+                  },
+                  {
+                    "index": 2,
+                    "value": 6,
+                    "span": {
+                      "textByteStart": 50,
+                      "textByteEnd": 51
+                    }
+                  },
+                  {
+                    "index": 3,
+                    "value": 18,
+                    "span": {
+                      "textByteStart": 54,
+                      "textByteEnd": 56
+                    }
+                  },
+                  {
+                    "index": 4,
+                    "value": null,
+                    "span": {
+                      "textByteStart": 59,
+                      "textByteEnd": 65
+                    }
+                  },
+                  {
+                    "index": 5,
+                    "value": 24,
+                    "span": {
+                      "textByteStart": 68,
+                      "textByteEnd": 70
+                    }
+                  }
+                ]
+              },
+              "sourceStatistics": {
+                "unit": "伏",
+                "positions": 6,
+                "values": [
+                  0,
+                  null,
+                  6,
+                  18,
+                  null,
+                  24
+                ],
+                "missingMask": [
+                  false,
+                  true,
+                  false,
+                  false,
+                  true,
+                  false
+                ],
+                "observed": {
+                  "count": 4,
+                  "missing": 2,
+                  "sum": 48,
+                  "mean": 12,
+                  "denominator": 4,
+                  "scope": "declared non-missing positions only"
+                },
+                "complete": {
+                  "count": 6,
+                  "mean": null,
+                  "denominator": 6,
+                  "known": false,
+                  "scope": "all declared positions; missing readings remain unknown"
+                },
+                "method": "unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference"
+              },
+              "comparison": {
+                "status": "not-requested"
+              },
+              "issues": [],
+              "claimChecks": [
+                {
+                  "index": 0,
+                  "kind": "mean",
+                  "population": "observed",
+                  "status": "mismatch",
+                  "expected": {
+                    "value": 12,
+                    "denominator": 4,
+                    "unit": "伏"
+                  },
+                  "actual": {
+                    "kind": "mean",
+                    "population": "observed",
+                    "denominator": 6,
+                    "value": 12,
+                    "unit": "伏"
+                  },
+                  "scopeKnown": true,
+                  "reason": "Unweighted arithmetic mean within the explicitly named range."
+                }
+              ],
+              "freeProse": {
+                "status": "not-verified",
+                "provided": false,
+                "characters": 0
+              },
+              "canonicalExplanation": {
+                "status": "withheld",
+                "reason": "Resolve the positional, missingness, unit, representation or statistical claim mismatch; no combined source explanation is delivered."
+              }
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "boundary": "Zero-imputation arithmetic is allowed as an explicit hypothesis. Submitting it as original complete-source fact is refused.",
+  "firstReviewError": "Offline assertion incorrectly expected a DSH SOURCE_STATISTIC issue from MCP claim-only receipts; actual claimChecks mismatch/withheld already met frozen refusal criteria. Corrected review only; no checker change, rerun or changed arithmetic expectation.",
+  "phaseLaunchNote": "A failed offline review assertion prevented intended B reservation; B was nevertheless launched once by a dependent orchestration call. Reconciled the in-flight invocation without retry; the independent source/question and two-turn cap stayed unchanged."
+}

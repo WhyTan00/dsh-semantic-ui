@@ -1,0 +1,10 @@
+{
+  "createdAt": "2026-10-27T03:15:12.545187+00:00",
+  "observedClientCommit": "f3f755ed36d4f06b18fef13cf98acd3f78d10642",
+  "observedClientSha256": "8ade2dbab4bbab70b8852264e87bfd0256cf25e9d64a49caf727f5fede61eab5",
+  "subsequentClientSha256": "e4c5e3a3c579f19eab0863a7a971488c96b9d0d0b57a46494bc9b0641be4e011",
+  "change": "Generic observations-zh workflow now spells out exact measurement label and plain 1-based x strings, plus legitimate imputation-vs-source scope. No case labels, answers, values, expected files or runtime/skill changes.",
+  "evidence": "Both original observed model turns hit SOURCE_ORDER once; B also hit SOURCE_SERIES. Both self-corrected within their turn.",
+  "validation": "10 offline client guard tests passed after guidance clarification. Zero further model turns.",
+  "naturalModelEffect": "unknown: clarification added after the two observed turns, not validated by a third turn."
+}

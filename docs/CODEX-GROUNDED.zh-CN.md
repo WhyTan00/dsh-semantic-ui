@@ -1,5 +1,7 @@
 # 受来源约束的普通答复
 
+后续伴随源码已支持独立`--question-file`及可选`--question-json-pointer`；未传时保留原默认问题。preview.16的两个新合成来源观察、首次拒绝与候选原文见 [数值模型观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)，不要与本页原13的两次模型结果混算。
+
 这是现有 [只读客户端](CODEX-EXPLICIT.zh-CN.md) 的伴随源码增量，复用已发布 preview.13 的MCP/core/skill，不修改或重打归档。默认仍为零推理；最终答复可以直接由现成检查器给出有限说明。
 
 | 运行方式 | 新推理回合 | 输出 |
@@ -20,7 +22,7 @@ python3 examples/codex-readonly.py --answer \
   --source-json-pointer /question
 ```
 
-这条已验证的命令输出普通可读答复，保留价格、反面责任和团队余力的未知。可换成自己的明确来源；现有三种有限语法和输入合同沿 [箭头选段](SOURCE-CHECKS.zh-CN.md)、[decision-zh](SOURCE-DECISION.zh-CN.md)、[permissions-zh](SOURCE-PERMISSIONS.zh-CN.md)。不支持的完整来源会得到拒绝，未默默跳过难句。
+这条已验证的命令输出普通可读答复，保留价格、反面责任和团队余力的未知。可换成自己的明确来源；有限语法和输入合同沿 [箭头选段](SOURCE-CHECKS.zh-CN.md)、[decision-zh](SOURCE-DECISION.zh-CN.md)、[permissions-zh](SOURCE-PERMISSIONS.zh-CN.md)及15起的[数值来源](SOURCE-NUMERIC.zh-CN.md)。不支持的完整来源会得到拒绝，未默默跳过难句。
 
 另两种来源各完成了一次真实零推理答复验收，复用原A2/A3来源和先前独立预期。关系题仅选定原文中的箭头片段：
 
@@ -55,7 +57,7 @@ preview.15新增`--source-kind observations-zh`，将实际值/缺失mask/单位
 
 ## 最终文字来自哪里
 
-宿主先通过真实Codex线程读取现成 `source_check`，核对选定问题的文本摘要。可选模型回合结束后，再读同一启动快照。只有完整有限说明可用、来源文本相同且身份/世界事实未认证的边界保持时，才交付检查器原有的 `canonicalExplanation`，加固定范围说明。
+宿主先通过真实Codex线程读取现成 `source_check`，核对独立来源的文本摘要。当前伴随脚本另核document/excerpt SHA、JSON pointer及UTF-8选段范围；问题SHA不替代来源SHA。可选模型回合结束后，再读同一启动快照。只有完整有限说明可用、来源对应且身份/世界事实未认证的边界保持时，才交付检查器原有的 `canonicalExplanation`，加固定范围说明。该canonical只覆盖来源合同；独立问题请求的额外合法假设计算若没有进入该合同，就不能声称宿主已经保障了整个问题。
 
 模型正文不会传入这个交付函数。没有任意正文判真、关键词删除、D1固定答案或从模型输出反推source真值。来源不支持或不对应时交付有限拒绝；可选模型回合在前置来源拒绝时不会启动。`sourceFactsVerified=false`、`identityVerified=false`一直保留。
 

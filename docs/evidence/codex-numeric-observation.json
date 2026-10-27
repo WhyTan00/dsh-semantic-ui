@@ -1,0 +1,75 @@
+{
+  "schema": "semantic-ui-codex-numeric-observation-v1",
+  "recordedAt": "2026-10-27T03:17:30.451156+00:00",
+  "scope": "Two new explicitly synthetic controlled sources/questions, official typed skill and generic workflow in the existing temporary personal Codex app-server client. Guided model observation, not unguided selection or DSH UI rendering.",
+  "independentExpectations": {
+    "path": "codex-numeric-observation/expectations.json",
+    "sha256": "3df062125efbaa842293df1d4e312932c02f7d6f505d0ed346bdf390475a0a31",
+    "frozenBeforeImplementationAndRuns": true,
+    "notProvidedToModel": true
+  },
+  "observedClientCommit": "f3f755ed36d4f06b18fef13cf98acd3f78d10642",
+  "observedClientSha256": "8ade2dbab4bbab70b8852264e87bfd0256cf25e9d64a49caf727f5fede61eab5",
+  "runtimeArchive": {
+    "version": "0.1.0-preview.16",
+    "sha256": "55e81da124ae0db8ae2696b58a1349de5b290c558e137f0228f493a0416ec9ae",
+    "sourceCommit": "a275e0fd8b6134e100b98056a2590bf6b6abbb4a",
+    "repackedOrRepublished": false
+  },
+  "cases": [
+    {
+      "case": "A",
+      "evidence": "codex-numeric-observation/A.json",
+      "ordinaryQuestionSha256": "8cda9a4156fc7af671a0df59459c7ffcda4c156d0b6d5f52d5b1f1e09af4e841",
+      "sourceSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+      "observedModelTurns": 1,
+      "semanticModelToolCalls": 6,
+      "hostExplicitToolCalls": 3,
+      "firstComparison": "mismatch",
+      "lastComparison": "matched",
+      "candidateReview": "met for frozen criteria",
+      "hostDelivery": "delivered"
+    },
+    {
+      "case": "B",
+      "evidence": "codex-numeric-observation/B.json",
+      "ordinaryQuestionSha256": "3848899d465e96069559b0cbbb070446ef3e043bd45371967dc4ecc50cdbcafc",
+      "sourceSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+      "observedModelTurns": 1,
+      "semanticModelToolCalls": 6,
+      "hostExplicitToolCalls": 3,
+      "firstComparison": "mismatch",
+      "lastComparison": "matched",
+      "candidateReview": "met for frozen criteria",
+      "hostDelivery": "delivered"
+    }
+  ],
+  "observedModelTurns": 2,
+  "clientTurnStartRequests": 2,
+  "backendModelRequestCount": "unknown",
+  "additionalModelTurnsAfterGuidanceClarification": 0,
+  "layers": {
+    "typedSkillProvisionAccepted": "met; internal attention unknown",
+    "modelSourceToolAdoption": "met in both controlled guided turns; actual mcpToolCall items",
+    "candidateSemanticReview": "met for both frozen criteria, manually assessed",
+    "firstStructuredComparisonSuccess": "unmet: both first attempts refused",
+    "sourceComparisonAfterInTurnCorrection": "met: both matched after preserving first rejection",
+    "boundedHostFinalExplanation": "met, original source only",
+    "hostCertifiedImputationAnswer": "unmet: B hypothesis calculated in candidate, not in host canonical",
+    "arbitraryProseVerification": "unmet",
+    "currentMainClientOrDeviceUi": "unknown; not run"
+  },
+  "offlineClientTests": {
+    "count": 10,
+    "status": "passed before and after generic guidance clarification",
+    "rawLogSha256": "d9853af017010fbcf76d87c8fe46b87ae058237da982d900a1181a4a916ad331",
+    "log": "codex-numeric-observation/client-contracts.txt"
+  },
+  "deterministicCounterchecks": "codex-numeric-observation/counterchecks.json",
+  "subsequentGuidance": "codex-numeric-observation/guidance-followup.json",
+  "cleanup": "codex-numeric-observation/cleanup.json",
+  "history": "Old 0/6/18 DSH natural results and C1-D1/C2-N2/other guided runs remain at their original versions/outcomes. No successful old question replay, release download/republish, Linux or DSH matrix rerun.",
+  "identityVerified": false,
+  "sourceFactsVerified": false,
+  "longTermGoalCompleted": false
+}

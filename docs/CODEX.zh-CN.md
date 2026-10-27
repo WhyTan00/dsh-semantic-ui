@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+最新[数值来源观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)复用16归档与独立问题入口：两次有指引模型回合都实际调用来源工具，候选按冻结判据评读通过；两次首次比较拒绝后同回合修正。B合法补零假设仅在候选中计算，宿主canonical仍只保障原来源。原自然0调用与桌面UI边界保持，不以本段替代DSH自然验收。
+
 新增 [来源保障的普通答复](CODEX-GROUNDED.zh-CN.md)：`--answer`零推理输出有限说明；显式加`--model-candidate`才运行一个有指引候选回合。两次新回归均出现真实模型检查调用，最终由宿主复用既有canonical交付；不改变下述旧两题或桌面UI边界。
 
 后续已完成 [显式只读线程入口](CODEX-EXPLICIT.zh-CN.md)：现成preview.13归档通过真实Codex线程路由返回schema与source_check，并临时发现/读取自包skill。新增推理0，未重发归档；两题自然0调用和桌面富UI边界不变。

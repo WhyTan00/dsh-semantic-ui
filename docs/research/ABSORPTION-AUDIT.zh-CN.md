@@ -21,6 +21,8 @@ preview.15的后续 [数值来源交付](../SOURCE-NUMERIC.zh-CN.md) 已把每�
 
 preview.16已把上述数值约束接入 [DSH正常render/checkpoint](../NUMERIC-DELIVERY.zh-CN.md)，最终归档本机/Linux的Native/PTC各正反例与刷新通过，保留source身份/世界/任意正文未核。该后续实现单列，不改下表原preview.11基线或旧自然题结果。
 
+其后[两个新Codex合成样本](../CODEX-NUMERIC-OBSERVATION.zh-CN.md)实证有指引模型的来源采用及有限候选语义；合法补零假设与原来源完整未知分开。首次比较失败、同回合修正、原始正文与宿主最终范围各自保留，宿主尚未保障假设答复。它没有补齐提交闭环、结果迁移或任意正文认证，也不改下表基线。
+
 ## 从上游优点到本项目行为
 
 | 能力与代表项目 | 本项目实际采用 | 仍缺什么 / 验证到哪里 |

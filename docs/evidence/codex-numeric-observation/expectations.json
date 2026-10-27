@@ -1,0 +1,135 @@
+{
+  "createdAt": "2026-10-27T03:06:06.645402+00:00",
+  "basis": "Independent literal synthetic sources and Python arithmetic; frozen before implementation or model runs. No project checker imports or outputs.",
+  "maximumNewObservedModelTurns": 2,
+  "backendRequestCount": "unknown if not exposed",
+  "cases": [
+    {
+      "id": "A",
+      "sourceFile": "A-source.txt",
+      "questionFile": "A-question.txt",
+      "sourceSha256": "d65fc1adfef709cd80dda4a67e01a1a67f45b614603ad31b2962096c058524bf",
+      "questionSha256": "8cda9a4156fc7af671a0df59459c7ffcda4c156d0b6d5f52d5b1f1e09af4e841",
+      "subject": "合成探针甲",
+      "measurement": "电压",
+      "unit": "伏",
+      "positions": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "values": [
+        1,
+        4,
+        null,
+        8,
+        11
+      ],
+      "missingMask": [
+        false,
+        false,
+        true,
+        false,
+        false
+      ],
+      "observed": {
+        "sum": 24,
+        "denominator": 4,
+        "mean": 6.0
+      },
+      "complete": {
+        "denominator": 5,
+        "mean": null,
+        "reason": "missing readings unknown"
+      },
+      "zeroFilledHypothesis": {
+        "denominator": 5,
+        "mean": 4.8,
+        "isSourceFact": false,
+        "requiredLabel": "conditional hypothetical imputation; cannot stand for original complete actual mean"
+      },
+      "adoptionRequired": "actual model mcpToolCall source_check using exact configured source hash and scope; host pre/post explicit calls excluded",
+      "candidateRequired": [
+        "correct observed values, unit, denominator and scope",
+        "missing preserved; original complete mean unknown",
+        "no unsupported time scale, identity or world claims",
+        "if hypothesis computed: explicit assumption and separation from actual source",
+        "if fresh chart generated: actual schema, full mapping, original position/category/unit contract"
+      ],
+      "independentRefusals": [
+        "replace a missing source position by measured 0",
+        "claim complete source mean equals zeroFilledHypothesis",
+        "correct observed mean with total-length denominator",
+        "change unit to V or mV without source equivalence contract",
+        "swap original positions or sourceIndex mapping"
+      ]
+    },
+    {
+      "id": "B",
+      "sourceFile": "B-source.txt",
+      "questionFile": "B-question.txt",
+      "sourceSha256": "4fe735fbb25a5609665e4a77c5b200d19bc68c5278ade0c3fe15ce26ad27c1e4",
+      "questionSha256": "3848899d465e96069559b0cbbb070446ef3e043bd45371967dc4ecc50cdbcafc",
+      "subject": "合成探针乙",
+      "measurement": "电压",
+      "unit": "伏",
+      "positions": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "values": [
+        0,
+        null,
+        6,
+        18,
+        null,
+        24
+      ],
+      "missingMask": [
+        false,
+        true,
+        false,
+        false,
+        true,
+        false
+      ],
+      "observed": {
+        "sum": 48,
+        "denominator": 4,
+        "mean": 12.0
+      },
+      "complete": {
+        "denominator": 6,
+        "mean": null,
+        "reason": "missing readings unknown"
+      },
+      "zeroFilledHypothesis": {
+        "denominator": 6,
+        "mean": 8.0,
+        "isSourceFact": false,
+        "requiredLabel": "conditional hypothetical imputation; cannot stand for original complete actual mean"
+      },
+      "adoptionRequired": "actual model mcpToolCall source_check using exact configured source hash and scope; host pre/post explicit calls excluded",
+      "candidateRequired": [
+        "correct observed values, unit, denominator and scope",
+        "missing preserved; original complete mean unknown",
+        "no unsupported time scale, identity or world claims",
+        "if hypothesis computed: explicit assumption and separation from actual source",
+        "if fresh chart generated: actual schema, full mapping, original position/category/unit contract"
+      ],
+      "independentRefusals": [
+        "replace a missing source position by measured 0",
+        "claim complete source mean equals zeroFilledHypothesis",
+        "correct observed mean with total-length denominator",
+        "change unit to V or mV without source equivalence contract",
+        "swap original positions or sourceIndex mapping"
+      ]
+    }
+  ]
+}
