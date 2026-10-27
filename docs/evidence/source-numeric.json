@@ -1,6 +1,6 @@
 {
   "date": "2026-10-27",
-  "version": "0.1.0-preview.14",
+  "version": "0.1.0-preview.15",
   "protocolVersion": "1.4",
   "scope": "source-stage candidate; final archive and normal-client acceptance recorded separately after freeze",
   "sourceKind": "observations-zh",
@@ -17,12 +17,13 @@
   "freeProseVerified": false,
   "newModelTurns": 0,
   "sourceStage": {
-    "targetedTests": 21,
+    "targetedTests": 22,
     "files": 5,
     "typecheck": "passed",
     "releaseIsolation": "passed",
     "firstFailure": "one test helper shadowed the parsed variable; corrected; private original log retained",
-    "productionPreAcceptanceFix": "compute source span start from parsed prefix fields; no source expectation change"
+    "productionPreAcceptanceFix": "compute source span start from parsed prefix fields; no source expectation change",
+    "boundedWhitespaceRegression": "child process timeout guard plus actual stdio unsupported long-whitespace source"
   },
   "normalClientAndArchiveAcceptance": "pending at source freeze",
   "originalRun9": {
@@ -42,5 +43,22 @@
     "automaticCiRun": 40423962982,
     "conclusion": "success",
     "note": "The prior private cleanup recorded zero new CI runs; that omitted the automatic push-triggered run. It is not preview13 release-byte acceptance and did not republish immutable assets."
+  },
+  "priorCandidate": {
+    "version": "0.1.0-preview.14",
+    "sourceCommit": "d899ccb01aba0346814e2388dc8f5fd87d97c055",
+    "archiveSha256": "dcffd83e54301a52935bdba66424436b52a66f4b994944c9ed7e888067c92b86",
+    "mcpEntrySha256": "99946d53921f51e2afc2a839de5d4fa3fee6efd248186bb1e30d2d2464d9b664",
+    "notPublished": true,
+    "functionalArchiveTestsPassed": 9,
+    "normalHostOnlyCases": 2,
+    "failedCostProbe": {
+      "input": "15000 spaces after a valid header, within source byte budget",
+      "timeoutSeconds": 3,
+      "timedOut": true,
+      "ownedChildKilled": true
+    },
+    "repair": "separate bounded header, final question, reading list and unit; no overlapping whitespace/list backtracking",
+    "frozenCandidateRetained": true
   }
 }

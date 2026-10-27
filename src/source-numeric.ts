@@ -19,12 +19,19 @@ function countValue(s:string){
 export function parseNumericSource(text:string,offset=0):{status:'ready';value:NumericSource}|{status:'unsupported';issues:SourceIssue[]}{
  const fail=(code:string,reason:string)=>({status:'unsupported' as const,issues:[{code,path:'$.source.excerpt',reason}]});
  if(bytes(text)>SOURCE_LIMITS.excerptBytes)return fail('SOURCE_LIMIT','Selected numeric text exceeds the byte limit.');
- const m=/^([^，,。；;\r\n]{1,80}?)([1-9]\d{0,2}|[一二三四五六七八九十]{1,3})次([^，,。；;\r\n]{1,40}?)读数是\s*([^。；;\r\n]+?)\s+([^\s，,。；;？！?!、]{1,24})。[\t ]*(请解释这批数据，能计算平均值吗？|能计算平均值吗？)$/u.exec(text);
- if(!m||!literal(m[1],80)||!literal(m[3],40)||!literal(m[5],24))return fail('SOURCE_SYNTAX','Use the complete documented observations-zh grammar with explicit count, ordered readings, unit and supported final mean question. No extra clause is discarded.');
+ const suffix=['。请解释这批数据，能计算平均值吗？','。能计算平均值吗？'].find(s=>text.endsWith(s));
+ if(!suffix)return fail('SOURCE_SYNTAX','Use the complete supported final mean question; no trailing clause is discarded.');
+ const body=text.slice(0,-suffix.length);
+ if(/[。\r\n]/u.test(body))return fail('SOURCE_SYNTAX','Supply one complete single-line reading clause and the supported final question.');
+ // Header work is bounded by label lengths. Split the unit separately rather
+ // than backtracking through overlapping whitespace/list quantifiers.
+ const m=/^([^，,。；;\r\n]{1,80}?)([1-9]\d{0,2}|[一二三四五六七八九十]{1,3})次([^，,。；;\r\n]{1,40}?)读数是/u.exec(body);
+ if(!m||!literal(m[1],80)||!literal(m[3],40))return fail('SOURCE_SYNTAX','Use the documented literal subject, count and measurement header.');
  const count=countValue(m[2]);if(!Number.isInteger(count)||count<1||count>MAX_POSITIONS)return fail('SOURCE_COUNT','Use a count from 1 to 128 (standard Chinese counts are supported through 99).');
- const prefixLength=m[1].length+m[2].length+1+m[3].length+3;
- const start=text.indexOf(m[4],prefixLength),tokens=[...m[4].matchAll(/[^、]+/gu)];
- if(tokens.length!==count||m[4].split('、').some(t=>!t.trim()))return fail('SOURCE_COUNT','Declared positions must exactly equal the complete reading list; empty positions are unsupported.');
+ const tail=body.slice(m[0].length),unitMatch=/\s([^\s，,。；;？！?!、]{1,24})$/u.exec(tail);
+ if(!unitMatch||!literal(unitMatch[1],24))return fail('SOURCE_SYNTAX','Supply a single explicit unit separated from the reading list by whitespace.');
+ const start=m[0].length,list=tail.slice(0,unitMatch.index),unit=unitMatch[1],tokens=[...list.matchAll(/[^、]+/gu)];
+ if(tokens.length!==count||list.split('、').some(t=>!t.trim()))return fail('SOURCE_COUNT','Declared positions must exactly equal the complete reading list; empty positions are unsupported.');
  const positions:NumericSource['positions']=[];
  for(const [index,token]of tokens.entries()){
   const valueText=token[0].trim();if(valueText!=='缺失'&&!/^[+-]?(?:\d+(?:\.\d+)?|\.\d+)(?:[eE][+-]?\d+)?$/u.test(valueText))return fail('SOURCE_VALUE','Every position must be one finite numeric literal or the literal 缺失. Ranges, qualifiers and missing units are not inferred.');
@@ -32,7 +39,7 @@ export function parseNumericSource(text:string,offset=0):{status:'ready';value:N
   const charStart=start+token.index!+token[0].indexOf(valueText);
   positions.push({index,value,span:{textByteStart:offset+bytes(text.slice(0,charStart)),textByteEnd:offset+bytes(text.slice(0,charStart+valueText.length))}});
  }
- return {status:'ready',value:{context:m[1],measurement:m[3],unit:m[5],positions}};
+ return {status:'ready',value:{context:m[1],measurement:m[3],unit,positions}};
 }
 const name=z.string().min(1).max(80);
 export const sourceNumericRequestSchema=z.strictObject({

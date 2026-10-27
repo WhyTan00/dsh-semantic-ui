@@ -1,5 +1,6 @@
 import {it,expect} from 'vitest';
 import {readFileSync} from 'node:fs';
+import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {parseNumericSource,checkSourceNumeric} from '../src/source-numeric';
 import {sourceOptions,readSourceSnapshot} from '../src/source-input';
@@ -52,4 +53,9 @@ it('handles all-missing, all-zero, signed decimals, different counts and overflo
 it('keeps source selection outside strict requests and recognizes the explicit startup kind',()=>{
  for(const extra of [{sourceFile:'forged'},{sourceText:e.question},{sourceKind:'arrows'},{authority:'human'},{claims:[{kind:'mean',population:'observed',denominator:3,value:0,unit:e.unit,text:'extra'}]}])expect(check(extra)).toHaveProperty('status','validation-failed');
  expect(sourceOptions(['--source-file','x','--source-kind','observations-zh'])).toHaveProperty('kind','observations-zh');
+});
+
+it('bounds whitespace rejection without allowing an in-process regexp regression to hang the test runner',()=>{
+ const program="import{parseNumericSource}from'./src/source-numeric.ts';const prefix='探针1次温度读数是 ';for(const tail of ['', '。能计算平均值吗？']){const result=parseNumericSource(prefix+' '.repeat(15000)+tail);if(result.status!=='unsupported')process.exit(2);}console.log('bounded-rejection');";
+ expect(execFileSync(process.execPath,['--import','tsx','--input-type=module','-e',program],{cwd:process.cwd(),timeout:3000,encoding:'utf8'})).toContain('bounded-rejection');
 });

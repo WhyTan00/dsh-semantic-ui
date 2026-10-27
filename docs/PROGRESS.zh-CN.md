@@ -1,6 +1,6 @@
 # 实际进度
 
-preview.14新增有限`observations-zh`数值来源：原始每位置值/缺失mask/单位与单组类别柱状图显式绑定，observed/complete均值及分母分开；同均值填零、漏行、换单位、时间/排序或错误完整均值均拒绝。普通`--answer`可消费一项显式source请求，最终仍用来源canonical或拒绝。源阶段21项定向测试、类型及发行隔离通过，原测试辅助变量失败保留；最终归档/正常客户端/CI与发行按 [本段回执](evidence/source-numeric.json) 单列，不把源码阶段冒充完成。范围与正常命令见 [数值来源](SOURCE-NUMERIC.zh-CN.md)，无新模型回合或DSH来源适配，原0/6/18不变。
+preview.15新增有限`observations-zh`数值来源：原始每位置值/缺失mask/单位与单组类别柱状图显式绑定，observed/complete均值及分母分开；同均值填零、漏行、换单位、时间/排序或错误完整均值均拒绝。普通`--answer`可消费一项显式source请求，最终仍用来源canonical或拒绝。源阶段22项定向测试、类型及发行隔离通过，原测试辅助变量失败保留；14候选发布前的大空白输入3秒超时保留，未发布；15拆分解析并用子进程超时保护和实际STDIO回归修复；最终归档/正常客户端/CI与发行按 [本段回执](evidence/source-numeric.json) 单列，不把源码阶段冒充完成。范围与正常命令见 [数值来源](SOURCE-NUMERIC.zh-CN.md)，无新模型回合或DSH来源适配，原0/6/18不变。
 
 伴随CLI补齐既有`--source-excerpt`透传；`arrows`原A2箭头选段、`permissions-zh`原A3全文各一次真实`--answer`完成，两项均为0模型回合，实际schema/source双层请求与响应一致、自有进程已退出、全局配置摘要未变。四条有向边及五项访问/一项禁止/主体局部目标限制与既有独立预期相同；没有view/claims比较或新自然模型验收，A2片段外故障/回滚/重试未核。可运行命令见 [普通答复](CODEX-GROUNDED.zh-CN.md)，新字节身份及完整结果见 [来源种类回执](evidence/grounded-answer-source-kinds.json)。只更新伴随源码与文档，未重打或重发preview.13；此前decision/模型结果继续按原字节单列。
 

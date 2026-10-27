@@ -1,6 +1,8 @@
 # 明确读数来源与图表绑定
 
-preview.14 / 协议1.4 的独立 MCP 增量。它把已有 `numericStats` 接到启动时固定的来源文件，再核对 DataChart 的每个值、缺失位置、单位和统计范围。不是任意中文解析、世界事实认证、DSH 新来源适配或 Codex 自定义富UI。
+preview.15 / 协议1.4 的独立 MCP 增量。它把已有 `numericStats` 接到启动时固定的来源文件，再核对 DataChart 的每个值、缺失位置、单位和统计范围。不是任意中文解析、世界事实认证、DSH 新来源适配或 Codex 自定义富UI。
+
+候选preview.14在公开发布前发现大量空格导致匹配超时，未发布；源码、归档及失败探针保留。preview.15将有界头部、列表和单位分开解析，并增加受超时保护的回归和归档实际输入检查。
 
 ## 有限来源合同
 
@@ -37,12 +39,12 @@ preview.14 / 协议1.4 的独立 MCP 增量。它把已有 `numericStats` 接到
 
 ## 普通零推理使用
 
-在源码仓库根目录使用已经核对SHA的preview.14归档；伴随Python客户端不在runtime包内。正确请求和故意错误的填零请求是公开可检查的例子：
+在源码仓库根目录使用已经核对SHA的preview.15归档；伴随Python客户端不在runtime包内。正确请求和故意错误的填零请求是公开可检查的例子：
 
 ```sh
 python3 examples/codex-readonly.py --answer \
-  --archive artifacts/releases/0.1.0-preview.14/whytan-dsh-semantic-ui-0.1.0-preview.14.tgz \
-  --manifest artifacts/releases/0.1.0-preview.14/package-manifest.json \
+  --archive artifacts/releases/0.1.0-preview.15/whytan-dsh-semantic-ui-0.1.0-preview.15.tgz \
+  --manifest artifacts/releases/0.1.0-preview.15/package-manifest.json \
   --source-file docs/evidence/natural/r9-N2.json --source-json-pointer /question \
   --source-kind observations-zh --component DataChart \
   --requests-file fixtures/source-numeric-request.json

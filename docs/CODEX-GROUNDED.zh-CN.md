@@ -51,7 +51,7 @@ python3 examples/codex-readonly.py --answer \
 
 ## 数值来源与图表请求
 
-preview.14新增`--source-kind observations-zh`，将实际值/缺失mask/单位与DataChart位置及均值分母逐项绑定。完整正常命令、正例与同均值填零拒绝见 [数值来源](SOURCE-NUMERIC.zh-CN.md)。`--answer --requests-file`可传**一项**完整source_check请求；最终仍仅来自该次来源检查，不把view注释当有据说明。此用法需要14归档，不能外推到13；与`--model-candidate`同时使用请求文件会拒绝。本段零新模型回合，旧模型验收仍按各自版本保留。
+preview.15新增`--source-kind observations-zh`，将实际值/缺失mask/单位与DataChart位置及均值分母逐项绑定。完整正常命令、正例与同均值填零拒绝见 [数值来源](SOURCE-NUMERIC.zh-CN.md)。`--answer --requests-file`可传**一项**完整source_check请求；最终仍仅来自该次来源检查，不把view注释当有据说明。此用法需要15归档，不能外推到13；与`--model-candidate`同时使用请求文件会拒绝。本段零新模型回合，旧模型验收仍按各自版本保留。
 
 ## 最终文字来自哪里
 

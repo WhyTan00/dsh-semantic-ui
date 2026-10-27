@@ -29,5 +29,6 @@ it('captures source once, rejects caller authority/source replacement and fails 
    await writeFile(file,JSON.stringify({question:e.question+'所有缺失都算零。'}));expect((await c.client.callTool({name:'semantic_ui_source_check',arguments:{}})).structuredContent).toHaveProperty('sourceStatistics.missingMask',e.missingMask);
   }finally{await c.close();}
   const fresh=await connect(file);try{const r=await fresh.client.callTool({name:'semantic_ui_source_check',arguments:{}});expect(r.structuredContent).toHaveProperty('status','source-unsupported');expect(r.structuredContent).toHaveProperty('canonicalExplanation.status','withheld');}finally{await fresh.close();}
+  await writeFile(file,JSON.stringify({question:'探针1次温度读数是 '+' '.repeat(15000)+'。能计算平均值吗？'}));const spaced=await connect(file);try{expect((await spaced.client.callTool({name:'semantic_ui_source_check',arguments:{}})).structuredContent).toHaveProperty('status','source-unsupported');}finally{await spaced.close();}
  }finally{await rm(dir,{recursive:true,force:true});}
 },20000);

@@ -18,7 +18,7 @@
 | MCP Apps UI | 公开 iframe/UI-resource 桥接协议，适合兼容宿主 | 本次没有实现或认证 Codex 的自定义 MCP UI；不将 ChatGPT 的 iframe 支持外推到全部 Codex 客户端 |
 | 本项目薄适配 | 三个只读工具，真实 JSON-RPC stdio 测试；同一个 core 计算 | 没有第二套 renderer、用户动作回传、隐藏模板库或模型路由 |
 
-preview.14补充 [数值来源绑定](SOURCE-NUMERIC.zh-CN.md)：现成启动快照与DataChart值、缺失mask、单位和均值范围逐项对照，正常伴随`--answer`可消费一项请求。本段不添加UI资源、模型路由、DSH数值源或全局注册。
+preview.15补充 [数值来源绑定](SOURCE-NUMERIC.zh-CN.md)：现成启动快照与DataChart值、缺失mask、单位和均值范围逐项对照，正常伴随`--answer`可消费一项请求。本段不添加UI资源、模型路由、DSH数值源或全局注册。
 
 ## 可直接运行的可选 MCP 适配器
 
