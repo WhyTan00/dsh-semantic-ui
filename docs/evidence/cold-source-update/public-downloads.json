@@ -1,0 +1,50 @@
+{
+  "releaseId": 425182323,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21",
+  "tag": "v0.1.0-preview.21",
+  "sourceCommit": "2f2cb1908655d4cf2d554b74b9356472339fb44b",
+  "prerelease": true,
+  "author": "WhyTan00",
+  "assets": [
+    {
+      "name": "package-manifest.json",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.21/package-manifest.json",
+      "httpStatus": 200,
+      "sha256": "67f74481977b452848a3ffa65d9b2d608a1100a540d6d4f310bdb438d47670b3",
+      "bytes": 32885,
+      "matchesLocalAndLinuxCI": true,
+      "authorizationHeaderSent": false,
+      "cookiesSent": false
+    },
+    {
+      "name": "SHA256SUMS",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.21/SHA256SUMS",
+      "httpStatus": 200,
+      "sha256": "ccaadb539e03b1fd502dc290a5b4c7c747f26a883b014f5a088326e8aa072b58",
+      "bytes": 229,
+      "matchesLocalAndLinuxCI": true,
+      "authorizationHeaderSent": false,
+      "cookiesSent": false
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.21.tgz",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.21/whytan-dsh-semantic-ui-0.1.0-preview.21.tgz",
+      "httpStatus": 200,
+      "sha256": "e0779f6ba59532aa2d003a0645fe84a8b8e17d71a13aa2d87c9ab6086602d46a",
+      "bytes": 2605844,
+      "matchesLocalAndLinuxCI": true,
+      "authorizationHeaderSent": false,
+      "cookiesSent": false
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.21.tgz",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.21/whytan-dsh-semantic-ui-evidence-0.1.0-preview.21.tgz",
+      "httpStatus": 200,
+      "sha256": "10d5713aa989bf5789d82422dec2ca4c00eed89d12ef3ca38f0e943a100476e2",
+      "bytes": 30755491,
+      "matchesLocalAndLinuxCI": true,
+      "authorizationHeaderSent": false,
+      "cookiesSent": false
+    }
+  ]
+}

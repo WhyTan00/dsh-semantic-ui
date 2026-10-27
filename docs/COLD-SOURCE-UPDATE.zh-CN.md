@@ -1,8 +1,8 @@
 # 重启后的来源补充与原请求核对
 
-preview.20的冷宿主/安装/CI/四匿名资产已[单独接受](evidence/cold-source-update20.json)，冻结资产不改。最后代码复查另发现界面在status结果省略requestId时可能丢失原ID提示；21候选修复此边界，不能用20原矩阵冒充本修复通过。
+preview.20的冷宿主/安装/CI/四匿名资产已[单独接受](evidence/cold-source-update20.json)，冻结资产不改。最后代码复查另发现界面在status结果省略requestId时可能丢失原ID提示；21已修复此边界，不能用20原矩阵冒充本修复通过。
 
-preview.21 / DSH `0.2.1-rc.2`，沿用[单未知当前事实补充](SOURCE-UPDATE.zh-CN.md)。本次完善的是会话生命周期，不扩大来源语法、图种或事实认证范围。源码开发检查已通过，最终归档安装、Linux 和公开资产接受在冻结后单独记录；本页不能替代最终归档回执。
+preview.21 / DSH `0.2.1-rc.2`，沿用[单未知当前事实补充](SOURCE-UPDATE.zh-CN.md)。本次完善的是会话生命周期，不扩大来源语法、图种或事实认证范围。[preview.21已公开](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21)：冻结源码`2f2cb1908655d4cf2d554b74b9356472339fb44b`，最终365文件归档在macOS/Linux的Native/PTC均通过，四份资产匿名HTTPS200且同字节。39项定向检查通过；完整[最终分层接受](evidence/cold-source-update.json)是冻结后的独立文档提交，不重打包。
 
 ## 行为与边界
 
@@ -25,7 +25,7 @@ preview.21 / DSH `0.2.1-rc.2`，沿用[单未知当前事实补充](SOURCE-UPDAT
 
 实现前固定的新合成来源：杉原支持缓存、松港不支持；若离线值守则需要缓存，否则不需要；原当前条件 unknown，调用者只补为 false。来源 SHA-256 `00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af`；新来源 `b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099`。只替换 UTF-8 `[156,180)` 的声明，当前缓存需求为 false，两方案均不因本项排除；价格、整体与赢家仍未知。
 
-开发构建的正常SourceUpdatePanel已注入两种合法但省略ID的status回执（unknown/withheld）：原ID持续可见，随后三次真实界面请求全部仍是同ID status，没有offer/submit或新提交ID；失败状态不显示旧采用信息，恢复正常回执后才重新显示真实采用。该故障注入另有标记，不冒真实服务器故障或旧receipt的新采用。最终归档仍须单独跑这个实际组件路径。
+开发构建的正常SourceUpdatePanel已注入两种合法但省略ID的status回执（unknown/withheld）：原ID持续可见，随后三次真实界面请求全部仍是同ID status，没有offer/submit或新提交ID；失败状态不显示旧采用信息，恢复正常回执后才重新显示真实采用。该故障注入另有标记，不冒真实服务器故障或旧receipt的新采用。最终365文件归档在macOS/Linux的Native/PTC另行完成了同一个实际组件路径，四组原件见分层接受。
 
 源码阶段39项定向测试通过，包含暂停 resolve/flush 时插入来源、排队工作和归档的拒绝；旧收据重放和既有 flush 前缀保护仍通过。开发构建的真实 Native/PTC 各经过原始正常一轮、完全停宿主、冷查询/明确补充、再完全停宿主、原 ID 收据恢复；模型推理0。活动拒绝由单独的 test-only activity provider 注入，仅证明该准入分支，不等于运行了真实作业/排程；排队、非普通和自动任务分支有服务/投影测试，未另制造真实任务。开发构建与最终包证据严格分开。
 

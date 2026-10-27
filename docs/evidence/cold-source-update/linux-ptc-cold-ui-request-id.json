@@ -1,0 +1,56 @@
+{
+  "kind": "SourceUpdatePanel on the real native page with two deliberately injected valid no-ID status responses; not a real server failure",
+  "archiveInstalled": true,
+  "knownRequestId": "96bd6d1c-fd27-4fe9-984a-344c9114285c",
+  "injectedStatuses": [
+    "unknown",
+    "withheld"
+  ],
+  "outgoingRequests": [
+    {
+      "action": "status",
+      "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+      "requestId": "96bd6d1c-fd27-4fe9-984a-344c9114285c"
+    },
+    {
+      "action": "status",
+      "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+      "requestId": "96bd6d1c-fd27-4fe9-984a-344c9114285c"
+    },
+    {
+      "action": "status",
+      "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+      "requestId": "96bd6d1c-fd27-4fe9-984a-344c9114285c"
+    }
+  ],
+  "originalIdVisibleAndRetained": true,
+  "noOfferSubmitOrNewSubmissionId": true,
+  "noOldReceiptFieldsReusedDuringFault": true,
+  "actualOriginalReceiptRecovered": true,
+  "requestsBefore": 12,
+  "requestsAfter": 12,
+  "before": {
+    "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+    "agentLive": true,
+    "sessionAttached": true,
+    "headSeq": 59,
+    "eventCount": 60,
+    "turnStarts": 2,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "after": {
+    "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+    "agentLive": true,
+    "sessionAttached": true,
+    "headSeq": 59,
+    "eventCount": 60,
+    "turnStarts": 2,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "pageErrors": [],
+  "newObservedModelTurns": 0
+}

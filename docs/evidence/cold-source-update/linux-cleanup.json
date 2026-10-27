@@ -1,0 +1,70 @@
+{
+  "allTaskOwnedChildrenTerminal": true,
+  "processes": [
+    {
+      "kind": "fixture",
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "kind": "native-initial",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native-initial-browser",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native-cold",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native-cold-browser",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native-recovered",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native-recovered-browser",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-initial",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-initial-browser",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-cold",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-cold-browser",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-recovered",
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc-recovered-browser",
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ]
+}

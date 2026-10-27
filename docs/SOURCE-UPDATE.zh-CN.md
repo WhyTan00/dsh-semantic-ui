@@ -1,6 +1,6 @@
 # 单个未知当前事实的正常补充
 
-后续preview.21源码候选补齐[冷会话来源入口](COLD-SOURCE-UPDATE.zh-CN.md)：offer/status不激活，明确submit使用公开Session resolver，恢复后复查并保留原ID收据；归档、排队与自动任务受约束。开发证据不等于最终归档接受。下文19历史发行不重包。
+后续preview.21已公开并补齐[冷会话来源入口](COLD-SOURCE-UPDATE.zh-CN.md)：offer/status不激活，明确submit使用公开Session resolver，恢复后复查并保留原ID收据；归档、排队与自动任务受约束。365文件最终归档的macOS/Linux Native/PTC及四匿名资产已[单独接受](evidence/cold-source-update.json)。下文仅记19范围，历史发行不重包。
 
 19发行后另完成[来源补充后的Codex快照采用](CODEX-SOURCE-UPDATE.zh-CN.md)：一个新反向分支场景经正常DSH19控件保存unknown→false的新声明，原生消息与导入文件hash逐项关联；两份独立guided回合各4次模型语义调用，首个view比较matched，raw final按独立判据评读met。新false按else推出need=true，价格/整体未知。它是文件快照导入，不是实时回调/主客户端安装；backend请求数unknown，任意正文仍未认证。没有新runtime或发行，原19的0模型接受不改。
 
@@ -36,7 +36,7 @@ preview.19 / DSH `0.2.1-rc.2`。这是一个有界的来源修订流程：在最
 
 ## 边界与恢复
 
-本版只允许修改**当前活跃 Session 的最新已绑定视图**。刷新页面仍可核对；历史旧视图在新输入或新 revision 后不再能编辑。宿主重启后的冷 Session 可以恢复原请求收据，尚未实现直接编辑冷历史：须在正常聊天中重新提供完整来源并获得新的当前绑定视图。不会为了激活会话暗中切模型、发送空消息或重放旧请求。
+本节19版本只允许修改**当前活跃 Session 的最新已绑定视图**。刷新页面仍可核对；历史旧视图在新输入或新 revision 后不再能编辑。宿主重启后的冷 Session 可以恢复原请求收据，19尚未实现直接编辑冷历史：须在正常聊天中重新提供完整来源并获得新的当前绑定视图；后续21已按上方独立合同支持受约束冷补充。不会为了激活会话暗中切模型、发送空消息或重放旧请求。
 
 取消仅适用于发送之前；进入宿主后不承诺撤销。若 intent 已持久化而接收情况不明，只保留同一 ID 对账；未出现确切消息/新 checkpoint 就保持 unknown，不自动重发。收到其他来源或同回合多条用户消息导致歧义时，不把它认证为本次合法更新。旧 unknown 视图保持只读，局部 need 切换和刷新复位仍按原合同。
 

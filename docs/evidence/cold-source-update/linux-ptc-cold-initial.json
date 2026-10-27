@@ -1,0 +1,263 @@
+{
+  "mode": "ptc",
+  "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+  "title": "Cold source ptc 1793088884585",
+  "originalId": "324d0a46-91db-4f4a-929d-e0d96dc107ae",
+  "base": {
+    "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+    "turn": 1,
+    "turnStartSeq": 6,
+    "messageId": "33d9758d-4aba-4494-9688-b75f098afa4e",
+    "messageSeq": 10,
+    "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+    "displayId": "condition-ptc-cold-before",
+    "revision": 1
+  },
+  "liveCancelNoEvents": true,
+  "oldExplanation": "杉原：缓存支持=true；价格声明未知。\n松港：缓存支持=false；价格声明未知。\n当前需要缓存=未知。\n来源两分支：若离线值守=true，则需要缓存=true；否则需要缓存=false。\n当前离线值守=未知（来源明确声明），所以当前需要缓存=未知；条件未定，不能按false或不需要处理。\n若本地假设离线值守=true：杉原满足本项；松港不满足本项；若本地假设离线值守=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+  "sourceCheck": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "DSH current own-turn message content snapshot; not a file",
+      "hostContext": {
+        "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+        "turn": 1,
+        "turnStartSeq": 6,
+        "messageId": "33d9758d-4aba-4494-9688-b75f098afa4e",
+        "messageSeq": 10,
+        "producerSourceKind": "user",
+        "inherited": false,
+        "excludedSyntheticContexts": 3,
+        "requestId": "324d0a46-91db-4f4a-929d-e0d96dc107ae"
+      },
+      "textSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+      "excerptSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 207,
+        "textUTF8Bytes": 207
+      },
+      "identityVerified": false,
+      "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "杉原",
+        "松港"
+      ],
+      "facts": [
+        {
+          "kind": "capability",
+          "option": "杉原",
+          "name": "缓存",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 39,
+              "textByteEnd": 57
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "松港",
+          "name": "缓存",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 60,
+              "textByteEnd": 81
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "杉原",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "松港",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 183,
+              "textByteEnd": 204
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "缓存",
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            {
+              "textByteStart": 102,
+              "textByteEnd": 123
+            },
+            {
+              "textByteStart": 126,
+              "textByteEnd": 153
+            },
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "derivation": {
+            "condition": "离线值守",
+            "whenTrue": true,
+            "whenFalse": false,
+            "current": null
+          }
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 57
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 60,
+            "textByteEnd": 81
+          }
+        },
+        {
+          "kind": "condition",
+          "span": {
+            "textByteStart": 84,
+            "textByteEnd": 99
+          }
+        },
+        {
+          "kind": "condition-true-branch",
+          "span": {
+            "textByteStart": 102,
+            "textByteEnd": 123
+          }
+        },
+        {
+          "kind": "condition-false-branch",
+          "span": {
+            "textByteStart": 126,
+            "textByteEnd": 153
+          }
+        },
+        {
+          "kind": "current-condition",
+          "span": {
+            "textByteStart": 156,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 204
+          }
+        }
+      ],
+      "conditionalNeeds": [
+        {
+          "name": "缓存",
+          "condition": "离线值守",
+          "whenTrue": true,
+          "whenFalse": false,
+          "current": null,
+          "currentSpans": [
+            {
+              "textByteStart": 156,
+              "textByteEnd": 180
+            }
+          ],
+          "spans": {
+            "condition": {
+              "textByteStart": 84,
+              "textByteEnd": 99
+            },
+            "whenTrue": {
+              "textByteStart": 102,
+              "textByteEnd": 123
+            },
+            "whenFalse": {
+              "textByteStart": 126,
+              "textByteEnd": 153
+            }
+          },
+          "derivedNeed": null
+        }
+      ]
+    },
+    "comparison": {
+      "status": "not-requested"
+    },
+    "issues": [],
+    "fieldChecks": [],
+    "inputChecks": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "杉原：缓存支持=true；价格声明未知。\n松港：缓存支持=false；价格声明未知。\n当前需要缓存=未知。\n来源两分支：若离线值守=true，则需要缓存=true；否则需要缓存=false。\n当前离线值守=未知（来源明确声明），所以当前需要缓存=未知；条件未定，不能按false或不需要处理。\n若本地假设离线值守=true：杉原满足本项；松港不满足本项；若本地假设离线值守=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "probe": {
+    "sessionId": "session-6a0a3882-f042-4e5e-87a2-7e1ed74d380f",
+    "agentLive": true,
+    "sessionAttached": true,
+    "headSeq": 32,
+    "eventCount": 33,
+    "turnStarts": 1,
+    "ordinary": true,
+    "archived": false,
+    "syntheticBusy": false
+  },
+  "requests": 9,
+  "pageErrors": []
+}

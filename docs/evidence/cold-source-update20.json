@@ -10,5 +10,10 @@
   "anonymousAssets200AndEqual": 4,
   "newObservedModelTurns": 0,
   "knownLimitation": "UI unknown/withheld status response omitting optional requestId could expose a re-offer button that clears the known caller ID. Original immutable assets retained; correction is a distinct successor version. Cold host acceptance is not proof that this UI edge case passed.",
-  "evidenceDirectory": "cold-source-update20/"
+  "evidenceDirectory": "cold-source-update20/",
+  "successor": {
+    "version": "0.1.0-preview.21",
+    "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21",
+    "evidence": "cold-source-update.json"
+  }
 }

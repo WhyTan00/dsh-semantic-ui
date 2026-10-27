@@ -1,0 +1,248 @@
+{
+  "schema": "semantic-cold-source-update-v1",
+  "version": "0.1.0-preview.21",
+  "sourceCommit": "2f2cb1908655d4cf2d554b74b9356472339fb44b",
+  "sourceTag": "v0.1.0-preview.21",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.21.tgz",
+    "sha256": "e0779f6ba59532aa2d003a0645fe84a8b8e17d71a13aa2d87c9ab6086602d46a",
+    "bytes": 2605844,
+    "files": 365,
+    "entrypoints": {
+      "dist/host.js": "dfbdaa6da48b9e17ab870a7b95dded359a62b019d0d7fde0f43125c904291eff",
+      "dist/client.js": "79def51c27cc131904210fb25b6d04d5fb9c86629980bda91e4c7a0eab2056b5",
+      "dist/core.js": "272c19b6c4cc63ae937e20cd8b7f7e31968bc37af3bc71c24946ef6878533682",
+      "dist/mcp.js": "b19c2f8b2685bc141d958d34e5ed8127d97138688b60edf512aa25bec6705000",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    }
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.21.tgz",
+    "bytes": 30755491,
+    "sha256": "10d5713aa989bf5789d82422dec2ca4c00eed89d12ef3ca38f0e943a100476e2",
+    "files": 581
+  },
+  "ci": {
+    "runId": 40472008667,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40472008667",
+    "conclusion": "success",
+    "headSha": "2f2cb1908655d4cf2d554b74b9356472339fb44b"
+  },
+  "targetedTests": {
+    "files": 6,
+    "tests": 39,
+    "typecheck": true,
+    "legacy19SelectedNativeReceiptReplay": true
+  },
+  "finalArchive": {
+    "macOS": {
+      "filesVerifiedBeforeHost": 365,
+      "native": true,
+      "ptc": true
+    },
+    "linux": {
+      "filesVerifiedBeforeHost": 365,
+      "native": true,
+      "ptc": true
+    },
+    "actualInstalledUiNoIdStatus": {
+      "platformModeRuns": 4,
+      "injectedStatuses": [
+        "unknown",
+        "withheld"
+      ],
+      "outgoingRequestsEachRun": 3,
+      "allRequestsAreOriginalIdStatus": true,
+      "noReofferNewSubmissionIdOrSubmit": true,
+      "failedResultsDoNotReuseOldReceiptFields": true,
+      "serverProvidedIdPrecedence": "separate unit case, not claimed as a distinct observed UI server response"
+    }
+  },
+  "sourceFreeze": {
+    "sourceSha256": "00f2fb7b07cd95e5da06e0ec1c725401d401282adb92288855e69d59fa7613af",
+    "updatedSha256": "b0654a83de8e3c9e177e59131ce1c047187ebcf0b0a56916a6deb856248f2099",
+    "change": {
+      "condition": "离线值守",
+      "from": null,
+      "to": false,
+      "utf8Start": 156,
+      "utf8End": 180
+    },
+    "derivedNeed": false,
+    "neitherOptionExcludedByThisItem": true,
+    "pricesOverallWinner": "unknown"
+  },
+  "scope": {
+    "coldOfferAndStatusDoNotActivate": true,
+    "onlyExplicitNewOwnerSubmitResolvesSameOrdinarySession": true,
+    "nativeNavigationItselfResumesAgent": true,
+    "coldSubmitTestTransport": "authenticated owner API on real DSH page; not falsely described as a click inside a still-cold conversation",
+    "busyActivityIsSyntheticProvider": true,
+    "nonordinaryAutomationPendingAndAwaitChanges": "service/projection tests; not extra real tasks or schedules",
+    "flushCapturesPreAwaitPrefix": true,
+    "inProcessSerializationOnly": true,
+    "atomicCrossProcessCompareAndPromptTransaction": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false,
+    "freeProseVerified": false,
+    "newObservedModelTurns": 0,
+    "parent0520ObservedTurnsAlreadyUsed": 2,
+    "budgetReset": false,
+    "originalNaturalResult": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18,
+      "changed": false
+    },
+    "generalRequestFormPortableResultsCrossDeviceAndDesktopCodexRichUI": "not completed"
+  },
+  "preservedFailures": [
+    {
+      "stage": "first source unit setup",
+      "finding": "a test-double object brace was missing; transform failed before tests ran",
+      "expectationsChanged": false
+    },
+    {
+      "stage": "first development native cold navigation",
+      "finding": "clicking the native session tree resumed Agent; original false!=true failure retained; test now separates cold API from native navigation, without intercepting native activation",
+      "originalRuntimeFailureOverwritten": false
+    },
+    {
+      "stage": "preview20 final code review after publication",
+      "finding": "the no-ID result/re-offer path could clear an already-known caller ID; identified from code, not presented as a previously executed UI counterexample",
+      "remediation": "distinct preview21 runtime and actual installed UI no-ID fault cases; immutable preview20 assets retained"
+    }
+  ],
+  "previous20": "cold-source-update20.json",
+  "publicRelease": {
+    "releaseId": 425182323,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.21",
+    "tag": "v0.1.0-preview.21",
+    "sourceCommit": "2f2cb1908655d4cf2d554b74b9356472339fb44b",
+    "prerelease": true,
+    "author": "WhyTan00"
+  },
+  "publicDownloads": "cold-source-update/public-downloads.json",
+  "proofFiles": [
+    {
+      "path": "cold-source-update/ci-byte-comparison.json",
+      "sha256": "ac8cc3cb6f95ee75088af584bc9b554fa8e033d53f5c41cadd06b85700c44a37"
+    },
+    {
+      "path": "cold-source-update/ci.json",
+      "sha256": "2c1ecca608ee6747b32bd44c645a9449b9b0202fcea53d87132db27d3d3b694e"
+    },
+    {
+      "path": "cold-source-update/linux-cleanup.json",
+      "sha256": "778b8420f7f795a5c82f11e584bbd20e4a59b8e8aba8a449d330169d3d959f4b"
+    },
+    {
+      "path": "cold-source-update/linux-install.json",
+      "sha256": "3b5372accfa0fec1725bd1e7dd70c49c42428e447b00dc8b84ebfaa33b26d828"
+    },
+    {
+      "path": "cold-source-update/linux-installed-byte-check.json",
+      "sha256": "8a97ca275ae44659eddd1289635d6067466dc484c17ea964c521702780af99bd"
+    },
+    {
+      "path": "cold-source-update/linux-native-cold-history-ui.json",
+      "sha256": "39947782449cdaa5e1632081760c69525837cefea0937a91be74051207153be2"
+    },
+    {
+      "path": "cold-source-update/linux-native-cold-initial.json",
+      "sha256": "eb314c8e4bc9d824b1dd3c3d6e937f6433991a353046bc3ed344fb1ef9a8af0e"
+    },
+    {
+      "path": "cold-source-update/linux-native-cold-recovered.json",
+      "sha256": "7d2ed87685799d3032994f1b5db861cd1a7ac93eb014a6a257aa698033003951"
+    },
+    {
+      "path": "cold-source-update/linux-native-cold-ui-request-id.json",
+      "sha256": "f69514575d3982cf2e8021686196f79cb89787a277ddf2a9975feed890e7d776"
+    },
+    {
+      "path": "cold-source-update/linux-native-cold-update.json",
+      "sha256": "5f5c9684ad23521f29890f08762039426fcffd34f33123bfc4dbb668705d6bb2"
+    },
+    {
+      "path": "cold-source-update/linux-ptc-cold-history-ui.json",
+      "sha256": "39947782449cdaa5e1632081760c69525837cefea0937a91be74051207153be2"
+    },
+    {
+      "path": "cold-source-update/linux-ptc-cold-initial.json",
+      "sha256": "0bce324b4f00fc16f599b4c95f749f265273caf2e873ef03ddf7857d49d8527c"
+    },
+    {
+      "path": "cold-source-update/linux-ptc-cold-recovered.json",
+      "sha256": "e914d189e33de8d87b8a33e753e6def815ccb4a192eebee982e715c3aeb09f0b"
+    },
+    {
+      "path": "cold-source-update/linux-ptc-cold-ui-request-id.json",
+      "sha256": "7cc76d902645901267dc21f96332c56a27930ceb3ae51cb3518a4878f22d21e9"
+    },
+    {
+      "path": "cold-source-update/linux-ptc-cold-update.json",
+      "sha256": "fc506c20fb3a9f070b20d4dbbbeae25dec78c9875858e7b290f50a0c0e5debd8"
+    },
+    {
+      "path": "cold-source-update/macos-cleanup.json",
+      "sha256": "bcb562abd52d94f89bc0cabd040e6e9ffa468e0fffb2f0e8ce34976c1f7c388e"
+    },
+    {
+      "path": "cold-source-update/macos-install.json",
+      "sha256": "3b5372accfa0fec1725bd1e7dd70c49c42428e447b00dc8b84ebfaa33b26d828"
+    },
+    {
+      "path": "cold-source-update/macos-installed-byte-check.json",
+      "sha256": "8a97ca275ae44659eddd1289635d6067466dc484c17ea964c521702780af99bd"
+    },
+    {
+      "path": "cold-source-update/macos-native-cold-history-ui.json",
+      "sha256": "39947782449cdaa5e1632081760c69525837cefea0937a91be74051207153be2"
+    },
+    {
+      "path": "cold-source-update/macos-native-cold-initial.json",
+      "sha256": "4092ff4c7f9baad1e98a5ddf43fa8ee2980f67f4b1b31ea26832187793d967bd"
+    },
+    {
+      "path": "cold-source-update/macos-native-cold-recovered.json",
+      "sha256": "593538268ebe642694d0916b103318e6f2ec88d0c65c82de1181a0250ccee8fc"
+    },
+    {
+      "path": "cold-source-update/macos-native-cold-ui-request-id.json",
+      "sha256": "a3a16709b40a58c85b77230bab37d181cd0bbebe5ae56e510d4f2f0aa20631ac"
+    },
+    {
+      "path": "cold-source-update/macos-native-cold-update.json",
+      "sha256": "200b3faa7594a89d7f0b6b442671441b1f20eef403a9facb48619dde45496035"
+    },
+    {
+      "path": "cold-source-update/macos-ptc-cold-history-ui.json",
+      "sha256": "39947782449cdaa5e1632081760c69525837cefea0937a91be74051207153be2"
+    },
+    {
+      "path": "cold-source-update/macos-ptc-cold-initial.json",
+      "sha256": "c27200642258adfcedf0be0921f49f091664408851ea0b0a0e5c9a06241932f1"
+    },
+    {
+      "path": "cold-source-update/macos-ptc-cold-recovered.json",
+      "sha256": "c67b1307bdb5106fca0bf69c5ae1347ae3e8efbb630c5b12a51485ac92a42803"
+    },
+    {
+      "path": "cold-source-update/macos-ptc-cold-ui-request-id.json",
+      "sha256": "dc19bb7e368dac807c650c5f5166ed0b1fac7513c99e4af475a1f676df1d6c33"
+    },
+    {
+      "path": "cold-source-update/macos-ptc-cold-update.json",
+      "sha256": "41b90623fcc81afd0429ea32e996dd12b5bfa8e22865288f600a1039789297d6"
+    },
+    {
+      "path": "cold-source-update/macos-transport-tools.json",
+      "sha256": "5a083f64fb2398734b7dc9b9cd50bc3e37bc633923e3cf831acc8ee3558ba112"
+    },
+    {
+      "path": "cold-source-update/public-downloads.json",
+      "sha256": "dd66bf058dbab7d14a24ec74e83b5b8d452fe1be023aceb73d5b425556cd6f0b"
+    }
+  ]
+}
