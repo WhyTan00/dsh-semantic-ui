@@ -170,6 +170,75 @@ def selected_question(path, pointer):
     return value
 
 
+def refusal_details(result, question_sha):
+    """Display already rejected typed fields; never decide whether a check passed."""
+    source = result.get('source', {})
+    if (result.get('sourceCheckKind') != 'observations-zh'
+            or source.get('textSha256') != question_sha
+            or source.get('identityVerified') is not False
+            or result.get('sourceFactsVerified') is not False):
+        return []
+
+    def number(value, absent):
+        if value is None:
+            return absent
+        if isinstance(value, bool) or not isinstance(value, (int, float)):
+            return '未展开'
+        try:
+            text = json.dumps(value, allow_nan=False)
+        except (ValueError, OverflowError):
+            return '未展开'
+        return text if len(text) <= 32 else '未展开'
+
+    def unit(value):
+        # Only small unit labels; never echo paths, URLs, IDs or free prose.
+        if (isinstance(value, str) and 0 < len(value) <= 24
+                and all(c.isalnum() or c in '°℃℉%‰μµ·⁻²³^*-' for c in value)):
+            return value
+        return '（单位文本未展开）'
+
+    details = []
+    rows = result.get('comparison', {}).get('rowChecks', [])
+    for row in rows[:8] if isinstance(rows, list) else []:
+        if not isinstance(row, dict):
+            continue
+        index = row.get('sourceIndex')
+        if (row.get('status') == 'mismatch' and isinstance(index, int)
+                and not isinstance(index, bool) and 0 <= index < 128
+                and 'expected' in row and 'actual' in row
+                and row['expected'] != row['actual']):
+            details.append(f"第{index + 1}个位置：来源为{number(row['expected'], '缺失')}，收到{number(row['actual'], '缺失')}。")
+    claims = result.get('claimChecks', [])
+    for claim in claims[:8] if isinstance(claims, list) else []:
+        if not isinstance(claim, dict):
+            continue
+        label = {'observed': '已观测均值', 'complete': '完整均值'}.get(claim.get('population'))
+        expected, actual = claim.get('expected'), claim.get('actual')
+        if (claim.get('status') == 'mismatch' and claim.get('kind') == 'mean'
+                and label and isinstance(expected, dict) and isinstance(actual, dict)
+                and all(k in expected and k in actual for k in ['value', 'unit', 'denominator'])):
+            details.append(f"{label}声明：来源{number(expected['value'], '未知')} {unit(expected['unit'])}（分母{number(expected['denominator'], '未知')}），收到{number(actual['value'], '未知')} {unit(actual['unit'])}（分母{number(actual['denominator'], '未知')}）。")
+    hints = {'SOURCE_UNIT': '图表单位与来源声明不一致。',
+             'SOURCE_ORDER': '行顺序或位置标签与来源不一致。',
+             'SOURCE_POSITIONS': '来源位置与图表行未完整、一一对应。',
+             'SOURCE_MAPPING': '缺少图表字段到来源位置的完整对应。',
+             'SOURCE_SERIES': '系列数量、字段或测量标签未与来源对应。',
+             'SOURCE_SYNTAX': '完整来源不符合受限语法；未跳过未支持部分。',
+             'SOURCE_COUNT': '声明数量、读数位置数或支持数量范围不一致。',
+             'SOURCE_REPRESENTATION': '图表表示超出本次来源合同支持的范围。',
+             'SOURCE_REQUEST': '请求字段不符合该来源检查合同。'}
+    issues = result.get('issues', [])
+    for issue in issues[:8] if isinstance(issues, list) else []:
+        if not isinstance(issue, dict):
+            continue
+        hint = hints.get(issue.get('code'))
+        if hint and hint not in details:
+            details.append(hint)
+    if len(details) > 4 or (isinstance(rows, list) and len(rows) > 8) or (isinstance(claims, list) and len(claims) > 8) or (isinstance(issues, list) and len(issues) > 8):
+        details = details[:4] + ['其余拒绝项未展开，详见私有运行记录。']
+    return details
+
+
 def grounded_delivery(source_result, question_sha):
     canonical = source_result.get('canonicalExplanation',{})
     source = source_result.get('source',{})
@@ -183,7 +252,11 @@ def grounded_delivery(source_result, question_sha):
         text = ('来源内的有限说明（宿主保障）\n\n' + canonical['text'] +
                 '\n\n以上只核对所选来源的有限声明；未认证来源身份、世界事实或模型自由正文。')
     else:
-        text = '当前来源无法产生完整的有限有据说明，未交付已核答复。模型候选仍是未核实内容；具体拒绝记录单独保存。'
+        details = refusal_details(source_result, question_sha)
+        text = '当前来源或比较请求未通过完整核对，未交付已核答复。'
+        if details:
+            text += '\n\n' + '\n'.join(details)
+        text += '\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。'
     return {'kind':'host-source-canonical','status':'delivered' if ready else 'withheld',
             'text':text,'sourceTextSha256':source.get('textSha256'),
             'sourceDocumentSha256':source.get('documentSha256'),

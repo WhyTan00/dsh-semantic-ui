@@ -1,0 +1,55 @@
+{
+  "runtimeArchiveSha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+  "runtimeSourceCommit": "8f1a39184df7b051686a3b6b25cf8b01ffce3c6f",
+  "installation": {
+    "dsh": "0.2.1-rc.2",
+    "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+    "package": "@whytan/dsh-semantic-ui",
+    "version": "0.1.0-preview.15",
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.15.tgz",
+    "sha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+    "hostStarted": true,
+    "allPackagedFilesVerified": 302,
+    "validationSuite": "legacy-chart-restore-smoke",
+    "casesPerMode": 1,
+    "oldProtocol": "1.0",
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "pageErrors": []
+  },
+  "cases": [
+    {
+      "toolMode": "native",
+      "fixtureOnly": true,
+      "oldProtocol": "1.0",
+      "component": "DataChart",
+      "cases": 1,
+      "standardCheckpoint": true,
+      "toolProcessFolded": true,
+      "refreshRestored": true,
+      "svgVisible": true,
+      "validAndMissingCountsPreserved": true,
+      "noNewFixtureRequestOnRefresh": true,
+      "pageErrors": [],
+      "newRealModelTurns": 0
+    },
+    {
+      "toolMode": "ptc",
+      "fixtureOnly": true,
+      "oldProtocol": "1.0",
+      "component": "DataChart",
+      "cases": 1,
+      "standardCheckpoint": true,
+      "toolProcessFolded": true,
+      "refreshRestored": true,
+      "svgVisible": true,
+      "validAndMissingCountsPreserved": true,
+      "noNewFixtureRequestOnRefresh": true,
+      "pageErrors": [],
+      "newRealModelTurns": 0
+    }
+  ],
+  "scope": "one old-protocol DataChart restore per Native/PTC; not a full lifecycle/numeric-source/model/GenUI acceptance"
+}

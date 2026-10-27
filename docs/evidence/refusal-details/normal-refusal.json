@@ -1,0 +1,33 @@
+{
+  "sourceBaseCommit": "0792fbf50edae9b15006c2280c31b79788e1fb19",
+  "testedClientSha256": "02b44871d02c0ed816c29f77bb41e239445db266b77181417ded047739699cf6",
+  "runtimeArchiveSha256": "b1b9b06c84c493a33d5ffb39ba592b0103d63406378ebb5e460c3943cb571518",
+  "mcpEntrySha256": "aff74edf1e5b8e03fd0c1626d05cbecc77f721a2598e67eb4c27b61f5c207867",
+  "checkerResponseExactlyEqualsPriorFrozenCase": true,
+  "sourceRequestExactlyEqualsPriorFrozenCase": true,
+  "priorPlainAnswerSha256": "4696ef7e08d56c4ed62f7cec46f92b722d604e3c84004e64b884af6b97c72e3d",
+  "hostDelivery": {
+    "kind": "host-source-canonical",
+    "status": "withheld",
+    "text": "当前来源或比较请求未通过完整核对，未交付已核答复。\n\n第3个位置：来源为缺失，收到0。\n已观测均值声明：来源0 摄氏度（分母3），收到0 摄氏度（分母4）。\n完整均值声明：来源未知 摄氏度（分母4），收到0 摄氏度（分母4）。\n\n完整拒绝记录单独保存；来源身份、世界事实与任意正文仍未认证。",
+    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+    "sourceDocumentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "modelCandidateUsed": false,
+    "freeProseVerified": false,
+    "sourceFactsVerified": false,
+    "identityVerified": false
+  },
+  "newModelTurns": 0,
+  "modelCandidateProduced": false,
+  "explicitToolCalls": 2,
+  "appMcpRequestsAndResponsesEqual": true,
+  "appServerExitCode": 0,
+  "globalConfigShaUnchanged": true,
+  "rawSha256": {
+    "codex-wire.jsonl": "8080c803dcc0621f3f744d4890cc21caca6cd556e59f8f0d7d8b69422a8f6ca8",
+    "mcp-wire.jsonl": "3fe63cdc925ebabc2ecd501cd80f51f8470bc4785a69f2fddfa69284ce4c7d99",
+    "result.json": "6447595566bc6c3c011c0cce99037a94e898d4b87439ae4815f540840bb462db",
+    "answer.md": "34848fe07e137bc9e919351b1113f52780035491e367c23666e9640e68089248",
+    "terminal.json": "5dfdc8dde6e143cdff8843fdbf3784dc08344fbef06f06de99545be526b95199"
+  }
+}

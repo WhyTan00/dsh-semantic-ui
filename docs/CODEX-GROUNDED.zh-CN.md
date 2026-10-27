@@ -59,7 +59,7 @@ preview.15新增`--source-kind observations-zh`，将实际值/缺失mask/单位
 
 模型正文不会传入这个交付函数。没有任意正文判真、关键词删除、D1固定答案或从模型输出反推source真值。来源不支持或不对应时交付有限拒绝；可选模型回合在前置来源拒绝时不会启动。`sourceFactsVerified=false`、`identityVerified=false`一直保留。
 
-终端正常显示宿主答复。私有日志目录另存 `answer.md`、`model-candidate.md`、完整API/MCP报文、typed输入、模型事件及终态。`model-candidate.md`保持候选原文，并不因为某题评读通过就自动成为已核正文。脚本没有将日志上传公开。
+终端正常显示宿主答复。后续伴随源码已将数值比较拒绝显示为位置、来源值/缺失与收到值，以及已拒绝均值声明的范围、单位和分母；没有候选时不暗示生成了候选。不回显任意prose、身份、路径或整份报文，超出显示数量/单位文本边界时明确省略并保留私有原件。它只格式化既有rowChecks/claimChecks/issues，仍为withheld，不是新checker或通过证明。这项客户端改动不在已冻15的runtime内，使用仓库当前Python脚本；一次真实零推理拒绝及补充兼容证据见 [拒绝收口](evidence/refusal-details.json)。私有日志目录另存 `answer.md`、`model-candidate.md`、完整API/MCP报文、typed输入、模型事件及终态。`model-candidate.md`保持候选原文，并不因为某题评读通过就自动成为已核正文。脚本没有将日志上传公开。
 
 ## 本轮真实验收
 

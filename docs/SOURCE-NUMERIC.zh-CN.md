@@ -59,3 +59,5 @@ python3 examples/codex-readonly.py --answer \
 独立预期在实现前冻结于 [source-numeric-expectations.json](../fixtures/source-numeric-expectations.json)，原N2首次记录不改；另含不同主体、数量、数值、顺序、单位和ID的反例。源码测试、实际归档STDIO、正常Codex客户端、Linux CI和发行各按最终字节记录，见 [本段交付证据](evidence/source-numeric.json)。归档内保留源码冻结时的阶段回执；后续验收补充到公开仓库同路径，不重打已冻归档。
 
 `sourceFactsVerified=false`、`identityVerified=false`、`freeProse.status=not-verified`保持。没有新自然模型回合，不回写原0通过/6失败/18请求，不把离线投影或客户端文字当DSH自然提问、当前桌面富UI、真机或读屏验收。
+
+后续补充：仓库伴随客户端的拒绝文字已直接显示位置/缺失/范围/分母等现成结构化差异，不再暗示不存在的模型候选；runtime15未改或重发。同一最终15归档另安装到隔离DSH profile，全部302文件在启动前核对，旧协议1.0 DataChart在Native/PTC各1例刷新恢复通过、pageerror=0。该smoke只补充旧图表恢复，不是完整矩阵、新DSH数值来源绑定或自然模型验收。见 [独立回执](evidence/refusal-details.json)。
