@@ -1,0 +1,39 @@
+{
+  "verifiedAt": "2026-10-27T04:57:51.364402+00:00",
+  "releaseId": 425045973,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.17",
+  "tag": "v0.1.0-preview.17",
+  "prerelease": true,
+  "author": "WhyTan00",
+  "tagCommit": "8930fb124fcac0971da72f8b010accfddf63b5a2",
+  "sourceCommit": "8930fb124fcac0971da72f8b010accfddf63b5a2",
+  "fourAssets": [
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.17.tgz",
+      "bytes": 2573174,
+      "sha256": "c42b8a2a1f2b5258e8eb6a0ffc162979eae53058398a57503ad7ae1f713702b5",
+      "anonymousHttpsBytesMatch": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.17.tgz",
+      "bytes": 29193295,
+      "sha256": "53dfd55aa9fbb1a3eb0f1b4992dc5c185dc5e331b52658f71402cd9a675cb716",
+      "anonymousHttpsBytesMatch": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "37b2916558f07d0f0d35a1014d1e123fe7c29fc23fbadd34b7ff9fac94cdf0a9",
+      "anonymousHttpsBytesMatch": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 27281,
+      "sha256": "1c6f206e1d0ea25d69db9d967047d620ca53958c8ba848f020ecc9ead3fdf8b6",
+      "anonymousHttpsBytesMatch": true
+    }
+  ],
+  "anonymousHttpsNoAuthorizationHeader": true,
+  "localLinuxCiAndPublicAssetsIdentical": true,
+  "archiveRepackedAfterAcceptance": false
+}

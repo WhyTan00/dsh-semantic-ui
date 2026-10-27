@@ -2,6 +2,8 @@
 
 本预览支持 **DSH 0.2.1-rc.2、Node 24+、pnpm**。已有其他 DSH 安装并不需要重装；使用公开发行版的准确可执行路径即可。不要修改正在运行的实例。
 
+preview.17的条件来源核对需要17或实现该增量的兼容版本；协议仍为1.4。本机/Linux实际归档安装、Native/PTC、普通Codex入口和两次有指引模型观察分别见[本版接受](evidence/source-condition.json)，不外推当前主客户端或真机。
+
 preview.16新增的数值来源交付已在最终归档上完成隔离Native/PTC正反例及刷新检查；其它功能仍按各版本证据读取，不把此定向检查当全矩阵。新来源checkpoint要求16或兼容reader，回退旧15不承诺读取新kind。
 
 ## 使用 Release 包
@@ -15,12 +17,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.16.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.17.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引，完整首次模型输入/结果与截图位于仓库及 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.13.tgz`，两者均公开保留失败记录。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量。
+运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.17.tgz`。本版归档的后补接受另存仓库[本版回执](evidence/source-condition.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 

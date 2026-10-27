@@ -1,0 +1,45 @@
+{
+  "checkedAt": "2026-10-27T04:48:12.732721+00:00",
+  "cliRuns": [
+    {
+      "run": "preflight-E",
+      "ownedPidsGone": true,
+      "temporaryRootAndSkillRemoved": true,
+      "exitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "observedModelTurns": 0,
+      "turnStartRequests": 0
+    },
+    {
+      "run": "preflight-F",
+      "ownedPidsGone": true,
+      "temporaryRootAndSkillRemoved": true,
+      "exitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "observedModelTurns": 0,
+      "turnStartRequests": 0
+    },
+    {
+      "run": "E",
+      "ownedPidsGone": true,
+      "temporaryRootAndSkillRemoved": true,
+      "exitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "observedModelTurns": 1,
+      "turnStartRequests": 1
+    },
+    {
+      "run": "F",
+      "ownedPidsGone": true,
+      "temporaryRootAndSkillRemoved": true,
+      "exitCode": 0,
+      "globalConfigShaUnchanged": true,
+      "observedModelTurns": 1,
+      "turnStartRequests": 1
+    }
+  ],
+  "localDshPidsGoneAndPortsClosed": true,
+  "newObservedModelTurns": 2,
+  "backendModelRequests": "unknown",
+  "globalConfigOrSharedServiceChanges": false
+}

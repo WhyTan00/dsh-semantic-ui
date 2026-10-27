@@ -1,5 +1,7 @@
 # 普通比较问题的有限来源核对
 
+后续preview.17新增[显式两分支条件来源](SOURCE-CONDITIONAL.zh-CN.md)：完整若/则/否则及当前布尔条件有独立出处，派生当前需求进入既有supports输入。它没有开放任意组件when，旧合同及下文的历史证据保持各自版本；[新包与模型/宿主接受](evidence/source-condition.json)单列。
+
 开发候选 `0.1.0-preview.12-dev.1` 新增 `decision-zh` 来源模式，核对合同1.0，Envelope仍为1.4。这是现有只读 MCP 的可选模式；默认三个工具与原 `arrows` 模式不变。下文是该增量的文件来源合同与证据；后续dev.2的 [DSH当前输入适配](HOST-SOURCE.zh-CN.md) 复用同一核对器，另列实际宿主证据。两段均没有新Release、归档安装、模型调用或当前Codex客户端加载验证。
 
 ## 已能完成的任务

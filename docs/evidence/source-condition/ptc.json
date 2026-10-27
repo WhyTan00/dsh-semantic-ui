@@ -1,0 +1,88 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "case": "E",
+      "status": "bound",
+      "sourceTextSha256": "ff5e99908a412c5cf5506d6e80ddc80e8bdc0324c498be4214afdaca1878187e",
+      "condition": {
+        "name": "离线",
+        "condition": "现场断网",
+        "whenTrue": true,
+        "whenFalse": false,
+        "current": false,
+        "currentSpans": [
+          {
+            "textByteStart": 153,
+            "textByteEnd": 177
+          }
+        ],
+        "spans": {
+          "condition": {
+            "textByteStart": 81,
+            "textByteEnd": 96
+          },
+          "whenTrue": {
+            "textByteStart": 99,
+            "textByteEnd": 120
+          },
+          "whenFalse": {
+            "textByteStart": 123,
+            "textByteEnd": 150
+          }
+        },
+        "derivedNeed": false
+      },
+      "canonicalExplanation": "雪松：离线支持=true；价格声明未知。\n白桦：离线支持=false；价格声明未知。\n当前需要离线=false（不据此排除缺少该能力的方案）。\n来源两分支：若现场断网=true，则需要离线=true；否则需要离线=false。\n当前现场断网=false（来源明确声明），所以当前需要离线=false；本项不排除两种方案。\n若本地假设现场断网=true：雪松满足本项；白桦不满足本项；若本地假设现场断网=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+      "localNeedAssumptionOnly": true,
+      "sourceScopeFixed": true,
+      "refreshRestoresCurrentNeed": true,
+      "noNewRequestsDuringExplorationOrRefresh": true,
+      "identityVerified": false,
+      "sourceFactsVerified": false
+    },
+    {
+      "case": "F",
+      "status": "bound",
+      "sourceTextSha256": "3bc731832eff76cdc2252d79f9cac35a5d1c150ddc3d7b039c00367d95bda2d5",
+      "condition": {
+        "name": "加密",
+        "condition": "使用公网",
+        "whenTrue": true,
+        "whenFalse": false,
+        "current": null,
+        "currentSpans": [
+          {
+            "textByteStart": 156,
+            "textByteEnd": 180
+          }
+        ],
+        "spans": {
+          "condition": {
+            "textByteStart": 84,
+            "textByteEnd": 99
+          },
+          "whenTrue": {
+            "textByteStart": 102,
+            "textByteEnd": 123
+          },
+          "whenFalse": {
+            "textByteStart": 126,
+            "textByteEnd": 153
+          }
+        },
+        "derivedNeed": null
+      },
+      "canonicalExplanation": "松湾：加密支持=true；价格声明未知。\n竹湾：加密支持=未知；价格声明未知。\n当前需要加密=未知。\n来源两分支：若使用公网=true，则需要加密=true；否则需要加密=false。\n当前使用公网=未知（来源明确声明），所以当前需要加密=未知；条件未定，不能按false或不需要处理。\n若本地假设使用公网=true：松湾满足本项；竹湾该能力未知，能否满足本项未知；若本地假设使用公网=false：本项不排除两种方案。\n这些结论只针对本项要求，不表示整体可行、唯一赢家或推荐。本地需求控件是假设，不改变原始条件或来源；其初值是上面的派生当前需求。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+      "localNeedAssumptionOnly": true,
+      "sourceScopeFixed": true,
+      "refreshRestoresCurrentNeed": true,
+      "noNewRequestsDuringExplorationOrRefresh": true,
+      "identityVerified": false,
+      "sourceFactsVerified": false
+    }
+  ],
+  "pageErrors": [],
+  "newRealModelTurns": 0,
+  "archiveInstallation": true
+}

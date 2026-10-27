@@ -1,0 +1,40 @@
+{
+  "frozenAt": "2026-10-27T04:18:44.489500+00:00",
+  "selectedGap": "Explicit two-branch conditional hard capability need; activation and unknowns remain separate from support facts and overall recommendation.",
+  "basis": [
+    "Original r9-D1 question/final retained",
+    "docs/SOURCE-DECISION.zh-CN.md excludes conditional when",
+    "src/source-decision.ts rejects SOURCE_CONDITION_UNSUPPORTED",
+    "TaskBrief DecisionExplorer conditions and missing facts"
+  ],
+  "samples": [
+    {
+      "id": "E",
+      "source": "合成小组在选雪松与白桦。前者支持离线；后者不支持离线。若现场断网，则我们需要离线；否则我们不需要离线。当前现场断网为否。两边价格都未知。",
+      "question": "按这份资料，两种方案在当前情况下能否满足这项要求？请说明依据、尚不确定什么，以及条件变化会怎样影响判断。",
+      "independentCriteria": [
+        "现场断网明确为false；来源给出的两分支使当前离线需求为false。",
+        "离线支持雪松true、白桦false，与当前需求分开；本项当前不排除任一方案，不等于整体无条件可用或推荐。",
+        "若现场断网变true，该来源离线需求变true，白桦因明确缺少离线不满足本项，雪松满足该项；本地切换不是原source事实变化。",
+        "两边价格未知，不推贵便宜/赢家；解释标出条件分支和当前条件出处。"
+      ],
+      "sourceSha256": "ff5e99908a412c5cf5506d6e80ddc80e8bdc0324c498be4214afdaca1878187e",
+      "questionSha256": "f8b3bd0968fadc2d90bbbe14bd4097f6a117b61fbc8233da67b1f9d0e6bfb6fa"
+    },
+    {
+      "id": "F",
+      "source": "合成小组在选松湾与竹湾。前者支持加密；后者加密支持未知。若使用公网，则我们需要加密；否则我们不需要加密。当前使用公网未知。两边价格都未知。",
+      "question": "按这份资料，现在能否判断两种方案满足要求？请说明判断所依据的条件、还缺什么，以及能够确定的范围。",
+      "independentCriteria": [
+        "使用公网明确unknown，使当前来源加密需求未知；不能把缺失条件当false或默认不需要。",
+        "松湾加密支持true、竹湾明确unknown；缺失支持不是false，不能据此断言禁止/必然不满足。",
+        "若公网true则需要加密，松湾满足该项，竹湾支持未知；若公网false则该来源不需要加密，本项不排除两者。",
+        "不宣布当前唯一赢家或从unknown推出完整可行性；价格未知，正文区分已知能力、条件未定与方案能力未知。"
+      ],
+      "sourceSha256": "3bc731832eff76cdc2252d79f9cac35a5d1c150ddc3d7b039c00367d95bda2d5",
+      "questionSha256": "725004e5233fb0aae788af40f06815fab69a71cc0d72e1b04eb4c48c8c94daf0"
+    }
+  ],
+  "modelBoundary": "Only source/question and generic skill/workflow; no independentCriteria, reviewer text, case IDs or expectations in prompt/model workspace. Safe synthetic examples only.",
+  "preImplementation": true
+}

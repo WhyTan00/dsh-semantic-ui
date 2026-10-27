@@ -1,0 +1,35 @@
+{
+  "source": "Actual previous assistant tool_calls in deterministic fixture HTTP requests, independent of mode labels",
+  "results": [
+    {
+      "mode": "native",
+      "observedAssistantToolNames": [
+        "dsh_semantic_ui"
+      ],
+      "expectedPath": "dsh_semantic_ui",
+      "rawRequestSha256": [
+        "8b99bec7216d8212cb88aed4f75c6ac9c5a8f2c1a578c7ae5a9da23435c9db47",
+        "9b24787d60f27094cf2e4c8413e73c486801b5510ceac8503bcbd1d5342653d8",
+        "47222c0ecf27fc63b993445624deb457873ac8a8423d2b0a107a7ac8c9ed8f2b",
+        "5bf60ac02b57d5f3e3f254ad0e3ebc2bc8a553e01107eb44ed769e1a82199d1f",
+        "b46ac9b75ee4a2c7f13d7882f477ebef0f04462676e47315d1695ec238175859",
+        "d73d02ff4940ffec5283fb657c4c2da67bb3b31a42d9cef76960714a736d4a6a"
+      ]
+    },
+    {
+      "mode": "ptc",
+      "observedAssistantToolNames": [
+        "run_code"
+      ],
+      "expectedPath": "run_code",
+      "rawRequestSha256": [
+        "f69f761e1cbfdb7eb3d6c2e3220b657f7b6b43a1b1d31d168da908305a70622a",
+        "5dd9b2f1b333a1e5d000dfad623c064d1faff882da2b1bf339c8e38c9582ff6a",
+        "aa88462135083be8ef96037d9a3a715d7bce8a451fc592cc8c646c8f8eee7a37",
+        "b7e7712ab40d76f1777a07949c49353537e83865fefaa8fb7f2030b299291121",
+        "a0f223c5c31e051f09f6c8cf9bd05e7c499e1c60edb7dcdac2f5f36a19f98bfd",
+        "554a12c17b825c58bc8931a2ca5e0370d11dae06e1e245ca01ef6a616be90ed7"
+      ]
+    }
+  ]
+}

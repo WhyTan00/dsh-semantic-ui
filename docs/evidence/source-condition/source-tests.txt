@@ -1,0 +1,9 @@
+
+ RUN  v5.0.5 <personal-repository>
+
+
+ Test Files  4 passed (4)
+      Tests  25 passed (25)
+   Start at  12:34:31
+   Duration  1.12s (tests 60%, import 28%, transform 10%, worker 1%)
+

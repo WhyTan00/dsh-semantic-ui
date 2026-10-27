@@ -1,0 +1,72 @@
+{
+  "schema": "semantic-ui-explicit-source-condition-delivery-v1",
+  "recordedAt": "2026-10-27T04:52:56.413652+00:00",
+  "sourceCommit": "8930fb124fcac0971da72f8b010accfddf63b5a2",
+  "version": "0.1.0-preview.17",
+  "archiveSha256": "c42b8a2a1f2b5258e8eb6a0ffc162979eae53058398a57503ad7ae1f713702b5",
+  "evidenceSha256": "53dfd55aa9fbb1a3eb0f1b4992dc5c185dc5e331b52658f71402cd9a675cb716",
+  "protocol": "1.4 unchanged",
+  "independentExpectations": {
+    "path": "source-condition/independent-expectations.json",
+    "sha256": "d53d17cedf549819d4f78eb6d5374356346ec535007aa21aafd7968168cbdfb6",
+    "preImplementation": true,
+    "notProvidedToModel": true
+  },
+  "sourceContract": "SOURCE-CONDITIONAL.zh-CN.md",
+  "normalization": "Complete explicit condition/true/false branches and current value retain byte spans; derive current capability-need for existing supports input. No component when, implicit else, recommendation or source identity promotion.",
+  "tests": {
+    "sourceContractsAndOldRegressionAndStdio": 25,
+    "log": "source-condition/source-tests.txt",
+    "sourceRawLogSha256": "6bde4ff04bedebc40435e8e3ef9314310f8a8254783ebaad3de8104381d11f3a",
+    "archivedStandaloneMcp": 1,
+    "installedFilesVerifiedBeforeStart": 309,
+    "localDshNativeCases": 2,
+    "localDshPtcCases": 2,
+    "linuxDshNativeCases": 2,
+    "linuxDshPtcCases": 2,
+    "pageErrors": 0,
+    "fullOldMatricesRerun": false,
+    "publicLogSha256": "2c6c79cee0f388e0e8e6d8f3d613611a2daf2288b7147c4bf45602ac717c666d",
+    "logExport": "repository path normalized in public log; original private log hash retained separately"
+  },
+  "models": [
+    {
+      "case": "E",
+      "path": "source-condition/E.json",
+      "sourceSha256": "ff5e99908a412c5cf5506d6e80ddc80e8bdc0324c498be4214afdaca1878187e",
+      "questionSha256": "f8b3bd0968fadc2d90bbbe14bd4097f6a117b61fbc8233da67b1f9d0e6bfb6fa",
+      "modelToolCalls": 5,
+      "firstSourceComparison": "matched",
+      "candidateManualReview": "met",
+      "observedTurns": 1,
+      "backendModelRequests": "unknown"
+    },
+    {
+      "case": "F",
+      "path": "source-condition/F.json",
+      "sourceSha256": "3bc731832eff76cdc2252d79f9cac35a5d1c150ddc3d7b039c00367d95bda2d5",
+      "questionSha256": "725004e5233fb0aae788af40f06815fab69a71cc0d72e1b04eb4c48c8c94daf0",
+      "modelToolCalls": 4,
+      "firstSourceComparison": "matched",
+      "candidateManualReview": "met",
+      "observedTurns": 1,
+      "backendModelRequests": "unknown"
+    }
+  ],
+  "newObservedModelTurns": 2,
+  "backendModelRequests": "unknown",
+  "firstModelFailure": "none in this two-turn observation; first source comparisons matched, no model retries",
+  "retainedEngineeringFailures": "Early explicit fixture used forbidden requirement reason and non-ASCII ID; fixtures corrected without changing independent criteria. Original unit output retained. One asset comparison ran before its original download completed; final same-run four-byte comparison succeeded, no CI redispatch.",
+  "normalHostAnswer": "Source-canonical text delivered in both zero-inference preflights and both model-run final stdout; separate from candidates.",
+  "branchClaimApiNaturalUse": "not observed; optional typed branch claims tested offline/stdio. Current-view source mappings with conditional derivation were used by both models.",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "linuxCi": "source-condition/linux-ci.json",
+  "byteIdentity": "source-condition/byte-comparison.json",
+  "publication": "source-condition/publication.json",
+  "history": "Old0/6/18 and all first failures, original A/B/C/D results and immutable13/15/16 assets remain unchanged. No current main desktop/phone, arbitrary language/prose or unguided adoption claim.",
+  "longTermGoalCompleted": false,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.17",
+  "actualNativePtcToolPaths": "source-condition/tool-paths.json"
+}
