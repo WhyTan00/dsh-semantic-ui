@@ -1,5 +1,7 @@
 # 受来源约束的普通答复
 
+后续伴随入口增加[同thread完整来源修订](CODEX-SOURCE-HISTORY.zh-CN.md)：`--revision-file`正常换MCP启动快照并核新来源身份，默认两版都是零模型；显式model-candidate时最多两个候选attempt，旧历史和新当前值分别保存。使用当前仓库Python脚本及原26运行包，不改旧归档。
+
 显式[补零假设模式](CODEX-ZERO-FILL.zh-CN.md)已进入伴随源码：`--answer --hypothesis zero-fill`完整绑定原来源后复用已有统计核心，另列假设均值与相对观测差；默认用法不变，0模型。正常值与计算不可得边界分别验证，不将未知字段补造0。
 
 后续伴随源码已支持独立`--question-file`及可选`--question-json-pointer`；未传时保留原默认问题。preview.16的两个新合成来源观察、首次拒绝与候选原文见 [数值模型观察](CODEX-NUMERIC-OBSERVATION.zh-CN.md)，不要与本页原13的两次模型结果混算。
@@ -11,7 +13,9 @@
 | 原命令，不加选项 | 0 | schema和source_check原结构化结果 |
 | `--answer` | 0 | 宿主交付来源内的有限说明，或明确拒绝 |
 | `--answer --hypothesis zero-fill` | 0 | 来源完整匹配后另列现有核心的补零假设；不可得时明确partial/unknown |
-| `--answer --model-candidate` | 每次最多1个 | 显式skill/工作流指引下的模型候选另存，最终仍由宿主保障 |
+| `--answer --model-candidate`，未传revision-file | 每次最多1个 | 显式skill/工作流指引下的模型候选另存，最终仍由宿主保障 |
+| `--answer --revision-file …` | 0 | 同线程切换两份完整来源，分别交付宿主说明 |
+| `--answer --model-candidate --revision-file …` | 最多2个attempt | 第一真实候选结束、来源实际切换后才开始第二回合；不重试、不预填历史 |
 
 ## 正常使用
 

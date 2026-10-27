@@ -3,6 +3,8 @@
 Use --answer for zero-inference source-canonical text.
 Add --model-candidate to also run one guided candidate model turn.
 Use --question-file to keep that question separate from the configured source.
+Add --revision-file for one complete source revision in the same live thread;
+without --model-candidate both phases remain zero-inference.
 
 Python 3.12+, Node 24+, Codex CLI 0.164.0. A compatible app-server is required.
 The supplied manifest authenticates bytes only, not its author or source facts.
@@ -30,6 +32,7 @@ import uuid
 ALLOWED = {
     'initialize', 'thread/start', 'thread/unsubscribe', 'mcpServerStatus/list',
     'mcpServer/tool/call', 'skills/extraRoots/set', 'skills/list', 'fs/readFile',
+    'config/mcpServer/reload',
 }
 TAP = r'''import{spawn}from'node:child_process';import{readFileSync,writeSync,openSync}from'node:fs';import{createHash}from'node:crypto';import{StringDecoder}from'node:string_decoder';
 const config=JSON.parse(readFileSync(process.argv[2],'utf8')),fd=openSync(config.log,'a',0o600);let seq=0;const log=(direction,value)=>writeSync(fd,JSON.stringify({observerPid:process.pid,seq:++seq,at:new Date().toISOString(),direction,value})+'\n');
@@ -55,8 +58,10 @@ class RpcError(Exception):
 
 
 class CodexRpc:
-    def __init__(self, argv, logs, allow_answer=False):
+    def __init__(self, argv, logs, allow_answer=False, allow_revision=False):
         self.allow_answer = allow_answer
+        self.allow_revision = allow_revision
+        self.maximum_model_turns = 2 if allow_revision else 1
         self.model_turn_requests = 0
         self.owned_thread = None
         self.active_turn = None
@@ -111,8 +116,8 @@ class CodexRpc:
             if not self.allow_answer or params.get('threadId') != self.owned_thread:
                 raise ValueError('Answer mode and this owned thread are required')
             if method == 'turn/start':
-                if self.model_turn_requests >= 1:
-                    raise ValueError('Only one model turn per opt-in invocation')
+                if self.active_turn or self.model_turn_requests >= getattr(self, 'maximum_model_turns', 1):
+                    raise ValueError('The owned invocation model-turn limit was reached or a turn is active')
                 self.model_turn_requests += 1
             elif params.get('turnId') != self.active_turn:
                 raise ValueError('Only the owned active turn can be interrupted')
@@ -120,6 +125,9 @@ class CodexRpc:
             raise ValueError('Method outside the no-inference allowlist')
         if method == 'thread/start' and params.get('ephemeral') is not True:
             raise ValueError('Only ephemeral threads are allowed')
+        if method == 'config/mcpServer/reload' and (
+                not getattr(self, 'allow_revision', False) or not self.owned_thread or params is not None or self.active_turn):
+            raise ValueError('Only an idle owned source-revision process may reload MCP with null params')
         self.sequence += 1
         request_id = self.sequence
         self.sent_methods.append(method)
@@ -598,12 +606,110 @@ def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, source_sha, in
             'backendModelRequestCount':'unknown','delivery':delivery}
 
 
+def revision_inputs(args):
+    """A caller-owned complete second snapshot, never history or a model tool argument."""
+    if args.revision_file is None:
+        return None
+    if not args.answer or not args.log_dir or args.requests_file or args.hypothesis:
+        raise ValueError('--revision-file requires --answer and --log-dir in an already trusted project, without requests-file or hypothesis')
+    value = json.loads(args.revision_file.read_text())
+    fields = {'sourceFile', 'questionFile', 'sourceJsonPointer', 'questionJsonPointer', 'sourceExcerpt'}
+    if not isinstance(value, dict) or set(value) - fields or any(
+            not isinstance(v, str) for v in value.values()) or not all(value.get(k) for k in ['sourceFile', 'questionFile']):
+        raise ValueError('Revision JSON requires sourceFile and questionFile strings; optional pointers and sourceExcerpt only')
+    revised = copy.copy(args)
+    base = args.revision_file.resolve().parent
+    revised.source_file = (base / value['sourceFile']).resolve()
+    revised.question_file = (base / value['questionFile']).resolve()
+    revised.source_json_pointer = value.get('sourceJsonPointer')
+    revised.question_json_pointer = value.get('questionJsonPointer')
+    revised.source_excerpt = value.get('sourceExcerpt')
+    revised.revision_file = None
+    return revised
+
+
+def source_arguments(args):
+    values = ['--source-file', str(args.source_file.resolve()), '--source-kind', args.source_kind]
+    if args.source_json_pointer is not None:
+        values += ['--source-json-pointer', args.source_json_pointer]
+    if args.source_excerpt is not None:
+        values += ['--source-excerpt', args.source_excerpt]
+    return values
+
+
+def local_mcp_config(workspace, server, settings):
+    """Only this generated temporary project's server changes; no global config write."""
+    directory = workspace / '.codex'
+    directory.mkdir(mode=0o700, exist_ok=True)
+    path = directory / 'config.toml'
+    staged = directory / 'config.toml.tmp'
+    staged.write_text('[mcp_servers.' + server + ']\n' + '\n'.join(
+        key + '=' + json.dumps(value, ensure_ascii=False) for key, value in settings.items()) + '\n')
+    staged.chmod(0o600)
+    staged.replace(path)
+    return sha(path.read_bytes())
+
+
+def reserve_candidate(logs, maximum, phase, reason):
+    """Count before startup/transport, including failures. No retries or budget resets."""
+    path = logs / 'candidate-budget.json'
+    value = json.loads(path.read_text()) if path.exists() else {
+        'maximumUserLevelAttempts': maximum, 'used': 0, 'automaticRetry': False,
+        'failedStartsInterruptionsRetriesCount': True, 'attempts': []}
+    if value['maximumUserLevelAttempts'] != maximum or value['used'] >= maximum:
+        raise ValueError('Candidate attempt budget exhausted')
+    value['used'] += 1
+    value['attempts'].append({'phase': phase, 'reservedAt': time.time(), 'reason': reason})
+    write_json(path, value)
+
+
+def previous_view_requests(answer):
+    """Keep actual previously compared model requests, without inventing a prior view."""
+    requests = []
+    for item in answer.get('modelMcpToolItems', []):
+        result = (item.get('result') or {}).get('structuredContent') or {}
+        arguments = item.get('arguments', {})
+        if (item.get('tool') == 'semantic_ui_source_check' and isinstance(arguments, dict)
+                and 'view' in arguments and result.get('comparison', {}).get('status') == 'matched'):
+            requests.append(copy.deepcopy(arguments))
+    return requests
+
+
+def revise_source(rpc, thread_id, server, workspace, settings, tap, tap_config, revised, tool,
+                  source_sha, identity, previous_requests, logs):
+    if rpc.active_turn:
+        raise ValueError('A source revision requires the previous owned turn to finish')
+    config = json.loads(tap_config.read_text())
+    config['args'] = source_arguments(revised)
+    next_tap = logs / 'tap-config.json'
+    write_json(next_tap, config)
+    next_settings = {**settings, 'args': [str(tap), str(next_tap)]}
+    local_config_sha = local_mcp_config(workspace, server, next_settings)
+    reload_response = rpc.call('config/mcpServer/reload', None)
+    inspection = tool('semantic_ui_source_check', {}).get('structuredContent', {})
+    delivered = grounded_delivery(inspection, source_sha, identity)
+    result = {'method': 'owned temporary project MCP configuration + reload(null)',
+              'threadId': thread_id, 'localConfigSha256': local_config_sha,
+              'reloadResponse': reload_response, 'inspection': inspection,
+              'expectedSource': identity, 'status': 'ready' if delivered['status'] == 'delivered' else 'source-not-current',
+              'previousViewComparisons': []}
+    # Success means the actual current source identity agrees, not merely reload's empty ACK.
+    if result['status'] == 'ready':
+        for request in previous_requests:
+            result['previousViewComparisons'].append({'request': request,
+                'response': tool('semantic_ui_source_check', request)})
+    write_json(logs / 'source-transition.json', result)
+    return result
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--answer', action='store_true',
                         help='Print source-canonical text with no model turn')
     parser.add_argument('--model-candidate', action='store_true',
                         help='Also run one guided candidate model turn; requires --answer')
+    parser.add_argument('--revision-file', type=Path,
+                        help='JSON for one complete source revision and new question in the same thread; maximum two candidate attempts')
     parser.add_argument('--hypothesis', choices=['zero-fill'],
                         help='Explicit host comparison using the existing numeric core; can accompany --model-candidate')
     parser.add_argument('--archive', type=Path, required=True)
@@ -642,6 +748,7 @@ def main():
     if args.hypothesis and (not args.answer or args.requests_file
                            or args.source_kind != 'observations-zh' or args.component != 'DataChart'):
         raise ValueError('--hypothesis requires --answer, observations-zh and DataChart, without requests-file')
+    revised = revision_inputs(args)
     needs_stat_check = bool(args.model_candidate or args.hypothesis)
     requests = json.loads(args.requests_file.read_text()) if args.requests_file else [{}]
     if not isinstance(requests, list) or not 1 <= len(requests) <= 16 or any(
@@ -656,7 +763,14 @@ def main():
     if args.answer:
         question, source_sha, input_identity = answer_inputs(args)
         write_json(logs/'answer-input-identities.json', input_identity)
-    root = Path(tempfile.mkdtemp(prefix='semantic-codex-route-'))
+        if revised:
+            next_question, next_source_sha, next_identity = answer_inputs(revised)
+            revision_logs = logs / 'revision'
+            revision_logs.mkdir(mode=0o700)
+            write_json(revision_logs / 'answer-input-identities.json', next_identity)
+    root = logs/'runtime' if revised else Path(tempfile.mkdtemp(prefix='semantic-codex-route-'))
+    if revised:
+        root.mkdir(mode=0o700)
     root.chmod(0o700)
     config_path = Path(os.environ.get('CODEX_HOME', str(Path.home()/'.codex'))) / 'config.toml'
     config_bytes = config_path.read_bytes() if config_path.exists() else b''
@@ -680,12 +794,19 @@ def main():
         skill_bytes = skill.read_bytes()
         workspace = root/'workspace'
         workspace.mkdir()
-        source_args = ['--source-file',str(args.source_file.resolve()),
-                       '--source-kind',args.source_kind]
-        if args.source_json_pointer is not None:
-            source_args += ['--source-json-pointer',args.source_json_pointer]
-        if args.source_excerpt is not None:
-            source_args += ['--source-excerpt',args.source_excerpt]
+        if revised:
+            # Freeze both caller-owned documents outside the model workspace before any turn.
+            snapshots = root / 'source-snapshots'
+            snapshots.mkdir(mode=0o700)
+            for number, selected, identity in [(1, args, input_identity), (2, revised, next_identity)]:
+                document = selected.source_file.read_bytes()
+                if sha(document) != identity['expectedSource']['documentSha256']:
+                    raise ValueError('Source document changed while preparing the invocation')
+                staged = snapshots / ('source-' + str(number))
+                staged.write_bytes(document)
+                staged.chmod(0o400)
+                selected.source_file = staged
+        source_args = source_arguments(args)
         tap = logs/'stdio-tap.mjs'
         tap.write_text(TAP)
         tap_config = logs/'tap-config.json'
@@ -708,11 +829,16 @@ def main():
         override('web_search','disabled')
         override('apps._default.enabled',False)
         prefix = 'mcp_servers.'+server+'.'
-        for key,value in [('command',node),('args',[str(tap),str(tap_config)]),
-                          ('cwd',str(workspace)),('enabled',True),('required',True),
-                          ('enabled_tools',['semantic_ui_schema','semantic_ui_source_check']+(['semantic_ui_check'] if needs_stat_check else [])),
-                          ('default_tools_approval_mode','auto')]:
-            override(prefix+key,value)
+        settings = dict(command=node, args=[str(tap),str(tap_config)], cwd=str(workspace),
+                        enabled=True, required=True,
+                        enabled_tools=['semantic_ui_schema','semantic_ui_source_check']+(['semantic_ui_check'] if needs_stat_check else []),
+                        default_tools_approval_mode='auto')
+        if revised:
+            local_mcp_config(workspace, server, settings)
+            # Use the caller's already trusted project; never set or persist a trust decision.
+        else:
+            for key, value in settings.items():
+                override(prefix+key,value)
         argv += ['app-server','--stdio']
         write_json(logs/'invocation.json',{'argv':argv,'archiveSha256':manifest['sha256'],
                     'mcpEntrySha256':entry_sha,'sourceCommit':manifest['sourceCommit'],
@@ -721,7 +847,9 @@ def main():
                     'archivedCoreSha256':sha((package/'dist/core.js').read_bytes()),
                     'archivedProtocolSha256':sha((package/'dist/protocol.js').read_bytes()),
                     'defaultModel':config.get('model'),'defaultReasoning':config.get('model_reasoning_effort')})
-        rpc = CodexRpc(argv,logs,allow_answer=args.model_candidate)
+        if args.model_candidate:
+            reserve_candidate(logs, 2 if revised else 1, 1, 'before owned app-server startup; failures count')
+        rpc = CodexRpc(argv,logs,allow_answer=args.model_candidate,allow_revision=bool(revised))
         rpc.call('initialize',{'clientInfo':{'name':'semantic_ui_explicit_reader',
                  'title':'Semantic UI explicit read-only client','version':'1.0.0'},
                  'capabilities':{'experimentalApi':True}})
@@ -782,6 +910,32 @@ def main():
                             if args.hypothesis else grounded_delivery(inspection,source_sha,input_identity['expectedSource']))
                 (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
                 answer = {'observedModelTurns':0,'status':'host-only','delivery':delivery}
+        revision_result = None
+        if revised:
+            revision_result = {'status': 'first-turn-not-completed', 'threadId': thread_id,
+                               'newModelTurns': 0, 'answer': None}
+            if not args.model_candidate or answer['status'] == 'completed':
+                transition = revise_source(rpc, thread_id, server, workspace, settings, tap, tap_config,
+                    revised, tool, next_source_sha, next_identity['expectedSource'],
+                    previous_view_requests(answer), revision_logs)
+                revision_result.update(status=transition['status'], transition=transition)
+                if transition['status'] == 'ready':
+                    next_schema = tool('semantic_ui_schema', {'component':args.component})
+                    if args.model_candidate:
+                        reserve_candidate(logs, 2, 2, 'before the second owned turn/start; no retry')
+                        next_answer = one_answer_turn(rpc,thread_id,skill,skill_bytes,next_question,next_source_sha,
+                            transition['inspection'],tool,revision_logs,next_identity['expectedSource'])
+                    else:
+                        delivery = grounded_delivery(transition['inspection'],next_source_sha,next_identity['expectedSource'])
+                        (revision_logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
+                        next_answer = {'observedModelTurns':0,'status':'host-only','delivery':delivery}
+                    revision_result.update(status=next_answer['status'], schema=next_schema,
+                                           answer=next_answer,newModelTurns=next_answer['observedModelTurns'])
+                else:
+                    withheld = grounded_delivery(transition['inspection'],next_source_sha,next_identity['expectedSource'])
+                    (revision_logs/'answer.md').write_text(withheld['text'],encoding='utf-8')
+                    revision_result['answer'] = {'observedModelTurns':0,'status':'source-refused-before-model','delivery':withheld}
+            write_json(revision_logs/'result.json',revision_result)
         rpc.call('skills/extraRoots/set',{'extraRoots':[]})
         after = rpc.call('skills/list',{'cwds':[str(workspace)],'forceReload':True})
         target_in = lambda result: any(Path(s['path']).resolve() == skill.resolve()
@@ -797,8 +951,9 @@ def main():
                   'skill':{'name':matches[0]['name'],'scope':matches[0]['scope'],
                            'sha256':sha(read_bytes),'discoveredAndRead':True,
                            'absentBeforeAndAfterTemporaryRoot':True},
-                  'newModelTurns':answer['observedModelTurns'] if answer else 0,
-                  'privateLogs':str(logs),**({'answer':answer} if answer else {})}
+                  'newModelTurns':(answer['observedModelTurns'] if answer else 0)+(revision_result['newModelTurns'] if revision_result else 0),
+                  'privateLogs':str(logs),**({'answer':answer} if answer else {}),
+                  **({'revision':revision_result} if revised else {})}
         write_json(logs/'result.json',output)
     finally:
         if rpc:
@@ -815,7 +970,12 @@ def main():
                     'globalConfigShaUnchanged':sha(config_path.read_bytes() if config_path.exists() else b'')==sha(config_bytes)})
         shutil.rmtree(root)
     if args.answer:
-        print(output['answer']['delivery']['text'])
+        text = output['answer']['delivery']['text']
+        if revised:
+            second = (output['revision'].get('answer') or {}).get('delivery',{}).get('text','第二版未开始；第一回合未正常完成。')
+            text = '第1版来源\n\n' + text + '\n\n第2版来源\n\n' + second
+            (logs/'conversation-answer.md').write_text(text,encoding='utf-8')
+        print(text)
         print('Private run log: '+str(logs),file=sys.stderr)
     else:
         print(json.dumps(output,ensure_ascii=False,indent=2))
