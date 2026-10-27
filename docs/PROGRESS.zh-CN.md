@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.25开发阶段补[普通数值解释的均值/合计基准](NUMERIC-BASELINE.zh-CN.md)：读数记录与问题独立输入；缺失mask、已观测小计、补零合计和未知真实完整范围分别保留。32项6文件和18项离线检查通过；最终归档、宿主、模型与发行另验，见[分层回执](evidence/numeric-baseline.json)。
+
 24已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)：源/tag780328056294060d79d7f89372ab87b312a982fb，运行ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70，382文件最终归档正常安装；19项4文件、macOS/Linux Native/PTC各1诊断序列、普通CLI错误标签拒绝/明确修正交付与刷新通过。CI40500985324成功、四匿名HTTP200资产与本机/Linux同字节，见[修复接受](evidence/capacity-contract.json)。[两个新引导观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)共2/2：两raw有限met，但首题23无view matched，第二题24当前view首次matched，假设初值不能冒原来源的拒绝保留；backend请求数unknown，不当同题因果基准或原六题通过。
 
 preview.23已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.23)：源/tag6393ec7277beb36e81ac679ebd3ae43966efe56d，运行SHA8f4492c7242c99f1daf884be1af38b1275f8eeac0164b2fb96309023117421c8，379文件最终归档先逐字节核再正常安装；macOS/Linux Native/PTC各6例、真实300/550本地容量变化、无效/空/非有限/0、原始需求刷新及旧Decision1.2通过，pageerror0。普通CLI正确请求delivered、300冒当前80 withheld，两层wire相同、0turn/start。55项8文件+16离线检查与精度窄回归通过，CI40491658156成功，四份匿名HTTPS200资产与本机/Linux同字节。通用安装摘要曾误标full/all-four，按真实案例更正范围并保留原件；摘要标签修正为冻结后的验证代码，未改包，不冒原Linux已跑该修订。本段新模型0，原D2/raw、0/6/18、A2及G/H保持；见[最终分层接受](evidence/source-capacity.json)。

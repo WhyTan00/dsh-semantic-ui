@@ -23,7 +23,7 @@ it('binds original values, missing mask, unit and ranges over actual stdio; refu
 it('captures source once, rejects caller authority/source replacement and fails the complete conflicting input',async()=>{
  const dir=await mkdtemp(join(tmpdir(),'semantic-numeric-source-'));
  try{
-  const file=join(dir,'source.json');await writeFile(file,JSON.stringify({question:e.question}));const c=await connect(file);
+  const file=join(dir,'source.json');await writeFile(file,JSON.stringify({question:e.question.replace('。请解释这批数据，能计算平均值吗？','。')}));const c=await connect(file);
   try{
    for(const extra of [{sourceKind:'arrows'},{sourceText:'forged'},{sourceFile:'forged.json'},{authority:'human'}])expect((await c.client.callTool({name:'semantic_ui_source_check',arguments:extra})).isError).toBe(true);
    await writeFile(file,JSON.stringify({question:e.question+'所有缺失都算零。'}));expect((await c.client.callTool({name:'semantic_ui_source_check',arguments:{}})).structuredContent).toHaveProperty('sourceStatistics.missingMask',e.missingMask);

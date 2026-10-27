@@ -1,0 +1,26 @@
+{
+  "phase": "development-source",
+  "version": "0.1.0-preview.25",
+  "protocolVersion": "1.4",
+  "recordedAt": "2026-10-27T13:16:21.037589+00:00",
+  "sourceChecks": {
+    "vitest": {
+      "files": 6,
+      "passed": 32
+    },
+    "python": {
+      "passed": 18
+    },
+    "typecheck": "passed"
+  },
+  "finalArchive": "pending",
+  "newModelAttempts": 0,
+  "originalNaturalResults": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18
+  },
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false
+}

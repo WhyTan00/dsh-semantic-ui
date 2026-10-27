@@ -167,6 +167,45 @@ class ZeroFillAnswerContracts(unittest.TestCase):
         self.assertEqual(answer['status'], 'partial')
         self.assertIsNone(answer['hypothesis']['mean'])
 
+    def test_current_sum_fields_are_core_bound_and_keep_complete_total_unknown(self):
+        source, core = self.source(), self.core()
+        source['sourceStatistics']['complete'].update({'sum': None, 'sumKnown': False})
+        series = core['dataFacts']['series'][0]
+        series['sum'] = 8
+        series['zeroFillIllustration'].update({'sum': 8, 'differenceFromObservedSum': 0,
+            'directionRelativeToObservedSum': 'same', 'completeDataSumKnown': False})
+        answer, calls = self.run_answer(source=source, core=core)
+        self.assertEqual(len(calls), 2)
+        self.assertEqual(answer['hypothesis']['sum'], 8)
+        self.assertEqual(answer['hypothesis']['differenceFromObservedSum'], 0)
+        self.assertFalse(answer['hypothesis']['completeDataSumKnown'])
+        self.assertIn('补零假设合计：8 毫安', answer['text'])
+        self.assertIn('不消除原始缺失状态', answer['text'])
+        for key, value in [('sum', 9), ('sum', False), ('differenceFromObservedSum', False),
+                           ('directionRelativeToObservedSum', 'lower'), ('completeDataSumKnown', True)]:
+            bad = copy.deepcopy(core);bad['dataFacts']['series'][0]['zeroFillIllustration'][key] = value
+            refused, _ = self.run_answer(source=source, core=bad)
+            self.assertEqual(refused['status'], 'withheld')
+        old, _ = self.run_answer()
+        self.assertIsNone(old['hypothesis']['sum'])
+
+    def test_all_missing_current_core_copy_keeps_unknown_original_sum(self):
+        source, core = self.source('D'), self.core('D')
+        source['sourceStatistics']['observed']['sum'] = None
+        source['sourceStatistics']['complete'].update({'sum': None, 'sumKnown': False})
+        series = core['dataFacts']['series'][0];series['sum'] = None
+        series['zeroFillIllustration'].update({'sum': None, 'differenceFromObservedSum': None,
+            'directionRelativeToObservedSum': 'unknown', 'completeDataSumKnown': False})
+        alternate = self.assumed_core(core);alternate['dataFacts']['series'][0]['sum'] = 0
+        alternate['dataFacts']['series'][0]['zeroFillIllustration'].update({'sum': 0,
+            'differenceFromObservedSum': 0, 'directionRelativeToObservedSum': 'same', 'completeDataSumKnown': True})
+        answer, calls = self.run_answer(source=source, core=core, alternate_core=alternate)
+        self.assertEqual(len(calls), 3)
+        self.assertEqual(answer['hypothesis']['sum'], 0)
+        self.assertIsNone(answer['hypothesis']['differenceFromObservedSum'])
+        self.assertEqual(answer['hypothesis']['directionRelativeToObservedSum'], 'unknown')
+        self.assertFalse(answer['hypothesis']['completeDataSumKnown'])
+
 
 if __name__ == '__main__':
     unittest.main()

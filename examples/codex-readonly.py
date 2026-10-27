@@ -373,10 +373,30 @@ def checked_zero_fill(receipt, bound, projection):
         raise ValueError('HYPOTHESIS_CORE_UNKNOWN')
     if z['differenceFromObservedMean'] is None and direction != 'unknown':
         raise ValueError('HYPOTHESIS_CORE_UNKNOWN')
+    # Older frozen archives do not expose sums. Keep them unknown, never infer a
+    # subtotal from the mean or recompute numbers in this companion client.
+    sum_fields = ['sum', 'differenceFromObservedSum', 'directionRelativeToObservedSum',
+                  'completeDataSumKnown']
+    sums = {key: None for key in sum_fields}
+    sums['directionRelativeToObservedSum'] = 'unknown'
+    if any(key in z for key in sum_fields):
+        if (any(key not in z for key in sum_fields) or 'sum' not in s
+                or 'sum' not in stats['observed']
+                or s['sum'] != stats['observed']['sum'] or z['sum'] != s['sum']
+                or s['sum'] is not None and not finite_number(s['sum'])
+                or z['sum'] is not None and not finite_number(z['sum'])
+                or z['differenceFromObservedSum'] != (None if s['sum'] is None else 0)
+                or z['differenceFromObservedSum'] is not None
+                   and not finite_number(z['differenceFromObservedSum'])
+                or z['directionRelativeToObservedSum'] != ('unknown' if s['sum'] is None else 'same')
+                or type(z['completeDataSumKnown']) is not bool
+                or z['completeDataSumKnown'] != stats['complete'].get('sumKnown')):
+            raise ValueError('HYPOTHESIS_CORE_SUM')
+        sums = {key: z[key] for key in sum_fields}
     return {'mode': 'zero-fill', 'status': 'available' if z['mean'] is not None else 'unknown',
             'unit': facts['unit'], **{key: z[key] for key in [
                 'count', 'mean', 'differenceFromObservedMean', 'directionRelativeToObservedMean',
-                'completeDataMeanKnown']}, 'sourceFact': False}
+                'completeDataMeanKnown']}, **sums, 'sourceFact': False}
 
 
 def checked_hypothetical_copy(receipt, view):
@@ -404,7 +424,17 @@ def checked_hypothetical_copy(receipt, view):
             or z['differenceFromObservedMean'] != 0
             or z.get('directionRelativeToObservedMean') != 'same'):
         raise ValueError('HYPOTHESIS_COPY_RESULT')
-    return z['mean']
+    total = None
+    if 'sum' in s or 'sum' in z:
+        if (not finite_number(s.get('sum')) or not finite_number(z.get('sum')) or z.get('sum') != s['sum']
+                or type(z.get('completeDataSumKnown')) is not bool
+                or z['completeDataSumKnown'] is not True
+                or not finite_number(z.get('differenceFromObservedSum'))
+                or z['differenceFromObservedSum'] != 0
+                or z.get('directionRelativeToObservedSum') != 'same'):
+            raise ValueError('HYPOTHESIS_COPY_SUM')
+        total = s['sum']
+    return {'mean': z['mean'], 'sum': total}
 
 
 def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
@@ -452,7 +482,7 @@ def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
             write_json(logs/'hypothesis-zero-filled-core-check.json', alternate)
             if alternate.get('isError'):
                 raise ValueError('HYPOTHESIS_COPY_TOOL_ERROR')
-            hypothesis.update({'mean': checked_hypothetical_copy(alternate['structuredContent'], assumed),
+            hypothesis.update({**checked_hypothetical_copy(alternate['structuredContent'], assumed),
                                'status': 'available', 'calculationSource': 'separate-zero-filled-copy'})
             # Keep original complete-known/difference/direction, never the copy's fields.
     except (RpcError, ValueError, KeyError, TypeError, AttributeError) as error:
@@ -467,8 +497,11 @@ def zero_fill_answer(inspection, source_sha, source_identity, tool, logs):
     delivery['text'] += ('\n\n明确假设：仅将原始缺失位置暂按0处理，不改写实测值或来源。'
         + f"\n补零假设平均值：{number(hypothesis['mean'])} {unit}；分母为{hypothesis['count']}个原始位置。"
         + f"\n相对已观测均值的差（假设减实测）：{'未知（没有有效实测均值）' if bound['sourceStatistics']['observed']['mean'] is None else number(hypothesis['differenceFromObservedMean'])} {unit}；方向：{direction[hypothesis['directionRelativeToObservedMean']]}。"
-        + '\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值的偏差方向。'
-        + '\n原始完整均值及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。')
+        + f"\n补零假设合计：{number(hypothesis['sum'])} {unit}；覆盖{hypothesis['count']}个假设位置。"
+        + f"\n相对已观测小计的差（假设减实测）：{number(hypothesis['differenceFromObservedSum'])} {unit}；方向：{direction[hypothesis['directionRelativeToObservedSum']]}。"
+        + '\n存在有限已观测小计时，只将缺失位置按零处理不改变该小计；均值还取决于分母。数值碰巧相同也不消除原始缺失状态。'
+        + '\n上述差异只比较两种计算口径，不能据此推断对未知真实完整均值或合计的偏差方向。'
+        + '\n原始完整均值、合计及其已知/未知状态仍以上方来源说明为准；假设结果不是新增实测事实。')
     delivery['hypothesis'] = hypothesis
     if hypothesis['status'] == 'unknown':
         delivery['status'] = 'partial'
@@ -492,7 +525,7 @@ ANSWER_WORKFLOW = (
 
 
 def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, source_sha, inspect, tool, logs,
-                    source_identity=None):
+                    source_identity=None, hypothesis=None):
     question_sha = sha(question.encode('utf-8'))
     if grounded_delivery(inspect,source_sha,source_identity)['status'] != 'delivered':
         delivery = grounded_delivery(inspect,source_sha,source_identity)
@@ -554,7 +587,8 @@ def one_answer_turn(rpc, thread_id, skill, skill_bytes, question, source_sha, in
     except RpcError as error:
         post = {'status':'source-unavailable','error':error.error}
     write_json(logs/'host-final-source.json',post)
-    delivery = grounded_delivery(post,source_sha,source_identity)
+    delivery = (zero_fill_answer(post, source_sha, source_identity, tool, logs)
+                if hypothesis == 'zero-fill' else grounded_delivery(post,source_sha,source_identity))
     (logs/'answer.md').write_text(delivery['text'],encoding='utf-8')
     return {'observedModelTurns':1 if turn_id else 0,'turnId':turn_id,
             'status':terminal.get('status'),'candidate':candidate,
@@ -571,7 +605,7 @@ def main():
     parser.add_argument('--model-candidate', action='store_true',
                         help='Also run one guided candidate model turn; requires --answer')
     parser.add_argument('--hypothesis', choices=['zero-fill'],
-                        help='Explicit host-only comparison using the existing numeric core; requires --answer')
+                        help='Explicit host comparison using the existing numeric core; can accompany --model-candidate')
     parser.add_argument('--archive', type=Path, required=True)
     parser.add_argument('--manifest', type=Path, required=True)
     parser.add_argument('--source-file', type=Path, required=True)
@@ -605,9 +639,9 @@ def main():
         raise ValueError('--question-file requires --answer')
     if args.model_candidate and args.requests_file:
         raise ValueError('A model candidate uses source inspection, not a custom request batch')
-    if args.hypothesis and (not args.answer or args.model_candidate or args.requests_file
+    if args.hypothesis and (not args.answer or args.requests_file
                            or args.source_kind != 'observations-zh' or args.component != 'DataChart'):
-        raise ValueError('--hypothesis requires host-only --answer, observations-zh and DataChart, without requests-file')
+        raise ValueError('--hypothesis requires --answer, observations-zh and DataChart, without requests-file')
     needs_stat_check = bool(args.model_candidate or args.hypothesis)
     requests = json.loads(args.requests_file.read_text()) if args.requests_file else [{}]
     if not isinstance(requests, list) or not 1 <= len(requests) <= 16 or any(
@@ -742,7 +776,7 @@ def main():
             if args.model_candidate:
                 answer = one_answer_turn(rpc,thread_id,skill,skill_bytes,
                                          question,source_sha,inspection,tool,logs,
-                                         input_identity['expectedSource'])
+                                         input_identity['expectedSource'], args.hypothesis)
             else:
                 delivery = (zero_fill_answer(inspection,source_sha,input_identity['expectedSource'],tool,logs)
                             if args.hypothesis else grounded_delivery(inspection,source_sha,input_identity['expectedSource']))

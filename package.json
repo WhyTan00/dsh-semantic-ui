@@ -1,6 +1,6 @@
 {
   "name": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.24",
+  "version": "0.1.0-preview.25",
   "description": "Bounded semantic UI for native DeepSeek Harness conversations, powered by json-render.",
   "type": "module",
   "license": "MIT",
@@ -84,7 +84,8 @@
     "fixtures/source-capacity-request.json",
     "fixtures/source-capacity-refused.json",
     "docs/CAPACITY-CONTRACT.zh-CN.md",
-    "fixtures/capacity-diagnostic-request.json"
+    "fixtures/capacity-diagnostic-request.json",
+    "docs/NUMERIC-BASELINE.zh-CN.md"
   ],
   "dsh": {
     "client": {
@@ -123,7 +124,8 @@
     "test:installed-cold-source": "node tests/installed-cold-source.mjs",
     "test:installed-workflow": "node tests/installed-workflow.mjs",
     "test:installed-capacity": "node tests/installed-capacity.mjs",
-    "test:installed-capacity-contract": "node tests/installed-capacity-contract.mjs"
+    "test:installed-capacity-contract": "node tests/installed-capacity-contract.mjs",
+    "test:installed-numeric-baseline": "node tests/installed-numeric-baseline.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "3.1.1",

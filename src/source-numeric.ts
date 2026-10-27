@@ -21,8 +21,8 @@ export const numericSourcePrefix=(text:string)=>/^[^，,。；;\r\n]{1,80}?([1-9
 export function parseNumericSource(text:string,offset=0):{status:'ready';value:NumericSource}|{status:'unsupported';issues:SourceIssue[]}{
  const fail=(code:string,reason:string)=>({status:'unsupported' as const,issues:[{code,path:'$.source.excerpt',reason}]});
  if(bytes(text)>SOURCE_LIMITS.excerptBytes)return fail('SOURCE_LIMIT','Selected numeric text exceeds the byte limit.');
- const suffix=['。请解释这批数据，能计算平均值吗？','。能计算平均值吗？'].find(s=>text.endsWith(s));
- if(!suffix)return fail('SOURCE_SYNTAX','Use the complete supported final mean question; no trailing clause is discarded.');
+ const suffix=['。请解释这批数据，能计算平均值吗？','。能计算平均值吗？','。'].find(s=>text.endsWith(s));
+ if(!suffix)return fail('SOURCE_SYNTAX','Use one complete reading sentence, optionally followed by the supported mean question; no trailing clause is discarded.');
  const body=text.slice(0,-suffix.length);
  if(/[。\r\n]/u.test(body))return fail('SOURCE_SYNTAX','Supply one complete single-line reading clause and the supported final question.');
  // Header work is bounded by label lengths. Split the unit separately rather
@@ -52,11 +52,11 @@ export const sourceNumericRequestSchema=z.strictObject({
 });
 function facts(source:NumericSource){
  const values=source.positions.map(p=>p.value),stats=numericStats(values);
- return {unit:source.unit,positions:values.length,values,missingMask:values.map(v=>v===null),observed:{count:stats.n,missing:stats.missing,sum:stats.sum,mean:stats.mean,denominator:stats.n,scope:'declared non-missing positions only'},complete:{count:values.length,mean:stats.missing?null:stats.mean,denominator:values.length,known:stats.missing===0&&stats.mean!==null,scope:'all declared positions; missing readings remain unknown'},method:'unweighted arithmetic mean; no imputation, unit conversion, sampling or population inference'};
+ return {unit:source.unit,positions:values.length,values,missingMask:values.map(v=>v===null),observed:{count:stats.n,missing:stats.missing,sum:stats.sum,mean:stats.mean,denominator:stats.n,scope:'declared non-missing positions only'},complete:{count:values.length,sum:stats.missing?null:stats.sum,sumKnown:stats.missing===0&&stats.sum!==null,mean:stats.missing?null:stats.mean,denominator:values.length,known:stats.missing===0&&stats.mean!==null,scope:'all declared positions; missing readings remain unknown'},method:'unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference'};
 }
 function canonical(source:NumericSource,f:ReturnType<typeof facts>){
  const list=source.positions.map(p=>`${p.index+1}=${p.value===null?'缺失':p.value}`).join('、');
- return `${source.context}的${source.measurement}读数（${source.unit}），按原文位置：${list}。\n共${f.positions}个位置，${f.observed.count}个实际观测、${f.observed.missing}个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：${f.observed.mean===null?'未知（无有效观测或计算超限）':f.observed.mean+' '+source.unit}；分母为${f.observed.denominator}个实际观测。\n完整${f.positions}次读数的平均值：${f.complete.known?f.complete.mean+' '+source.unit:'未知'}；完整范围分母为${f.complete.denominator}。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或完整均值，也不据此推断偏差方向、总体或任意正文。`;
+ return `${source.context}的${source.measurement}读数（${source.unit}），按原文位置：${list}。\n共${f.positions}个位置，${f.observed.count}个实际观测、${f.observed.missing}个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：${f.observed.mean===null?'未知（无有效观测或计算超限）':f.observed.mean+' '+source.unit}；分母为${f.observed.denominator}个实际观测。\n已观测${f.observed.count}项的小计：${f.observed.sum===null?'未知（无有效观测或计算超限）':f.observed.sum+' '+source.unit}；仅覆盖实际观测。\n完整${f.positions}次读数的平均值：${f.complete.known?f.complete.mean+' '+source.unit:'未知'}；完整范围分母为${f.complete.denominator}。\n完整${f.positions}次读数的合计：${f.complete.sumKnown?f.complete.sum+' '+source.unit:'未知'}。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。`;
 }
 /** Independent startup source -> complete positional DataChart binding -> finite explanation. */
 export function checkSourceNumeric(snapshot:SourceSnapshot,input:unknown):Record<string,unknown>{
