@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.16源码接入DSH当前own-turn数值来源与正常render/checkpoint：完整核值/null/单位/顺序和typed mean后重建来源投影，原摘要/注释不进入有据显示；不匹配持久化拒绝。新增metadata kind与DataChart对应，历史只恢复原来源范围。7项定向单元、类型/构建及源阶段Native2例已通过；首次AGENTS producer拒绝经锁定公开包核实后将agent-instructions排除为合成上下文，未知producer仍阻断，当前来源缓存版本4，私有harness固定DSH_AGENTS_HOME。最终归档/Native/PTC/CI/发行按 [数值交付回执](evidence/numeric-delivery.json) 补充；源阶段不冒充最终接受，0真实模型，旧0/6/18及资产保持。
+
 伴随客户端补齐数值拒绝原因：一次真实普通`--answer`明确显示第3位置缺失收到0、观测分母3收到4、完整均值未知收到0，仍withheld；检查器请求/响应与原15案例逐字相同，仅文字呈现改变。6项离线合同通过，不回显prose/身份/路径，长错误有界降级。最终15归档另在隔离DSH实际安装并核302文件，旧协议1.0 DataChart的Native/PTC各1刷新恢复smoke通过，pageerror=0；源码差异为shared模块/reexport初始化而非DSH/React/协议源码变更，故补了真实smoke。没有新数值源接入DSH、完整矩阵、模型/CI/发行或全局变更。原笼统拒绝/14超时全保留；见 [独立回执](evidence/refusal-details.json)。
 
 preview.15已实际 [公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.15)：有限`observations-zh`逐位置绑定原始读数、缺失mask、单位与单组类别柱状图，observed/complete均值和分母分开。最终归档正常`--answer`正例输出3个已观测读数均值0℃、完整4次均值未知；同均值填零/分母偷换/完整均值0反例真实拒绝，双层wire一致、0模型回合、自有进程退出及配置摘要不变。源码22项、归档9项、既有客户端4项离线合同通过；Linux定向CI40428299852与本地四资产完全同字节，公开四资产匿名HTTPS逐字节核对。14候选在发行前发现大空白输入超过3秒，未发行；保留原候选/首次失败，15拆分解析并通过超时保护和实际归档回归。源码标签8f1a391，最终原件/范围与SHA见 [本段回执](evidence/source-numeric.json)。host/client/core/MCP均重新打包且字节不同于13，协议包字节相同；没有新DSH矩阵或数值来源适配，原0/6/18和旧资产/tag保持。正常命令见 [数值来源](SOURCE-NUMERIC.zh-CN.md)。

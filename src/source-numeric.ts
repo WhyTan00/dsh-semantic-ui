@@ -15,6 +15,8 @@ function countValue(s:string){
  if(/^[二三四五六七八九]十[一二三四五六七八九]?$/u.test(s))return digit(s[0])*10+(s.length===3?digit(s[2]):0);
  return NaN;
 }
+/** Grammar selection only, never fact extraction or source authentication. */
+export const numericSourcePrefix=(text:string)=>/^[^，,。；;\r\n]{1,80}?([1-9]\d{0,2}|[一二三四五六七八九十]{1,3})次[^，,。；;\r\n]{1,40}?读数是/u.test(text);
 /** Anchored complete grammar. Does not extract a plausible list from arbitrary prose. */
 export function parseNumericSource(text:string,offset=0):{status:'ready';value:NumericSource}|{status:'unsupported';issues:SourceIssue[]}{
  const fail=(code:string,reason:string)=>({status:'unsupported' as const,issues:[{code,path:'$.source.excerpt',reason}]});

@@ -4,6 +4,7 @@ import type {Context} from '@deepseek-ai/cordis';
 import type {ToolExecution} from '@deepseek-ai/dsh-tools';
 import type {ProjectionDefinition} from '@deepseek-ai/dsh-session-projection';
 import {SOURCE_LIMITS,type SourceSnapshot} from '../source-graph';
+import {numericSourcePrefix} from '../source-numeric';
 import {permissionsSourcePrefix} from '../source-permissions';
 
 const candidateSchema=z.strictObject({id:z.string().min(1).max(160),seq:z.number().int().nonnegative(),text:z.string().max(SOURCE_LIMITS.excerptBytes)});
@@ -12,9 +13,9 @@ export type CurrentSourceState=z.infer<typeof currentSourceSchema>;
 declare module '@deepseek-ai/dsh-session-projection/types'{interface SessionProjectionStateMap{dshSemanticCurrentSource:CurrentSourceState}}
 // These are explicitly non-user producer labels in the pinned public message
 // contracts. They are excluded, never promoted to human input or authority.
-const synthetic=new Set(['runtime-context','skill-catalog','time-context','skill-invocation','model-selection','tool-registry']);
+const synthetic=new Set(['runtime-context','agent-instructions','skill-catalog','time-context','skill-invocation','model-selection','tool-registry']);
 export const currentSourceProjection:ProjectionDefinition<'dshSemanticCurrentSource'>={
- key:'dshSemanticCurrentSource',stateSchema:currentSourceSchema,stateVersion:3,
+ key:'dshSemanticCurrentSource',stateSchema:currentSourceSchema,stateVersion:4,
  init:(header,inherited)=>({sessionId:String(header.id),inheritedRemaining:Number(inherited),open:false,turn:null,startSeq:null,candidate:null,userCount:0,excludedSyntheticContexts:0,blocked:null,unknownProducerKinds:[]}),
  apply:(state,event)=>{
   if(state.inheritedRemaining>0)return {...state,inheritedRemaining:state.inheritedRemaining-1};
@@ -45,7 +46,7 @@ export function snapshotCurrentSource(state:CurrentSourceState|undefined,boundar
  if(state.userCount!==1||!state.candidate)return unavailable(state.excludedSyntheticContexts?'HOST_SOURCE_SYNTHETIC_ONLY':'HOST_SOURCE_NO_USER');
  const c=state.candidate;if(c.seq<=state.startSeq)return unavailable('HOST_SOURCE_NOT_CURRENT');
  const sha=createHash('sha256').update(c.text).digest('hex'),textBytes=Buffer.byteLength(c.text);
- const snapshot:SourceSnapshot={kind:permissionsSourcePrefix(c.text)?'permissions-zh':'decision-zh',textSha256:sha,excerptSha256:sha,textBytes,textByteStart:0,textByteEnd:textBytes,excerpt:c.text,hostContext:{sessionId,turn:state.turn!,turnStartSeq:state.startSeq,messageId:c.id,messageSeq:c.seq,producerSourceKind:'user',inherited:false,excludedSyntheticContexts:state.excludedSyntheticContexts}};
+ const snapshot:SourceSnapshot={kind:permissionsSourcePrefix(c.text)?'permissions-zh':numericSourcePrefix(c.text)?'observations-zh':'decision-zh',textSha256:sha,excerptSha256:sha,textBytes,textByteStart:0,textByteEnd:textBytes,excerpt:c.text,hostContext:{sessionId,turn:state.turn!,turnStartSeq:state.startSeq,messageId:c.id,messageSeq:c.seq,producerSourceKind:'user',inherited:false,excludedSyntheticContexts:state.excludedSyntheticContexts}};
  return {ok:true as const,snapshot};
 }
 export function currentHostSource(ctx:Context,exec:Pick<ToolExecution,'agent'>){

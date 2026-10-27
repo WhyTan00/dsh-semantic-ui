@@ -1,6 +1,6 @@
 {
   "name": "@whytan/dsh-semantic-ui",
-  "version": "0.1.0-preview.15",
+  "version": "0.1.0-preview.16",
   "description": "Bounded semantic UI for native DeepSeek Harness conversations, powered by json-render.",
   "type": "module",
   "license": "MIT",
@@ -70,7 +70,8 @@
     "docs/HOST-SOURCE.zh-CN.md",
     "docs/SOURCE-PERMISSIONS.zh-CN.md",
     "docs/SOURCE-DELIVERY.zh-CN.md",
-    "docs/SOURCE-NUMERIC.zh-CN.md"
+    "docs/SOURCE-NUMERIC.zh-CN.md",
+    "docs/NUMERIC-DELIVERY.zh-CN.md"
   ],
   "dsh": {
     "client": {
@@ -104,7 +105,8 @@
     "test:consistency-host": "CONSISTENCY_CHECK_ONLY=1 node tests/host-lifecycle.mjs",
     "test:installed-consistency": "node tests/installed-consistency.mjs",
     "test:installed-source": "node tests/installed-source.mjs",
-    "test:installed-mcp": "node tests/installed-mcp.mjs"
+    "test:installed-mcp": "node tests/installed-mcp.mjs",
+    "test:installed-numeric": "node tests/installed-numeric.mjs"
   },
   "dependencies": {
     "@dagrejs/dagre": "3.1.1",

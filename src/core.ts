@@ -10,7 +10,7 @@ export {checkSourceGraph,parseExplicitRelations,sourceCheckRequestSchema} from '
 export {checkSourceDecision,parseDecisionSource,sourceDecisionRequestSchema} from './source-decision';
 export {checkSourcePermissions,parsePermissionSource,sourcePermissionsRequestSchema} from './source-permissions';
 export {checkSourceNumeric,parseNumericSource,sourceNumericRequestSchema} from './source-numeric';
-export {bindPermissionView,bindDecisionView} from './source-delivery';
+export {bindPermissionView,bindDecisionView,bindNumericView} from './source-delivery';
 
 /** A new request cannot select historical behavior to bypass current policy. */
 export function validateForDelivery(input:unknown):Validation{

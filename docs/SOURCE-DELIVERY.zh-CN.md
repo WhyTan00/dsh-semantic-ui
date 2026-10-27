@@ -50,3 +50,5 @@ checkpoint沿原meta扩展版本化的来源说明、文本摘要、实际host�
 - 最终候选刷新/历史切回及独立进程恢复；完整360px容器截图、宽度无溢出、pageerror=0。首次截图被宿主滚动层裁切，首次恢复脚本因工作区未展开超时；修正的是取证步骤，失败记录保留，最终完整图另存。
 
 新模型/自然题请求为0，原六题仍0通过/6失败/18请求，所有raw与A2勘误保持。明确另写的投影和恶意注释夹具不是自然模型通过。`identityVerified=false`、`sourceFactsVerified=false`；仅来源文字内的有限内容一致性得到检查，独立人类身份、真实世界权限和组件外自由正文仍未认证。dev.5仅验证权限来源；preview.12新增上述Decision交付及独立版本验证。图表原始数据与全文一致性、自然生成采用、真实手机/读屏和当前Codex客户端效果仍需分别推进。
+
+后续preview.16增加 [数值来源正常交付](NUMERIC-DELIVERY.zh-CN.md)：沿同一当前own-turn/source-check/binder/checkpoint链路核对DataChart位置、缺失mask、单位及均值范围；保存新来源投影，不认证模型原文。旧版本证据保持，不回算原自然题通过。

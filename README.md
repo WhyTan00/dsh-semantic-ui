@@ -6,6 +6,8 @@ A personal, independently written **preview** plugin for native [DeepSeek Harnes
 - **DecisionExplorer** aligns common dimensions, preserves unknowns and explains finite conditional rules and hard constraints.
 - **DataChart** supports lines, category bars and real histograms, with explicit missing values, units, bin rules, filters and source tables.
 
+**Preview.16** adds [normal DSH numeric-source delivery](docs/NUMERIC-DELIVERY.zh-CN.md): current own-turn readings are rechecked before a fresh source-derived DataChart projection and bounded explanation are checkpointed. Null masks, exact units and observed/complete mean ranges stay distinct; imputation and conflicting typed means are refused. Saved source scope restores independently of later inputs. No arbitrary prose, source author or world-fact certification.
+
 **Preview.15** adds [explicit numeric-source binding](docs/SOURCE-NUMERIC.zh-CN.md) to the optional read-only MCP path: ordered readings, null masks, exact units and observed/complete mean ranges are checked against a separately captured finite source. A missing value changed to zero is rejected even when means happen to coincide. The [normal companion answer](docs/CODEX-GROUNDED.zh-CN.md) can consume one explicit comparison without a model turn. This increment does not claim a new DSH numeric-source adapter, desktop UI or natural-model pass.
 
 Plain text remains appropriate for simple questions. No model-generated JavaScript, JSX, HTML, callbacks, arbitrary ECharts options or network resources are accepted.
