@@ -1,0 +1,12 @@
+{
+  "defaultServeReady": true,
+  "runtime": "0.1.0-preview.27",
+  "localTransportRequests": 4,
+  "newRealModelStarts": 0,
+  "sourceReferenceOnly": true,
+  "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+  "normalCheckpointSeq": 29,
+  "callerCatalogFlag": false,
+  "observedMean": null,
+  "zeroFillHypothesisMean": 0
+}

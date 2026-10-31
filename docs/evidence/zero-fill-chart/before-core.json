@@ -1,0 +1,120 @@
+{
+  "request": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "readings-chart-all-missing",
+      "revision": 1,
+      "component": "DataChart",
+      "summary": "Explicit positional source projection; free prose unverified.",
+      "payload": {
+        "chartType": "bar",
+        "title": "Source readings",
+        "unit": "毫安",
+        "x": {
+          "kind": "category",
+          "order": "input"
+        },
+        "series": [
+          {
+            "id": "series-chart-all-missing",
+            "label": "电流"
+          }
+        ],
+        "rows": [
+          {
+            "id": "row-chart-all-missing-0",
+            "x": "1",
+            "values": {
+              "series-chart-all-missing": null
+            }
+          },
+          {
+            "id": "row-chart-all-missing-1",
+            "x": "2",
+            "values": {
+              "series-chart-all-missing": null
+            }
+          },
+          {
+            "id": "row-chart-all-missing-2",
+            "x": "3",
+            "values": {
+              "series-chart-all-missing": null
+            }
+          }
+        ]
+      }
+    },
+    "mapping": {
+      "seriesId": "series-chart-all-missing",
+      "rows": [
+        {
+          "sourceIndex": 0,
+          "rowId": "row-chart-all-missing-0"
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "row-chart-all-missing-1"
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "row-chart-all-missing-2"
+        }
+      ]
+    }
+  },
+  "facts": {
+    "scope": "original-full-data",
+    "chartType": "bar",
+    "unit": "毫安",
+    "order": "input",
+    "rows": 3,
+    "firstRow": {
+      "id": "row-chart-all-missing-0",
+      "x": "1",
+      "xTruncated": false
+    },
+    "lastRow": {
+      "id": "row-chart-all-missing-2",
+      "x": "3",
+      "xTruncated": false
+    },
+    "series": [
+      {
+        "id": "series-chart-all-missing",
+        "valid": 0,
+        "missing": 3,
+        "sum": null,
+        "mean": null,
+        "zeroFillIllustration": {
+          "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+          "count": 3,
+          "sum": null,
+          "differenceFromObservedSum": null,
+          "directionRelativeToObservedSum": "unknown",
+          "completeDataSumKnown": false,
+          "mean": null,
+          "differenceFromObservedMean": null,
+          "directionRelativeToObservedMean": "unknown",
+          "completeDataMeanKnown": false
+        },
+        "minimum": null,
+        "maximum": null,
+        "firstValue": null,
+        "lastValue": null,
+        "netChange": null,
+        "adjacentValidDecreases": 0
+      }
+    ]
+  },
+  "independentExpected": {
+    "observedMean": null,
+    "observedSum": null,
+    "zeroFillHypothesisMean": 0,
+    "zeroFillHypothesisSum": 0,
+    "zeroFillDenominator": 3,
+    "differenceVsObserved": null,
+    "directionVsObserved": "unknown",
+    "realCompleteMeanKnown": false
+  }
+}

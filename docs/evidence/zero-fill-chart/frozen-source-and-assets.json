@@ -1,0 +1,34 @@
+{
+  "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+  "sourceTag": "v0.1.0-preview.27",
+  "runtimeFiles": 396,
+  "runtimeEntrypoints": {
+    "dist/host.js": "64ec99ad13474ce2bc59067d98ccbb7cb434f4cfc93d6ee898064be5c707822a",
+    "dist/client.js": "2093410287cacaf5833f65c4ddd12ee0b7ed66c365b97a14b027367d1a486c49",
+    "dist/core.js": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6",
+    "dist/mcp.js": "ac47f317d9787ed1c2a26eb61333e592cf73f45eef2dae1bf95d7afbd294d190",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "assets": [
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+      "bytes": 2715895,
+      "sha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1"
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+      "bytes": 38784415,
+      "sha256": "cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e"
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 35468,
+      "sha256": "6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1"
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199"
+    }
+  ]
+}

@@ -1,0 +1,712 @@
+{
+  "mode": "native",
+  "originalInputs": false,
+  "results": [
+    {
+      "caseKey": "caller-source",
+      "origin": {
+        "caseKey": "caller-source",
+        "sourceRecord": "fixtures/all-missing-chart.json",
+        "sourceRecordSha256": "6d576dd90b3754f987b3345c330930e8642bd9334c27ac4332722c0bd0e4d17e",
+        "jsonPointer": "/source",
+        "selectedTextSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+        "legacyModelRenderCallIndex": null,
+        "originalModelFinalSha256": null,
+        "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer"
+      },
+      "sessionId": "session-b3905f95-d328-4255-b19f-227e902211d3",
+      "requestId": "8cb945ab-c2fc-4576-8390-2238a875b369",
+      "acceptance": {
+        "accepted": true
+      },
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 10,
+        "time": 1793437285435,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "图形探针3次电流读数是缺失、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "8cb945ab-c2fc-4576-8390-2238a875b369",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "2c1bb642-3b01-42e6-a3c3-e4c299f42e71"
+        },
+        "surfaceOp": "append"
+      },
+      "referenceStatus": "ready",
+      "kind": "observations-zh",
+      "sourceReferenceOnly": true,
+      "referenceRequest": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-df5be18afea123bf",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "DataChart",
+          "payload": {
+            "chartType": "bar",
+            "title": "来源声明的电流",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "source-values",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "position-0",
+                "x": "1",
+                "values": {
+                  "source-values": null
+                }
+              },
+              {
+                "id": "position-1",
+                "x": "2",
+                "values": {
+                  "source-values": null
+                }
+              },
+              {
+                "id": "position-2",
+                "x": "3",
+                "values": {
+                  "source-values": null
+                }
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "seriesId": "source-values",
+          "rows": [
+            {
+              "sourceIndex": 0,
+              "rowId": "position-0"
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "position-1"
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "position-2"
+            }
+          ]
+        }
+      },
+      "sourceCheck": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-b3905f95-d328-4255-b19f-227e902211d3",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "2c1bb642-3b01-42e6-a3c3-e4c299f42e71",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 4,
+            "requestId": "8cb945ab-c2fc-4576-8390-2238a875b369"
+          },
+          "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "excerptSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 113,
+            "textUTF8Bytes": 113
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "图形探针",
+          "measurement": "电流",
+          "unit": "毫安",
+          "positions": [
+            {
+              "index": 0,
+              "value": null,
+              "span": {
+                "textByteStart": 31,
+                "textByteEnd": 37
+              }
+            },
+            {
+              "index": 1,
+              "value": null,
+              "span": {
+                "textByteStart": 40,
+                "textByteEnd": 46
+              }
+            },
+            {
+              "index": 2,
+              "value": null,
+              "span": {
+                "textByteStart": 49,
+                "textByteEnd": 55
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫安",
+          "positions": 3,
+          "values": [
+            null,
+            null,
+            null
+          ],
+          "missingMask": [
+            true,
+            true,
+            true
+          ],
+          "observed": {
+            "count": 0,
+            "missing": 3,
+            "sum": null,
+            "mean": null,
+            "denominator": 0,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 3,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 3,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "matched": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-b3905f95-d328-4255-b19f-227e902211d3",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "2c1bb642-3b01-42e6-a3c3-e4c299f42e71",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 4,
+            "requestId": "8cb945ab-c2fc-4576-8390-2238a875b369"
+          },
+          "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "excerptSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 113,
+            "textUTF8Bytes": 113
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "图形探针",
+          "measurement": "电流",
+          "unit": "毫安",
+          "positions": [
+            {
+              "index": 0,
+              "value": null,
+              "span": {
+                "textByteStart": 31,
+                "textByteEnd": 37
+              }
+            },
+            {
+              "index": 1,
+              "value": null,
+              "span": {
+                "textByteStart": 40,
+                "textByteEnd": 46
+              }
+            },
+            {
+              "index": 2,
+              "value": null,
+              "span": {
+                "textByteStart": 49,
+                "textByteEnd": 55
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫安",
+          "positions": 3,
+          "values": [
+            null,
+            null,
+            null
+          ],
+          "missingMask": [
+            true,
+            true,
+            true
+          ],
+          "observed": {
+            "count": 0,
+            "missing": 3,
+            "sum": null,
+            "mean": null,
+            "denominator": 0,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 3,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 3,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "matched",
+          "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+          "rowChecks": [
+            {
+              "sourceIndex": 0,
+              "rowId": "position-0",
+              "seriesId": "source-values",
+              "expected": null,
+              "actual": null,
+              "missing": true,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 31,
+                "textByteEnd": 37
+              }
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "position-1",
+              "seriesId": "source-values",
+              "expected": null,
+              "actual": null,
+              "missing": true,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 40,
+                "textByteEnd": 46
+              }
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "position-2",
+              "seriesId": "source-values",
+              "expected": null,
+              "actual": null,
+              "missing": true,
+              "status": "matched",
+              "sourceSpan": {
+                "textByteStart": 49,
+                "textByteEnd": 55
+              }
+            }
+          ],
+          "viewAnnotations": "not-verified"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "legacyRender": null,
+      "legacyRejection": null,
+      "delivery": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "source-reference-df5be18afea123bf",
+        "revision": 1,
+        "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "dataFacts": {
+          "scope": "original-full-data",
+          "chartType": "bar",
+          "unit": "毫安",
+          "order": "input",
+          "rows": 3,
+          "firstRow": {
+            "id": "position-0",
+            "x": "1",
+            "xTruncated": false
+          },
+          "lastRow": {
+            "id": "position-2",
+            "x": "3",
+            "xTruncated": false
+          },
+          "series": [
+            {
+              "id": "source-values",
+              "valid": 0,
+              "missing": 3,
+              "sum": null,
+              "mean": null,
+              "zeroFillIllustration": {
+                "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                "count": 3,
+                "sum": 0,
+                "differenceFromObservedSum": null,
+                "directionRelativeToObservedSum": "unknown",
+                "completeDataSumKnown": false,
+                "mean": 0,
+                "differenceFromObservedMean": null,
+                "directionRelativeToObservedMean": "unknown",
+                "completeDataMeanKnown": false
+              },
+              "minimum": null,
+              "maximum": null,
+              "firstValue": null,
+              "lastValue": null,
+              "netChange": null,
+              "adjacentValidDecreases": 0
+            }
+          ]
+        },
+        "canonicalSummary": "Declared bar data in 毫安: source-values: 0 valid, 3 missing, mean unknown.",
+        "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+        "canonicalExplanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "d9a8f8d3-4ee2-44a4-a565-4540260a3793"
+      },
+      "checkpointEvent": {
+        "type": "tool/result",
+        "seq": 29,
+        "time": 1793437285693,
+        "data": {
+          "turn": 1,
+          "step": 3,
+          "message": {
+            "role": "tool",
+            "source": {
+              "kind": "tool",
+              "callId": "saved-call-3"
+            },
+            "toolCallId": "saved-call-3",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"status\":\"delivered\",\"turn\":1,\"displayId\":\"source-reference-df5be18afea123bf\",\"revision\":1,\"summary\":\"来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。\",\"presentation\":{\"version\":1,\"theme\":{\"mode\":\"light\",\"palette\":\"ocean\",\"font\":\"system\",\"density\":\"comfortable\",\"textSize\":\"standard\"},\"layout\":{\"direction\":\"auto\"}},\"protocolVersion\":\"1.4\",\"component\":\"DataChart\",\"summarySource\":\"source-derived bounded projection\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"dataFacts\":{\"scope\":\"original-full-data\",\"chartType\":\"bar\",\"unit\":\"毫安\",\"order\":\"input\",\"rows\":3,\"firstRow\":{\"id\":\"position-0\",\"x\":\"1\",\"xTruncated\":false},\"lastRow\":{\"id\":\"position-2\",\"x\":\"3\",\"xTruncated\":false},\"series\":[{\"id\":\"source-values\",\"valid\":0,\"missing\":3,\"sum\":null,\"mean\":null,\"zeroFillIllustration\":{\"assumption\":\"Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.\",\"count\":3,\"sum\":0,\"differenceFromObservedSum\":null,\"directionRelativeToObservedSum\":\"unknown\",\"completeDataSumKnown\":false,\"mean\":0,\"differenceFromObservedMean\":null,\"directionRelativeToObservedMean\":\"unknown\",\"completeDataMeanKnown\":false},\"minimum\":null,\"maximum\":null,\"firstValue\":null,\"lastValue\":null,\"netChange\":null,\"adjacentValidDecreases\":0}]},\"canonicalSummary\":\"Declared bar data in 毫安: source-values: 0 valid, 3 missing, mean unknown.\",\"canonicalSummarySource\":\"computed from supplied observations; not independent source verification\",\"canonicalExplanation\":\"图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\\n完整3次读数的平均值：未知；完整范围分母为3。\\n完整3次读数的合计：未知。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\",\"sourceDeliveryStatus\":\"bound\",\"identityVerified\":false,\"deliveryId\":\"d9a8f8d3-4ee2-44a4-a565-4540260a3793\"}"
+              }
+            ],
+            "isError": false,
+            "id": "149e3ab6-b3c2-45ad-8125-42ecc55a6840"
+          },
+          "meta": {
+            "dshSemanticUi": {
+              "turn": 1,
+              "view": {
+                "protocolVersion": "1.4",
+                "displayId": "source-reference-df5be18afea123bf",
+                "revision": 1,
+                "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+                "presentation": {
+                  "version": 1,
+                  "theme": {
+                    "mode": "light",
+                    "palette": "ocean",
+                    "font": "system",
+                    "density": "comfortable",
+                    "textSize": "standard"
+                  },
+                  "layout": {
+                    "direction": "auto"
+                  }
+                },
+                "component": "DataChart",
+                "payload": {
+                  "chartType": "bar",
+                  "title": "来源声明的电流读数",
+                  "unit": "毫安",
+                  "x": {
+                    "kind": "category",
+                    "order": "input"
+                  },
+                  "series": [
+                    {
+                      "id": "source-values",
+                      "label": "电流"
+                    }
+                  ],
+                  "rows": [
+                    {
+                      "id": "position-0",
+                      "x": "1",
+                      "values": {
+                        "source-values": null
+                      }
+                    },
+                    {
+                      "id": "position-1",
+                      "x": "2",
+                      "values": {
+                        "source-values": null
+                      }
+                    },
+                    {
+                      "id": "position-2",
+                      "x": "3",
+                      "values": {
+                        "source-values": null
+                      }
+                    }
+                  ]
+                }
+              },
+              "sourceDelivery": {
+                "version": 1,
+                "identityVerified": false,
+                "sourceFactsVerified": false,
+                "status": "bound",
+                "kind": "observations-zh",
+                "explanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+                "sourceRef": {
+                  "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+                  "hostContext": {
+                    "sessionId": "session-b3905f95-d328-4255-b19f-227e902211d3",
+                    "turn": 1,
+                    "turnStartSeq": 6,
+                    "messageId": "2c1bb642-3b01-42e6-a3c3-e4c299f42e71",
+                    "messageSeq": 10,
+                    "producerSourceKind": "user",
+                    "inherited": false,
+                    "excludedSyntheticContexts": 4,
+                    "requestId": "8cb945ab-c2fc-4576-8390-2238a875b369"
+                  }
+                },
+                "viewIdentity": {
+                  "displayId": "source-reference-df5be18afea123bf",
+                  "revision": 1,
+                  "component": "DataChart"
+                }
+              }
+            }
+          }
+        },
+        "sourceEventSeqs": [
+          28
+        ],
+        "surfaceOp": "append"
+      },
+      "checkpoint": {
+        "turn": 1,
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-df5be18afea123bf",
+          "revision": 1,
+          "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+          "presentation": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          },
+          "component": "DataChart",
+          "payload": {
+            "chartType": "bar",
+            "title": "来源声明的电流读数",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "source-values",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "position-0",
+                "x": "1",
+                "values": {
+                  "source-values": null
+                }
+              },
+              {
+                "id": "position-1",
+                "x": "2",
+                "values": {
+                  "source-values": null
+                }
+              },
+              {
+                "id": "position-2",
+                "x": "3",
+                "values": {
+                  "source-values": null
+                }
+              }
+            ]
+          }
+        },
+        "sourceDelivery": {
+          "version": 1,
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "status": "bound",
+          "kind": "observations-zh",
+          "explanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+          "sourceRef": {
+            "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+            "hostContext": {
+              "sessionId": "session-b3905f95-d328-4255-b19f-227e902211d3",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageId": "2c1bb642-3b01-42e6-a3c3-e4c299f42e71",
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 4,
+              "requestId": "8cb945ab-c2fc-4576-8390-2238a875b369"
+            }
+          },
+          "viewIdentity": {
+            "displayId": "source-reference-df5be18afea123bf",
+            "revision": 1,
+            "component": "DataChart"
+          }
+        }
+      },
+      "referenceToCheckpointChanges": [
+        {
+          "path": "$.summary",
+          "before": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "after": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。"
+        },
+        {
+          "path": "$.payload.title",
+          "before": "来源声明的电流",
+          "after": "来源声明的电流读数"
+        },
+        {
+          "path": "$.presentation",
+          "before": {
+            "absent": true
+          },
+          "after": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        }
+      ],
+      "localInteractions": [],
+      "journalAndSourceUnchanged": false,
+      "refreshRestoredOriginalState": false,
+      "images": [],
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    }
+  ],
+  "pageErrors": [],
+  "newModelStarts": 0,
+  "newModelAnswers": 0,
+  "sourceReferenceAuthorship": "program, using the installed current core finite parsers",
+  "originalModelNaturalPassCountUnchanged": true,
+  "graphMainCodexClientVerified": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false
+}

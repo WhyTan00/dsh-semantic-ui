@@ -1,18 +1,630 @@
 {
   "schema": "all-missing-chart-hypothesis-v1",
-  "status": "development verification; final archive and release acceptance pending",
+  "status": "accepted for this bounded graphical/core fix and ordinary installed adoption; not general semantic perfection",
   "version": "0.1.0-preview.27",
+  "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+  "sourceTag": "v0.1.0-preview.27",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+    "sha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+    "bytes": 2715895,
+    "files": 396,
+    "runtimeEntrypoints": {
+      "dist/host.js": "64ec99ad13474ce2bc59067d98ccbb7cb434f4cfc93d6ee898064be5c707822a",
+      "dist/client.js": "2093410287cacaf5833f65c4ddd12ee0b7ed66c365b97a14b027367d1a486c49",
+      "dist/core.js": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6",
+      "dist/mcp.js": "ac47f317d9787ed1c2a26eb61333e592cf73f45eef2dae1bf95d7afbd294d190",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    }
+  },
+  "release": {
+    "id": 429827347,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27",
+    "prerelease": true,
+    "draft": false
+  },
+  "ci": {
+    "id": 41186746024,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41186746024",
+    "headSha": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+    "conclusion": "success",
+    "mode": "numeric_baseline_only=true, all_missing_only=true; older full matrices skipped"
+  },
+  "problem": "Graphical/core zero-fill illustration reused original observed subtotal, so a nonempty all-null hypothesis incorrectly stayed unknown. The prior Python-only independent-copy fix did not cover DataChart and locally selected all-missing ranges.",
+  "fix": "The existing numericStats computes an explicit null-to-zero hypothetical copy. Original statistics, source values, missing mask, export and complete-data knowledge are not replaced.",
   "firstRegression": {
     "failed": 2,
     "passed": 1,
-    "retained": true
+    "originalStdoutSha256": "cc4a73231a5371a0176c736c0a060e85183a66a90a03b9bb88bf9cea5d511c0d",
+    "originalStderrSha256": "59dda3f8226c6a40be1b9efee695869ae95313b4d1a37b26c66f21147797df19",
+    "publicCopySanitization": "The absolute repository path was replaced with [repository] and trailing blank lines were trimmed. Original private stdout/stderr hashes remain recorded."
   },
-  "developmentFocusedTestsPassed": 39,
-  "newRealModelTurns": 0,
-  "originalNaturalResultsUnchanged": true,
+  "developmentQualification": "Development Native record preceded adding the ordinary mean question and direct tool-receipt assertion in the test harness. Final archived macOS/Linux runs used the delivered harness.",
+  "typecheckQualification": "Initial new test lacked a Chart union narrowing; corrected before final typecheck/build/freeze. Original failure logs retained privately.",
+  "offline": {
+    "focusedTests": 39,
+    "focusedFiles": 8,
+    "typecheck": "passed",
+    "releaseIsolation": "passed",
+    "savedAndSourceCompanionContractsInCi": 10
+  },
+  "ordinaryAdoption": {
+    "nativeAndPtc": true,
+    "macosAndLinux": true,
+    "casesPerMode": 2,
+    "finalInstalledCases": 8,
+    "allPackagedFilesVerified": 396,
+    "widths": [
+      640,
+      360
+    ],
+    "images": 16,
+    "sourceInputNormalQuestion": true,
+    "defaultCompanionServeReady": true,
+    "serve": "docs/evidence/zero-fill-chart/serve-ready.json",
+    "sourceFile": "fixtures/all-missing-chart.json",
+    "sourceBindings": [
+      {
+        "platform": "macos",
+        "mode": "native",
+        "case": "all-missing",
+        "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+        "messageId": "e849e6ed-fa74-4534-acd6-5880e40d8991",
+        "messageSeq": 10,
+        "checkpointSeq": 29,
+        "originalValues": [
+          null,
+          null,
+          null
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=3；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=3；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "1",
+            null
+          ],
+          [
+            "2",
+            null
+          ],
+          [
+            "3",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "macos",
+        "mode": "native",
+        "case": "missing-slice",
+        "sourceSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+        "messageId": "9750459f-8eb5-4c85-9b12-0e076143cec2",
+        "messageSeq": 10,
+        "checkpointSeq": 24,
+        "originalValues": [
+          4,
+          null,
+          -4
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=1；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=1；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "2",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "macos",
+        "mode": "ptc",
+        "case": "all-missing",
+        "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+        "messageId": "63f855a0-6722-43b4-9ca4-ea574532a88a",
+        "messageSeq": 10,
+        "checkpointSeq": 34,
+        "originalValues": [
+          null,
+          null,
+          null
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=3；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=3；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "1",
+            null
+          ],
+          [
+            "2",
+            null
+          ],
+          [
+            "3",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "macos",
+        "mode": "ptc",
+        "case": "missing-slice",
+        "sourceSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+        "messageId": "b1a9bdf1-4303-4484-905c-e4691c1af624",
+        "messageSeq": 10,
+        "checkpointSeq": 27,
+        "originalValues": [
+          4,
+          null,
+          -4
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=1；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=1；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "2",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "linux",
+        "mode": "native",
+        "case": "all-missing",
+        "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+        "messageId": "776c3f3b-e6c9-4ae7-92f6-6b2ed2b0fdb0",
+        "messageSeq": 10,
+        "checkpointSeq": 28,
+        "originalValues": [
+          null,
+          null,
+          null
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=3；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=3；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "1",
+            null
+          ],
+          [
+            "2",
+            null
+          ],
+          [
+            "3",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "linux",
+        "mode": "native",
+        "case": "missing-slice",
+        "sourceSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+        "messageId": "79d945d0-06dd-4317-a1bc-f6f27ebd94c5",
+        "messageSeq": 10,
+        "checkpointSeq": 23,
+        "originalValues": [
+          4,
+          null,
+          -4
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=1；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=1；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "2",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "linux",
+        "mode": "ptc",
+        "case": "all-missing",
+        "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+        "messageId": "df7dfca5-acc5-49a5-b850-a8857f88a212",
+        "messageSeq": 10,
+        "checkpointSeq": 33,
+        "originalValues": [
+          null,
+          null,
+          null
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=3；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=3；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "1",
+            null
+          ],
+          [
+            "2",
+            null
+          ],
+          [
+            "3",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      },
+      {
+        "platform": "linux",
+        "mode": "ptc",
+        "case": "missing-slice",
+        "sourceSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+        "messageId": "62ab6ffb-301a-42a7-a32c-8d4e32b4081a",
+        "messageSeq": 10,
+        "checkpointSeq": 26,
+        "originalValues": [
+          4,
+          null,
+          -4
+        ],
+        "localHypothesisComparison": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=1；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=1；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+        "exportRows": [
+          [
+            "2",
+            null
+          ]
+        ],
+        "sourceAndJournalUnchanged": true,
+        "refreshRestored": true
+      }
+    ]
+  },
+  "fixtureTurns": {
+    "developmentNative": 2,
+    "macosInstalledNative": 2,
+    "macosInstalledPtc": 2,
+    "defaultServe": 1,
+    "linuxInstalledNative": 2,
+    "linuxInstalledPtc": 2,
+    "total": 11
+  },
+  "httpPosts": {
+    "macosObserved": {
+      "developmentNative": 7,
+      "finalInstalled": 14,
+      "defaultServe": 4,
+      "total": 25
+    },
+    "linuxObserved": null,
+    "allPlatformsObservedTotal": null,
+    "linuxPlannedFromDeterministicSequence": 14
+  },
+  "requestCountQualification": "Linux artifacts did not retain provider request files or a request counter. Its expected 14 fixture POSTs are an inference from the same deterministic sequence, not measured acceptance. No aggregate observed HTTP total is claimed; real model starts remain zero.",
+  "newRealModelStarts": 0,
+  "newRealModelAnswers": 0,
+  "budgetQualification": "Prior segment model budgets and original natural results are unchanged. Zero models were chosen for this deterministic calculation and actual UI fix; this is not a permanent model prohibition or a missing-auth claim.",
+  "originalNaturalResults": {
+    "passed": 0,
+    "failed": 6,
+    "modelRequests": 18,
+    "unchanged": true
+  },
+  "oldDPartialAndCompanionSuccessUnchanged": true,
+  "protocolChanged": false,
   "sourceFactsVerified": false,
   "identityVerified": false,
   "freeProseVerified": false,
-  "developmentFocusedTestFiles": 8,
-  "typecheck": "passed"
+  "newPhoneMainCodexUiOrGeneralGenuiClaims": false,
+  "currentCodeBindings": [
+    {
+      "path": "src/facts.ts",
+      "sha256": "224b38182e71a271480c2cba5d265d349e86488fb530ca19c04ffc061e161f3e"
+    },
+    {
+      "path": "src/components/DataChart.tsx",
+      "sha256": "a521c46deac285f91cc4df0a576e545298a4d7b713c129d960c8d8f6656b3e01"
+    },
+    {
+      "path": "src/locales/zh-CN.ts",
+      "sha256": "80871d1e3433476daa18d364ba0dc18d18fcdff06d5a90cde7712dd7a9d350bb"
+    },
+    {
+      "path": "tests/zero-fill-chart.test.ts",
+      "sha256": "96ed5c505125d91c9e49611ead62eaffbf5ae09a1bfe14203cba4a88e67bff27"
+    },
+    {
+      "path": "tests/zero-fill-chart-browser.mjs",
+      "sha256": "f30db8d786229fd850df3f2591bef3de8ed0f1c4516efc7be63c58c3efe211f0"
+    },
+    {
+      "path": "tests/host-lifecycle.mjs",
+      "sha256": "0d2f4136e740da6820665ef81081da24025c1c6a994239d36a12275824f8ea0a"
+    },
+    {
+      "path": "fixtures/all-missing-chart.json",
+      "sha256": "6d576dd90b3754f987b3345c330930e8642bd9334c27ac4332722c0bd0e4d17e"
+    }
+  ],
+  "acceptanceArtifacts": [
+    {
+      "path": "docs/evidence/zero-fill-chart/anonymous-release.json",
+      "bytes": 2381,
+      "sha256": "da844da916daff9d529cd9db3881e774230d0b02f3c5e13b93978bff423597a2"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/before-core.json",
+      "bytes": 3023,
+      "sha256": "3da3ebca40d567de6354670a5d7e12336ff1ebe61eaa1e86ae230f08bd5e4243"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/ci.json",
+      "bytes": 6917,
+      "sha256": "36a5fa1926270eb0a3de2493b0a4e6e385aca7379881ab0814664b8ca1d84b58"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/contract-before-code.json",
+      "bytes": 733,
+      "sha256": "c661540758b21fa18c4cc26b0cc45d103b094a19070884fe77857f7be1374e13"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/development-cleanup.json",
+      "bytes": 279,
+      "sha256": "30427232a7d8f5b20cc90180ba581e4b228d2f2ae5b0890504d6f3e55c2c9c65"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/development-native.json",
+      "bytes": 49660,
+      "sha256": "6471b0b791250de471719b332ef164b022ab548d9d3bcd2d73b9201090080835"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/first-regression-errors.txt",
+      "bytes": 1580,
+      "sha256": "36f042574f354309e905aa155f39bd6960907f98f225b96f9437f9a60182c03c"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/first-regression.txt",
+      "bytes": 484,
+      "sha256": "e4e42c340c10b5060e6a0ff89da968020bdf3f733c45a8ea28e41dcd4c34fe6d"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/focused-errors.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/focused.txt",
+      "bytes": 371,
+      "sha256": "7d5c83a221ddeefed55454d741209143300e6646319c4366240c23b74aeb9528"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/frozen-source-and-assets.json",
+      "bytes": 1306,
+      "sha256": "28d48ab02c2d673eee46edb77be1f673a85f99be015c15e6e4f3ce996173e364"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-asset-comparison.json",
+      "bytes": 1136,
+      "sha256": "c2272e822bb92a5870c0219efab6b0e56651f84eecc3035a8414576f508b821e"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-cleanup.json",
+      "bytes": 376,
+      "sha256": "eebee07e7ab19dbfc47b2a5f02e1444b5959171f1982cefc2d317266ad1fce3b"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-install.json",
+      "bytes": 607,
+      "sha256": "76ee530487688e6106214ac842ae0a51fe10bd559c436ff80af46b7f2bf131cb"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-installed-byte-check.json",
+      "bytes": 68,
+      "sha256": "eb9e9707407aaebbcaa1ae097ff170554cb76679c61d8ebcc501f751735d493e"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-native-numeric-baseline-zero-fill-all-missing-360.png",
+      "bytes": 278069,
+      "sha256": "a757e7b6236e5e8a37408e8d35466e1647af54fe57adb0a844960913d04a46dc"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-native-numeric-baseline-zero-fill-all-missing-640.png",
+      "bytes": 287388,
+      "sha256": "3301591e00d67fea0dde8b7c5f4c739841cea978eabb5802bd771d6d79934180"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-native-numeric-baseline-zero-fill-missing-slice-360.png",
+      "bytes": 269022,
+      "sha256": "3aa872d6555c7b56881fecfa4d9176f837fdd9b3aa09394ba7c37799ef9a90b0"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-native-numeric-baseline-zero-fill-missing-slice-640.png",
+      "bytes": 278078,
+      "sha256": "3ae2cfba129edac0d17231b0aa301dc5d425b39ba93e5544360b3ed2b452a8ac"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-native.json",
+      "bytes": 49855,
+      "sha256": "9086023f2860893db696de9504d60150e60df4cf63db0e385db9be8becbcc8e2"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-ptc-numeric-baseline-zero-fill-all-missing-360.png",
+      "bytes": 278069,
+      "sha256": "a757e7b6236e5e8a37408e8d35466e1647af54fe57adb0a844960913d04a46dc"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-ptc-numeric-baseline-zero-fill-all-missing-640.png",
+      "bytes": 287388,
+      "sha256": "3301591e00d67fea0dde8b7c5f4c739841cea978eabb5802bd771d6d79934180"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-ptc-numeric-baseline-zero-fill-missing-slice-360.png",
+      "bytes": 269022,
+      "sha256": "3aa872d6555c7b56881fecfa4d9176f837fdd9b3aa09394ba7c37799ef9a90b0"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-ptc-numeric-baseline-zero-fill-missing-slice-640.png",
+      "bytes": 278078,
+      "sha256": "3ae2cfba129edac0d17231b0aa301dc5d425b39ba93e5544360b3ed2b452a8ac"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/linux-ptc.json",
+      "bytes": 53869,
+      "sha256": "d2f9c42d1af29b37942ad919a98c1a463edcca732107eda8e3ca61d6ddcbe2ba"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-cleanup.json",
+      "bytes": 379,
+      "sha256": "172eb4d497be77787291bda0cb0e1164bce90b15e3f70789d2d16cfc5dc8e2e5"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-install.json",
+      "bytes": 607,
+      "sha256": "76ee530487688e6106214ac842ae0a51fe10bd559c436ff80af46b7f2bf131cb"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-installed-byte-check.json",
+      "bytes": 68,
+      "sha256": "eb9e9707407aaebbcaa1ae097ff170554cb76679c61d8ebcc501f751735d493e"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-native-numeric-baseline-zero-fill-all-missing-360.png",
+      "bytes": 272196,
+      "sha256": "77b5cc56276a0f403746b300ad0ded1b6e03f1af02804aa13462c1535428806f"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-native-numeric-baseline-zero-fill-all-missing-640.png",
+      "bytes": 281167,
+      "sha256": "f74b504e7e271e75479d1fa94364b012eb612da6e88fdfd31346241e5cbe7f4a"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-native-numeric-baseline-zero-fill-missing-slice-360.png",
+      "bytes": 259676,
+      "sha256": "de7d1c472d9e9aa859d047c3ca8cf88bc0cc3216e41c9f923cc535df06bc5e3d"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-native-numeric-baseline-zero-fill-missing-slice-640.png",
+      "bytes": 269673,
+      "sha256": "adaa513150a4c3fec05ef9cc9bc8ede4806cea219a79b2e85d0356c5208517bf"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-native.json",
+      "bytes": 49855,
+      "sha256": "289119f6f1fbe39072b9d0c791209f3065c197d9b84b0acc9667ceb831bcab8d"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-ptc-numeric-baseline-zero-fill-all-missing-360.png",
+      "bytes": 272196,
+      "sha256": "77b5cc56276a0f403746b300ad0ded1b6e03f1af02804aa13462c1535428806f"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-ptc-numeric-baseline-zero-fill-all-missing-640.png",
+      "bytes": 281167,
+      "sha256": "f74b504e7e271e75479d1fa94364b012eb612da6e88fdfd31346241e5cbe7f4a"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-ptc-numeric-baseline-zero-fill-missing-slice-360.png",
+      "bytes": 259676,
+      "sha256": "de7d1c472d9e9aa859d047c3ca8cf88bc0cc3216e41c9f923cc535df06bc5e3d"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-ptc-numeric-baseline-zero-fill-missing-slice-640.png",
+      "bytes": 269673,
+      "sha256": "adaa513150a4c3fec05ef9cc9bc8ede4806cea219a79b2e85d0356c5208517bf"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/macos-ptc.json",
+      "bytes": 53872,
+      "sha256": "c2cb22b0eaff37958d17127cdb216075507ba7c2670628e94805e1c8ff97c08a"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/resource-observation.json",
+      "bytes": 161,
+      "sha256": "c0cd0fe3f6d5292e4e1ad6ed4c7e7daed41dbbf14087fec7e94587c692c94244"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/serve-cleanup.json",
+      "bytes": 471,
+      "sha256": "5cf89bc874734d5ec898d74205aaaa10ea6e3747591ecd6314e8ad40f1d623d5"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/serve-install.json",
+      "bytes": 769,
+      "sha256": "3d43c951e45f5f37c7cf752058c9bb34736a3aaf38426c79e0c601580da66ae7"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/serve-native.json",
+      "bytes": 29871,
+      "sha256": "db162eed3b41689be7b01bee809352cded6328b1d2f16a168650ceaeeeb8bccc"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/serve-ready.json",
+      "bytes": 354,
+      "sha256": "17a472fd8fb219d6af7be051a599651fd2fa672331759258c0313380c2df9603"
+    },
+    {
+      "path": "docs/evidence/zero-fill-chart/typecheck-final.txt",
+      "bytes": 82,
+      "sha256": "2cb9ad6c0e3aaa51fc7a9ae3d9d7a2747c8b2deb69c53b71b16f411deac7c88b"
+    }
+  ],
+  "frozenPackageEvidenceQualification": "The package/evidence archives contain source-freeze-stage documentation. Post-freeze acceptance is in the repository and does not repack the immutable archives.",
+  "recordedAt": "2026-10-31T09:19:11.146887+00:00",
+  "anonymousReleaseAcceptance": {
+    "at": "2026-10-31T09:18:15.271513+00:00",
+    "releaseId": 429827347,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27",
+    "tag": "v0.1.0-preview.27",
+    "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+    "prerelease": true,
+    "draft": false,
+    "assets": [
+      {
+        "name": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+        "id": 694893728,
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+        "httpStatus": 200,
+        "sha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+        "bytes": 2715895,
+        "githubDigest": "sha256:03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+        "matchesLocalAndLinux": true,
+        "authorizationHeaderUsed": false
+      },
+      {
+        "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+        "id": 694893727,
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+        "httpStatus": 200,
+        "sha256": "cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e",
+        "bytes": 38784415,
+        "githubDigest": "sha256:cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e",
+        "matchesLocalAndLinux": true,
+        "authorizationHeaderUsed": false
+      },
+      {
+        "name": "package-manifest.json",
+        "id": 694893722,
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/package-manifest.json",
+        "httpStatus": 200,
+        "sha256": "6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1",
+        "bytes": 35468,
+        "githubDigest": "sha256:6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1",
+        "matchesLocalAndLinux": true,
+        "authorizationHeaderUsed": false
+      },
+      {
+        "name": "SHA256SUMS",
+        "id": 694893730,
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/SHA256SUMS",
+        "httpStatus": 200,
+        "sha256": "70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199",
+        "bytes": 229,
+        "githubDigest": "sha256:70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199",
+        "matchesLocalAndLinux": true,
+        "authorizationHeaderUsed": false
+      }
+    ]
+  }
 }

@@ -1,0 +1,24 @@
+{
+  "processes": [
+    {
+      "kind": "fixture",
+      "pid": 26867,
+      "exitCode": null,
+      "signalCode": "SIGTERM"
+    },
+    {
+      "kind": "native",
+      "pid": 26868,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "ptc",
+      "pid": 27110,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "port": 61116,
+  "fixturePort": 61115
+}

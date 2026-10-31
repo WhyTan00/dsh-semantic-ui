@@ -1,0 +1,54 @@
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  tests/zero-fill-chart.test.ts > computes a nonempty all-zero hypothesis while leaving all original readings and real statistics unknown
+AssertionError: expected { id: 'series-all-missing', …(11) } to match object { valid: +0, missing: 3, …(3) }
+(8 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -9,9 +9,9 @@
+      "count": 3,
+      "differenceFromObservedMean": null,
+      "differenceFromObservedSum": null,
+      "directionRelativeToObservedMean": "unknown",
+      "directionRelativeToObservedSum": "unknown",
+-     "mean": 0,
+-     "sum": 0,
++     "mean": null,
++     "sum": null,
+    },
+  }
+
+ ❯ tests/zero-fill-chart.test.ts:10:22
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  tests/zero-fill-chart.test.ts > uses the selected table population for an all-missing slice, retains null export, and leaves an empty range undefined
+AssertionError: expected { scope: 'filtered-source-rows', …(2) } to match object { scope: 'filtered-source-rows', …(2) }
+(14 matching properties omitted from actual)
+
+- Expected
++ Received
+
+@@ -8,11 +8,11 @@
+        "sum": null,
+        "valid": 0,
+        "zeroFillIllustration": {
+          "count": 1,
+          "directionRelativeToObservedMean": "unknown",
+-         "mean": 0,
+-         "sum": 0,
++         "mean": null,
++         "sum": null,
+        },
+      },
+    ],
+  }
+
+ ❯ tests/zero-fill-chart.test.ts:18:35
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯

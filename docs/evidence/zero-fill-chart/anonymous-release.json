@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-31T09:18:15.271513+00:00",
+  "releaseId": 429827347,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27",
+  "tag": "v0.1.0-preview.27",
+  "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+  "prerelease": true,
+  "draft": false,
+  "assets": [
+    {
+      "name": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+      "id": 694893728,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+      "httpStatus": 200,
+      "sha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+      "bytes": 2715895,
+      "githubDigest": "sha256:03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+      "matchesLocalAndLinux": true,
+      "authorizationHeaderUsed": false
+    },
+    {
+      "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+      "id": 694893727,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+      "httpStatus": 200,
+      "sha256": "cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e",
+      "bytes": 38784415,
+      "githubDigest": "sha256:cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e",
+      "matchesLocalAndLinux": true,
+      "authorizationHeaderUsed": false
+    },
+    {
+      "name": "package-manifest.json",
+      "id": 694893722,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/package-manifest.json",
+      "httpStatus": 200,
+      "sha256": "6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1",
+      "bytes": 35468,
+      "githubDigest": "sha256:6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1",
+      "matchesLocalAndLinux": true,
+      "authorizationHeaderUsed": false
+    },
+    {
+      "name": "SHA256SUMS",
+      "id": 694893730,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.27/SHA256SUMS",
+      "httpStatus": 200,
+      "sha256": "70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199",
+      "bytes": 229,
+      "githubDigest": "sha256:70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199",
+      "matchesLocalAndLinux": true,
+      "authorizationHeaderUsed": false
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+
+ RUN  v5.0.5 [repository]
+
+ ❯ tests/zero-fill-chart.test.ts (3 tests | 2 failed) 8ms
+   × computes a nonempty all-zero hypothesis while leaving all original readings and real statistics unknown 6ms
+   × uses the selected table population for an all-missing slice, retains null export, and leaves an empty range undefined 1ms
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 1 passed (3)
+   Start at  16:49:55
+   Duration  195ms (import 59%, transform 30%, tests 9%, worker 3%)

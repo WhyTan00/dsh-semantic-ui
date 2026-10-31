@@ -2,6 +2,8 @@
 
 [简体中文](README.md) · English
 
+**[Preview.27](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)** fixes zero-fill hypotheses in nonempty all-missing chart ranges, including locally filtered slices. The explicit hypothetical mean and sum are 0; original observations, real complete values and differences from unavailable observations stay unknown. Empty ranges and overflow remain unknown, and downloads retain null. 39 targeted checks and final 396-file macOS/Linux Native/PTC installation passed. See the [chart behavior](docs/ZERO-FILL-CHART.zh-CN.md) and [layered receipt](docs/evidence/zero-fill-chart.json). Chinese defaults and language persistence continue from preview.26; no new model results or old natural-case upgrades are claimed.
+
 **[Preview.26](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)** defaults to Simplified Chinese with a persistent Chinese / English selector in every view. Same-page views switch together without resetting local selections or requesting a model.245 unit checks and normal388-file macOS/Linux Native/PTC installation passed. See [language behavior](docs/LANGUAGE.zh-CN.md) and the [acceptance receipt](docs/evidence/language.json). Source data and model prose retain their original language.
 
 **[Preview.25](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.25)** adds [explicit mean and sum baselines](docs/NUMERIC-BASELINE.zh-CN.md), accepts a complete reading record separately from the ordinary question, and keeps complete-data totals unknown when readings are missing. Final archive installation, model observations and release evidence are tracked separately in the [receipt](docs/evidence/numeric-baseline.json).

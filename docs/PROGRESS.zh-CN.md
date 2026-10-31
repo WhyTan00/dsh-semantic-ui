@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.27已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)，源码/tag13054fcb6e98488a1f9029277daa7c2385f20b3d，runtime03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1。39项/8文件、类型与发行隔离检查通过，396文件最终归档在macOS/Linux正常安装，Native/PTC每组2个全缺失/局部筛选场景、null下载、空范围/全量切换、刷新及16张640/360截图通过，pageerror0。CI41186746024成功、四Linux输出及四匿名HTTPS200资产同本机字节；公开下载接受见[本版回执](evidence/zero-fill-chart.json)。普通自带来源入口默认serve实际就绪/Ctrl+C关闭，合计11个夹具回合、0真实模型，不改原六题、旧D或26。以下开发段为冻结前记录。
+
 preview.27开发修复[图表全缺失范围的独立补零假设](ZERO-FILL-CHART.zh-CN.md)：图形和工具回执共用既有统计器计算假设副本，非空全null假设均值/合计0，原观测与完整真实值仍未知。空范围/溢出不回退0，导出/null/来源不改；新回归首次2失败保留，开发33项通过。最终新归档、正常Native/PTC/Linux和发行接受另记[独立回执](evidence/zero-fill-chart.json)，0新增真实模型，不改原自然判定。
 
 原六题现已补[可运行来源参考入口](ORIGINAL-CASE-REFERENCE.zh-CN.md)：五类完整来源由既有26核心构造并核对，正常Native持久呈现；T2不强行生成组件。四个原模型载荷实际拒绝、五次局部交互不改来源/历史、刷新恢复，10项离线合同通过。默认六题与自带文件serve共7个夹具回合/29次本机请求、0真实模型；复用保存会话另补10张稳定截图，首轮过早截图与两次只读取证失败保留。当前六题没有发现剩余核心误比较，本次交付普通采用入口、无运行修改/新包/发行；原0通过/6失败/18请求和自由正文未核不变，见[独立回执](evidence/original-case-reference.json)。

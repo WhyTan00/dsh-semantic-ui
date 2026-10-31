@@ -1,0 +1,27 @@
+{
+  "processes": [
+    {
+      "kind": "installer",
+      "pid": 27760,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "native",
+      "pid": 28381,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "browser-seed",
+      "pid": 28409,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "port": 62990,
+  "fixturePort": 62989,
+  "localTransportRequests": 4,
+  "newRealModelStarts": 0,
+  "replayServerClosed": true
+}

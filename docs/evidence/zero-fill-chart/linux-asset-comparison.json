@@ -1,0 +1,44 @@
+{
+  "ciRun": 41186746024,
+  "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+  "status": "success",
+  "assets": [
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+      "bytes": 2715895,
+      "sha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+      "linuxEqualsMac": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.27.tgz",
+      "bytes": 38784415,
+      "sha256": "cd39705ebc838a642ea0c8c02b9ab9c07c5136fc0cb7a0e4c9f2fecfe6813d3e",
+      "linuxEqualsMac": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 35468,
+      "sha256": "6a13ef4333a561e9cbf0e3df93a88d3980b3d7a97580f4c8d31f489492af0fa1",
+      "linuxEqualsMac": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "70c871795c3f111a77925babc1b13c3636510bcc144166cfc5f2b60741193199",
+      "linuxEqualsMac": true
+    }
+  ],
+  "modes": [
+    {
+      "mode": "native",
+      "cases": 2,
+      "pageErrors": []
+    },
+    {
+      "mode": "ptc",
+      "cases": 2,
+      "pageErrors": []
+    }
+  ],
+  "allFilesVerified": 396
+}

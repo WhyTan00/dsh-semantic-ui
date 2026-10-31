@@ -15,9 +15,15 @@ preview.27 修复图表自身的一个计算缺口：**非空范围全为缺失�
 
 本次修复由新的数学合同先复现两项失败，再修改核心和三处旧全缺失预期。原始[六题自然失败](natural-question-results.json)、旧D首次partial及[伴随命令修复](evidence/zero-fill-all-missing.json)均保持各自原判定；这次针对的是尚未覆盖的图形路径。
 
-开发时39项定向检查（8文件）及类型检查已通过；最终归档安装、Native/PTC、Linux定向CI、稳定截图与发行分别在[本版回执](evidence/zero-fill-chart.json)记录。构建和确定性夹具不代表新自然模型通过。本次不增加真实模型调用，不认证原始作者、世界事实或任意模型正文；此前各模型预算与0通过/6失败/18请求不变。
+39项定向检查（8文件）、类型检查与发行隔离检查通过。最终396文件归档在macOS/Linux正常隔离安装，Native/PTC每组两个场景通过，页错0；16张640/360截图保留。四份发行文件经本机与Linux逐字比较一致，[CI41186746024](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41186746024)成功；四份资产匿名HTTPS200下载的SHA-256均与本机/Linux一致，接受另列于[本版回执](evidence/zero-fill-chart.json)。构建和确定性夹具不代表新自然模型通过。本次不增加真实模型调用，不认证原始作者、世界事实或任意模型正文；此前各模型预算与0通过/6失败/18请求不变。
 
-下载27运行包并安装后，可通过正常来源参考入口直接查看全缺失例子：
+开发Native两个夹具回合、最终macOS/Linux各4个夹具回合、自带文件默认serve一个，共11个夹具回合；真实模型启动0。macOS三次实例共实测25次本机POST，Linux没有保留请求计数，不把按计划推算的14次当实测。默认serve已正常就绪并经Ctrl+C关闭，本次已知进程/端口关闭。
+
+![全缺失原始数据与补零假设分别显示](evidence/zero-fill-chart/macos-native-numeric-baseline-zero-fill-all-missing-360.png)
+
+![局部筛选后只剩缺失项](evidence/zero-fill-chart/macos-ptc-numeric-baseline-zero-fill-missing-slice-640.png)
+
+下载27运行包后，在已安装开发依赖的仓库根目录，可通过正常来源参考入口直接查看全缺失例子：
 
 ```sh
 node examples/dsh-source-reference.mjs \

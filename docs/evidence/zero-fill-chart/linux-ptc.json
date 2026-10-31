@@ -1,0 +1,1211 @@
+{
+  "mode": "ptc",
+  "results": [
+    {
+      "case": "all-missing",
+      "source": "图形探针3次电流读数是缺失、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？",
+      "sourceSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 10,
+        "time": 1793437206446,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "图形探针3次电流读数是缺失、缺失、缺失 毫安。请解释这批数据，能计算平均值吗？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "1550b649-eeeb-4d36-a4ef-93cf74da822a",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "df7dfca5-acc5-49a5-b850-a8857f88a212"
+        },
+        "surfaceOp": "append"
+      },
+      "checkpointEvent": {
+        "type": "tool/ptc-dispatch",
+        "seq": 33,
+        "time": 1793437211990,
+        "data": {
+          "rootCallId": "call-10",
+          "parentCallId": "call-10",
+          "subCallId": "call-10:ptc:1",
+          "name": "dsh_semantic_ui",
+          "arguments": {
+            "action": "render",
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+              "revision": 2,
+              "component": "DataChart",
+              "summary": "Explicit positional source projection; free prose unverified.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Source readings",
+                "unit": "毫安",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "series-numeric-baseline-zero-fill-ptc-all-missing",
+                    "label": "电流"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-all-missing-0",
+                    "x": "1",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                    }
+                  },
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-all-missing-1",
+                    "x": "2",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                    }
+                  },
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-all-missing-2",
+                    "x": "3",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "series-numeric-baseline-zero-fill-ptc-all-missing",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-0"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-1"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-2"
+                }
+              ]
+            }
+          },
+          "isError": false,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"status\":\"delivered\",\"turn\":1,\"displayId\":\"readings-numeric-baseline-zero-fill-ptc-all-missing\",\"revision\":2,\"summary\":\"来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。\",\"presentation\":{\"version\":1,\"theme\":{\"mode\":\"light\",\"palette\":\"ocean\",\"font\":\"system\",\"density\":\"comfortable\",\"textSize\":\"standard\"},\"layout\":{\"direction\":\"auto\"}},\"protocolVersion\":\"1.4\",\"component\":\"DataChart\",\"summarySource\":\"source-derived bounded projection\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"dataFacts\":{\"scope\":\"original-full-data\",\"chartType\":\"bar\",\"unit\":\"毫安\",\"order\":\"input\",\"rows\":3,\"firstRow\":{\"id\":\"row-numeric-baseline-zero-fill-ptc-all-missing-0\",\"x\":\"1\",\"xTruncated\":false},\"lastRow\":{\"id\":\"row-numeric-baseline-zero-fill-ptc-all-missing-2\",\"x\":\"3\",\"xTruncated\":false},\"series\":[{\"id\":\"series-numeric-baseline-zero-fill-ptc-all-missing\",\"valid\":0,\"missing\":3,\"sum\":null,\"mean\":null,\"zeroFillIllustration\":{\"assumption\":\"Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.\",\"count\":3,\"sum\":0,\"differenceFromObservedSum\":null,\"directionRelativeToObservedSum\":\"unknown\",\"completeDataSumKnown\":false,\"mean\":0,\"differenceFromObservedMean\":null,\"directionRelativeToObservedMean\":\"unknown\",\"completeDataMeanKnown\":false},\"minimum\":null,\"maximum\":null,\"firstValue\":null,\"lastValue\":null,\"netChange\":null,\"adjacentValidDecreases\":0}]},\"canonicalSummary\":\"Declared bar data in 毫安: series-numeric-baseline-zero-fill-ptc-all-missing: 0 valid, 3 missing, mean unknown.\",\"canonicalSummarySource\":\"computed from supplied observations; not independent source verification\",\"canonicalExplanation\":\"图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\\n完整3次读数的平均值：未知；完整范围分母为3。\\n完整3次读数的合计：未知。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\",\"sourceDeliveryStatus\":\"bound\",\"identityVerified\":false,\"deliveryId\":\"d258f235-0982-4a71-8fdb-82d792ea9a5e\"}"
+            }
+          ],
+          "meta": {
+            "dshSemanticUi": {
+              "turn": 1,
+              "view": {
+                "protocolVersion": "1.4",
+                "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+                "revision": 2,
+                "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+                "presentation": {
+                  "version": 1,
+                  "theme": {
+                    "mode": "light",
+                    "palette": "ocean",
+                    "font": "system",
+                    "density": "comfortable",
+                    "textSize": "standard"
+                  },
+                  "layout": {
+                    "direction": "auto"
+                  }
+                },
+                "component": "DataChart",
+                "payload": {
+                  "chartType": "bar",
+                  "title": "来源声明的电流读数",
+                  "unit": "毫安",
+                  "x": {
+                    "kind": "category",
+                    "order": "input"
+                  },
+                  "series": [
+                    {
+                      "id": "series-numeric-baseline-zero-fill-ptc-all-missing",
+                      "label": "电流"
+                    }
+                  ],
+                  "rows": [
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-all-missing-0",
+                      "x": "1",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                      }
+                    },
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-all-missing-1",
+                      "x": "2",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                      }
+                    },
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-all-missing-2",
+                      "x": "3",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                      }
+                    }
+                  ]
+                }
+              },
+              "sourceDelivery": {
+                "version": 1,
+                "identityVerified": false,
+                "sourceFactsVerified": false,
+                "status": "bound",
+                "kind": "observations-zh",
+                "explanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+                "sourceRef": {
+                  "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+                  "hostContext": {
+                    "sessionId": "session-66bba7ed-470a-4e78-a7ab-a73cf9266c08",
+                    "turn": 1,
+                    "turnStartSeq": 6,
+                    "messageId": "df7dfca5-acc5-49a5-b850-a8857f88a212",
+                    "messageSeq": 10,
+                    "producerSourceKind": "user",
+                    "inherited": false,
+                    "excludedSyntheticContexts": 3,
+                    "requestId": "1550b649-eeeb-4d36-a4ef-93cf74da822a"
+                  }
+                },
+                "viewIdentity": {
+                  "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+                  "revision": 2,
+                  "component": "DataChart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "checkpoint": {
+        "turn": 1,
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+          "revision": 2,
+          "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+          "presentation": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          },
+          "component": "DataChart",
+          "payload": {
+            "chartType": "bar",
+            "title": "来源声明的电流读数",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-numeric-baseline-zero-fill-ptc-all-missing",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-0",
+                "x": "1",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-1",
+                "x": "2",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-2",
+                "x": "3",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              }
+            ]
+          }
+        },
+        "sourceDelivery": {
+          "version": 1,
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "status": "bound",
+          "kind": "observations-zh",
+          "explanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+          "sourceRef": {
+            "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+            "hostContext": {
+              "sessionId": "session-66bba7ed-470a-4e78-a7ab-a73cf9266c08",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageId": "df7dfca5-acc5-49a5-b850-a8857f88a212",
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "requestId": "1550b649-eeeb-4d36-a4ef-93cf74da822a"
+            }
+          },
+          "viewIdentity": {
+            "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+            "revision": 2,
+            "component": "DataChart"
+          }
+        }
+      },
+      "inspected": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-66bba7ed-470a-4e78-a7ab-a73cf9266c08",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "df7dfca5-acc5-49a5-b850-a8857f88a212",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 3,
+            "requestId": "1550b649-eeeb-4d36-a4ef-93cf74da822a"
+          },
+          "textSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "excerptSha256": "df5be18afea123bf474d304210e1d3d5f699332b0db85199cb9c71c8d0791593",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 113,
+            "textUTF8Bytes": 113
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "图形探针",
+          "measurement": "电流",
+          "unit": "毫安",
+          "positions": [
+            {
+              "index": 0,
+              "value": null,
+              "span": {
+                "textByteStart": 31,
+                "textByteEnd": 37
+              }
+            },
+            {
+              "index": 1,
+              "value": null,
+              "span": {
+                "textByteStart": 40,
+                "textByteEnd": 46
+              }
+            },
+            {
+              "index": 2,
+              "value": null,
+              "span": {
+                "textByteStart": 49,
+                "textByteEnd": 55
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫安",
+          "positions": 3,
+          "values": [
+            null,
+            null,
+            null
+          ],
+          "missingMask": [
+            true,
+            true,
+            true
+          ],
+          "observed": {
+            "count": 0,
+            "missing": 3,
+            "sum": null,
+            "mean": null,
+            "denominator": 0,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 3,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 3,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "delivered": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+        "revision": 2,
+        "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "dataFacts": {
+          "scope": "original-full-data",
+          "chartType": "bar",
+          "unit": "毫安",
+          "order": "input",
+          "rows": 3,
+          "firstRow": {
+            "id": "row-numeric-baseline-zero-fill-ptc-all-missing-0",
+            "x": "1",
+            "xTruncated": false
+          },
+          "lastRow": {
+            "id": "row-numeric-baseline-zero-fill-ptc-all-missing-2",
+            "x": "3",
+            "xTruncated": false
+          },
+          "series": [
+            {
+              "id": "series-numeric-baseline-zero-fill-ptc-all-missing",
+              "valid": 0,
+              "missing": 3,
+              "sum": null,
+              "mean": null,
+              "zeroFillIllustration": {
+                "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                "count": 3,
+                "sum": 0,
+                "differenceFromObservedSum": null,
+                "directionRelativeToObservedSum": "unknown",
+                "completeDataSumKnown": false,
+                "mean": 0,
+                "differenceFromObservedMean": null,
+                "directionRelativeToObservedMean": "unknown",
+                "completeDataMeanKnown": false
+              },
+              "minimum": null,
+              "maximum": null,
+              "firstValue": null,
+              "lastValue": null,
+              "netChange": null,
+              "adjacentValidDecreases": 0
+            }
+          ]
+        },
+        "canonicalSummary": "Declared bar data in 毫安: series-numeric-baseline-zero-fill-ptc-all-missing: 0 valid, 3 missing, mean unknown.",
+        "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+        "canonicalExplanation": "图形探针的电流读数（毫安），按原文位置：1=缺失、2=缺失、3=缺失。\n共3个位置，0个实际观测、3个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：未知（无有效观测或计算超限）；分母为0个实际观测。\n已观测0项的小计：未知（无有效观测或计算超限）；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "d258f235-0982-4a71-8fdb-82d792ea9a5e"
+      },
+      "renderArguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-numeric-baseline-zero-fill-ptc-all-missing",
+          "revision": 2,
+          "component": "DataChart",
+          "summary": "Explicit positional source projection; free prose unverified.",
+          "payload": {
+            "chartType": "bar",
+            "title": "Source readings",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-numeric-baseline-zero-fill-ptc-all-missing",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-0",
+                "x": "1",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-1",
+                "x": "2",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-all-missing-2",
+                "x": "3",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-all-missing": null
+                }
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "seriesId": "series-numeric-baseline-zero-fill-ptc-all-missing",
+          "rows": [
+            {
+              "sourceIndex": 0,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-0"
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-1"
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-all-missing-2"
+            }
+          ]
+        }
+      },
+      "sourceValues": [
+        null,
+        null,
+        null
+      ],
+      "comparisonText": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=3；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=3；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+      "exported": {
+        "format": "dsh-semantic-ui-table",
+        "version": 1,
+        "title": "来源声明的电流读数",
+        "chartType": "bar",
+        "unit": "毫安",
+        "scope": "filtered-source-rows",
+        "selection": {
+          "from": 0,
+          "to": 2,
+          "seriesIds": [
+            "series-numeric-baseline-zero-fill-ptc-all-missing"
+          ]
+        },
+        "headers": [
+          "x (类别)",
+          "电流 (毫安)"
+        ],
+        "rows": [
+          [
+            "1",
+            null
+          ],
+          [
+            "2",
+            null
+          ],
+          [
+            "3",
+            null
+          ]
+        ]
+      },
+      "images": [
+        {
+          "file": "numeric-baseline-zero-fill-all-missing-640.png",
+          "width": 640,
+          "actualWidth": 640,
+          "noRootOverflow": true,
+          "graphGeometry": null,
+          "plotResized": false
+        },
+        {
+          "file": "numeric-baseline-zero-fill-all-missing-360.png",
+          "width": 360,
+          "actualWidth": 360,
+          "noRootOverflow": true,
+          "graphGeometry": null,
+          "plotResized": false
+        }
+      ],
+      "allMissingSourceImputationRefused": true,
+      "journalAndSourceUnchanged": true,
+      "emptyHypothesisUnknown": true,
+      "allScopeHypothesisZero": true,
+      "refreshRestored": true,
+      "noExtraRequestsOnLocalInteraction": true,
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    },
+    {
+      "case": "missing-slice",
+      "source": "图形探针3次电流读数是4、缺失、-4 毫安。请解释这批数据，能计算平均值吗？",
+      "sourceSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 10,
+        "time": 1793437214437,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "图形探针3次电流读数是4、缺失、-4 毫安。请解释这批数据，能计算平均值吗？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "b375c297-5cbd-42a0-944a-37db759fc171",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "62ab6ffb-301a-42a7-a32c-8d4e32b4081a"
+        },
+        "surfaceOp": "append"
+      },
+      "checkpointEvent": {
+        "type": "tool/ptc-dispatch",
+        "seq": 26,
+        "time": 1793437217921,
+        "data": {
+          "rootCallId": "call-13",
+          "parentCallId": "call-13",
+          "subCallId": "call-13:ptc:1",
+          "name": "dsh_semantic_ui",
+          "arguments": {
+            "action": "render",
+            "view": {
+              "protocolVersion": "1.4",
+              "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+              "revision": 1,
+              "component": "DataChart",
+              "summary": "Explicit positional source projection; free prose unverified.",
+              "payload": {
+                "chartType": "bar",
+                "title": "Source readings",
+                "unit": "毫安",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+                    "label": "电流"
+                  }
+                ],
+                "rows": [
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-0",
+                    "x": "1",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-missing-slice": 4
+                    }
+                  },
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-1",
+                    "x": "2",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-missing-slice": null
+                    }
+                  },
+                  {
+                    "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-2",
+                    "x": "3",
+                    "values": {
+                      "series-numeric-baseline-zero-fill-ptc-missing-slice": -4
+                    }
+                  }
+                ]
+              }
+            },
+            "mapping": {
+              "seriesId": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+              "rows": [
+                {
+                  "sourceIndex": 0,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-0"
+                },
+                {
+                  "sourceIndex": 1,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-1"
+                },
+                {
+                  "sourceIndex": 2,
+                  "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-2"
+                }
+              ]
+            }
+          },
+          "isError": false,
+          "content": [
+            {
+              "type": "text",
+              "text": "{\"status\":\"delivered\",\"turn\":1,\"displayId\":\"readings-numeric-baseline-zero-fill-ptc-missing-slice\",\"revision\":1,\"summary\":\"来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。\",\"presentation\":{\"version\":1,\"theme\":{\"mode\":\"light\",\"palette\":\"ocean\",\"font\":\"system\",\"density\":\"comfortable\",\"textSize\":\"standard\"},\"layout\":{\"direction\":\"auto\"}},\"protocolVersion\":\"1.4\",\"component\":\"DataChart\",\"summarySource\":\"source-derived bounded projection\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"dataFacts\":{\"scope\":\"original-full-data\",\"chartType\":\"bar\",\"unit\":\"毫安\",\"order\":\"input\",\"rows\":3,\"firstRow\":{\"id\":\"row-numeric-baseline-zero-fill-ptc-missing-slice-0\",\"x\":\"1\",\"xTruncated\":false},\"lastRow\":{\"id\":\"row-numeric-baseline-zero-fill-ptc-missing-slice-2\",\"x\":\"3\",\"xTruncated\":false},\"series\":[{\"id\":\"series-numeric-baseline-zero-fill-ptc-missing-slice\",\"valid\":2,\"missing\":1,\"sum\":0,\"mean\":0,\"zeroFillIllustration\":{\"assumption\":\"Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.\",\"count\":3,\"sum\":0,\"differenceFromObservedSum\":0,\"directionRelativeToObservedSum\":\"same\",\"completeDataSumKnown\":false,\"mean\":0,\"differenceFromObservedMean\":0,\"directionRelativeToObservedMean\":\"same\",\"completeDataMeanKnown\":false},\"minimum\":-4,\"maximum\":4,\"firstValue\":4,\"lastValue\":-4,\"netChange\":-8,\"adjacentValidDecreases\":0}]},\"canonicalSummary\":\"Declared bar data in 毫安: series-numeric-baseline-zero-fill-ptc-missing-slice: 2 valid, 1 missing, mean 0.\",\"canonicalSummarySource\":\"computed from supplied observations; not independent source verification\",\"canonicalExplanation\":\"图形探针的电流读数（毫安），按原文位置：1=4、2=缺失、3=-4。\\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\\n已观测项的算术平均值：0 毫安；分母为2个实际观测。\\n已观测2项的小计：0 毫安；仅覆盖实际观测。\\n完整3次读数的平均值：未知；完整范围分母为3。\\n完整3次读数的合计：未知。\\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\",\"sourceDeliveryStatus\":\"bound\",\"identityVerified\":false,\"deliveryId\":\"ee9b7eaf-39a4-4dc3-8586-a658d1f0a2eb\"}"
+            }
+          ],
+          "meta": {
+            "dshSemanticUi": {
+              "turn": 1,
+              "view": {
+                "protocolVersion": "1.4",
+                "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+                "revision": 1,
+                "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+                "presentation": {
+                  "version": 1,
+                  "theme": {
+                    "mode": "light",
+                    "palette": "ocean",
+                    "font": "system",
+                    "density": "comfortable",
+                    "textSize": "standard"
+                  },
+                  "layout": {
+                    "direction": "auto"
+                  }
+                },
+                "component": "DataChart",
+                "payload": {
+                  "chartType": "bar",
+                  "title": "来源声明的电流读数",
+                  "unit": "毫安",
+                  "x": {
+                    "kind": "category",
+                    "order": "input"
+                  },
+                  "series": [
+                    {
+                      "id": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+                      "label": "电流"
+                    }
+                  ],
+                  "rows": [
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-0",
+                      "x": "1",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-missing-slice": 4
+                      }
+                    },
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-1",
+                      "x": "2",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-missing-slice": null
+                      }
+                    },
+                    {
+                      "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-2",
+                      "x": "3",
+                      "values": {
+                        "series-numeric-baseline-zero-fill-ptc-missing-slice": -4
+                      }
+                    }
+                  ]
+                }
+              },
+              "sourceDelivery": {
+                "version": 1,
+                "identityVerified": false,
+                "sourceFactsVerified": false,
+                "status": "bound",
+                "kind": "observations-zh",
+                "explanation": "图形探针的电流读数（毫安），按原文位置：1=4、2=缺失、3=-4。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫安；分母为2个实际观测。\n已观测2项的小计：0 毫安；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+                "sourceRef": {
+                  "textSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+                  "hostContext": {
+                    "sessionId": "session-cdfe67eb-7cb1-4fc0-a027-b2d60b7b1343",
+                    "turn": 1,
+                    "turnStartSeq": 6,
+                    "messageId": "62ab6ffb-301a-42a7-a32c-8d4e32b4081a",
+                    "messageSeq": 10,
+                    "producerSourceKind": "user",
+                    "inherited": false,
+                    "excludedSyntheticContexts": 3,
+                    "requestId": "b375c297-5cbd-42a0-944a-37db759fc171"
+                  }
+                },
+                "viewIdentity": {
+                  "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+                  "revision": 1,
+                  "component": "DataChart"
+                }
+              }
+            }
+          }
+        }
+      },
+      "checkpoint": {
+        "turn": 1,
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+          "revision": 1,
+          "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+          "presentation": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          },
+          "component": "DataChart",
+          "payload": {
+            "chartType": "bar",
+            "title": "来源声明的电流读数",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-0",
+                "x": "1",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": 4
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-1",
+                "x": "2",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-2",
+                "x": "3",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": -4
+                }
+              }
+            ]
+          }
+        },
+        "sourceDelivery": {
+          "version": 1,
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "status": "bound",
+          "kind": "observations-zh",
+          "explanation": "图形探针的电流读数（毫安），按原文位置：1=4、2=缺失、3=-4。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫安；分母为2个实际观测。\n已观测2项的小计：0 毫安；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+          "sourceRef": {
+            "textSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+            "hostContext": {
+              "sessionId": "session-cdfe67eb-7cb1-4fc0-a027-b2d60b7b1343",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageId": "62ab6ffb-301a-42a7-a32c-8d4e32b4081a",
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 3,
+              "requestId": "b375c297-5cbd-42a0-944a-37db759fc171"
+            }
+          },
+          "viewIdentity": {
+            "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+            "revision": 1,
+            "component": "DataChart"
+          }
+        }
+      },
+      "inspected": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "observations-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-cdfe67eb-7cb1-4fc0-a027-b2d60b7b1343",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "62ab6ffb-301a-42a7-a32c-8d4e32b4081a",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 3,
+            "requestId": "b375c297-5cbd-42a0-944a-37db759fc171"
+          },
+          "textSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+          "excerptSha256": "406301f5ab9ff1879f56945ec9c14d87c1b15959ab260721eff8b025e441e470",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 104,
+            "textUTF8Bytes": 104
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source identity, authorship and real-world readings",
+          "unselected context, arbitrary prose, chart title and annotations",
+          "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+        ],
+        "status": "compared",
+        "sourceObservations": {
+          "context": "图形探针",
+          "measurement": "电流",
+          "unit": "毫安",
+          "positions": [
+            {
+              "index": 0,
+              "value": 4,
+              "span": {
+                "textByteStart": 31,
+                "textByteEnd": 32
+              }
+            },
+            {
+              "index": 1,
+              "value": null,
+              "span": {
+                "textByteStart": 35,
+                "textByteEnd": 41
+              }
+            },
+            {
+              "index": 2,
+              "value": -4,
+              "span": {
+                "textByteStart": 44,
+                "textByteEnd": 46
+              }
+            }
+          ]
+        },
+        "sourceStatistics": {
+          "unit": "毫安",
+          "positions": 3,
+          "values": [
+            4,
+            null,
+            -4
+          ],
+          "missingMask": [
+            false,
+            true,
+            false
+          ],
+          "observed": {
+            "count": 2,
+            "missing": 1,
+            "sum": 0,
+            "mean": 0,
+            "denominator": 2,
+            "scope": "declared non-missing positions only"
+          },
+          "complete": {
+            "count": 3,
+            "sum": null,
+            "sumKnown": false,
+            "mean": null,
+            "denominator": 3,
+            "known": false,
+            "scope": "all declared positions; missing readings remain unknown"
+          },
+          "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete selected finite source readings and explicit calculation range only",
+          "text": "图形探针的电流读数（毫安），按原文位置：1=4、2=缺失、3=-4。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫安；分母为2个实际观测。\n已观测2项的小计：0 毫安；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+        }
+      },
+      "delivered": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+        "revision": 1,
+        "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "dataFacts": {
+          "scope": "original-full-data",
+          "chartType": "bar",
+          "unit": "毫安",
+          "order": "input",
+          "rows": 3,
+          "firstRow": {
+            "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-0",
+            "x": "1",
+            "xTruncated": false
+          },
+          "lastRow": {
+            "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-2",
+            "x": "3",
+            "xTruncated": false
+          },
+          "series": [
+            {
+              "id": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+              "valid": 2,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "zeroFillIllustration": {
+                "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                "count": 3,
+                "sum": 0,
+                "differenceFromObservedSum": 0,
+                "directionRelativeToObservedSum": "same",
+                "completeDataSumKnown": false,
+                "mean": 0,
+                "differenceFromObservedMean": 0,
+                "directionRelativeToObservedMean": "same",
+                "completeDataMeanKnown": false
+              },
+              "minimum": -4,
+              "maximum": 4,
+              "firstValue": 4,
+              "lastValue": -4,
+              "netChange": -8,
+              "adjacentValidDecreases": 0
+            }
+          ]
+        },
+        "canonicalSummary": "Declared bar data in 毫安: series-numeric-baseline-zero-fill-ptc-missing-slice: 2 valid, 1 missing, mean 0.",
+        "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+        "canonicalExplanation": "图形探针的电流读数（毫安），按原文位置：1=4、2=缺失、3=-4。\n共3个位置，2个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 毫安；分母为2个实际观测。\n已观测2项的小计：0 毫安；仅覆盖实际观测。\n完整3次读数的平均值：未知；完整范围分母为3。\n完整3次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "ee9b7eaf-39a4-4dc3-8586-a658d1f0a2eb"
+      },
+      "renderArguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-numeric-baseline-zero-fill-ptc-missing-slice",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Explicit positional source projection; free prose unverified.",
+          "payload": {
+            "chartType": "bar",
+            "title": "Source readings",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-0",
+                "x": "1",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": 4
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-1",
+                "x": "2",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": null
+                }
+              },
+              {
+                "id": "row-numeric-baseline-zero-fill-ptc-missing-slice-2",
+                "x": "3",
+                "values": {
+                  "series-numeric-baseline-zero-fill-ptc-missing-slice": -4
+                }
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "seriesId": "series-numeric-baseline-zero-fill-ptc-missing-slice",
+          "rows": [
+            {
+              "sourceIndex": 0,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-0"
+            },
+            {
+              "sourceIndex": 1,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-1"
+            },
+            {
+              "sourceIndex": 2,
+              "rowId": "row-numeric-baseline-zero-fill-ptc-missing-slice-2"
+            }
+          ]
+        }
+      },
+      "sourceValues": [
+        4,
+        null,
+        -4
+      ],
+      "comparisonText": "已观测均值、合计与明确补零假设的对照 · 筛选后的源数据行\n数据系列\t均值与合计对照\t相对已观测数据的变化\n电流\t\n\n已观测：有效数=0，缺失数=1；均值=未知 毫安；小计=未知 毫安\n\n补零假设：位置数=1；均值=0 毫安；合计=0 毫安\n\n\t\n\n均值： 未知；差值=未知 毫安\n\n合计： 未知；差值=未知 毫安",
+      "exported": {
+        "format": "dsh-semantic-ui-table",
+        "version": 1,
+        "title": "来源声明的电流读数",
+        "chartType": "bar",
+        "unit": "毫安",
+        "scope": "filtered-source-rows",
+        "selection": {
+          "from": 1,
+          "to": 1,
+          "seriesIds": [
+            "series-numeric-baseline-zero-fill-ptc-missing-slice"
+          ]
+        },
+        "headers": [
+          "x (类别)",
+          "电流 (毫安)"
+        ],
+        "rows": [
+          [
+            "2",
+            null
+          ]
+        ]
+      },
+      "images": [
+        {
+          "file": "numeric-baseline-zero-fill-missing-slice-640.png",
+          "width": 640,
+          "actualWidth": 640,
+          "noRootOverflow": true,
+          "graphGeometry": null,
+          "plotResized": false
+        },
+        {
+          "file": "numeric-baseline-zero-fill-missing-slice-360.png",
+          "width": 360,
+          "actualWidth": 360,
+          "noRootOverflow": true,
+          "graphGeometry": null,
+          "plotResized": false
+        }
+      ],
+      "allMissingSourceImputationRefused": null,
+      "journalAndSourceUnchanged": true,
+      "emptyHypothesisUnknown": true,
+      "allScopeHypothesisZero": true,
+      "refreshRestored": true,
+      "noExtraRequestsOnLocalInteraction": true,
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    }
+  ],
+  "pageErrors": [],
+  "fixtureTurns": 2,
+  "newRealModelTurns": 0,
+  "archiveInstallation": true
+}

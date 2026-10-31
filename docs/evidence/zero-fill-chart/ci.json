@@ -1,0 +1,256 @@
+{
+  "id": 41186746024,
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41186746024",
+  "headSha": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+  "status": "completed",
+  "conclusion": "success",
+  "jobs": [
+    {
+      "name": "verify",
+      "status": "completed",
+      "conclusion": "success",
+      "steps": [
+        {
+          "name": "Set up job",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Validate the focused suite selection",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm/action-setup@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm install --frozen-lockfile",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check saved model replay provenance (no model)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check original-source reference and template contracts (no model)",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm docs:generate",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm research:check",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm check",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check declaration source",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check source-bound delivery",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check read-only MCP workflow",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check interface localization",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check numeric mean and sum baselines",
+          "conclusion": "success"
+        },
+        {
+          "name": "Check numeric source delivery",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check conditional source contracts",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check source supplementation contracts",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check cold source contracts",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check capacity representation diagnostics",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check capacity source contracts",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Check complete workflow contracts",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm exec playwright install --with-deps chromium",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run pnpm test:host",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:chart-host",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:consistency-host",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm release:pack",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tests/installed-language.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-numeric-baseline.mjs",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Run node tests/installed-capacity-contract.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-capacity.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-workflow.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-cold-source.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-source-update.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run node tests/installed-condition.mjs",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:installed-numeric",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:installed-mcp",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:installed-source",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run pnpm test:installed-consistency",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "skipped"
+        },
+        {
+          "name": "Run actions/upload-artifact@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/setup-node@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run pnpm/action-setup@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Post Run actions/checkout@v4",
+          "conclusion": "success"
+        },
+        {
+          "name": "Complete job",
+          "conclusion": "success"
+        }
+      ]
+    }
+  ]
+}

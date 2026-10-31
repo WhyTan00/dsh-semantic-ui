@@ -1,0 +1,3 @@
+
+> @whytan/dsh-semantic-ui@0.1.0-preview.27 typecheck [repository]
+> tsc --noEmit

@@ -1,0 +1,15 @@
+{
+  "method": "normal dsh plugin add local tgz into a new private profile",
+  "version": "0.1.0-preview.27",
+  "archiveSha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+  "runtimeEntrypoints": {
+    "dist/host.js": "64ec99ad13474ce2bc59067d98ccbb7cb434f4cfc93d6ee898064be5c707822a",
+    "dist/client.js": "2093410287cacaf5833f65c4ddd12ee0b7ed66c365b97a14b027367d1a486c49",
+    "dist/core.js": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6",
+    "dist/mcp.js": "ac47f317d9787ed1c2a26eb61333e592cf73f45eef2dae1bf95d7afbd294d190",
+    "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+  },
+  "all388FilesRechecked": false,
+  "semanticSourceOverlay": false,
+  "downloadedArchive": false
+}
