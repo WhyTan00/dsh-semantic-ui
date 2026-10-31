@@ -1,4 +1,5 @@
 import {build} from 'esbuild';
+import {buildMcp} from './mcp-build.mjs';
 import {mkdir,writeFile} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import {execFileSync} from 'node:child_process';
@@ -8,6 +9,6 @@ await build({entryPoints:['src/island.tsx'],bundle:true,format:'esm',platform:'b
 await writeFile('.handoff/build/island.d.ts',"export {mount} from '../../src/island';\n");
 await build({entryPoints:['src/dsh/client.tsx'],bundle:true,format:'cjs',platform:'browser',outfile:'dist/client.js',external:['react','react/jsx-runtime'],plugins:[{name:'isolated-island',setup(b){b.onResolve({filter:/^\.\.\/host-island$/},()=>({path:resolve('.handoff/build/island.js')}));}}],minify:true,legalComments:'linked',banner:{js:'window.__ModuleLoader__.load({id:"@whytan/dsh-semantic-ui",factory:(require)=>{var module={exports:{}};var exports=module.exports;'},footer:{js:'return module.exports;}});'}});
 for(const [entry,name]of[['src/dsh/host.ts','host'],['src/protocol.ts','protocol'],['src/core.ts','core']])await build({entryPoints:[entry],bundle:true,format:'esm',platform:'node',outfile:`dist/${name}.js`,packages:'external',sourcemap:false});
-await build({entryPoints:['src/mcp-main.ts'],bundle:true,format:'esm',platform:'node',outfile:'dist/mcp.js',external:['@cfworker/json-schema'],minify:true,legalComments:'linked',banner:{js:'#!/usr/bin/env node\nimport {createRequire as semanticCreateRequire} from "node:module";const require=semanticCreateRequire(import.meta.url);'}});
+await buildMcp({outfile:'dist/mcp.js'});
 execFileSync('node',['node_modules/typescript/bin/tsc','-p','tsconfig.types.json'],{stdio:'inherit'});
 console.log('Built host, closure-factory client with isolated React 19, and protocol.');

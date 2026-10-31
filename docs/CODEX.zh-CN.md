@@ -1,5 +1,7 @@
 # Codex 原生交互 UI 与本项目的接入
 
+新增[独立本地Codex插件包](CODEX-PLUGIN-PACKAGE.zh-CN.md)：便携manifest、stdio MCP、skill及本地插件源合并分发，复用27核心字节；MCP自报版本随构建修正，不再硬编码24。既有手动MCP和普通来源伴随入口保留，当前主会话/桌面未自动安装，不新增模型或UI声称。
+
 [容量来源两次实际模型观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)保留23首题raw正确但新view未匹配的事实，并据此交付24的可发现字段合同/精确诊断。第二个原冻结GiB对照在24上当前view首次matched，原文有限met；192假设来源拒绝不等于禁合法假设。2/2回合，无第三次；普通CLI宿主说明与raw分开，不代表当前客户端UI/实时回传。
 
 23新增显式 `--source-kind capacity-zh` 的[容量来源核对](SOURCE-CAPACITY.zh-CN.md)，仍沿同一MCP/core和正常 `--answer` 入口。最终归档的正确请求delivered、错误当前初值withheld，原D2来源身份与两层wire分别核验，0turn/start；[接受](evidence/source-capacity.json)不等于当前桌面富UI或模型自然采用。没有全局MCP注册、模型配置或客户端安装。

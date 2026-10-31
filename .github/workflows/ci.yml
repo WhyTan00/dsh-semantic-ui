@@ -106,7 +106,7 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && inputs.mcp_only
         run: |
           pnpm typecheck
-          pnpm exec vitest run tests/mcp.test.ts tests/mcp-instructions.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/source-input.test.ts
+          pnpm exec vitest run tests/mcp-version.test.ts tests/mcp.test.ts tests/mcp-instructions.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/source-input.test.ts
           pnpm test:release-isolation
       - name: Check interface localization
         if: github.event_name == 'workflow_dispatch' && inputs.language_only
@@ -177,6 +177,18 @@ jobs:
           retention-days: 7
           if-no-files-found: ignore
       - run: pnpm release:pack
+      - name: Check portable local Codex package (no model)
+        run: node --import tsx tests/codex-plugin-package.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex-local-plugin-package
+          path: |
+            artifacts/local/codex-plugin-check-*/build/*.zip
+            artifacts/local/codex-plugin-check-*/build/plugin-package-manifest.json
+            artifacts/local/codex-plugin-check-*/build/SHA256SUMS
+            artifacts/local/codex-plugin-check-*/acceptance.json
+            artifacts/local/codex-plugin-check-*/stdio-receipts.json
+          if-no-files-found: error
       - run: node tests/installed-language.mjs
         if: github.event_name == 'workflow_dispatch' && inputs.language_only
       - uses: actions/upload-artifact@v4

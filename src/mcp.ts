@@ -1,4 +1,5 @@
 import {McpServer} from '@modelcontextprotocol/sdk/server/mcp.js';
+import packageJson from '../package.json' with {type:'json'};
 import {z} from 'zod';
 import {analyzeEnvelope,describeSemantic,checkSourceGraph,sourceCheckRequestSchema} from './core';
 import type {SourceSnapshot} from './source-graph';
@@ -11,6 +12,7 @@ import {components,validateEnvelope,VERSION} from './protocol';
 import {parseBounded,exportSchema,matchTemplate} from './templates';
 const annotations={readOnlyHint:true,destructiveHint:false,idempotentHint:true,openWorldHint:false};
 const reply=(value:Record<string,unknown>)=>({structuredContent:value,content:[{type:'text' as const,text:JSON.stringify(value)}]});
+declare const __SEMANTIC_MCP_VERSION__:string|undefined;
 /** Initialization guidance belongs to the server, never to source-file content. */
 function workflowInstructions(source?:SourceSnapshot){
  const common='For arithmetic over supplied numeric observations, inspect semantic_ui_schema, then use semantic_ui_check with a fresh view before stating computed results. Preserve null versus observed zero, units and unknowns. Checks do not verify source identity, world facts or free prose. This server provides no UI, actions or model route. Short nonnumeric explanations can use plain text.';
@@ -19,7 +21,8 @@ function workflowInstructions(source?:SourceSnapshot){
 /** No request-selected file, network, model, credential or DSH access. */
 export function createSemanticServer(options:{source?:SourceSnapshot}={}){
  const source=options.source?structuredClone(options.source):undefined;
- const server=new McpServer({name:'semantic-ui-checks',version:'0.1.0-preview.24'},{instructions:workflowInstructions(source)});
+ const version=typeof __SEMANTIC_MCP_VERSION__==='string'?__SEMANTIC_MCP_VERSION__:packageJson.version;
+ const server=new McpServer({name:'semantic-ui-checks',version},{instructions:workflowInstructions(source)});
  server.registerTool('semantic_ui_schema',{title:'Inspect a semantic data contract',description:'Get the exact bounded schema for relationships, comparison requirements or chart data. Read-only. Does not render UI.',inputSchema:{component:z.enum(['ArchitectureExplorer','DecisionExplorer','DataChart'])},annotations},async({component})=>reply({...describeSemantic(component),hostRendering:'Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource.'}));
  server.registerTool('semantic_ui_check',{title:'Check semantic data and compute facts',description:'Validate bounded semantic JSON and compute graph topology, numeric requirements, cautious policy results or chart statistics before explaining or rendering it. No external access; never certifies model-authored prose or source facts.',inputSchema:{view:z.unknown()},annotations},async({view})=>reply({...analyzeEnvelope(view),nativeRendering:'Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component.'}));
  server.registerTool('semantic_ui_template_check',{title:'Check an explicitly supplied exported template',description:'Check fresh data against a supplied exported field/appearance contract. Does not read a saved library or persist data. Supply the exported document explicitly.',inputSchema:{document:z.unknown(),view:z.unknown()},annotations},async({document,view})=>{

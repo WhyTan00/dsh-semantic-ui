@@ -1,0 +1,27 @@
+{
+  "schema": "local-codex-plugin-package-v1",
+  "status": "implementation and prototype stdio passed; frozen artifact acceptance pending",
+  "version": "0.1.0-preview.27.1",
+  "originRuntimeVersion": "0.1.0-preview.27",
+  "coreByteEqualToOrigin": true,
+  "mcpVersionFirstFailureRetained": true,
+  "mcpUnitTestsPassed": 8,
+  "typecheck": "passed",
+  "currentCodexClientInstalled": false,
+  "mainChatLoaded": false,
+  "uiResourceProvided": false,
+  "newModelStarts": 0,
+  "originalNaturalResultsUnchanged": true,
+  "prototypeStdio": {
+    "toolCalls": 10,
+    "closedTransports": 3,
+    "defaultTools": 3,
+    "configuredSourceKinds": [
+      "workflow-zh",
+      "permissions-zh"
+    ],
+    "extractedFiles": 230
+  },
+  "currentCodexCliVersion": "0.166.0",
+  "newDshReleaseRequired": false
+}

@@ -1,0 +1,53 @@
+name: codex-local-plugin
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - name: Check MCP identity and existing read-only contracts
+        run: pnpm exec vitest run tests/mcp-version.test.ts tests/mcp.test.ts tests/mcp-instructions.test.ts
+      - name: Obtain the pinned existing verification core
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v0.1.0-preview.27 --repo WhyTan00/dsh-semantic-ui --pattern whytan-dsh-semantic-ui-0.1.0-preview.27.tgz --pattern package-manifest.json --dir artifacts/local/codex-origin
+          node --input-type=module - <<'JS'
+          import {readFile} from 'node:fs/promises';
+          import {createHash} from 'node:crypto';
+          import assert from 'node:assert/strict';
+          const m=JSON.parse(await readFile('artifacts/local/codex-origin/package-manifest.json'));
+          assert.equal(m.sha256,'03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1');
+          assert.equal(createHash('sha256').update(await readFile('artifacts/local/codex-origin/'+m.filename)).digest('hex'),m.sha256);
+          JS
+      - name: Build the companion without rebuilding DSH
+        run: node scripts/pack-codex-plugin.mjs --archive artifacts/local/codex-origin/whytan-dsh-semantic-ui-0.1.0-preview.27.tgz --manifest artifacts/local/codex-origin/package-manifest.json --output artifacts/local/codex-release-build
+      - name: Verify the extracted package over real stdio (no model)
+        run: node --import tsx tests/codex-plugin-package.mjs --package artifacts/local/codex-release-build/plugin-package-manifest.json --output artifacts/local/codex-release-check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex-companion-package
+          path: |
+            artifacts/local/codex-release-build/*.zip
+            artifacts/local/codex-release-build/plugin-package-manifest.json
+            artifacts/local/codex-release-build/SHA256SUMS
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex-companion-receipts
+          path: |
+            artifacts/local/codex-release-check/acceptance.json
+            artifacts/local/codex-release-check/stdio-receipts.json
+          if-no-files-found: error
