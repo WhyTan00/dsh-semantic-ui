@@ -1,0 +1,8 @@
+{
+  "at": "2026-10-31T08:34:28.274027+00:00",
+  "knownCleanupRecords": 5,
+  "recordedPidsStillExisting": 0,
+  "knownPortsStillAccepting": 0,
+  "otherProcessesAltered": false,
+  "scope": "Only processes and ports recorded by these two primary runs and three read-only capture attempts were inspected; PID reuse would not imply ownership."
+}

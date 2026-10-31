@@ -4,12 +4,16 @@ import {spawn} from 'node:child_process';
 import {createServer} from 'node:net';
 import {mkdir, readFile, writeFile} from 'node:fs/promises';
 import path from 'node:path';
+import {pathToFileURL} from 'node:url';
 import {setTimeout as delay} from 'node:timers/promises';
 import assert from 'node:assert/strict';
 import {loadSavedHistory, sha} from './saved-model-history.mjs';
 import {startReplayServer} from './saved-model-replay-server.mjs';
+import {loadSourceReferences} from './original-source-cases.mjs';
 
 const {values} = parseArgs({options: {archive: {type: 'string'}, manifest: {type: 'string'}, output: {type: 'string'},
+  'source-reference': {type: 'boolean'}, 'source-file': {type: 'string'}, 'source-json-pointer': {type: 'string'},
+  'source-kind': {type: 'string'}, case: {type: 'string'},
   check: {type: 'boolean'}, open: {type: 'boolean'}, help: {type: 'boolean'}}});
 if (values.help) {
   console.log('node examples/dsh-model-history.mjs --archive <local26.tgz> --manifest <manifest.json> [--open] [--check] [--output <new-private-dir>]\n默认启动临时Native DSH回放，Ctrl+C结束；--check自动交互验收并清理。始终0新增模型。');
@@ -17,10 +21,12 @@ if (values.help) {
 }
 assert(values.archive && values.manifest, 'Provide the existing local archive and manifest; no automatic download');
 const root = process.cwd(), archive = path.resolve(values.archive), manifest = JSON.parse(await readFile(values.manifest));
-const saved = await loadSavedHistory(root);
+const referenceMode = !!values['source-reference'];
+if (!referenceMode && ['source-file','source-json-pointer','source-kind','case'].some(key => values[key] !== undefined)) throw Error('Source options require the source-reference companion');
+let saved = referenceMode ? null : await loadSavedHistory(root);
 assert.equal(path.basename(archive), manifest.filename);
 assert.equal(sha(await readFile(archive)), manifest.sha256);
-assert.equal(manifest.sha256, saved.runtimeArchiveSha256, 'Use the original accepted runtime for this replay');
+if (saved) assert.equal(manifest.sha256, saved.runtimeArchiveSha256, 'Use the original accepted runtime for this replay');
 const run = path.resolve(values.output ?? path.join(root, 'artifacts/local/model-view-replay-' + Date.now()));
 await mkdir(run, {mode: 0o700}); // Never overwrite an existing run/profile.
 const home = path.join(run, 'home'), profile = path.join(home, 'profiles/web'), output = path.join(run, 'native');
@@ -61,10 +67,16 @@ try {
   assert.equal(installed, 0, 'Normal private dsh plugin add failed; inspect private install.log');
   const packageRoot = path.join(profile, 'node_modules/@whytan/dsh-semantic-ui');
   const pkg = JSON.parse(await readFile(path.join(packageRoot, 'package.json')));
-  assert.equal(pkg.version, saved.runtimeVersion);
+  if (saved) assert.equal(pkg.version, saved.runtimeVersion);
   const entries = {};
   for (const [name, expected] of Object.entries(manifest.runtimeEntrypoints)) {
     entries[name] = sha(await readFile(path.join(packageRoot, name))); assert.equal(entries[name], expected);
+  }
+  if (referenceMode) {
+    const core = await import(pathToFileURL(path.join(packageRoot, 'dist/core.js')));
+    saved = {...await loadSourceReferences(core, root, {sourceFile: values['source-file'], jsonPointer: values['source-json-pointer'], kind: values['source-kind'], case: values.case}),
+      runtimeVersion: pkg.version};
+    await write(path.join(run, 'reference-dataset.json'), saved);
   }
   await write(path.join(run, 'installation.json'), {method: 'normal dsh plugin add local tgz into a new private profile',
     version: pkg.version, archiveSha256: manifest.sha256, runtimeEntrypoints: entries,
@@ -72,7 +84,7 @@ try {
   replay = await startReplayServer(planFile, path.join(run, 'requests'));
   port = await freePort(); assert(port !== 3200 && replay.port !== 3200 && port !== replay.port);
   await write(path.join(run, 'ports.json'), {port, fixturePort: replay.port});
-  await write(path.join(profile, 'cordis.patch.yml'), `- id: workspace-controller\n  config:\n    documentsDirectory: ${JSON.stringify(path.join(run, 'documents'))}\n- id: llm-pi-ai\n  config:\n    providers:\n      saved-model-replay:\n        api: openai-completions\n        apiKeyEnv: DSH_SEMANTIC_REPLAY_KEY\n        baseURL: http://127.0.0.1:${replay.port}/v1\n        models:\n          - id: saved-model-replay\n            name: Saved real model views - deterministic replay, no new model\n            contextWindow: 32768\n            maxTokens: 4096\n- id: tools\n  config:\n    mode: native\n`);
+  await write(path.join(profile, 'cordis.patch.yml'), `- id: workspace-controller\n  config:\n    documentsDirectory: ${JSON.stringify(path.join(run, 'documents'))}\n- id: llm-pi-ai\n  config:\n    providers:\n      saved-model-replay:\n        api: openai-completions\n        apiKeyEnv: DSH_SEMANTIC_REPLAY_KEY\n        baseURL: http://127.0.0.1:${replay.port}/v1\n        models:\n          - id: saved-model-replay\n            name: ${referenceMode ? 'Finite source reference - deterministic, no model' : 'Saved real model views - deterministic replay, no new model'}\n            contextWindow: 32768\n            maxTokens: 4096\n- id: tools\n  config:\n    mode: native\n`);
   host = child('native', ['node_modules/@deepseek-ai/dsh/lib/bin.js', '--profile', 'web', '--no-open', '--port', String(port)]);
   host.stdout.on('data', b => hostLog += b); host.stderr.on('data', b => hostLog += b);
   for (let i = 0; i < 300 && !/dsh web: http/.test(hostLog); i++) {
@@ -82,21 +94,21 @@ try {
   const auth = hostLog.match(/http:\/\/127\.0\.0\.1:\d+\/\?token=[^\s]+/)?.[0];
   assert(auth, 'Private host readiness URL missing');
   await write(path.join(run, 'OPEN-PRIVATE.txt'), auth + '\n');
-  browser = child('browser-seed', ['--import', 'tsx', 'examples/dsh-model-history-browser.mjs'], {...env,
+  browser = child('browser-seed', ['--import', 'tsx', referenceMode ? 'examples/dsh-source-reference-browser.mjs' : 'examples/dsh-model-history-browser.mjs'], {...env,
     HOST_ORIGIN: `http://127.0.0.1:${port}`, HOST_SHARED: run, HOST_OUTPUT: output,
-    SAVED_REPLAY_PLAN: planFile, SAVED_REPLAY_CHECK: values.check ? '1' : '0'});
+    SAVED_REPLAY_PLAN: planFile, SAVED_REPLAY_CHECK: values.check ? '1' : '0', SOURCE_REFERENCE_DATASET: path.join(run, 'reference-dataset.json')});
   let browserLog = ''; browser.stdout.on('data', b => browserLog += b); browser.stderr.on('data', b => browserLog += b);
   const result = await new Promise(r => browser.once('exit', r));
   await write(path.join(run, 'browser.log'), browserLog);
   assert.equal(result, 0, 'Saved-view replay browser failed; inspect private browser.log');
-  await write(path.join(run, 'run.json'), {mode: 'native', replayOfSavedRealModelResults: true,
+  await write(path.join(run, 'run.json'), {mode: 'native', replayOfSavedRealModelResults: !referenceMode, sourceReferenceMode: referenceMode,
     existingRuntime: saved.runtimeVersion, originEvidenceCommit: saved.originEvidenceCommit,
     newRealModelStarts: 0, localTransportRequests: replay.requestCount(), checked: !!values.check,
     publicProvenance: saved.phases.map(x => x.origin)});
   if (values.check) console.log(JSON.stringify({mode: 'native', checked: true, newRealModelStarts: 0,
     localTransportRequests: replay.requestCount(), privateOutput: run}));
   else {
-    console.log('已保存模型结果的DSH Native回放已就绪（0新增模型）。私有访问地址保存在 ' + path.join(run, 'OPEN-PRIVATE.txt') + '；Ctrl+C关闭本次自有服务。');
+    console.log((referenceMode ? '有限来源程序参考' : '已保存模型结果的DSH Native回放') + '已就绪（0新增模型）。私有访问地址保存在 ' + path.join(run, 'OPEN-PRIVATE.txt') + '；Ctrl+C关闭本次自有服务。');
     if (values.open) {
       assert.equal(process.platform, 'darwin', '--open currently uses macOS Edge; otherwise open the private URL yourself');
       const opener = spawn('open', ['-a', 'Microsoft Edge', auth], {stdio: 'ignore'});

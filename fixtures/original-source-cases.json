@@ -1,0 +1,12 @@
+{
+  "schema": "original-source-cases-v1",
+  "description": "Original public run9 source inputs. Case keys select examples, never validation answers or model-success labels.",
+  "records": [
+    {"key": "A2", "file": "docs/evidence/natural/r9-A2.json"},
+    {"key": "A3", "file": "docs/evidence/natural/r9-A3.json"},
+    {"key": "D1", "file": "docs/evidence/natural/r9-D1.json"},
+    {"key": "D2", "file": "docs/evidence/natural/r9-D2.json"},
+    {"key": "N2", "file": "docs/evidence/natural/r9-N2.json"},
+    {"key": "T2", "file": "docs/evidence/natural/r9-T2.json"}
+  ]
+}

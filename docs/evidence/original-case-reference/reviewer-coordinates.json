@@ -1,0 +1,45 @@
+{
+  "authorship": "explicit reviewer diagnostic coordinates, not supplied by the original model; old view bytes remain unchanged",
+  "mappings": {
+    "D1": {
+      "dimensions": [
+        {
+          "id": "private_net",
+          "kind": "capability",
+          "name": "私网"
+        },
+        {
+          "id": "vendor_managed",
+          "kind": "actor-updates",
+          "actor": "供应商"
+        },
+        {
+          "id": "team_maint",
+          "kind": "maintenance-need",
+          "actor": "团队"
+        },
+        {
+          "id": "price",
+          "kind": "price"
+        }
+      ],
+      "inputs": [
+        {
+          "id": "need_private_net",
+          "kind": "capability-need",
+          "name": "私网"
+        },
+        {
+          "id": "team_capacity",
+          "kind": "actor-available",
+          "actor": "团队"
+        }
+      ]
+    },
+    "D2": {
+      "capacityDimensionId": "capacity",
+      "demandInputId": "demand",
+      "requirementId": "cap-cover"
+    }
+  }
+}

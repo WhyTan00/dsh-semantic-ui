@@ -1,0 +1,80 @@
+[
+  {
+    "caseKey": "A2",
+    "sourceRecord": "docs/evidence/natural/r9-A2.json",
+    "sourceRecordSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+    "legacyModelRenderCallIndex": 2,
+    "originalModelFinalSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？",
+    "originalToolCallCount": 3,
+    "originalFinalAnswerUnchanged": true
+  },
+  {
+    "caseKey": "A3",
+    "sourceRecord": "docs/evidence/natural/r9-A3.json",
+    "sourceRecordSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+    "legacyModelRenderCallIndex": 3,
+    "originalModelFinalSha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Search 访问 Store。请帮我理解边界与耦合。",
+    "originalToolCallCount": 4,
+    "originalFinalAnswerUnchanged": true
+  },
+  {
+    "caseKey": "D1",
+    "sourceRecord": "docs/evidence/natural/r9-D1.json",
+    "sourceRecordSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+    "legacyModelRenderCallIndex": 2,
+    "originalModelFinalSha256": "1c159ff7bc6e6451bba7a795e22078dcc284d0d4580ef83ad7f0a4d3858010c7",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+    "originalToolCallCount": 3,
+    "originalFinalAnswerUnchanged": true
+  },
+  {
+    "caseKey": "D2",
+    "sourceRecord": "docs/evidence/natural/r9-D2.json",
+    "sourceRecordSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+    "legacyModelRenderCallIndex": 2,
+    "originalModelFinalSha256": "31697c4ced78e92410b37c8945d93ae4426f0809b44cfa64cc7d00560a6b5fcc",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "虚构存储选项 A 上限 100GB、部署简单，B 上限 1000GB、维护复杂。现在需求 80GB，以后可能到 300GB。不同需求下该如何选？",
+    "originalToolCallCount": 3,
+    "originalFinalAnswerUnchanged": true
+  },
+  {
+    "caseKey": "N2",
+    "sourceRecord": "docs/evidence/natural/r9-N2.json",
+    "sourceRecordSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+    "legacyModelRenderCallIndex": null,
+    "originalModelFinalSha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+    "originalToolCallCount": 1,
+    "originalFinalAnswerUnchanged": true
+  },
+  {
+    "caseKey": "T2",
+    "sourceRecord": "docs/evidence/natural/r9-T2.json",
+    "sourceRecordSha256": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2",
+    "jsonPointer": "/question",
+    "selectedTextSha256": "40a76f7e8e2c1cfdf500d5437fa15197be5da39f25c3e51ce43d84a884612dfa",
+    "legacyModelRenderCallIndex": null,
+    "originalModelFinalSha256": "98c575665f01cdcd26cc70945c31d59966f0eba278c899386ff65242fe1997c0",
+    "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer",
+    "question": "简单解释一下为什么缺失读数不等于零。",
+    "originalToolCallCount": 0,
+    "originalFinalAnswerUnchanged": true
+  }
+]

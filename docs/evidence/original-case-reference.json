@@ -1,0 +1,444 @@
+{
+  "schema": "original-case-source-reference-acceptance-v1",
+  "recordedAt": "2026-10-31T08:35:37.310619+00:00",
+  "scope": "Original six public r9 inputs checked against current core; generic finite source-reference adoption through ordinary isolated DSH Native. Program references are not original or new model answers.",
+  "runtime": {
+    "version": "0.1.0-preview.26",
+    "dsh": "0.2.1-rc.2",
+    "archiveSha256": "a8cfc1d4fb36847a2b9e137346ea078d25c3877e14457be3e56aa0f96951c51d",
+    "normalLocalArchiveInstall": true,
+    "runtimeEntrypointsChecked": 5,
+    "all388FilesRechecked": false,
+    "sourceOverlay": false,
+    "runtimeChanged": false,
+    "newRelease": false
+  },
+  "originalNaturalResults": {
+    "passed": 0,
+    "failed": 6,
+    "modelRequests": 18,
+    "unchanged": true,
+    "originalFilesByteEqualToPreTaskHEAD": true
+  },
+  "currentCoreDiagnosis": {
+    "newReproducibleMiscomparisonFoundInTheseSixInputs": false,
+    "notAUniversalSemanticCorrectnessClaim": true,
+    "legacyViews": [
+      {
+        "caseKey": "A2",
+        "originalCallIndex": 2,
+        "historyReadable": true,
+        "newDeliveryStructureAccepted": true,
+        "newDeliveryIssueCodes": [],
+        "sourceComparison": "mismatch",
+        "sourceIssueCodes": [
+          "SOURCE_POLICY_MAPPING_REQUIRED",
+          "SOURCE_POLICY_MISSING"
+        ],
+        "sourceCoordinates": "actual original call without invented mapping"
+      },
+      {
+        "caseKey": "A3",
+        "originalCallIndex": 3,
+        "historyReadable": true,
+        "newDeliveryStructureAccepted": true,
+        "newDeliveryIssueCodes": [],
+        "sourceComparison": "not-assessed",
+        "sourceIssueCodes": [
+          "SOURCE_ACCESS_MISSING",
+          "SOURCE_BINDING_UNVERIFIED",
+          "SOURCE_NODE_MISSING"
+        ],
+        "sourceCoordinates": "actual original call without invented mapping"
+      },
+      {
+        "caseKey": "D1",
+        "originalCallIndex": 2,
+        "historyReadable": true,
+        "newDeliveryStructureAccepted": false,
+        "newDeliveryIssueCodes": [
+          "DECLARATION_MISSING"
+        ],
+        "sourceComparison": "mismatch",
+        "sourceIssueCodes": [
+          "SOURCE_FIELD_LABEL",
+          "SOURCE_FIELD_TYPE",
+          "SOURCE_REQUIREMENT_ROLE",
+          "SOURCE_VALUE"
+        ],
+        "sourceCoordinates": "reviewer supplied; see reviewer-coordinates.json"
+      },
+      {
+        "caseKey": "D2",
+        "originalCallIndex": 2,
+        "historyReadable": true,
+        "newDeliveryStructureAccepted": false,
+        "newDeliveryIssueCodes": [
+          "DECLARATION_MISSING"
+        ],
+        "sourceComparison": "mismatch",
+        "sourceIssueCodes": [
+          "SOURCE_CAPACITY_DIMENSION",
+          "SOURCE_CAPACITY_INPUT",
+          "SOURCE_INPUT_EFFECT",
+          "SOURCE_OPTIONS",
+          "SOURCE_POLICY_UNSUPPORTED"
+        ],
+        "sourceCoordinates": "reviewer supplied; see reviewer-coordinates.json"
+      }
+    ],
+    "N2": "original used another plugin; current complete-source parser preserves all four positions and computes observed n3 versus complete n4",
+    "T2": "original has zero tools; unsupported as complete finite source, no invented component; arbitrary old prose remains unverified"
+  },
+  "native": {
+    "originalSourceFixtureTurns": 6,
+    "callerFileFixtureTurns": 1,
+    "fixtureTurnsTotal": 7,
+    "localHttpPostsTotal": 29,
+    "realModelStarts": 0,
+    "newModelAnswers": 0,
+    "supportedComponents": 5,
+    "legacyActualRenderRejections": 4,
+    "localInteractions": 5,
+    "pageErrors": [],
+    "sourceBindings": [
+      {
+        "caseKey": "A2",
+        "sourceKind": "workflow-zh",
+        "messageId": "5b7f3565-02d3-463e-a622-c95e247ecb9e",
+        "messageSeq": 10,
+        "checkpointSeq": 34,
+        "matched": true,
+        "localInteractions": [
+          {
+            "kind": "graph-neighborhood",
+            "fromNodes": 5,
+            "visibleNodes": 2,
+            "graphSourceUnchanged": true
+          }
+        ],
+        "refreshRestoredOriginal": true,
+        "sourceAndJournalUnchanged": true,
+        "legacyIssueCodes": [
+          "SOURCE_POLICY_MAPPING_REQUIRED",
+          "SOURCE_POLICY_MISSING"
+        ]
+      },
+      {
+        "caseKey": "A3",
+        "sourceKind": "permissions-zh",
+        "messageId": "980b6cd9-7ec7-4bc8-9f20-309d7787757f",
+        "messageSeq": 10,
+        "checkpointSeq": 34,
+        "matched": true,
+        "localInteractions": [
+          {
+            "kind": "graph-neighborhood",
+            "fromNodes": 6,
+            "visibleNodes": 2,
+            "graphSourceUnchanged": true
+          }
+        ],
+        "refreshRestoredOriginal": true,
+        "sourceAndJournalUnchanged": true,
+        "legacyIssueCodes": [
+          "SOURCE_ACCESS_MISSING",
+          "SOURCE_BINDING_UNVERIFIED",
+          "SOURCE_NODE_MISSING"
+        ]
+      },
+      {
+        "caseKey": "D1",
+        "sourceKind": "decision-zh",
+        "messageId": "b73119c5-6f61-4130-ab3d-9e2ae4661f7e",
+        "messageSeq": 10,
+        "checkpointSeq": 34,
+        "matched": true,
+        "localInteractions": [
+          {
+            "kind": "resource-availability",
+            "inputId": "input-1",
+            "original": null,
+            "hypothesis": false,
+            "requirementsBefore": "方案 / 条件\t当前检查\t状态\n托管平台 / 当前需要私网\t否 支持所需能力 否\t未启用\n虚拟机 / 当前需要私网\t是 支持所需能力 否\t未启用\n托管平台 / 团队有维护余力\t未知 要求资源可用 未知\t未知\n虚拟机 / 团队有维护余力\t是 要求资源可用 未知\t未知",
+            "requirementsAfter": "方案 / 条件\t当前检查\t状态\n托管平台 / 当前需要私网\t否 支持所需能力 否\t未启用\n虚拟机 / 当前需要私网\t是 支持所需能力 否\t未启用\n托管平台 / 团队有维护余力\t未知 要求资源可用 否\t未知\n虚拟机 / 团队有维护余力\t是 要求资源可用 否\t不满足"
+          }
+        ],
+        "refreshRestoredOriginal": true,
+        "sourceAndJournalUnchanged": true,
+        "legacyIssueCodes": [
+          "DECLARATION_MISSING"
+        ]
+      },
+      {
+        "caseKey": "D2",
+        "sourceKind": "capacity-zh",
+        "messageId": "b5a55039-8408-49ef-9944-7ae860fec959",
+        "messageSeq": 10,
+        "checkpointSeq": 34,
+        "matched": true,
+        "localInteractions": [
+          {
+            "kind": "hard-demand",
+            "inputId": "demand",
+            "original": 80,
+            "hypothesis": 300,
+            "requirementsBefore": "方案 / 条件\t当前检查\t状态\nA / 需求容量（本地假设）\t100 ≥ 80 GB\t通过\nB / 需求容量（本地假设）\t1000 ≥ 80 GB\t通过",
+            "requirementsAfter": "方案 / 条件\t当前检查\t状态\nA / 需求容量（本地假设）\t100 ≥ 300 GB\t不满足\nB / 需求容量（本地假设）\t1000 ≥ 300 GB\t通过"
+          }
+        ],
+        "refreshRestoredOriginal": true,
+        "sourceAndJournalUnchanged": true,
+        "legacyIssueCodes": [
+          "DECLARATION_MISSING"
+        ]
+      },
+      {
+        "caseKey": "N2",
+        "sourceKind": "observations-zh",
+        "messageId": "de456f21-b39c-42a8-abf7-4f734c49ea57",
+        "messageSeq": 10,
+        "checkpointSeq": 29,
+        "matched": true,
+        "localInteractions": [
+          {
+            "kind": "chart-range",
+            "from": 0,
+            "to": 1,
+            "statisticsBefore": "温度：有效数=3，缺失数=1；均值=0 摄氏度",
+            "statisticsAfter": "温度：有效数=2，缺失数=1；均值=1 摄氏度"
+          }
+        ],
+        "refreshRestoredOriginal": true,
+        "sourceAndJournalUnchanged": true,
+        "legacyIssueCodes": []
+      }
+    ],
+    "callerFileReady": {
+      "defaultServeReady": true,
+      "callerSuppliedJsonPointer": "/question",
+      "sourceRecord": "docs/evidence/natural/r9-D2.json",
+      "sourceSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "referenceKind": "capacity-zh",
+      "graphicalComponentObserved": true,
+      "newModelStarts": 0
+    },
+    "callerRunMetadataErratum": "Recorded caller-file-native originalInputs=true was a generic label, not evidence of catalog selection or human authorship. Delivered loader/browser now records catalog selection separately; contract checks distinguish caller source from catalog.",
+    "captureQualification": "Initial six-case state/interaction run preceded the final capture helper correction. Final helper was verified by read-only reopening saved sessions, not by replaying the six source prompts.",
+    "postHostMetadataChanges": "Final CLI rejects JSON pointer without a file and file+case ambiguity; origin label now derives from loader catalog selection. Verified by the offline contracts, not a new model or host matrix."
+  },
+  "templates": {
+    "shapeAndRolesOnly": true,
+    "oldOptionsRowsAndInitialsNotStored": true,
+    "matchingTemplateDoesNotApproveChangedSourceData": true,
+    "verification": "tests/source-reference-contracts.mjs"
+  },
+  "verification": {
+    "offlineContractsPassed": 10,
+    "newSourceReferenceContracts": 7,
+    "savedModelContracts": 3,
+    "syntaxFilesPassed": 8,
+    "unitOutput": "docs/evidence/original-case-reference/unit.txt",
+    "newCiRun": false,
+    "newPtcLinuxPhoneMainCodexUiClaims": false
+  },
+  "capture": {
+    "savedSessionsOnly": true,
+    "newPrompts": 0,
+    "newFixtureRequests": 0,
+    "newModels": 0,
+    "images": 10,
+    "widths": [
+      640,
+      360
+    ],
+    "checkpointEventsEqual": true,
+    "source": "docs/evidence/original-case-reference/settled-capture.json",
+    "firstFailurePreserved": true,
+    "readOnlyCollectorFailuresPreserved": 2
+  },
+  "deliveryCompanionFiles": [
+    {
+      "path": "examples/dsh-source-reference.mjs",
+      "sha256": "ac6c50d7f41fffa9060d8cfac80b6c0907da5565cdc0691e98d90381862bc84e"
+    },
+    {
+      "path": "examples/source-reference.mjs",
+      "sha256": "39adde6d546236bf0f1089e9334d4472d75df682e2065967fad3627180c7abb6"
+    },
+    {
+      "path": "examples/original-source-cases.mjs",
+      "sha256": "b734764e05ca9e5a4026b2a0c01fc9ef3e1e230dc3e5443f318f93b2c280d518"
+    },
+    {
+      "path": "examples/dsh-source-reference-browser.mjs",
+      "sha256": "8982e348454fd2c081b1d10ed4d118d103e0b693812e5ea88294486822053470"
+    },
+    {
+      "path": "examples/host-component-capture.mjs",
+      "sha256": "689a8938a33289042153fbec5648af48b0378d5a26c9338bac9e7c6f7c35af7d"
+    },
+    {
+      "path": "examples/dsh-model-history.mjs",
+      "sha256": "9dc374ee2d0bff0c1126274680fb101129682179898a292bce1d5f83a24032c7"
+    },
+    {
+      "path": "examples/saved-model-replay-server.mjs",
+      "sha256": "a100094e0940adbe862cbb3789502e515a30f2f98e1d96cef43f3bfd8060aab0"
+    },
+    {
+      "path": "fixtures/original-source-cases.json",
+      "sha256": "54f31d5b79e42252f669f13357b56cc2203c41bad543d80de7721f6c25236d42"
+    },
+    {
+      "path": "tests/source-reference-contracts.mjs",
+      "sha256": "8f919b4f4416eb51d3da94d6db8efeb577be04a92ab62b2924b576db1f99fbe9"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "3c8d56c563391e1517496f88a98f5275a89b73839eebda625fac0570460688d7"
+    }
+  ],
+  "companionDigestScope": "Final delivered files; not a claim that later capture/metadata changes were present during the initial host interaction run.",
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "generalGenuiReplacementVerified": false,
+  "assets": [
+    {
+      "path": "docs/evidence/original-case-reference/caller-file-cleanup.json",
+      "sha256": "1761900207921601b64dd2d358c366de0b428568bf7686746b902214b62ef610",
+      "bytes": 471
+    },
+    {
+      "path": "docs/evidence/original-case-reference/caller-file-install.json",
+      "sha256": "cf928e5d59d99d8410940a9467a6bffd0a1e9b12c5d283d5b5616abb75baba3f",
+      "bytes": 769
+    },
+    {
+      "path": "docs/evidence/original-case-reference/caller-file-native.json",
+      "sha256": "6c07924a93843d24001053442efb677ae45a4464b9f92c4071076ec2b8213cde",
+      "bytes": 48406
+    },
+    {
+      "path": "docs/evidence/original-case-reference/caller-file-run.json",
+      "sha256": "99c8d8814087545f7ff24df9111f1889d91049371ea2f523990d695c13fe3608",
+      "bytes": 793
+    },
+    {
+      "path": "docs/evidence/original-case-reference/capture-attempts.json",
+      "sha256": "05d3d3c56870cd355da96430892c8c218b5b3053ab7acfebfbca1c51011ac951",
+      "bytes": 2044
+    },
+    {
+      "path": "docs/evidence/original-case-reference/capture-cleanup.json",
+      "sha256": "b6f23031bd41c41925ffc80ff6bb31803416f64d2199e2bcf056248f5817577a",
+      "bytes": 320
+    },
+    {
+      "path": "docs/evidence/original-case-reference/current-core-baseline.json",
+      "sha256": "8e0c22426bf88766faa8d5c2e4af7241c91c13caa163464e4068113d6d849238",
+      "bytes": 136192
+    },
+    {
+      "path": "docs/evidence/original-case-reference/first-capture-A2-640.png",
+      "sha256": "3e544eb412bd89f38f3e276de4a0397f017491168061172a5407ceba1d4d308e",
+      "bytes": 162315
+    },
+    {
+      "path": "docs/evidence/original-case-reference/native-cleanup.json",
+      "sha256": "65bbdc4d09cc956d0c67ed7d0182438db22c9299718cd0ddf87ba9e2b87c7f2b",
+      "bytes": 472
+    },
+    {
+      "path": "docs/evidence/original-case-reference/native-run.json",
+      "sha256": "c2d5c839af4dc489f5c4f9a01a89ac08da9f19d9103b29d21aeacf30f775202f",
+      "bytes": 3837
+    },
+    {
+      "path": "docs/evidence/original-case-reference/native.json",
+      "sha256": "4cdc291ca34aa45fdc1f536df90af804066aa563ef1774f174e48080694e4360",
+      "bytes": 263143
+    },
+    {
+      "path": "docs/evidence/original-case-reference/normal-install.json",
+      "sha256": "cf928e5d59d99d8410940a9467a6bffd0a1e9b12c5d283d5b5616abb75baba3f",
+      "bytes": 769
+    },
+    {
+      "path": "docs/evidence/original-case-reference/original-records.json",
+      "sha256": "08826f2e4544d9feb772ad2bafc60287086c3ad769aa83bb9de9daf1bbc1f81d",
+      "bytes": 4935
+    },
+    {
+      "path": "docs/evidence/original-case-reference/resource-observation.json",
+      "sha256": "9296da996fa3ae9191afa51158fe7baab9ad09c8c6fd0e965df8a1306d164c41",
+      "bytes": 340
+    },
+    {
+      "path": "docs/evidence/original-case-reference/reviewer-coordinates.json",
+      "sha256": "c8ab77091e6d1ac4bc97d055f7c3480c56de5f4576da474d209f53a076b8f1c6",
+      "bytes": 1015
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-A2-360.png",
+      "sha256": "dfa8b9ed5637bf59e542f241816339ee5ddfae572c4f3fbd2f26e8c44c6d3eca",
+      "bytes": 162114
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-A2-640.png",
+      "sha256": "90432659043627e5090d57c7654a2eb0d3861c5bd0e6d1cd8070e5d9039de79f",
+      "bytes": 162150
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-A3-360.png",
+      "sha256": "742a70f2cf2f5b5a07c09d7edc337366ca2110bbed8133231ed009a16f51c10d",
+      "bytes": 171101
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-A3-640.png",
+      "sha256": "70094436d97e55fe280842831cca17f5fe17bbf4918a42950eba765e6d004df5",
+      "bytes": 174649
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-D1-360.png",
+      "sha256": "0e9ad5a820fba9410f0c9039bd11364a6ded2237383c7bd3f87ff4a9375845ae",
+      "bytes": 271104
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-D1-640.png",
+      "sha256": "2e5cf698d8fde46210125eb1e8ac4b55b3194b05d9b6dc224b28b5266a6be089",
+      "bytes": 281800
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-D2-360.png",
+      "sha256": "bcff6c988aa7dedffa23b070796f575a6c93e37d5fdb1625c7a4bc71f4043f7b",
+      "bytes": 245999
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-D2-640.png",
+      "sha256": "b5ad6b5128af7ea4c9e8c0611e08a8f4aff5f733715546d139385abba855943a",
+      "bytes": 254160
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-N2-360.png",
+      "sha256": "b3f23cd50f011e17bd2dde5fe3a2dee479684381d8a5513e0aa9e82698917dcf",
+      "bytes": 185123
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-N2-640.png",
+      "sha256": "2f967ca5ce8537d92a78a1cc02d7ed9304311fb278f0a0640551980ebd8079fe",
+      "bytes": 194532
+    },
+    {
+      "path": "docs/evidence/original-case-reference/settled-capture.json",
+      "sha256": "de308eec353a87e72c3d0a23e561fb3cd6ac9faae1ed8cb90e73206279ba2faa",
+      "bytes": 6817
+    },
+    {
+      "path": "docs/evidence/original-case-reference/unit.txt",
+      "sha256": "53a78d867b5198e875162df9889eafc8a7c7e36818950ce6d08d5be73143ece0",
+      "bytes": 1319
+    }
+  ]
+}

@@ -1,0 +1,4038 @@
+[
+  {
+    "id": "A2",
+    "kind": "workflow-zh",
+    "source": {
+      "documentSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "jsonPointer": null,
+      "textBytes": 174,
+      "textByteStart": 0,
+      "textByteEnd": 174,
+      "excerpt": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？",
+      "kind": "workflow-zh"
+    },
+    "parsed": {
+      "status": "ready",
+      "value": {
+        "nodes": [
+          "入口",
+          "鉴权",
+          "库存",
+          "支付",
+          "通知"
+        ],
+        "relations": [
+          {
+            "from": "入口",
+            "to": "鉴权",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "鉴权",
+            "to": "库存",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "库存",
+            "to": "支付",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "支付",
+            "to": "通知",
+            "spans": [
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ]
+          }
+        ],
+        "failurePolicies": [
+          {
+            "trigger": "通知",
+            "retryOnly": [
+              "通知"
+            ],
+            "noRollback": [
+              "支付"
+            ],
+            "triggerSpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "retrySpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "noRollbackSpans": [
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ]
+          }
+        ],
+        "questions": [
+          {
+            "triggers": [
+              "通知",
+              "库存"
+            ],
+            "span": {
+              "textByteStart": 123,
+              "textByteEnd": 171
+            }
+          }
+        ]
+      }
+    },
+    "inspection": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "workflow-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "jsonPointer": null,
+        "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 174,
+          "textUTF8Bytes": 174
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "status": "compared",
+      "sourceWorkflow": {
+        "nodes": [
+          "入口",
+          "鉴权",
+          "库存",
+          "支付",
+          "通知"
+        ],
+        "relations": [
+          {
+            "from": "入口",
+            "to": "鉴权",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "鉴权",
+            "to": "库存",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "库存",
+            "to": "支付",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              }
+            ]
+          },
+          {
+            "from": "支付",
+            "to": "通知",
+            "spans": [
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ]
+          }
+        ],
+        "failurePolicies": [
+          {
+            "trigger": "通知",
+            "retryOnly": [
+              "通知"
+            ],
+            "noRollback": [
+              "支付"
+            ],
+            "triggerSpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "retrySpans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              }
+            ],
+            "noRollbackSpans": [
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ]
+          }
+        ],
+        "questions": [
+          {
+            "triggers": [
+              "通知",
+              "库存"
+            ],
+            "span": {
+              "textByteStart": 123,
+              "textByteEnd": 171
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "claimChecks": [],
+      "conclusion": {
+        "selectedSource": "not-requested",
+        "structuredClaims": "not-requested",
+        "sourceIdentity": "unverified",
+        "freeProse": "not-verified"
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "reason": "No keyword removal or arbitrary prose certification."
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete finite workflow syntax only",
+        "text": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+      }
+    },
+    "calls": [
+      {
+        "callIndex": 2,
+        "originalArguments": {
+          "action": "render",
+          "view": {
+            "protocolVersion": "1.2",
+            "displayId": "order-flow-fault-scope",
+            "revision": 1,
+            "component": "ArchitectureExplorer",
+            "summary": "虚构订单流程共五个节点：通知出错只落在支付之后的通知自身（仅重试，不回滚支付）；库存位于支付之前，其出错会挡住支付与通知，而入口与鉴权已先完成。",
+            "payload": {
+              "title": "订单流程故障影响范围",
+              "nodes": [
+                {
+                  "id": "entry",
+                  "label": "入口",
+                  "responsibility": "下单请求进入流程的起点。",
+                  "constraints": [
+                    "用户给定的链路起点，之前无节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "auth",
+                  "label": "鉴权",
+                  "responsibility": "在库存与支付之前完成身份/权限校验。",
+                  "constraints": [
+                    "位于库存之前，属库存出错时的上游已完成环节。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "inventory",
+                  "label": "库存",
+                  "responsibility": "在支付之前处理库存扣减等动作。",
+                  "constraints": [
+                    "位于支付之前；其出错时按给定顺序后续的支付与通知无法到达（条件推断，用户未说明补偿方式）。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "payment",
+                  "label": "支付",
+                  "responsibility": "承接库存之后的支付动作，并向下游触发通知。",
+                  "constraints": [
+                    "用户明确：通知失败时不回滚支付。",
+                    "位于库存之后，故库存出错会影响其可达性。"
+                  ],
+                  "evidence": [
+                    "用户给定：支付→通知",
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                },
+                {
+                  "id": "notify",
+                  "label": "通知",
+                  "responsibility": "支付后的通知投递，失败时仅重试自身。",
+                  "constraints": [
+                    "用户明确：通知失败只重试通知本身。",
+                    "用户明确：通知失败不回滚支付。",
+                    "链路末端，之后无其他节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-entry-auth",
+                  "source": "entry",
+                  "target": "auth",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "进入",
+                  "evidence": [
+                    "用户给定：入口→鉴权"
+                  ]
+                },
+                {
+                  "id": "e-auth-inv",
+                  "source": "auth",
+                  "target": "inventory",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "通过后进入",
+                  "evidence": [
+                    "用户给定：鉴权→库存"
+                  ]
+                },
+                {
+                  "id": "e-inv-pay",
+                  "source": "inventory",
+                  "target": "payment",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "库存通过后发起",
+                  "evidence": [
+                    "用户给定：库存→支付"
+                  ]
+                },
+                {
+                  "id": "e-pay-notify",
+                  "source": "payment",
+                  "target": "notify",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "支付后通知",
+                  "evidence": [
+                    "用户给定：支付→通知"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-notify-fail",
+                  "label": "通知出错（仅重试）",
+                  "nodeIds": [
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-pay-notify"
+                  ],
+                  "explanation": "通知出错的影响面是支付到通知这一段：支付已发生，按用户给定规则只重试通知、不回滚支付；通知之后无下游节点。"
+                },
+                {
+                  "id": "s-inventory-fail",
+                  "label": "库存出错",
+                  "nodeIds": [
+                    "inventory",
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-inv-pay",
+                    "e-pay-notify"
+                  ],
+                  "explanation": "库存位于支付之前，其出错时按给定顺序支付与通知都无法到达，影响范围是库存之后的这一段；入口与鉴权在其上游，已完成环节不在此路径上（条件推断，用户未说明补偿或回滚方式）。"
+                }
+              ]
+            }
+          }
+        },
+        "historyRead": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.2",
+            "displayId": "order-flow-fault-scope",
+            "revision": 1,
+            "summary": "虚构订单流程共五个节点：通知出错只落在支付之后的通知自身（仅重试，不回滚支付）；库存位于支付之前，其出错会挡住支付与通知，而入口与鉴权已先完成。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "订单流程故障影响范围",
+              "nodes": [
+                {
+                  "id": "entry",
+                  "label": "入口",
+                  "responsibility": "下单请求进入流程的起点。",
+                  "constraints": [
+                    "用户给定的链路起点，之前无节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "auth",
+                  "label": "鉴权",
+                  "responsibility": "在库存与支付之前完成身份/权限校验。",
+                  "constraints": [
+                    "位于库存之前，属库存出错时的上游已完成环节。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "inventory",
+                  "label": "库存",
+                  "responsibility": "在支付之前处理库存扣减等动作。",
+                  "constraints": [
+                    "位于支付之前；其出错时按给定顺序后续的支付与通知无法到达（条件推断，用户未说明补偿方式）。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "payment",
+                  "label": "支付",
+                  "responsibility": "承接库存之后的支付动作，并向下游触发通知。",
+                  "constraints": [
+                    "用户明确：通知失败时不回滚支付。",
+                    "位于库存之后，故库存出错会影响其可达性。"
+                  ],
+                  "evidence": [
+                    "用户给定：支付→通知",
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                },
+                {
+                  "id": "notify",
+                  "label": "通知",
+                  "responsibility": "支付后的通知投递，失败时仅重试自身。",
+                  "constraints": [
+                    "用户明确：通知失败只重试通知本身。",
+                    "用户明确：通知失败不回滚支付。",
+                    "链路末端，之后无其他节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-entry-auth",
+                  "source": "entry",
+                  "target": "auth",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "进入",
+                  "evidence": [
+                    "用户给定：入口→鉴权"
+                  ]
+                },
+                {
+                  "id": "e-auth-inv",
+                  "source": "auth",
+                  "target": "inventory",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "通过后进入",
+                  "evidence": [
+                    "用户给定：鉴权→库存"
+                  ]
+                },
+                {
+                  "id": "e-inv-pay",
+                  "source": "inventory",
+                  "target": "payment",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "库存通过后发起",
+                  "evidence": [
+                    "用户给定：库存→支付"
+                  ]
+                },
+                {
+                  "id": "e-pay-notify",
+                  "source": "payment",
+                  "target": "notify",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "支付后通知",
+                  "evidence": [
+                    "用户给定：支付→通知"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-notify-fail",
+                  "label": "通知出错（仅重试）",
+                  "nodeIds": [
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-pay-notify"
+                  ],
+                  "explanation": "通知出错的影响面是支付到通知这一段：支付已发生，按用户给定规则只重试通知、不回滚支付；通知之后无下游节点。"
+                },
+                {
+                  "id": "s-inventory-fail",
+                  "label": "库存出错",
+                  "nodeIds": [
+                    "inventory",
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-inv-pay",
+                    "e-pay-notify"
+                  ],
+                  "explanation": "库存位于支付之前，其出错时按给定顺序支付与通知都无法到达，影响范围是库存之后的这一段；入口与鉴权在其上游，已完成环节不在此路径上（条件推断，用户未说明补偿或回滚方式）。"
+                }
+              ]
+            }
+          }
+        },
+        "newDelivery": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.4",
+            "displayId": "order-flow-fault-scope",
+            "revision": 1,
+            "summary": "虚构订单流程共五个节点：通知出错只落在支付之后的通知自身（仅重试，不回滚支付）；库存位于支付之前，其出错会挡住支付与通知，而入口与鉴权已先完成。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "订单流程故障影响范围",
+              "nodes": [
+                {
+                  "id": "entry",
+                  "label": "入口",
+                  "responsibility": "下单请求进入流程的起点。",
+                  "constraints": [
+                    "用户给定的链路起点，之前无节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "auth",
+                  "label": "鉴权",
+                  "responsibility": "在库存与支付之前完成身份/权限校验。",
+                  "constraints": [
+                    "位于库存之前，属库存出错时的上游已完成环节。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "inventory",
+                  "label": "库存",
+                  "responsibility": "在支付之前处理库存扣减等动作。",
+                  "constraints": [
+                    "位于支付之前；其出错时按给定顺序后续的支付与通知无法到达（条件推断，用户未说明补偿方式）。"
+                  ],
+                  "evidence": [
+                    "用户给定：入口→鉴权→库存→支付"
+                  ]
+                },
+                {
+                  "id": "payment",
+                  "label": "支付",
+                  "responsibility": "承接库存之后的支付动作，并向下游触发通知。",
+                  "constraints": [
+                    "用户明确：通知失败时不回滚支付。",
+                    "位于库存之后，故库存出错会影响其可达性。"
+                  ],
+                  "evidence": [
+                    "用户给定：支付→通知",
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                },
+                {
+                  "id": "notify",
+                  "label": "通知",
+                  "responsibility": "支付后的通知投递，失败时仅重试自身。",
+                  "constraints": [
+                    "用户明确：通知失败只重试通知本身。",
+                    "用户明确：通知失败不回滚支付。",
+                    "链路末端，之后无其他节点。"
+                  ],
+                  "evidence": [
+                    "用户给定：通知失败只重试通知，不回滚支付"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-entry-auth",
+                  "source": "entry",
+                  "target": "auth",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "进入",
+                  "evidence": [
+                    "用户给定：入口→鉴权"
+                  ]
+                },
+                {
+                  "id": "e-auth-inv",
+                  "source": "auth",
+                  "target": "inventory",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "通过后进入",
+                  "evidence": [
+                    "用户给定：鉴权→库存"
+                  ]
+                },
+                {
+                  "id": "e-inv-pay",
+                  "source": "inventory",
+                  "target": "payment",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "库存通过后发起",
+                  "evidence": [
+                    "用户给定：库存→支付"
+                  ]
+                },
+                {
+                  "id": "e-pay-notify",
+                  "source": "payment",
+                  "target": "notify",
+                  "directed": true,
+                  "type": "sequential",
+                  "label": "支付后通知",
+                  "evidence": [
+                    "用户给定：支付→通知"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-notify-fail",
+                  "label": "通知出错（仅重试）",
+                  "nodeIds": [
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-pay-notify"
+                  ],
+                  "explanation": "通知出错的影响面是支付到通知这一段：支付已发生，按用户给定规则只重试通知、不回滚支付；通知之后无下游节点。"
+                },
+                {
+                  "id": "s-inventory-fail",
+                  "label": "库存出错",
+                  "nodeIds": [
+                    "inventory",
+                    "payment",
+                    "notify"
+                  ],
+                  "edgeIds": [
+                    "e-inv-pay",
+                    "e-pay-notify"
+                  ],
+                  "explanation": "库存位于支付之前，其出错时按给定顺序支付与通知都无法到达，影响范围是库存之后的这一段；入口与鉴权在其上游，已完成环节不在此路径上（条件推断，用户未说明补偿或回滚方式）。"
+                }
+              ]
+            }
+          }
+        },
+        "sourceCheck": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "workflow-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "jsonPointer": null,
+            "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 174,
+              "textUTF8Bytes": 174
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+          },
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceWorkflow": {
+            "nodes": [
+              "入口",
+              "鉴权",
+              "库存",
+              "支付",
+              "通知"
+            ],
+            "relations": [
+              {
+                "from": "入口",
+                "to": "鉴权",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "鉴权",
+                "to": "库存",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "库存",
+                "to": "支付",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "支付",
+                "to": "通知",
+                "spans": [
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ]
+              }
+            ],
+            "failurePolicies": [
+              {
+                "trigger": "通知",
+                "retryOnly": [
+                  "通知"
+                ],
+                "noRollback": [
+                  "支付"
+                ],
+                "triggerSpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "retrySpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "noRollbackSpans": [
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ]
+              }
+            ],
+            "questions": [
+              {
+                "triggers": [
+                  "通知",
+                  "库存"
+                ],
+                "span": {
+                  "textByteStart": 123,
+                  "textByteEnd": 171
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "mismatch",
+            "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+            "edgeChecks": [
+              {
+                "edgeId": "e-entry-auth",
+                "from": "入口",
+                "to": "鉴权",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-auth-inv",
+                "from": "鉴权",
+                "to": "库存",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-inv-pay",
+                "from": "库存",
+                "to": "支付",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-pay-notify",
+                "from": "支付",
+                "to": "通知",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ]
+              }
+            ],
+            "missingRelations": [],
+            "policyChecks": [],
+            "missingPolicies": [
+              {
+                "trigger": "通知",
+                "retryOnly": [
+                  "通知"
+                ],
+                "noRollback": [
+                  "支付"
+                ],
+                "triggerSpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "retrySpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "noRollbackSpans": [
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ]
+              }
+            ]
+          },
+          "issues": [
+            {
+              "code": "SOURCE_POLICY_MAPPING_REQUIRED",
+              "path": "$.mapping",
+              "reason": "A complete view comparison must explicitly map all failurePolicies, including an empty array when none are declared."
+            },
+            {
+              "code": "SOURCE_POLICY_MISSING",
+              "path": "$.mapping.failurePolicies",
+              "reason": "Complete coverage includes every explicit failure policy, not just all arrows."
+            }
+          ],
+          "claimChecks": [],
+          "conclusion": {
+            "selectedSource": "mismatch",
+            "structuredClaims": "not-requested",
+            "sourceIdentity": "unverified",
+            "freeProse": "not-verified"
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "reason": "No keyword removal or arbitrary prose certification."
+          },
+          "canonicalExplanation": {
+            "status": "withheld"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "A3",
+    "kind": "permissions-zh",
+    "source": {
+      "documentSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "jsonPointer": null,
+      "textBytes": 193,
+      "textByteStart": 0,
+      "textByteEnd": 193,
+      "excerpt": "虚构服务中，客户端只能访问 Gateway，Gateway 访问 Search 与 Account，Search 只读 Index，Account 读写 Store；禁止 Search 访问 Store。请帮我理解边界与耦合。",
+      "kind": "permissions-zh"
+    },
+    "parsed": {
+      "status": "ready",
+      "value": {
+        "context": "虚构服务",
+        "nodes": [
+          "客户端",
+          "Gateway",
+          "Search",
+          "Account",
+          "Index",
+          "Store"
+        ],
+        "accesses": [
+          {
+            "from": "客户端",
+            "to": "Gateway",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 18,
+                "textByteEnd": 47
+              }
+            ]
+          },
+          {
+            "from": "Gateway",
+            "to": "Search",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "from": "Gateway",
+            "to": "Account",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "from": "Search",
+            "to": "Index",
+            "mode": "read-only",
+            "spans": [
+              {
+                "textByteStart": 86,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "from": "Account",
+            "to": "Store",
+            "mode": "read-write",
+            "spans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 128
+              }
+            ]
+          }
+        ],
+        "prohibitions": [
+          {
+            "from": "Search",
+            "to": "Store",
+            "spans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 157
+              }
+            ]
+          }
+        ],
+        "onlyTargets": [
+          {
+            "from": "客户端",
+            "targets": [
+              "Gateway"
+            ],
+            "spans": [
+              {
+                "textByteStart": 18,
+                "textByteEnd": 47
+              }
+            ]
+          }
+        ]
+      }
+    },
+    "inspection": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "permissions-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "jsonPointer": null,
+        "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 193,
+          "textUTF8Bytes": 193
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source author/human identity",
+        "unselected context and general natural-language meaning",
+        "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+        "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+      ],
+      "status": "compared",
+      "sourcePermissions": {
+        "context": "虚构服务",
+        "nodes": [
+          "客户端",
+          "Gateway",
+          "Search",
+          "Account",
+          "Index",
+          "Store"
+        ],
+        "accesses": [
+          {
+            "from": "客户端",
+            "to": "Gateway",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 18,
+                "textByteEnd": 47
+              }
+            ]
+          },
+          {
+            "from": "Gateway",
+            "to": "Search",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "from": "Gateway",
+            "to": "Account",
+            "mode": "access",
+            "spans": [
+              {
+                "textByteStart": 50,
+                "textByteEnd": 83
+              }
+            ]
+          },
+          {
+            "from": "Search",
+            "to": "Index",
+            "mode": "read-only",
+            "spans": [
+              {
+                "textByteStart": 86,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "from": "Account",
+            "to": "Store",
+            "mode": "read-write",
+            "spans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 128
+              }
+            ]
+          }
+        ],
+        "prohibitions": [
+          {
+            "from": "Search",
+            "to": "Store",
+            "spans": [
+              {
+                "textByteStart": 131,
+                "textByteEnd": 157
+              }
+            ]
+          }
+        ],
+        "onlyTargets": [
+          {
+            "from": "客户端",
+            "targets": [
+              "Gateway"
+            ],
+            "spans": [
+              {
+                "textByteStart": 18,
+                "textByteEnd": 47
+              }
+            ]
+          }
+        ]
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "claimChecks": [],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "bounded explicit source declarations; no global or causal inference",
+        "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+      }
+    },
+    "calls": [
+      {
+        "callIndex": 3,
+        "originalArguments": {
+          "action": "render",
+          "view": {
+            "protocolVersion": "1.2",
+            "displayId": "gateway-search-account-boundary",
+            "revision": 1,
+            "component": "ArchitectureExplorer",
+            "summary": "只有 Client→Gateway 一条入口边；Search 与 Account 互不连接，二者分别只经 Index 与 Store 落地。",
+            "payload": {
+              "title": "Gateway / Search / Account 的边界与耦合",
+              "nodes": [
+                {
+                  "id": "client",
+                  "label": "Client",
+                  "responsibility": "调用方；按给定约束只能访问 Gateway。",
+                  "constraints": [
+                    "未声明任何绕过 Gateway 的直连通路"
+                  ],
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "gateway",
+                  "label": "Gateway",
+                  "responsibility": "唯一入口，向外调用 Search 与 Account 两个下游。",
+                  "constraints": [
+                    "是所有外部请求的必经节点",
+                    "不直连 Index 或 Store（给定关系里没有这些边）"
+                  ],
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "search",
+                  "label": "Search",
+                  "responsibility": "查询侧服务，只读 Index，不写入。",
+                  "constraints": [
+                    "对 Index 只读",
+                    "禁止访问 Store：该禁止是约束，不是图中的边"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index",
+                    "禁止 Search 访问 Store"
+                  ]
+                },
+                {
+                  "id": "account",
+                  "label": "Account",
+                  "responsibility": "账户侧服务，对 Store 读写。",
+                  "constraints": [
+                    "对 Store 读写"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                },
+                {
+                  "id": "index",
+                  "label": "Index",
+                  "responsibility": "查询侧存储，仅由 Search 读。",
+                  "constraints": [
+                    "在本图中只有 Search 一个访问方"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "store",
+                  "label": "Store",
+                  "responsibility": "账户侧存储，仅由 Account 读写。",
+                  "constraints": [
+                    "在本图中只有 Account 一个访问方",
+                    "Search 不得作为其访问方"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store",
+                    "禁止 Search 访问 Store"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-client-gw",
+                  "source": "client",
+                  "target": "gateway",
+                  "directed": true,
+                  "type": "call",
+                  "label": "唯一入口调用",
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "e-gw-search",
+                  "source": "gateway",
+                  "target": "search",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到查询侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-gw-account",
+                  "source": "gateway",
+                  "target": "account",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到账户侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-search-index",
+                  "source": "search",
+                  "target": "index",
+                  "directed": true,
+                  "type": "read",
+                  "label": "只读",
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "e-account-store",
+                  "source": "account",
+                  "target": "store",
+                  "directed": true,
+                  "type": "read-write",
+                  "label": "读写",
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-read",
+                  "label": "查询路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "search",
+                    "index"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-search",
+                    "e-search-index"
+                  ],
+                  "explanation": "读请求经 Gateway 进入 Search，再落到 Index；全程不触碰 Store。"
+                },
+                {
+                  "id": "s-write",
+                  "label": "账户读写路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "account",
+                    "store"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-account",
+                    "e-account-store"
+                  ],
+                  "explanation": "账户请求经 Gateway 进入 Account，再读写 Store；与 Search/Index 无连接。"
+                }
+              ]
+            }
+          }
+        },
+        "historyRead": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.2",
+            "displayId": "gateway-search-account-boundary",
+            "revision": 1,
+            "summary": "只有 Client→Gateway 一条入口边；Search 与 Account 互不连接，二者分别只经 Index 与 Store 落地。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "Gateway / Search / Account 的边界与耦合",
+              "nodes": [
+                {
+                  "id": "client",
+                  "label": "Client",
+                  "responsibility": "调用方；按给定约束只能访问 Gateway。",
+                  "constraints": [
+                    "未声明任何绕过 Gateway 的直连通路"
+                  ],
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "gateway",
+                  "label": "Gateway",
+                  "responsibility": "唯一入口，向外调用 Search 与 Account 两个下游。",
+                  "constraints": [
+                    "是所有外部请求的必经节点",
+                    "不直连 Index 或 Store（给定关系里没有这些边）"
+                  ],
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "search",
+                  "label": "Search",
+                  "responsibility": "查询侧服务，只读 Index，不写入。",
+                  "constraints": [
+                    "对 Index 只读",
+                    "禁止访问 Store：该禁止是约束，不是图中的边"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index",
+                    "禁止 Search 访问 Store"
+                  ]
+                },
+                {
+                  "id": "account",
+                  "label": "Account",
+                  "responsibility": "账户侧服务，对 Store 读写。",
+                  "constraints": [
+                    "对 Store 读写"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                },
+                {
+                  "id": "index",
+                  "label": "Index",
+                  "responsibility": "查询侧存储，仅由 Search 读。",
+                  "constraints": [
+                    "在本图中只有 Search 一个访问方"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "store",
+                  "label": "Store",
+                  "responsibility": "账户侧存储，仅由 Account 读写。",
+                  "constraints": [
+                    "在本图中只有 Account 一个访问方",
+                    "Search 不得作为其访问方"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store",
+                    "禁止 Search 访问 Store"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-client-gw",
+                  "source": "client",
+                  "target": "gateway",
+                  "directed": true,
+                  "type": "call",
+                  "label": "唯一入口调用",
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "e-gw-search",
+                  "source": "gateway",
+                  "target": "search",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到查询侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-gw-account",
+                  "source": "gateway",
+                  "target": "account",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到账户侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-search-index",
+                  "source": "search",
+                  "target": "index",
+                  "directed": true,
+                  "type": "read",
+                  "label": "只读",
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "e-account-store",
+                  "source": "account",
+                  "target": "store",
+                  "directed": true,
+                  "type": "read-write",
+                  "label": "读写",
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-read",
+                  "label": "查询路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "search",
+                    "index"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-search",
+                    "e-search-index"
+                  ],
+                  "explanation": "读请求经 Gateway 进入 Search，再落到 Index；全程不触碰 Store。"
+                },
+                {
+                  "id": "s-write",
+                  "label": "账户读写路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "account",
+                    "store"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-account",
+                    "e-account-store"
+                  ],
+                  "explanation": "账户请求经 Gateway 进入 Account，再读写 Store；与 Search/Index 无连接。"
+                }
+              ]
+            }
+          }
+        },
+        "newDelivery": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.4",
+            "displayId": "gateway-search-account-boundary",
+            "revision": 1,
+            "summary": "只有 Client→Gateway 一条入口边；Search 与 Account 互不连接，二者分别只经 Index 与 Store 落地。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "Gateway / Search / Account 的边界与耦合",
+              "nodes": [
+                {
+                  "id": "client",
+                  "label": "Client",
+                  "responsibility": "调用方；按给定约束只能访问 Gateway。",
+                  "constraints": [
+                    "未声明任何绕过 Gateway 的直连通路"
+                  ],
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "gateway",
+                  "label": "Gateway",
+                  "responsibility": "唯一入口，向外调用 Search 与 Account 两个下游。",
+                  "constraints": [
+                    "是所有外部请求的必经节点",
+                    "不直连 Index 或 Store（给定关系里没有这些边）"
+                  ],
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "search",
+                  "label": "Search",
+                  "responsibility": "查询侧服务，只读 Index，不写入。",
+                  "constraints": [
+                    "对 Index 只读",
+                    "禁止访问 Store：该禁止是约束，不是图中的边"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index",
+                    "禁止 Search 访问 Store"
+                  ]
+                },
+                {
+                  "id": "account",
+                  "label": "Account",
+                  "responsibility": "账户侧服务，对 Store 读写。",
+                  "constraints": [
+                    "对 Store 读写"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                },
+                {
+                  "id": "index",
+                  "label": "Index",
+                  "responsibility": "查询侧存储，仅由 Search 读。",
+                  "constraints": [
+                    "在本图中只有 Search 一个访问方"
+                  ],
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "store",
+                  "label": "Store",
+                  "responsibility": "账户侧存储，仅由 Account 读写。",
+                  "constraints": [
+                    "在本图中只有 Account 一个访问方",
+                    "Search 不得作为其访问方"
+                  ],
+                  "evidence": [
+                    "Account 读写 Store",
+                    "禁止 Search 访问 Store"
+                  ]
+                }
+              ],
+              "edges": [
+                {
+                  "id": "e-client-gw",
+                  "source": "client",
+                  "target": "gateway",
+                  "directed": true,
+                  "type": "call",
+                  "label": "唯一入口调用",
+                  "evidence": [
+                    "客户端只能访问 Gateway"
+                  ]
+                },
+                {
+                  "id": "e-gw-search",
+                  "source": "gateway",
+                  "target": "search",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到查询侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-gw-account",
+                  "source": "gateway",
+                  "target": "account",
+                  "directed": true,
+                  "type": "call",
+                  "label": "路由到账户侧",
+                  "evidence": [
+                    "Gateway 访问 Search 与 Account"
+                  ]
+                },
+                {
+                  "id": "e-search-index",
+                  "source": "search",
+                  "target": "index",
+                  "directed": true,
+                  "type": "read",
+                  "label": "只读",
+                  "evidence": [
+                    "Search 只读 Index"
+                  ]
+                },
+                {
+                  "id": "e-account-store",
+                  "source": "account",
+                  "target": "store",
+                  "directed": true,
+                  "type": "read-write",
+                  "label": "读写",
+                  "evidence": [
+                    "Account 读写 Store"
+                  ]
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "s-read",
+                  "label": "查询路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "search",
+                    "index"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-search",
+                    "e-search-index"
+                  ],
+                  "explanation": "读请求经 Gateway 进入 Search，再落到 Index；全程不触碰 Store。"
+                },
+                {
+                  "id": "s-write",
+                  "label": "账户读写路径",
+                  "nodeIds": [
+                    "client",
+                    "gateway",
+                    "account",
+                    "store"
+                  ],
+                  "edgeIds": [
+                    "e-client-gw",
+                    "e-gw-account",
+                    "e-account-store"
+                  ],
+                  "explanation": "账户请求经 Gateway 进入 Account，再读写 Store；与 Search/Index 无连接。"
+                }
+              ]
+            }
+          }
+        },
+        "sourceCheck": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "permissions-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "jsonPointer": null,
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 193,
+              "textUTF8Bytes": 193
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/human identity",
+            "unselected context and general natural-language meaning",
+            "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+            "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+          ],
+          "status": "compared",
+          "sourcePermissions": {
+            "context": "虚构服务",
+            "nodes": [
+              "客户端",
+              "Gateway",
+              "Search",
+              "Account",
+              "Index",
+              "Store"
+            ],
+            "accesses": [
+              {
+                "from": "客户端",
+                "to": "Gateway",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 18,
+                    "textByteEnd": 47
+                  }
+                ]
+              },
+              {
+                "from": "Gateway",
+                "to": "Search",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "from": "Gateway",
+                "to": "Account",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "from": "Search",
+                "to": "Index",
+                "mode": "read-only",
+                "spans": [
+                  {
+                    "textByteStart": 86,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "from": "Account",
+                "to": "Store",
+                "mode": "read-write",
+                "spans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 128
+                  }
+                ]
+              }
+            ],
+            "prohibitions": [
+              {
+                "from": "Search",
+                "to": "Store",
+                "spans": [
+                  {
+                    "textByteStart": 131,
+                    "textByteEnd": 157
+                  }
+                ]
+              }
+            ],
+            "onlyTargets": [
+              {
+                "from": "客户端",
+                "targets": [
+                  "Gateway"
+                ],
+                "spans": [
+                  {
+                    "textByteStart": 18,
+                    "textByteEnd": 47
+                  }
+                ]
+              }
+            ]
+          },
+          "comparison": {
+            "status": "not-assessed",
+            "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+            "nodeChecks": [
+              {
+                "nodeId": "client",
+                "label": "Client",
+                "status": "not-assessed"
+              },
+              {
+                "nodeId": "gateway",
+                "label": "Gateway",
+                "status": "matched"
+              },
+              {
+                "nodeId": "search",
+                "label": "Search",
+                "status": "matched"
+              },
+              {
+                "nodeId": "account",
+                "label": "Account",
+                "status": "matched"
+              },
+              {
+                "nodeId": "index",
+                "label": "Index",
+                "status": "matched"
+              },
+              {
+                "nodeId": "store",
+                "label": "Store",
+                "status": "matched"
+              }
+            ],
+            "edgeChecks": [
+              {
+                "edgeId": "e-client-gw",
+                "from": "Client",
+                "to": "Gateway",
+                "status": "not-assessed"
+              },
+              {
+                "edgeId": "e-gw-search",
+                "from": "Gateway",
+                "to": "Search",
+                "status": "matched",
+                "expectedMode": "access",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-gw-account",
+                "from": "Gateway",
+                "to": "Account",
+                "status": "matched",
+                "expectedMode": "access",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-search-index",
+                "from": "Search",
+                "to": "Index",
+                "status": "matched",
+                "expectedMode": "read-only",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 86,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "edgeId": "e-account-store",
+                "from": "Account",
+                "to": "Store",
+                "status": "matched",
+                "expectedMode": "read-write",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 128
+                  }
+                ]
+              }
+            ],
+            "viewAnnotations": "not-verified"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_BINDING_UNVERIFIED",
+              "path": "$.view.payload.nodes.0.label",
+              "reason": "No unique exact source label establishes this correspondence. Translation/aliases are not inferred; this does not prove the entity or its relations false."
+            },
+            {
+              "code": "SOURCE_NODE_MISSING",
+              "path": "$.view.payload.nodes",
+              "reason": "Source entity \"客户端\" is not represented by an exact label."
+            },
+            {
+              "code": "SOURCE_ACCESS_MISSING",
+              "path": "$.view.payload.edges",
+              "reason": "The declared positive access \"客户端\" → \"Gateway\" is missing or unbound."
+            }
+          ],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "withheld",
+            "reason": "Resolve unsupported bindings, modes or claims before using a combined explanation."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "D1",
+    "kind": "decision-zh",
+    "source": {
+      "documentSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "jsonPointer": null,
+      "textBytes": 201,
+      "textByteStart": 0,
+      "textByteEnd": 201,
+      "excerpt": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+      "kind": "decision-zh"
+    },
+    "parsed": {
+      "status": "ready",
+      "value": {
+        "options": [
+          "托管平台",
+          "虚拟机"
+        ],
+        "facts": [
+          {
+            "kind": "actor-updates",
+            "option": "托管平台",
+            "name": null,
+            "actor": "供应商",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 45,
+                "textByteEnd": 69
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "托管平台",
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 72,
+                "textByteEnd": 84
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "虚拟机",
+            "name": "私网",
+            "actor": null,
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 87,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "虚拟机",
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 126
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "托管平台",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "虚拟机",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ]
+          },
+          {
+            "kind": "capability-need",
+            "option": null,
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 153,
+                "textByteEnd": 180
+              }
+            ]
+          }
+        ],
+        "clauses": [
+          {
+            "kind": "selection",
+            "span": {
+              "textByteStart": 0,
+              "textByteEnd": 42
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 45,
+              "textByteEnd": 69
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 72,
+              "textByteEnd": 84
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 87,
+              "textByteEnd": 105
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 108,
+              "textByteEnd": 126
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 153,
+              "textByteEnd": 180
+            }
+          },
+          {
+            "kind": "comparison-request",
+            "span": {
+              "textByteStart": 183,
+              "textByteEnd": 198
+            }
+          }
+        ]
+      }
+    },
+    "inspection": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "decision-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+        "jsonPointer": null,
+        "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+        "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 201,
+          "textUTF8Bytes": 201
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source author/original human identity",
+        "general natural-language meaning outside the documented grammar",
+        "component annotations and arbitrary free prose",
+        "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+      ],
+      "status": "compared",
+      "sourceDecision": {
+        "options": [
+          "托管平台",
+          "虚拟机"
+        ],
+        "facts": [
+          {
+            "kind": "actor-updates",
+            "option": "托管平台",
+            "name": null,
+            "actor": "供应商",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 45,
+                "textByteEnd": 69
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "托管平台",
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 72,
+                "textByteEnd": 84
+              }
+            ]
+          },
+          {
+            "kind": "capability",
+            "option": "虚拟机",
+            "name": "私网",
+            "actor": null,
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 87,
+                "textByteEnd": 105
+              }
+            ]
+          },
+          {
+            "kind": "maintenance-need",
+            "option": "虚拟机",
+            "name": null,
+            "actor": "团队",
+            "value": true,
+            "spans": [
+              {
+                "textByteStart": 108,
+                "textByteEnd": 126
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "托管平台",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ]
+          },
+          {
+            "kind": "price",
+            "option": "虚拟机",
+            "name": null,
+            "actor": null,
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ]
+          },
+          {
+            "kind": "capability-need",
+            "option": null,
+            "name": "私网",
+            "actor": null,
+            "value": false,
+            "spans": [
+              {
+                "textByteStart": 153,
+                "textByteEnd": 180
+              }
+            ]
+          }
+        ],
+        "clauses": [
+          {
+            "kind": "selection",
+            "span": {
+              "textByteStart": 0,
+              "textByteEnd": 42
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 45,
+              "textByteEnd": 69
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 72,
+              "textByteEnd": 84
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 87,
+              "textByteEnd": 105
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 108,
+              "textByteEnd": 126
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          },
+          {
+            "kind": "fact",
+            "span": {
+              "textByteStart": 153,
+              "textByteEnd": 180
+            }
+          },
+          {
+            "kind": "comparison-request",
+            "span": {
+              "textByteStart": 183,
+              "textByteEnd": 198
+            }
+          }
+        ]
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "fieldChecks": [],
+      "inputChecks": [],
+      "claimChecks": [],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "bounded parsed source declarations; not general natural-language certification",
+        "text": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+      }
+    },
+    "calls": [
+      {
+        "callIndex": 2,
+        "originalArguments": {
+          "action": "render",
+          "view": {
+            "protocolVersion": "1.2",
+            "displayId": "hosting-vs-vm-tradeoff",
+            "revision": 1,
+            "component": "DecisionExplorer",
+            "summary": "两项价格都未知、当前又不需要私网：托管平台与虚拟机都不被硬性排除，现有事实不足以判出赢家。",
+            "payload": {
+              "title": "托管平台 vs 虚拟机：私网与运维的权衡",
+              "dimensions": [
+                {
+                  "id": "private_net",
+                  "label": "支持私网",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "vendor_managed",
+                  "label": "供应商负责更新",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "team_maint",
+                  "label": "需团队自行维护",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "price",
+                  "label": "每月费用",
+                  "kind": "number",
+                  "unit": "元/月"
+                }
+              ],
+              "options": [
+                {
+                  "id": "hosted",
+                  "label": "托管平台",
+                  "values": {
+                    "private_net": false,
+                    "vendor_managed": true,
+                    "team_maint": false,
+                    "price": null
+                  },
+                  "advantages": [
+                    "更新与补丁由供应商承担，团队不必投入运维人力",
+                    "不用自己搭建与维护私网"
+                  ],
+                  "disadvantages": [
+                    "不具备私网能力，若真需要只能更换方案",
+                    "价格未知，无法与另一项做成本比较"
+                  ],
+                  "suitableWhen": "当前阶段不需要私网，且更愿意把更新和运维责任交给供应商",
+                  "evidence": [
+                    "供应商负责更新、平台没有私网（用户提供）",
+                    "价格未知（用户提供）"
+                  ]
+                },
+                {
+                  "id": "vm",
+                  "label": "虚拟机",
+                  "values": {
+                    "private_net": true,
+                    "vendor_managed": false,
+                    "team_maint": true,
+                    "price": null
+                  },
+                  "advantages": [
+                    "支持私网，网络形态与隔离方式由团队自己掌控"
+                  ],
+                  "disadvantages": [
+                    "需要团队自行维护与更新，占用人力",
+                    "价格未知，无法与另一项做成本比较"
+                  ],
+                  "suitableWhen": "确实需要私网，或团队已有余力并愿意承担日常运维",
+                  "evidence": [
+                    "支持私网、需要团队维护（用户提供）",
+                    "价格未知（用户提供）"
+                  ]
+                }
+              ],
+              "inputs": [
+                {
+                  "id": "need_private_net",
+                  "label": "当前需要私网",
+                  "type": "boolean",
+                  "initial": false
+                },
+                {
+                  "id": "team_capacity",
+                  "label": "团队有维护余力",
+                  "type": "boolean",
+                  "initial": null
+                }
+              ],
+              "rules": [],
+              "constraints": [],
+              "requirements": [
+                {
+                  "id": "rq-private",
+                  "dimension": "private_net",
+                  "input": "need_private_net",
+                  "relation": "supports"
+                },
+                {
+                  "id": "rq-maint",
+                  "dimension": "team_maint",
+                  "input": "team_capacity",
+                  "relation": "supports"
+                }
+              ]
+            }
+          }
+        },
+        "historyRead": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.2",
+            "displayId": "hosting-vs-vm-tradeoff",
+            "revision": 1,
+            "summary": "两项价格都未知、当前又不需要私网：托管平台与虚拟机都不被硬性排除，现有事实不足以判出赢家。",
+            "component": "DecisionExplorer",
+            "payload": {
+              "title": "托管平台 vs 虚拟机：私网与运维的权衡",
+              "dimensions": [
+                {
+                  "id": "private_net",
+                  "label": "支持私网",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "vendor_managed",
+                  "label": "供应商负责更新",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "team_maint",
+                  "label": "需团队自行维护",
+                  "kind": "boolean"
+                },
+                {
+                  "id": "price",
+                  "label": "每月费用",
+                  "kind": "number",
+                  "unit": "元/月"
+                }
+              ],
+              "options": [
+                {
+                  "id": "hosted",
+                  "label": "托管平台",
+                  "values": {
+                    "private_net": false,
+                    "vendor_managed": true,
+                    "team_maint": false,
+                    "price": null
+                  },
+                  "advantages": [
+                    "更新与补丁由供应商承担，团队不必投入运维人力",
+                    "不用自己搭建与维护私网"
+                  ],
+                  "disadvantages": [
+                    "不具备私网能力，若真需要只能更换方案",
+                    "价格未知，无法与另一项做成本比较"
+                  ],
+                  "suitableWhen": "当前阶段不需要私网，且更愿意把更新和运维责任交给供应商",
+                  "evidence": [
+                    "供应商负责更新、平台没有私网（用户提供）",
+                    "价格未知（用户提供）"
+                  ]
+                },
+                {
+                  "id": "vm",
+                  "label": "虚拟机",
+                  "values": {
+                    "private_net": true,
+                    "vendor_managed": false,
+                    "team_maint": true,
+                    "price": null
+                  },
+                  "advantages": [
+                    "支持私网，网络形态与隔离方式由团队自己掌控"
+                  ],
+                  "disadvantages": [
+                    "需要团队自行维护与更新，占用人力",
+                    "价格未知，无法与另一项做成本比较"
+                  ],
+                  "suitableWhen": "确实需要私网，或团队已有余力并愿意承担日常运维",
+                  "evidence": [
+                    "支持私网、需要团队维护（用户提供）",
+                    "价格未知（用户提供）"
+                  ]
+                }
+              ],
+              "inputs": [
+                {
+                  "id": "need_private_net",
+                  "label": "当前需要私网",
+                  "type": "boolean",
+                  "initial": false
+                },
+                {
+                  "id": "team_capacity",
+                  "label": "团队有维护余力",
+                  "type": "boolean",
+                  "initial": null
+                }
+              ],
+              "rules": [],
+              "constraints": [],
+              "requirements": [
+                {
+                  "id": "rq-private",
+                  "dimension": "private_net",
+                  "input": "need_private_net",
+                  "relation": "supports"
+                },
+                {
+                  "id": "rq-maint",
+                  "dimension": "team_maint",
+                  "input": "team_capacity",
+                  "relation": "supports"
+                }
+              ]
+            }
+          }
+        },
+        "newDelivery": {
+          "ok": false,
+          "issues": [
+            {
+              "path": "$.payload.dimensions.0.semanticRole",
+              "code": "DECLARATION_MISSING",
+              "reason": "Requirement rq-private needs an explicit option-field role.",
+              "hint": "For supports, declare capability-support on dimension private_net. Verify against the source; do not guess from labels."
+            },
+            {
+              "path": "$.payload.inputs.0.semanticRole",
+              "code": "DECLARATION_MISSING",
+              "reason": "Requirement rq-private needs an explicit local-input role.",
+              "hint": "For supports, declare capability-need on input need_private_net. Preserve unknown initial values."
+            },
+            {
+              "path": "$.payload.dimensions.2.semanticRole",
+              "code": "DECLARATION_MISSING",
+              "reason": "Requirement rq-maint needs an explicit option-field role.",
+              "hint": "For supports, declare capability-support on dimension team_maint. Verify against the source; do not guess from labels."
+            },
+            {
+              "path": "$.payload.inputs.1.semanticRole",
+              "code": "DECLARATION_MISSING",
+              "reason": "Requirement rq-maint needs an explicit local-input role.",
+              "hint": "For supports, declare capability-need on input team_capacity. Preserve unknown initial values."
+            },
+            {
+              "path": "$.payload.inputs.0.expectedEffect",
+              "code": "DECLARATION_MISSING",
+              "reason": "Input need_private_net must declare its expected dependency scope.",
+              "hint": "Declare hard, preference-only or hard-and-preference, then link the input to the corresponding requirements/constraints/rules. Unused controls must be removed."
+            },
+            {
+              "path": "$.payload.inputs.1.expectedEffect",
+              "code": "DECLARATION_MISSING",
+              "reason": "Input team_capacity must declare its expected dependency scope.",
+              "hint": "Declare hard, preference-only or hard-and-preference, then link the input to the corresponding requirements/constraints/rules. Unused controls must be removed."
+            }
+          ]
+        },
+        "sourceCheck": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "decision-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "jsonPointer": null,
+            "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 201,
+              "textUTF8Bytes": 201
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/original human identity",
+            "general natural-language meaning outside the documented grammar",
+            "component annotations and arbitrary free prose",
+            "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+          ],
+          "status": "compared",
+          "sourceDecision": {
+            "options": [
+              "托管平台",
+              "虚拟机"
+            ],
+            "facts": [
+              {
+                "kind": "actor-updates",
+                "option": "托管平台",
+                "name": null,
+                "actor": "供应商",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 45,
+                    "textByteEnd": 69
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "托管平台",
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 72,
+                    "textByteEnd": 84
+                  }
+                ]
+              },
+              {
+                "kind": "capability",
+                "option": "虚拟机",
+                "name": "私网",
+                "actor": null,
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 87,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "kind": "maintenance-need",
+                "option": "虚拟机",
+                "name": null,
+                "actor": "团队",
+                "value": true,
+                "spans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 126
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "托管平台",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "price",
+                "option": "虚拟机",
+                "name": null,
+                "actor": null,
+                "value": null,
+                "spans": [
+                  {
+                    "textByteStart": 129,
+                    "textByteEnd": 150
+                  }
+                ]
+              },
+              {
+                "kind": "capability-need",
+                "option": null,
+                "name": "私网",
+                "actor": null,
+                "value": false,
+                "spans": [
+                  {
+                    "textByteStart": 153,
+                    "textByteEnd": 180
+                  }
+                ]
+              }
+            ],
+            "clauses": [
+              {
+                "kind": "selection",
+                "span": {
+                  "textByteStart": 0,
+                  "textByteEnd": 42
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 45,
+                  "textByteEnd": 69
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 72,
+                  "textByteEnd": 84
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 87,
+                  "textByteEnd": 105
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 108,
+                  "textByteEnd": 126
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 129,
+                  "textByteEnd": 150
+                }
+              },
+              {
+                "kind": "fact",
+                "span": {
+                  "textByteStart": 153,
+                  "textByteEnd": 180
+                }
+              },
+              {
+                "kind": "comparison-request",
+                "span": {
+                  "textByteStart": 183,
+                  "textByteEnd": 198
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "mismatch",
+            "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_VALUE",
+              "path": "$.view.payload.options.1.values.vendor_managed",
+              "reason": "The value differs from the source. A missing fact remains null; a stated responsibility does not establish its opposite."
+            },
+            {
+              "code": "SOURCE_VALUE",
+              "path": "$.view.payload.options.0.values.team_maint",
+              "reason": "The value differs from the source. A missing fact remains null; a stated responsibility does not establish its opposite."
+            },
+            {
+              "code": "SOURCE_FIELD_LABEL",
+              "path": "$.mapping.dimensions.3",
+              "reason": "The literal field label does not express the selected bounded source concept; no synonym or role guess was made."
+            },
+            {
+              "code": "SOURCE_FIELD_TYPE",
+              "path": "$.mapping.dimensions.3",
+              "reason": "Boolean facts are unitless; an unknown price does not establish a currency, billing period or numeric type."
+            },
+            {
+              "code": "SOURCE_REQUIREMENT_ROLE",
+              "path": "$.view.payload.requirements.1",
+              "reason": "Source capability support pairs with need; an actor maintenance burden pairs with that actor availability via requires-availability."
+            }
+          ],
+          "fieldChecks": [
+            {
+              "optionId": "hosted",
+              "sourceOption": "托管平台",
+              "dimensionId": "private_net",
+              "sourceKind": "capability",
+              "expected": false,
+              "actual": false,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 72,
+                  "textByteEnd": 84
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "vm",
+              "sourceOption": "虚拟机",
+              "dimensionId": "private_net",
+              "sourceKind": "capability",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 87,
+                  "textByteEnd": 105
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "hosted",
+              "sourceOption": "托管平台",
+              "dimensionId": "vendor_managed",
+              "sourceKind": "actor-updates",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 69
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "vm",
+              "sourceOption": "虚拟机",
+              "dimensionId": "vendor_managed",
+              "sourceKind": "actor-updates",
+              "expected": null,
+              "actual": false,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "mismatch"
+            },
+            {
+              "optionId": "hosted",
+              "sourceOption": "托管平台",
+              "dimensionId": "team_maint",
+              "sourceKind": "maintenance-need",
+              "expected": null,
+              "actual": false,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "mismatch"
+            },
+            {
+              "optionId": "vm",
+              "sourceOption": "虚拟机",
+              "dimensionId": "team_maint",
+              "sourceKind": "maintenance-need",
+              "expected": true,
+              "actual": true,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 108,
+                  "textByteEnd": 126
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "optionId": "hosted",
+              "sourceOption": "托管平台",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 129,
+                  "textByteEnd": 150
+                }
+              ],
+              "status": "declared-unknown"
+            },
+            {
+              "optionId": "vm",
+              "sourceOption": "虚拟机",
+              "dimensionId": "price",
+              "sourceKind": "price",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 129,
+                  "textByteEnd": 150
+                }
+              ],
+              "status": "declared-unknown"
+            }
+          ],
+          "inputChecks": [
+            {
+              "inputId": "need_private_net",
+              "sourceKind": "capability-need",
+              "expected": false,
+              "actual": false,
+              "sourceDeclared": true,
+              "sourceSpans": [
+                {
+                  "textByteStart": 153,
+                  "textByteEnd": 180
+                }
+              ],
+              "status": "matched"
+            },
+            {
+              "inputId": "team_capacity",
+              "sourceKind": "actor-available",
+              "expected": null,
+              "actual": null,
+              "sourceDeclared": false,
+              "sourceSpans": [],
+              "status": "unknown"
+            }
+          ],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "withheld",
+            "reason": "Resolve unsupported mappings, policies or source claims first."
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "D2",
+    "kind": "capacity-zh",
+    "source": {
+      "documentSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "jsonPointer": null,
+      "textBytes": 158,
+      "textByteStart": 0,
+      "textByteEnd": 158,
+      "excerpt": "虚构存储选项 A 上限 100GB、部署简单，B 上限 1000GB、维护复杂。现在需求 80GB，以后可能到 300GB。不同需求下该如何选？",
+      "kind": "capacity-zh"
+    },
+    "parsed": {
+      "status": "ready",
+      "value": {
+        "options": [
+          {
+            "label": "A",
+            "ceiling": {
+              "value": 100,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 28,
+                  "textByteEnd": 33
+                }
+              ]
+            },
+            "deployment": {
+              "value": "simple",
+              "spans": [
+                {
+                  "textByteStart": 36,
+                  "textByteEnd": 48
+                }
+              ]
+            },
+            "maintenance": {
+              "value": null,
+              "spans": []
+            }
+          },
+          {
+            "label": "B",
+            "ceiling": {
+              "value": 1000,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 60,
+                  "textByteEnd": 66
+                }
+              ]
+            },
+            "deployment": {
+              "value": null,
+              "spans": []
+            },
+            "maintenance": {
+              "value": "complex",
+              "spans": [
+                {
+                  "textByteStart": 69,
+                  "textByteEnd": 81
+                }
+              ]
+            }
+          }
+        ],
+        "current": {
+          "value": 80,
+          "unit": "GB",
+          "spans": [
+            {
+              "textByteStart": 97,
+              "textByteEnd": 101
+            }
+          ]
+        },
+        "possibleFuture": {
+          "value": 300,
+          "unit": "GB",
+          "spans": [
+            {
+              "textByteStart": 120,
+              "textByteEnd": 125
+            }
+          ]
+        },
+        "confirmedFuturePlan": null
+      }
+    },
+    "inspection": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "capacity-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+        "jsonPointer": null,
+        "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+        "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 158,
+          "textUTF8Bytes": 158
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+      },
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false,
+      "viewContract": {
+        "version": "1.0",
+        "component": "DecisionExplorer",
+        "protocolVersion": "1.4",
+        "mapping": {
+          "capacityDimensionId": "actual numeric dimension ID",
+          "demandInputId": "actual numeric input ID",
+          "requirementId": "actual hard requirement ID"
+        },
+        "dimensions": {
+          "count": 1,
+          "label": "容量上限",
+          "kind": "number",
+          "unit": "GB",
+          "omittedFields": [
+            "semanticRole"
+          ]
+        },
+        "inputs": {
+          "count": 1,
+          "labels": [
+            "需求容量",
+            "需求容量（本地假设）"
+          ],
+          "type": "number",
+          "unit": "GB",
+          "initial": 80,
+          "expectedEffect": "hard",
+          "omittedFields": [
+            "semanticRole",
+            "choices"
+          ]
+        },
+        "requirements": {
+          "count": 1,
+          "relation": "at-least",
+          "direction": "capacityDimensionId >= demandInputId",
+          "omittedFields": [
+            "when"
+          ]
+        },
+        "policies": {
+          "rules": "empty",
+          "constraints": "empty"
+        },
+        "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+        "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+      },
+      "status": "compared",
+      "sourceCapacity": {
+        "options": [
+          {
+            "label": "A",
+            "ceiling": {
+              "value": 100,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 28,
+                  "textByteEnd": 33
+                }
+              ]
+            },
+            "deployment": {
+              "value": "simple",
+              "spans": [
+                {
+                  "textByteStart": 36,
+                  "textByteEnd": 48
+                }
+              ]
+            },
+            "maintenance": {
+              "value": null,
+              "spans": []
+            }
+          },
+          {
+            "label": "B",
+            "ceiling": {
+              "value": 1000,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 60,
+                  "textByteEnd": 66
+                }
+              ]
+            },
+            "deployment": {
+              "value": null,
+              "spans": []
+            },
+            "maintenance": {
+              "value": "complex",
+              "spans": [
+                {
+                  "textByteStart": 69,
+                  "textByteEnd": 81
+                }
+              ]
+            }
+          }
+        ],
+        "current": {
+          "value": 80,
+          "unit": "GB",
+          "spans": [
+            {
+              "textByteStart": 97,
+              "textByteEnd": 101
+            }
+          ]
+        },
+        "possibleFuture": {
+          "value": 300,
+          "unit": "GB",
+          "spans": [
+            {
+              "textByteStart": 120,
+              "textByteEnd": 125
+            }
+          ]
+        },
+        "confirmedFuturePlan": null
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "fieldChecks": [],
+      "inputChecks": [],
+      "claimChecks": [],
+      "computedCapacity": {
+        "current": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 100,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 1000,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "possibleFutureHypothesis": {
+          "demand": 300,
+          "unit": "GB",
+          "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+          "eligibleOptionIds": [
+            "option-1"
+          ],
+          "excludedOptionIds": [
+            "option-0"
+          ],
+          "requirements": [
+            {
+              "requirementId": "capacity",
+              "optionId": "option-0",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 100,
+              "needed": 300,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "option-1",
+              "dimensionId": "ceiling",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 1000,
+              "needed": 300,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ]
+        }
+      },
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete finite capacity source and existing numeric hard-requirement core",
+        "text": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+      }
+    },
+    "calls": [
+      {
+        "callIndex": 2,
+        "originalArguments": {
+          "action": "render",
+          "view": {
+            "protocolVersion": "1.2",
+            "displayId": "storage-choice-ab",
+            "revision": 1,
+            "component": "DecisionExplorer",
+            "summary": "容量上限决定可选范围，运维复杂度与是否为增长预留决定同样可行时选哪个",
+            "payload": {
+              "title": "存储方案选择：A 与 B",
+              "dimensions": [
+                {
+                  "id": "capacity",
+                  "label": "容量上限",
+                  "kind": "number",
+                  "unit": "GB"
+                },
+                {
+                  "id": "opsSimple",
+                  "label": "运维简单",
+                  "kind": "boolean"
+                }
+              ],
+              "options": [
+                {
+                  "id": "A",
+                  "label": "方案 A",
+                  "values": {
+                    "capacity": 100,
+                    "opsSimple": true
+                  },
+                  "advantages": [
+                    "部署简单"
+                  ],
+                  "disadvantages": [
+                    "上限 100GB，无法覆盖 300GB"
+                  ],
+                  "suitableWhen": "当前与可预见的需求都落在 100GB 以内",
+                  "evidence": []
+                },
+                {
+                  "id": "B",
+                  "label": "方案 B",
+                  "values": {
+                    "capacity": 1000,
+                    "opsSimple": false
+                  },
+                  "advantages": [
+                    "上限 1000GB，可覆盖 300GB"
+                  ],
+                  "disadvantages": [
+                    "维护复杂"
+                  ],
+                  "suitableWhen": "需求已超过 100GB，或需要现在就留足增长空间",
+                  "evidence": []
+                }
+              ],
+              "inputs": [
+                {
+                  "id": "demand",
+                  "label": "需求容量",
+                  "type": "number",
+                  "unit": "GB",
+                  "initial": 80
+                },
+                {
+                  "id": "reserveNow",
+                  "label": "现在就要为增长预留",
+                  "type": "boolean",
+                  "initial": null
+                }
+              ],
+              "rules": [
+                {
+                  "id": "over-cap",
+                  "priority": 90,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "demand",
+                        "op": "gt",
+                        "value": 100
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "B"
+                  ],
+                  "reason": "需求超过 100GB，A 的容量上限已不满足",
+                  "origin": "model-judgment",
+                  "evidence": []
+                },
+                {
+                  "id": "reserve",
+                  "priority": 60,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "reserveNow",
+                        "op": "eq",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "B"
+                  ],
+                  "reason": "需要现在就为 300GB 预留，A 的上限不足",
+                  "origin": "model-judgment",
+                  "evidence": []
+                },
+                {
+                  "id": "fit-simple",
+                  "priority": 30,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "demand",
+                        "op": "lte",
+                        "value": 100
+                      },
+                      {
+                        "input": "reserveNow",
+                        "op": "eq",
+                        "value": false
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "A"
+                  ],
+                  "reason": "当前需求在 A 上限内且不预留增长，A 部署简单",
+                  "origin": "model-judgment",
+                  "evidence": []
+                }
+              ],
+              "constraints": [],
+              "requirements": [
+                {
+                  "id": "cap-cover",
+                  "dimension": "capacity",
+                  "input": "demand",
+                  "relation": "at-least"
+                }
+              ]
+            }
+          }
+        },
+        "historyRead": {
+          "ok": true,
+          "value": {
+            "protocolVersion": "1.2",
+            "displayId": "storage-choice-ab",
+            "revision": 1,
+            "summary": "容量上限决定可选范围，运维复杂度与是否为增长预留决定同样可行时选哪个",
+            "component": "DecisionExplorer",
+            "payload": {
+              "title": "存储方案选择：A 与 B",
+              "dimensions": [
+                {
+                  "id": "capacity",
+                  "label": "容量上限",
+                  "kind": "number",
+                  "unit": "GB"
+                },
+                {
+                  "id": "opsSimple",
+                  "label": "运维简单",
+                  "kind": "boolean"
+                }
+              ],
+              "options": [
+                {
+                  "id": "A",
+                  "label": "方案 A",
+                  "values": {
+                    "capacity": 100,
+                    "opsSimple": true
+                  },
+                  "advantages": [
+                    "部署简单"
+                  ],
+                  "disadvantages": [
+                    "上限 100GB，无法覆盖 300GB"
+                  ],
+                  "suitableWhen": "当前与可预见的需求都落在 100GB 以内",
+                  "evidence": []
+                },
+                {
+                  "id": "B",
+                  "label": "方案 B",
+                  "values": {
+                    "capacity": 1000,
+                    "opsSimple": false
+                  },
+                  "advantages": [
+                    "上限 1000GB，可覆盖 300GB"
+                  ],
+                  "disadvantages": [
+                    "维护复杂"
+                  ],
+                  "suitableWhen": "需求已超过 100GB，或需要现在就留足增长空间",
+                  "evidence": []
+                }
+              ],
+              "inputs": [
+                {
+                  "id": "demand",
+                  "label": "需求容量",
+                  "type": "number",
+                  "unit": "GB",
+                  "initial": 80
+                },
+                {
+                  "id": "reserveNow",
+                  "label": "现在就要为增长预留",
+                  "type": "boolean",
+                  "initial": null
+                }
+              ],
+              "rules": [
+                {
+                  "id": "over-cap",
+                  "priority": 90,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "demand",
+                        "op": "gt",
+                        "value": 100
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "B"
+                  ],
+                  "reason": "需求超过 100GB，A 的容量上限已不满足",
+                  "origin": "model-judgment",
+                  "evidence": []
+                },
+                {
+                  "id": "reserve",
+                  "priority": 60,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "reserveNow",
+                        "op": "eq",
+                        "value": true
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "B"
+                  ],
+                  "reason": "需要现在就为 300GB 预留，A 的上限不足",
+                  "origin": "model-judgment",
+                  "evidence": []
+                },
+                {
+                  "id": "fit-simple",
+                  "priority": 30,
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "demand",
+                        "op": "lte",
+                        "value": 100
+                      },
+                      {
+                        "input": "reserveNow",
+                        "op": "eq",
+                        "value": false
+                      }
+                    ]
+                  },
+                  "recommend": [
+                    "A"
+                  ],
+                  "reason": "当前需求在 A 上限内且不预留增长，A 部署简单",
+                  "origin": "model-judgment",
+                  "evidence": []
+                }
+              ],
+              "constraints": [],
+              "requirements": [
+                {
+                  "id": "cap-cover",
+                  "dimension": "capacity",
+                  "input": "demand",
+                  "relation": "at-least"
+                }
+              ]
+            }
+          }
+        },
+        "newDelivery": {
+          "ok": false,
+          "issues": [
+            {
+              "path": "$.payload.inputs.0.expectedEffect",
+              "code": "DECLARATION_MISSING",
+              "reason": "Input demand must declare its expected dependency scope.",
+              "hint": "Declare hard, preference-only or hard-and-preference, then link the input to the corresponding requirements/constraints/rules. Unused controls must be removed."
+            },
+            {
+              "path": "$.payload.inputs.1.expectedEffect",
+              "code": "DECLARATION_MISSING",
+              "reason": "Input reserveNow must declare its expected dependency scope.",
+              "hint": "Declare hard, preference-only or hard-and-preference, then link the input to the corresponding requirements/constraints/rules. Unused controls must be removed."
+            }
+          ]
+        },
+        "sourceCheck": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "capacity-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "jsonPointer": null,
+            "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 158,
+              "textUTF8Bytes": 158
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+          },
+          "sourceFactsVerified": false,
+          "identityVerified": false,
+          "freeProseVerified": false,
+          "viewContract": {
+            "version": "1.0",
+            "component": "DecisionExplorer",
+            "protocolVersion": "1.4",
+            "mapping": {
+              "capacityDimensionId": "actual numeric dimension ID",
+              "demandInputId": "actual numeric input ID",
+              "requirementId": "actual hard requirement ID"
+            },
+            "dimensions": {
+              "count": 1,
+              "label": "容量上限",
+              "kind": "number",
+              "unit": "GB",
+              "omittedFields": [
+                "semanticRole"
+              ]
+            },
+            "inputs": {
+              "count": 1,
+              "labels": [
+                "需求容量",
+                "需求容量（本地假设）"
+              ],
+              "type": "number",
+              "unit": "GB",
+              "initial": 80,
+              "expectedEffect": "hard",
+              "omittedFields": [
+                "semanticRole",
+                "choices"
+              ]
+            },
+            "requirements": {
+              "count": 1,
+              "relation": "at-least",
+              "direction": "capacityDimensionId >= demandInputId",
+              "omittedFields": [
+                "when"
+              ]
+            },
+            "policies": {
+              "rules": "empty",
+              "constraints": "empty"
+            },
+            "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+            "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+          },
+          "status": "compared",
+          "sourceCapacity": {
+            "options": [
+              {
+                "label": "A",
+                "ceiling": {
+                  "value": 100,
+                  "unit": "GB",
+                  "spans": [
+                    {
+                      "textByteStart": 28,
+                      "textByteEnd": 33
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": "simple",
+                  "spans": [
+                    {
+                      "textByteStart": 36,
+                      "textByteEnd": 48
+                    }
+                  ]
+                },
+                "maintenance": {
+                  "value": null,
+                  "spans": []
+                }
+              },
+              {
+                "label": "B",
+                "ceiling": {
+                  "value": 1000,
+                  "unit": "GB",
+                  "spans": [
+                    {
+                      "textByteStart": 60,
+                      "textByteEnd": 66
+                    }
+                  ]
+                },
+                "deployment": {
+                  "value": null,
+                  "spans": []
+                },
+                "maintenance": {
+                  "value": "complex",
+                  "spans": [
+                    {
+                      "textByteStart": 69,
+                      "textByteEnd": 81
+                    }
+                  ]
+                }
+              }
+            ],
+            "current": {
+              "value": 80,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 97,
+                  "textByteEnd": 101
+                }
+              ]
+            },
+            "possibleFuture": {
+              "value": 300,
+              "unit": "GB",
+              "spans": [
+                {
+                  "textByteStart": 120,
+                  "textByteEnd": 125
+                }
+              ]
+            },
+            "confirmedFuturePlan": null
+          },
+          "comparison": {
+            "status": "mismatch"
+          },
+          "issues": [
+            {
+              "code": "SOURCE_CAPACITY_DIMENSION",
+              "path": "$.view.payload.dimensions",
+              "reason": "Exactly one mapped capacity column is required; qualitative attributes remain separate source explanations. Read viewContract."
+            },
+            {
+              "code": "SOURCE_CAPACITY_INPUT",
+              "path": "$.view.payload.inputs",
+              "reason": "Exactly one mapped numeric demand input is required. Read viewContract."
+            },
+            {
+              "code": "SOURCE_INPUT_EFFECT",
+              "path": "$.view.payload.inputs.0.expectedEffect",
+              "reason": "The source-bound demand requires expectedEffect=hard, matching its numeric requirement."
+            },
+            {
+              "code": "SOURCE_OPTIONS",
+              "path": "$.view.payload.options",
+              "reason": "Use both exact source option labels; no aliases or extra options."
+            },
+            {
+              "code": "SOURCE_POLICY_UNSUPPORTED",
+              "path": "$.view.payload",
+              "reason": "No recommendation, cost, reserve-growth policy or arbitrary exclusion follows from these declarations."
+            }
+          ],
+          "fieldChecks": [],
+          "inputChecks": [
+            {
+              "inputId": "demand",
+              "role": "required-capacity",
+              "expected": 80,
+              "actual": 80,
+              "unit": "GB",
+              "sourceSpans": [
+                {
+                  "textByteStart": 97,
+                  "textByteEnd": 101
+                }
+              ],
+              "status": "matched"
+            }
+          ],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false
+          },
+          "canonicalExplanation": {
+            "status": "withheld"
+          }
+        }
+      }
+    ]
+  },
+  {
+    "id": "N2",
+    "kind": "observations-zh",
+    "source": {
+      "documentSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "excerptSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "jsonPointer": null,
+      "textBytes": 114,
+      "textByteStart": 0,
+      "textByteEnd": 114,
+      "excerpt": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+      "kind": "observations-zh"
+    },
+    "parsed": {
+      "status": "ready",
+      "value": {
+        "context": "虚构设备",
+        "measurement": "温度",
+        "unit": "摄氏度",
+        "positions": [
+          {
+            "index": 0,
+            "value": -2,
+            "span": {
+              "textByteStart": 34,
+              "textByteEnd": 36
+            }
+          },
+          {
+            "index": 1,
+            "value": 0,
+            "span": {
+              "textByteStart": 39,
+              "textByteEnd": 40
+            }
+          },
+          {
+            "index": 2,
+            "value": null,
+            "span": {
+              "textByteStart": 43,
+              "textByteEnd": 49
+            }
+          },
+          {
+            "index": 3,
+            "value": 2,
+            "span": {
+              "textByteStart": 52,
+              "textByteEnd": 53
+            }
+          }
+        ]
+      }
+    },
+    "inspection": {
+      "sourceCheckVersion": "1.0",
+      "sourceCheckKind": "observations-zh",
+      "source": {
+        "input": "caller-configured startup file snapshot; separate from tool arguments",
+        "documentSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+        "jsonPointer": null,
+        "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+        "excerptSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+        "selection": {
+          "textUTF8ByteStart": 0,
+          "textUTF8ByteEnd": 114,
+          "textUTF8Bytes": 114
+        },
+        "identityVerified": false,
+        "authorship": "unverified; a configured file does not certify its author or original user",
+        "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+      },
+      "sourceFactsVerified": false,
+      "unverified": [
+        "source identity, authorship and real-world readings",
+        "unselected context, arbitrary prose, chart title and annotations",
+        "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+      ],
+      "status": "compared",
+      "sourceObservations": {
+        "context": "虚构设备",
+        "measurement": "温度",
+        "unit": "摄氏度",
+        "positions": [
+          {
+            "index": 0,
+            "value": -2,
+            "span": {
+              "textByteStart": 34,
+              "textByteEnd": 36
+            }
+          },
+          {
+            "index": 1,
+            "value": 0,
+            "span": {
+              "textByteStart": 39,
+              "textByteEnd": 40
+            }
+          },
+          {
+            "index": 2,
+            "value": null,
+            "span": {
+              "textByteStart": 43,
+              "textByteEnd": 49
+            }
+          },
+          {
+            "index": 3,
+            "value": 2,
+            "span": {
+              "textByteStart": 52,
+              "textByteEnd": 53
+            }
+          }
+        ]
+      },
+      "sourceStatistics": {
+        "unit": "摄氏度",
+        "positions": 4,
+        "values": [
+          -2,
+          0,
+          null,
+          2
+        ],
+        "missingMask": [
+          false,
+          false,
+          true,
+          false
+        ],
+        "observed": {
+          "count": 3,
+          "missing": 1,
+          "sum": 0,
+          "mean": 0,
+          "denominator": 3,
+          "scope": "declared non-missing positions only"
+        },
+        "complete": {
+          "count": 4,
+          "sum": null,
+          "sumKnown": false,
+          "mean": null,
+          "denominator": 4,
+          "known": false,
+          "scope": "all declared positions; missing readings remain unknown"
+        },
+        "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+      },
+      "comparison": {
+        "status": "not-requested"
+      },
+      "issues": [],
+      "claimChecks": [],
+      "freeProse": {
+        "status": "not-verified",
+        "provided": false,
+        "characters": 0
+      },
+      "canonicalExplanation": {
+        "status": "available",
+        "basis": "complete selected finite source readings and explicit calculation range only",
+        "text": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+      }
+    },
+    "calls": []
+  }
+]

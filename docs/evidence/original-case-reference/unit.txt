@@ -1,0 +1,18 @@
+✔ selects the latest actual matched event for this source, independent of titles and IDs (1.097625ms)
+✔ render adaptation preserves model view and mapping and only removes source-check claims (0.835166ms)
+✔ public saved model evidence validates original bytes and is not a rebuilt expected view (6.7035ms)
+✔ five original complete sources produce checked references; the original prose-only case produces no invented UI (10.343916ms)
+✔ actual original model views remain readable history and are not silently upgraded into approved source mappings (5.165792ms)
+✔ original workflow exception and permission scope are preserved without inventing reverse edges or global exclusivity (0.199416ms)
+✔ D1 reference keeps unprovided opposite responsibilities unknown and uses burden versus availability (0.161084ms)
+✔ D2 reference uses one numeric hard demand and separates future possibility, deployment and maintenance (0.096083ms)
+✔ N2 original missing mask and denominator survive; zero-fill is same numeric mean and sum, not complete truth (0.458458ms)
+✔ reference templates carry shape and roles, never old facts; a matching template does not approve changed source data (0.818833ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 245.226708

@@ -1,0 +1,272 @@
+{
+  "existingSavedSessionsOnly": true,
+  "newSourcePrompts": 0,
+  "newFixtureRequests": 0,
+  "newRealModels": 0,
+  "originalCheckpointEventsEqual": true,
+  "images": [
+    {
+      "caseKey": "A2",
+      "file": "settled-A2-640.png",
+      "width": 640,
+      "actualWidth": 640,
+      "noRootOverflow": true,
+      "graphGeometry": {
+        "viewport": {
+          "x": 404.5,
+          "y": 1214,
+          "width": 604,
+          "height": 328
+        },
+        "nodes": [
+          {
+            "x": 433.15631103515625,
+            "y": 1356.98291015625,
+            "width": 91.2364501953125,
+            "height": 34.213623046875
+          },
+          {
+            "x": 549.7362060546875,
+            "y": 1356.98291015625,
+            "width": 91.2364501953125,
+            "height": 34.213623046875
+          },
+          {
+            "x": 666.316162109375,
+            "y": 1356.98291015625,
+            "width": 91.2364501953125,
+            "height": 34.213623046875
+          },
+          {
+            "x": 782.8960571289062,
+            "y": 1356.98291015625,
+            "width": 91.2364501953125,
+            "height": 34.213623046875
+          },
+          {
+            "x": 899.4759521484375,
+            "y": 1356.98291015625,
+            "width": 91.2364501953125,
+            "height": 34.213623046875
+          }
+        ],
+        "allNodesInside": true
+      },
+      "plotResized": false
+    },
+    {
+      "caseKey": "A2",
+      "file": "settled-A2-360.png",
+      "width": 360,
+      "actualWidth": 360,
+      "noRootOverflow": true,
+      "graphGeometry": {
+        "viewport": {
+          "x": 404.5,
+          "y": 1381,
+          "width": 324,
+          "height": 328
+        },
+        "nodes": [
+          {
+            "x": 513.3052978515625,
+            "y": 1415.23974609375,
+            "width": 92.86956787109375,
+            "height": 34.8260498046875
+          },
+          {
+            "x": 513.3052978515625,
+            "y": 1475.8629150390625,
+            "width": 92.86956787109375,
+            "height": 34.8260498046875
+          },
+          {
+            "x": 513.3052978515625,
+            "y": 1536.486083984375,
+            "width": 92.86956787109375,
+            "height": 34.826171875
+          },
+          {
+            "x": 513.3052978515625,
+            "y": 1597.109375,
+            "width": 92.86956787109375,
+            "height": 34.8260498046875
+          },
+          {
+            "x": 513.3052978515625,
+            "y": 1657.7325439453125,
+            "width": 92.86956787109375,
+            "height": 34.8260498046875
+          }
+        ],
+        "allNodesInside": true
+      },
+      "plotResized": false
+    },
+    {
+      "caseKey": "A3",
+      "file": "settled-A3-640.png",
+      "width": 640,
+      "actualWidth": 640,
+      "noRootOverflow": true,
+      "graphGeometry": {
+        "viewport": {
+          "x": 404.5,
+          "y": 1357,
+          "width": 604,
+          "height": 328
+        },
+        "nodes": [
+          {
+            "x": 434.5362243652344,
+            "y": 1493.532470703125,
+            "width": 114.39163208007812,
+            "height": 42.8968505859375
+          },
+          {
+            "x": 580.7032470703125,
+            "y": 1493.532470703125,
+            "width": 114.3916015625,
+            "height": 42.8968505859375
+          },
+          {
+            "x": 726.870361328125,
+            "y": 1526.102294921875,
+            "width": 114.3916015625,
+            "height": 42.8968505859375
+          },
+          {
+            "x": 726.870361328125,
+            "y": 1460.962646484375,
+            "width": 114.3916015625,
+            "height": 42.8968505859375
+          },
+          {
+            "x": 873.037353515625,
+            "y": 1526.102294921875,
+            "width": 114.39166259765625,
+            "height": 42.8968505859375
+          },
+          {
+            "x": 873.037353515625,
+            "y": 1460.962646484375,
+            "width": 114.39166259765625,
+            "height": 42.8968505859375
+          }
+        ],
+        "allNodesInside": true
+      },
+      "plotResized": false
+    },
+    {
+      "caseKey": "A3",
+      "file": "settled-A3-360.png",
+      "width": 360,
+      "actualWidth": 360,
+      "noRootOverflow": true,
+      "graphGeometry": {
+        "viewport": {
+          "x": 404.5,
+          "y": 1587,
+          "width": 324,
+          "height": 328
+        },
+        "nodes": [
+          {
+            "x": 506.59381103515625,
+            "y": 1618.334716796875,
+            "width": 118.6729736328125,
+            "height": 44.5023193359375
+          },
+          {
+            "x": 506.59381103515625,
+            "y": 1695.8017578125,
+            "width": 118.6729736328125,
+            "height": 44.5023193359375
+          },
+          {
+            "x": 577.4679565429688,
+            "y": 1773.268798828125,
+            "width": 118.6729736328125,
+            "height": 44.50244140625
+          },
+          {
+            "x": 435.71966552734375,
+            "y": 1773.268798828125,
+            "width": 118.6729736328125,
+            "height": 44.50244140625
+          },
+          {
+            "x": 577.4679565429688,
+            "y": 1850.73583984375,
+            "width": 118.6729736328125,
+            "height": 44.50244140625
+          },
+          {
+            "x": 435.71966552734375,
+            "y": 1850.73583984375,
+            "width": 118.6729736328125,
+            "height": 44.50244140625
+          }
+        ],
+        "allNodesInside": true
+      },
+      "plotResized": false
+    },
+    {
+      "caseKey": "D1",
+      "file": "settled-D1-640.png",
+      "width": 640,
+      "actualWidth": 640,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": false
+    },
+    {
+      "caseKey": "D1",
+      "file": "settled-D1-360.png",
+      "width": 360,
+      "actualWidth": 360,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": false
+    },
+    {
+      "caseKey": "D2",
+      "file": "settled-D2-640.png",
+      "width": 640,
+      "actualWidth": 640,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": false
+    },
+    {
+      "caseKey": "D2",
+      "file": "settled-D2-360.png",
+      "width": 360,
+      "actualWidth": 360,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": false
+    },
+    {
+      "caseKey": "N2",
+      "file": "settled-N2-640.png",
+      "width": 640,
+      "actualWidth": 640,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": true
+    },
+    {
+      "caseKey": "N2",
+      "file": "settled-N2-360.png",
+      "width": 360,
+      "actualWidth": 360,
+      "noRootOverflow": true,
+      "graphGeometry": null,
+      "plotResized": true
+    }
+  ],
+  "pageErrors": []
+}

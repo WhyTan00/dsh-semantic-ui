@@ -1,0 +1,65 @@
+{
+  "originalRunCaptureIssue": "Root width and no overflow alone did not await graph fitting; initial A2 image clipped a node. Initial images and failed collectors retained. Final capture waits node bounds and actual SVG/canvas width.",
+  "attempts": [
+    {
+      "attempt": "recapture",
+      "sourcePrompts": 0,
+      "fixtureRequests": 0,
+      "realModels": 0,
+      "collectorFailure": "Saved original A2 was behind the normal sidebar Show more pagination; normal pagination added before selection.",
+      "cleanup": {
+        "port": 51340,
+        "newSourcePrompts": 0,
+        "newFixtureRequests": 0,
+        "newRealModels": 0,
+        "processes": [
+          {
+            "kind": "native",
+            "pid": 1883,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "browser",
+            "pid": 1910,
+            "exitCode": 1,
+            "signalCode": null
+          }
+        ]
+      }
+    },
+    {
+      "attempt": "recapture2",
+      "sourcePrompts": 0,
+      "fixtureRequests": 0,
+      "realModels": 0,
+      "collectorFailure": "Collector expected clientWidth640 but a 2px border gives638; compare actual bounding box width640 instead.",
+      "cleanup": {
+        "port": 52671,
+        "newSourcePrompts": 0,
+        "newFixtureRequests": 0,
+        "newRealModels": 0,
+        "processes": [
+          {
+            "kind": "native",
+            "pid": 3015,
+            "exitCode": 0,
+            "signalCode": null
+          },
+          {
+            "kind": "browser",
+            "pid": 3075,
+            "exitCode": 1,
+            "signalCode": null
+          }
+        ]
+      }
+    }
+  ],
+  "successfulAttempt": "recapture3",
+  "firstBadA2": {
+    "file": "first-capture-A2-640.png",
+    "sha256": "3e544eb412bd89f38f3e276de4a0397f017491168061172a5407ceba1d4d308e"
+  },
+  "prototypeConstructorFailure": "First D2 draft supplied min/max fields forbidden by the existing numeric-input schema. Removed unsupported fields; schema and core were not relaxed."
+}

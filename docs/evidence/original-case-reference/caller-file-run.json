@@ -1,0 +1,21 @@
+{
+  "mode": "native",
+  "replayOfSavedRealModelResults": false,
+  "sourceReferenceMode": true,
+  "existingRuntime": "0.1.0-preview.26",
+  "newRealModelStarts": 0,
+  "localTransportRequests": 4,
+  "checked": false,
+  "publicProvenance": [
+    {
+      "caseKey": "caller-source",
+      "sourceRecord": "docs/evidence/natural/r9-D2.json",
+      "sourceRecordSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+      "jsonPointer": "/question",
+      "selectedTextSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "legacyModelRenderCallIndex": null,
+      "originalModelFinalSha256": null,
+      "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer"
+    }
+  ]
+}

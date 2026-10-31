@@ -74,6 +74,8 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - name: Check saved model replay provenance (no model)
         run: node --test tests/saved-model-history-contracts.mjs
+      - name: Check original-source reference and template contracts (no model)
+        run: node --import tsx --test tests/source-reference-contracts.mjs
       - run: pnpm docs:generate
       - run: git diff --exit-code -- SKILL.md docs/generated/protocol.schema.json docs/generated/template.schema.json
       - run: pnpm research:check

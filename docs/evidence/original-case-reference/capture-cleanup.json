@@ -1,0 +1,20 @@
+{
+  "port": 54281,
+  "newSourcePrompts": 0,
+  "newFixtureRequests": 0,
+  "newRealModels": 0,
+  "processes": [
+    {
+      "kind": "native",
+      "pid": 4559,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "kind": "browser",
+      "pid": 4589,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ]
+}

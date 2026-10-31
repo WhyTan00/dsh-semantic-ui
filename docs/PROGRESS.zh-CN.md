@@ -1,5 +1,7 @@
 # 实际进度
 
+原六题现已补[可运行来源参考入口](ORIGINAL-CASE-REFERENCE.zh-CN.md)：五类完整来源由既有26核心构造并核对，正常Native持久呈现；T2不强行生成组件。四个原模型载荷实际拒绝、五次局部交互不改来源/历史、刷新恢复，10项离线合同通过。默认六题与自带文件serve共7个夹具回合/29次本机请求、0真实模型；复用保存会话另补10张稳定截图，首轮过早截图与两次只读取证失败保留。当前六题没有发现剩余核心误比较，本次交付普通采用入口、无运行修改/新包/发行；原0通过/6失败/18请求和自由正文未核不变，见[独立回执](evidence/original-case-reference.json)。
+
 已将上述真实模型候选交付为[正常DSH Native按需回放示例](SAVED-MODEL-HOST-REPLAY.zh-CN.md)：从每轮实际matched事件取原view/mapping，正常render输入值不改，typed claims按频道合同仅用于source-check；安全投影5处差异明确保留。旧true/true与新false/null各自持久消息/checkpoint关联，旧view新源拒绝两个初值，四次局部切换不改源/历史、刷新恢复、640/360实际截图pageerror0。3离线合同、默认serve就绪及Ctrl+C清理通过；两次共4个fixture回合/20本机POST、0真实新模型，无运行包变更/新发行，见[分层接受](evidence/model-view-host.json)。
 
 伴随客户端已交付[同一真实模型thread的完整来源修订](CODEX-SOURCE-HISTORY.zh-CN.md)，源码86e8bb5：26项Python检查、6个零模型探针/入口及新2/2真实回合终态。源从禁止外传true/维护余力true修订为false/unknown，旧view两初值拒绝，模型新view首次matched，raw保留旧假设与新当前值；首轮首次标签拒绝后同回合修正完整保留，不称首轮首次成功。7宿主显式与9+8模型语义调用分列，最终全局配置字节不变，早期两条本次临时信任记录已清理。原26 runtime/技能不变、无新包/发行，MCP/终端文字不冒图形UI；见[独立接受](evidence/source-history.json)。

@@ -28,7 +28,8 @@ export async function startReplayServer(planFile, output) {
       res.writeHead(200, {'Content-Type': 'text/event-stream', 'Cache-Control': 'no-cache', Connection: 'keep-alive'});
       const send = (delta, finish_reason = null) => res.write('data: ' + JSON.stringify({...base, choices: [{index: 0, delta, finish_reason}]}) + '\n\n');
       if (toolCount >= plan.argsSequence.length) {
-        send({role: 'assistant', content: `已保存模型结果的呈现回放 · 第${plan.phase}版 · 本次0新增模型\n\n${plan.rawFinal}\n\n回放完成：${plan.key}。上述为既有模型原文，任意正文与世界事实未认证。`});
+        const reference = plan.kind === 'source-reference';
+        send({role: 'assistant', content: `${reference ? '有限来源程序参考（非模型回答）' : '已保存模型结果的呈现回放'} · 第${plan.phase}版 · 本次0新增模型\n\n${reference ? plan.finalText : plan.rawFinal}\n\n回放完成：${plan.key}。${reference ? '上述只覆盖明确支持的来源合同，' : '上述为既有模型原文，'}任意正文与世界事实未认证。`});
         send({}, 'stop');
       } else {
         const args = plan.argsSequence[toolCount];

@@ -1,0 +1,1161 @@
+{
+  "mode": "native",
+  "originalInputs": true,
+  "results": [
+    {
+      "caseKey": "caller-source",
+      "origin": {
+        "caseKey": "caller-source",
+        "sourceRecord": "docs/evidence/natural/r9-D2.json",
+        "sourceRecordSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+        "jsonPointer": "/question",
+        "selectedTextSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+        "legacyModelRenderCallIndex": null,
+        "originalModelFinalSha256": null,
+        "referenceAuthorship": "program-derived from current finite source parser; not an original model candidate or repaired raw answer"
+      },
+      "sessionId": "session-8e855c24-b507-43b7-86c9-0fc54fd92618",
+      "requestId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7",
+      "acceptance": {
+        "accepted": true
+      },
+      "inputEvent": {
+        "type": "user/message",
+        "seq": 10,
+        "time": 1793434119792,
+        "data": {
+          "content": [
+            {
+              "type": "text",
+              "text": "虚构存储选项 A 上限 100GB、部署简单，B 上限 1000GB、维护复杂。现在需求 80GB，以后可能到 300GB。不同需求下该如何选？"
+            }
+          ],
+          "source": {
+            "kind": "user",
+            "rpcId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7",
+            "clientTimeZone": "UTC"
+          },
+          "role": "user",
+          "id": "22364f43-6d71-4aec-b8b4-cce4076a80c2"
+        },
+        "surfaceOp": "append"
+      },
+      "referenceStatus": "ready",
+      "kind": "capacity-zh",
+      "sourceReferenceOnly": true,
+      "referenceRequest": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-8deea750b000b6ab",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "DecisionExplorer",
+          "payload": {
+            "title": "来源声明的容量条件",
+            "dimensions": [
+              {
+                "id": "capacity",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "A",
+                "values": {
+                  "capacity": 100
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "只比较当前容量要求；部署和维护声明另见来源说明。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "B",
+                "values": {
+                  "capacity": 1000
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "只比较当前容量要求；部署和维护声明另见来源说明。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量",
+                "type": "number",
+                "unit": "GB",
+                "initial": 80,
+                "expectedEffect": "hard"
+              }
+            ],
+            "rules": [],
+            "constraints": [],
+            "requirements": [
+              {
+                "id": "capacity-demand",
+                "dimension": "capacity",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "capacityDimensionId": "capacity",
+          "demandInputId": "demand",
+          "requirementId": "capacity-demand"
+        }
+      },
+      "sourceCheck": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-8e855c24-b507-43b7-86c9-0fc54fd92618",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "22364f43-6d71-4aec-b8b4-cce4076a80c2",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 4,
+            "requestId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7"
+          },
+          "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 158,
+            "textUTF8Bytes": 158
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GB",
+            "initial": 80,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "A",
+              "ceiling": {
+                "value": 100,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 28,
+                    "textByteEnd": 33
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 36,
+                    "textByteEnd": 48
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            },
+            {
+              "label": "B",
+              "ceiling": {
+                "value": 1000,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 60,
+                    "textByteEnd": 66
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 69,
+                    "textByteEnd": 81
+                  }
+                ]
+              }
+            }
+          ],
+          "current": {
+            "value": 80,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 97,
+                "textByteEnd": 101
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 300,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 120,
+                "textByteEnd": 125
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "fieldChecks": [],
+        "inputChecks": [],
+        "claimChecks": [],
+        "computedCapacity": {
+          "current": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "demand",
+                "requirementIds": [
+                  "capacity"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "possibleFutureHypothesis": {
+            "demand": 300,
+            "unit": "GB",
+            "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+            "eligibleOptionIds": [
+              "option-1"
+            ],
+            "excludedOptionIds": [
+              "option-0"
+            ],
+            "requirements": [
+              {
+                "requirementId": "capacity",
+                "optionId": "option-0",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "capacity",
+                "optionId": "option-1",
+                "dimensionId": "ceiling",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite capacity source and existing numeric hard-requirement core",
+          "text": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+        }
+      },
+      "matched": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "DSH current own-turn message content snapshot; not a file",
+          "hostContext": {
+            "sessionId": "session-8e855c24-b507-43b7-86c9-0fc54fd92618",
+            "turn": 1,
+            "turnStartSeq": 6,
+            "messageId": "22364f43-6d71-4aec-b8b4-cce4076a80c2",
+            "messageSeq": 10,
+            "producerSourceKind": "user",
+            "inherited": false,
+            "excludedSyntheticContexts": 4,
+            "requestId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7"
+          },
+          "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 158,
+            "textUTF8Bytes": 158
+          },
+          "identityVerified": false,
+          "authorship": "unverified; host message IDs and producer source.kind are not an independent human principal or signature",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GB",
+            "initial": 80,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "A",
+              "ceiling": {
+                "value": 100,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 28,
+                    "textByteEnd": 33
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 36,
+                    "textByteEnd": 48
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            },
+            {
+              "label": "B",
+              "ceiling": {
+                "value": 1000,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 60,
+                    "textByteEnd": 66
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 69,
+                    "textByteEnd": 81
+                  }
+                ]
+              }
+            }
+          ],
+          "current": {
+            "value": 80,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 97,
+                "textByteEnd": 101
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 300,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 120,
+                "textByteEnd": 125
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "matched"
+        },
+        "issues": [],
+        "fieldChecks": [
+          {
+            "optionId": "option-0",
+            "sourceOption": "A",
+            "kind": "capacity-limit",
+            "dimensionId": "capacity",
+            "role": "provided-capacity",
+            "expected": 100,
+            "actual": 100,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 28,
+                "textByteEnd": 33
+              }
+            ],
+            "status": "matched"
+          },
+          {
+            "optionId": "option-1",
+            "sourceOption": "B",
+            "kind": "capacity-limit",
+            "dimensionId": "capacity",
+            "role": "provided-capacity",
+            "expected": 1000,
+            "actual": 1000,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 60,
+                "textByteEnd": 66
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "inputChecks": [
+          {
+            "inputId": "demand",
+            "role": "required-capacity",
+            "expected": 80,
+            "actual": 80,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 97,
+                "textByteEnd": 101
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "claimChecks": [],
+        "computedCapacity": {
+          "current": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "demand",
+                "requirementIds": [
+                  "capacity-demand"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "option-0",
+              "option-1"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "capacity-demand",
+                "optionId": "option-0",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "capacity-demand",
+                "optionId": "option-1",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "possibleFutureHypothesis": {
+            "demand": 300,
+            "unit": "GB",
+            "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+            "eligibleOptionIds": [
+              "option-1"
+            ],
+            "excludedOptionIds": [
+              "option-0"
+            ],
+            "requirements": [
+              {
+                "requirementId": "capacity-demand",
+                "optionId": "option-0",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "capacity-demand",
+                "optionId": "option-1",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite capacity source and existing numeric hard-requirement core",
+          "text": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+        }
+      },
+      "legacyRender": null,
+      "legacyRejection": null,
+      "delivery": {
+        "status": "delivered",
+        "turn": 1,
+        "displayId": "source-reference-8deea750b000b6ab",
+        "revision": 1,
+        "summary": "来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。",
+        "presentation": {
+          "version": 1,
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          }
+        },
+        "protocolVersion": "1.4",
+        "component": "DecisionExplorer",
+        "summarySource": "source-derived bounded projection",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "decisionFacts": {
+          "scope": "declared-policy-under-original-conditions",
+          "status": "no-match",
+          "strictPolicy": true,
+          "inputEffects": [
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity-demand"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "eligibilityOnly": true,
+          "eligibilityAssessed": true,
+          "eligibleOptionIds": [
+            "option-0",
+            "option-1"
+          ],
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "requirements": [
+            {
+              "requirementId": "capacity-demand",
+              "optionId": "option-0",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 100,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity-demand",
+              "optionId": "option-1",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "GB",
+              "actual": 1000,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "resultBasis": null,
+          "sourceFactsVerified": false,
+          "recommendedOptionIds": [],
+          "matchedRuleIds": [],
+          "pendingRuleIds": [],
+          "missingInputs": [],
+          "activeConstraintIds": [],
+          "unknownConstraintIds": [],
+          "declaredOriginCounts": {
+            "given": 0,
+            "modelJudgment": 0
+          },
+          "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+        },
+        "declarationMapping": {
+          "scope": "declared-fields-and-dependencies",
+          "sourceFactsVerified": false,
+          "requirements": [
+            {
+              "requirementId": "capacity-demand",
+              "dimensionId": "capacity",
+              "dimensionRole": null,
+              "inputId": "demand",
+              "inputRole": null,
+              "relation": "at-least",
+              "unit": "GB"
+            }
+          ],
+          "inputs": [
+            {
+              "inputId": "demand",
+              "scope": "hard",
+              "expectedEffect": "hard"
+            }
+          ],
+          "dependencyLinks": "decisionFacts.inputEffects",
+          "boundary": "Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified."
+        },
+        "canonicalSummary": "Declared comparison: 2 options, 1 dimensions. Meets declared hard requirements: A, B. Unknown feasibility: none. No preference established.",
+        "canonicalSummarySource": "computed from declared requirements and policy; not verification of suitability",
+        "canonicalExplanation": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。",
+        "sourceDeliveryStatus": "bound",
+        "identityVerified": false,
+        "deliveryId": "d1469091-5b2b-4eb3-b5f4-f70cabc62390"
+      },
+      "checkpointEvent": {
+        "type": "tool/result",
+        "seq": 29,
+        "time": 1793434120023,
+        "data": {
+          "turn": 1,
+          "step": 3,
+          "message": {
+            "role": "tool",
+            "source": {
+              "kind": "tool",
+              "callId": "saved-call-3"
+            },
+            "toolCallId": "saved-call-3",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"status\":\"delivered\",\"turn\":1,\"displayId\":\"source-reference-8deea750b000b6ab\",\"revision\":1,\"summary\":\"来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。\",\"presentation\":{\"version\":1,\"theme\":{\"mode\":\"light\",\"palette\":\"ocean\",\"font\":\"system\",\"density\":\"comfortable\",\"textSize\":\"standard\"},\"layout\":{\"direction\":\"auto\"}},\"protocolVersion\":\"1.4\",\"component\":\"DecisionExplorer\",\"summarySource\":\"source-derived bounded projection\",\"sourceFactsVerified\":false,\"responseContract\":\"Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.\",\"decisionFacts\":{\"scope\":\"declared-policy-under-original-conditions\",\"status\":\"no-match\",\"strictPolicy\":true,\"inputEffects\":[{\"inputId\":\"demand\",\"requirementIds\":[\"capacity-demand\"],\"constraintIds\":[],\"ruleIds\":[],\"affectsEligibility\":true,\"affectsPreference\":false,\"scope\":\"hard\"}],\"unusedInputIds\":[],\"requiresPolicyReview\":false,\"preferenceMode\":\"withheld-pending-local-review\",\"eligibilityOnly\":true,\"eligibilityAssessed\":true,\"eligibleOptionIds\":[\"option-0\",\"option-1\"],\"excludedOptionIds\":[],\"unknownFeasibilityIds\":[],\"requirements\":[{\"requirementId\":\"capacity-demand\",\"optionId\":\"option-0\",\"dimensionId\":\"capacity\",\"inputId\":\"demand\",\"unit\":\"GB\",\"actual\":100,\"needed\":80,\"relation\":\"at-least\",\"active\":true,\"status\":\"pass\"},{\"requirementId\":\"capacity-demand\",\"optionId\":\"option-1\",\"dimensionId\":\"capacity\",\"inputId\":\"demand\",\"unit\":\"GB\",\"actual\":1000,\"needed\":80,\"relation\":\"at-least\",\"active\":true,\"status\":\"pass\"}],\"unknownComparisonCells\":[],\"proposalWithMissingFacts\":false,\"resultBasis\":null,\"sourceFactsVerified\":false,\"recommendedOptionIds\":[],\"matchedRuleIds\":[],\"pendingRuleIds\":[],\"missingInputs\":[],\"activeConstraintIds\":[],\"unknownConstraintIds\":[],\"declaredOriginCounts\":{\"given\":0,\"modelJudgment\":0},\"boundary\":\"Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner.\"},\"declarationMapping\":{\"scope\":\"declared-fields-and-dependencies\",\"sourceFactsVerified\":false,\"requirements\":[{\"requirementId\":\"capacity-demand\",\"dimensionId\":\"capacity\",\"dimensionRole\":null,\"inputId\":\"demand\",\"inputRole\":null,\"relation\":\"at-least\",\"unit\":\"GB\"}],\"inputs\":[{\"inputId\":\"demand\",\"scope\":\"hard\",\"expectedEffect\":\"hard\"}],\"dependencyLinks\":\"decisionFacts.inputEffects\",\"boundary\":\"Internal declaration consistency only. Roles and expectations are supplied data, not independent source facts. Links include inactive/conditional predicates; a dependency does not guarantee every value change alters the result. Free prose is not certified.\"},\"canonicalSummary\":\"Declared comparison: 2 options, 1 dimensions. Meets declared hard requirements: A, B. Unknown feasibility: none. No preference established.\",\"canonicalSummarySource\":\"computed from declared requirements and policy; not verification of suitability\",\"canonicalExplanation\":\"A容量上限 100GB；部署：简单；维护：未声明。\\nB容量上限 1000GB；部署：未声明；维护：复杂。\\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。\",\"sourceDeliveryStatus\":\"bound\",\"identityVerified\":false,\"deliveryId\":\"d1469091-5b2b-4eb3-b5f4-f70cabc62390\"}"
+              }
+            ],
+            "isError": false,
+            "id": "377ca7aa-da0b-460a-ad4e-f41b64a652fa"
+          },
+          "meta": {
+            "dshSemanticUi": {
+              "turn": 1,
+              "view": {
+                "protocolVersion": "1.4",
+                "displayId": "source-reference-8deea750b000b6ab",
+                "revision": 1,
+                "summary": "来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。",
+                "presentation": {
+                  "version": 1,
+                  "theme": {
+                    "mode": "light",
+                    "palette": "ocean",
+                    "font": "system",
+                    "density": "comfortable",
+                    "textSize": "standard"
+                  },
+                  "layout": {
+                    "direction": "auto"
+                  }
+                },
+                "component": "DecisionExplorer",
+                "payload": {
+                  "title": "来源声明的容量与本地需求假设",
+                  "dimensions": [
+                    {
+                      "id": "capacity",
+                      "label": "容量上限",
+                      "kind": "number",
+                      "unit": "GB"
+                    }
+                  ],
+                  "options": [
+                    {
+                      "id": "option-0",
+                      "label": "A",
+                      "values": {
+                        "capacity": 100
+                      },
+                      "advantages": [],
+                      "disadvantages": [],
+                      "suitableWhen": "来源部署：简单；维护：未声明。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。",
+                      "evidence": []
+                    },
+                    {
+                      "id": "option-1",
+                      "label": "B",
+                      "values": {
+                        "capacity": 1000
+                      },
+                      "advantages": [],
+                      "disadvantages": [],
+                      "suitableWhen": "来源部署：未声明；维护：复杂。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。",
+                      "evidence": []
+                    }
+                  ],
+                  "inputs": [
+                    {
+                      "id": "demand",
+                      "label": "需求容量（本地假设）",
+                      "type": "number",
+                      "unit": "GB",
+                      "initial": 80,
+                      "expectedEffect": "hard"
+                    }
+                  ],
+                  "rules": [],
+                  "constraints": [],
+                  "requirements": [
+                    {
+                      "id": "capacity-demand",
+                      "dimension": "capacity",
+                      "input": "demand",
+                      "relation": "at-least"
+                    }
+                  ]
+                }
+              },
+              "sourceDelivery": {
+                "version": 1,
+                "identityVerified": false,
+                "sourceFactsVerified": false,
+                "status": "bound",
+                "kind": "capacity-zh",
+                "explanation": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。",
+                "sourceRef": {
+                  "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+                  "hostContext": {
+                    "sessionId": "session-8e855c24-b507-43b7-86c9-0fc54fd92618",
+                    "turn": 1,
+                    "turnStartSeq": 6,
+                    "messageId": "22364f43-6d71-4aec-b8b4-cce4076a80c2",
+                    "messageSeq": 10,
+                    "producerSourceKind": "user",
+                    "inherited": false,
+                    "excludedSyntheticContexts": 4,
+                    "requestId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7"
+                  }
+                },
+                "viewIdentity": {
+                  "displayId": "source-reference-8deea750b000b6ab",
+                  "revision": 1,
+                  "component": "DecisionExplorer"
+                }
+              }
+            }
+          }
+        },
+        "sourceEventSeqs": [
+          28
+        ],
+        "surfaceOp": "append"
+      },
+      "checkpoint": {
+        "turn": 1,
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-8deea750b000b6ab",
+          "revision": 1,
+          "summary": "来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。",
+          "presentation": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          },
+          "component": "DecisionExplorer",
+          "payload": {
+            "title": "来源声明的容量与本地需求假设",
+            "dimensions": [
+              {
+                "id": "capacity",
+                "label": "容量上限",
+                "kind": "number",
+                "unit": "GB"
+              }
+            ],
+            "options": [
+              {
+                "id": "option-0",
+                "label": "A",
+                "values": {
+                  "capacity": 100
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "来源部署：简单；维护：未声明。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。",
+                "evidence": []
+              },
+              {
+                "id": "option-1",
+                "label": "B",
+                "values": {
+                  "capacity": 1000
+                },
+                "advantages": [],
+                "disadvantages": [],
+                "suitableWhen": "来源部署：未声明；维护：复杂。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。",
+                "evidence": []
+              }
+            ],
+            "inputs": [
+              {
+                "id": "demand",
+                "label": "需求容量（本地假设）",
+                "type": "number",
+                "unit": "GB",
+                "initial": 80,
+                "expectedEffect": "hard"
+              }
+            ],
+            "rules": [],
+            "constraints": [],
+            "requirements": [
+              {
+                "id": "capacity-demand",
+                "dimension": "capacity",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ]
+          }
+        },
+        "sourceDelivery": {
+          "version": 1,
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "status": "bound",
+          "kind": "capacity-zh",
+          "explanation": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。",
+          "sourceRef": {
+            "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+            "hostContext": {
+              "sessionId": "session-8e855c24-b507-43b7-86c9-0fc54fd92618",
+              "turn": 1,
+              "turnStartSeq": 6,
+              "messageId": "22364f43-6d71-4aec-b8b4-cce4076a80c2",
+              "messageSeq": 10,
+              "producerSourceKind": "user",
+              "inherited": false,
+              "excludedSyntheticContexts": 4,
+              "requestId": "7066f2b0-77aa-4cf1-ad35-e439a26a05a7"
+            }
+          },
+          "viewIdentity": {
+            "displayId": "source-reference-8deea750b000b6ab",
+            "revision": 1,
+            "component": "DecisionExplorer"
+          }
+        }
+      },
+      "referenceToCheckpointChanges": [
+        {
+          "path": "$.summary",
+          "before": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "after": "来源当前需求与未来可能点分别保留；本地需求是假设，只重算容量，不建立整体推荐。"
+        },
+        {
+          "path": "$.payload.title",
+          "before": "来源声明的容量条件",
+          "after": "来源声明的容量与本地需求假设"
+        },
+        {
+          "path": "$.payload.options.0.suitableWhen",
+          "before": "只比较当前容量要求；部署和维护声明另见来源说明。",
+          "after": "来源部署：简单；维护：未声明。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。"
+        },
+        {
+          "path": "$.payload.options.1.suitableWhen",
+          "before": "只比较当前容量要求；部署和维护声明另见来源说明。",
+          "after": "来源部署：未声明；维护：复杂。两类属性独立，不能由其中一项推断另一项、费用或整体适合程度。"
+        },
+        {
+          "path": "$.payload.inputs.0.label",
+          "before": "需求容量",
+          "after": "需求容量（本地假设）"
+        },
+        {
+          "path": "$.presentation",
+          "before": {
+            "absent": true
+          },
+          "after": {
+            "version": 1,
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        }
+      ],
+      "localInteractions": [],
+      "journalAndSourceUnchanged": false,
+      "refreshRestoredOriginalState": false,
+      "images": [],
+      "sourceFactsVerified": false,
+      "identityVerified": false,
+      "freeProseVerified": false
+    }
+  ],
+  "pageErrors": [],
+  "newModelStarts": 0,
+  "newModelAnswers": 0,
+  "sourceReferenceAuthorship": "program, using the installed current core finite parsers",
+  "originalModelNaturalPassCountUnchanged": true,
+  "graphMainCodexClientVerified": false,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false
+}
