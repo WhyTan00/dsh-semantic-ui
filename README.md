@@ -16,21 +16,23 @@ DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、�
 
 ## 安装新版
 
-下载 [0.1.0-preview.26 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.26)的运行包，核对同页 `SHA256SUMS` 后安装：
+下载 [0.1.0-preview.27 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)的运行包，核对同页 `SHA256SUMS` 后安装：
 
 ```sh
-dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.26.tgz
+dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.27.tgz
 ```
 
 本项目锁定 DSH `0.2.1-rc.2` 与 json-render `0.21.1`，组件协议为1.4。完整配置、兼容范围与历史版本见[安装说明](docs/INSTALL.zh-CN.md)。当前共享工作台不会因源码更新而自动升级，请按自己的运行环境安装新包。
 
-## 本版实际验证
+## 沿用的preview.26语言验证
 
 - 默认中文；四类视图同页同步切换，中英文刷新记忆，切换不重置本地筛选、不请求模型。
 - 类型检查及245项单元检查通过。388文件最终归档正常隔离安装，未用语义插件源码覆盖。
 - macOS/Linux分别验证 Native/PTC，每组四类视图，360px容器无根溢出，页面错误为0。[CI](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/40515658647)与[分层回执](docs/evidence/language.json)可查。
 
 浏览器禁止本地存储时，本页仍可切换，但无法保证刷新记忆。语言功能不自动翻译用户来源、节点名称、单位或模型正文。窄屏容器测试不等于真机或完整读屏验收。
+
+preview.27另修复[全缺失范围中的补零假设](docs/ZERO-FILL-CHART.zh-CN.md)：独立假设可算0，原始观测与真实完整统计仍未知。最终安装、定向宿主和发行接受见[本版回执](docs/evidence/zero-fill-chart.json)。
 
 ## 与 GenUI 及其他开源项目的关系
 

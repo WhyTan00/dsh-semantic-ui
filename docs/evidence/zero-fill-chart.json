@@ -1,0 +1,18 @@
+{
+  "schema": "all-missing-chart-hypothesis-v1",
+  "status": "development verification; final archive and release acceptance pending",
+  "version": "0.1.0-preview.27",
+  "firstRegression": {
+    "failed": 2,
+    "passed": 1,
+    "retained": true
+  },
+  "developmentFocusedTestsPassed": 39,
+  "newRealModelTurns": 0,
+  "originalNaturalResultsUnchanged": true,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false,
+  "developmentFocusedTestFiles": 8,
+  "typecheck": "passed"
+}

@@ -1,5 +1,7 @@
 # 验证证据与未通过项
 
+preview.27的[图表全缺失假设修复](ZERO-FILL-CHART.zh-CN.md)先以独立数学0复现2个失败，再由现有核心统计器计算独立假设副本；开发33项定向检查通过，原观测/完整值、空范围、溢出和null导出分开保护。新运行归档和宿主/发行接受见[分层回执](evidence/zero-fill-chart.json)，不以开发检查或旧CLI成功替代，不升级原六题自然结果。
+
 2026-10-31原六题定向采用：[来源参考入口](ORIGINAL-CASE-REFERENCE.zh-CN.md)在既有26归档正常Native验证5个支持来源/4个旧载荷拒绝/5个有效局部交互与刷新，T2无组件。10项离线合同通过；六题检查及自带文件serve共7个确定性夹具回合、29本机POST、0真实模型，未重发运行包或重跑旧矩阵。后补截图只读重开既有会话，10张640/360稳定图与checkpoint相同；首轮截图过早和两次采集断言失败单列。现有六输入未发现可复现的核心错误比较，来源未知/模板角色/容量硬条件仍严格；原六自然失败、自由正文和未覆盖平台边界不升级，见[分层证据](evidence/original-case-reference.json)。
 
 24已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.24)：源/tag780328056294060d79d7f89372ab87b312a982fb，运行ccd2b7890292eee150d8fb9c3ea800d75e0f69ddcd4c72b532eee0bdee28fb70，382文件最终归档正常安装；19项4文件、macOS/Linux Native/PTC各1诊断序列、普通CLI错误标签拒绝/明确修正交付与刷新通过。CI40500985324成功、四匿名HTTP200资产与本机/Linux同字节，见[修复接受](evidence/capacity-contract.json)。[两个新引导观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)共2/2：两raw有限met，但首题23无view matched，第二题24当前view首次matched，假设初值不能冒原来源的拒绝保留；backend请求数unknown，不当同题因果基准或原六题通过。

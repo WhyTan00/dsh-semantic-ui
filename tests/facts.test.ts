@@ -30,6 +30,6 @@ describe('declared decision receipts',()=>{
 });
 it('computes the signed zero-fill direction only relative to observed values, never an unknown complete mean',()=>{
  if(chart.component!=='DataChart'||chart.payload.chartType==='histogram')throw Error();
- const cases:{values:(number|null)[];mean:number|null;direction:string}[]=[{values:[-2,0,null,2],mean:0,direction:'same'},{values:[-4,null,-2],mean:-2,direction:'higher'},{values:[2,null,4],mean:2,direction:'lower'},{values:[null,null],mean:null,direction:'unknown'},{values:[Number.MAX_VALUE,Number.MAX_VALUE],mean:null,direction:'unknown'}];
+ const cases:{values:(number|null)[];mean:number|null;direction:string}[]=[{values:[-2,0,null,2],mean:0,direction:'same'},{values:[-4,null,-2],mean:-2,direction:'higher'},{values:[2,null,4],mean:2,direction:'lower'},{values:[null,null],mean:0,direction:'unknown'},{values:[Number.MAX_VALUE,Number.MAX_VALUE],mean:null,direction:'unknown'}];
  for(const c of cases){const p=structuredClone(chart.payload);p.x={kind:'category',order:'input'};p.series=[{id:'a',label:'Declared readings'}];p.rows=c.values.map((v,i)=>({id:'r'+i,x:String(i),values:{a:v}}));const f=chartFacts(p);if(f.chartType==='histogram')throw Error();expect(f.series[0].zeroFillIllustration).toMatchObject({mean:c.mean,directionRelativeToObservedMean:c.direction,completeDataMeanKnown:false});expect(f.series[0].zeroFillIllustration.assumption).toContain('hypothetical');}
 });

@@ -29,6 +29,10 @@ on:
         description: Validate signed and zero-sum baselines from the final installed archive
         type: boolean
         default: false
+      all_missing_only:
+        description: With numeric_baseline_only, check all-missing chart hypotheses instead of earlier cases
+        type: boolean
+        default: false
       numeric_delivery_only:
         description: Validate source-bound numeric render and installed Native/PTC only
         type: boolean
@@ -62,8 +66,13 @@ permissions:
 jobs:
   verify:
     runs-on: ubuntu-latest
+    env:
+      ZERO_FILL_ALL_MISSING_ONLY: ${{ inputs.all_missing_only && '1' || '' }}
     steps:
       - uses: actions/checkout@v4
+      - name: Validate the focused suite selection
+        if: inputs.all_missing_only && !inputs.numeric_baseline_only
+        run: exit 1
       - uses: pnpm/action-setup@v4
         with:
           version: 10.32.1
@@ -108,8 +117,12 @@ jobs:
         if: github.event_name == 'workflow_dispatch' && inputs.numeric_baseline_only
         run: |
           pnpm typecheck
-          pnpm exec vitest run tests/numeric-baseline.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/facts.test.ts tests/numeric-delivery.test.ts tests/chart-comparison.test.ts
-          python3 -m unittest discover -s tests -p 'test_codex_*.py'
+          if [ "$ZERO_FILL_ALL_MISSING_ONLY" = "1" ]; then
+            pnpm exec vitest run tests/zero-fill-chart.test.ts tests/numeric-baseline.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/facts.test.ts tests/numeric-delivery.test.ts tests/chart-comparison.test.ts tests/i18n.test.ts
+          else
+            pnpm exec vitest run tests/numeric-baseline.test.ts tests/source-numeric.test.ts tests/source-numeric-mcp.test.ts tests/facts.test.ts tests/numeric-delivery.test.ts tests/chart-comparison.test.ts
+            python3 -m unittest discover -s tests -p 'test_codex_*.py'
+          fi
       - name: Check numeric source delivery
         if: github.event_name == 'workflow_dispatch' && inputs.numeric_delivery_only
         run: |

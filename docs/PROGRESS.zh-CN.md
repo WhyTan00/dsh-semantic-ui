@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.27开发修复[图表全缺失范围的独立补零假设](ZERO-FILL-CHART.zh-CN.md)：图形和工具回执共用既有统计器计算假设副本，非空全null假设均值/合计0，原观测与完整真实值仍未知。空范围/溢出不回退0，导出/null/来源不改；新回归首次2失败保留，开发33项通过。最终新归档、正常Native/PTC/Linux和发行接受另记[独立回执](evidence/zero-fill-chart.json)，0新增真实模型，不改原自然判定。
+
 原六题现已补[可运行来源参考入口](ORIGINAL-CASE-REFERENCE.zh-CN.md)：五类完整来源由既有26核心构造并核对，正常Native持久呈现；T2不强行生成组件。四个原模型载荷实际拒绝、五次局部交互不改来源/历史、刷新恢复，10项离线合同通过。默认六题与自带文件serve共7个夹具回合/29次本机请求、0真实模型；复用保存会话另补10张稳定截图，首轮过早截图与两次只读取证失败保留。当前六题没有发现剩余核心误比较，本次交付普通采用入口、无运行修改/新包/发行；原0通过/6失败/18请求和自由正文未核不变，见[独立回执](evidence/original-case-reference.json)。
 
 已将上述真实模型候选交付为[正常DSH Native按需回放示例](SAVED-MODEL-HOST-REPLAY.zh-CN.md)：从每轮实际matched事件取原view/mapping，正常render输入值不改，typed claims按频道合同仅用于source-check；安全投影5处差异明确保留。旧true/true与新false/null各自持久消息/checkpoint关联，旧view新源拒绝两个初值，四次局部切换不改源/历史、刷新恢复、640/360实际截图pageerror0。3离线合同、默认serve就绪及Ctrl+C清理通过；两次共4个fixture回合/20本机POST、0真实新模型，无运行包变更/新发行，见[分层接受](evidence/model-view-host.json)。
