@@ -1,0 +1,1988 @@
+{
+  "sessions": [
+    {
+      "label": "default",
+      "server": {
+        "name": "semantic-ui-checks",
+        "version": "0.1.0-preview.27.1"
+      },
+      "tools": [
+        "semantic_ui_schema",
+        "semantic_ui_check",
+        "semantic_ui_template_check"
+      ],
+      "uiResources": false
+    },
+    {
+      "label": "workflow-zh",
+      "server": {
+        "name": "semantic-ui-checks",
+        "version": "0.1.0-preview.27.1"
+      },
+      "tools": [
+        "semantic_ui_schema",
+        "semantic_ui_check",
+        "semantic_ui_template_check",
+        "semantic_ui_source_check"
+      ],
+      "uiResources": false
+    },
+    {
+      "label": "permissions-zh",
+      "server": {
+        "name": "semantic-ui-checks",
+        "version": "0.1.0-preview.27.1"
+      },
+      "tools": [
+        "semantic_ui_schema",
+        "semantic_ui_check",
+        "semantic_ui_template_check",
+        "semantic_ui_source_check"
+      ],
+      "uiResources": false
+    }
+  ],
+  "calls": [
+    {
+      "session": "default",
+      "tool": "semantic_ui_schema",
+      "arguments": {
+        "component": "DataChart"
+      },
+      "result": {
+        "component": "DataChart",
+        "protocolVersion": "1.4",
+        "payloadSchema": {
+          "$schema": "https://json-schema.org/draft/2020-12/schema",
+          "oneOf": [
+            {
+              "type": "object",
+              "properties": {
+                "chartType": {
+                  "type": "string",
+                  "enum": [
+                    "line",
+                    "bar"
+                  ]
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "x": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "time",
+                        "category"
+                      ]
+                    },
+                    "timezone": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "granularity": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 80
+                    },
+                    "order": {
+                      "type": "string",
+                      "enum": [
+                        "ascending",
+                        "input"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "order"
+                  ],
+                  "additionalProperties": false
+                },
+                "series": {
+                  "minItems": 1,
+                  "maxItems": 8,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "label": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 80
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "label"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "rows": {
+                  "maxItems": 2000,
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                      },
+                      "x": {
+                        "type": "string",
+                        "minLength": 1,
+                        "maxLength": 1200
+                      },
+                      "values": {
+                        "type": "object",
+                        "propertyNames": {
+                          "type": "string",
+                          "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                        },
+                        "additionalProperties": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "x",
+                      "values"
+                    ],
+                    "additionalProperties": false
+                  }
+                },
+                "fullDataExplanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                }
+              },
+              "required": [
+                "chartType",
+                "title",
+                "unit",
+                "x",
+                "series",
+                "rows"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "chartType": {
+                  "type": "string",
+                  "const": "histogram"
+                },
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "unit": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "display": {
+                  "type": "string",
+                  "enum": [
+                    "count",
+                    "proportion"
+                  ]
+                },
+                "source": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "const": "observations"
+                        },
+                        "boundaries": {
+                          "minItems": 2,
+                          "maxItems": 81,
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "groups": {
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "label": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 80
+                              },
+                              "observations": {
+                                "maxItems": 10000,
+                                "type": "array",
+                                "items": {
+                                  "anyOf": [
+                                    {
+                                      "type": "number"
+                                    },
+                                    {
+                                      "type": "null"
+                                    }
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "label",
+                              "observations"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "boundaries",
+                        "groups"
+                      ],
+                      "additionalProperties": false
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "mode": {
+                          "type": "string",
+                          "const": "prebinned"
+                        },
+                        "boundaries": {
+                          "minItems": 2,
+                          "maxItems": 81,
+                          "type": "array",
+                          "items": {
+                            "type": "number"
+                          }
+                        },
+                        "groups": {
+                          "minItems": 1,
+                          "maxItems": 8,
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "pattern": "^[a-zA-Z0-9][a-zA-Z0-9_.:-]{0,79}$"
+                              },
+                              "label": {
+                                "type": "string",
+                                "minLength": 1,
+                                "maxLength": 80
+                              },
+                              "counts": {
+                                "maxItems": 80,
+                                "type": "array",
+                                "items": {
+                                  "type": "integer",
+                                  "minimum": 0,
+                                  "maximum": 9007199254740991
+                                }
+                              },
+                              "missing": {
+                                "type": "integer",
+                                "minimum": 0,
+                                "maximum": 9007199254740991
+                              }
+                            },
+                            "required": [
+                              "id",
+                              "label",
+                              "counts",
+                              "missing"
+                            ],
+                            "additionalProperties": false
+                          }
+                        }
+                      },
+                      "required": [
+                        "mode",
+                        "boundaries",
+                        "groups"
+                      ],
+                      "additionalProperties": false
+                    }
+                  ]
+                },
+                "fullDataExplanation": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 1200
+                }
+              },
+              "required": [
+                "chartType",
+                "title",
+                "unit",
+                "display",
+                "source"
+              ],
+              "additionalProperties": false
+            }
+          ]
+        },
+        "envelope": {
+          "protocolVersion": "1.4",
+          "displayId": "stable-subject-id",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "A short readable conclusion.",
+          "payload": "Follow payloadSchema."
+        },
+        "delivery": "Validate structured data before using the host rendering channel. Validation does not itself display a component.",
+        "semantics": "Only fields inside dataFacts are program-computed; summary and fullDataExplanation are echoed model prose, never independently verified. Do not attribute an extra calculation to the program if it is absent from dataFacts. zeroFillIllustration.directionRelativeToObservedMean compares a hypothetical zero-filled mean to the observed-data mean only: signed values can make it higher, lower or the same. The observed sum and zeroFillIllustration.sum cover their named counts; zero-fill leaves a finite observed subtotal unchanged. Equal statistics do not erase missingness. These comparisons do not establish bias relative to unknown complete-data means or sums. A zero fill can leave the numeric mean unchanged; do not say every imputation changes it. The render receipt returns deterministic full-data dataFacts; check prose against these facts, including endpoints, minimum, maximum and net change. Line/bar rows need explicit null for missing values. Time timestamps need offsets, timezone and granularity; duplicate instants need explicit upstream aggregation. Describe only the observed interval: do not invent irregular spacing, missing causes or trend forecasts. Histograms share increasing equal-width bin boundaries: [lower,upper), last bin includes upper. Unequal-width bins are unsupported; do not invent rebinning from pre-aggregated counts. Ratio denominator is valid observations in each group; missing is excluded. Weighted averages and quantiles are unsupported.",
+        "hostRendering": "Use the available native visualizer, diagram, table or text. This server does not deliver a UI resource."
+      }
+    },
+    {
+      "session": "default",
+      "tool": "semantic_ui_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-standalone-check",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Explicit positional source projection; free prose unverified.",
+          "payload": {
+            "chartType": "bar",
+            "title": "Source readings",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-standalone-check",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-standalone-check-0",
+                "x": "1",
+                "values": {
+                  "series-standalone-check": null
+                }
+              },
+              {
+                "id": "row-standalone-check-1",
+                "x": "2",
+                "values": {
+                  "series-standalone-check": null
+                }
+              },
+              {
+                "id": "row-standalone-check-2",
+                "x": "3",
+                "values": {
+                  "series-standalone-check": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "status": "validated",
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "summarySource": "model-authored; not independently verified",
+        "sourceFactsVerified": false,
+        "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+        "dataFacts": {
+          "scope": "original-full-data",
+          "chartType": "bar",
+          "unit": "毫安",
+          "order": "input",
+          "rows": 3,
+          "firstRow": {
+            "id": "row-standalone-check-0",
+            "x": "1",
+            "xTruncated": false
+          },
+          "lastRow": {
+            "id": "row-standalone-check-2",
+            "x": "3",
+            "xTruncated": false
+          },
+          "series": [
+            {
+              "id": "series-standalone-check",
+              "valid": 0,
+              "missing": 3,
+              "sum": null,
+              "mean": null,
+              "zeroFillIllustration": {
+                "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                "count": 3,
+                "sum": 0,
+                "differenceFromObservedSum": null,
+                "directionRelativeToObservedSum": "unknown",
+                "completeDataSumKnown": false,
+                "mean": 0,
+                "differenceFromObservedMean": null,
+                "directionRelativeToObservedMean": "unknown",
+                "completeDataMeanKnown": false
+              },
+              "minimum": null,
+              "maximum": null,
+              "firstValue": null,
+              "lastValue": null,
+              "netChange": null,
+              "adjacentValidDecreases": 0
+            }
+          ]
+        },
+        "canonicalSummary": "Declared bar data in 毫安: series-standalone-check: 0 valid, 3 missing, mean unknown.",
+        "canonicalSummarySource": "computed from supplied observations; not independent source verification",
+        "nativeRendering": "Use the host native visualization only when useful; retain declared data, nulls, units and computed checks. A successful check is not proof the host rendered a component."
+      }
+    },
+    {
+      "session": "default",
+      "tool": "semantic_ui_template_check",
+      "arguments": {
+        "document": {
+          "format": "dsh-semantic-ui-template",
+          "version": 1,
+          "template": {
+            "name": "本地数值形状",
+            "definition": {
+              "component": "DataChart",
+              "chart": {
+                "chartType": "bar",
+                "unit": "毫安",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "series-standalone-check",
+                    "label": "电流"
+                  }
+                ]
+              }
+            },
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        },
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-standalone-check",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Explicit positional source projection; free prose unverified.",
+          "payload": {
+            "chartType": "bar",
+            "title": "Source readings",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-standalone-check",
+                "label": "电流"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-standalone-check-0",
+                "x": "1",
+                "values": {
+                  "series-standalone-check": null
+                }
+              },
+              {
+                "id": "row-standalone-check-1",
+                "x": "2",
+                "values": {
+                  "series-standalone-check": null
+                }
+              },
+              {
+                "id": "row-standalone-check-2",
+                "x": "3",
+                "values": {
+                  "series-standalone-check": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "status": "compatible",
+        "protocolVersion": "1.4",
+        "component": "DataChart",
+        "templateName": "本地数值形状",
+        "boundary": "Field contract compatibility only; no original data, source verification, library mutation or automatic rendering."
+      }
+    },
+    {
+      "session": "default",
+      "tool": "semantic_ui_template_check",
+      "arguments": {
+        "document": {
+          "format": "dsh-semantic-ui-template",
+          "version": 1,
+          "template": {
+            "name": "本地数值形状",
+            "definition": {
+              "component": "DataChart",
+              "chart": {
+                "chartType": "bar",
+                "unit": "毫安",
+                "x": {
+                  "kind": "category",
+                  "order": "input"
+                },
+                "series": [
+                  {
+                    "id": "series-standalone-check",
+                    "label": "电流"
+                  }
+                ]
+              }
+            },
+            "theme": {
+              "mode": "light",
+              "palette": "ocean",
+              "font": "system",
+              "density": "comfortable",
+              "textSize": "standard"
+            },
+            "layout": {
+              "direction": "auto"
+            }
+          }
+        },
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "readings-standalone-check",
+          "revision": 1,
+          "component": "DataChart",
+          "summary": "Explicit positional source projection; free prose unverified.",
+          "payload": {
+            "chartType": "bar",
+            "title": "Source readings",
+            "unit": "毫安",
+            "x": {
+              "kind": "category",
+              "order": "input"
+            },
+            "series": [
+              {
+                "id": "series-standalone-check",
+                "label": "电流"
+              },
+              {
+                "id": "extra",
+                "label": "额外系列"
+              }
+            ],
+            "rows": [
+              {
+                "id": "row-standalone-check-0",
+                "x": "1",
+                "values": {
+                  "series-standalone-check": null,
+                  "extra": null
+                }
+              },
+              {
+                "id": "row-standalone-check-1",
+                "x": "2",
+                "values": {
+                  "series-standalone-check": null,
+                  "extra": null
+                }
+              },
+              {
+                "id": "row-standalone-check-2",
+                "x": "3",
+                "values": {
+                  "series-standalone-check": null,
+                  "extra": null
+                }
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "status": "incompatible",
+        "reason": "TEMPLATE_INPUT: Fresh data does not match the saved field IDs, units, types, order or chart mode. Inspect action=template; use a different template or save a new one."
+      }
+    },
+    {
+      "session": "workflow-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {},
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "workflow-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "jsonPointer": null,
+          "textSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "excerptSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 165,
+            "textUTF8Bytes": 165
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+        },
+        "identityVerified": false,
+        "sourceFactsVerified": false,
+        "freeProseVerified": false,
+        "status": "compared",
+        "sourceWorkflow": {
+          "nodes": [
+            "入口",
+            "处理",
+            "发送",
+            "归档"
+          ],
+          "relations": [
+            {
+              "from": "入口",
+              "to": "处理",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "处理",
+              "to": "发送",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "发送",
+              "to": "归档",
+              "spans": [
+                {
+                  "textByteStart": 48,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "failurePolicies": [
+            {
+              "trigger": "归档",
+              "retryOnly": [
+                "归档"
+              ],
+              "noRollback": [
+                "发送"
+              ],
+              "triggerSpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "retrySpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "noRollbackSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 111
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "triggers": [
+                "归档",
+                "处理"
+              ],
+              "span": {
+                "textByteStart": 114,
+                "textByteEnd": 162
+              }
+            }
+          ]
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "conclusion": {
+          "selectedSource": "not-requested",
+          "structuredClaims": "not-requested",
+          "sourceIdentity": "unverified",
+          "freeProse": "not-verified"
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "reason": "No keyword removal or arbitrary prose certification."
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite workflow syntax only",
+          "text": "来源明确给出的有向拓扑：入口 → 处理；处理 → 发送；发送 → 归档。\n明确异常规则：当归档失败时，仅重试归档；此失败分支不回滚发送。重试范围不扩展到整个流程。\n处理失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+        }
+      }
+    },
+    {
+      "session": "workflow-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-9be2eb9d746095ea",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "ArchitectureExplorer",
+          "payload": {
+            "title": "来源声明的直接关系",
+            "nodes": [
+              {
+                "id": "node-0",
+                "label": "入口",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-1",
+                "label": "处理",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-2",
+                "label": "发送",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-3",
+                "label": "归档",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              },
+              {
+                "id": "edge-2",
+                "source": "node-2",
+                "target": "node-3",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              }
+            ],
+            "scenarios": [
+              {
+                "id": "relation-0",
+                "label": "声明关系 1",
+                "nodeIds": [
+                  "node-0",
+                  "node-1"
+                ],
+                "edgeIds": [
+                  "edge-0"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-1",
+                "label": "声明关系 2",
+                "nodeIds": [
+                  "node-1",
+                  "node-2"
+                ],
+                "edgeIds": [
+                  "edge-1"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-2",
+                "label": "声明关系 3",
+                "nodeIds": [
+                  "node-2",
+                  "node-3"
+                ],
+                "edgeIds": [
+                  "edge-2"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "failurePolicies": [
+            {
+              "trigger": "node-3",
+              "retryOnly": [
+                "node-3"
+              ],
+              "noRollback": [
+                "node-2"
+              ]
+            }
+          ]
+        }
+      },
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "workflow-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "jsonPointer": null,
+          "textSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "excerptSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 165,
+            "textUTF8Bytes": 165
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+        },
+        "identityVerified": false,
+        "sourceFactsVerified": false,
+        "freeProseVerified": false,
+        "status": "compared",
+        "sourceWorkflow": {
+          "nodes": [
+            "入口",
+            "处理",
+            "发送",
+            "归档"
+          ],
+          "relations": [
+            {
+              "from": "入口",
+              "to": "处理",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "处理",
+              "to": "发送",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "发送",
+              "to": "归档",
+              "spans": [
+                {
+                  "textByteStart": 48,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "failurePolicies": [
+            {
+              "trigger": "归档",
+              "retryOnly": [
+                "归档"
+              ],
+              "noRollback": [
+                "发送"
+              ],
+              "triggerSpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "retrySpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "noRollbackSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 111
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "triggers": [
+                "归档",
+                "处理"
+              ],
+              "span": {
+                "textByteStart": 114,
+                "textByteEnd": 162
+              }
+            }
+          ]
+        },
+        "comparison": {
+          "status": "matched",
+          "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+          "edgeChecks": [
+            {
+              "edgeId": "edge-0",
+              "from": "入口",
+              "to": "处理",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-1",
+              "from": "处理",
+              "to": "发送",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-2",
+              "from": "发送",
+              "to": "归档",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 48,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "missingRelations": [],
+          "policyChecks": [
+            {
+              "trigger": "归档",
+              "retryOnly": [
+                "归档"
+              ],
+              "noRollback": [
+                "发送"
+              ]
+            }
+          ],
+          "missingPolicies": []
+        },
+        "issues": [],
+        "claimChecks": [],
+        "conclusion": {
+          "selectedSource": "matched",
+          "structuredClaims": "not-requested",
+          "sourceIdentity": "unverified",
+          "freeProse": "not-verified"
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "reason": "No keyword removal or arbitrary prose certification."
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite workflow syntax only",
+          "text": "来源明确给出的有向拓扑：入口 → 处理；处理 → 发送；发送 → 归档。\n明确异常规则：当归档失败时，仅重试归档；此失败分支不回滚发送。重试范围不扩展到整个流程。\n处理失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+        }
+      }
+    },
+    {
+      "session": "workflow-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-9be2eb9d746095ea",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "ArchitectureExplorer",
+          "payload": {
+            "title": "来源声明的直接关系",
+            "nodes": [
+              {
+                "id": "node-0",
+                "label": "入口",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-1",
+                "label": "处理",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-2",
+                "label": "发送",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-3",
+                "label": "归档",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              },
+              {
+                "id": "edge-2",
+                "source": "node-2",
+                "target": "node-3",
+                "directed": true,
+                "type": "声明流程",
+                "evidence": []
+              }
+            ],
+            "scenarios": [
+              {
+                "id": "relation-0",
+                "label": "声明关系 1",
+                "nodeIds": [
+                  "node-0",
+                  "node-1"
+                ],
+                "edgeIds": [
+                  "edge-0"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-1",
+                "label": "声明关系 2",
+                "nodeIds": [
+                  "node-1",
+                  "node-2"
+                ],
+                "edgeIds": [
+                  "edge-1"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-2",
+                "label": "声明关系 3",
+                "nodeIds": [
+                  "node-2",
+                  "node-3"
+                ],
+                "edgeIds": [
+                  "edge-2"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              }
+            ]
+          }
+        },
+        "mapping": {
+          "failurePolicies": []
+        }
+      },
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "workflow-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "jsonPointer": null,
+          "textSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "excerptSha256": "9be2eb9d746095eaad5662e73ac1aa5defd281286067c6d720745d4cf04e370b",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 165,
+            "textUTF8Bytes": 165
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+        },
+        "identityVerified": false,
+        "sourceFactsVerified": false,
+        "freeProseVerified": false,
+        "status": "compared",
+        "sourceWorkflow": {
+          "nodes": [
+            "入口",
+            "处理",
+            "发送",
+            "归档"
+          ],
+          "relations": [
+            {
+              "from": "入口",
+              "to": "处理",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "处理",
+              "to": "发送",
+              "spans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "from": "发送",
+              "to": "归档",
+              "spans": [
+                {
+                  "textByteStart": 48,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "failurePolicies": [
+            {
+              "trigger": "归档",
+              "retryOnly": [
+                "归档"
+              ],
+              "noRollback": [
+                "发送"
+              ],
+              "triggerSpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "retrySpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "noRollbackSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 111
+                }
+              ]
+            }
+          ],
+          "questions": [
+            {
+              "triggers": [
+                "归档",
+                "处理"
+              ],
+              "span": {
+                "textByteStart": 114,
+                "textByteEnd": 162
+              }
+            }
+          ]
+        },
+        "comparison": {
+          "status": "mismatch",
+          "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+          "edgeChecks": [
+            {
+              "edgeId": "edge-0",
+              "from": "入口",
+              "to": "处理",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-1",
+              "from": "处理",
+              "to": "发送",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 21,
+                  "textByteEnd": 45
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-2",
+              "from": "发送",
+              "to": "归档",
+              "status": "matched",
+              "sourceSpans": [
+                {
+                  "textByteStart": 48,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "missingRelations": [],
+          "policyChecks": [],
+          "missingPolicies": [
+            {
+              "trigger": "归档",
+              "retryOnly": [
+                "归档"
+              ],
+              "noRollback": [
+                "发送"
+              ],
+              "triggerSpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "retrySpans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 93
+                }
+              ],
+              "noRollbackSpans": [
+                {
+                  "textByteStart": 96,
+                  "textByteEnd": 111
+                }
+              ]
+            }
+          ]
+        },
+        "issues": [
+          {
+            "code": "SOURCE_POLICY_MISSING",
+            "path": "$.mapping.failurePolicies",
+            "reason": "Complete coverage includes every explicit failure policy, not just all arrows."
+          }
+        ],
+        "claimChecks": [],
+        "conclusion": {
+          "selectedSource": "mismatch",
+          "structuredClaims": "not-requested",
+          "sourceIdentity": "unverified",
+          "freeProse": "not-verified"
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "reason": "No keyword removal or arbitrary prose certification."
+        },
+        "canonicalExplanation": {
+          "status": "withheld"
+        }
+      }
+    },
+    {
+      "session": "permissions-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {},
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "permissions-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "jsonPointer": null,
+          "textSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "excerptSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 117,
+            "textUTF8Bytes": 117
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source author/human identity",
+          "unselected context and general natural-language meaning",
+          "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+          "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+        ],
+        "status": "compared",
+        "sourcePermissions": {
+          "context": "演示服务",
+          "nodes": [
+            "前端",
+            "网关",
+            "索引"
+          ],
+          "accesses": [
+            {
+              "from": "前端",
+              "to": "网关",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            },
+            {
+              "from": "网关",
+              "to": "索引",
+              "mode": "read-only",
+              "spans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "prohibitions": [
+            {
+              "from": "前端",
+              "to": "索引",
+              "spans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 90
+                }
+              ]
+            }
+          ],
+          "onlyTargets": [
+            {
+              "from": "前端",
+              "targets": [
+                "网关"
+              ],
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            }
+          ]
+        },
+        "comparison": {
+          "status": "not-requested"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "bounded explicit source declarations; no global or causal inference",
+          "text": "前端 → 网关：明确访问关系；读写权限未声明。\n网关 → 索引：该主体对该目标只读，不许可写入。\n禁止 前端 → 索引；这是方向性限制，不是正向访问边。\n前端 的直接访问目标仅限 网关；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+        }
+      }
+    },
+    {
+      "session": "permissions-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-2a96896d471ccd46",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "ArchitectureExplorer",
+          "payload": {
+            "title": "来源声明的直接关系",
+            "nodes": [
+              {
+                "id": "node-0",
+                "label": "前端",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-1",
+                "label": "网关",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-2",
+                "label": "索引",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1",
+                "directed": true,
+                "type": "access",
+                "evidence": []
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2",
+                "directed": true,
+                "type": "read-only",
+                "evidence": []
+              }
+            ],
+            "scenarios": [
+              {
+                "id": "relation-0",
+                "label": "声明关系 1",
+                "nodeIds": [
+                  "node-0",
+                  "node-1"
+                ],
+                "edgeIds": [
+                  "edge-0"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-1",
+                "label": "声明关系 2",
+                "nodeIds": [
+                  "node-1",
+                  "node-2"
+                ],
+                "edgeIds": [
+                  "edge-1"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "permissions-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "jsonPointer": null,
+          "textSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "excerptSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 117,
+            "textUTF8Bytes": 117
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source author/human identity",
+          "unselected context and general natural-language meaning",
+          "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+          "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+        ],
+        "status": "compared",
+        "sourcePermissions": {
+          "context": "演示服务",
+          "nodes": [
+            "前端",
+            "网关",
+            "索引"
+          ],
+          "accesses": [
+            {
+              "from": "前端",
+              "to": "网关",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            },
+            {
+              "from": "网关",
+              "to": "索引",
+              "mode": "read-only",
+              "spans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "prohibitions": [
+            {
+              "from": "前端",
+              "to": "索引",
+              "spans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 90
+                }
+              ]
+            }
+          ],
+          "onlyTargets": [
+            {
+              "from": "前端",
+              "targets": [
+                "网关"
+              ],
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            }
+          ]
+        },
+        "comparison": {
+          "status": "matched",
+          "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+          "nodeChecks": [
+            {
+              "nodeId": "node-0",
+              "label": "前端",
+              "status": "matched"
+            },
+            {
+              "nodeId": "node-1",
+              "label": "网关",
+              "status": "matched"
+            },
+            {
+              "nodeId": "node-2",
+              "label": "索引",
+              "status": "matched"
+            }
+          ],
+          "edgeChecks": [
+            {
+              "edgeId": "edge-0",
+              "from": "前端",
+              "to": "网关",
+              "status": "matched",
+              "expectedMode": "access",
+              "sourceSpans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-1",
+              "from": "网关",
+              "to": "索引",
+              "status": "matched",
+              "expectedMode": "read-only",
+              "sourceSpans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "viewAnnotations": "not-verified"
+        },
+        "issues": [],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "bounded explicit source declarations; no global or causal inference",
+          "text": "前端 → 网关：明确访问关系；读写权限未声明。\n网关 → 索引：该主体对该目标只读，不许可写入。\n禁止 前端 → 索引；这是方向性限制，不是正向访问边。\n前端 的直接访问目标仅限 网关；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+        }
+      }
+    },
+    {
+      "session": "permissions-zh",
+      "tool": "semantic_ui_source_check",
+      "arguments": {
+        "view": {
+          "protocolVersion": "1.4",
+          "displayId": "source-reference-2a96896d471ccd46",
+          "revision": 1,
+          "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+          "component": "ArchitectureExplorer",
+          "payload": {
+            "title": "来源声明的直接关系",
+            "nodes": [
+              {
+                "id": "node-0",
+                "label": "前端",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-1",
+                "label": "网关",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              },
+              {
+                "id": "node-2",
+                "label": "索引",
+                "responsibility": "来源声明中的字面节点。",
+                "constraints": [],
+                "evidence": []
+              }
+            ],
+            "edges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1",
+                "directed": true,
+                "type": "access",
+                "evidence": []
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2",
+                "directed": true,
+                "type": "read-write",
+                "evidence": []
+              }
+            ],
+            "scenarios": [
+              {
+                "id": "relation-0",
+                "label": "声明关系 1",
+                "nodeIds": [
+                  "node-0",
+                  "node-1"
+                ],
+                "edgeIds": [
+                  "edge-0"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              },
+              {
+                "id": "relation-1",
+                "label": "声明关系 2",
+                "nodeIds": [
+                  "node-1",
+                  "node-2"
+                ],
+                "edgeIds": [
+                  "edge-1"
+                ],
+                "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+              }
+            ]
+          }
+        }
+      },
+      "result": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "permissions-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "jsonPointer": null,
+          "textSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "excerptSha256": "2a96896d471ccd461b4e046879abf39dc01d03f4d320f38cde63256911eb44e9",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 117,
+            "textUTF8Bytes": 117
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+        },
+        "sourceFactsVerified": false,
+        "unverified": [
+          "source author/human identity",
+          "unselected context and general natural-language meaning",
+          "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+          "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+        ],
+        "status": "compared",
+        "sourcePermissions": {
+          "context": "演示服务",
+          "nodes": [
+            "前端",
+            "网关",
+            "索引"
+          ],
+          "accesses": [
+            {
+              "from": "前端",
+              "to": "网关",
+              "mode": "access",
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            },
+            {
+              "from": "网关",
+              "to": "索引",
+              "mode": "read-only",
+              "spans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "prohibitions": [
+            {
+              "from": "前端",
+              "to": "索引",
+              "spans": [
+                {
+                  "textByteStart": 66,
+                  "textByteEnd": 90
+                }
+              ]
+            }
+          ],
+          "onlyTargets": [
+            {
+              "from": "前端",
+              "targets": [
+                "网关"
+              ],
+              "spans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            }
+          ]
+        },
+        "comparison": {
+          "status": "mismatch",
+          "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+          "nodeChecks": [
+            {
+              "nodeId": "node-0",
+              "label": "前端",
+              "status": "matched"
+            },
+            {
+              "nodeId": "node-1",
+              "label": "网关",
+              "status": "matched"
+            },
+            {
+              "nodeId": "node-2",
+              "label": "索引",
+              "status": "matched"
+            }
+          ],
+          "edgeChecks": [
+            {
+              "edgeId": "edge-0",
+              "from": "前端",
+              "to": "网关",
+              "status": "matched",
+              "expectedMode": "access",
+              "sourceSpans": [
+                {
+                  "textByteStart": 18,
+                  "textByteEnd": 42
+                }
+              ]
+            },
+            {
+              "edgeId": "edge-1",
+              "from": "网关",
+              "to": "索引",
+              "status": "mismatch",
+              "expectedMode": "read-only",
+              "sourceSpans": [
+                {
+                  "textByteStart": 45,
+                  "textByteEnd": 63
+                }
+              ]
+            }
+          ],
+          "viewAnnotations": "not-verified"
+        },
+        "issues": [
+          {
+            "code": "SOURCE_ACCESS_MODE",
+            "path": "$.view.payload.edges.1.type",
+            "reason": "The view mode differs from the source-bound subject-target permission, or adds/omits a read/write restriction."
+          }
+        ],
+        "claimChecks": [],
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false,
+          "characters": 0
+        },
+        "canonicalExplanation": {
+          "status": "withheld",
+          "reason": "Resolve unsupported bindings, modes or claims before using a combined explanation."
+        }
+      }
+    }
+  ],
+  "closedServers": 3,
+  "newModelStarts": 0,
+  "sourceFactsVerified": false,
+  "identityVerified": false,
+  "freeProseVerified": false
+}

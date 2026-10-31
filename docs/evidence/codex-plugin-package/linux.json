@@ -1,0 +1,29 @@
+{
+  "version": "0.1.0-preview.27.1",
+  "zipSha256": "8afc88b2b0f754cff6ec746047f9e496ffd4b3dd8e9aa582642643640ea491bb",
+  "sourceCommit": "afab3efec92cf3a03698caab5903fb78e5437967",
+  "origin": {
+    "version": "0.1.0-preview.27",
+    "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+    "archiveFilename": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+    "archiveSha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+    "coreSha256": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6"
+  },
+  "filesVerified": 230,
+  "extractedOutsideRepository": true,
+  "extractionPathContainsSpaces": true,
+  "serverWithoutNodeModules": true,
+  "portableManifestAndMarketplace": true,
+  "defaultTools": 3,
+  "sourceKindsVerified": [
+    "workflow-zh",
+    "permissions-zh"
+  ],
+  "stdioToolCalls": 10,
+  "closedServers": 3,
+  "currentCodexClientInstalled": false,
+  "mainChatLoaded": false,
+  "nativeUiVerified": false,
+  "globalConfigChanged": false,
+  "newModelStarts": 0
+}

@@ -1,0 +1,40 @@
+{
+  "checkedAt": "2026-10-31T10:29:26.859069+00:00",
+  "releaseId": 429864187,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.27.1",
+  "tag": "codex-v0.1.0-preview.27.1",
+  "sourceCommit": "afab3efec92cf3a03698caab5903fb78e5437967",
+  "prerelease": true,
+  "draft": false,
+  "files": [
+    {
+      "filename": "semantic-ui-checks-codex-0.1.0-preview.27.1.zip",
+      "bytes": 393569,
+      "sha256": "8afc88b2b0f754cff6ec746047f9e496ffd4b3dd8e9aa582642643640ea491bb",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/codex-v0.1.0-preview.27.1/semantic-ui-checks-codex-0.1.0-preview.27.1.zip",
+      "assetId": 695061709,
+      "githubDigest": "sha256:8afc88b2b0f754cff6ec746047f9e496ffd4b3dd8e9aa582642643640ea491bb",
+      "anonymousFullGet": true
+    },
+    {
+      "filename": "plugin-package-manifest.json",
+      "bytes": 48448,
+      "sha256": "d308bf048f4357c44e00a7e2c41519e34c087e0a82de296f9979d0b7bf2e5439",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/codex-v0.1.0-preview.27.1/plugin-package-manifest.json",
+      "assetId": 695061708,
+      "githubDigest": "sha256:d308bf048f4357c44e00a7e2c41519e34c087e0a82de296f9979d0b7bf2e5439",
+      "anonymousFullGet": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 114,
+      "sha256": "b646e418c502c0f6bfd036ea7800694681b4bbff1c5fd28459c8ad1899051e19",
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/codex-v0.1.0-preview.27.1/SHA256SUMS",
+      "assetId": 695061705,
+      "githubDigest": "sha256:b646e418c502c0f6bfd036ea7800694681b4bbff1c5fd28459c8ad1899051e19",
+      "anonymousFullGet": true
+    }
+  ],
+  "authorizationHeader": false,
+  "passed": true
+}

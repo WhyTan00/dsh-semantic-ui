@@ -4,6 +4,14 @@
 
 本地包版本为 `0.1.0-preview.27.1`，与DSH运行包 `0.1.0-preview.27` 分开。生成时先将当前核心的编译字节与选定27归档逐项对照，拒绝借用不同核心的身份；MCP入口另按插件版本编译。初始化自报版本过去硬编码为24，已修为包/构建版本，首次失败保留。已发布的DSH27归档不修改、不重发。
 
+## 本版验证
+
+已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.27.1)。源码/tag为 `afab3efec92cf3a03698caab5903fb78e5437967`，ZIP的SHA-256为 `8afc88b2b0f754cff6ec746047f9e496ffd4b3dd8e9aa582642643640ea491bb`。
+
+8项MCP合同、类型检查和技能格式检查通过。macOS与[Linux CI](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41191951713)分别核对230个文件，并在仓库外、含空格路径、无开发依赖的解压目录中运行真实stdio服务器：每平台10次工具调用，3个连接均关闭。检查包括全缺失数值、模板兼容/拒绝以及流程和权限来源的正反例。两平台的包内文件及ZIP、manifest、校验文件全部同字节；三个公开资产均已匿名完整下载并核对大小、SHA-256与GitHub摘要。
+
+本次只运行程序核对，新增模型回合0。实际安装到当前Codex App、模型自然采用和自定义图形界面仍未验证，不能用以上结果代替。原始回执、首次版本错误和日志处理范围见[本版证据](evidence/codex-plugin-package.json)。
+
 ## 安装
 
 从本仓库的独立 [Codex本地插件Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.27.1)下载ZIP、`plugin-package-manifest.json` 与 `SHA256SUMS`，核对后解压到独立目录。在解压目录执行：

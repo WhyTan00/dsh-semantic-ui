@@ -1,6 +1,6 @@
 # 典型开源项目采用复核
 
-公开接入进一步落到[可安装的Codex本地包](../CODEX-PLUGIN-PACKAGE.zh-CN.md)：沿官方便携manifest/MCP/skill格式合并分发，核对核心字节，保留独立版本、只读能力与显式来源边界。补齐workflow/permissions按需指引，MCP自报版本漂移另修；不增加研究项目或renderer，不把插件包、SDK stdio或安装命令可用性当成当前App/自然模型已采用。
+公开接入进一步落到[已开源发布的Codex本地包27.1](../CODEX-PLUGIN-PACKAGE.zh-CN.md)：沿官方便携manifest/MCP/skill格式合并分发，核对核心字节，保留独立版本、只读能力与显式来源边界。补齐workflow/permissions按需指引，MCP自报版本漂移另修；macOS/Linux最终包和匿名下载已接受，见[回执](../evidence/codex-plugin-package.json)。不增加研究项目或renderer，不把插件包、SDK stdio或安装命令可用性当成当前App/自然模型已采用。
 
 本次修复[图表全缺失范围的独立补零假设](../ZERO-FILL-CHART.zh-CN.md)，将原始观测、假设计算与真实完整范围的分层落实到图表自身及筛选/导出；不再只靠伴随命令副本。原mask/null不改、空范围和溢出不变成0，沿既有核心统计器和可访问对照表；没有新增研究项目、图种或协议兼容声称。
 

@@ -24,6 +24,8 @@ dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.
 
 本项目锁定 DSH `0.2.1-rc.2` 与 json-render `0.21.1`，组件协议为1.4。完整配置、兼容范围与历史版本见[安装说明](docs/INSTALL.zh-CN.md)。当前共享工作台不会因源码更新而自动升级，请按自己的运行环境安装新包。
 
+也提供[独立Codex本地插件包27.1](docs/CODEX-PLUGIN-PACKAGE.zh-CN.md)，将技能与只读MCP一起安装；macOS/Linux包与公开下载已核对。它复用相同核对核心，图形展示仍由宿主提供，当前Codex会话没有自动安装。
+
 ## 沿用的preview.26语言验证
 
 - 默认中文；四类视图同页同步切换，中英文刷新记忆，切换不重置本地筛选、不请求模型。

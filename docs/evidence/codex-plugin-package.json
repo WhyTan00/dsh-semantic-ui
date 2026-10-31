@@ -1,27 +1,151 @@
 {
   "schema": "local-codex-plugin-package-v1",
-  "status": "implementation and prototype stdio passed; frozen artifact acceptance pending",
+  "status": "released; macOS/Linux final package and anonymous downloads accepted",
   "version": "0.1.0-preview.27.1",
-  "originRuntimeVersion": "0.1.0-preview.27",
+  "sourceCommit": "afab3efec92cf3a03698caab5903fb78e5437967",
+  "sourceWorkingTreeCleanAtBuild": true,
+  "tag": "codex-v0.1.0-preview.27.1",
+  "releaseId": 429864187,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.27.1",
+  "origin": {
+    "version": "0.1.0-preview.27",
+    "sourceCommit": "13054fcb6e98488a1f9029277daa7c2385f20b3d",
+    "archiveFilename": "whytan-dsh-semantic-ui-0.1.0-preview.27.tgz",
+    "archiveSha256": "03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1",
+    "coreSha256": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6"
+  },
   "coreByteEqualToOrigin": true,
+  "mcpSha256": "75bdbe46cd382b18152d2bb47ed207c82f53975f20bedc264be89ccb4c22a362",
+  "mcpReportsVersion": "0.1.0-preview.27.1",
   "mcpVersionFirstFailureRetained": true,
-  "mcpUnitTestsPassed": 8,
-  "typecheck": "passed",
-  "currentCodexClientInstalled": false,
-  "mainChatLoaded": false,
-  "uiResourceProvided": false,
-  "newModelStarts": 0,
-  "originalNaturalResultsUnchanged": true,
-  "prototypeStdio": {
-    "toolCalls": 10,
-    "closedTransports": 3,
+  "immutableDsh27McpStillReports": "0.1.0-preview.24",
+  "newDshReleaseRequired": false,
+  "files": [
+    {
+      "filename": "semantic-ui-checks-codex-0.1.0-preview.27.1.zip",
+      "bytes": 393569,
+      "sha256": "8afc88b2b0f754cff6ec746047f9e496ffd4b3dd8e9aa582642643640ea491bb"
+    },
+    {
+      "filename": "plugin-package-manifest.json",
+      "bytes": 48448,
+      "sha256": "d308bf048f4357c44e00a7e2c41519e34c087e0a82de296f9979d0b7bf2e5439"
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 114,
+      "sha256": "b646e418c502c0f6bfd036ea7800694681b4bbff1c5fd28459c8ad1899051e19"
+    }
+  ],
+  "ci": {
+    "runId": 41191951713,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41191951713",
+    "status": "success",
+    "sourceCommit": "afab3efec92cf3a03698caab5903fb78e5437967"
+  },
+  "validation": {
+    "mcpUnitTestsPassed": 8,
+    "testFiles": 3,
+    "typecheck": "passed",
+    "skillValidation": "passed",
+    "platforms": [
+      "macOS",
+      "Linux"
+    ],
+    "payloadFilesVerifiedPerPlatform": 230,
+    "allPayloadHashesEqual": true,
+    "allThreeDistributionFilesByteEqual": true,
+    "stdioToolCallsPerPlatform": 10,
+    "closedServersPerPlatform": 3,
+    "extractedOutsideRepository": true,
+    "extractionPathContainsSpaces": true,
+    "serverWithoutNodeModules": true,
     "defaultTools": 3,
     "configuredSourceKinds": [
       "workflow-zh",
       "permissions-zh"
     ],
-    "extractedFiles": 230
+    "corruptArchiveIdentityRejectedBeforeOutput": true,
+    "existingOutputRefusedAndUnchanged": true,
+    "anonymousFullGetAssets": 3,
+    "allDownloadedShaSizeAndGithubDigestsMatched": true,
+    "stdioReceiptByteEqualOnBothPlatforms": true
   },
-  "currentCodexCliVersion": "0.166.0",
-  "newDshReleaseRequired": false
+  "knownScopeReview": {
+    "newCoreBugReproduced": false,
+    "reviewed": [
+      "decision capability and resource direction, unknown conditions and role distinctions",
+      "workflow and permissions direction and forbidden claims",
+      "numeric range, missing mask, empty scope and overflow",
+      "same displayId with new revision and template compatibility"
+    ],
+    "reviewScope": "targeted review and counterexamples, reusing previously accepted preview.27 and original-case reference evidence; no complete matrix rerun"
+  },
+  "boundaries": {
+    "defaultIndependentSourceTool": false,
+    "sourceRequiresExplicitStartupFile": true,
+    "currentCodexClientInstalled": false,
+    "mainChatLoaded": false,
+    "uiResourceProvided": false,
+    "nativeUiVerified": false,
+    "globalConfigChanged": false,
+    "officialOpenAiDirectorySubmitted": false,
+    "newModelStarts": 0,
+    "sourceIdentityVerified": false,
+    "worldFactsVerified": false,
+    "arbitraryFreeProseVerified": false,
+    "originalNaturalResultsUnchanged": true,
+    "originalNaturalPass": 0,
+    "originalNaturalFail": 6,
+    "originalNaturalRequests": 18,
+    "furtherModelBudgetAuthorizedByThisReceipt": false
+  },
+  "currentCodexCliVersionAtHelpCheck": "0.166.0",
+  "receipts": {
+    "macos.json": "codex-plugin-package/macos.json",
+    "linux.json": "codex-plugin-package/linux.json",
+    "platform-comparison.json": "codex-plugin-package/platform-comparison.json",
+    "stdio-receipts.json": "codex-plugin-package/stdio-receipts.json",
+    "ci.json": "codex-plugin-package/ci.json",
+    "public-downloads.json": "codex-plugin-package/public-downloads.json",
+    "build-guards.json": "codex-plugin-package/build-guards.json",
+    "mcp-tests.txt": "codex-plugin-package/mcp-tests.txt",
+    "typecheck.txt": "codex-plugin-package/typecheck.txt",
+    "mcp-version-first-failure.txt": "codex-plugin-package/mcp-version-first-failure.txt",
+    "skill-validation.txt": "codex-plugin-package/skill-validation.txt"
+  },
+  "sharedStdioReceiptSha256": "b81ae58c38c37f638be304323ff9be4ac4662d801edc342bc21d2f911a34c418",
+  "logProvenance": {
+    "mcp-tests.txt": {
+      "privateSourceSha256": {
+        "mcp-final.stdout": "d1ffeeb6b87373d1dc8c35567c7751eaf64e78aab4992c478979ddda44910427",
+        "mcp-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "publicSha256": "0e6cb21fb5626cfaf54c09b251350448fc8c4272fb1e1594fe828e271bf8924a",
+      "transformation": "replace absolute repository path with [repository]; trim surrounding blank lines; combine stdout/stderr where applicable"
+    },
+    "typecheck.txt": {
+      "privateSourceSha256": {
+        "typecheck-final.stdout": "e185dfe5437174992f8309e00af2007f018e9501c81925c158819f3333d2a41b",
+        "typecheck-final.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "publicSha256": "0355f9df0a4110b1337bf370a493a941fd6433c6d9331951d48089599fa623ab",
+      "transformation": "replace absolute repository path with [repository]; trim surrounding blank lines; combine stdout/stderr where applicable"
+    },
+    "mcp-version-first-failure.txt": {
+      "privateSourceSha256": {
+        "version-first.stdout": "e2e127988bf15be95add9cd1659790194629737242cf9d84845b13b156bcfb39",
+        "version-first.stderr": "bf258ce438a74031d92dec8cd350a16b0ed9dff08496545dcc8d5075c35212c3"
+      },
+      "publicSha256": "8a67a1bc9913a556550040b529fa7b7a47d48953052a619df5dfd2c41b27b021",
+      "transformation": "replace absolute repository path with [repository]; trim surrounding blank lines; combine stdout/stderr where applicable"
+    },
+    "skill-validation.txt": {
+      "privateSourceSha256": {
+        "skill-final.txt": "db349825903d66adffea3ecf1bd8e1803043e8a71cf1a051235dabc5371f5bb0"
+      },
+      "publicSha256": "db349825903d66adffea3ecf1bd8e1803043e8a71cf1a051235dabc5371f5bb0",
+      "transformation": "replace absolute repository path with [repository]; trim surrounding blank lines; combine stdout/stderr where applicable"
+    }
+  }
 }
