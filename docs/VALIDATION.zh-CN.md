@@ -1,5 +1,7 @@
 # 验证证据与未通过项
 
+preview.28的[完整交互结果包](RESULT-PACKAGE.zh-CN.md)按正常DSH导出→干净个人profile导入→刷新后重开、继续交互验证，损坏/不兼容拒绝不覆盖旧结果；具体源码/最终归档/Native/PTC/Linux与公开发行身份分别见[本版回执](evidence/result-package.json)。0新增真实模型，旧六题结果保持；下面按各历史版本读取，不把旧矩阵当本轮重跑。
+
 独立Codex本地包27.1已[公开预发布](CODEX-PLUGIN-PACKAGE.zh-CN.md)：源码/tag afab3ef，8项MCP合同、类型和技能格式检查通过，MCP初始化版本首败保留。macOS/Linux各核230文件、仓库外无开发依赖stdio运行、10次工具调用与3连接关闭；两平台三份发行文件同字节，CI41191951713成功，三个匿名完整下载的大小/SHA/GitHub摘要一致。最终回执见[本版证据](evidence/codex-plugin-package.json)。没有新DSH包或模型回合，当前Codex App/主会话加载、自定义UI和任意正文仍未验；不重判原六题。
 
 preview.27最终接受：39项定向单元（8文件）与类型/发行隔离检查通过，源码/tag13054fcb6e98488a1f9029277daa7c2385f20b3d，归档03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1，396文件安装前全核。本机/Linux Native/PTC每组2场景检出全缺失与筛选后缺失假设0、原观测和真实完整未知、填零冒源拒绝、JSON null、空范围/全量/刷新，16张640/360实际图与pageerror0；CI41186746024成功、四构建文件同字节。普通来源入口serve实际采用并清理。四发行资产匿名HTTPS200且同本机/Linux字节，另按[分层回执](evidence/zero-fill-chart.json)记录；11夹具回合0真实模型，原自然0/6/18和旧D首败不改。开发Native截图早于测试问题尾句/工具回执断言的补充，不冒最终归档证据；下面开发段保留原范围。

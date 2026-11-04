@@ -14,12 +14,14 @@ DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、�
 
 个人模板支持主题、字体、疏密、字号与布局预览，保存版本、导入导出和使用新数据复用。模板不携带旧观测值、规则或结论。
 
+新增[完整交互结果包](docs/RESULT-PACKAGE.zh-CN.md)：将当前数据、规则/假设、来源历史状态、主题/中文与选择一起导出，在另一兼容个人环境导入、保存并重开后继续操作。它和模板分开，不自动调用模型。
+
 ## 安装新版
 
-下载 [0.1.0-preview.27 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)的运行包，核对同页 `SHA256SUMS` 后安装：
+下载 [0.1.0-preview.28 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28)的运行包，核对同页 `SHA256SUMS` 后安装：
 
 ```sh
-dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.27.tgz
+dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.28.tgz
 ```
 
 本项目锁定 DSH `0.2.1-rc.2` 与 json-render `0.21.1`，组件协议为1.4。完整配置、兼容范围与历史版本见[安装说明](docs/INSTALL.zh-CN.md)。当前共享工作台不会因源码更新而自动升级，请按自己的运行环境安装新包。

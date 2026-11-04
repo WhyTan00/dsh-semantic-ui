@@ -1,0 +1,50 @@
+name: portable-result-package
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm exec vitest run
+      - run: pnpm test:release-isolation
+      - run: pnpm exec playwright install --with-deps chromium
+      - run: pnpm release:pack
+      - run: pnpm test:installed-results
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: portable-result-receipts
+          path: |
+            artifacts/local/host-*/install.json
+            artifacts/local/host-*/installed-byte-check.json
+            artifacts/local/host-*/cleanup.json
+            artifacts/local/host-*/native/evidence/results-*.json
+            artifacts/local/host-*/ptc/evidence/results-*.json
+            artifacts/local/host-*/native/evidence/roundtrip-*.json
+            artifacts/local/host-*/ptc/evidence/roundtrip-*.json
+            artifacts/local/host-*/native/evidence/reopened-*.json
+            artifacts/local/host-*/ptc/evidence/reopened-*.json
+            artifacts/local/host-*/native/evidence/result-*.png
+            artifacts/local/host-*/ptc/evidence/result-*.png
+            artifacts/local/result-transfer-*/accepted-*.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        with:
+          name: portable-result-build
+          path: |
+            artifacts/releases/**/*.tgz
+            artifacts/releases/**/package-manifest.json
+            artifacts/releases/**/SHA256SUMS
+          if-no-files-found: error

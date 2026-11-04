@@ -1,5 +1,7 @@
 # 成熟度与替代范围
 
+2026-11-05增量：preview.28增加[完整结果的受限迁移](RESULT-PACKAGE.zh-CN.md)，保留数据、规则/假设、null/unknown、来源历史状态、主题/locale和选择，导入后显式重开。仍需要兼容插件，不提供独立HTML、通用动作/聊天迁移或来源认证；本轮验证见[回执](evidence/result-package.json)。下文保持历史评估。
+
 评估更新：2026-10-27，0.1.0-preview.11 /协议1.4（下文各版本均为各自的历史证据）。结论：程序计算与本地交互进一步可核对，仍是预览；不能全面替代 GenUI，也没有通过完整内容语义验收。
 
 preview.10加入同表格范围的缺失值对照，preview.11加入角色/关系与预期作用/依赖图一致性检查；归档安装、MCP和Linux分别见 [preview.10](evidence/preview10.json)、[preview.11](evidence/preview11.json)。不把内部一致性当来源认证，原六题仍未通过。最新 [开源采用矩阵](research/ABSORPTION-AUDIT.zh-CN.md) 逐项区分已有实现、候选与验证缺口；本次复核未新增运行功能。

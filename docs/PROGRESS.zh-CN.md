@@ -1,5 +1,7 @@
 # 实际进度
 
+preview.28新增[完整交互结果包](RESULT-PACKAGE.zh-CN.md)：正常插件面板提供纯数据导出、独立结果库、校验后新副本导入和显式重开。数据/规则/null/unknown、来源历史状态、主题/locale与有界交互状态分层保存，模板库保持独立；不认证来源/权限/批准，不从包触发模型或工具。最终归档与实际验证见[本版回执](evidence/result-package.json)。旧27/26、Codex27.1与原自然失败沿用既有证据。
+
 当前已知语义合同继续复核后，暂未复现角色/未知真值、关系方向、数值范围或模板继承的新错误；[可执行Codex本地包27.1已公开预发布](CODEX-PLUGIN-PACKAGE.zh-CN.md)。便携包合并MCP/skill/本地插件源，核心编译与27归档一致，MCP自报版本漂移首败已修，流程/权限按需指引补齐。8项MCP合同、类型和技能格式检查通过；冻结源码afab3ef，macOS/Linux分别核230文件、10次实际stdio调用及3连接关闭，三份发行文件同字节，CI41191951713成功。三个公开资产已匿名完整下载并核对，见[回执](evidence/codex-plugin-package.json)。本次已知可控缺口完成；当前App/主会话安装、自然采用及自由正文/世界事实仍单列未验证。0新模型、不改27既有包或原六题，不以此声称普遍完美。
 
 preview.27已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)，源码/tag13054fcb6e98488a1f9029277daa7c2385f20b3d，runtime03f962eda24e915f430e0d6660009eb21e7f9b3a0b92d67ef94685e4386c63d1。39项/8文件、类型与发行隔离检查通过，396文件最终归档在macOS/Linux正常安装，Native/PTC每组2个全缺失/局部筛选场景、null下载、空范围/全量切换、刷新及16张640/360截图通过，pageerror0。CI41186746024成功、四Linux输出及四匿名HTTPS200资产同本机字节；公开下载接受见[本版回执](evidence/zero-fill-chart.json)。普通自带来源入口默认serve实际就绪/Ctrl+C关闭，合计11个夹具回合、0真实模型，不改原六题、旧D或26。以下开发段为冻结前记录。

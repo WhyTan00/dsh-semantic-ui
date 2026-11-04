@@ -1,6 +1,7 @@
+import{useResultField}from'../interaction';
 import{useI18n}from'../i18n';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { ReactFlow, Background, Controls, MarkerType, Position, BaseEdge, getSmoothStepPath, useReactFlow, useStore, getViewportForBounds, ControlButton, type Node, type Edge, type EdgeProps, type OnNodesChange } from '@xyflow/react';
+import { ReactFlow, Background, Controls, MarkerType, Position, BaseEdge, getSmoothStepPath, useReactFlow, useStore, getViewportForBounds, ControlButton, type Node, type Edge, type EdgeProps, type OnNodesChange,type Viewport } from '@xyflow/react';
 import dagre from '@dagrejs/dagre';
 import type { Architecture } from '../protocol';
 import {useAppearance} from '../appearance';
@@ -11,7 +12,7 @@ export function ArchitectureExplorer({data:p}:{data:Architecture}){
   const {theme,tokens,layout,strictPolicy}=useAppearance();
   const host=useRef<HTMLElement>(null);const [narrow,setNarrow]=useState(false);
   useEffect(()=>{if(!host.current)return;const obs=new ResizeObserver(entries=>setNarrow(entries[0].contentRect.width<480));obs.observe(host.current);return()=>obs.disconnect();},[]);
-  const [selected,setSelected]=useState('');const [query,setQuery]=useState('');const [focus,setFocus]=useState(false);const [scenario,setScenario]=useState('');
+  const [selected,setSelected]=useResultField('selected','');const [query,setQuery]=useResultField('query','');const [focus,setFocus]=useResultField('focus',false);const [scenario,setScenario]=useResultField('scenario','');const [viewport,setViewport]=useResultField<Viewport|undefined>('viewport',undefined);const restoreViewport=useRef(viewport);
   const onNodesChange=useCallback<OnNodesChange>(changes=>setSelected(current=>{const chosen=changes.find(c=>c.type==='select'&&c.selected);return chosen?.type==='select'?chosen.id:changes.some(c=>c.type==='select'&&!c.selected&&c.id===current)?'':current;}),[]);
   const path=p.scenarios.find(s=>s.id===scenario);
   const graph=useMemo(()=>{
@@ -28,7 +29,7 @@ export function ArchitectureExplorer({data:p}:{data:Architecture}){
   return <section ref={host} aria-label={p.title} className="explorer architecture"><h3>{p.title}</h3><div className="toolbar"><label>{t("Find node")} <input value={query} onChange={e=>setQuery(e.target.value)} placeholder={t("Search labels")}/></label><label>{t("Locate")} <select aria-label={t("Locate node")} value={selected} onChange={e=>setSelected(e.target.value)}><option value="">{t("All nodes")}</option>{p.nodes.filter(n=>!query||n.label.toLowerCase().includes(query.toLowerCase())).map(n=><option key={n.id} value={n.id}>{n.label}</option>)}</select></label><label><input type="checkbox" checked={focus} disabled={!selected} onChange={e=>setFocus(e.target.checked)}/>{t("Immediate neighborhood")}</label><button onClick={()=>{setFocus(false);setSelected('');setQuery('');setScenario('');}}>{t("Restore full graph")}</button></div>
     {p.scenarios.length>0?<label>{t("Scenario")} <select aria-label={t("Scenario")} value={scenario} onChange={e=>setScenario(e.target.value)}><option value="">{t("No highlight")}</option>{p.scenarios.map(s=><option key={s.id} value={s.id}>{s.label}</option>)}</select></label>:null}
     <p className="meta" aria-live="polite">{t("Showing")} {graph.nodes.length}/{p.nodes.length} {t("nodes ·")} {graph.edges.length}/{p.edges.length} {t("edges.")} {p.nodes.length-graph.nodes.length} {t("nodes and")} {p.edges.length-graph.edges.length} {t("edges hidden.")}</p>
-    {p.nodes.length?<div className="graph"><ReactFlow colorMode={theme.mode} key={graph.nodes.map(n=>n.id).join(',')} nodes={graph.nodes} edges={graph.edges} edgeTypes={edgeTypes} minZoom={0.12} maxZoom={2} onNodesChange={onNodesChange} nodesDraggable={false} nodesConnectable={false} deleteKeyCode={null} zoomOnScroll={false} zoomOnDoubleClick={false} preventScrolling={false} ariaLabelConfig={{'controls.ariaLabel':t('Control Panel'),'controls.zoomIn.ariaLabel':t('Zoom in'),'controls.zoomOut.ariaLabel':t('Zoom out'),'controls.fitView.ariaLabel':t('Fit view'),'node.a11yDescription.default':t("Press Enter or Space to inspect this node. Escape clears selection. Relationships are read-only."),'edge.a11yDescription.default':t("Read-only relationship. Details are available in the relationship list.")}} proOptions={{hideAttribution:false}}><Locate selected={selected} nodes={graph.nodes} edges={graph.edges}/><Background color={tokens.line}/><span className="sr-only">{t("Graph colors follow the selected appearance.")}</span></ReactFlow></div>:<p role="status">{t("No architecture data.")}</p>}
+    {p.nodes.length?<div className="graph"><ReactFlow colorMode={theme.mode} key={graph.nodes.map(n=>n.id).join(',')} nodes={graph.nodes} edges={graph.edges} edgeTypes={edgeTypes} minZoom={0.12} maxZoom={2} onNodesChange={onNodesChange} defaultViewport={viewport} onMoveEnd={(_event,value)=>setViewport(value)} nodesDraggable={false} nodesConnectable={false} deleteKeyCode={null} zoomOnScroll={false} zoomOnDoubleClick={false} preventScrolling={false} ariaLabelConfig={{'controls.ariaLabel':t('Control Panel'),'controls.zoomIn.ariaLabel':t('Zoom in'),'controls.zoomOut.ariaLabel':t('Zoom out'),'controls.fitView.ariaLabel':t('Fit view'),'node.a11yDescription.default':t("Press Enter or Space to inspect this node. Escape clears selection. Relationships are read-only."),'edge.a11yDescription.default':t("Read-only relationship. Details are available in the relationship list.")}} proOptions={{hideAttribution:false}}><Locate restore={restoreViewport.current} onRestored={()=>{restoreViewport.current=undefined;}} selected={selected} nodes={graph.nodes} edges={graph.edges}/><Background color={tokens.line}/><span className="sr-only">{t("Graph colors follow the selected appearance.")}</span></ReactFlow></div>:<p role="status">{t("No architecture data.")}</p>}
     <p className="meta">{t("Tab to a node and press Enter or Space to inspect it. Use Locate or zoom controls without dragging. Wheel scrolling continues through the conversation.")}</p>
     {path?<p role="status">{strictPolicy?t("Model scenario note (not computed): "):''}{path.explanation}</p>:null}
     {strictPolicy?<details><summary>{t("Computed graph checks")}</summary><p>{computed.nodeCount} {t("declared nodes ·")} {computed.edgeCount} {t("declared relationships.")}</p>{computed.sharedTargets.map(target=><p key={target.nodeId}>{t("Shared directed target:")} {nodeLabels([target.nodeId])} ← {nodeLabels(target.sourceNodeIds)}.</p>)}{computed.scenarioIntersections.map(intersection=><p key={intersection.scenarioIds.join(':')}>{t("Path intersection")} {intersection.scenarioIds.join(' / ')}: {nodeLabels(intersection.sharedNodeIds)}.</p>)}<p className="meta">{locale==='zh-CN'?'仅核对已声明的节点、连线和路径。未提供的连线不能证明禁止访问、唯一归属或故障独立；连线不说明回滚、重试、故障传播或反向路径。':computed.boundary} {t("Large lists may be truncated; counts and omitted-entry totals remain in the tool receipt.")}</p></details>:null}
@@ -38,7 +39,7 @@ export function ArchitectureExplorer({data:p}:{data:Architecture}){
 }
 export function Evidence({items}:{items:string[]}){const {t}=useI18n();return items.length?<details><summary>{t("Evidence (")}{items.length})</summary><ul>{items.map((x,i)=><li key={i}>{x}</li>)}</ul></details>:<span className="meta"> {t("No additional evidence supplied.")}</span>;}
 
-function Locate({selected,nodes,edges}:{selected:string;nodes:Node[];edges:Edge[]}){
+function Locate({selected,nodes,edges,restore,onRestored}:{selected:string;nodes:Node[];edges:Edge[];restore?:Viewport;onRestored:()=>void}){
  const {t,locale}=useI18n();
   const flow=useReactFlow(),width=useStore(s=>s.width),height=useStore(s=>s.height);
   const geometry=JSON.stringify(nodes.map(n=>({id:n.id,x:n.position.x,y:n.position.y})));
@@ -54,7 +55,8 @@ function Locate({selected,nodes,edges}:{selected:string;nodes:Node[];edges:Edge[
     const bounds={x,y,width:Math.max(...positions.map(n=>n.x+144))+inset-x,height:Math.max(...positions.map(n=>n.y+54))+inset-y};
     void flow.setViewport(getViewportForBounds(bounds,width,height,0.12,1,0.05),{duration});
   },[geometry,selected,width,height,inset,flow]);
-  useEffect(()=>{fit(true);},[fit]);
+  const restored=useRef(false);
+  useEffect(()=>{if(!width||!height||!flow.viewportInitialized)return;if(!restored.current&&restore){restored.current=true;onRestored();void flow.setViewport(restore);return;}restored.current=true;fit(true);},[fit,width,height,flow]);
   return <Controls showInteractive={false} showFitView={false}><ControlButton title={t("Fit all nodes and relationships")} aria-label={t("Fit all nodes and relationships")} onClick={()=>fit(false)}>↔</ControlButton></Controls>;
 }
 

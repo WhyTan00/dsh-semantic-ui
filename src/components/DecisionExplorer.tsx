@@ -1,3 +1,4 @@
+import{useResultField}from'../interaction';
 import{useI18n}from'../i18n';
 import {useState} from 'react';
 import type {Decision} from '../protocol';
@@ -10,10 +11,10 @@ export function DecisionExplorer({data:p}:{data:Decision}){
  const {t,locale}=useI18n();
  const {strictPolicy,capacityDemandId}=useAppearance();
  const displayValue=(value:unknown)=>value===null?t('Unknown'):typeof value==='boolean'?t(value?t("Yes"):t("No")):String(value);
- const [capacityDraft,setCapacityDraft]=useState<{text:string;invalid:boolean}>();
- const [values,setValues]=useState<InputValues>(()=>Object.fromEntries(p.inputs.map(i=>[i.id,i.initial])));
- const [dimensions,setDimensions]=useState(()=>p.dimensions.map(d=>d.id));
- const [exploreProposals,setExploreProposals]=useState(false);
+ const [capacityDraft,setCapacityDraft]=useResultField<{text:string;invalid:boolean}|undefined>('capacityDraft',undefined);
+ const [values,setValues]=useResultField<InputValues>('values',()=>Object.fromEntries(p.inputs.map(i=>[i.id,i.initial])));
+ const [dimensions,setDimensions]=useResultField('dimensions',()=>p.dimensions.map(d=>d.id));
+ const [exploreProposals,setExploreProposals]=useResultField('exploreProposals',false);
  const mapping=p.inputs.some(i=>i.expectedEffect)||p.dimensions.some(d=>d.semanticRole)?decisionDeclarationFacts(p):null;
  const result=decide(p,values,strictPolicy,exploreProposals);const changed=p.inputs.filter(i=>values[i.id]!==i.initial);
  return <section className="explorer decision" aria-label={p.title}><h3>{p.title}</h3>

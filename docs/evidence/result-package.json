@@ -1,0 +1,14 @@
+{
+  "schema": "portable-semantic-result-v1",
+  "version": "0.1.0-preview.28",
+  "status": "implementation complete; final archive acceptance pending",
+  "formatVersion": 1,
+  "dataOnly": true,
+  "templatesSeparate": true,
+  "sourceRecordsAreHistorical": true,
+  "newRealModelTurns": 0,
+  "currentCodexClientVerified": false,
+  "phoneVerified": false,
+  "screenReaderVerified": false,
+  "originalNaturalResultsUnchanged": true
+}
