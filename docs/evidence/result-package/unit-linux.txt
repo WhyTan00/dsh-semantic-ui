@@ -1,0 +1,2 @@
+verify	Run pnpm exec vitest run	2026-11-04T17:54:25.6291964Z  Test Files  39 passed (39)
+verify	Run pnpm exec vitest run	2026-11-04T17:54:25.6293806Z       Tests  261 passed (261)

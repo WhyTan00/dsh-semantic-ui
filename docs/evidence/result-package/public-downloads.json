@@ -1,0 +1,61 @@
+{
+  "checkedAt": "2026-11-04T18:05:31.947517+00:00",
+  "tag": "v0.1.0-preview.28",
+  "sourceCommit": "bb5fec87dde259714c9ec04383f08fd76472142c",
+  "releaseId": 434267322,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28",
+  "prerelease": true,
+  "draft": false,
+  "files": [
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "52cd9f881315a0ad04f48bfbe0de1707cd25fd35ee6d21c9396bc0738e54e6af",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/SHA256SUMS",
+      "assetId": 710413409,
+      "httpStatus": 200,
+      "githubDigest": "sha256:52cd9f881315a0ad04f48bfbe0de1707cd25fd35ee6d21c9396bc0738e54e6af",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 35968,
+      "sha256": "0e2865d8d3d7bf6dd5d27ea946c216470ed3e81bf2e33a31938ead3959bdeae1",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/package-manifest.json",
+      "assetId": 710413387,
+      "httpStatus": 200,
+      "githubDigest": "sha256:0e2865d8d3d7bf6dd5d27ea946c216470ed3e81bf2e33a31938ead3959bdeae1",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+      "bytes": 2747126,
+      "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+      "assetId": 710413413,
+      "httpStatus": 200,
+      "githubDigest": "sha256:9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.28.tgz",
+      "bytes": 43134963,
+      "sha256": "28cfc2f91c2f2e043a4f0268d2a245aa96582922f9df54c0d3d1afd0709c8f76",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/whytan-dsh-semantic-ui-evidence-0.1.0-preview.28.tgz",
+      "assetId": 710413389,
+      "httpStatus": 200,
+      "githubDigest": "sha256:28cfc2f91c2f2e043a4f0268d2a245aa96582922f9df54c0d3d1afd0709c8f76",
+      "anonymousFullGet": true,
+      "matched": true
+    }
+  ],
+  "authorizationHeader": false,
+  "allFourAnonymousDownloadsMatchMacLinuxAndGithub": true
+}

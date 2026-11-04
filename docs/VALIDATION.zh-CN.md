@@ -1,6 +1,6 @@
 # 验证证据与未通过项
 
-preview.28的[完整交互结果包](RESULT-PACKAGE.zh-CN.md)按正常DSH导出→干净个人profile导入→刷新后重开、继续交互验证，损坏/不兼容拒绝不覆盖旧结果；具体源码/最终归档/Native/PTC/Linux与公开发行身份分别见[本版回执](evidence/result-package.json)。0新增真实模型，旧六题结果保持；下面按各历史版本读取，不把旧矩阵当本轮重跑。
+preview.28最终接受：源码/tag bb5fec87dde259714c9ec04383f08fd76472142c、运行包9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35（402文件）。本机260项全单元+最终12项结果检查，Linux261项/39文件、类型与发行隔离通过。macOS/Linux Native/PTC共4组干净profile对、每组5类结果，正常归档导出→导入→刷新重开/继续操作及必要拒绝通过，真实工具路由和pageerror0；本机Native还经宿主关闭/重启确认持久结果，实测640/360，无新prompt。CI41881505772成功，四工件同字节、四公开资产匿名完整GET同大小/SHA/GitHub摘要。[最终回执](evidence/result-package.json)保留开发首败、来源历史边界、模板分离和原0/6/18；最终12夹具回合与开发5回合分列，真实模型0。下面各历史版本不冒本轮重跑。
 
 独立Codex本地包27.1已[公开预发布](CODEX-PLUGIN-PACKAGE.zh-CN.md)：源码/tag afab3ef，8项MCP合同、类型和技能格式检查通过，MCP初始化版本首败保留。macOS/Linux各核230文件、仓库外无开发依赖stdio运行、10次工具调用与3连接关闭；两平台三份发行文件同字节，CI41191951713成功，三个匿名完整下载的大小/SHA/GitHub摘要一致。最终回执见[本版证据](evidence/codex-plugin-package.json)。没有新DSH包或模型回合，当前Codex App/主会话加载、自定义UI和任意正文仍未验；不重判原六题。
 

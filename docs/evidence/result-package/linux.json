@@ -1,0 +1,360 @@
+{
+  "sourceCommit": "bb5fec87dde259714c9ec04383f08fd76472142c",
+  "version": "0.1.0-preview.28",
+  "phases": [
+    {
+      "mode": "ptc",
+      "phase": "export",
+      "install": {
+        "dsh": "0.2.1-rc.2",
+        "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+        "package": "@whytan/dsh-semantic-ui",
+        "version": "0.1.0-preview.28",
+        "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+        "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+        "hostStarted": true,
+        "allPackagedFilesVerified": 402,
+        "validationSuite": "portable-results-export",
+        "casesPerMode": 5,
+        "toolModes": [
+          "ptc"
+        ],
+        "pageErrors": []
+      },
+      "checks": {
+        "mode": "ptc",
+        "phase": "export",
+        "cases": [
+          {
+            "index": 0,
+            "component": "ArchitectureExplorer",
+            "sourceStatus": "unverified",
+            "sha256": "898ca5ba443724b1f21cf9317a8a8ac6328e1404aebaaad629fc294afa7422f6"
+          },
+          {
+            "index": 1,
+            "component": "DecisionExplorer",
+            "sourceStatus": "unverified",
+            "sha256": "4fe6bc94e00df7630ebb2c333126b5252884ddedfc8ddcab76af0d3358a39a48"
+          },
+          {
+            "index": 2,
+            "component": "DataChart",
+            "sourceStatus": "unverified",
+            "sha256": "64dc78085246045477c84e2e5d0de5185c72910b1992cfe8fa31a37dd1331bb2"
+          },
+          {
+            "index": 3,
+            "component": "DataChart",
+            "sourceStatus": "unverified",
+            "sha256": "8fe63459cb9de9fe278a0ce8e28b871b04ea9c573ed7232c34831828b9f53f25"
+          },
+          {
+            "index": 4,
+            "component": "DataChart",
+            "sourceStatus": "bound",
+            "sha256": "9929d7ad4d70c892076afa45581fea1876a05aff1c0d58629b9fa6471f06f4a1"
+          }
+        ],
+        "cleanResultLibraryAtStart": true,
+        "pageErrors": [],
+        "fixtureOnly": true,
+        "newRealModelTurns": 0,
+        "localHttpRequestsSoFar": 7,
+        "executedToolCalls": 5,
+        "actualToolRoute": "run_code -> tools.dsh_semantic_ui",
+        "archiveInstalled": true,
+        "normalPluginFileDownloads": true
+      },
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "fixture",
+            "pid": 4251,
+            "exitCode": null,
+            "signalCode": "SIGTERM"
+          },
+          {
+            "kind": "ptc",
+            "pid": 4252,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 32769,
+        "fixturePort": 45373
+      }
+    },
+    {
+      "mode": "native",
+      "phase": "export",
+      "install": {
+        "dsh": "0.2.1-rc.2",
+        "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+        "package": "@whytan/dsh-semantic-ui",
+        "version": "0.1.0-preview.28",
+        "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+        "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+        "hostStarted": true,
+        "allPackagedFilesVerified": 402,
+        "validationSuite": "portable-results-export",
+        "casesPerMode": 5,
+        "toolModes": [
+          "native"
+        ],
+        "pageErrors": []
+      },
+      "checks": {
+        "mode": "native",
+        "phase": "export",
+        "cases": [
+          {
+            "index": 0,
+            "component": "ArchitectureExplorer",
+            "sourceStatus": "unverified",
+            "sha256": "5565c5cb069f01e905f823914d2d49b1f79ebeb85c81c532e1f479a3899d927d"
+          },
+          {
+            "index": 1,
+            "component": "DecisionExplorer",
+            "sourceStatus": "unverified",
+            "sha256": "a2a250eec2af94b942b56a984c5133abc95869faca4893b61451948272fe2acd"
+          },
+          {
+            "index": 2,
+            "component": "DataChart",
+            "sourceStatus": "unverified",
+            "sha256": "9e8f781e51f6ed95aea4d44f046a77f6cbd73bbd31b0bbf32a04a8f79c3c8304"
+          },
+          {
+            "index": 3,
+            "component": "DataChart",
+            "sourceStatus": "unverified",
+            "sha256": "a12f9146967cbd9b5b3664873a4df307fd05426e64d1539143795b057a9d4156"
+          },
+          {
+            "index": 4,
+            "component": "DataChart",
+            "sourceStatus": "bound",
+            "sha256": "c8d7cf3ec58e467102864b21118c77593c3f6d35df07cd2a2d50ef27727afa6f"
+          }
+        ],
+        "cleanResultLibraryAtStart": true,
+        "pageErrors": [],
+        "fixtureOnly": true,
+        "newRealModelTurns": 0,
+        "localHttpRequestsSoFar": 7,
+        "executedToolCalls": 5,
+        "actualToolRoute": "dsh_semantic_ui",
+        "archiveInstalled": true,
+        "normalPluginFileDownloads": true
+      },
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "fixture",
+            "pid": 3986,
+            "exitCode": null,
+            "signalCode": "SIGTERM"
+          },
+          {
+            "kind": "native",
+            "pid": 3987,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 39627,
+        "fixturePort": 38541
+      }
+    },
+    {
+      "mode": "native",
+      "phase": "import",
+      "install": {
+        "dsh": "0.2.1-rc.2",
+        "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+        "package": "@whytan/dsh-semantic-ui",
+        "version": "0.1.0-preview.28",
+        "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+        "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+        "hostStarted": true,
+        "allPackagedFilesVerified": 402,
+        "validationSuite": "portable-results-import",
+        "casesPerMode": 5,
+        "toolModes": [
+          "native"
+        ],
+        "pageErrors": []
+      },
+      "checks": {
+        "mode": "native",
+        "phase": "import",
+        "cases": [
+          {
+            "index": 0,
+            "component": "ArchitectureExplorer",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 1,
+            "component": "DecisionExplorer",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 2,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 3,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 4,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "bound-record"
+          }
+        ],
+        "cleanResultLibraryAtStart": true,
+        "pageErrors": [],
+        "fixtureOnly": true,
+        "newRealModelTurns": 0,
+        "localHttpRequestsSoFar": 5,
+        "executedToolCalls": 4,
+        "actualToolRoute": "dsh_semantic_ui",
+        "archiveInstalled": true,
+        "fiveSavedResultsReopenedAfterRefresh": true,
+        "localInteractionsContinue": true,
+        "corruptAndUnsupportedRefusedWithoutOverwrite": true,
+        "noRequestsDuringImportReopenAndLocalEdits": true,
+        "widths": [
+          640,
+          360
+        ],
+        "noRootOverflow": true
+      },
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "fixture",
+            "pid": 4595,
+            "exitCode": null,
+            "signalCode": "SIGTERM"
+          },
+          {
+            "kind": "native",
+            "pid": 4596,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 35737,
+        "fixturePort": 43219
+      }
+    },
+    {
+      "mode": "ptc",
+      "phase": "import",
+      "install": {
+        "dsh": "0.2.1-rc.2",
+        "installation": "actual dsh plugin --profile web add tgz into fresh isolated profile; no semantic plugin source overlay; separate fixture-only legacy checkpoint tool",
+        "package": "@whytan/dsh-semantic-ui",
+        "version": "0.1.0-preview.28",
+        "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+        "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+        "hostStarted": true,
+        "allPackagedFilesVerified": 402,
+        "validationSuite": "portable-results-import",
+        "casesPerMode": 5,
+        "toolModes": [
+          "ptc"
+        ],
+        "pageErrors": []
+      },
+      "checks": {
+        "mode": "ptc",
+        "phase": "import",
+        "cases": [
+          {
+            "index": 0,
+            "component": "ArchitectureExplorer",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 1,
+            "component": "DecisionExplorer",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 2,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 3,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "unverified-record"
+          },
+          {
+            "index": 4,
+            "component": "DataChart",
+            "contentRestored": true,
+            "sourceState": "bound-record"
+          }
+        ],
+        "cleanResultLibraryAtStart": true,
+        "pageErrors": [],
+        "fixtureOnly": true,
+        "newRealModelTurns": 0,
+        "localHttpRequestsSoFar": 5,
+        "executedToolCalls": 4,
+        "actualToolRoute": "run_code -> tools.dsh_semantic_ui",
+        "archiveInstalled": true,
+        "fiveSavedResultsReopenedAfterRefresh": true,
+        "localInteractionsContinue": true,
+        "corruptAndUnsupportedRefusedWithoutOverwrite": true,
+        "noRequestsDuringImportReopenAndLocalEdits": true,
+        "widths": [
+          640,
+          360
+        ],
+        "noRootOverflow": true
+      },
+      "cleanup": {
+        "processes": [
+          {
+            "kind": "fixture",
+            "pid": 4790,
+            "exitCode": null,
+            "signalCode": "SIGTERM"
+          },
+          {
+            "kind": "ptc",
+            "pid": 4791,
+            "exitCode": 0,
+            "signalCode": null
+          }
+        ],
+        "port": 38031,
+        "fixturePort": 40961
+      }
+    }
+  ],
+  "cleanSourceAndDestinationProfiles": true,
+  "fixtureTurns": 6,
+  "localFixtureHttpRequests": 24,
+  "executedSemanticToolCalls": 18,
+  "newRealModelTurns": 0,
+  "allOwnedProcessesClosed": true
+}

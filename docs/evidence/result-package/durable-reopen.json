@@ -1,0 +1,28 @@
+{
+  "source": "existing archive-installed Native import profile",
+  "hostRestarted": true,
+  "sameSavedDocument": true,
+  "oneComponent": true,
+  "originalViewAndHistoricalSourceUnchanged": true,
+  "selectionThemeAndLocaleRestored": true,
+  "viewportResizesThroughExistingControls": true,
+  "dimensions": [
+    {
+      "requestedWidth": 640,
+      "width": 640,
+      "clientWidth": 638,
+      "scrollWidth": 638,
+      "height": 1926
+    },
+    {
+      "requestedWidth": 360,
+      "width": 360,
+      "clientWidth": 358,
+      "scrollWidth": 358,
+      "height": 2404
+    }
+  ],
+  "pageErrors": [],
+  "promptRequests": 0,
+  "newModelStarts": 0
+}

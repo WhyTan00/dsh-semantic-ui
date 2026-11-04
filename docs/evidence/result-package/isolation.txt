@@ -1,0 +1,4 @@
+> @whytan/dsh-semantic-ui@0.1.0-preview.28 test:release-isolation [repository]
+> node tests/release-isolation.mjs
+
+{"privateProvenanceExcluded":true,"publicDocumentationRetained":true,"archivePathGuards":true}

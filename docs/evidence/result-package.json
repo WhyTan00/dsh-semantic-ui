@@ -1,14 +1,210 @@
 {
   "schema": "portable-semantic-result-v1",
   "version": "0.1.0-preview.28",
-  "status": "implementation complete; final archive acceptance pending",
+  "status": "released; final archive Native/PTC on macOS/Linux and anonymous assets accepted",
+  "sourceCommit": "bb5fec87dde259714c9ec04383f08fd76472142c",
+  "sourceTag": "v0.1.0-preview.28",
+  "releaseId": 434267322,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28",
   "formatVersion": 1,
-  "dataOnly": true,
-  "templatesSeparate": true,
-  "sourceRecordsAreHistorical": true,
-  "newRealModelTurns": 0,
-  "currentCodexClientVerified": false,
-  "phoneVerified": false,
-  "screenReaderVerified": false,
-  "originalNaturalResultsUnchanged": true
+  "protocolVersion": "1.4",
+  "runtime": {
+    "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+    "bytes": 2747126,
+    "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+    "files": 402,
+    "entrypoints": {
+      "dist/host.js": "e1655b3d5cd2c73bba14bdabfec782a6e78b4292fe8cc41d556f853eca713046",
+      "dist/client.js": "849779377713c77cbdd82dc4132d4fa42a02903fdac3b7c8b077b45f9b5f1a39",
+      "dist/core.js": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6",
+      "dist/mcp.js": "a75a6d3aac69dece75526b5a9ec8c9e05c2b7485c3bf8819c330264748eec1c5",
+      "dist/protocol.js": "3f782296c9b02042ca0e806129e3b0073bb167d6934104cf333ac037ce41fdf6"
+    }
+  },
+  "evidenceArchive": {
+    "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.28.tgz",
+    "bytes": 43134963,
+    "sha256": "28cfc2f91c2f2e043a4f0268d2a245aa96582922f9df54c0d3d1afd0709c8f76",
+    "files": 929
+  },
+  "publicAssets": [
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 229,
+      "sha256": "52cd9f881315a0ad04f48bfbe0de1707cd25fd35ee6d21c9396bc0738e54e6af",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/SHA256SUMS",
+      "assetId": 710413409,
+      "httpStatus": 200,
+      "githubDigest": "sha256:52cd9f881315a0ad04f48bfbe0de1707cd25fd35ee6d21c9396bc0738e54e6af",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "package-manifest.json",
+      "bytes": 35968,
+      "sha256": "0e2865d8d3d7bf6dd5d27ea946c216470ed3e81bf2e33a31938ead3959bdeae1",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/package-manifest.json",
+      "assetId": 710413387,
+      "httpStatus": 200,
+      "githubDigest": "sha256:0e2865d8d3d7bf6dd5d27ea946c216470ed3e81bf2e33a31938ead3959bdeae1",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+      "bytes": 2747126,
+      "sha256": "9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/whytan-dsh-semantic-ui-0.1.0-preview.28.tgz",
+      "assetId": 710413413,
+      "httpStatus": 200,
+      "githubDigest": "sha256:9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35",
+      "anonymousFullGet": true,
+      "matched": true
+    },
+    {
+      "filename": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.28.tgz",
+      "bytes": 43134963,
+      "sha256": "28cfc2f91c2f2e043a4f0268d2a245aa96582922f9df54c0d3d1afd0709c8f76",
+      "linuxByteEqual": true,
+      "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/v0.1.0-preview.28/whytan-dsh-semantic-ui-evidence-0.1.0-preview.28.tgz",
+      "assetId": 710413389,
+      "httpStatus": 200,
+      "githubDigest": "sha256:28cfc2f91c2f2e043a4f0268d2a245aa96582922f9df54c0d3d1afd0709c8f76",
+      "anonymousFullGet": true,
+      "matched": true
+    }
+  ],
+  "ci": {
+    "runId": 41881505772,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/41881505772",
+    "status": "success",
+    "sourceCommit": "bb5fec87dde259714c9ec04383f08fd76472142c",
+    "allUnitTests": 261,
+    "testFiles": 39
+  },
+  "validation": {
+    "macOsFullUnitBeforeFinalAddedCapacityCase": 260,
+    "macOsFocusedFinalResultTests": 12,
+    "typecheck": "passed",
+    "releaseIsolation": "passed",
+    "linuxAllUnitTests": 261,
+    "allFourDistributionFilesByteEqual": true,
+    "all402RuntimeFilesVerifiedBeforeEveryInstalledHost": true,
+    "platforms": [
+      "macOS",
+      "Linux"
+    ],
+    "toolModes": [
+      "native",
+      "ptc"
+    ],
+    "actualRoutes": [
+      "dsh_semantic_ui",
+      "run_code -> tools.dsh_semantic_ui"
+    ],
+    "cleanProfilePairs": 4,
+    "finalAcceptanceProfiles": 8,
+    "casesPerMode": [
+      "architecture with search, node, scenario, neighborhood and viewport",
+      "decision with two rules, unknown condition, dimensions and policy exploration",
+      "line chart with real zero, negative and missing data",
+      "histogram with shared bins and missing observations",
+      "source-bound numeric snapshot with separate local range"
+    ],
+    "casesPerProfile": 5,
+    "roundTripsPerPlatform": 10,
+    "reopenedAfterPageRefresh": true,
+    "localInteractionsContinue": true,
+    "sourceRecordAndOriginalViewRemainUnchanged": true,
+    "corruptAndUnsupportedImportsLeaveCurrentAndSavedResultsUnchanged": true,
+    "incompatibleDependencyRefusal": "unit tested",
+    "profileStorageFailureAndConflictRefusal": "unit tested",
+    "templatesSeparate": "unit and independent storage domain",
+    "pageErrors": [],
+    "requestedWidths": [
+      640,
+      360
+    ],
+    "durableHostRestartReadback": "macOS Native; no new prompt; data/source record/selection/theme/Chinese restored; measured widths 640 and 360",
+    "finalFixtureTurns": 12,
+    "finalLocalFixtureHttpRequests": 48,
+    "developmentFixtureTurns": 5,
+    "developmentLocalFixtureHttpRequests": 22,
+    "developmentFirstFailuresRetained": true,
+    "newRealModelTurns": 0,
+    "allOwnedHostAndFixtureProcessesClosed": true
+  },
+  "boundaries": {
+    "dataOnly": true,
+    "templatesSeparate": true,
+    "sourceRecordsAreHistorical": true,
+    "checksumIsSignature": false,
+    "sourceIdentityVerified": false,
+    "worldFactsVerified": false,
+    "permissionOrApprovalGrantedByImport": false,
+    "importedInstructionsExecuted": false,
+    "toolOrModelCallsOnImportReopenOrLocalEdits": false,
+    "standaloneHtml": false,
+    "firstEntryRequiresExistingSemanticView": true,
+    "automaticLiveControlPersistence": false,
+    "explicitReopenSavedDocument": true,
+    "disclosureAndKeyboardFocusSaved": false,
+    "crossContainerPixelIdenticalLayout": false,
+    "currentCodexClientVerified": false,
+    "phoneVerified": false,
+    "screenReaderVerified": false,
+    "originalNaturalResultsUnchanged": true,
+    "originalNaturalPassFailRequests": [
+      0,
+      6,
+      18
+    ],
+    "oldFrozenModelBudgetsChanged": false
+  },
+  "receipts": {
+    "macos.json": "result-package/macos.json",
+    "linux.json": "result-package/linux.json",
+    "platform-comparison.json": "result-package/platform-comparison.json",
+    "durable-reopen.json": "result-package/durable-reopen.json",
+    "reopen-cleanup.json": "result-package/reopen-cleanup.json",
+    "public-downloads.json": "result-package/public-downloads.json",
+    "first-failures.json": "result-package/first-failures.json",
+    "unit-macos.txt": "result-package/unit-macos.txt",
+    "result-unit.txt": "result-package/result-unit.txt",
+    "unit-linux.txt": "result-package/unit-linux.txt",
+    "typecheck.txt": "result-package/typecheck.txt",
+    "isolation.txt": "result-package/isolation.txt"
+  },
+  "syntheticExampleFiles": [
+    {
+      "path": "result-package/examples/0.json",
+      "fileSha256": "c943569f35826cacded07b5fe28a2f380d0d8805e331a391110b3ab5cbdb088c",
+      "contentSha256": "5565c5cb069f01e905f823914d2d49b1f79ebeb85c81c532e1f479a3899d927d"
+    },
+    {
+      "path": "result-package/examples/1.json",
+      "fileSha256": "e1281c52f76c6fe438821ad4b7baa6f03aa3f8fc2adaf1b649dbdf1ccd2662d8",
+      "contentSha256": "a2a250eec2af94b942b56a984c5133abc95869faca4893b61451948272fe2acd"
+    },
+    {
+      "path": "result-package/examples/2.json",
+      "fileSha256": "7f5fe2f565175238a432d9a160751a694b0995c43b5b433c404814b672c901ed",
+      "contentSha256": "9e8f781e51f6ed95aea4d44f046a77f6cbd73bbd31b0bbf32a04a8f79c3c8304"
+    },
+    {
+      "path": "result-package/examples/3.json",
+      "fileSha256": "5a873afcb1b1e4b5541d1dfdc90cdac8d0458e8289bcc9118e64cd3af3c2eb5e",
+      "contentSha256": "a12f9146967cbd9b5b3664873a4df307fd05426e64d1539143795b057a9d4156"
+    },
+    {
+      "path": "result-package/examples/4.json",
+      "fileSha256": "95f05459ae8506d49ad822b6eb74501dc2bda2cee731025f1747780865d597a3",
+      "contentSha256": "800e48f3045ce9a83726a3311d0b87c1cfa2ad2f7c9c9f5cd3f82c6a97042e2c"
+    }
+  ],
+  "logHandling": "Mac logs replace only absolute repository path with [repository] and trim surrounding blank lines. Linux log includes only exact passing-count lines with ANSI removed. Original private logs and failed snapshots are retained.",
+  "screenshotHandling": "Native graph recaptured after owned host restart in a taller viewport to remove composer occlusion; no new prompt. Initial shorter-viewport graph capture retained privately. Other images are original installed-profile captures."
 }

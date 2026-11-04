@@ -1,0 +1,16 @@
+{
+  "developmentTypeAndMockFailures": "source narrowing and test route/dependency assumptions were corrected; original logs retained",
+  "firstImportDiagnostic": "ariaSnapshot timed out and masked the first primary error; no causal claim from that timeout",
+  "secondImportObserved": "one root contained 10 duplicate architecture headings",
+  "pageErrorsOnSecondFailure": [],
+  "causeFound": "Boundary and TemplatePanel siblings had equal React keys",
+  "fix": "distinct component/template keys; stable state setters and equal-value deduplication",
+  "secondFailureRawSha256": "07283618b8e898967dd6e905e66eeeda969d0a91d92ecb620a41df0bf2ac6815",
+  "laterNormalInstalledNativeAndPtc": "all five round trips passed",
+  "originalNaturalPassFailRequests": [
+    0,
+    6,
+    18
+  ],
+  "newRealModelTurns": 0
+}

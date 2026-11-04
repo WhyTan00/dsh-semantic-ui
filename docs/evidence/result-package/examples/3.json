@@ -1,0 +1,141 @@
+{
+  "manifest": {
+    "format": "dsh-semantic-ui-result",
+    "version": 1,
+    "producer": {
+      "name": "@whytan/dsh-semantic-ui",
+      "version": "0.1.0-preview.28"
+    },
+    "protocolVersion": "1.4",
+    "dependencies": [
+      {
+        "name": "dsh",
+        "version": "0.2.1-rc.2"
+      },
+      {
+        "name": "@json-render/core",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@json-render/react",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@xyflow/react",
+        "version": "12.12.0"
+      },
+      {
+        "name": "@dagrejs/dagre",
+        "version": "3.1.1"
+      },
+      {
+        "name": "echarts",
+        "version": "6.1.0"
+      },
+      {
+        "name": "react",
+        "version": "19.3.1"
+      }
+    ],
+    "sourceState": "unverified-record",
+    "templateLibraryIncluded": false,
+    "authority": "data-only; no identity, permission, approval or instruction authority"
+  },
+  "content": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "portable-native-3",
+      "revision": 1,
+      "summary": "Shared bins preserve boundary values; null readings remain missing.",
+      "presentation": {
+        "version": 1,
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        }
+      },
+      "component": "DataChart",
+      "payload": {
+        "chartType": "histogram",
+        "title": "完整结果合成样本 3",
+        "unit": "ms",
+        "display": "count",
+        "source": {
+          "mode": "observations",
+          "boundaries": [
+            -2,
+            0,
+            2,
+            4
+          ],
+          "groups": [
+            {
+              "id": "a",
+              "label": "Group A",
+              "observations": [
+                -2,
+                -1,
+                0,
+                0,
+                1,
+                2,
+                3,
+                4,
+                null
+              ]
+            },
+            {
+              "id": "b",
+              "label": "Group B",
+              "observations": [
+                -1,
+                0,
+                1,
+                2,
+                2,
+                3,
+                null
+              ]
+            }
+          ]
+        }
+      }
+    },
+    "sourceRecord": {
+      "version": 1,
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "status": "unverified",
+      "code": "SOURCE_RENDER_SCOPE",
+      "reason": "本次普通渲染未绑定该来源语法；结构化数据、模型摘要和注释均未作独立来源核对。"
+    },
+    "theme": {
+      "mode": "dark",
+      "palette": "forest",
+      "font": "mono",
+      "density": "compact",
+      "textSize": "large"
+    },
+    "layout": {
+      "direction": "auto"
+    },
+    "locale": "zh-CN",
+    "interaction": {
+      "component": "DataChart",
+      "enabled": [
+        "a"
+      ],
+      "from": 1,
+      "to": 2,
+      "scope": "filtered",
+      "page": 0
+    }
+  },
+  "sha256": "a12f9146967cbd9b5b3664873a4df307fd05426e64d1539143795b057a9d4156"
+}

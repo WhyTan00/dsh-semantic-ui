@@ -1,6 +1,6 @@
 # 实际进度
 
-preview.28新增[完整交互结果包](RESULT-PACKAGE.zh-CN.md)：正常插件面板提供纯数据导出、独立结果库、校验后新副本导入和显式重开。数据/规则/null/unknown、来源历史状态、主题/locale与有界交互状态分层保存，模板库保持独立；不认证来源/权限/批准，不从包触发模型或工具。最终归档与实际验证见[本版回执](evidence/result-package.json)。旧27/26、Codex27.1与原自然失败沿用既有证据。
+preview.28的[完整交互结果包已公开预发布](RESULT-PACKAGE.zh-CN.md)。源码/tag bb5fec87dde259714c9ec04383f08fd76472142c，运行包9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35、402文件。macOS/Linux分别在Native/PTC干净source/destination profile完成五类结果导出/导入、刷新重开、继续交互与损坏/版本拒绝；所有view/来源历史状态、null/unknown、规则/假设、主题/中文和选择保留，pageerror0。另经本机宿主重启恢复并在实际640/360容器核对；没有新prompt。CI41881505772成功（261项/39文件），四份发行工件同两平台字节、四资产匿名完整下载匹配，见[最终回执](evidence/result-package.json)。最终12夹具回合/48本地HTTP、开发5回合/22本地HTTP另计，真实模型0，原六题/首败和已冻结预算不改。Codex富UI、手机/读屏及通用GenUI替代仍不由此完成。
 
 当前已知语义合同继续复核后，暂未复现角色/未知真值、关系方向、数值范围或模板继承的新错误；[可执行Codex本地包27.1已公开预发布](CODEX-PLUGIN-PACKAGE.zh-CN.md)。便携包合并MCP/skill/本地插件源，核心编译与27归档一致，MCP自报版本漂移首败已修，流程/权限按需指引补齐。8项MCP合同、类型和技能格式检查通过；冻结源码afab3ef，macOS/Linux分别核230文件、10次实际stdio调用及3连接关闭，三份发行文件同字节，CI41191951713成功。三个公开资产已匿名完整下载并核对，见[回执](evidence/codex-plugin-package.json)。本次已知可控缺口完成；当前App/主会话安装、自然采用及自由正文/世界事实仍单列未验证。0新模型、不改27既有包或原六题，不以此声称普遍完美。
 

@@ -39,6 +39,8 @@ JSON包格式为`dsh-semantic-ui-result`、版本1，分为`manifest`、`content
 
 ## 验证
 
+[preview.28已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28)。最终运行包402文件，SHA-256为`9bbc88c781bddcf589eb567020ddd06a9220f764054beaca040981f4df617c35`；源码/tag为`bb5fec87dde259714c9ec04383f08fd76472142c`。macOS/Linux Native/PTC四组干净环境对的五类结果往返均通过，pageerror0，Linux261项单元和定向CI41881505772成功。四工件与两平台和匿名完整下载一致。另一次宿主重启后保存结果可重开，实测640/360宽，无新prompt。当前浏览器需支持安全上下文中的Web Crypto（localhost或HTTPS）以核对摘要。
+
 确定性合成夹具通过正常DSH工具交付，再在插件面板下载和导入。检查范围为架构、带规则决策、折线、直方图以及一个来源绑定数值快照；分别记录导出、干净profile安装/导入、刷新后重开、继续交互、损坏/不兼容拒绝和640/360容器。模型自然题、手机、读屏和Codex富UI不由本轮验证覆盖；原六题失败保持。最终安装/发行状态见[本版回执](evidence/result-package.json)。
 
 开发运行`pnpm typecheck`和`pnpm test`；冻结干净源码后以`pnpm release:pack`构建，再运行`pnpm test:installed-results`验证实际归档。测试服务只用临时个人profile、回环端口与确定性本地传输，结束后关闭自有进程，不消费自然模型额度。
