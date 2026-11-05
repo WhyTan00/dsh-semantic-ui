@@ -1,5 +1,7 @@
 # DSH Semantic UI
 
+The `preview.31-prose.3` client adds [finite temporal capacity prose checks](docs/PROSE-CAPACITY.zh-CN.md). Current demand, a possible future demand, owned/provided capacity and confirmed plans remain distinct. Eligibility reuses the capacity core and does not establish an overall recommendation. Source updates recheck current conclusions while preserving separate hypotheses and historical snapshots; no new natural model observation was performed without verified free eligibility and remaining budget.
+
 The `preview.31-prose.2` overlay adds [finite workflow prose checks](docs/PROSE-WORKFLOW.zh-CN.md): conditional failure branches, retry/rollback targets and scope, negation and passive wording. Unresolved new antecedents invalidate the previous branch. This reuses the existing workflow checker and panel; it does not infer runtime causality or certify an entire answer.
 
 The `preview.31-prose.1` client overlay adds a [local source-and-prose review panel](docs/PROSE-REVIEW.zh-CN.md), with Chinese as the default and a persistent Chinese/English selector. It checks bounded Chinese decision/observation assertions, preserves unsupported and uncovered text, and creates a source-grounded explanation. Source edits invalidate old verdicts; loading an exported review recalculates it. It does not certify an entire assistant answer or replace the preview.31 host.

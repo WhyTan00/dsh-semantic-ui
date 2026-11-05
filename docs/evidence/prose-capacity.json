@@ -1,0 +1,135 @@
+{
+  "schema": "dsh-semantic-capacity-prose-acceptance-v1",
+  "clientRevision": "0.1.0-preview.31-prose.3",
+  "baseHost": "0.1.0-preview.31",
+  "newImplementation": [
+    "src/prose-capacity.ts",
+    "src/prose.ts"
+  ],
+  "existingCoreReused": [
+    "parseCapacitySource",
+    "checkSourceCapacity",
+    "capacityDecision",
+    "decide",
+    "validCapacityAmount",
+    "source-reference constructor"
+  ],
+  "checks": {
+    "typecheck": "passed",
+    "focusedTestsIncludingAffectedOldCoreRegression": 91,
+    "normalPersonalDshFlows": [
+      {
+        "case": "original-D2-body",
+        "conditionalCapacitySupported": true,
+        "broaderChoiceAndControlPromisesUnsupported": true,
+        "verbatimCandidateAndSourcePointersRetained": true
+      },
+      {
+        "case": "new-current-insufficient-then-sufficient-source-update",
+        "sourceBefore": 60,
+        "sourceAfter": 120,
+        "currentDemand": 100,
+        "possibleFuture": 240,
+        "unit": "GiB",
+        "sameCandidateCurrentConclusionFlips": true,
+        "futureRemainsSeparateHypothesis": true,
+        "oldReportCleared": true,
+        "confirmedFutureRemainsUnknown": true,
+        "oldExportUnchanged": true,
+        "deterministicOnlyNotModelObservation": true
+      },
+      {
+        "case": "owned-possible-commitment-and-overall-scope",
+        "currentOwnedNotInferredFromDemand": true,
+        "possibleNotPromotedToCertain": true,
+        "capacityPassDoesNotCertifyAllRequirements": true
+      },
+      {
+        "case": "old-capacity-review",
+        "ownOriginalSourceRecomputed": true,
+        "sourceAndHistoricalUnknownsNotOverwritten": true
+      }
+    ],
+    "pageErrors": [],
+    "unchangedOverlayInstallerSafetyEvidence": "reused prose.2; upgrade base manifests will be verified during new archive freeze"
+  },
+  "originalD2Body": "prose-capacity/D2-review.json",
+  "newDeterministicSourceBefore": "prose-capacity/capacity-before-review.json",
+  "newDeterministicSourceAfter": "prose-capacity/capacity-after-review.json",
+  "wrongTemporalClaims": "prose-capacity/wrong-temporal-review.json",
+  "syntheticNewCandidateOrigin": "agent-authored deterministic source/candidate for engineering QA; not a new model response",
+  "retainedDevelopmentCounterexamples": {
+    "firstFailures": 8,
+    "groups": [
+      "multiple-option quantity binding",
+      "current limits projected into future",
+      "asserted reserve mislabeled as hypothesis",
+      "negated reserve mislabeled as positive hypothesis",
+      "capacity used to certify other requirements",
+      "independent hypothesis absent from grounded text",
+      "demand scenarios promoted into objective time stages",
+      "future demand relabeled as owned/provided capacity"
+    ],
+    "originalNaturalScoresChanged": false
+  },
+  "naturalObservation": {
+    "newGenerations": 0,
+    "ceiling": 2,
+    "ceilingIsNotNewQuota": true,
+    "oldSegmentsRemainSealed": {
+      "capacity": "2/2",
+      "numeric": "2/2",
+      "sourceHistory": "2/2",
+      "sourceRevision": "1/1"
+    },
+    "broaderUnusedSlotAutomaticallyInherited": false,
+    "oldBackendRequestCounts": "unknown",
+    "currentFreeQualification": "unverified",
+    "completeCurrentRemainingBalance": "unverified",
+    "visibleChannelLabelIsNotQuotaProof": true,
+    "newIntentReserved": false,
+    "newNaturalToolAdoptionVerified": false,
+    "newModelBodyCorrectnessVerified": false,
+    "reason": "Original personal authorization persists; current free qualification and complete remaining balance were not proven, so no exploratory model call, retry or new quota was created."
+  },
+  "installedClientFiles": [
+    {
+      "name": "client.js.LEGAL.txt",
+      "oldSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7",
+      "newSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7"
+    },
+    {
+      "name": "client.js",
+      "oldSha256": "b128a333b92e4dac6b0808055e5976f34e275a706977446c3bfa4b8c0730956d",
+      "newSha256": "4f3d27a8b346f2d38571d5efee2115f1ce1906a8d135596516ed7b470a2fd889"
+    }
+  ],
+  "preservation": {
+    "historyCount": 93,
+    "sameExistingCompressedHashes": true,
+    "noNewHistoryReparseOrReplay": true,
+    "templatesUnchanged": true,
+    "privateResultsUnchanged": true,
+    "rawProfileConfigUnchanged": true,
+    "pid": 95289,
+    "healthyHostRestarted": false
+  },
+  "newModelCalls": 0,
+  "newMcpConnections": 0,
+  "newServices": 0,
+  "newRemoteCiDispatches": 0,
+  "oldMatricesReused": true,
+  "originalSixNaturalResults": "0 pass / 6 fail / 18 requests; unchanged",
+  "boundaries": {
+    "wholeAnswerCertified": false,
+    "actualOwnedCapacityInferredFromDemand": false,
+    "possibleFutureConfirmedAsPlan": false,
+    "sourceWithUnsupportedConfirmedPlanOrDateAccepted": false,
+    "externalAssistantOrGenuiBodyIntercepted": false,
+    "worldFactsVerified": false,
+    "identityVerified": false,
+    "nativeCodexRichUiAcceptance": false,
+    "newLinuxPtcUserEdgeOrPhysicalMobileAcceptance": false
+  },
+  "releaseStatus": "new code and normal personal DSH adopted; new client archive pending committed source freeze"
+}

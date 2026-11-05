@@ -1,0 +1,345 @@
+{
+  "format": "dsh-semantic-prose-review",
+  "version": 1,
+  "sourceText": "合成存储选项 小盘 上限 60GiB、部署简单，大盘 上限 500GiB、维护复杂。当前需求 100GiB，以后可能到 240GiB。请比较。",
+  "candidate": "当前需求100GiB。小盘容量不足。以后可能到240GiB。届时小盘容量不足。未来计划未知。",
+  "report": {
+    "version": 1,
+    "status": "reviewed",
+    "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+    "candidateSha256": "e74f5889252780e4654305d0acc1163cff41a89ddef3c8bc5342d22945ee9dbf",
+    "originalCandidate": "当前需求100GiB。小盘容量不足。以后可能到240GiB。届时小盘容量不足。未来计划未知。",
+    "claims": [
+      {
+        "kind": "capacity-current-demand",
+        "quote": "当前需求100GiB。",
+        "extractedText": "当前需求100GiB。",
+        "candidateSpan": {
+          "utf16Start": 0,
+          "utf16End": 11
+        },
+        "status": "supported",
+        "reason": "当前需求只对照source.current；未来可能值不能填进当前字段。",
+        "correction": "来源当前所需量为100GiB；未来仅可能到240GiB，已确认未来计划未知。容量上限是可提供量，不是当前已拥有量，也不是需求。",
+        "evidence": [
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.current",
+            "value": {
+              "value": 100,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 107,
+                  "textByteEnd": 113
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 113
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          }
+        ],
+        "actual": {
+          "value": 100,
+          "unit": "GiB",
+          "negated": false,
+          "time": "current"
+        }
+      },
+      {
+        "kind": "capacity-eligibility",
+        "quote": "小盘容量不足。",
+        "extractedText": "小盘容量不足。",
+        "candidateSpan": {
+          "utf16Start": 11,
+          "utf16End": 18
+        },
+        "status": "supported",
+        "reason": "仅用同一decide核心核容量上限≥所需量，不推出整体可用或优选。",
+        "correction": "在原始当前需求100GiB下，小盘仅容量不足；不代表整体推荐。",
+        "evidence": [
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "view.requirements.capacity",
+            "value": [
+              {
+                "id": "capacity",
+                "dimension": "capacity",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 153
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          },
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.current",
+            "value": {
+              "value": 100,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 107,
+                  "textByteEnd": 113
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 113
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          },
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.possibleFuture",
+            "value": {
+              "value": 240,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 132,
+                  "textByteEnd": 138
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 132,
+                "textByteEnd": 138
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          }
+        ],
+        "actual": {
+          "option": "小盘",
+          "expected": false,
+          "positive": false,
+          "frame": {
+            "time": "current",
+            "role": "demand",
+            "amount": 100,
+            "unit": "GiB",
+            "sourcePointMatched": true,
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 11
+            },
+            "text": "当前需求100GiB。"
+          },
+          "evaluatedDemand": 100
+        }
+      },
+      {
+        "kind": "capacity-future-demand",
+        "quote": "以后可能到240GiB。",
+        "extractedText": "以后可能到240GiB。",
+        "candidateSpan": {
+          "utf16Start": 18,
+          "utf16End": 30
+        },
+        "status": "supported",
+        "reason": "对照未来可能需求点；它不是现在已具备的容量或确认计划。",
+        "correction": "来源当前所需量为100GiB；未来仅可能到240GiB，已确认未来计划未知。容量上限是可提供量，不是当前已拥有量，也不是需求。",
+        "evidence": [
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.possibleFuture",
+            "value": {
+              "value": 240,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 132,
+                  "textByteEnd": 138
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 132,
+                "textByteEnd": 138
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          },
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.confirmedFuturePlan",
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 153
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          }
+        ],
+        "actual": {
+          "value": 240,
+          "unit": "GiB",
+          "negated": false,
+          "time": "future-possible"
+        }
+      },
+      {
+        "kind": "capacity-eligibility",
+        "quote": "届时小盘容量不足。",
+        "extractedText": "届时小盘容量不足。",
+        "candidateSpan": {
+          "utf16Start": 30,
+          "utf16End": 39
+        },
+        "status": "supported-hypothesis",
+        "reason": "仅用同一decide核心核容量上限≥所需量，不推出整体可用或优选。",
+        "correction": "在明确局部需求假设240GiB下，小盘仅容量不足；不代表整体推荐。",
+        "evidence": [
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "view.requirements.capacity",
+            "value": [
+              {
+                "id": "capacity",
+                "dimension": "capacity",
+                "input": "demand",
+                "relation": "at-least"
+              }
+            ],
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 153
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          },
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.current",
+            "value": {
+              "value": 100,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 107,
+                  "textByteEnd": 113
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 107,
+                "textByteEnd": 113
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          },
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.possibleFuture",
+            "value": {
+              "value": 240,
+              "unit": "GiB",
+              "spans": [
+                {
+                  "textByteStart": 132,
+                  "textByteEnd": 138
+                }
+              ]
+            },
+            "spans": [
+              {
+                "textByteStart": 132,
+                "textByteEnd": 138
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          }
+        ],
+        "actual": {
+          "option": "小盘",
+          "expected": false,
+          "positive": false,
+          "frame": {
+            "time": "future-possible",
+            "role": "demand",
+            "amount": 240,
+            "unit": "GiB",
+            "sourcePointMatched": true,
+            "candidateSpan": {
+              "utf16Start": 18,
+              "utf16End": 30
+            },
+            "text": "以后可能到240GiB。"
+          },
+          "evaluatedDemand": 240
+        }
+      },
+      {
+        "kind": "capacity-future-commitment",
+        "quote": "未来计划未知。",
+        "extractedText": "未来计划未知。",
+        "candidateSpan": {
+          "utf16Start": 39,
+          "utf16End": 46
+        },
+        "status": "supported",
+        "reason": "未承诺/未确认保持null；可能、否认计划和确定计划都不能互相代换。",
+        "correction": "来源当前所需量为100GiB；未来仅可能到240GiB，已确认未来计划未知。容量上限是可提供量，不是当前已拥有量，也不是需求。",
+        "evidence": [
+          {
+            "sourceTextSha256": "f389cd887b723a8b6089d023c606e875b6b971528fa0ed6f0a6cf0fc0b02a068",
+            "path": "source.confirmedFuturePlan",
+            "value": null,
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 153
+              }
+            ],
+            "scope": "当前来源版本中的数量角色、时间与确定性；假设不更新来源"
+          }
+        ],
+        "actual": {
+          "withheld": true,
+          "frame": {
+            "time": "future-committed",
+            "role": "demand",
+            "amount": null,
+            "unit": null,
+            "sourcePointMatched": false,
+            "candidateSpan": {
+              "utf16Start": 39,
+              "utf16End": 46
+            },
+            "text": "未来计划未知。"
+          }
+        }
+      }
+    ],
+    "uncovered": [],
+    "groundedText": "小盘容量上限 60GiB；部署：简单；维护：未声明。\n大盘容量上限 500GiB；部署：未声明；维护：复杂。\n来源当前需求 100GiB：仅容量满足的方案为大盘；容量不足的方案为小盘。\n来源仅说以后可能到 240GiB，不是已确认的当前需求或未来计划。若显式按 240GiB 作本地需求假设：仅容量满足的方案为大盘；容量不足的方案为小盘。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。\n在明确局部需求假设240GiB下，小盘仅容量不足；不代表整体推荐。",
+    "sourceExplanation": "小盘容量上限 60GiB；部署：简单；维护：未声明。\n大盘容量上限 500GiB；部署：未声明；维护：复杂。\n来源当前需求 100GiB：仅容量满足的方案为大盘；容量不足的方案为小盘。\n来源仅说以后可能到 240GiB，不是已确认的当前需求或未来计划。若显式按 240GiB 作本地需求假设：仅容量满足的方案为大盘；容量不足的方案为小盘。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。",
+    "coverage": "finite-chinese-assertions-only",
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "newModelCalls": 0,
+    "sourceKind": "capacity-zh"
+  }
+}

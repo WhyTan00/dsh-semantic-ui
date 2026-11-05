@@ -1,6 +1,6 @@
 # 说明正文与来源核对
 
-[下载客户端增量与校验和](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.2) · [完整原31宿主包](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)
+[下载客户端增量与校验和](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.3) · [完整原31宿主包](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)
 
 在已有 DSH 语义消息中展开 **“核对说明与来源”**，填写完整来源与候选说明，点击 **“核对并生成有据说明”**。也可以直接选择包含这两段文字的 JSON 文件：默认读取 `/question` 与 `/finalAnswer`，支持修改位置。无需运行命令、调用模型或预选固定结果包。
 
@@ -8,7 +8,7 @@
 
 ## 哪些内容可以核对
 
-当前版本支持既有完整有限中文来源语法：[工作流拓扑与明确失败规则](PROSE-WORKFLOW.zh-CN.md)，两方案的能力、更新责任、维护需求、资源可用性、未知价格，以及逐项读数、缺失和单位。来源自身必须先被完整解析并通过既有来源校验；可见图表不能代替独立来源。正文支持有限的明确断言，不是任意自然语言理解器。
+当前版本支持既有完整有限中文来源语法：[容量、时间与需求角色](PROSE-CAPACITY.zh-CN.md)、[工作流拓扑与明确失败规则](PROSE-WORKFLOW.zh-CN.md)，两方案的能力、更新责任、维护需求、资源可用性、未知价格，以及逐项读数、缺失和单位。来源自身必须先被完整解析并通过既有来源校验；可见图表不能代替独立来源。正文支持有限的明确断言，不是任意自然语言理解器。
 
 - **取舍说明**：对照当前需求、资源未知、维护需求和硬性可行性。缺少成本或偏好政策时，不能把可行性升级成整体推荐，不能给未知价格添加月费、币种或成本排序。供应商更新不自动证明团队无需维护。
 - **读数说明**：复用 `numericStats`，区分已观测与完整范围、分母、单位、实测零与缺失。显式补零只属于假设。对“无论补什么都会改变均值”构造反例；中位数和告警因果等未实现断言不会被均值检查背书。
@@ -27,7 +27,7 @@
 
 ## 客户端增量包
 
-当前发行标识为 **`0.1.0-preview.31-prose.2`**，只更新客户端与随附许可证，兼容冻结的 preview.31 宿主及 DSH `0.2.1-rc.2`；接受原31客户端或已冻结的prose.1。它不是新的完整宿主包，也不冒充原31安装后所有字节仍相同。源码的完整构建会包含此功能，原prose.1发行与验证保持不可变。
+当前发行标识为 **`0.1.0-preview.31-prose.3`**，只更新客户端与随附许可证，兼容冻结的 preview.31 宿主及 DSH `0.2.1-rc.2`；接受原31客户端或已冻结的prose.1／prose.2。它不是新的完整宿主包，也不冒充原31安装后所有字节仍相同。源码的完整构建会包含此功能，原prose.1／prose.2发行与验证保持不可变。
 
 下载同名客户端 ZIP 和 `SHA256SUMS`，先核对摘要并解压。在已正常安装原31的**个人独立配置目录**上执行：
 
@@ -43,6 +43,6 @@ node client-overlay.mjs /absolute/path/to/your/personal/profile
 node client-overlay.mjs /absolute/path/to/your/personal/profile --rollback /absolute/path/to/returned/backup
 ```
 
-安装器拒绝覆盖其他已变化的版本。采用及回退都只处理两个客户端文件，回退恢复安装前实际的被接受版本。构建者可用 `node scripts/pack-prose-client.mjs` 从已提交干净源码生成客户端包；前提是本地保留不可变的原31归档与清单，以及prose.1清单。该命令不启动服务或模型。
+安装器拒绝覆盖其他已变化的版本。采用及回退都只处理两个客户端文件，回退恢复安装前实际的被接受版本。构建者可用 `node scripts/pack-prose-client.mjs` 从已提交干净源码生成客户端包；前提是本地保留不可变的原31归档与清单，以及prose.1／prose.2清单。该命令不启动服务或模型。
 
 本次新增代码的离线单元、原始 D1/N2 正文复核、来源修订和正常个人 DSH 页面接受证据见 [回执](evidence/prose-review.json)。无新增 Linux、PTC、用户 Edge 视觉或真机验收；旧完整语言矩阵仍按原版本记录，不外推成本次增量包的测试。

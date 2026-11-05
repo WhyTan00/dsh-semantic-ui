@@ -1,6 +1,6 @@
 export const proseCopy={
  'Check explanation against source':'核对说明与来源',
- 'Paste complete source text and a candidate explanation. This local check supports finite Chinese workflow, decision and observation assertions; it never approves an entire answer.':'粘贴完整来源与候选说明。本地核对支持有限的中文工作流、取舍、读数断言，不认证整篇回答。',
+ 'Paste complete source text and a candidate explanation. This local check supports finite Chinese capacity, workflow, decision and observation assertions; it never approves an entire answer.':'粘贴完整来源与候选说明。本地核对支持有限的中文容量、工作流、取舍、读数断言，不认证整篇回答。',
  'Complete source text':'完整来源文字','Candidate explanation (original)':'候选说明（原文）',
  'Check and create grounded explanation':'核对并生成有据说明','Checking locally…':'正在本地核对…',
  'Load source and candidate from JSON':'从 JSON 载入来源与候选','Source text pointer':'来源文字位置','Candidate text pointer':'候选文字位置',

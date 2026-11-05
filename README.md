@@ -18,6 +18,8 @@ preview.31新增[双方案本地假设对照](docs/WHAT-IF.zh-CN.md)：保留只
 
 [`preview.31-prose.2`](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.2) 进一步接通[工作流条件与故障动作范围](docs/PROSE-WORKFLOW.zh-CN.md)：能区分局部重试和整流程重试、分支内不回滚和全局保证，处理跨句条件、否定与动作对象。未识别的新条件撤销旧分支；原A2正确规则与额外执行／反向传播断言分别核对，不把旧自然题改判通过。
 
+`preview.31-prose.3` 新增[容量正文的时间与确定性](docs/PROSE-CAPACITY.zh-CN.md)：当前需求、未来可能点、已拥有量／预留承诺和整体推荐分开核对，来源更新会改变当前结论并保留独立未来假设。未来可能需求不能变成未来已有容量，需求情景也不能变成已确定阶段。正常面板接受与自然模型观察分别记录。
+
 [六题当前状态与可保存的有据结果](docs/SIX-QUESTION-STATUS.zh-CN.md)逐题区分已实现的有限来源修复和仍未通过的模型自由正文；提供既有正常checkpoint的结果包，在现有DSH选择文件即可读来源说明、改本地条件、保存重开。原六题自然结果仍为0通过/6失败/18请求。
 
 独立Codex伴随包新增[完整结果显式互通](docs/CODEX-RESULTS.zh-CN.md)：零新增模型地读取保存结果，核对来源与A/B假设，原合同文件可交回DSH继续使用。
