@@ -1,0 +1,34 @@
+import {useContext,useState} from 'react';
+import type {Decision} from '../protocol';
+import type {InputValues} from '../math';
+import {InteractionContext,useResultField} from '../interaction';
+import {useI18n} from '../i18n';
+import {useAppearance} from '../appearance';
+import {CAPACITY_DOMAIN} from '../capacity-domain';
+import {makeConditionDraft,validateConditionDraft,previewConditions,applyConditionPreview,type ConditionDraft,type ConditionPreview,type ConditionError} from '../condition-form';
+
+const errorText:Record<ConditionError,string>={empty:'Enter a value or explicitly keep it unknown.',number:'Enter a finite number without spaces. Blank is never zero.',capacity:'Capacity must be a finite number from 0 to the stated limit.',boolean:'Choose Yes or No, or explicitly keep it unknown.',choice:'Choose a declared option, or explicitly keep it unknown.'};
+export function LocalConditionForm({data:p,values,exploreProposals,onApply}:{data:Decision;values:InputValues;exploreProposals:boolean;onApply:(values:InputValues)=>void}){
+ const {t}=useI18n(),{strictPolicy=false,capacityDemandId}=useAppearance(),context=useContext(InteractionContext);
+ const [savedDraft,setDraft]=useResultField<ConditionDraft|undefined>('conditionDraft',undefined);
+ const draft=savedDraft??makeConditionDraft(p,values);
+ const [open,setOpen]=useState(!!savedDraft),[preview,setPreview]=useState<ConditionPreview>(),[message,setMessage]=useState(''),[busy,setBusy]=useState(false);
+ const validation=draft?validateConditionDraft(p,draft,capacityDemandId):undefined;
+ let canApply=false;
+ if(draft&&preview){try{applyConditionPreview(p,draft,values,preview,strictPolicy,exploreProposals,capacityDemandId);canApply=true;}catch{/* A fresh preview is required after any edit to the draft or its base. */}}
+ const display=(v:unknown)=>v===null?t('Unknown'):typeof v==='boolean'?t(v?'Yes':'No'):String(v);
+ const names=(ids:string[])=>p.options.filter(o=>ids.includes(o.id)).map(o=>o.label).join(' / ')||t('none');
+ function update(id:string,field:ConditionDraft['fields'][string]){setDraft(old=>{const base=old??makeConditionDraft(p,values);return {...base,fields:{...base.fields,[id]:field}};});setPreview(undefined);setMessage('');}
+ function summarize(result:ConditionPreview['before']){return <><p>{t('Meets active requirements:')} {names(result.eligibleOptionIds)}{t('. Excluded:')} {names(result.excludedOptionIds)}{t('. Unknown:')} {names(result.unknownFeasibilityIds)}</p><p>{t('Preference policy status:')} {t(result.status)}{result.recommendations.length?' · '+names(result.recommendations):''}</p></>;}
+ return <details className="condition-form" open={open} onToggle={e=>{const next=e.currentTarget.open;setOpen(next);if(next&&!savedDraft)setDraft(makeConditionDraft(p,values));}}><summary>{t('Edit several local conditions')}</summary>
+  <p>{t('Drafts are local hypotheses. Editing, previewing and saving do not change the source, run a model or approve a policy. Apply only after reviewing the difference.')}</p>
+  {draft?<><fieldset disabled={busy}><legend>{t('Unapplied draft')}</legend>{p.inputs.map(input=>{
+   const field=draft.fields[input.id],error=validation?.errors[input.id],label=input.label+' · '+t('Draft value');
+   return <div className="condition-field" key={input.id}><label>{input.label} {input.unit?'('+input.unit+')':''}<br/>{input.type==='number'?<input type="text" inputMode="decimal" maxLength={80} aria-label={label} disabled={field.mode==='unknown'} aria-invalid={!!error} value={field.text} onChange={e=>update(input.id,{mode:'value',text:e.target.value})}/>:<select aria-label={label} disabled={field.mode==='unknown'} aria-invalid={!!error} value={field.text} onChange={e=>update(input.id,{mode:'value',text:e.target.value})}><option value="">{t('Choose a value')}</option>{input.type==='boolean'?<><option value="true">{t('Yes')}</option><option value="false">{t('No')}</option></>:input.choices?.map(choice=><option key={choice} value={choice}>{choice}</option>)}</select>}</label><label><input type="checkbox" checked={field.mode==='unknown'} onChange={e=>update(input.id,{...field,mode:e.target.checked?'unknown':'value'})}/>{input.label} · {t('Keep unknown')}</label>{error?<p role="alert">{t(errorText[error])}{error==='capacity'?' '+CAPACITY_DOMAIN.max:''}</p>:null}</div>;
+  })}</fieldset>
+  <div className="toolbar"><button disabled={busy||!validation?.ok} onClick={()=>{setPreview(previewConditions(p,draft,values,strictPolicy,exploreProposals,capacityDemandId));setMessage('');}}>{t('Preview differences')}</button><button disabled={busy||!canApply} onClick={()=>{if(!preview)return;try{onApply(applyConditionPreview(p,draft,values,preview,strictPolicy,exploreProposals,capacityDemandId));setPreview(undefined);setMessage('Applied to the local copy. The source is unchanged.');}catch{setMessage('Conditions changed. Preview the difference again.');}}}>{t('Apply to local calculation')}</button><button disabled={busy} onClick={()=>{setDraft(undefined);setPreview(undefined);setOpen(false);setMessage('');}}>{t('Cancel draft')}</button><button disabled={busy} onClick={()=>{setDraft(makeConditionDraft(p,Object.fromEntries(p.inputs.map(i=>[i.id,i.initial]))));setPreview(undefined);setMessage('');}}>{t('Refill from source declarations')}</button><button disabled={busy||!context?.saveDraft} onClick={()=>void(async()=>{if(busy||!context?.saveDraft)return;setBusy(true);setMessage('');try{await context.saveDraft();setMessage('Draft saved as a new result. Reopen it from saved results.');}catch{setMessage('Draft could not be saved. Previous results are unchanged.');}finally{setBusy(false);}})()}>{t('Save draft in this profile')}</button></div>
+  <p className="meta">{t('Invalid draft text can be saved and resumed. It is never applied implicitly. To carry the draft, export the full result; templates contain no condition values.')}</p>
+  {preview?<section className="condition-preview" aria-label={t('Condition difference preview')}><h4>{t('Condition difference preview')}</h4><div className="table-wrap" tabIndex={0} role="region" aria-label={t('Draft differences')}><table><thead><tr><th scope="col">{t('Condition')}</th><th scope="col">{t('Original declaration')}</th><th scope="col">{t('Applied local value')}</th><th scope="col">{t('Proposed local value')}</th></tr></thead><tbody>{preview.changes.map(row=><tr key={row.id}><th scope="row">{p.inputs.find(i=>i.id===row.id)?.label}</th><td>{display(row.source)}</td><td>{display(row.current)}</td><td>{display(row.proposed)}</td></tr>)}</tbody></table></div><h5>{t('Before applying')}</h5>{summarize(preview.before)}<h5>{t('After applying (preview only)')}</h5>{summarize(preview.after)}{!canApply?<p role="status">{t('Conditions changed. Preview the difference again.')}</p>:null}</section>:null}
+  </>:null}{message?<p role="status">{t(message)}</p>:null}
+ </details>;
+}

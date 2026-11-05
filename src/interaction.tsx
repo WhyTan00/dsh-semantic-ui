@@ -1,6 +1,6 @@
 import {createContext,useContext,useState,useCallback,type Dispatch,type SetStateAction} from 'react';
 import type {Interaction} from './results';
-export const InteractionContext=createContext<{state:Interaction;set:Dispatch<SetStateAction<Interaction>>}|null>(null);
+export const InteractionContext=createContext<{state:Interaction;set:Dispatch<SetStateAction<Interaction>>;saveDraft?:()=>Promise<void>}|null>(null);
 /** Standalone components retain local behavior; the normal workspace owns exportable state. */
 export function useResultField<T>(key:string,initial:T|(()=>T)):[T,Dispatch<SetStateAction<T>>]{
  const context=useContext(InteractionContext),[local,setLocal]=useState(initial);

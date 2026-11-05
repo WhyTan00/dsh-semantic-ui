@@ -1,5 +1,8 @@
 # DSH Semantic UI
 
+Preview.29 keeps a bilingual language selector visible, defaults to Simplified Chinese and preserves the reader's language preference when opening saved results. The new [local condition form](docs/LOCAL-CONDITIONS.zh-CN.md) validates several fields, previews differences before applying, and saves portable drafts. New exports use result format 2; format 1 from preview.28 remains readable.
+
+
 [简体中文](README.md) · English
 
 **[Preview.28](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28)** adds portable result packages that preserve component data, local hypotheses and selections, historical source status, appearance and locale. Import and explicitly reopen them in a compatible personal DSH profile; templates remain separate. See [result packages](docs/RESULT-PACKAGE.zh-CN.md).

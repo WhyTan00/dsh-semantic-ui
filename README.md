@@ -2,7 +2,9 @@
 
 [English](README.en.md) · [安装](docs/INSTALL.zh-CN.md) · [语言设置](docs/LANGUAGE.zh-CN.md) · [验证证据](docs/evidence/language.json)
 
-**默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有「界面语言」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
+**默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有固定双语入口「界面语言 / Language」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
+
+preview.29修正打开历史结果意外覆盖语言偏好的问题，并新增[中文批量条件表单](docs/LOCAL-CONDITIONS.zh-CN.md)：逐项校验、预览差异后应用、本地草稿保存重开和携带。新结果使用格式2，继续读取preview.28的格式1。
 
 DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、取舍和数值整理成可交互组件，并把来源、计算结果、本地假设与模型说明分开。
 
@@ -42,7 +44,7 @@ preview.27另修复[全缺失范围中的补零假设](docs/ZERO-FILL-CHART.zh-C
 
 项目借鉴 json-render、A2UI、AG-UI、Tambo、assistant-ui、Vega-Lite、Observable Plot、ECharts、React Flow 等的受约束渲染、状态分层、统计范围和可访问性设计，并保留固定公开来源及许可证记录。研究覆盖35项目、139份固定文件；研究覆盖不等于功能采用完成率，具体实现与缺口见[采用复核](docs/research/ABSORPTION-AUDIT.zh-CN.md)。
 
-本插件可与 GenUI 分工使用，不能完整替代通用应用生成、任意表单提交、复杂统计图和完整可迁移交互结果。两类 GenUI 的对照与分版本证据见[兼容边界](docs/GENUI.zh-CN.md)。
+本插件可与 GenUI 分工使用，不能完整替代通用应用生成、任意表单提交和复杂统计图。两类 GenUI 的对照与分版本证据见[兼容边界](docs/GENUI.zh-CN.md)。
 
 ## 语义边界
 

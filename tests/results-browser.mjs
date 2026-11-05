@@ -62,7 +62,7 @@ try{
    const actual=await exported(root,output+'/evidence/roundtrip-'+i+'.json');equivalent(actual.content,document.content);assert.equal(actual.manifest.sourceState,document.manifest.sourceState);
    const original=await library(),originalView=actual.content;
    if(i===0){
-    for(const bad of [{...document,sha256:'0'.repeat(64)},{...document,manifest:{...document.manifest,version:2}}]){
+    for(const bad of [{...document,sha256:'0'.repeat(64)},{...document,manifest:{...document.manifest,version:99}}]){
      await root.getByLabel(t('Import full result'),{exact:true}).setInputFiles({name:'broken.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(bad))});await expect(root.getByRole('status').filter({hasText:t('Result operation failed. Previous result is unchanged.')})).toBeVisible();assert.deepEqual(await library(),original);equivalent((await exported(root,output+'/evidence/after-refusal.json')).content,originalView);
     }
    }

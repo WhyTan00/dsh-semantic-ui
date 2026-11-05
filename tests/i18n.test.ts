@@ -19,3 +19,8 @@ it('localizes chart descriptions and headers while keeping exported values, unit
 it('formats existing deterministic summaries in Chinese without converting supplied labels or inventing known values',()=>{
  const before=JSON.stringify(chart);expect(localizedSummary(chart,'zh-CN')).toContain('个缺失');expect(localizedSummary(chart,'en')).toContain('Declared');expect(JSON.stringify(chart)).toBe(before);
 });
+
+import {LanguageSelector} from '../src/components/LanguageSelector';
+it('always labels the language selector in both Chinese and English',()=>{
+ for(const locale of ['zh-CN','en'] as const){const html=renderToStaticMarkup(createElement(LocaleContext.Provider,{value:locale},createElement(LanguageSelector)));expect(html).toContain('界面语言 / Language');expect(html).toContain('简体中文');expect(html).toContain('English');}
+});

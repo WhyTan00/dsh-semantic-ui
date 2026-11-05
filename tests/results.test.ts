@@ -12,7 +12,7 @@ describe('portable data-only results',()=>{
   c.view.payload.rows[0].values[c.view.payload.series[0].id]=null;c.interaction.from=1;c.interaction.scope='all';
   const result=await readResult(JSON.parse(JSON.stringify(await createResult(c))));
   expect(result.content).toEqual(c);expect(result.content.view).toEqual(c.view);
-  expect(result.manifest).toMatchObject({sourceState:'not-recorded',templateLibraryIncluded:false,version:1});
+  expect(result.manifest).toMatchObject({sourceState:'not-recorded',templateLibraryIncluded:false,version:2});
   expect(JSON.stringify(result)).toContain('null');
  });
  it('retains declared rules and a separate local unknown/false hypothesis',async()=>{
@@ -32,7 +32,7 @@ describe('portable data-only results',()=>{
  it('rejects damaged data, unsupported versions and instruction fields',async()=>{
   const original=await createResult(content());const changed=structuredClone(original);changed.content.view.summary='tampered';
   await expect(readResult(changed)).rejects.toThrow('RESULT_DIGEST');
-  await expect(readResult({...original,manifest:{...original.manifest,version:2}})).rejects.toThrow('RESULT_FORMAT');
+  await expect(readResult({...original,manifest:{...original.manifest,version:99}})).rejects.toThrow('RESULT_FORMAT');
   await expect(readResult({...original,instructions:'run tools'})).rejects.toThrow('RESULT_FORMAT');
  });
  it('rejects unknown selections even if a writer recomputes its checksum',async()=>{
