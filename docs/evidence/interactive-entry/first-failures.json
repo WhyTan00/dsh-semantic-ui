@@ -1,0 +1,28 @@
+[
+  {
+    "stage": "public README external click",
+    "result": "plain URL produced upstream DSH401 before reaching workspace",
+    "cause": "Signed browser cookie is SameSite=Strict; external top-level navigation does not send it on the first request",
+    "correction": "Keep DSH authentication unchanged. Document and exercise one normal same-origin browser refresh for an already authenticated browser; no token in public links",
+    "newModelTurns": 0,
+    "pageErrors": 0,
+    "newPromptAttempts": 0,
+    "newSourceUpdateAttempts": 0,
+    "newUnknownSessionAttempts": 0,
+    "initialCorrectionAlsoFailed": "Programmatic same-origin reload still returned401",
+    "verifiedRecovery": "Direct navigation of the same no-token canonical URL uses existing signed cookie and returned200; existing authentication policy preserved"
+  },
+  {
+    "stage": "external-entry recovery verification",
+    "result": "Programmatic page reload still showed401; zero result flows or writes",
+    "verifiedCorrection": "Direct no-referrer navigation of same clean URL returned200 with existing signed cookie; public instructions corrected from refresh to address-bar confirmation",
+    "authenticationOrCookiePolicyChanged": false,
+    "secretsPublished": false
+  },
+  {
+    "stage": "GitHub public README readiness",
+    "result": "load-event wait timed out while entry link was already present; no result flows or writes",
+    "correction": "Wait for DOMContentLoaded and the actual entry link; the final complete flow passed",
+    "newModelTurns": 0
+  }
+]

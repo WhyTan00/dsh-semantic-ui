@@ -1,0 +1,129 @@
+{
+  "entry": "http://127.0.0.1:3200/",
+  "label": "打开个人DSH交互视图（本机3200）",
+  "entrySourceCommit": "52dd5190b79a3edf109dda32e4845a2b4c187fec",
+  "mode": "existing personal DSH31 normal interactive UI; no Codex native embedding",
+  "softwareChanged": "project entry/skill/docs only; existing renderer and result bridge reused",
+  "projectSkill": {
+    "path": ".agents/skills/semantic-ui-view/SKILL.md",
+    "validation": "passed",
+    "scope": "personal repository only",
+    "chineseInterfaceMetadata": true,
+    "globalInstallationPerformed": false,
+    "automaticDiscoveryInCurrentAiRootVerified": false,
+    "explicitlyReachableFromProjectReadme": true
+  },
+  "normalConsumer": {
+    "actualSource": "public GitHub README link",
+    "authenticatedBrowserContext": true,
+    "externalStrictCookieChallengeObserved": true,
+    "programmaticReloadInsufficient": true,
+    "cleanAddressBarEquivalentDirectNavigationVerified": true,
+    "publicTokenOrCredential": false,
+    "userTerminalCommandRequired": false,
+    "twoDifferentUserSelectedPackages": true,
+    "normalFileChooserUsed": true,
+    "saveRefreshReopenAndContinue": true,
+    "cancelDamagedAndIncompatibleDoNotPolluteCurrentOrStoredResults": true,
+    "aAndSourcePreservedWithBAndInvalidDraft": true,
+    "unknownNullThemeLocalePreserved": true
+  },
+  "flows": [
+    {
+      "name": "multi-condition",
+      "input": "docs/evidence/scenarios/examples/pair.json",
+      "chosenThroughNormalFilePicker": true,
+      "originalSourceInitialAndA": 100,
+      "importedB": 220,
+      "appliedThenSavedB": 240,
+      "invalidDraftSavedAndReopened": "NaN",
+      "continuedB": 260,
+      "aRemainsReadOnly": true,
+      "sourceViewAndRecordUnchanged": true,
+      "localeChineseAndThemeRetained": true,
+      "unknownCellsRetained": true
+    },
+    {
+      "name": "capacity",
+      "input": "docs/evidence/codex-result-interop/examples/capacity-returned.json",
+      "chosenThroughNormalFilePicker": true,
+      "originalSourceInitialAndA": 80,
+      "importedB": 120,
+      "appliedThenSavedB": 150,
+      "invalidDraftSavedAndReopened": "NaN",
+      "continuedB": 180,
+      "aRemainsReadOnly": true,
+      "sourceViewAndRecordUnchanged": true,
+      "localeChineseAndThemeRetained": true,
+      "unknownCellsRetained": true
+    }
+  ],
+  "preservation": {
+    "historicalSessionsBefore": 93,
+    "historicalSessionsAfter": 93,
+    "allCompressedHistoryBytesAndMetadataUnchanged": true,
+    "unfinishedTurns": 0,
+    "pendingInbox": 0,
+    "unsettledJobs": 0,
+    "globalServicesChanged": false,
+    "personalServicePidUnchanged": 95289,
+    "profileConfigRawBytesUnchanged": true,
+    "modelAccountRoutingAndOtherPluginConfigurationUnchanged": true,
+    "onlyAutomaticCatalogCacheChangeAllowed": true,
+    "preexistingResultsPreserved": true,
+    "ownTemporaryCopiesRemoved": 4,
+    "remainingPreexistingResults": 0,
+    "resultRevisionMonotonic": 30,
+    "templatesComparedThroughNormalBridgeUnchanged": true
+  },
+  "runtime": {
+    "dshVersion": "0.1.0-preview.31",
+    "pid": 95289,
+    "port": 3200,
+    "newServersOrRestarts": 0,
+    "newMcpConnections": 0,
+    "newModelOrApiInferenceTurns": 0,
+    "newCodexThreads": 0,
+    "pageErrors": 0,
+    "promptAttempts": 0,
+    "sourceUpdateAttempts": 0,
+    "newUnknownSessionAttempts": 0
+  },
+  "reuseEvidence": [
+    "scenarios.json",
+    "codex-result-interop.json",
+    "codex-local-entry.json"
+  ],
+  "boundaries": {
+    "currentNativeCodexRichUiVerified": false,
+    "naturalSkillSelectionVerified": false,
+    "actualUserEdgeVisualAcceptance": false,
+    "unauthenticatedBrowserNeedsExistingDshAuthentication": true,
+    "phoneOrScreenReaderVerifiedThisRound": false,
+    "oldSixQuestions": {
+      "passed": 0,
+      "failed": 6,
+      "requests": 18
+    }
+  },
+  "receipts": [
+    "interactive-entry/adoption.json",
+    "interactive-entry/preservation.json",
+    "interactive-entry/auth-navigation.json",
+    "interactive-entry/first-failures.json"
+  ],
+  "screenshots": [
+    {
+      "path": "interactive-entry/multi-condition-interactive.png",
+      "bytes": 145303,
+      "sha256": "cd5c501d1e05ec4a3ef08315f0f78d1525bef12ec74c0efd8541e0738e2cf492",
+      "scope": "synthetic imported scenario panel only; no history or authentication content"
+    },
+    {
+      "path": "interactive-entry/capacity-interactive.png",
+      "bytes": 121127,
+      "sha256": "df6b968a5b273a14e1e7fe8e1cfd8bda039ca21a9e31b7edced33415068d0406",
+      "scope": "synthetic imported scenario panel only; no history or authentication content"
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "historicalSessionsBefore": 93,
+  "historicalSessionsAfter": 93,
+  "allCompressedHistoryBytesAndMetadataUnchanged": true,
+  "unfinishedTurns": 0,
+  "pendingInbox": 0,
+  "unsettledJobs": 0,
+  "globalServicesChanged": false,
+  "personalServicePidUnchanged": 95289,
+  "profileConfigRawBytesUnchanged": true,
+  "modelAccountRoutingAndOtherPluginConfigurationUnchanged": true,
+  "onlyAutomaticCatalogCacheChangeAllowed": true,
+  "preexistingResultsPreserved": true,
+  "ownTemporaryCopiesRemoved": 4,
+  "remainingPreexistingResults": 0,
+  "resultRevisionMonotonic": 30,
+  "templatesComparedThroughNormalBridgeUnchanged": true
+}

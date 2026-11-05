@@ -1,3 +1,7 @@
+# 免命令交互入口 · 现有个人DSH采用
+
+新增[可点击正常入口](INTERACTIVE-ENTRY.zh-CN.md)与仓库级semantic-ui-view技能，用户用现有DSH选择结果文件、改条件和保存重开，0终端命令。已从公开README实际点击，经已登录浏览器的无token直接导航，完成多条件A100/B220→保存B240/NaN→刷新继续260、容量A80/B120→保存B150/NaN→刷新继续180；只读A、源、unknown/主题/中文保留，坏包/不兼容/取消不污染。93历史字节/metadata、模板/原私有结果及配置原字节保留，清理本轮4副本，pageerror0，见[接受与首次失败](evidence/interactive-entry.json)。外链受DSH SameSite=Strict认证约束，程序刷新不等于有效恢复，已验证地址栏确认同一无token URL可进入；不公开启动token或改认证。0新MCP/服务/模型/线程，不改或重发31/31.1。当前主聊天自然技能选择、Codex原生富UI及用户Edge视觉仍未验，原六题0/6/18不变。
+
 # 项目内本地入口修订1 · 无新MCP采用
 
 [正常源码命令](CODEX-LOCAL-ENTRY.zh-CN.md)已由原个人业务会话通过shell实际运行：`node --import tsx scripts/result-local.ts`直接复用31.1同一checkResultPackage/readResult/来源快照核心，固定源容量包checked，A/B与unknown示例缺源checked-unverified，--require-source缺源非零拒绝。中文有限说明、结构化来源/本地差异、原document与草稿/语言主题保留。类型及15个新入口正反例通过，进程守卫网络/子进程尝试均0，导入图不含MCP；见[采用回执](evidence/codex-local-entry.json)。0新增MCP/模型/线程/服务，不改全局配置；未访问个人DSH运行历史/模板/私有结果，31/31.1既有发行与3200沿用，不重跑旧矩阵/发行/中文化QA。主聊天自然工具选择/富UI仍未验，原六题0/6/18不变。

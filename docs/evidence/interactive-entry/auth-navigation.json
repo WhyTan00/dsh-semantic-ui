@@ -1,0 +1,9 @@
+{
+  "seedStatus": 200,
+  "existingStrictCookiePresent": true,
+  "externalClickChallenged": true,
+  "directNoReferrerNavigationStatus": 200,
+  "directShowsAuthenticationRequired": false,
+  "directHasApplication": true,
+  "cookieOrTokenValuesEmitted": false
+}
