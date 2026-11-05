@@ -43,11 +43,11 @@ it('rejects extra/missing field IDs and bounded non-data shapes',()=>{
  draft.fields.extra={mode:'value',text:'1'};expect(()=>assertConditionDraft(p,draft)).toThrow('CONDITION_FIELDS');
  const next=makeConditionDraft(p,initial());next.fields.demand.text='x'.repeat(81);expect(()=>assertConditionDraft(p,next)).toThrow();
 });
-it('carries an invalid raw draft in format 2 while keeping the applied values separate and refusing a mislabeled v1',async()=>{
+it('carries an invalid raw draft in the current result format while keeping the applied values separate and refusing a mislabeled v1',async()=>{
  const c:ResultContent={view:structuredClone(localConditions),theme:defaultTheme,layout:defaultLayout,locale:'zh-CN',interaction:initialInteraction(localConditions)};
  if(c.interaction.component!=='DecisionExplorer')throw Error('fixture');
  c.interaction.conditionDraft=makeConditionDraft(p,c.interaction.values);c.interaction.conditionDraft.fields.demand.text='NaN';
- const result=await createResult(c);expect(result.manifest.version).toBe(2);expect((await readResult(JSON.parse(JSON.stringify(result)))).content).toEqual(c);expect(c.interaction.values.demand).toBe(100);
+ const result=await createResult(c);expect(result.manifest.version).toBe(3);expect((await readResult(JSON.parse(JSON.stringify(result)))).content).toEqual(c);expect(c.interaction.values.demand).toBe(100);
  result.manifest.version=1;result.sha256=await resultDigest({manifest:result.manifest,content:result.content});await expect(readResult(result)).rejects.toThrow('RESULT_FORMAT');
 });
 it('reads the published preview.28 format 1 bytes without requiring migration or writing them',async()=>{

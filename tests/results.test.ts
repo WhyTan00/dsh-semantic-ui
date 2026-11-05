@@ -12,7 +12,7 @@ describe('portable data-only results',()=>{
   c.view.payload.rows[0].values[c.view.payload.series[0].id]=null;c.interaction.from=1;c.interaction.scope='all';
   const result=await readResult(JSON.parse(JSON.stringify(await createResult(c))));
   expect(result.content).toEqual(c);expect(result.content.view).toEqual(c.view);
-  expect(result.manifest).toMatchObject({sourceState:'not-recorded',templateLibraryIncluded:false,version:2});
+  expect(result.manifest).toMatchObject({sourceState:'not-recorded',templateLibraryIncluded:false,version:3});
   expect(JSON.stringify(result)).toContain('null');
  });
  it('retains declared rules and a separate local unknown/false hypothesis',async()=>{

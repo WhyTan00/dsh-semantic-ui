@@ -1,11 +1,14 @@
 # DSH Semantic UI
 
+Preview.31 adds [two local what-if scenarios](docs/WHAT-IF.zh-CN.md): retain read-only A, edit B using the existing form, compare both with the same deterministic core, then save/reopen or carry the pair. New result format 3 reads previous formats 1 and 2.
+
+
 Preview.30 keeps a bilingual language selector visible, defaults to Simplified Chinese and preserves the reader's language preference when opening saved results. The new [local condition form](docs/LOCAL-CONDITIONS.zh-CN.md) validates several fields, previews differences before applying, and saves portable drafts. New exports use result format 2; format 1 from preview.28 remains readable.
 
 
 [简体中文](README.md) · English
 
-**[Preview.28](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)** adds portable result packages that preserve component data, local hypotheses and selections, historical source status, appearance and locale. Import and explicitly reopen them in a compatible personal DSH profile; templates remain separate. See [result packages](docs/RESULT-PACKAGE.zh-CN.md).
+**[Preview.28](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28)** adds portable result packages that preserve component data, local hypotheses and selections, historical source status, appearance and locale. Import and explicitly reopen them in a compatible personal DSH profile; templates remain separate. See [result packages](docs/RESULT-PACKAGE.zh-CN.md).
 
 **[Preview.27](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.27)** fixes zero-fill hypotheses in nonempty all-missing chart ranges, including locally filtered slices. The explicit hypothetical mean and sum are 0; original observations, real complete values and differences from unavailable observations stay unknown. Empty ranges and overflow remain unknown, and downloads retain null. 39 targeted checks and final 396-file macOS/Linux Native/PTC installation passed. See the [chart behavior](docs/ZERO-FILL-CHART.zh-CN.md) and [layered receipt](docs/evidence/zero-fill-chart.json). Chinese defaults and language persistence continue from preview.26; no new model results or old natural-case upgrades are claimed.
 

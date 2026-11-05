@@ -2,6 +2,8 @@ import{publicDocumentation,privatePackagePath}from'./public-files.mjs';
 import{execFileSync}from'node:child_process';import{readFile,writeFile,mkdir,cp,rm}from'node:fs/promises';import{resolve}from'node:path';import{createHash}from'node:crypto';
 const p=JSON.parse(await readFile('package.json','utf8'));const releaseDir=resolve('artifacts/releases',p.version);
 const sourceCommit=execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+// Concrete install examples must select the version being frozen.
+for(const file of ['README.md','docs/INSTALL.zh-CN.md']){const text=await readFile(file,'utf8'),versions=[...text.matchAll(/^dsh plugin --profile web add .*whytan-dsh-semantic-ui-([^\s]+)\.tgz/gm)].map(match=>match[1]);if(!versions.length||versions.some(version=>version!==p.version))throw Error('Install example/version mismatch: '+file);}
 if(execFileSync('git',['status','--porcelain=v1'],{encoding:'utf8'}).trim())throw Error('Freeze a clean source commit before packaging');
 async function existing(file){try{return await readFile(file);}catch(error){if(error.code==='ENOENT')return;throw error;}}
 const priorManifest=await existing(resolve(releaseDir,'package-manifest.json'));

@@ -1,6 +1,6 @@
 # 安装、隔离验证和回退
 
-当前新增[preview.30](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)支持[中文多条件草稿表单](LOCAL-CONDITIONS.zh-CN.md)，逐项校验、预览后应用、保存重开和跨环境继续；顶部「界面语言 / Language」默认中文并记忆选择，打开历史结果不覆盖当前语言。新导出结果格式2，可读旧preview.28格式1。最终404文件包的正常安装、定向Native/PTC/Linux、公开下载及个人入口采用通过，[接受记录](evidence/local-conditions.json)另存仓库。28完整结果、27全缺失假设和26中文记忆沿用已有分层证据，不重跑旧矩阵。
+当前新增[preview.31](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)支持[双方案本地假设对照](WHAT-IF.zh-CN.md)：保留只读A、在B编辑，用同一核心并排核对条件/结果/未知，保存或携带后继续。新结果格式3可读28格式1和30格式2，接收格式3需升级。30中文默认、语言记忆与条件表单沿用已有接受；最终不可变31归档及新增路径、公开下载/个人采用的接受记录在冻结后单列，不重跑旧矩阵。
 
 历史已核版本[preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，317文件归档已在本机/Linux定向安装验收，四份资产匿名回验一致；[新证据](evidence/source-update.json)随仓库单列。18候选因真实安装失败未发行。
 
@@ -23,12 +23,12 @@ shasum -a 256 -c SHA256SUMS
 sha256sum -c SHA256SUMS
 
 dsh --version
-dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.30.tgz
+dsh plugin --profile web add /absolute/path/to/whytan-dsh-semantic-ui-0.1.0-preview.31.tgz
 ```
 
 `dsh plugin` 安装包并组合公开 bundle patch；普通 `npm install` 本身不等于插件已启用。首次安装后重启所选 profile，刷新 DSH 页面，检查插件列表。不要在已有生产/共享实例中进行本项目验收。
 
-运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.30.tgz`。本版归档的后补接受另存仓库；preview.28完整结果的既有接受见[历史回执](evidence/result-package.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
+运行包包含简要验证说明和证据索引；冻结源码前的历史输入/结果与截图位于独立的 `whytan-dsh-semantic-ui-evidence-0.1.0-preview.31.tgz`。本版归档的后补接受另存仓库；preview.28完整结果的既有接受见[历史回执](evidence/result-package.json)及子目录，不回灌或重打不可变包。`package-manifest.json` 分别记录运行包和证据包的 SHA-256、大小及文件清单/数量，首次失败始终保留。
 
 自然使用需要这个 profile 中已有可用的个人模型渠道，可通过 **Settings → Models** 管理。既有 WorkBuddy 等连接器可正常复用用户已授权的个人登录；没有官方 DeepSeek API Key 不代表其他模型渠道未授权。插件不包含模型密钥、不导入其他工具凭据、不读取其他项目配置。已有服务的 401 只说明该请求未通过浏览器认证，不能证明模型不可用。
 
@@ -54,7 +54,7 @@ pnpm exec dsh plugin --profile web add /absolute/path/to/release.tgz
 
 只停用新生成而保留历史：将此插件行配置设为 `generation: false`。工具、系统指引和 Skill 不再注册；同包 client 继续注册历史聊天节点。重启所选 profile、刷新页面后核对。恢复为 true 或移除此选项以重新启用。
 
-格式2的草稿结果不被preview.28读取。回退前需导出/保护新格式结果，并保留升级前私人结果库备份；不得把旧库直接覆盖到有新结果的当前环境。
+格式3的双方案结果需要preview.31或兼容版本；preview.30只读取格式1/2。格式2的草稿结果不被preview.28读取。回退前需导出/保护新格式结果，并保留升级前私人结果库备份；不得把旧库直接覆盖到有新结果的当前环境。
 
 回退：先保存 profile 的 patch/package 元数据和 DSH 自有会话备份，再用 `dsh plugin --profile web add /absolute/path/to/previous.tgz` 恢复兼容包。协议不支持时显示可读错误，不迁移或改写旧消息。不对 0.1.x 宣称兼容。
 
