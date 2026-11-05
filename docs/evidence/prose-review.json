@@ -2,7 +2,7 @@
   "schema": "dsh-semantic-prose-review-acceptance-v1",
   "clientRevision": "0.1.0-preview.31-prose.1",
   "hostBaseVersion": "0.1.0-preview.31",
-  "sourceStatus": "new source code and client-only adoption; release identity to be appended after freeze",
+  "sourceStatus": "source committed, public prerelease frozen, normal personal DSH final client bytes and anonymous downloads verified",
   "scope": "finite Chinese decision/observations assertions and plugin-owned grounded explanation path",
   "checks": {
     "typecheck": "passed",
@@ -83,5 +83,41 @@
     "actualUserEdgeVisualAcceptance": false,
     "physicalMobileAcceptance": false
   },
-  "retainedDevelopmentFailure": "Initial unit test exposed vendor actor chosen instead of resource actor; corrected by existing input-coordinate mapping and added regression. First logs retained privately."
+  "retainedDevelopmentFailure": "Initial unit test exposed vendor actor chosen instead of resource actor; corrected by existing input-coordinate mapping and added regression. First logs retained privately.",
+  "release": {
+    "releaseId": 435805114,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.1",
+    "tag": "client-v0.1.0-preview.31-prose.1",
+    "assets": [
+      {
+        "name": "client-manifest.json",
+        "bytes": 1477,
+        "sha256": "fe6d0723502c972fab5ebe7b5ff9b416d58801e986baec2b7ee6e04f487fdeab",
+        "publicFullGetMatchesLocal": true,
+        "githubDigestMatches": true
+      },
+      {
+        "name": "dsh-semantic-ui-client-0.1.0-preview.31-prose.1.zip",
+        "bytes": 796933,
+        "sha256": "041ad9c1bfcd549e07658fbd348cfd69dace1149d83b27e28f8284d9708feb85",
+        "publicFullGetMatchesLocal": true,
+        "githubDigestMatches": true
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 118,
+        "sha256": "2174350d5bcfbe1958f5c3ce4f82389905c47ad086debe86c3d8382144f23070",
+        "publicFullGetMatchesLocal": true,
+        "githubDigestMatches": true
+      }
+    ],
+    "authenticatedDownload": false,
+    "sourceCommit": "5ee7ff689248e6c20d2e0664b94835f271731d9a",
+    "fileCount": 226,
+    "archiveBytes": 796933,
+    "installedClientMatchesFinalArchive": true,
+    "newRemoteWorkflowDispatches": 0,
+    "githubActionsRunsForSourceCommit": 0,
+    "linuxOrPtcAcceptanceAdded": false
+  }
 }

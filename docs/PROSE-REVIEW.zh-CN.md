@@ -1,5 +1,7 @@
 # 说明正文与来源核对
 
+[下载客户端增量与校验和](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.1) · [完整原31宿主包](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)
+
 在已有 DSH 语义消息中展开 **“核对说明与来源”**，填写完整来源与候选说明，点击 **“核对并生成有据说明”**。也可以直接选择包含这两段文字的 JSON 文件：默认读取 `/question` 与 `/finalAnswer`，支持修改位置。无需运行命令、调用模型或预选固定结果包。
 
 界面默认中文，沿用组件顶部的 **“界面语言 / Language”**；切换不改输入，刷新记住界面语言。原文、单位和来源生成的中文说明不被静默翻译。本功能只在浏览器内计算，不自动保存或上传文字；导出记录会包含你的来源和候选原文。
