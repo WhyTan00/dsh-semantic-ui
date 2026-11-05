@@ -18,10 +18,12 @@ export function applyClientOverlay(bundleDirectory,profileDirectory,rollbackDire
  for(const [path,expected]of Object.entries(manifest.baseRuntimeEntrypoints)){assert(['dist/host.js','dist/core.js','dist/mcp.js','dist/protocol.js'].includes(path));assert.equal(sha(readFileSync(join(pkg,path))),expected,'Base runtime differs: '+path);}
  const backup=rollbackDirectory?realpathSync(rollbackDirectory):join(profile,'.semantic-ui-client-backups',manifest.clientRevision+'-'+randomUUID());
  if(rollbackDirectory)assert(inside(join(profile,'.semantic-ui-client-backups'),backup),'Rollback backup must belong to this profile.');
+ const approved=[manifest.baseClient,...(manifest.previousClients??[]).map(previous=>previous.files)];
+ const baseClient=approved.find(files=>names.every(name=>sha(readFileSync(join(rollbackDirectory?backup:join(pkg,'dist'),name)))===files[name]))??manifest.baseClient;
  const rows=names.map(name=>{
   const file=manifest.files.find(f=>f.path===name);assert(file,'Manifest file missing.');
   const target=join(pkg,'dist',name);assert(inside(pkg,realpathSync(target)),'Asset points outside installed package.');
-  const expected=rollbackDirectory?file.sha256:manifest.baseClient[name],replacement=rollbackDirectory?manifest.baseClient[name]:file.sha256;
+  const expected=rollbackDirectory?file.sha256:baseClient[name],replacement=rollbackDirectory?baseClient[name]:file.sha256;
   const bytes=readFileSync(join(rollbackDirectory?backup:bundle,name));assert.equal(sha(bytes),replacement,'Replacement digest mismatch.');
   return {name,target,expected,replacement,bytes,current:readFileSync(target)};
  });

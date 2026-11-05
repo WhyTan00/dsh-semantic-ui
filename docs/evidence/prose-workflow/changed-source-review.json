@@ -1,0 +1,151 @@
+{
+  "format": "dsh-semantic-prose-review",
+  "version": 1,
+  "sourceText": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试支付，不回滚支付。通知出错与库存出错分别会影响哪里？",
+  "candidate": "通知失败时。此时仅重试通知。此分支不回滚支付。",
+  "report": {
+    "version": 1,
+    "status": "reviewed",
+    "sourceTextSha256": "061fb2ef23b7bcf2c49bbd6ae45d6d820be2bee7dec4dde60d52b07eac6270f9",
+    "candidateSha256": "a3ed755f214375bd0e8d4fccb85e9f5f52eabad4d6aad0634095d664ae582e8b",
+    "originalCandidate": "通知失败时。此时仅重试通知。此分支不回滚支付。",
+    "claims": [
+      {
+        "kind": "workflow-retry-scope",
+        "quote": "此时仅重试通知。",
+        "extractedText": "此时仅重试通知。",
+        "candidateSpan": {
+          "utf16Start": 6,
+          "utf16End": 14
+        },
+        "status": "contradicted",
+        "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+        "correction": "当通知失败时，仅重试支付；此失败分支不回滚支付。不把此规则扩为其他分支或全局保证。",
+        "evidence": [
+          {
+            "sourceTextSha256": "061fb2ef23b7bcf2c49bbd6ae45d6d820be2bee7dec4dde60d52b07eac6270f9",
+            "path": "source.failurePolicies.0",
+            "spans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ],
+            "value": {
+              "trigger": "通知",
+              "retryOnly": [
+                "支付"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            },
+            "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "通知",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 6
+            },
+            "text": "通知失败时。"
+          },
+          "action": "retry-only",
+          "targets": [
+            "通知"
+          ],
+          "negated": false
+        }
+      },
+      {
+        "kind": "workflow-rollback-scope",
+        "quote": "此分支不回滚支付。",
+        "extractedText": "此分支不回滚支付。",
+        "candidateSpan": {
+          "utf16Start": 14,
+          "utf16End": 23
+        },
+        "status": "supported",
+        "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+        "correction": "当通知失败时，仅重试支付；此失败分支不回滚支付。不把此规则扩为其他分支或全局保证。",
+        "evidence": [
+          {
+            "sourceTextSha256": "061fb2ef23b7bcf2c49bbd6ae45d6d820be2bee7dec4dde60d52b07eac6270f9",
+            "path": "source.failurePolicies.0",
+            "spans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ],
+            "value": {
+              "trigger": "通知",
+              "retryOnly": [
+                "支付"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            },
+            "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "通知",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 6
+            },
+            "text": "通知失败时。"
+          },
+          "action": "rollback",
+          "targets": [
+            "支付"
+          ],
+          "negated": true
+        }
+      }
+    ],
+    "uncovered": [
+      {
+        "text": "通知失败时。",
+        "utf16Start": 0,
+        "utf16End": 6,
+        "reason": "未进入有限工作流正文合同；没有据拓扑推断因果或执行。"
+      }
+    ],
+    "groundedText": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试支付；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\n候选中以下说法已被排除或限定：\n当通知失败时，仅重试支付；此失败分支不回滚支付。不把此规则扩为其他分支或全局保证。",
+    "sourceExplanation": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试支付；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+    "coverage": "finite-chinese-assertions-only",
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "newModelCalls": 0,
+    "sourceKind": "workflow-zh"
+  }
+}

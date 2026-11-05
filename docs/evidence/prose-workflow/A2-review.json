@@ -1,0 +1,579 @@
+{
+  "format": "dsh-semantic-prose-review",
+  "version": 1,
+  "sourceText": "虚构订单流程为入口→鉴权→库存→支付，支付→通知；通知失败只重试通知，不回滚支付。通知出错与库存出错分别会影响哪里？",
+  "candidate": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。**\n\n- **通知出错**：影响只到“支付到通知”这段。按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。\n- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。\n\n另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。细节可看上面那张图，切换场景即可对比。",
+  "report": {
+    "version": 1,
+    "status": "reviewed",
+    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+    "candidateSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+    "originalCandidate": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。**\n\n- **通知出错**：影响只到“支付到通知”这段。按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。\n- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。\n\n另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。细节可看上面那张图，切换场景即可对比。",
+    "claims": [
+      {
+        "kind": "workflow-execution-causality",
+        "quote": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。",
+        "extractedText": "两个出错点的影响范围不同",
+        "candidateSpan": {
+          "utf16Start": 0,
+          "utf16End": 29
+        },
+        "status": "unsupported",
+        "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+        "correction": "只保留声明的正向连接；实际执行、传播方向与故障影响范围未建立。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.relations",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ],
+            "value": [
+              [
+                "入口",
+                "鉴权"
+              ],
+              [
+                "鉴权",
+                "库存"
+              ],
+              [
+                "库存",
+                "支付"
+              ],
+              [
+                "支付",
+                "通知"
+              ]
+            ],
+            "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+          },
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.absent",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 174
+              }
+            ],
+            "value": null,
+            "scope": "完整来源未声明此分支策略；未知不等于否"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "event": "ambiguous",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 29
+            },
+            "text": "两个出错点的影响范围不同"
+          },
+          "withheld": false
+        }
+      },
+      {
+        "kind": "workflow-execution-causality",
+        "quote": "- **通知出错**：影响只到“支付到通知”这段。",
+        "extractedText": "通知出错：影响只到“支付到通知”这段。",
+        "candidateSpan": {
+          "utf16Start": 33,
+          "utf16End": 58
+        },
+        "status": "unsupported",
+        "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+        "correction": "只保留声明的正向连接；实际执行、传播方向与故障影响范围未建立。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.relations",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ],
+            "value": [
+              [
+                "入口",
+                "鉴权"
+              ],
+              [
+                "鉴权",
+                "库存"
+              ],
+              [
+                "库存",
+                "支付"
+              ],
+              [
+                "支付",
+                "通知"
+              ]
+            ],
+            "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+          },
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.0",
+            "spans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ],
+            "value": {
+              "trigger": "通知",
+              "retryOnly": [
+                "通知"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            },
+            "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "通知",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 33,
+              "utf16End": 58
+            },
+            "text": "通知出错：影响只到“支付到通知”这段。"
+          },
+          "withheld": false
+        }
+      },
+      {
+        "kind": "workflow-retry-scope",
+        "quote": "按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。",
+        "extractedText": "通知失败只重试通知、不回滚支付",
+        "candidateSpan": {
+          "utf16Start": 58,
+          "utf16End": 96
+        },
+        "status": "supported",
+        "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+        "correction": "当通知失败时，仅重试通知；此失败分支不回滚支付。不把此规则扩为其他分支或全局保证。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.0",
+            "spans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ],
+            "value": {
+              "trigger": "通知",
+              "retryOnly": [
+                "通知"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            },
+            "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "通知",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 58,
+              "utf16End": 96
+            },
+            "text": "通知失败只重试通知、不回滚支付"
+          },
+          "action": "retry-only",
+          "targets": [
+            "通知"
+          ],
+          "negated": false
+        }
+      },
+      {
+        "kind": "workflow-rollback-scope",
+        "quote": "按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。",
+        "extractedText": "通知失败只重试通知、不回滚支付",
+        "candidateSpan": {
+          "utf16Start": 58,
+          "utf16End": 96
+        },
+        "status": "supported",
+        "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+        "correction": "当通知失败时，仅重试通知；此失败分支不回滚支付。不把此规则扩为其他分支或全局保证。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.0",
+            "spans": [
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 75,
+                "textByteEnd": 102
+              },
+              {
+                "textByteStart": 105,
+                "textByteEnd": 120
+              }
+            ],
+            "value": {
+              "trigger": "通知",
+              "retryOnly": [
+                "通知"
+              ],
+              "noRollback": [
+                "支付"
+              ]
+            },
+            "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "通知",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 58,
+              "utf16End": 96
+            },
+            "text": "通知失败只重试通知、不回滚支付"
+          },
+          "action": "rollback",
+          "targets": [
+            "支付"
+          ],
+          "negated": true
+        }
+      },
+      {
+        "kind": "workflow-terminal-topology",
+        "quote": "按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。",
+        "extractedText": "通知又是末端节点",
+        "candidateSpan": {
+          "utf16Start": 58,
+          "utf16End": 96
+        },
+        "status": "supported",
+        "reason": "仅核对声明图的出边及明确极性，不把末端节点变成故障传播保证。",
+        "correction": "通知在声明图中没有下游。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.relations",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ],
+            "value": [
+              [
+                "入口",
+                "鉴权"
+              ],
+              [
+                "鉴权",
+                "库存"
+              ],
+              [
+                "库存",
+                "支付"
+              ],
+              [
+                "支付",
+                "通知"
+              ]
+            ],
+            "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+          }
+        ],
+        "actual": {
+          "node": "通知",
+          "outgoing": []
+        }
+      },
+      {
+        "kind": "workflow-execution-causality",
+        "quote": "- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。",
+        "extractedText": "所以支付和通知都无法到达",
+        "candidateSpan": {
+          "utf16Start": 97,
+          "utf16End": 163
+        },
+        "status": "unsupported",
+        "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+        "correction": "只保留声明的正向连接；实际执行、传播方向与故障影响范围未建立。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.relations",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ],
+            "value": [
+              [
+                "入口",
+                "鉴权"
+              ],
+              [
+                "鉴权",
+                "库存"
+              ],
+              [
+                "库存",
+                "支付"
+              ],
+              [
+                "支付",
+                "通知"
+              ]
+            ],
+            "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+          },
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.absent",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 174
+              }
+            ],
+            "value": null,
+            "scope": "完整来源未声明此分支策略；未知不等于否"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "库存",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 97,
+              "utf16End": 163
+            },
+            "text": "库存出错：位置在支付之前"
+          },
+          "withheld": false
+        }
+      },
+      {
+        "kind": "workflow-execution-causality",
+        "quote": "另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。",
+        "extractedText": "方向相反：一个是通知阻碍回传",
+        "candidateSpan": {
+          "utf16Start": 165,
+          "utf16End": 213
+        },
+        "status": "unsupported",
+        "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+        "correction": "只保留声明的正向连接；实际执行、传播方向与故障影响范围未建立。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.relations",
+            "spans": [
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 21,
+                "textByteEnd": 54
+              },
+              {
+                "textByteStart": 57,
+                "textByteEnd": 72
+              }
+            ],
+            "value": [
+              [
+                "入口",
+                "鉴权"
+              ],
+              [
+                "鉴权",
+                "库存"
+              ],
+              [
+                "库存",
+                "支付"
+              ],
+              [
+                "支付",
+                "通知"
+              ]
+            ],
+            "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+          },
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.absent",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 174
+              }
+            ],
+            "value": null,
+            "scope": "完整来源未声明此分支策略；未知不等于否"
+          }
+        ],
+        "actual": {
+          "condition": null,
+          "withheld": false
+        }
+      },
+      {
+        "kind": "workflow-compensation",
+        "quote": "库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。",
+        "extractedText": "库存出错后是否补偿、如何补偿",
+        "candidateSpan": {
+          "utf16Start": 213,
+          "utf16End": 243
+        },
+        "status": "supported",
+        "reason": "当前完整来源未提供补偿政策，不能从重试或不回滚推得。",
+        "correction": "库存失败分支是否补偿及如何补偿未声明。",
+        "evidence": [
+          {
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "path": "source.failurePolicies.absent",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 174
+              }
+            ],
+            "value": null,
+            "scope": "完整来源未声明此分支策略；未知不等于否"
+          }
+        ],
+        "actual": {
+          "condition": {
+            "trigger": "库存",
+            "event": "failure",
+            "necessary": false,
+            "global": false,
+            "candidateSpan": {
+              "utf16Start": 213,
+              "utf16End": 243
+            },
+            "text": "库存出错后是否补偿、如何补偿"
+          },
+          "withheld": true
+        }
+      }
+    ],
+    "uncovered": [
+      {
+        "text": "细节可看上面那张图，切换场景即可对比。",
+        "utf16Start": 243,
+        "utf16End": 262,
+        "reason": "未进入有限工作流正文合同；没有据拓扑推断因果或执行。"
+      }
+    ],
+    "groundedText": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\n候选中以下说法已被排除或限定：\n只保留声明的正向连接；实际执行、传播方向与故障影响范围未建立。",
+    "sourceExplanation": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+    "coverage": "finite-chinese-assertions-only",
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "newModelCalls": 0,
+    "sourceKind": "workflow-zh"
+  }
+}

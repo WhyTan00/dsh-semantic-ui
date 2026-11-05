@@ -1,5 +1,7 @@
 # DSH Semantic UI
 
+The `preview.31-prose.2` overlay adds [finite workflow prose checks](docs/PROSE-WORKFLOW.zh-CN.md): conditional failure branches, retry/rollback targets and scope, negation and passive wording. Unresolved new antecedents invalidate the previous branch. This reuses the existing workflow checker and panel; it does not infer runtime causality or certify an entire answer.
+
 The `preview.31-prose.1` client overlay adds a [local source-and-prose review panel](docs/PROSE-REVIEW.zh-CN.md), with Chinese as the default and a persistent Chinese/English selector. It checks bounded Chinese decision/observation assertions, preserves unsupported and uncovered text, and creates a source-grounded explanation. Source edits invalidate old verdicts; loading an exported review recalculates it. It does not certify an entire assistant answer or replace the preview.31 host.
 
 Preview.31 adds [two local what-if scenarios](docs/WHAT-IF.zh-CN.md): retain read-only A, edit B using the existing form, compare both with the same deterministic core, then save/reopen or carry the pair. New result format 3 reads previous formats 1 and 2.

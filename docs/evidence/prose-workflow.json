@@ -1,0 +1,93 @@
+{
+  "schema": "dsh-semantic-workflow-prose-acceptance-v1",
+  "clientRevision": "0.1.0-preview.31-prose.2",
+  "baseHost": "0.1.0-preview.31",
+  "implementation": [
+    "src/prose-workflow.ts",
+    "src/prose.ts"
+  ],
+  "existingCoreReused": "checkSourceWorkflow, parseWorkflowSource, explainWorkflow and source-reference constructor",
+  "actualNewCapability": "finite workflow failure-branch conditions, cross-sentence binding, action targets/scope and polarity; source-grounded revision in normal existing panel",
+  "checks": {
+    "typecheck": "passed",
+    "focusedTestsIncludingExistingCoreRegression": 67,
+    "overlaySafetyUpgradeRollbackTests": 4,
+    "normalDshFlows": [
+      {
+        "case": "actual-A2-first-failed-body",
+        "sourceAndVerbatimCandidateLoadedNormally": true,
+        "localRetryAndNoRollbackSupported": true,
+        "executionAndReversePropagationUnsupported": true,
+        "sourcePointersAndCorrectionsVisible": true,
+        "wholeCandidateVerified": false
+      },
+      {
+        "case": "cross-sentence-source-change",
+        "linkedConditionResolves": true,
+        "oldVerdictCleared": true,
+        "sameCandidateFlipsWhenRetryTargetChanges": true,
+        "oldExportUnchanged": true
+      },
+      {
+        "case": "action-target-and-local-vs-global",
+        "wholeFlowRetryContradicted": true,
+        "passivePaymentRollbackContradicted": true,
+        "undeclaredInventoryCompensationUnsupported": true,
+        "oldReviewRecomputedAgainstOwnSource": true
+      },
+      {
+        "case": "unresolved-new-antecedent",
+        "priorNotificationFailureNotReused": true
+      }
+    ],
+    "pageErrors": []
+  },
+  "originalCandidateReview": "prose-workflow/A2-review.json",
+  "sourceRevisionReview": "prose-workflow/changed-source-review.json",
+  "wrongScopeReview": "prose-workflow/wrong-scope-review.json",
+  "retainedFailure": {
+    "counterexamples": "unresolved new failure, load condition, success antecedent reused previous branch",
+    "firstDevelopmentFailures": 3,
+    "fixed": "unresolved/new conditional antecedent invalidates old branch; unrelated uncovered topic ends previous context",
+    "naturalModelFailureReclassified": false
+  },
+  "installedClientFiles": [
+    {
+      "name": "client.js.LEGAL.txt",
+      "oldSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7",
+      "newSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7"
+    },
+    {
+      "name": "client.js",
+      "oldSha256": "1d2034bc22e6303ea62454dd76aa8cd18d7e9044f802cf9c5bab0f419d9cb75e",
+      "newSha256": "b128a333b92e4dac6b0808055e5976f34e275a706977446c3bfa4b8c0730956d"
+    }
+  ],
+  "preservation": {
+    "historyCount": 93,
+    "sameStoredCompressedHashes": true,
+    "noHistoryReparseOrReplay": true,
+    "rawConfigUnchanged": true,
+    "privateResultsUnchanged": true,
+    "templatesUnchanged": true,
+    "healthyHostRestarted": false,
+    "servicePidUnchanged": 95289
+  },
+  "reusedExistingEvidence": "prose.1 language, entry, download and CI evidence; no old matrices rerun",
+  "newModelCalls": 0,
+  "newMcpConnections": 0,
+  "newServices": 0,
+  "newRemoteCiDispatches": 0,
+  "originalNaturalResults": "0 pass / 6 fail / 18 requests; unchanged",
+  "boundaries": {
+    "wholeAnswerCertified": false,
+    "worldFactsVerified": false,
+    "identityVerified": false,
+    "runtimeCausalityInferred": false,
+    "externalAssistantOrGenuiBodyIntercepted": false,
+    "newLinuxPtcOrUserEdgeVisualAcceptance": false,
+    "nativeCodexRichUiAcceptance": false,
+    "physicalMobileAcceptance": false
+  },
+  "releaseStatus": "source and final normal-UI differences accepted; new client archive to be frozen from committed source"
+}

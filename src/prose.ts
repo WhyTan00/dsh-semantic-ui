@@ -2,6 +2,8 @@ import * as core from './core';
 import {sourceReferenceFromSnapshot} from './source-reference.mjs';
 import {decide,numericStats} from './math';
 import {countValue} from './source-numeric';
+import {workflowProseClaims} from './prose-workflow';
+import type {WorkflowSource} from './source-workflow';
 import type {SourceSnapshot,SourceSpan} from './source-graph';
 import type {DecisionSource,DecisionSourceFact} from './source-decision';
 import type {Decision} from './protocol';
@@ -16,7 +18,7 @@ const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 const normalize=(s:string)=>s.replace(/\*\*|`/g,'').replace(/[−–]/g,'-').replace(/\s+/g,' ').trim();
 const number='[+-]?(?:\\d+(?:\\.\\d*)?|\\.\\d+)';
 const empty=(sourceSha:string,candidateSha:string,candidate:string):ProseReview=>({version:1,status:'reviewed',sourceTextSha256:sourceSha,candidateSha256:candidateSha,originalCandidate:candidate,claims:[],uncovered:[],groundedText:'',sourceExplanation:'',coverage:'finite-chinese-assertions-only',wholeCandidateVerified:false,identityVerified:false,worldFactsVerified:false,newModelCalls:0});
-interface Segment{text:string;start:number;end:number;pointer?:string;quote?:string}
+export interface Segment{text:string;start:number;end:number;pointer?:string;quote?:string}
 /** Locations in already parsed JSON; retain original escaped tokens and repeated-value identity. */
 function jsonLocations(text:string){
  let i=0;const locations=new Map<string,{start:number;end:number}>(),space=()=>{while(/\s/u.test(text[i]??'')&&i<text.length)i++;};
@@ -54,10 +56,17 @@ export async function reviewProse(sourceText:string,candidate:string):Promise<Pr
  if(!sourceText.trim()||bytes(sourceText).length>16384||!candidate.trim()||bytes(candidate).length>24000){return {...report,status:'refused',reason:'来源或候选为空/超过有限输入限制，未进行部分批准。'};}
  const snapshot:SourceSnapshot={documentSha256:sourceSha,textSha256:sourceSha,excerptSha256:sourceSha,jsonPointer:null,excerpt:sourceText,textBytes:bytes(sourceText).length,textByteStart:0,textByteEnd:bytes(sourceText).length};
  const ref=sourceReferenceFromSnapshot(core,snapshot);
- if(ref.status!=='ready'||!['decision-zh','observations-zh'].includes(ref.kind)){return {...report,status:'source-unsupported',reason:'当前正文断言合同只支持完整的两方案条件来源与逐项读数来源；没有用现有图表替代来源。'};}
+ if(ref.status!=='ready'||!['decision-zh','observations-zh','workflow-zh'].includes(ref.kind)){return {...report,status:'source-unsupported',reason:'当前正文断言合同支持完整的有限工作流、两方案条件来源与逐项读数来源；没有用现有图表替代来源。'};}
  report.sourceKind=ref.kind;const canonical=ref.comparison.canonicalExplanation as {status?:string;text?:string};
  if(canonical?.status!=='available'||!canonical.text)return {...report,status:'refused',reason:'来源的完整有限说明不可用，没有补造正文。'};
  report.sourceExplanation=canonical.text;
+ if(ref.kind==='workflow-zh'){
+  const workflow=workflowProseClaims(ref.parsedSource as WorkflowSource,{...snapshot,kind:'workflow-zh'},candidate,segments(candidate));
+  if(workflow.refused)return {...report,status:'refused',reason:'工作流断言或未覆盖片段超过有限限制，未返回部分批准。'};
+  report.claims=workflow.claims;report.uncovered=workflow.uncovered;
+  const changes=workflow.claims.filter(c=>c.status==='contradicted'||c.status==='unsupported'||c.status==='unknown').map(c=>c.correction);
+  report.groundedText=[canonical.text,...(changes.length?['候选中以下说法已被排除或限定：',...new Set(changes)]:[])].join('\n');return report;
+ }
  const whole:ProseEvidence={sourceTextSha256:sourceSha,path:'complete-selected-source',spans:[{textByteStart:0,textByteEnd:bytes(sourceText).length}],scope:'完整有限来源；没有独立作者或现实事实认证'};
  const parsed=ref.parsedSource as DecisionSource;
  const factEvidence=(predicate:(f:DecisionSourceFact)=>boolean):ProseEvidence[]=>{const matches=(parsed.facts??[]).map((f,i)=>({f,i})).filter(x=>predicate(x.f));return matches.length?matches.map(({f,i})=>({sourceTextSha256:sourceSha,path:'source.facts.'+i,spans:f.spans,value:f.value,scope:f.kind})): [{...whole,path:'source.facts.absent',value:null,scope:'完整来源未声明，不能自动取反或补值'}];};

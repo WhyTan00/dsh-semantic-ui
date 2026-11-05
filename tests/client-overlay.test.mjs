@@ -21,3 +21,6 @@ test('refuses another installed revision before either client asset is changed',
 test('refuses a package symlink escaping the explicit personal profile',()=>{
  const f=fixture();try{const foreign=join(f.root,'other-profile-package');mkdirSync(foreign);const profile=join(f.root,'symlink-profile');mkdirSync(join(profile,'node_modules/@whytan'),{recursive:true});symlinkSync(foreign,join(profile,'node_modules/@whytan/dsh-semantic-ui'));assert.throws(()=>applyClientOverlay(f.bundle,profile),/physically inside/);}finally{rmSync(f.root,{recursive:true,force:true});}
 });
+test('upgrades an approved previous client and rolls back to that exact revision rather than the original base',()=>{
+ const f=fixture();try{const path=join(f.bundle,'client-manifest.json'),m=JSON.parse(readFileSync(path)),files={};for(const name of ['client.js','client.js.LEGAL.txt']){const bytes='previous overlay '+name;writeFileSync(join(f.pkg,'dist',name),bytes);files[name]=sha(bytes);}m.previousClients=[{clientRevision:'previous',files}];writeFileSync(path,JSON.stringify(m));const r=applyClientOverlay(f.bundle,f.profile);applyClientOverlay(f.bundle,f.profile,r.backupDirectory);assert.equal(readFileSync(join(f.pkg,'dist/client.js'),'utf8'),'previous overlay client.js');}finally{rmSync(f.root,{recursive:true,force:true});}
+});
