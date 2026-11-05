@@ -1,0 +1,5 @@
+{
+  "capacityDimensionId": "limit-fixture",
+  "demandInputId": "quantity-fixture",
+  "requirementId": "cover-fixture"
+}

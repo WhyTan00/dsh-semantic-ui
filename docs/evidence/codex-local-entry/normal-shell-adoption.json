@@ -1,0 +1,1134 @@
+{
+  "consumer": "existing personal Codex business session through normal shell tool",
+  "inputSelection": "existing public synthetic saved packages",
+  "actualRuns": {
+    "capacity": {
+      "status": "checked",
+      "explanationZh": "已读取决策比较完整结果（格式3）。保存的语言、主题、选择、A/B与草稿保留在原合同内。\n原始view与调用者固定来源在既有有限语法内匹配；未认证作者、现实事实、任意正文或政策。\n保留的A：满足当前要求 A、B；排除 无；待确认 无。无偏好规则匹配。\n本地B：满足当前要求 B；排除 A；待确认 无。无偏好规则匹配。\n当前查看A（只读）；A/B计算状态有变化，条件差异不自动成为新来源。\nB草稿有1项无效输入，保留原文并与已应用值分开。\n计算复用已有核心；规则、标签和模型注释仍是声明，不认证优选或世界事实。",
+      "documentSha256": "3f3c554c88ee86be28f5790ef09c6b5cf110b56ed64dd274307a3d7c2f0139ac",
+      "retained": {
+        "format": 3,
+        "locale": "zh-CN",
+        "theme": {
+          "mode": "dark",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        },
+        "recordedSourceStatus": "not-recorded"
+      },
+      "sourceComparison": {
+        "sourceCheckVersion": "1.0",
+        "sourceCheckKind": "capacity-zh",
+        "source": {
+          "input": "caller-configured startup file snapshot; separate from tool arguments",
+          "documentSha256": "8c3479321fc338dfc08ebdd6e4daf152c37c394064c78aba2bf4105d0fc28638",
+          "jsonPointer": "/text",
+          "textSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "excerptSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+          "selection": {
+            "textUTF8ByteStart": 0,
+            "textUTF8ByteEnd": 158,
+            "textUTF8Bytes": 158
+          },
+          "identityVerified": false,
+          "authorship": "unverified; a configured file does not certify its author or original user",
+          "scope": "complete bounded storage capacities, exact unit, current demand, possible future point and separate deployment/maintenance declarations"
+        },
+        "sourceFactsVerified": false,
+        "identityVerified": false,
+        "freeProseVerified": false,
+        "viewContract": {
+          "version": "1.0",
+          "component": "DecisionExplorer",
+          "protocolVersion": "1.4",
+          "mapping": {
+            "capacityDimensionId": "actual numeric dimension ID",
+            "demandInputId": "actual numeric input ID",
+            "requirementId": "actual hard requirement ID"
+          },
+          "dimensions": {
+            "count": 1,
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GB",
+            "omittedFields": [
+              "semanticRole"
+            ]
+          },
+          "inputs": {
+            "count": 1,
+            "labels": [
+              "需求容量",
+              "需求容量（本地假设）"
+            ],
+            "type": "number",
+            "unit": "GB",
+            "initial": 80,
+            "expectedEffect": "hard",
+            "omittedFields": [
+              "semanticRole",
+              "choices"
+            ]
+          },
+          "requirements": {
+            "count": 1,
+            "relation": "at-least",
+            "direction": "capacityDimensionId >= demandInputId",
+            "omittedFields": [
+              "when"
+            ]
+          },
+          "policies": {
+            "rules": "empty",
+            "constraints": "empty"
+          },
+          "qualitativeAttributes": "Deployment/maintenance are separate source explanations, not additional comparison columns in this finite contract.",
+          "boundary": "These literal display labels and coordinates are representation constraints, not new facts or authority. Local changes remain hypotheses; source/prose identity stays unverified."
+        },
+        "status": "compared",
+        "sourceCapacity": {
+          "options": [
+            {
+              "label": "A",
+              "ceiling": {
+                "value": 100,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 28,
+                    "textByteEnd": 33
+                  }
+                ]
+              },
+              "deployment": {
+                "value": "simple",
+                "spans": [
+                  {
+                    "textByteStart": 36,
+                    "textByteEnd": 48
+                  }
+                ]
+              },
+              "maintenance": {
+                "value": null,
+                "spans": []
+              }
+            },
+            {
+              "label": "B",
+              "ceiling": {
+                "value": 1000,
+                "unit": "GB",
+                "spans": [
+                  {
+                    "textByteStart": 60,
+                    "textByteEnd": 66
+                  }
+                ]
+              },
+              "deployment": {
+                "value": null,
+                "spans": []
+              },
+              "maintenance": {
+                "value": "complex",
+                "spans": [
+                  {
+                    "textByteStart": 69,
+                    "textByteEnd": 81
+                  }
+                ]
+              }
+            }
+          ],
+          "current": {
+            "value": 80,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 97,
+                "textByteEnd": 101
+              }
+            ]
+          },
+          "possibleFuture": {
+            "value": 300,
+            "unit": "GB",
+            "spans": [
+              {
+                "textByteStart": 120,
+                "textByteEnd": 125
+              }
+            ]
+          },
+          "confirmedFuturePlan": null
+        },
+        "comparison": {
+          "status": "matched"
+        },
+        "issues": [],
+        "fieldChecks": [
+          {
+            "optionId": "option-fixture-0",
+            "sourceOption": "A",
+            "kind": "capacity-limit",
+            "dimensionId": "limit-fixture",
+            "role": "provided-capacity",
+            "expected": 100,
+            "actual": 100,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 28,
+                "textByteEnd": 33
+              }
+            ],
+            "status": "matched"
+          },
+          {
+            "optionId": "option-fixture-1",
+            "sourceOption": "B",
+            "kind": "capacity-limit",
+            "dimensionId": "limit-fixture",
+            "role": "provided-capacity",
+            "expected": 1000,
+            "actual": 1000,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 60,
+                "textByteEnd": 66
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "inputChecks": [
+          {
+            "inputId": "quantity-fixture",
+            "role": "required-capacity",
+            "expected": 80,
+            "actual": 80,
+            "unit": "GB",
+            "sourceSpans": [
+              {
+                "textByteStart": 97,
+                "textByteEnd": 101
+              }
+            ],
+            "status": "matched"
+          }
+        ],
+        "claimChecks": [],
+        "computedCapacity": {
+          "current": {
+            "scope": "declared-policy-under-original-conditions",
+            "status": "no-match",
+            "strictPolicy": true,
+            "inputEffects": [
+              {
+                "inputId": "quantity-fixture",
+                "requirementIds": [
+                  "cover-fixture"
+                ],
+                "constraintIds": [],
+                "ruleIds": [],
+                "affectsEligibility": true,
+                "affectsPreference": false,
+                "scope": "hard"
+              }
+            ],
+            "unusedInputIds": [],
+            "requiresPolicyReview": false,
+            "preferenceMode": "withheld-pending-local-review",
+            "eligibilityOnly": true,
+            "eligibilityAssessed": true,
+            "eligibleOptionIds": [
+              "option-fixture-0",
+              "option-fixture-1"
+            ],
+            "excludedOptionIds": [],
+            "unknownFeasibilityIds": [],
+            "requirements": [
+              {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-0",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-1",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ],
+            "unknownComparisonCells": [],
+            "proposalWithMissingFacts": false,
+            "resultBasis": null,
+            "sourceFactsVerified": false,
+            "recommendedOptionIds": [],
+            "matchedRuleIds": [],
+            "pendingRuleIds": [],
+            "missingInputs": [],
+            "activeConstraintIds": [],
+            "unknownConstraintIds": [],
+            "declaredOriginCounts": {
+              "given": 0,
+              "modelJudgment": 0
+            },
+            "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+          },
+          "possibleFutureHypothesis": {
+            "demand": 300,
+            "unit": "GB",
+            "scope": "explicit local hypothesis, not current source demand or confirmed plan",
+            "eligibleOptionIds": [
+              "option-fixture-1"
+            ],
+            "excludedOptionIds": [
+              "option-fixture-0"
+            ],
+            "requirements": [
+              {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-0",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              },
+              {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-1",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 1000,
+                "needed": 300,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              }
+            ]
+          }
+        },
+        "freeProse": {
+          "status": "not-verified",
+          "provided": false
+        },
+        "canonicalExplanation": {
+          "status": "available",
+          "basis": "complete finite capacity source and existing numeric hard-requirement core",
+          "text": "A容量上限 100GB；部署：简单；维护：未声明。\nB容量上限 1000GB；部署：未声明；维护：复杂。\n来源当前需求 80GB：仅容量满足的方案为A、B；容量不足的方案为无。\n来源仅说以后可能到 300GB，不是已确认的当前需求或未来计划。若显式按 300GB 作本地需求假设：仅容量满足的方案为B；容量不足的方案为A。\n容量上限是可提供量，需求是所需量；同单位按上限 ≥ 需求计算。部署简单不证明维护简单，维护复杂不证明部署属性、具体费用或维护资源需求。\n本地数值控件只重算容量硬条件，显示改变的是假设，不更新原始来源或确认预留计划；刷新恢复原始需求。容量达标不等于整体胜出，价格、迁移代价和偏好未知。以上不认证世界事实、作者身份或任意模型正文。"
+        }
+      },
+      "local": {
+        "scope": "local-hypotheses-only",
+        "bComputed": {
+          "inputEffects": [
+            {
+              "inputId": "quantity-fixture",
+              "requirementIds": [
+                "cover-fixture"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "status": "no-match",
+          "recommendations": [],
+          "triggered": [],
+          "unresolved": [],
+          "constraints": [],
+          "requirements": [
+            {
+              "requirementId": "cover-fixture",
+              "optionId": "option-fixture-0",
+              "dimensionId": "limit-fixture",
+              "inputId": "quantity-fixture",
+              "unit": "GB",
+              "actual": 100,
+              "needed": 120,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "cover-fixture",
+              "optionId": "option-fixture-1",
+              "dimensionId": "limit-fixture",
+              "inputId": "quantity-fixture",
+              "unit": "GB",
+              "actual": 1000,
+              "needed": 120,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "missingInputs": [],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "excludedOptionIds": [
+            "option-fixture-0"
+          ],
+          "unknownFeasibilityIds": [],
+          "eligibleOptionIds": [
+            "option-fixture-1"
+          ]
+        },
+        "aComputed": {
+          "inputEffects": [
+            {
+              "inputId": "quantity-fixture",
+              "requirementIds": [
+                "cover-fixture"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "status": "no-match",
+          "recommendations": [],
+          "triggered": [],
+          "unresolved": [],
+          "constraints": [],
+          "requirements": [
+            {
+              "requirementId": "cover-fixture",
+              "optionId": "option-fixture-0",
+              "dimensionId": "limit-fixture",
+              "inputId": "quantity-fixture",
+              "unit": "GB",
+              "actual": 100,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "cover-fixture",
+              "optionId": "option-fixture-1",
+              "dimensionId": "limit-fixture",
+              "inputId": "quantity-fixture",
+              "unit": "GB",
+              "actual": 1000,
+              "needed": 80,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "missingInputs": [],
+          "unknownComparisonCells": [],
+          "proposalWithMissingFacts": false,
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [],
+          "eligibleOptionIds": [
+            "option-fixture-0",
+            "option-fixture-1"
+          ]
+        },
+        "difference": {
+          "conditions": [
+            {
+              "id": "quantity-fixture",
+              "source": 80,
+              "a": 80,
+              "b": 120,
+              "changed": true,
+              "effect": "hard"
+            }
+          ],
+          "outcomeChanged": true,
+          "dimensionsChanged": false,
+          "policySelectionChanged": false,
+          "requirementChanges": [
+            {
+              "before": {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-0",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 80,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              "after": {
+                "requirementId": "cover-fixture",
+                "optionId": "option-fixture-0",
+                "dimensionId": "limit-fixture",
+                "inputId": "quantity-fixture",
+                "unit": "GB",
+                "actual": 100,
+                "needed": 120,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              }
+            }
+          ],
+          "constraintChanges": []
+        },
+        "draftValidation": {
+          "ok": false,
+          "errors": {
+            "quantity-fixture": "number"
+          }
+        },
+        "viewing": "a",
+        "sourceOrPolicyApproved": false
+      },
+      "appliedValues": {
+        "quantity-fixture": 120
+      },
+      "aValues": {
+        "quantity-fixture": 80
+      },
+      "conditionDraft": {
+        "version": 1,
+        "fields": {
+          "quantity-fixture": {
+            "mode": "value",
+            "text": "NaN"
+          }
+        }
+      },
+      "invocation": {
+        "entry": {
+          "name": "semantic-ui-result-local",
+          "revision": 1,
+          "packageVersion": "0.1.0-preview.31",
+          "checkerContract": "Codex 0.1.0-preview.31.1"
+        },
+        "transport": "direct in-process function; no MCP",
+        "checker": "checkResultPackage",
+        "inputFileSha256": "8109aa870a2f45bf871d85183c3ae903efb41be3089ffdd6ac4079eb1633b659",
+        "sourceConfiguredByCaller": true,
+        "newMcpConnections": 0,
+        "newCodexThreads": 0,
+        "newModelTurns": 0,
+        "globalConfigurationChanged": false
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false
+    },
+    "pair": {
+      "status": "checked-unverified",
+      "explanationZh": "已读取决策比较完整结果（格式3）。保存的语言、主题、选择、A/B与草稿保留在原合同内。\n未配置独立固定来源；包内来源状态与摘要仅作历史记录，来源映射未核。\n保留的A：满足当前要求 托管方案；排除 无；待确认 自管方案。无偏好规则匹配。\n本地B：满足当前要求 自管方案；排除 托管方案；待确认 无。无偏好规则匹配。\n当前查看A（只读）；A/B计算状态有变化，条件差异不自动成为新来源。\nB草稿有效但未自动应用。\n计算复用已有核心；规则、标签和模型注释仍是声明，不认证优选或世界事实。",
+      "documentSha256": "f210e044beefe8df0ee6ee8b9fcd2e78450a05dfe004c44dcc70289be1cf8973",
+      "retained": {
+        "format": 3,
+        "locale": "zh-CN",
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        },
+        "recordedSourceStatus": "unverified"
+      },
+      "sourceComparison": {
+        "status": "not-configured",
+        "identityVerified": false,
+        "sourceFactsVerified": false,
+        "reason": "No independent caller-configured source snapshot. Saved source records cannot supply one."
+      },
+      "local": {
+        "scope": "local-hypotheses-only",
+        "bComputed": {
+          "inputEffects": [
+            {
+              "inputId": "networkNeeded",
+              "requirementIds": [
+                "private-network"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "teamAvailable",
+              "requirementIds": [
+                "team-maintenance"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "mode",
+              "requirementIds": [],
+              "constraintIds": [
+                "high-mode"
+              ],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "status": "no-match",
+          "recommendations": [],
+          "triggered": [],
+          "unresolved": [],
+          "constraints": [
+            {
+              "constraint": {
+                "id": "high-mode",
+                "optionId": "managed",
+                "when": {
+                  "mode": "all",
+                  "clauses": [
+                    {
+                      "input": "mode",
+                      "op": "eq",
+                      "value": "高并发"
+                    }
+                  ]
+                },
+                "reason": "合成声明：高并发模式排除托管方案。",
+                "evidence": [
+                  "合成规则，仅用于本地表单验证。"
+                ]
+              },
+              "match": true
+            }
+          ],
+          "requirements": [
+            {
+              "requirementId": "private-network",
+              "optionId": "managed",
+              "dimensionId": "network",
+              "inputId": "networkNeeded",
+              "unit": null,
+              "actual": false,
+              "needed": false,
+              "relation": "supports",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "private-network",
+              "optionId": "vm",
+              "dimensionId": "network",
+              "inputId": "networkNeeded",
+              "unit": null,
+              "actual": true,
+              "needed": false,
+              "relation": "supports",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "team-maintenance",
+              "optionId": "managed",
+              "dimensionId": "maintenance",
+              "inputId": "teamAvailable",
+              "unit": null,
+              "actual": false,
+              "needed": true,
+              "relation": "requires-availability",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "team-maintenance",
+              "optionId": "vm",
+              "dimensionId": "maintenance",
+              "inputId": "teamAvailable",
+              "unit": null,
+              "actual": true,
+              "needed": true,
+              "relation": "requires-availability",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "managed",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "次/秒",
+              "actual": 120,
+              "needed": 220,
+              "relation": "at-least",
+              "active": true,
+              "status": "fail"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "vm",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "次/秒",
+              "actual": 300,
+              "needed": 220,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "missingInputs": [],
+          "unknownComparisonCells": [
+            {
+              "optionId": "managed",
+              "dimensionId": "price"
+            },
+            {
+              "optionId": "vm",
+              "dimensionId": "price"
+            }
+          ],
+          "proposalWithMissingFacts": false,
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "excludedOptionIds": [
+            "managed"
+          ],
+          "unknownFeasibilityIds": [],
+          "eligibleOptionIds": [
+            "vm"
+          ]
+        },
+        "aComputed": {
+          "inputEffects": [
+            {
+              "inputId": "networkNeeded",
+              "requirementIds": [
+                "private-network"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "teamAvailable",
+              "requirementIds": [
+                "team-maintenance"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "demand",
+              "requirementIds": [
+                "capacity"
+              ],
+              "constraintIds": [],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            },
+            {
+              "inputId": "mode",
+              "requirementIds": [],
+              "constraintIds": [
+                "high-mode"
+              ],
+              "ruleIds": [],
+              "affectsEligibility": true,
+              "affectsPreference": false,
+              "scope": "hard"
+            }
+          ],
+          "unusedInputIds": [],
+          "status": "no-match",
+          "recommendations": [],
+          "triggered": [],
+          "unresolved": [],
+          "constraints": [
+            {
+              "constraint": {
+                "id": "high-mode",
+                "optionId": "managed",
+                "when": {
+                  "mode": "all",
+                  "clauses": [
+                    {
+                      "input": "mode",
+                      "op": "eq",
+                      "value": "高并发"
+                    }
+                  ]
+                },
+                "reason": "合成声明：高并发模式排除托管方案。",
+                "evidence": [
+                  "合成规则，仅用于本地表单验证。"
+                ]
+              },
+              "match": false
+            }
+          ],
+          "requirements": [
+            {
+              "requirementId": "private-network",
+              "optionId": "managed",
+              "dimensionId": "network",
+              "inputId": "networkNeeded",
+              "unit": null,
+              "actual": false,
+              "needed": false,
+              "relation": "supports",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "private-network",
+              "optionId": "vm",
+              "dimensionId": "network",
+              "inputId": "networkNeeded",
+              "unit": null,
+              "actual": true,
+              "needed": false,
+              "relation": "supports",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "team-maintenance",
+              "optionId": "managed",
+              "dimensionId": "maintenance",
+              "inputId": "teamAvailable",
+              "unit": null,
+              "actual": false,
+              "needed": null,
+              "relation": "requires-availability",
+              "active": true,
+              "status": "inactive"
+            },
+            {
+              "requirementId": "team-maintenance",
+              "optionId": "vm",
+              "dimensionId": "maintenance",
+              "inputId": "teamAvailable",
+              "unit": null,
+              "actual": true,
+              "needed": null,
+              "relation": "requires-availability",
+              "active": true,
+              "status": "unknown"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "managed",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "次/秒",
+              "actual": 120,
+              "needed": 100,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            },
+            {
+              "requirementId": "capacity",
+              "optionId": "vm",
+              "dimensionId": "capacity",
+              "inputId": "demand",
+              "unit": "次/秒",
+              "actual": 300,
+              "needed": 100,
+              "relation": "at-least",
+              "active": true,
+              "status": "pass"
+            }
+          ],
+          "missingInputs": [
+            {
+              "id": "teamAvailable",
+              "label": "维护人员可用"
+            }
+          ],
+          "unknownComparisonCells": [
+            {
+              "optionId": "managed",
+              "dimensionId": "price"
+            },
+            {
+              "optionId": "vm",
+              "dimensionId": "price"
+            }
+          ],
+          "proposalWithMissingFacts": false,
+          "requiresPolicyReview": false,
+          "preferenceMode": "withheld-pending-local-review",
+          "excludedOptionIds": [],
+          "unknownFeasibilityIds": [
+            "vm"
+          ],
+          "eligibleOptionIds": [
+            "managed"
+          ]
+        },
+        "difference": {
+          "conditions": [
+            {
+              "id": "networkNeeded",
+              "source": false,
+              "a": false,
+              "b": false,
+              "changed": false,
+              "effect": "hard"
+            },
+            {
+              "id": "teamAvailable",
+              "source": null,
+              "a": null,
+              "b": true,
+              "changed": true,
+              "effect": "hard"
+            },
+            {
+              "id": "demand",
+              "source": 100,
+              "a": 100,
+              "b": 220,
+              "changed": true,
+              "effect": "hard"
+            },
+            {
+              "id": "mode",
+              "source": "常规",
+              "a": "常规",
+              "b": "高并发",
+              "changed": true,
+              "effect": "hard"
+            }
+          ],
+          "outcomeChanged": true,
+          "dimensionsChanged": true,
+          "policySelectionChanged": false,
+          "requirementChanges": [
+            {
+              "before": {
+                "requirementId": "team-maintenance",
+                "optionId": "vm",
+                "dimensionId": "maintenance",
+                "inputId": "teamAvailable",
+                "unit": null,
+                "actual": true,
+                "needed": null,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "unknown"
+              },
+              "after": {
+                "requirementId": "team-maintenance",
+                "optionId": "vm",
+                "dimensionId": "maintenance",
+                "inputId": "teamAvailable",
+                "unit": null,
+                "actual": true,
+                "needed": true,
+                "relation": "requires-availability",
+                "active": true,
+                "status": "pass"
+              }
+            },
+            {
+              "before": {
+                "requirementId": "capacity",
+                "optionId": "managed",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "次/秒",
+                "actual": 120,
+                "needed": 100,
+                "relation": "at-least",
+                "active": true,
+                "status": "pass"
+              },
+              "after": {
+                "requirementId": "capacity",
+                "optionId": "managed",
+                "dimensionId": "capacity",
+                "inputId": "demand",
+                "unit": "次/秒",
+                "actual": 120,
+                "needed": 220,
+                "relation": "at-least",
+                "active": true,
+                "status": "fail"
+              }
+            }
+          ],
+          "constraintChanges": [
+            {
+              "before": {
+                "constraint": {
+                  "id": "high-mode",
+                  "optionId": "managed",
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "mode",
+                        "op": "eq",
+                        "value": "高并发"
+                      }
+                    ]
+                  },
+                  "reason": "合成声明：高并发模式排除托管方案。",
+                  "evidence": [
+                    "合成规则，仅用于本地表单验证。"
+                  ]
+                },
+                "match": false
+              },
+              "after": {
+                "constraint": {
+                  "id": "high-mode",
+                  "optionId": "managed",
+                  "when": {
+                    "mode": "all",
+                    "clauses": [
+                      {
+                        "input": "mode",
+                        "op": "eq",
+                        "value": "高并发"
+                      }
+                    ]
+                  },
+                  "reason": "合成声明：高并发模式排除托管方案。",
+                  "evidence": [
+                    "合成规则，仅用于本地表单验证。"
+                  ]
+                },
+                "match": true
+              }
+            }
+          ]
+        },
+        "draftValidation": {
+          "ok": true,
+          "values": {
+            "networkNeeded": false,
+            "teamAvailable": true,
+            "demand": 220,
+            "mode": "高并发"
+          },
+          "errors": {}
+        },
+        "viewing": "a",
+        "sourceOrPolicyApproved": false
+      },
+      "appliedValues": {
+        "networkNeeded": false,
+        "teamAvailable": true,
+        "demand": 220,
+        "mode": "高并发"
+      },
+      "aValues": {
+        "networkNeeded": false,
+        "teamAvailable": null,
+        "demand": 100,
+        "mode": "常规"
+      },
+      "conditionDraft": {
+        "version": 1,
+        "fields": {
+          "networkNeeded": {
+            "mode": "value",
+            "text": "false"
+          },
+          "teamAvailable": {
+            "mode": "value",
+            "text": "true"
+          },
+          "demand": {
+            "mode": "value",
+            "text": "220"
+          },
+          "mode": {
+            "mode": "value",
+            "text": "高并发"
+          }
+        }
+      },
+      "invocation": {
+        "entry": {
+          "name": "semantic-ui-result-local",
+          "revision": 1,
+          "packageVersion": "0.1.0-preview.31",
+          "checkerContract": "Codex 0.1.0-preview.31.1"
+        },
+        "transport": "direct in-process function; no MCP",
+        "checker": "checkResultPackage",
+        "inputFileSha256": "625a3f13a4a1663f2f979f6f32c7f95aadfdc79f9625254a076dc7032960c898",
+        "sourceConfiguredByCaller": false,
+        "newMcpConnections": 0,
+        "newCodexThreads": 0,
+        "newModelTurns": 0,
+        "globalConfigurationChanged": false
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false
+    }
+  }
+}

@@ -1,0 +1,97 @@
+{
+  "entry": {
+    "command": "node --import tsx scripts/result-local.ts",
+    "revision": 1,
+    "packageVersion": "0.1.0-preview.31",
+    "checkerContract": "Codex 0.1.0-preview.31.1",
+    "mode": "direct in-process function; no MCP",
+    "project": "WhyTan00/dsh-semantic-ui",
+    "sourceTreeBaseCommit": "a05c2f554de0f68c140ef0b48309195ae1624131",
+    "sourceFiles": [
+      {
+        "path": "scripts/result-local.ts",
+        "sha256": "f11ff8c3dbaba83f992efb3a2bb6f7f29db814267f387fafacb968fb34d8942f"
+      },
+      {
+        "path": "src/result-interop.ts",
+        "sha256": "da0d6ddca5618bd15b888f74d5126f299b215280e2d32a6e1d1a84bf3cc75a73"
+      },
+      {
+        "path": "src/results.ts",
+        "sha256": "98fd4c684eeaafd0d76b6cef7897595a15be00115094f116040c03a0e561f97b"
+      },
+      {
+        "path": "src/source-input.ts",
+        "sha256": "749f1a023a9f252a982fc9e25825f00174338af84e9845d1bff9c9660410145c"
+      },
+      {
+        "path": "src/core.ts",
+        "sha256": "853cd17afb1e0f299ac70b619d31c1eb715c0a44f67dc35f1383bba8532c6312"
+      },
+      {
+        "path": "src/math.ts",
+        "sha256": "79b18db35dd58d0d7191c822b621623e692ed7d74188474a1506495a4bd8fbfe"
+      },
+      {
+        "path": "src/scenarios.ts",
+        "sha256": "8fd6f6b2233359453d5ca513672c5223c17d4b98444077f7e9a1066ebc30f2ff"
+      },
+      {
+        "path": "src/condition-form.ts",
+        "sha256": "10446e0fe9aeef9cbffa4aa89a0b934fc938384a18ecbd46e38fbdb263de7972"
+      }
+    ]
+  },
+  "adoption": {
+    "normalShellUsedInExistingPersonalBusinessSession": true,
+    "fixedSourceCapacity": "checked",
+    "noIndependentSourcePair": "checked-unverified",
+    "requiredSourceWithoutMatch": "source-required; exit2",
+    "usesExistingCheckResultPackage": true,
+    "usesExistingResultPackageAndSourceSnapshotContracts": true,
+    "a80Source80AndB120InvalidDraftNaNPreserved": true,
+    "a100B220NullTeamAndPricePreserved": true,
+    "localeThemeAndViewingPreserved": true,
+    "sameDocumentCanBeEmitted": true,
+    "explicitChineseExplanationActuallyPrinted": true
+  },
+  "verification": {
+    "typecheck": "passed",
+    "newDirectEntryCases": 15,
+    "allEntryProcessGuardsPassed": true,
+    "guardedNetworkAttempts": 0,
+    "guardedChildProcessAttempts": 0,
+    "importGraphNoMcpSdkServerTransportNetworkOrChildProcess": true,
+    "originalInputsAndSourceByteUnchanged": true,
+    "wrongMappingDamagedIncompatibleAndRequiredSourceRefused": true,
+    "symlinkOversizedBrokenJsonAndDuplicateSourceFlagsRefused": true,
+    "implementationTestFailures": []
+  },
+  "limits": {
+    "newMcpConnections": 0,
+    "newCodexThreads": 0,
+    "newModelOrApiInferenceTurns": 0,
+    "globalInstallations": 0,
+    "globalConfigurationChanges": 0,
+    "newServicesOrRestarts": 0,
+    "oldMcpResourcesAccessed": false,
+    "dsh31And3200Touched": false,
+    "dshRuntimeHistoryTemplatesAndPrivateResultsAccessed": false,
+    "oldMatrixOrReleaseRerun": false,
+    "officialRichUiOrNaturalToolAdoptionVerified": false,
+    "oldSixQuestions": {
+      "passed": 0,
+      "failed": 6,
+      "requests": 18
+    }
+  },
+  "reuseEvidence": [
+    "codex-result-interop.json",
+    "scenarios.json"
+  ],
+  "receipts": [
+    "codex-local-entry/normal-shell-adoption.json",
+    "codex-local-entry/checks.json"
+  ],
+  "guide": "../CODEX-LOCAL-ENTRY.zh-CN.md"
+}

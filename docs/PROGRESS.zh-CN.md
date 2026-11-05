@@ -1,3 +1,7 @@
+# 项目内本地入口修订1 · 无新MCP采用
+
+[正常源码命令](CODEX-LOCAL-ENTRY.zh-CN.md)已由原个人业务会话通过shell实际运行：`node --import tsx scripts/result-local.ts`直接复用31.1同一checkResultPackage/readResult/来源快照核心，固定源容量包checked，A/B与unknown示例缺源checked-unverified，--require-source缺源非零拒绝。中文有限说明、结构化来源/本地差异、原document与草稿/语言主题保留。类型及15个新入口正反例通过，进程守卫网络/子进程尝试均0，导入图不含MCP；见[采用回执](evidence/codex-local-entry.json)。0新增MCP/模型/线程/服务，不改全局配置；未访问个人DSH运行历史/模板/私有结果，31/31.1既有发行与3200沿用，不重跑旧矩阵/发行/中文化QA。主聊天自然工具选择/富UI仍未验，原六题0/6/18不变。
+
 # Codex preview.31.1 · 完整结果显式只读互通
 
 独立伴随包已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.1)，不重发、安装或重启DSH31。`semantic_ui_result_check`及Node/原Python入口通过真实stdio MCP读取结果格式1/2/3，原合同、来源历史记录、null/unknown、语言/主题、A/B和草稿保留；固定源只核原view，缺源标未核，错映射拒绝。309项/42文件、26项Python回归及CI42086835568通过；232文件ZIP及manifest/SHA256SUMS三工件Mac/Linux与匿名公开全量下载同字节。原个人3200新增正常导出→最终伴随核对→导回继续B150、A80/来源80保留，pageerror0、93历史字节/metadata及模板/既有私有结果保留。详见[使用说明](CODEX-RESULTS.zh-CN.md)与[最终回执](evidence/codex-result-interop.json)。0新模型/线程，不改全局配置；自然采用、主聊天工具注册、富UI与用户Edge视觉仍未验，原六题0/6/18不变。

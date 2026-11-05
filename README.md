@@ -10,6 +10,14 @@ preview.31新增[双方案本地假设对照](docs/WHAT-IF.zh-CN.md)：保留只
 
 独立Codex伴随包新增[完整结果显式互通](docs/CODEX-RESULTS.zh-CN.md)：零新增模型地读取保存结果，核对来源与A/B假设，原合同文件可交回DSH继续使用。
 
+本仓库也有[直接本地读取命令](docs/CODEX-LOCAL-ENTRY.zh-CN.md)，不建立MCP连接。在当前个人项目目录中可直接运行：
+
+```sh
+node --import tsx scripts/result-local.ts --result-file docs/evidence/scenarios/examples/pair.json
+```
+
+输出中文说明、原结果和结构化A/B/unknown；缺独立来源会明确标为未核。固定来源核对、只看中文说明和携带原合同的用法见上述指南。需要已有Node24+及仓库开发依赖，不全局安装。
+
 DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、取舍和数值整理成可交互组件，并把来源、计算结果、本地假设与模型说明分开。
 
 | 组件 | 可以做什么 |
