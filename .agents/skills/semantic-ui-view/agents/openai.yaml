@@ -1,0 +1,4 @@
+interface:
+  display_name: "打开语义交互视图"
+  short_description: "在已有个人DSH选择结果、查看差异和未知、改本地条件并保存重开继续"
+  default_prompt: "使用 $semantic-ui-view 打开个人DSH交互页面，让我选择保存结果并继续操作。"
