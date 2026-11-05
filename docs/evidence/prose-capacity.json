@@ -90,7 +90,8 @@
     "newIntentReserved": false,
     "newNaturalToolAdoptionVerified": false,
     "newModelBodyCorrectnessVerified": false,
-    "reason": "Original personal authorization persists; current free qualification and complete remaining balance were not proven, so no exploratory model call, retry or new quota was created."
+    "reason": "Original personal authorization persists; current free qualification and complete remaining balance were not proven, so no exploratory model call, retry or new quota was created.",
+    "newModelGeneratedViewAndBodyConsistencyVerified": false
   },
   "installedClientFiles": [
     {
@@ -131,5 +132,41 @@
     "nativeCodexRichUiAcceptance": false,
     "newLinuxPtcUserEdgeOrPhysicalMobileAcceptance": false
   },
-  "releaseStatus": "new code and normal personal DSH adopted; new client archive pending committed source freeze"
+  "releaseStatus": "new source and normal personal panel adopted; frozen client prerelease published",
+  "release": {
+    "releaseId": 435876696,
+    "tag": "client-v0.1.0-preview.31-prose.3",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.3",
+    "assets": [
+      {
+        "name": "client-manifest.json",
+        "bytes": 2097,
+        "sha256": "8bc463d8076b5419ee60ae233440d1e9d5791d661ffc3afbe816c949c183e3eb",
+        "githubUploadDigestMatchesLocal": true
+      },
+      {
+        "name": "dsh-semantic-ui-client-0.1.0-preview.31-prose.3.zip",
+        "bytes": 812728,
+        "sha256": "cb409b510a711a341916c58c2854b8a97749628fc8c5a8631bb721b44d8219f8",
+        "githubUploadDigestMatchesLocal": true
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 118,
+        "sha256": "b307677c8afe4ca6416cab86a145183e282470c4d58d8a83dbcf04213622f801",
+        "githubUploadDigestMatchesLocal": true
+      }
+    ],
+    "verification": "frozen local archive plus GitHub upload digest and size; anonymous download and old CI matrices not repeated",
+    "newAnonymousDownloadMatrix": false,
+    "newCiDispatches": 0,
+    "sourceCommit": "b2a0d2d874628b7d30528e88a57c118f70fdf152",
+    "clientRevision": "0.1.0-preview.31-prose.3",
+    "sha256": "cb409b510a711a341916c58c2854b8a97749628fc8c5a8631bb721b44d8219f8",
+    "files": 228,
+    "bytes": 812728,
+    "installedClientMatchesFrozenArchive": true,
+    "previousClientManifestsVerified": true
+  },
+  "normalConsumerScope": "existing independent source/candidate prose panel; historical view is not replaced by editing review source"
 }
