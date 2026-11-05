@@ -1,3 +1,7 @@
+# 完整结果互通增量
+
+当前新独立伴随包为0.1.0-preview.31.1，新增第四个只读工具semantic_ui_result_check和同包result-readonly.js显式客户端，读取格式1/2/3，保持A/B/草稿/语言主题与来源分层；核对核心及结果parser/host编译字节固定到已发行31。正常用法与当前客户端边界见[结果互通](CODEX-RESULTS.zh-CN.md)。下文27.1是历史已接受版本，不重发或改写旧字节。
+
 # 可安装的本地Codex插件包
 
 现在提供独立的 `semantic-ui-checks-codex` 分发包：技能、只读MCP、便携清单和本地插件源放在同一个ZIP中。安装后由插件启动检查工具，用户无需再单独执行 `codex mcp add`。它仍复用DSH Semantic UI的核对核心，不增加图形渲染器或模型调用层。

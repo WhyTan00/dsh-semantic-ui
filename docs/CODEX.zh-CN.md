@@ -1,5 +1,8 @@
 # Codex 原生交互 UI 与本项目的接入
 
+新增[完整结果包显式互通](CODEX-RESULTS.zh-CN.md)：独立Codex31.1包读取DSH28/30/31保存结果，保留A/B/草稿、主题语言和未知；同一parser/core与固定来源检查，直接stdio MCP和原Python命令结果模式均0新增线程/模型，全局配置不变。DSH31和3200无需重装。
+
+
 新增[独立本地Codex插件包](CODEX-PLUGIN-PACKAGE.zh-CN.md)：便携manifest、stdio MCP、skill及本地插件源合并分发，复用27核心字节；MCP自报版本随构建修正，不再硬编码24。既有手动MCP和普通来源伴随入口保留，当前主会话/桌面未自动安装，不新增模型或UI声称。
 
 [容量来源两次实际模型观察](CODEX-CAPACITY-OBSERVATION.zh-CN.md)保留23首题raw正确但新view未匹配的事实，并据此交付24的可发现字段合同/精确诊断。第二个原冻结GiB对照在24上当前view首次matched，原文有限met；192假设来源拒绝不等于禁合法假设。2/2回合，无第三次；普通CLI宿主说明与raw分开，不代表当前客户端UI/实时回传。

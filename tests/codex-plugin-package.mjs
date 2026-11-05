@@ -58,7 +58,7 @@ try{
  assert.equal(await stat(path.join(plugin,'node_modules')).then(()=>true,()=>false),false);
  const numeric=numericRequest([null,null,null],'电流','毫安','standalone-check').view;
  await using(config,plugin,'default',[],async(call,c)=>{
-  assert.deepEqual(c.tools.map(t=>t.name),['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check']);
+  assert.deepEqual(c.tools.map(t=>t.name),['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_result_check']);
   assert(!c.client.getInstructions().includes('semantic_ui_source_check'));
   const schema=await call('semantic_ui_schema',{component:'DataChart'});assert(schema.payloadSchema);
   const facts=await call('semantic_ui_check',{view:numeric});assert.equal(facts.status,'validated');assert.equal(facts.sourceFactsVerified,false);
@@ -75,7 +75,7 @@ try{
  for(const s of sources){
   const file=path.join(target,s.kind+'.txt');await writeFile(file,s.source);const reference=sourceReference(core,s.source,s.kind);assert.equal(reference.status,'ready');
   await using(config,plugin,s.kind,['--source-file',file,'--source-kind',s.kind],async(call,c)=>{
-   assert.equal(c.tools.length,4);const inspected=await call('semantic_ui_source_check',{});assert.equal(inspected.sourceCheckKind,s.kind);
+   assert.equal(c.tools.length,5);const inspected=await call('semantic_ui_source_check',{});assert.equal(inspected.sourceCheckKind,s.kind);
    assert.equal(inspected.source.textSha256,sha(s.source));assert.equal((await call('semantic_ui_source_check',reference.request)).comparison.status,'matched');
    const wrong=structuredClone(reference.request);
    if(s.kind==='workflow-zh')wrong.mapping.failurePolicies=[];else wrong.view.payload.edges[1].type='read-write';
@@ -84,7 +84,7 @@ try{
  }
  await writeFile(path.join(output,'stdio-receipts.json'),json({sessions,calls,closedServers:closed,newModelStarts:0,sourceFactsVerified:false,identityVerified:false,freeProseVerified:false}));
  await writeFile(path.join(output,'acceptance.json'),json({version:manifest.version,zipSha256:manifest.sha256,sourceCommit:manifest.sourceCommit,origin:manifest.origin,filesVerified:manifest.files.length,
-  extractedOutsideRepository:true,extractionPathContainsSpaces:true,serverWithoutNodeModules:true,portableManifestAndMarketplace:true,defaultTools:3,sourceKindsVerified:sources.map(s=>s.kind),stdioToolCalls:calls.length,closedServers:closed,
+  extractedOutsideRepository:true,extractionPathContainsSpaces:true,serverWithoutNodeModules:true,portableManifestAndMarketplace:true,defaultTools:4,sourceKindsVerified:sources.map(s=>s.kind),stdioToolCalls:calls.length,closedServers:closed,
   currentCodexClientInstalled:false,mainChatLoaded:false,nativeUiVerified:false,globalConfigChanged:false,newModelStarts:0}));
  console.log(json({version:manifest.version,filesVerified:manifest.files.length,stdioToolCalls:calls.length,closedServers:closed,newModelStarts:0}));
 }finally{await rm(target,{recursive:true,force:true});}

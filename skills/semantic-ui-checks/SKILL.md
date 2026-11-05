@@ -1,6 +1,6 @@
 ---
 name: semantic-ui-checks
-description: Check explicit relationship, comparison or chart data before a native visualization, especially when numeric limits, unknown values or a reusable exported template matter. Does not supply a visualization renderer.
+description: Check explicit relationship, comparison, chart data or saved DSH result packages before a native visualization, especially when numeric limits, unknown values or a reusable exported template matter. Does not supply a visualization renderer.
 ---
 
 Use this workflow when an available native visualizer would benefit from deterministic checks. Ordinary short facts and explanations do not need it.
@@ -8,6 +8,8 @@ Use this workflow when an available native visualizer would benefit from determi
 If the semantic MCP tools are available, inspect `semantic_ui_schema` for the selected component and call `semantic_ui_check` with fresh data. Preserve unknowns as null. For capacity or deadlines, declare numeric dimensions, matching units, and requirements linked to actual controls. Eligibility under these requirements is not a preferred option. Use only computed receipt fields as program-verified calculations; source facts and model notes remain unverified.
 
 For an explicitly supplied exported template, `semantic_ui_template_check` checks the fresh field contract without importing prior values or rules. This adapter has no saved library and cannot discover or modify DSH's private templates.
+
+For an explicitly supplied complete saved result, use `semantic_ui_result_check` and [the result guide](references/results.md). Retain the original result document, A/B choices and draft; an envelope check alone does not cover the package. Fixed sources come from the caller's startup configuration, never from saved authority claims or tool arguments. A finite mismatch or missing source stays unverified. The same explicit CLI result mode can run through stdio MCP with no new Codex thread or model; it does not register tools globally or supply rich UI.
 
 When an available source tool advertises `workflow-zh` or `permissions-zh`, read [the relation-source guide](references/relations.md) for the corresponding mapping and claim scope. Explicit failure actions, direct permissions and topology are different contracts; do not transfer conclusions between them.
 

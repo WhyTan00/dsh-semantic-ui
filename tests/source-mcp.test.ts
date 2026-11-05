@@ -20,7 +20,7 @@ it('adds one opt-in tool over real stdio, exposes source hashes and compares the
  const data=JSON.parse(await readFile(a2,'utf8')),view=data.actualToolCalls.find((c:{arguments?:{view?:unknown}})=>c.arguments?.view).arguments.view;
  const conn=await connect(a2,excerpt);
  try{
-  const tools=await conn.client.listTools();expect(tools.tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_source_check']);
+  const tools=await conn.client.listTools();expect(tools.tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_result_check','semantic_ui_source_check']);
   expect(tools.tools.at(-1)?.annotations?.readOnlyHint).toBe(true);expect(tools.tools.at(-1)?._meta?.ui).toBeUndefined();
   let result=await conn.client.callTool({name:'semantic_ui_source_check',arguments:{}});
   expect(result.structuredContent).toHaveProperty('source.documentSha256','17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e');

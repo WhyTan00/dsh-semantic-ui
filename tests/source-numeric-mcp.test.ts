@@ -12,7 +12,7 @@ async function connect(file=resolve(e.source.path)){
 }
 it('binds original values, missing mask, unit and ranges over actual stdio; refuses equal-mean zero fill',async()=>{
  const c=await connect();try{
-  expect((await c.client.listTools()).tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_source_check']);
+  expect((await c.client.listTools()).tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_result_check','semantic_ui_source_check']);
   let r=await c.client.callTool({name:'semantic_ui_source_check',arguments:{}});expect(r.structuredContent).toHaveProperty('source.documentSha256',e.source.sha256);expect(r.structuredContent).toHaveProperty('sourceStatistics.values',e.values);expect(r.structuredContent).toHaveProperty('sourceStatistics.complete.mean',null);expect(r.structuredContent).toHaveProperty('canonicalExplanation.status','available');
   const req=numericRequest();r=await c.client.callTool({name:'semantic_ui_source_check',arguments:req});expect(r.structuredContent).toHaveProperty('comparison.status','matched');
   if(req.view.payload.chartType!=='bar')throw Error();req.view.payload.rows[2].values[req.mapping.seriesId]=0;

@@ -28,6 +28,7 @@ import threading
 import time
 import tomllib
 import uuid
+import zipfile
 
 ALLOWED = {
     'initialize', 'thread/start', 'thread/unsubscribe', 'mcpServerStatus/list',
@@ -702,7 +703,74 @@ def revise_source(rpc, thread_id, server, workspace, settings, tap, tap_config, 
     return result
 
 
+def result_package_main(argv):
+    """Same explicit entry, direct MCP transport: no Codex process, thread, model or global config read."""
+    parser = argparse.ArgumentParser(description='完整结果包的显式只读MCP模式；不启动Codex线程或模型')
+    parser.add_argument('--result-package', type=Path, required=True)
+    parser.add_argument('--plugin-package', type=Path, required=True)
+    parser.add_argument('--plugin-manifest', type=Path, required=True)
+    parser.add_argument('--mapping-file', type=Path)
+    parser.add_argument('--source-file', type=Path)
+    parser.add_argument('--source-json-pointer')
+    parser.add_argument('--source-excerpt')
+    parser.add_argument('--source-kind', choices=['arrows','capacity-zh','workflow-zh','decision-zh','permissions-zh','observations-zh'])
+    parser.add_argument('--require-source', action='store_true')
+    parser.add_argument('--emit', choices=['report','document'], default='report')
+    parser.add_argument('--node', default='node')
+    args = parser.parse_args(argv)
+    node = shutil.which(args.node)
+    if not node:
+        raise ValueError('需要Node24+；没有读取或改动Codex配置')
+    if args.plugin_manifest.stat().st_size > 2_000_000 or args.plugin_package.stat().st_size > 128_000_000:
+        raise ValueError('插件工件超过有界大小')
+    manifest = json.loads(args.plugin_manifest.read_text())
+    if args.plugin_package.name != manifest['filename'] or sha(args.plugin_package.read_bytes()) != manifest['sha256']:
+        raise ValueError('插件ZIP与调用者manifest不一致；未执行其中代码')
+    files = {row['path']: row for row in manifest['files']}
+    with tempfile.TemporaryDirectory(prefix='semantic result reader ') as temporary:
+        folder = Path(temporary)
+        folder.chmod(0o700)
+        with zipfile.ZipFile(args.plugin_package) as packed:
+            entries = packed.infolist()
+            if len(entries) != len(files) or {row.filename for row in entries} != set(files) or len(entries) > 500:
+                raise ValueError('插件文件清单不一致')
+            total = 0
+            for row in entries:
+                name = row.filename
+                if name.startswith('/') or '\\' in name or any(p in {'', '.', '..'} for p in name.split('/')) or row.is_dir() or (row.external_attr >> 16) & 0o170000 == 0o120000:
+                    raise ValueError('拒绝路径越界或链接工件')
+                total += row.file_size
+                if row.file_size > 16_000_000 or total > 64_000_000:
+                    raise ValueError('插件解压超过有界大小')
+                data = packed.read(row)
+                if sha(data) != files[name]['sha256'] or len(data) != files[name]['bytes']:
+                    raise ValueError('插件文件摘要不一致')
+                target = folder / name
+                target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes(data)
+                target.chmod(0o600)
+        entry = folder/'plugins/semantic-ui-checks/dist/result-readonly.js'
+        if not entry.is_file():
+            raise ValueError('该旧插件包没有完整结果入口；请使用包含桥接的新独立Codex包')
+        command = [node, str(entry), '--result-file', str(args.result_package.resolve()), '--emit', args.emit]
+        for key in ['mapping_file','source_file','source_json_pointer','source_excerpt','source_kind']:
+            value = getattr(args, key)
+            if value is not None:
+                command += ['--'+key.replace('_','-'), str(value.resolve() if isinstance(value, Path) else value)]
+        if args.require_source:
+            command += ['--require-source']
+        result = subprocess.run(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True, timeout=60)
+        if len(result.stdout.encode()) > 1_100_000:
+            raise ValueError('桥接回执超过有界输出大小')
+        # Decode before forwarding; incomplete output is never presented as a result package.
+        parsed = json.loads(result.stdout)
+        print(json.dumps(parsed, ensure_ascii=False, indent=2))
+        return result.returncode
+
+
 def main():
+    if any(a == '--result-package' or a.startswith('--result-package=') for a in sys.argv[1:]):
+        return result_package_main(sys.argv[1:])
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--answer', action='store_true',
                         help='Print source-canonical text with no model turn')
@@ -982,4 +1050,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())

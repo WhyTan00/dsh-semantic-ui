@@ -1,0 +1,56 @@
+name: codex-result-interop
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10.32.1
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+      - run: pnpm install --frozen-lockfile
+      - run: pnpm typecheck
+      - run: pnpm exec vitest run
+      - run: python3 -m unittest discover -s tests -p 'test_codex*.py'
+      - name: Read the frozen DSH31 origin without rebuilding or installing it
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release download v0.1.0-preview.31 --repo WhyTan00/dsh-semantic-ui --pattern whytan-dsh-semantic-ui-0.1.0-preview.31.tgz --pattern package-manifest.json --dir artifacts/local/codex-result-origin
+          node --input-type=module - <<'JS'
+          import {readFile} from 'node:fs/promises';
+          import {createHash} from 'node:crypto';
+          import assert from 'node:assert/strict';
+          const m=JSON.parse(await readFile('artifacts/local/codex-result-origin/package-manifest.json'));
+          assert.equal(m.sourceCommit,'a74c4d026417346e7400ebf43f042b0d33bbe982');
+          assert.equal(m.sha256,'0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123');
+          assert.equal(createHash('sha256').update(await readFile('artifacts/local/codex-result-origin/'+m.filename)).digest('hex'),m.sha256);
+          JS
+      - name: Build only the independent Codex companion
+        run: node scripts/pack-codex-plugin.mjs --archive artifacts/local/codex-result-origin/whytan-dsh-semantic-ui-0.1.0-preview.31.tgz --manifest artifacts/local/codex-result-origin/package-manifest.json --output artifacts/local/codex-result-build --version 0.1.0-preview.31.1
+      - name: Exercise the extracted MCP, CLI and existing Python entry without a model or Codex thread
+        run: node --import tsx tests/codex-result-interop.mjs --package artifacts/local/codex-result-build/plugin-package-manifest.json --output artifacts/local/codex-result-check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: codex-result-package
+          path: |
+            artifacts/local/codex-result-build/*.zip
+            artifacts/local/codex-result-build/plugin-package-manifest.json
+            artifacts/local/codex-result-build/SHA256SUMS
+          if-no-files-found: error
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: codex-result-receipts
+          path: |
+            artifacts/local/codex-result-check/acceptance.json
+            artifacts/local/codex-result-check/report.json
+            artifacts/local/codex-result-check/carried-result.json
+          if-no-files-found: error

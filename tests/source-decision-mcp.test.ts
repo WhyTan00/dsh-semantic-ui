@@ -13,7 +13,7 @@ async function connect(source=file){
 }
 it('uses the normal source-file entry to inspect the actual full D1 question and reject its first erroneous comparison',async()=>{
  const c=await connect();try{
-  const tools=await c.client.listTools();expect(tools.tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_source_check']);
+  const tools=await c.client.listTools();expect(tools.tools.map(t=>t.name)).toEqual(['semantic_ui_schema','semantic_ui_check','semantic_ui_template_check','semantic_ui_result_check','semantic_ui_source_check']);
   let r=await c.client.callTool({name:'semantic_ui_source_check',arguments:{}});
   expect(r.structuredContent).toHaveProperty('sourceCheckKind','decision-zh');expect(r.structuredContent).toHaveProperty('source.documentSha256','d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61');expect(r.structuredContent).toHaveProperty('canonicalExplanation.status','available');
   r=await c.client.callTool({name:'semantic_ui_source_check',arguments:{view:d1FirstView,mapping:d1Mapping,prose:d1Record.finalAnswer}});expect(r.structuredContent).toHaveProperty('comparison.status','mismatch');expect(JSON.stringify(r.structuredContent)).toContain('SOURCE_REQUIREMENT_ROLE');

@@ -1,6 +1,6 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "semantic-ui-checks",
-  "version": "0.1.0-preview.27",
-  "description": "Deterministic semantic checks and template contracts for native visualizations."
+  "version": "0.1.0-preview.31.1",
+  "description": "Read-only semantic/result-package checks and preserved A/B state for explicit native workflows."
 }

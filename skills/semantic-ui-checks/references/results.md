@@ -1,0 +1,11 @@
+# Explicit saved results
+
+Use `semantic_ui_result_check` for an explicitly supplied complete DSH result document. It reads result formats 1/2/3 with the existing parser; an envelope-only tool cannot validate the outer result package. Preserve its returned `document` and checksum, locale/theme/layout, source record, nulls, A/B values, selected scenario and unapplied draft. The returned document uses the same DSH contract and can be carried back to a compatible DSH; the checker does not save or overwrite a library.
+
+The result tool separates original declarations, deterministic calculations, local hypotheses and the saved historical source record. A is a retained local snapshot; B and its draft remain separate. Invalid draft text is not an applied numeric value, zero or false. Do not use model annotations, saved source hashes or a declared `bound` status as identity, approval or a fresh source check.
+
+An optional `mapping` compares only the original view against the source snapshot configured by the caller when the server started. It reuses the advertised finite source grammar. Tool arguments and package fields cannot select another file, kind, account or source. A mismatch, missing source, unsupported scope or changed historical source digest remains explicit. Finite field matching does not verify arbitrary prose or world facts. Never silently substitute A/B values for original source conditions.
+
+When the MCP tool is unavailable, the user can explicitly run the same package's `dist/result-readonly.js --result-file …`, or the repository's existing `examples/codex-readonly.py --result-package … --plugin-package … --plugin-manifest …`. This result mode uses real stdio MCP without creating a Codex thread, starting a model or reading global Codex settings. Use only caller-provided files; no directory search, global plugin installation, source replacement, tool/model fallback or approval is implied. `--emit document` prints the unchanged package contract to stdout; input files are read-only. Without an independently configured source, describe the report as unverified, even when the package checksum is valid.
+
+CLI/MCP execution is distinct from native Codex tool registration, model natural adoption, rich UI or DSH rendering. Report only the layer actually exercised.
