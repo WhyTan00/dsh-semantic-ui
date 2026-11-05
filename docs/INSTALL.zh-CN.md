@@ -1,6 +1,6 @@
 # 安装、隔离验证和回退
 
-当前新增[preview.31](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)支持[双方案本地假设对照](WHAT-IF.zh-CN.md)：保留只读A、在B编辑，用同一核心并排核对条件/结果/未知，保存或携带后继续。新结果格式3可读28格式1和30格式2，接收格式3需升级。30中文默认、语言记忆与条件表单沿用已有接受；最终不可变31归档及新增路径、公开下载/个人采用的接受记录在冻结后单列，不重跑旧矩阵。
+当前新增[preview.31](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)支持[双方案本地假设对照](WHAT-IF.zh-CN.md)：保留只读A、在B编辑，用同一核心并排核对条件/结果/未知，保存或携带后继续。新结果格式3可读28格式1和30格式2，接收格式3需升级。30中文默认、语言记忆与条件表单沿用已有接受；最终407文件包、Native/PTC/Linux新增路径、公开下载和个人入口采用均通过，见[本版接受](evidence/scenarios.json)；后补接受独立提交，不重跑旧矩阵或重打冻结包。
 
 历史已核版本[preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，317文件归档已在本机/Linux定向安装验收，四份资产匿名回验一致；[新证据](evidence/source-update.json)随仓库单列。18候选因真实安装失败未发行。
 

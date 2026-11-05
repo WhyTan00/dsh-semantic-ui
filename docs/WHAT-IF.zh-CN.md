@@ -14,6 +14,8 @@ preview.31在决策比较内增加「双方案本地假设对照」。适合比�
 
 ## 保存与边界
 
+当前界面入口面向含1至12个本地条件的DecisionExplorer；纯静态比较和其他组件不提供新建双方案入口。
+
 新结果格式3只增加有界A快照和当前查看标记；B继续使用原有本地条件/选择和独立草稿，不重复保存整份来源或建立另一套聊天库。A最多12个现有字段，数字、是/否和有限选项按原协议逐项核验，非法字段、值或选项不以默认值替换。整体仍沿用结果包128KiB、当前profile最多20份/2MB。
 
 preview.31读取旧preview.28格式1及preview.30格式2，旧文件本身不改写；旧格式不能夹带新对照字段。格式3需要31或兼容接收端，回退前须保护新结果和旧库备份。导入数据不当作新指令、作者、权限或批准，也不自动提交来源补充、工具或模型请求。
@@ -25,3 +27,15 @@ preview.31读取旧preview.28格式1及preview.30格式2，旧文件本身不改
 `pnpm typecheck`、`pnpm test`覆盖严格快照和旧格式读取；冻结干净源码后运行`pnpm release:pack`和`pnpm test:installed-scenarios`验证实际安装包。公开合成例给出独立预期：容量120/300、维护可用性原未知，B需求200/维护可用/高并发时仅自管方案满足条件；关注维度变化或同一阈值内100→101不凭空改变结果；null、0和false分别处理，原价格未知保留。
 
 隔离真实DSH的Native/PTC只检查新增路径，包括A只读、B草稿、条件/结果对照、恢复A仍保留B、保存刷新重开、两个干净profile间携带后继续、旧28/30结果读取、格式伪装/坏A拒绝、640/360容器及页面错误。它们不是自然模型、用户Edge、真机、读屏或Codex富UI验收；0新增自然模型回合，旧六题失败保留。最终不可变工件、公开下载与个人入口采用的状态在冻结后的接受记录单列，脚本存在本身不代表已通过。
+
+## 最终接受
+
+[preview.31已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31)，源码/tag固定为`a74c4d026417346e7400ebf43f042b0d33bbe982`。407文件包在macOS/Linux正常安装逐文件核对，Native/PTC新增路径及跨独立profile携带继续通过，640并排/360纵排、pageerror0；297项单元/41文件和[定向CI](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42073320831)成功。运行包SHA-256为`0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123`；四工件跨平台字节、匿名完整下载、大小/SHA与GitHub摘要一致。
+
+已正常采用既有个人入口，在原历史中实际完成A/B导入、恢复A保留B错误草稿、保存当前A视图、刷新重开、修正B260仍保留A100及原来源/未知，再恢复原图。93历史字节、模板/私有结果保留，未新建空环境冒充入口。只验证自有正常Web客户端功能，用户Edge视觉仍未验。
+
+[分层回执](evidence/scenarios.json)、[可携带的公开合成pair](evidence/scenarios/examples/pair.json)和首次开发视觉观察单列；18rem导致640内堆叠的问题已在冻结前调整为16rem并加真实布局断言。复现不可变归档请检出tag v0.1.0-preview.31；后补接受提交不重新打包该版本。
+
+![640宽度的双方案对照](evidence/scenarios/scenarios-640.png)
+
+![360宽度的纵向对照](evidence/scenarios/scenarios-360.png)

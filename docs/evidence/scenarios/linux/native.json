@@ -1,0 +1,32 @@
+{
+  "mode": "native",
+  "fixtureOnly": true,
+  "newRealModelTurns": 0,
+  "baselineAReadOnlyAndIndependent": true,
+  "bUsesExistingConditionForm": true,
+  "sameDeterministicCore": true,
+  "independentEligibilityOracle": true,
+  "irrelevantDisplaySelectionDoesNotChangeOutcome": true,
+  "belowThresholdChangeDoesNotInventOutcome": true,
+  "unknownZeroAndFalseRemainDistinct": true,
+  "sourceAndUnknownComparisonCellsUnchanged": true,
+  "invalidDraftRetainedAcrossAAndB": true,
+  "cancelAndEndDoNotOverwriteSavedResults": true,
+  "restoreARetainsB": true,
+  "bothScenariosSavedAndReopened": true,
+  "currentScenarioAndDraftRestored": true,
+  "fullResultFormat": 3,
+  "old28And30ResultsReadable": true,
+  "corruptAAndMislabeledOldFormatRefusedWithoutOverwrite": true,
+  "crossProfile": "exported-pair",
+  "pageErrors": [],
+  "widths": [
+    640,
+    360
+  ],
+  "wideSideBySideAndNarrowStacked": true,
+  "noRootOverflow": true,
+  "archiveInstalled": true,
+  "executedToolCalls": 1,
+  "actualToolRoute": "dsh_semantic_ui"
+}

@@ -1,0 +1,134 @@
+{
+  "version": "0.1.0-preview.31",
+  "acceptedAt": "2026-11-05T17:40:10.427771+00:00",
+  "sourceCommit": "a74c4d026417346e7400ebf43f042b0d33bbe982",
+  "tag": "v0.1.0-preview.31",
+  "release": {
+    "id": 435509115,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.31",
+    "assets": [
+      {
+        "name": "SHA256SUMS",
+        "bytes": 229,
+        "sha256": "9810b943a652a42235561750317ee7dd4f1c8ccfb1d3b7aef67dbccebc57edd2",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:9810b943a652a42235561750317ee7dd4f1c8ccfb1d3b7aef67dbccebc57edd2",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "package-manifest.json",
+        "bytes": 36361,
+        "sha256": "1aca14554d44ca9f34739b2110ab889f0b5a60349f227fe16572661fbac20fca",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:1aca14554d44ca9f34739b2110ab889f0b5a60349f227fe16572661fbac20fca",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "whytan-dsh-semantic-ui-0.1.0-preview.31.tgz",
+        "bytes": 2766771,
+        "sha256": "0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.31.tgz",
+        "bytes": 44687242,
+        "sha256": "b84b7088b0b9002ed398213f506d0ba8c147dc37ddb5238ddf55ae41e10b5cf5",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:b84b7088b0b9002ed398213f506d0ba8c147dc37ddb5238ddf55ae41e10b5cf5",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      }
+    ],
+    "allFourAnonymousFullDownloadsVerified": true,
+    "allFourMacosLinuxByteEqual": true,
+    "allFourGitHubDigestsVerified": true
+  },
+  "ci": {
+    "run": 42073320831,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42073320831",
+    "conclusion": "success",
+    "unitTests": 297,
+    "unitFiles": 41,
+    "newScenarioUnitTests": 17,
+    "scope": "two-local-scenarios only; final archive normal installation into two clean profiles"
+  },
+  "installation": {
+    "files": 407,
+    "platforms": [
+      "macOS",
+      "Linux"
+    ],
+    "toolModes": [
+      "Native",
+      "PTC"
+    ],
+    "pageErrors": 0,
+    "coreUnchangedFromPreview30": true,
+    "coreSha256": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6"
+  },
+  "contract": {
+    "component": "DecisionExplorer with local inputs",
+    "writeResultFormat": 3,
+    "readResultFormats": [
+      1,
+      2,
+      3
+    ],
+    "a": "retained applied values and display/policy selections; read-only in normal UI",
+    "b": "existing local values, selections and independent draft; no second copy of source data",
+    "switchingToAKeepsB": true,
+    "legacyFormatCannotCarryComparison": true,
+    "templateDefinitionContainsNoScenarioValues": true,
+    "noIdentityPermissionApprovalOrInstructionAuthority": true
+  },
+  "verified": [
+    "independent eligibility oracle on synthetic capacities120/300 and explicit maintenance availability",
+    "display selection and below-threshold changes do not invent changed outcomes",
+    "unknown,zero,false and unknown source price remain distinct",
+    "A retained and B changes isolated",
+    "invalid draft retained while viewing read-only A",
+    "difference table, requirement and exclusion checks",
+    "both scenarios and active view saved/reopened after reload",
+    "B continues after cross-profile transfer",
+    "bad A and mislabeled old format rejected without overwrite",
+    "preview28 format1 and preview30 format2 readable",
+    "640 side-by-side and360 vertical cards without root overflow"
+  ],
+  "personalAdoption": {
+    "samePreexistingPersonalProfileAndPort": true,
+    "historicalSessions": 93,
+    "allHistoricalBytesUnchanged": true,
+    "originalWorkspaceTemplatesAndPrivateResultsPreserved": true,
+    "onlyOwnTemporaryResultsRemoved": 2,
+    "modelAccountRoutingAndOtherPluginsUnchanged": true,
+    "normalWebClientPairFlowPassed": true,
+    "sourceAndAUnchangedWhenBContinued": true,
+    "actualUserEdgeVisualAcceptance": "unverified",
+    "newProfileOrInstanceCreated": false,
+    "sharedServiceChanged": false
+  },
+  "newRealModelTurns": 0,
+  "originalNaturalCases": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18,
+    "rerun": false
+  },
+  "unverified": [
+    "natural-model content semantics",
+    "physical mobile device",
+    "screen reader",
+    "Codex rich UI"
+  ],
+  "firstObservations": "scenarios/first-observations.json",
+  "notes": [
+    "old language/form/result-package matrices were reused, not rerun",
+    "post-freeze acceptance is a separate documentation commit; source tag and archive bytes are not repacked",
+    "UI creation is scoped to DecisionExplorer with1-12 local fields; pure static views and other components have no new creation entry"
+  ]
+}
