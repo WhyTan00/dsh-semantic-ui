@@ -1,3 +1,7 @@
+# Codex preview.31.1 · 完整结果显式只读互通
+
+独立伴随包已[公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.1)，不重发、安装或重启DSH31。`semantic_ui_result_check`及Node/原Python入口通过真实stdio MCP读取结果格式1/2/3，原合同、来源历史记录、null/unknown、语言/主题、A/B和草稿保留；固定源只核原view，缺源标未核，错映射拒绝。309项/42文件、26项Python回归及CI42086835568通过；232文件ZIP及manifest/SHA256SUMS三工件Mac/Linux与匿名公开全量下载同字节。原个人3200新增正常导出→最终伴随核对→导回继续B150、A80/来源80保留，pageerror0、93历史字节/metadata及模板/既有私有结果保留。详见[使用说明](CODEX-RESULTS.zh-CN.md)与[最终回执](evidence/codex-result-interop.json)。0新模型/线程，不改全局配置；自然采用、主聊天工具注册、富UI与用户Edge视觉仍未验，原六题0/6/18不变。
+
 # preview.31 · 双方案本地假设对照
 
 A保留已应用条件/选择只读，B复用现有表单和草稿；同一decide核心并排核对需求、规则状态、条件变化与未知项。切回A保留B，结果格式3保存两方案和当前选择，兼容读取28/30格式1/2。最终407文件Mac/Linux正常安装及Native/PTC新增路径通过，297项单元/41文件（17项新场景检查）、CI42073320831成功。Release435509115的四工件跨平台及匿名全量下载字节/SHA与GitHub摘要一致；既有个人3200真实A/B流程通过，93历史/模板/私有结果和其他插件偏好保留，见[evidence/scenarios.json](evidence/scenarios.json)。后补接受独立提交，不重包。原六题/自然模型额度不变，0新模型调用；30已接受结果沿用，不重测旧矩阵。

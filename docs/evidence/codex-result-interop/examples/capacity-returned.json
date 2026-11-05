@@ -1,0 +1,160 @@
+{
+  "manifest": {
+    "format": "dsh-semantic-ui-result",
+    "version": 3,
+    "producer": {
+      "name": "@whytan/dsh-semantic-ui",
+      "version": "0.1.0-preview.31"
+    },
+    "protocolVersion": "1.4",
+    "dependencies": [
+      {
+        "name": "dsh",
+        "version": "0.2.1-rc.2"
+      },
+      {
+        "name": "@json-render/core",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@json-render/react",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@xyflow/react",
+        "version": "12.12.0"
+      },
+      {
+        "name": "@dagrejs/dagre",
+        "version": "3.1.1"
+      },
+      {
+        "name": "echarts",
+        "version": "6.1.0"
+      },
+      {
+        "name": "react",
+        "version": "19.3.1"
+      }
+    ],
+    "sourceState": "not-recorded",
+    "templateLibraryIncluded": false,
+    "authority": "data-only; no identity, permission, approval or instruction authority"
+  },
+  "content": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "capacity-fixture",
+      "revision": 1,
+      "summary": "UNVERIFIED_MODEL_SUMMARY",
+      "component": "DecisionExplorer",
+      "payload": {
+        "title": "UNVERIFIED_MODEL_TITLE",
+        "dimensions": [
+          {
+            "id": "limit-fixture",
+            "label": "容量上限",
+            "kind": "number",
+            "unit": "GB"
+          }
+        ],
+        "options": [
+          {
+            "id": "option-fixture-0",
+            "label": "A",
+            "values": {
+              "limit-fixture": 100
+            },
+            "advantages": [
+              "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+            ],
+            "disadvantages": [
+              "UNVERIFIED_COST"
+            ],
+            "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+            "evidence": []
+          },
+          {
+            "id": "option-fixture-1",
+            "label": "B",
+            "values": {
+              "limit-fixture": 1000
+            },
+            "advantages": [
+              "UNVERIFIED_DEPLOYMENT_MAINTENANCE"
+            ],
+            "disadvantages": [
+              "UNVERIFIED_COST"
+            ],
+            "suitableWhen": "UNVERIFIED_FUTURE_PLAN",
+            "evidence": []
+          }
+        ],
+        "inputs": [
+          {
+            "id": "quantity-fixture",
+            "label": "需求容量",
+            "type": "number",
+            "unit": "GB",
+            "initial": 80,
+            "expectedEffect": "hard"
+          }
+        ],
+        "rules": [],
+        "constraints": [],
+        "requirements": [
+          {
+            "id": "cover-fixture",
+            "dimension": "limit-fixture",
+            "input": "quantity-fixture",
+            "relation": "at-least"
+          }
+        ]
+      }
+    },
+    "theme": {
+      "mode": "dark",
+      "palette": "ocean",
+      "font": "system",
+      "density": "comfortable",
+      "textSize": "standard"
+    },
+    "layout": {
+      "direction": "auto"
+    },
+    "locale": "zh-CN",
+    "interaction": {
+      "component": "DecisionExplorer",
+      "values": {
+        "quantity-fixture": 120
+      },
+      "dimensions": [
+        "limit-fixture"
+      ],
+      "exploreProposals": false,
+      "conditionDraft": {
+        "version": 1,
+        "fields": {
+          "quantity-fixture": {
+            "mode": "value",
+            "text": "NaN"
+          }
+        }
+      },
+      "scenarioComparison": {
+        "version": 1,
+        "a": {
+          "values": {
+            "quantity-fixture": 80
+          },
+          "dimensions": [
+            "limit-fixture"
+          ],
+          "exploreProposals": false
+        },
+        "viewing": "a"
+      }
+    }
+  },
+  "sha256": "3f3c554c88ee86be28f5790ef09c6b5cf110b56ed64dd274307a3d7c2f0139ac"
+}

@@ -1,0 +1,66 @@
+{
+  "version": "0.1.0-preview.31.1",
+  "sourceCommit": "e6387cd2b0c6ba5be69be8b582f54dda44fdc9be",
+  "zipSha256": "877295f44ec117db05b0a9999c31e97b77f8e177722cc688d9403aff505b6a86",
+  "origin": {
+    "version": "0.1.0-preview.31",
+    "sourceCommit": "a74c4d026417346e7400ebf43f042b0d33bbe982",
+    "archiveFilename": "whytan-dsh-semantic-ui-0.1.0-preview.31.tgz",
+    "archiveSha256": "0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123",
+    "coreSha256": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6"
+  },
+  "filesVerified": 232,
+  "extractedOutsideRepository": true,
+  "pathContainsSpaces": true,
+  "noNodeModulesRequired": true,
+  "actualStdioCalls": [
+    {
+      "status": "checked-unverified",
+      "source": "unverified"
+    },
+    {
+      "status": "checked-unverified",
+      "source": "unverified"
+    },
+    {
+      "status": "checked-unverified",
+      "source": "unverified"
+    },
+    {
+      "status": "invalid-result",
+      "source": "unverified"
+    },
+    {
+      "status": "checked",
+      "source": "matched"
+    },
+    {
+      "status": "source-mismatch",
+      "source": "mismatch"
+    },
+    {
+      "status": "checked",
+      "source": "matched"
+    }
+  ],
+  "closedServers": 2,
+  "normalBundledCli": true,
+  "normalExistingPythonEntry": true,
+  "pythonWorksWithoutCodexOnPath": true,
+  "sourcePinnedBeforeRequests": true,
+  "oldResultFormats": [
+    1,
+    2,
+    3
+  ],
+  "rawDraftRetainedAndNotApplied": true,
+  "localA80B120AndSource80Separate": true,
+  "localeAndThemeRetained": true,
+  "unchangedInputBytes": true,
+  "carriedSameResultContract": true,
+  "newCodexThreads": 0,
+  "newModelTurns": 0,
+  "globalConfigurationChanged": false,
+  "currentMainChatToolRegistration": false,
+  "richUiVerified": false
+}

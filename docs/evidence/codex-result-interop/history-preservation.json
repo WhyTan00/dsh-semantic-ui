@@ -1,0 +1,13 @@
+{
+  "sessionsBefore": 93,
+  "sessionsAfter": 93,
+  "allCompressedHistoryBytesAndMetadataUnchanged": true,
+  "unfinishedTurns": 0,
+  "pendingInbox": 0,
+  "unsettledJobs": 0,
+  "scheduleEvents": 0,
+  "goalEvents": 0,
+  "decodeFailures": 0,
+  "personalServicePidUnchanged": 95289,
+  "serviceRestarted": false
+}

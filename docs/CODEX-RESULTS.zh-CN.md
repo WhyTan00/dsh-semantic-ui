@@ -49,10 +49,18 @@ node /absolute/path/plugins/semantic-ui-checks/dist/result-readonly.js \
   --result-file /absolute/path/saved-result.json --emit document > copied-result-new.json
 ```
 
-此模式仅向stdout输出原合同document，没有新包协议，也不添加认证或重写来源；输入仍只读。可把新文件导入兼容DSH继续。新工具读取格式1/2/3，格式3仍需DSH31或兼容reader；保存语言保留在文件内，接收端显示语言遵循其现有偏好。原始文件和DSH历史/私人模板库不由桥接修改。
+此模式仅向stdout输出原合同document，没有新包协议，也不添加认证或重写来源；输入仍只读。可把新文件导入兼容DSH继续。新工具读取格式1/2/3，格式3仍需DSH31或兼容reader；保存语言保留在导入的存储文档内，接收端显示语言遵循其现有偏好。在DSH再次导出会记录当时的界面语言；桥接保留的是它实际收到的文件，不强制接收端改语言。原始文件和DSH历史/私人模板库不由桥接修改。
 
 ## 当前客户端边界
 
 当前Codex可以通过上述普通显式命令使用CLI/MCP，本轮不全局安装或自动注册新工具。主会话自然选择工具、原生富UI及自然模型内容正确性分别未验。官方[app-server API](https://learn.chatgpt.com/docs/app-server#api-overview)把`mcpServer/tool/call`定义为线程配置的MCP调用，`turn/start`会开始生成；原伴随旧路径创建临时thread，本次结果模式用直接stdio适配满足零新增线程和推理约束。工具返回数据与文本，不附UI资源或动作回传。
 
-验证运行`pnpm typecheck`、`pnpm test`及新`tests/codex-result-interop.mjs`；独立包在无node_modules、含空格路径中核对MCP/CLI/原Python入口，输入字节和同合同输出、固定来源/缺来源/错映射/旧格式/坏包分别记录。开发首个工具数量断言仍期待3，已按新增第四个只读工具更正，来源门禁没有放松。最终包、两平台及公开下载接受在冻结后单列，不以脚本存在或模型回放替代。原六题0通过/6失败/18请求不变，本轮0新增自然模型/推理回合。
+验证运行`pnpm typecheck`、`pnpm test`及新`tests/codex-result-interop.mjs`；独立包在无node_modules、含空格路径中核对MCP/CLI/原Python入口，输入字节和同合同输出、固定来源/缺来源/错映射/旧格式/坏包分别记录。开发首个工具数量断言仍期待3，已按新增第四个只读工具更正，来源门禁没有放松。原六题0通过/6失败/18请求不变，本轮0新增自然模型/推理回合。
+
+## 最终发行与正常入口接受
+
+[独立31.1 Release](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.1)冻结源码为`e6387cd2b0c6ba5be69be8b582f54dda44fdc9be`，232文件、ZIP 535304字节，SHA-256为`877295f44ec117db05b0a9999c31e97b77f8e177722cc688d9403aff505b6a86`。309项/42文件单元测试、26项Python回归及[Linux CI42086835568](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42086835568)通过；ZIP、manifest、SHA256SUMS三工件Mac/Linux字节相同，三个公开资产均完成匿名全量下载、大小、SHA及GitHub digest核对。
+
+最终包在原个人DSH31正常历史入口完成：导出完整结果→固定来源CLI核对→原合同导回→继续B为150，保留A80/来源80与先前B120、NaN无效草稿；pageerror=0、中文偏好保持。这个新增流程使用headless Chromium，没有重启服务、安装新DSH、调用模型或新增Codex线程；93份原历史的压缩字节及metadata不变，模板和既有私有结果保留，只清理本轮自建的结果副本。实际用户Edge视觉仍未验。
+
+[分层接受与工件](evidence/codex-result-interop.json)列出实际stdio、CLI/Python、正常DSH回路和边界；[首次失败](evidence/codex-result-interop/first-failures.json)保留旧工具数量、生成目录provenance、UI语言假设及异步等待修正。后补接受单独提交，不改已冻结包，也不冒称当前主聊天自然采用或富UI已经验收。

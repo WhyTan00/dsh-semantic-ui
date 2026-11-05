@@ -1,0 +1,32 @@
+[
+  {
+    "stage": "development contract tests",
+    "observation": "One previous default-tool-count assertion still expected3 after adding the fourth read-only result tool",
+    "result": "1 failed,18 passed; all12 new result-interop cases passed",
+    "correction": "Update only the advertised tool count to4; optional-source catalog now5; no source validator relaxed",
+    "modelCalls": 0
+  },
+  {
+    "stage": "first clean-source candidate",
+    "observation": "Generated Codex output was not ignored; sourceWorkingTreeClean was false",
+    "correction": "Preserved candidate privately, ignored generated directory, committed e6387cd, rebuilt new candidate; release records true",
+    "publishedCandidate": false,
+    "modelCalls": 0
+  },
+  {
+    "stage": "normal DSH roundtrip first assertion",
+    "observation": "QA expected imported en locale to be re-exported while the reader preferred zh-CN",
+    "actual": "Imported stored document preserves en; current DSH export records reader zh-CN",
+    "correction": "Test these two existing semantics separately; bridge must preserve exactly the actual exported document",
+    "sourceOrRuntimeChanged": false,
+    "modelCalls": 0
+  },
+  {
+    "stage": "normal DSH second import timing",
+    "observation": "QA queried result library while file import was still busy",
+    "correction": "Wait for explicit completed-import status and enabled controls. Recovered one exact owned new UUID by unique name and complete document equality; final two owned copies cleaned after success",
+    "preexistingResultsPreserved": true,
+    "sourceOrRuntimeChanged": false,
+    "modelCalls": 0
+  }
+]

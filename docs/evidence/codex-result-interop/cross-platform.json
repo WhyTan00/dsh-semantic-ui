@@ -1,0 +1,24 @@
+{
+  "ciRunId": 42086835568,
+  "sourceCommit": "e6387cd2b0c6ba5be69be8b582f54dda44fdc9be",
+  "assets": [
+    {
+      "filename": "semantic-ui-checks-codex-0.1.0-preview.31.1.zip",
+      "bytes": 535304,
+      "sha256": "877295f44ec117db05b0a9999c31e97b77f8e177722cc688d9403aff505b6a86",
+      "macLinuxByteEqual": true
+    },
+    {
+      "filename": "plugin-package-manifest.json",
+      "bytes": 49476,
+      "sha256": "cbe6ada7d3966839ccdfbf029bf483976cad6808688a9bf442e86fb4e9d34d1c",
+      "macLinuxByteEqual": true
+    },
+    {
+      "filename": "SHA256SUMS",
+      "bytes": 114,
+      "sha256": "2003f7b33990492c06ba8ca049bfd7b6b9aa57fe1edf00f5b2733a92dbc81037",
+      "macLinuxByteEqual": true
+    }
+  ]
+}

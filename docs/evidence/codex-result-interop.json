@@ -1,0 +1,89 @@
+{
+  "version": "0.1.0-preview.31.1",
+  "kind": "independent-codex-readonly-companion",
+  "sourceCommit": "e6387cd2b0c6ba5be69be8b582f54dda44fdc9be",
+  "sourceWorkingTreeClean": true,
+  "releaseId": 435593952,
+  "releaseUrl": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.1",
+  "zipSha256": "877295f44ec117db05b0a9999c31e97b77f8e177722cc688d9403aff505b6a86",
+  "zipBytes": 535304,
+  "files": 232,
+  "origin": {
+    "version": "0.1.0-preview.31",
+    "sourceCommit": "a74c4d026417346e7400ebf43f042b0d33bbe982",
+    "archiveFilename": "whytan-dsh-semantic-ui-0.1.0-preview.31.tgz",
+    "archiveSha256": "0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123",
+    "coreSha256": "ca3c0a6e930ea837d21aebdded56c3f91e578b84296d97d8fba367fbc674c8c6"
+  },
+  "coreByteEqualToOrigin": true,
+  "resultParserHostByteEqualToOrigin": true,
+  "dsh31RebuiltReinstalledOrRestarted": false,
+  "ci": {
+    "runId": 42086835568,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42086835568",
+    "headSha": "e6387cd2b0c6ba5be69be8b582f54dda44fdc9be",
+    "conclusion": "success"
+  },
+  "verification": {
+    "unitTests": 309,
+    "unitFiles": 42,
+    "pythonRegressionTests": 26,
+    "actualDefaultAndFixedSourceMcp": true,
+    "normalBundledCli": true,
+    "normalExistingPythonEntryWithoutCodexExecutable": true,
+    "outsideRepositoryAndNoNodeModules": true,
+    "formatsRead": [
+      1,
+      2,
+      3
+    ],
+    "sourcePinnedBeforeRequests": true,
+    "wrongMappingRejected": true,
+    "missingSourceMarkedUnverified": true,
+    "damagedPackageRejected": true,
+    "inputBytesUnchanged": true,
+    "macLinuxThreeAssetsByteEqual": true,
+    "threeAnonymousFullDownloadsByteEqual": true,
+    "normalDsh31ExportCheckReimportAndContinue": true,
+    "normalDshBrowser": "headless Chromium on existing normal personal entry; user Edge visual acceptance not performed",
+    "a80Source80AndB120DraftNaNThenB150": true,
+    "readerPreferenceChinesePreserved": true,
+    "historySessionsBeforeAfter": [
+      93,
+      93
+    ],
+    "allCompressedHistoriesAndMetadataUnchanged": true,
+    "preexistingResultsAndTemplatesPreserved": true,
+    "pageErrors": 0
+  },
+  "unchangedBudgets": {
+    "newModelTurns": 0,
+    "newCodexThreads": 0,
+    "globalConfigChanged": false,
+    "oldSixQuestions": {
+      "passed": 0,
+      "failed": 6,
+      "requests": 18
+    }
+  },
+  "boundaries": {
+    "mainChatAutomaticToolRegistrationVerified": false,
+    "nativeRichUiVerified": false,
+    "naturalModelAdoptionVerified": false,
+    "identityVerified": false,
+    "sourceWorldFactsVerified": false,
+    "freeProseVerified": false,
+    "globalInstallationPerformed": false
+  },
+  "receipts": [
+    "codex-result-interop/mac-mcp-cli.json",
+    "codex-result-interop/linux-mcp-cli.json",
+    "codex-result-interop/normal-entry.json",
+    "codex-result-interop/cross-platform.json",
+    "codex-result-interop/public-download.json",
+    "codex-result-interop/history-preservation.json",
+    "codex-result-interop/examples/capacity-returned.json",
+    "codex-result-interop/examples/capacity-report.json",
+    "codex-result-interop/first-failures.json"
+  ]
+}
