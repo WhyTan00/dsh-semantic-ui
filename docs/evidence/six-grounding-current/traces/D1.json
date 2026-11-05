@@ -1,0 +1,483 @@
+{
+  "case": "D1",
+  "sourceFile": "docs/evidence/natural/r9-D1.json",
+  "jsonPointer": "/question",
+  "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+  "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+  "sourceComparison": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "decision-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+      "jsonPointer": "/question",
+      "textSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "excerptSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 201,
+        "textUTF8Bytes": 201
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded two-option decision-zh grammar in the selected text; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/original human identity",
+      "general natural-language meaning outside the documented grammar",
+      "component annotations and arbitrary free prose",
+      "cost ranking, recommendation, exclusivity or inferred opposite responsibilities"
+    ],
+    "status": "compared",
+    "sourceDecision": {
+      "options": [
+        "托管平台",
+        "虚拟机"
+      ],
+      "facts": [
+        {
+          "kind": "actor-updates",
+          "option": "托管平台",
+          "name": null,
+          "actor": "供应商",
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 45,
+              "textByteEnd": 69
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "托管平台",
+          "name": "私网",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 72,
+              "textByteEnd": 84
+            }
+          ]
+        },
+        {
+          "kind": "capability",
+          "option": "虚拟机",
+          "name": "私网",
+          "actor": null,
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 87,
+              "textByteEnd": 105
+            }
+          ]
+        },
+        {
+          "kind": "maintenance-need",
+          "option": "虚拟机",
+          "name": null,
+          "actor": "团队",
+          "value": true,
+          "spans": [
+            {
+              "textByteStart": 108,
+              "textByteEnd": 126
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "托管平台",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ]
+        },
+        {
+          "kind": "price",
+          "option": "虚拟机",
+          "name": null,
+          "actor": null,
+          "value": null,
+          "spans": [
+            {
+              "textByteStart": 129,
+              "textByteEnd": 150
+            }
+          ]
+        },
+        {
+          "kind": "capability-need",
+          "option": null,
+          "name": "私网",
+          "actor": null,
+          "value": false,
+          "spans": [
+            {
+              "textByteStart": 153,
+              "textByteEnd": 180
+            }
+          ]
+        }
+      ],
+      "clauses": [
+        {
+          "kind": "selection",
+          "span": {
+            "textByteStart": 0,
+            "textByteEnd": 42
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 45,
+            "textByteEnd": 69
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 72,
+            "textByteEnd": 84
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 87,
+            "textByteEnd": 105
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 108,
+            "textByteEnd": 126
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 129,
+            "textByteEnd": 150
+          }
+        },
+        {
+          "kind": "fact",
+          "span": {
+            "textByteStart": 153,
+            "textByteEnd": 180
+          }
+        },
+        {
+          "kind": "comparison-request",
+          "span": {
+            "textByteStart": 183,
+            "textByteEnd": 198
+          }
+        }
+      ]
+    },
+    "comparison": {
+      "status": "matched",
+      "scope": "exact bounded source fields, original conditions and requirement direction; component prose is unverified"
+    },
+    "issues": [],
+    "fieldChecks": [
+      {
+        "optionId": "option-0",
+        "sourceOption": "托管平台",
+        "dimensionId": "dimension-0",
+        "sourceKind": "actor-updates",
+        "expected": true,
+        "actual": true,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 45,
+            "textByteEnd": 69
+          }
+        ],
+        "status": "matched"
+      },
+      {
+        "optionId": "option-1",
+        "sourceOption": "虚拟机",
+        "dimensionId": "dimension-0",
+        "sourceKind": "actor-updates",
+        "expected": null,
+        "actual": null,
+        "sourceDeclared": false,
+        "sourceSpans": [],
+        "status": "unknown"
+      },
+      {
+        "optionId": "option-0",
+        "sourceOption": "托管平台",
+        "dimensionId": "dimension-1",
+        "sourceKind": "capability",
+        "expected": false,
+        "actual": false,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 72,
+            "textByteEnd": 84
+          }
+        ],
+        "status": "matched"
+      },
+      {
+        "optionId": "option-1",
+        "sourceOption": "虚拟机",
+        "dimensionId": "dimension-1",
+        "sourceKind": "capability",
+        "expected": true,
+        "actual": true,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 87,
+            "textByteEnd": 105
+          }
+        ],
+        "status": "matched"
+      },
+      {
+        "optionId": "option-0",
+        "sourceOption": "托管平台",
+        "dimensionId": "dimension-2",
+        "sourceKind": "maintenance-need",
+        "expected": null,
+        "actual": null,
+        "sourceDeclared": false,
+        "sourceSpans": [],
+        "status": "unknown"
+      },
+      {
+        "optionId": "option-1",
+        "sourceOption": "虚拟机",
+        "dimensionId": "dimension-2",
+        "sourceKind": "maintenance-need",
+        "expected": true,
+        "actual": true,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 108,
+            "textByteEnd": 126
+          }
+        ],
+        "status": "matched"
+      },
+      {
+        "optionId": "option-0",
+        "sourceOption": "托管平台",
+        "dimensionId": "dimension-3",
+        "sourceKind": "price",
+        "expected": null,
+        "actual": null,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 129,
+            "textByteEnd": 150
+          }
+        ],
+        "status": "declared-unknown"
+      },
+      {
+        "optionId": "option-1",
+        "sourceOption": "虚拟机",
+        "dimensionId": "dimension-3",
+        "sourceKind": "price",
+        "expected": null,
+        "actual": null,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 129,
+            "textByteEnd": 150
+          }
+        ],
+        "status": "declared-unknown"
+      }
+    ],
+    "inputChecks": [
+      {
+        "inputId": "input-0",
+        "sourceKind": "capability-need",
+        "expected": false,
+        "actual": false,
+        "sourceDeclared": true,
+        "sourceSpans": [
+          {
+            "textByteStart": 153,
+            "textByteEnd": 180
+          }
+        ],
+        "status": "matched"
+      },
+      {
+        "inputId": "input-1",
+        "sourceKind": "actor-available",
+        "expected": null,
+        "actual": null,
+        "sourceDeclared": false,
+        "sourceSpans": [],
+        "status": "unknown"
+      }
+    ],
+    "claimChecks": [],
+    "computedDecision": {
+      "scope": "declared-policy-under-original-conditions",
+      "status": "no-match",
+      "strictPolicy": true,
+      "inputEffects": [
+        {
+          "inputId": "input-0",
+          "requirementIds": [
+            "requirement-1"
+          ],
+          "constraintIds": [],
+          "ruleIds": [],
+          "affectsEligibility": true,
+          "affectsPreference": false,
+          "scope": "hard"
+        },
+        {
+          "inputId": "input-1",
+          "requirementIds": [
+            "requirement-2"
+          ],
+          "constraintIds": [],
+          "ruleIds": [],
+          "affectsEligibility": true,
+          "affectsPreference": false,
+          "scope": "hard"
+        }
+      ],
+      "unusedInputIds": [],
+      "requiresPolicyReview": false,
+      "preferenceMode": "withheld-pending-local-review",
+      "eligibilityOnly": true,
+      "eligibilityAssessed": true,
+      "eligibleOptionIds": [],
+      "excludedOptionIds": [],
+      "unknownFeasibilityIds": [
+        "option-0",
+        "option-1"
+      ],
+      "requirements": [
+        {
+          "requirementId": "requirement-1",
+          "optionId": "option-0",
+          "dimensionId": "dimension-1",
+          "inputId": "input-0",
+          "unit": null,
+          "actual": false,
+          "needed": false,
+          "relation": "supports",
+          "active": true,
+          "status": "inactive"
+        },
+        {
+          "requirementId": "requirement-1",
+          "optionId": "option-1",
+          "dimensionId": "dimension-1",
+          "inputId": "input-0",
+          "unit": null,
+          "actual": true,
+          "needed": false,
+          "relation": "supports",
+          "active": true,
+          "status": "inactive"
+        },
+        {
+          "requirementId": "requirement-2",
+          "optionId": "option-0",
+          "dimensionId": "dimension-2",
+          "inputId": "input-1",
+          "unit": null,
+          "actual": null,
+          "needed": null,
+          "relation": "requires-availability",
+          "active": true,
+          "status": "unknown"
+        },
+        {
+          "requirementId": "requirement-2",
+          "optionId": "option-1",
+          "dimensionId": "dimension-2",
+          "inputId": "input-1",
+          "unit": null,
+          "actual": true,
+          "needed": null,
+          "relation": "requires-availability",
+          "active": true,
+          "status": "unknown"
+        }
+      ],
+      "unknownComparisonCells": [
+        {
+          "optionId": "option-0",
+          "dimensionId": "dimension-2"
+        },
+        {
+          "optionId": "option-0",
+          "dimensionId": "dimension-3"
+        },
+        {
+          "optionId": "option-1",
+          "dimensionId": "dimension-0"
+        },
+        {
+          "optionId": "option-1",
+          "dimensionId": "dimension-3"
+        }
+      ],
+      "proposalWithMissingFacts": false,
+      "resultBasis": null,
+      "sourceFactsVerified": false,
+      "recommendedOptionIds": [],
+      "matchedRuleIds": [],
+      "pendingRuleIds": [],
+      "missingInputs": [
+        {
+          "id": "input-1",
+          "label": "团队有维护余力"
+        }
+      ],
+      "activeConstraintIds": [],
+      "unknownConstraintIds": [],
+      "declaredOriginCounts": {
+        "given": 0,
+        "modelJudgment": 0
+      },
+      "boundary": "Evaluates supplied rules and initial conditions only; does not independently verify their origin, facts or suitability. Insufficient conditions do not establish a winner."
+    },
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded parsed source declarations; not general natural-language certification",
+      "text": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。"
+    }
+  },
+  "historicalCanonicalMatchesCurrentCheck": true,
+  "sourceIdentityVerified": false,
+  "worldFactsVerified": false,
+  "freeProseVerified": false
+}

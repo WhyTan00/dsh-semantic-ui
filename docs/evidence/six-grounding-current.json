@@ -1,0 +1,228 @@
+{
+  "scope": "Current known six-case finite-control status and source-backed result adoption; not new natural-model repair/acceptance",
+  "sourceBaseCommit": "d8b29237821c8952f436d6a22b1d330914e5b231",
+  "coreOrRendererCodeChanged": false,
+  "newControllableSixCaseMiscomparisonReproduced": false,
+  "reasonForNoNewAlgorithm": "The generic reference constructor, five source parsers/binders and normal source delivery already cover these known structured failures. Current31 source/installed bytes and seven historical canonical texts match. Do not rewrite existing implementations or invent a new release.",
+  "originalNaturalResults": {
+    "passed": 0,
+    "failed": 6,
+    "requests": 18,
+    "unchanged": true
+  },
+  "cases": [
+    {
+      "case": "A2",
+      "originalError": "反向故障传播、上游已经完成等无据正文；原策略映射缺失",
+      "existingControlledRepair": "通用workflow-zh完整来源、通知retry-only/no-rollback、正向拓扑边界和安全正文投影",
+      "firstRepairVersions": [
+        "9",
+        "22"
+      ],
+      "stillUnverified": "模型自然选择和原正文的完整因果/执行语义",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-A2.json",
+      "boundedReferenceSupported": true,
+      "noNewNaturalPass": true,
+      "savedResult": "six-grounding-current/results/A2.json"
+    },
+    {
+      "case": "A3",
+      "originalError": "Client别名替代原文客户端；只读推成互不影响、独立故障及共享节点数等于耦合宽度",
+      "existingControlledRepair": "精确名称/方向/逐对权限与only-targets/禁止；拒绝无据断言并从来源重建视图文字",
+      "firstRepairVersions": [
+        "12"
+      ],
+      "stillUnverified": "完整自由正文和原模型是否采用正确来源映射",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-A3.json",
+      "boundedReferenceSupported": true,
+      "noNewNaturalPass": true,
+      "savedResult": "six-grounding-current/results/A3.json"
+    },
+    {
+      "case": "D1",
+      "originalError": "需要团队维护被映成支持维护，资源真值方向颠倒；费用单位和维护事实补写",
+      "existingControlledRepair": "resource-need/requires-availability；未声明反面保持null；来源映射全量核对并去除无据策略",
+      "firstRepairVersions": [
+        "9",
+        "12"
+      ],
+      "stillUnverified": "模型自然映射、原始费用/维护等额外正文",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-D1.json",
+      "boundedReferenceSupported": true,
+      "noNewNaturalPass": true,
+      "savedResult": "six-grounding-current/results/D1.json"
+    },
+    {
+      "case": "D2",
+      "originalError": "预留开关只连偏好却承诺300GB硬排除，部署简单混成维护简单",
+      "existingControlledRepair": "完整容量/精确单位/当前量和未来可能量分离；真实numeric hard requirement，属性分开且不建整体推荐",
+      "firstRepairVersions": [
+        "23",
+        "24"
+      ],
+      "stillUnverified": "原自然正文、未声明迁移/成本事实和模型采用",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-D2.json",
+      "boundedReferenceSupported": true,
+      "noNewNaturalPass": true,
+      "savedResult": "six-grounding-current/results/D2.json"
+    },
+    {
+      "case": "N2",
+      "originalError": "GenUI说任意填充值都会改变均值且中位数不受影响",
+      "existingControlledRepair": "逐位置值/null/精确单位、已观测和完整分母；typed mean与补零假设同核心核对",
+      "firstRepairVersions": [
+        "16",
+        "25",
+        "27"
+      ],
+      "stillUnverified": "GenUI原文字和模型是否选择语义检查；不认证中位数等任意额外正文",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-N2.json",
+      "boundedReferenceSupported": true,
+      "noNewNaturalPass": true,
+      "savedResult": "six-grounding-current/results/N2.json"
+    },
+    {
+      "case": "T2",
+      "originalError": "把补零对均值/总量/告警的方向普遍化，忽略有符号数和未知完整数据",
+      "existingControlledRepair": "已有有符号/零和补零反例与来源不足拒绝；不为概念问题强制作图或认证",
+      "firstRepairVersions": [
+        "8",
+        "9",
+        "27"
+      ],
+      "stillUnverified": "概念性自由正文没有有限来源合同，原纯文字未通过",
+      "originalNaturalStatus": "fail",
+      "source": "natural/r9-T2.json",
+      "boundedReferenceSupported": false,
+      "noNewNaturalPass": true
+    }
+  ],
+  "reuse": {
+    "priorSixCaseCoreDiagnosis": {
+      "newReproducibleMiscomparisonFoundInTheseSixInputs": false,
+      "notAUniversalSemanticCorrectnessClaim": true,
+      "legacyViews": [
+        {
+          "caseKey": "A2",
+          "originalCallIndex": 2,
+          "historyReadable": true,
+          "newDeliveryStructureAccepted": true,
+          "newDeliveryIssueCodes": [],
+          "sourceComparison": "mismatch",
+          "sourceIssueCodes": [
+            "SOURCE_POLICY_MAPPING_REQUIRED",
+            "SOURCE_POLICY_MISSING"
+          ],
+          "sourceCoordinates": "actual original call without invented mapping"
+        },
+        {
+          "caseKey": "A3",
+          "originalCallIndex": 3,
+          "historyReadable": true,
+          "newDeliveryStructureAccepted": true,
+          "newDeliveryIssueCodes": [],
+          "sourceComparison": "not-assessed",
+          "sourceIssueCodes": [
+            "SOURCE_ACCESS_MISSING",
+            "SOURCE_BINDING_UNVERIFIED",
+            "SOURCE_NODE_MISSING"
+          ],
+          "sourceCoordinates": "actual original call without invented mapping"
+        },
+        {
+          "caseKey": "D1",
+          "originalCallIndex": 2,
+          "historyReadable": true,
+          "newDeliveryStructureAccepted": false,
+          "newDeliveryIssueCodes": [
+            "DECLARATION_MISSING"
+          ],
+          "sourceComparison": "mismatch",
+          "sourceIssueCodes": [
+            "SOURCE_FIELD_LABEL",
+            "SOURCE_FIELD_TYPE",
+            "SOURCE_REQUIREMENT_ROLE",
+            "SOURCE_VALUE"
+          ],
+          "sourceCoordinates": "reviewer supplied; see reviewer-coordinates.json"
+        },
+        {
+          "caseKey": "D2",
+          "originalCallIndex": 2,
+          "historyReadable": true,
+          "newDeliveryStructureAccepted": false,
+          "newDeliveryIssueCodes": [
+            "DECLARATION_MISSING"
+          ],
+          "sourceComparison": "mismatch",
+          "sourceIssueCodes": [
+            "SOURCE_CAPACITY_DIMENSION",
+            "SOURCE_CAPACITY_INPUT",
+            "SOURCE_INPUT_EFFECT",
+            "SOURCE_OPTIONS",
+            "SOURCE_POLICY_UNSUPPORTED"
+          ],
+          "sourceCoordinates": "reviewer supplied; see reviewer-coordinates.json"
+        }
+      ],
+      "N2": "original used another plugin; current complete-source parser preserves all four positions and computes observed n3 versus complete n4",
+      "T2": "original has zero tools; unsupported as complete finite source, no invented component; arbitrary old prose remains unverified"
+    },
+    "normalNativeAndPtcEvidence": [
+      "source-delivery.json",
+      "source-workflow.json",
+      "source-capacity.json",
+      "numeric-delivery.json",
+      "original-case-reference.json",
+      "model-view-host.json"
+    ],
+    "olderEvidenceScopePreserved": true
+  },
+  "newVerification": {
+    "sourceBackedPackagesChecked": 7,
+    "historicalCanonicalMatchesCurrentSourceCheck": true,
+    "explicitChangedSourceSnapshotRejectedOldPacket": true,
+    "changedSourcePositiveMatched": true,
+    "nullToObservedZeroDespiteSameMeanRejected": true,
+    "contradictedRollbackWithholdsCanonical": true,
+    "unsupportedFailureIndependenceNotAssessed": true,
+    "T2NotForcedIntoGraph": true,
+    "normalPersonalUiFlows": [
+      "D1 source/local resource and save-reopen",
+      "N2 source/full-vs-local numeric scope and save-reopen",
+      "two recorded model source revisions reopened independently"
+    ],
+    "normalUiSourceRecordsRemainHistorical": true,
+    "newModelOrApiInferenceTurns": 0,
+    "newMcpConnections": 0,
+    "newServicesOrRestarts": 0,
+    "newFixtureOrReplayAgentTurns": 0
+  },
+  "remaining": {
+    "originalModelFullProseReverified": false,
+    "naturalToolSelectionVerified": false,
+    "arbitraryFreeProseCertified": false,
+    "sourceIdentityOrWorldFactsCertified": false,
+    "nativeCodexRichUiVerified": false,
+    "actualUserEdgeVisualAcceptance": false,
+    "needsForFutureNaturalAcceptance": "Controlled new generation/full-prose observation under independently evidenced existing free eligibility and remaining budget; existing sealed budgets and first failures cannot be reset. Plugin canonical projection does not certify other renderers or the final raw narrative."
+  },
+  "receipts": [
+    "six-grounding-current/packages.json",
+    "six-grounding-current/runtime-identity.json",
+    "six-grounding-current/composition-checks.json",
+    "six-grounding-current/adoption.json",
+    "six-grounding-current/preservation.json",
+    "six-grounding-current/first-failures.json"
+  ],
+  "screenshot": {
+    "path": "six-grounding-current/N2-historical-canonical.png",
+    "sha256": "8992e6527798873ae67e03c234df625a50e44685ea3dd24e5805177947bc639f",
+    "scope": "public synthetic source explanation in actual normal personal DSH; historical record only"
+  }
+}

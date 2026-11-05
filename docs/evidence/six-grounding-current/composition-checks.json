@@ -1,0 +1,17 @@
+{
+  "recheckedSavedSourcePackages": 7,
+  "sourceRevisionOnOldPackage": "source-mismatch",
+  "nullToObservedZeroEvenWithSameMean": "source-mismatch",
+  "contradictedRollbackClaim": "withheld",
+  "unprovenFailureIndependence": "not-assessed",
+  "T2": "unsupported; not forced into a component",
+  "newModelOrApiInferenceTurns": 0,
+  "newMcpConnections": 0,
+  "originalNaturalPassCountUnchanged": true,
+  "coreCodeChanged": false,
+  "sourceRevisionSnapshotReadFromExplicitFile": true,
+  "changedSourceQuestionSha256": "0fb1b42f051947214a50b06016251a0b31c126e7ae74638c4569f7f777c3d59c",
+  "staleRecordedSourceConsistency": "different-text-digest",
+  "sourceRevisionPositiveMatched": true,
+  "sourceRevisionPositiveObservedMean": 1.3333333333333333
+}

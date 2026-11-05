@@ -1,0 +1,248 @@
+{
+  "case": "A3",
+  "sourceFile": "docs/evidence/natural/r9-A3.json",
+  "jsonPointer": "/question",
+  "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+  "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+  "sourceComparison": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "permissions-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "jsonPointer": "/question",
+      "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 193,
+        "textUTF8Bytes": 193
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source author/human identity",
+      "unselected context and general natural-language meaning",
+      "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+      "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+    ],
+    "status": "compared",
+    "sourcePermissions": {
+      "context": "虚构服务",
+      "nodes": [
+        "客户端",
+        "Gateway",
+        "Search",
+        "Account",
+        "Index",
+        "Store"
+      ],
+      "accesses": [
+        {
+          "from": "客户端",
+          "to": "Gateway",
+          "mode": "access",
+          "spans": [
+            {
+              "textByteStart": 18,
+              "textByteEnd": 47
+            }
+          ]
+        },
+        {
+          "from": "Gateway",
+          "to": "Search",
+          "mode": "access",
+          "spans": [
+            {
+              "textByteStart": 50,
+              "textByteEnd": 83
+            }
+          ]
+        },
+        {
+          "from": "Gateway",
+          "to": "Account",
+          "mode": "access",
+          "spans": [
+            {
+              "textByteStart": 50,
+              "textByteEnd": 83
+            }
+          ]
+        },
+        {
+          "from": "Search",
+          "to": "Index",
+          "mode": "read-only",
+          "spans": [
+            {
+              "textByteStart": 86,
+              "textByteEnd": 105
+            }
+          ]
+        },
+        {
+          "from": "Account",
+          "to": "Store",
+          "mode": "read-write",
+          "spans": [
+            {
+              "textByteStart": 108,
+              "textByteEnd": 128
+            }
+          ]
+        }
+      ],
+      "prohibitions": [
+        {
+          "from": "Search",
+          "to": "Store",
+          "spans": [
+            {
+              "textByteStart": 131,
+              "textByteEnd": 157
+            }
+          ]
+        }
+      ],
+      "onlyTargets": [
+        {
+          "from": "客户端",
+          "targets": [
+            "Gateway"
+          ],
+          "spans": [
+            {
+              "textByteStart": 18,
+              "textByteEnd": 47
+            }
+          ]
+        }
+      ]
+    },
+    "comparison": {
+      "status": "matched",
+      "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+      "nodeChecks": [
+        {
+          "nodeId": "node-0",
+          "label": "客户端",
+          "status": "matched"
+        },
+        {
+          "nodeId": "node-1",
+          "label": "Gateway",
+          "status": "matched"
+        },
+        {
+          "nodeId": "node-2",
+          "label": "Search",
+          "status": "matched"
+        },
+        {
+          "nodeId": "node-3",
+          "label": "Account",
+          "status": "matched"
+        },
+        {
+          "nodeId": "node-4",
+          "label": "Index",
+          "status": "matched"
+        },
+        {
+          "nodeId": "node-5",
+          "label": "Store",
+          "status": "matched"
+        }
+      ],
+      "edgeChecks": [
+        {
+          "edgeId": "edge-0",
+          "from": "客户端",
+          "to": "Gateway",
+          "status": "matched",
+          "expectedMode": "access",
+          "sourceSpans": [
+            {
+              "textByteStart": 18,
+              "textByteEnd": 47
+            }
+          ]
+        },
+        {
+          "edgeId": "edge-1",
+          "from": "Gateway",
+          "to": "Search",
+          "status": "matched",
+          "expectedMode": "access",
+          "sourceSpans": [
+            {
+              "textByteStart": 50,
+              "textByteEnd": 83
+            }
+          ]
+        },
+        {
+          "edgeId": "edge-2",
+          "from": "Gateway",
+          "to": "Account",
+          "status": "matched",
+          "expectedMode": "access",
+          "sourceSpans": [
+            {
+              "textByteStart": 50,
+              "textByteEnd": 83
+            }
+          ]
+        },
+        {
+          "edgeId": "edge-3",
+          "from": "Search",
+          "to": "Index",
+          "status": "matched",
+          "expectedMode": "read-only",
+          "sourceSpans": [
+            {
+              "textByteStart": 86,
+              "textByteEnd": 105
+            }
+          ]
+        },
+        {
+          "edgeId": "edge-4",
+          "from": "Account",
+          "to": "Store",
+          "status": "matched",
+          "expectedMode": "read-write",
+          "sourceSpans": [
+            {
+              "textByteStart": 108,
+              "textByteEnd": 128
+            }
+          ]
+        }
+      ],
+      "viewAnnotations": "not-verified"
+    },
+    "issues": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "bounded explicit source declarations; no global or causal inference",
+      "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+    }
+  },
+  "historicalCanonicalMatchesCurrentCheck": true,
+  "sourceIdentityVerified": false,
+  "worldFactsVerified": false,
+  "freeProseVerified": false
+}

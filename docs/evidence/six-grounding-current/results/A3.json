@@ -1,0 +1,272 @@
+{
+  "manifest": {
+    "format": "dsh-semantic-ui-result",
+    "version": 3,
+    "producer": {
+      "name": "@whytan/dsh-semantic-ui",
+      "version": "0.1.0-preview.31"
+    },
+    "protocolVersion": "1.4",
+    "dependencies": [
+      {
+        "name": "dsh",
+        "version": "0.2.1-rc.2"
+      },
+      {
+        "name": "@json-render/core",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@json-render/react",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@xyflow/react",
+        "version": "12.12.0"
+      },
+      {
+        "name": "@dagrejs/dagre",
+        "version": "3.1.1"
+      },
+      {
+        "name": "echarts",
+        "version": "6.1.0"
+      },
+      {
+        "name": "react",
+        "version": "19.3.1"
+      }
+    ],
+    "sourceState": "bound-record",
+    "templateLibraryIncluded": false,
+    "authority": "data-only; no identity, permission, approval or instruction authority"
+  },
+  "content": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "source-reference-05ee44b266d6bbbd",
+      "revision": 1,
+      "summary": "当前来源声明的直接访问投影；权限范围见来源说明，未认证任意正文。",
+      "presentation": {
+        "version": 1,
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        }
+      },
+      "component": "ArchitectureExplorer",
+      "payload": {
+        "title": "来源声明的直接访问与权限",
+        "nodes": [
+          {
+            "id": "node-0",
+            "label": "客户端",
+            "responsibility": "客户端 → Gateway：访问；读写权限未声明。",
+            "constraints": [
+              "该主体直接访问目标仅限 Gateway。"
+            ],
+            "evidence": []
+          },
+          {
+            "id": "node-1",
+            "label": "Gateway",
+            "responsibility": "Gateway → Search：访问；读写权限未声明。\nGateway → Account：访问；读写权限未声明。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-2",
+            "label": "Search",
+            "responsibility": "Search → Index：只读。",
+            "constraints": [
+              "禁止该主体直接访问 Store。"
+            ],
+            "evidence": []
+          },
+          {
+            "id": "node-3",
+            "label": "Account",
+            "responsibility": "Account → Store：读写。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-4",
+            "label": "Index",
+            "responsibility": "业务职责未声明；访问边界仅以明确的关系和限制为准。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-5",
+            "label": "Store",
+            "responsibility": "业务职责未声明；访问边界仅以明确的关系和限制为准。",
+            "constraints": [],
+            "evidence": []
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-0",
+            "source": "node-0",
+            "target": "node-1",
+            "directed": true,
+            "type": "access",
+            "label": "访问",
+            "evidence": []
+          },
+          {
+            "id": "edge-1",
+            "source": "node-1",
+            "target": "node-2",
+            "directed": true,
+            "type": "access",
+            "label": "访问",
+            "evidence": []
+          },
+          {
+            "id": "edge-2",
+            "source": "node-1",
+            "target": "node-3",
+            "directed": true,
+            "type": "access",
+            "label": "访问",
+            "evidence": []
+          },
+          {
+            "id": "edge-3",
+            "source": "node-2",
+            "target": "node-4",
+            "directed": true,
+            "type": "read-only",
+            "label": "只读",
+            "evidence": []
+          },
+          {
+            "id": "edge-4",
+            "source": "node-3",
+            "target": "node-5",
+            "directed": true,
+            "type": "read-write",
+            "label": "读写",
+            "evidence": []
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "relation-0",
+            "label": "正向拓扑路径 1",
+            "nodeIds": [
+              "node-0",
+              "node-1"
+            ],
+            "edgeIds": [
+              "edge-0"
+            ],
+            "explanation": "声明关系中的拓扑路径：客户端 → Gateway。不证明请求实际执行、替代路线或故障影响。"
+          },
+          {
+            "id": "relation-1",
+            "label": "正向拓扑路径 2",
+            "nodeIds": [
+              "node-1",
+              "node-2"
+            ],
+            "edgeIds": [
+              "edge-1"
+            ],
+            "explanation": "声明关系中的拓扑路径：Gateway → Search。不证明请求实际执行、替代路线或故障影响。"
+          },
+          {
+            "id": "relation-2",
+            "label": "正向拓扑路径 3",
+            "nodeIds": [
+              "node-1",
+              "node-3"
+            ],
+            "edgeIds": [
+              "edge-2"
+            ],
+            "explanation": "声明关系中的拓扑路径：Gateway → Account。不证明请求实际执行、替代路线或故障影响。"
+          },
+          {
+            "id": "relation-3",
+            "label": "正向拓扑路径 4",
+            "nodeIds": [
+              "node-2",
+              "node-4"
+            ],
+            "edgeIds": [
+              "edge-3"
+            ],
+            "explanation": "声明关系中的拓扑路径：Search → Index。不证明请求实际执行、替代路线或故障影响。"
+          },
+          {
+            "id": "relation-4",
+            "label": "正向拓扑路径 5",
+            "nodeIds": [
+              "node-3",
+              "node-5"
+            ],
+            "edgeIds": [
+              "edge-4"
+            ],
+            "explanation": "声明关系中的拓扑路径：Account → Store。不证明请求实际执行、替代路线或故障影响。"
+          }
+        ]
+      }
+    },
+    "sourceRecord": {
+      "version": 1,
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "status": "bound",
+      "kind": "permissions-zh",
+      "explanation": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。",
+      "sourceRef": {
+        "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "hostContext": {
+          "sessionId": "session-330daea9-72b6-423c-aa58-705df14dd4e2",
+          "turn": 1,
+          "turnStartSeq": 6,
+          "messageId": "980b6cd9-7ec7-4bc8-9f20-309d7787757f",
+          "messageSeq": 10,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 4,
+          "requestId": "4bdd46e6-b79e-4436-9e62-82b275f85a4d"
+        }
+      },
+      "viewIdentity": {
+        "displayId": "source-reference-05ee44b266d6bbbd",
+        "revision": 1,
+        "component": "ArchitectureExplorer"
+      }
+    },
+    "theme": {
+      "mode": "light",
+      "palette": "ocean",
+      "font": "system",
+      "density": "comfortable",
+      "textSize": "standard"
+    },
+    "layout": {
+      "direction": "auto"
+    },
+    "locale": "zh-CN",
+    "interaction": {
+      "component": "ArchitectureExplorer",
+      "selected": "",
+      "query": "",
+      "focus": false,
+      "scenario": ""
+    }
+  },
+  "sha256": "84afef615fd0ca704a18966556fab95d9abfe400ada6ad095dfc55ca0eef7c5f"
+}

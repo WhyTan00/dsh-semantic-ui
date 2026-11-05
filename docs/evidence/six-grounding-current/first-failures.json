@@ -1,0 +1,10 @@
+{
+  "stage": "normal source-backed result adoption",
+  "failure": "QA expected 结果已保存在当前环境 but UI correctly reported 结果已保存到当前环境",
+  "softwareSaveSucceeded": true,
+  "correction": "Use actual translated status and register exact new UUID before status assertions",
+  "orphanedOwnSavedCopyRecoveredByUniqueNameAndWholeDocument": true,
+  "preexistingResultsPreserved": true,
+  "sourceSemanticRegressionFound": false,
+  "newModelTurns": 0
+}

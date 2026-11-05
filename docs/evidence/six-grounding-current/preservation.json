@@ -1,0 +1,72 @@
+{
+  "historicalSessionsBeforeAfter": [
+    93,
+    93
+  ],
+  "allCompressedHistoryBytesAndMetadataUnchanged": true,
+  "profileConfigRawBytesUnchanged": true,
+  "modelAccountRoutesAndOtherPluginConfigurationUnchanged": true,
+  "templatesAndOriginalPrivateResultsPreserved": true,
+  "finalTemporaryCopiesRemoved": 6,
+  "initialFailedSaveCopyRecoveredByExactIdentity": true,
+  "remainingPreexistingResults": 0,
+  "resultRevisionMonotonic": 46,
+  "sourceNaturalRecords": [
+    {
+      "case": "A2",
+      "file": "docs/evidence/natural/r9-A2.json",
+      "fileSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+      "originalQuestionSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "originalFinalSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+      "wholeOriginalRecordUnchanged": true
+    },
+    {
+      "case": "A3",
+      "file": "docs/evidence/natural/r9-A3.json",
+      "fileSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "originalQuestionSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "originalFinalSha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+      "wholeOriginalRecordUnchanged": true
+    },
+    {
+      "case": "D1",
+      "file": "docs/evidence/natural/r9-D1.json",
+      "fileSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+      "originalQuestionSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "originalFinalSha256": "1c159ff7bc6e6451bba7a795e22078dcc284d0d4580ef83ad7f0a4d3858010c7",
+      "wholeOriginalRecordUnchanged": true
+    },
+    {
+      "case": "D2",
+      "file": "docs/evidence/natural/r9-D2.json",
+      "fileSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+      "originalQuestionSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "originalFinalSha256": "31697c4ced78e92410b37c8945d93ae4426f0809b44cfa64cc7d00560a6b5fcc",
+      "wholeOriginalRecordUnchanged": true
+    },
+    {
+      "case": "N2",
+      "file": "docs/evidence/natural/r9-N2.json",
+      "fileSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "originalQuestionSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "originalFinalSha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+      "wholeOriginalRecordUnchanged": true
+    },
+    {
+      "case": "T2",
+      "file": "docs/evidence/natural/r9-T2.json",
+      "fileSha256": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2",
+      "originalQuestionSha256": "40a76f7e8e2c1cfdf500d5437fa15197be5da39f25c3e51ce43d84a884612dfa",
+      "originalFinalSha256": "98c575665f01cdcd26cc70945c31d59966f0eba278c899386ff65242fe1997c0",
+      "wholeOriginalRecordUnchanged": true
+    }
+  ],
+  "originalNaturalResults": {
+    "passed": 0,
+    "failed": 6,
+    "requests": 18
+  },
+  "newModelOrApiInferenceTurns": 0,
+  "newMcpConnections": 0,
+  "runtimeRestarted": false
+}

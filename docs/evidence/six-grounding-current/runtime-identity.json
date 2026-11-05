@@ -1,0 +1,8 @@
+{
+  "version": "0.1.0-preview.31",
+  "pid": 95289,
+  "archiveSha256": "0810c0e8829f998d8fc5156a77ab881c8868cc5314feaf89ddc4d49773f2c123",
+  "sourceHostCompilesToInstalled31Bytes": true,
+  "installedHostAndClientMatchFrozen31": true,
+  "pluginOrServerRestarted": false
+}

@@ -1,0 +1,181 @@
+{
+  "case": "N2",
+  "sourceFile": "docs/evidence/natural/r9-N2.json",
+  "jsonPointer": "/question",
+  "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+  "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+  "sourceComparison": {
+    "sourceCheckVersion": "1.0",
+    "sourceCheckKind": "observations-zh",
+    "source": {
+      "input": "caller-configured startup file snapshot; separate from tool arguments",
+      "documentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "jsonPointer": "/question",
+      "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "excerptSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "selection": {
+        "textUTF8ByteStart": 0,
+        "textUTF8ByteEnd": 114,
+        "textUTF8Bytes": 114
+      },
+      "identityVerified": false,
+      "authorship": "unverified; a configured file does not certify its author or original user",
+      "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+    },
+    "sourceFactsVerified": false,
+    "unverified": [
+      "source identity, authorship and real-world readings",
+      "unselected context, arbitrary prose, chart title and annotations",
+      "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+    ],
+    "status": "compared",
+    "sourceObservations": {
+      "context": "虚构设备",
+      "measurement": "温度",
+      "unit": "摄氏度",
+      "positions": [
+        {
+          "index": 0,
+          "value": -2,
+          "span": {
+            "textByteStart": 34,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "index": 1,
+          "value": 0,
+          "span": {
+            "textByteStart": 39,
+            "textByteEnd": 40
+          }
+        },
+        {
+          "index": 2,
+          "value": null,
+          "span": {
+            "textByteStart": 43,
+            "textByteEnd": 49
+          }
+        },
+        {
+          "index": 3,
+          "value": 2,
+          "span": {
+            "textByteStart": 52,
+            "textByteEnd": 53
+          }
+        }
+      ]
+    },
+    "sourceStatistics": {
+      "unit": "摄氏度",
+      "positions": 4,
+      "values": [
+        -2,
+        0,
+        null,
+        2
+      ],
+      "missingMask": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "observed": {
+        "count": 3,
+        "missing": 1,
+        "sum": 0,
+        "mean": 0,
+        "denominator": 3,
+        "scope": "declared non-missing positions only"
+      },
+      "complete": {
+        "count": 4,
+        "sum": null,
+        "sumKnown": false,
+        "mean": null,
+        "denominator": 4,
+        "known": false,
+        "scope": "all declared positions; missing readings remain unknown"
+      },
+      "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+    },
+    "comparison": {
+      "status": "matched",
+      "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+      "rowChecks": [
+        {
+          "sourceIndex": 0,
+          "rowId": "position-0",
+          "seriesId": "source-values",
+          "expected": -2,
+          "actual": -2,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 34,
+            "textByteEnd": 36
+          }
+        },
+        {
+          "sourceIndex": 1,
+          "rowId": "position-1",
+          "seriesId": "source-values",
+          "expected": 0,
+          "actual": 0,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 39,
+            "textByteEnd": 40
+          }
+        },
+        {
+          "sourceIndex": 2,
+          "rowId": "position-2",
+          "seriesId": "source-values",
+          "expected": null,
+          "actual": null,
+          "missing": true,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 43,
+            "textByteEnd": 49
+          }
+        },
+        {
+          "sourceIndex": 3,
+          "rowId": "position-3",
+          "seriesId": "source-values",
+          "expected": 2,
+          "actual": 2,
+          "missing": false,
+          "status": "matched",
+          "sourceSpan": {
+            "textByteStart": 52,
+            "textByteEnd": 53
+          }
+        }
+      ],
+      "viewAnnotations": "not-verified"
+    },
+    "issues": [],
+    "claimChecks": [],
+    "freeProse": {
+      "status": "not-verified",
+      "provided": false,
+      "characters": 0
+    },
+    "canonicalExplanation": {
+      "status": "available",
+      "basis": "complete selected finite source readings and explicit calculation range only",
+      "text": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+    }
+  },
+  "historicalCanonicalMatchesCurrentCheck": true,
+  "sourceIdentityVerified": false,
+  "worldFactsVerified": false,
+  "freeProseVerified": false
+}

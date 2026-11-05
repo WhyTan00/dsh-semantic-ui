@@ -1,0 +1,160 @@
+{
+  "manifest": {
+    "format": "dsh-semantic-ui-result",
+    "version": 3,
+    "producer": {
+      "name": "@whytan/dsh-semantic-ui",
+      "version": "0.1.0-preview.31"
+    },
+    "protocolVersion": "1.4",
+    "dependencies": [
+      {
+        "name": "dsh",
+        "version": "0.2.1-rc.2"
+      },
+      {
+        "name": "@json-render/core",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@json-render/react",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@xyflow/react",
+        "version": "12.12.0"
+      },
+      {
+        "name": "@dagrejs/dagre",
+        "version": "3.1.1"
+      },
+      {
+        "name": "echarts",
+        "version": "6.1.0"
+      },
+      {
+        "name": "react",
+        "version": "19.3.1"
+      }
+    ],
+    "sourceState": "bound-record",
+    "templateLibraryIncluded": false,
+    "authority": "data-only; no identity, permission, approval or instruction authority"
+  },
+  "content": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "source-reference-30e3ee365de57d2e",
+      "revision": 1,
+      "summary": "来源声明的完整位置读数；已观测统计与完整范围未知分开，本地筛选和补零假设不改变来源。",
+      "presentation": {
+        "version": 1,
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        }
+      },
+      "component": "DataChart",
+      "payload": {
+        "chartType": "bar",
+        "title": "来源声明的温度读数",
+        "unit": "摄氏度",
+        "x": {
+          "kind": "category",
+          "order": "input"
+        },
+        "series": [
+          {
+            "id": "source-values",
+            "label": "温度"
+          }
+        ],
+        "rows": [
+          {
+            "id": "position-0",
+            "x": "1",
+            "values": {
+              "source-values": -2
+            }
+          },
+          {
+            "id": "position-1",
+            "x": "2",
+            "values": {
+              "source-values": 0
+            }
+          },
+          {
+            "id": "position-2",
+            "x": "3",
+            "values": {
+              "source-values": null
+            }
+          },
+          {
+            "id": "position-3",
+            "x": "4",
+            "values": {
+              "source-values": 2
+            }
+          }
+        ]
+      }
+    },
+    "sourceRecord": {
+      "version": 1,
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "status": "bound",
+      "kind": "observations-zh",
+      "explanation": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+      "sourceRef": {
+        "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+        "hostContext": {
+          "sessionId": "session-a150676b-3cc7-4cf1-941b-fccb7a989905",
+          "turn": 1,
+          "turnStartSeq": 6,
+          "messageId": "de456f21-b39c-42a8-abf7-4f734c49ea57",
+          "messageSeq": 10,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 4,
+          "requestId": "45825333-6250-4b09-a8b6-fdd6f3310960"
+        }
+      },
+      "viewIdentity": {
+        "displayId": "source-reference-30e3ee365de57d2e",
+        "revision": 1,
+        "component": "DataChart"
+      }
+    },
+    "theme": {
+      "mode": "light",
+      "palette": "ocean",
+      "font": "system",
+      "density": "comfortable",
+      "textSize": "standard"
+    },
+    "layout": {
+      "direction": "auto"
+    },
+    "locale": "zh-CN",
+    "interaction": {
+      "component": "DataChart",
+      "enabled": [
+        "source-values"
+      ],
+      "from": 0,
+      "to": 3,
+      "scope": "filtered",
+      "page": 0
+    }
+  },
+  "sha256": "a84a84d9e8e9816317d67a98e97a4c7a8505ac950780d576f9a13361e21887bb"
+}

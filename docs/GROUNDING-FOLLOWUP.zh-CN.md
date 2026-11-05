@@ -1,5 +1,7 @@
 # 来源映射改进与协议1.3验证
 
+当前31的逐题控制范围、历史自然失败和正常保存恢复采用见[六题当前状态](SIX-QUESTION-STATUS.zh-CN.md)。下表是preview.9当时的冻结归因；后续12–27已有有限来源/正文投影修复，不能把表内旧实现缺口一概当作当前未修，也不能把新投影当作原模型正文通过。
+
 后续preview.23以[完整容量来源合同](SOURCE-CAPACITY.zh-CN.md)交付D2的新投影：上限/精确单位/当前需求绑定实际数值硬条件，未来可能点作明确假设，部署与维护未知分开。最终归档的macOS/Linux正常安装、Native/PTC本地容量/无效域和刷新/旧1.2及CLI正反例已[分层接受](evidence/source-capacity.json)。它不修改原D2 preference-only控件或raw承诺，下表原冻结结果不升级为自然通过；新增模型0。
 
 22的[最终分层接受](evidence/source-workflow.json)已补齐：371文件归档、macOS/Linux Native/PTC与旧图恢复、普通答复正反例及四匿名资产分别核验。明确给定失败规则可核，原始模型正文仍不认证；旧研究与自然失败范围不重写。

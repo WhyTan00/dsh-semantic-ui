@@ -1,0 +1,44 @@
+{
+  "runtime": "existing personal DSH31",
+  "servicePid": 95289,
+  "entry": "http://127.0.0.1:3200/",
+  "browser": "headless Chromium normal existing historical message and file chooser",
+  "flows": [
+    {
+      "case": "D1",
+      "historicalCanonicalAndSourceRefPreserved": true,
+      "localResourceFalseExcludesVm": true,
+      "saveReloadReopen": true,
+      "noHistoricalRecordPromotedToCurrentSource": true
+    },
+    {
+      "case": "N2",
+      "fullSourceObservedMean0AndUnknownCompleteRemainFixed": true,
+      "localFilteredMean1Separate": true,
+      "nullAndObservedZeroPreserved": true,
+      "saveReloadReopen": true,
+      "noHistoricalRecordPromotedToCurrentSource": true
+    },
+    {
+      "case": "recorded-source-revision",
+      "oldAndNewSavedIndependently": true,
+      "oldSourceAndCanonicalNotOverwritten": true,
+      "newFalseAndUnknownRetained": true,
+      "reopenBothAfterReload": true,
+      "noHistoricalRecordPromotedToCurrentSource": true
+    }
+  ],
+  "newMcpConnections": 0,
+  "newModelOrApiInferenceTurns": 0,
+  "newSessions": 0,
+  "newFixtureOrReplayAgentTurns": 0,
+  "promptAttempts": 0,
+  "sourceUpdateAttempts": 0,
+  "unknownSessionCreates": 0,
+  "reusedKnownExistingSession": 1,
+  "pageErrors": [],
+  "originalHistoryAndTemplatesRestored": true,
+  "sourceRecordsRemainExplicitHistoricalData": true,
+  "nativeCodexRichUiVerified": false,
+  "actualUserEdgeVisualAcceptance": false
+}

@@ -1,0 +1,117 @@
+{
+  "entry": "existing personal DSH31 result panel",
+  "rows": [
+    {
+      "key": "A2",
+      "package": "results/A2.json",
+      "sha256": "aa76412d5adb68fb282e1c54eba7f248e2102fd12a5fafc9eca8e51f962dfd5e",
+      "documentSha256": "801bcb34867fb087de3feacbd40db3c2797be25fc9362106dcb98082cb413b6e",
+      "sourceFile": "docs/evidence/natural/r9-A2.json",
+      "jsonPointer": "/question",
+      "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "kind": "workflow-zh",
+      "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/A2.json"
+    },
+    {
+      "key": "A3",
+      "package": "results/A3.json",
+      "sha256": "afd1bc3452210e345cedbb6c560cd2bbbfc88f33c68bcad302c99ff7eb64bd13",
+      "documentSha256": "84afef615fd0ca704a18966556fab95d9abfe400ada6ad095dfc55ca0eef7c5f",
+      "sourceFile": "docs/evidence/natural/r9-A3.json",
+      "jsonPointer": "/question",
+      "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "kind": "permissions-zh",
+      "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/A3.json"
+    },
+    {
+      "key": "D1",
+      "package": "results/D1.json",
+      "sha256": "f0afe44ee3db74cfa32e8a24fe88c4838d65bbdfc9dae0aef0363387b695e73c",
+      "documentSha256": "5f8d97191537fc489eccd96422d123d0d50c23fd305c087a6047b4f3cdfab80d",
+      "sourceFile": "docs/evidence/natural/r9-D1.json",
+      "jsonPointer": "/question",
+      "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+      "kind": "decision-zh",
+      "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/D1.json"
+    },
+    {
+      "key": "D2",
+      "package": "results/D2.json",
+      "sha256": "538e8bb7dc253fa43ae1afe0e1a40ee4109520fe33baf91874d35ef0221c3f1d",
+      "documentSha256": "4a7440bd663084c98bdc5e9a195327399f990995f60f4d6018004e30c547bf16",
+      "sourceFile": "docs/evidence/natural/r9-D2.json",
+      "jsonPointer": "/question",
+      "sourceTextSha256": "8deea750b000b6ab6ffca75c3b162cbd29ea375e352d1e870fc9949ae9cc330c",
+      "kind": "capacity-zh",
+      "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/D2.json"
+    },
+    {
+      "key": "N2",
+      "package": "results/N2.json",
+      "sha256": "b5a91d8103cf437202260c624ff0333f0654630c97f87ab25c19fcbcd51f61c6",
+      "documentSha256": "a84a84d9e8e9816317d67a98e97a4c7a8505ac950780d576f9a13361e21887bb",
+      "sourceFile": "docs/evidence/natural/r9-N2.json",
+      "jsonPointer": "/question",
+      "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+      "kind": "observations-zh",
+      "authorship": "existing program-derived finite source reference, taken unchanged from actual Native checkpoint; not a repaired/new model answer",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/N2.json"
+    },
+    {
+      "key": "T2",
+      "component": false,
+      "sourceStatus": "unsupported conceptual prose; no forced component",
+      "originalRawStillFailed": true
+    },
+    {
+      "key": "revision-1",
+      "package": "results/revision-1.json",
+      "sha256": "47ce48e858c5cf46c9cc94fb17522768d153d5b7e595fcdb16f66540ae813e6e",
+      "documentSha256": "c3306695cdf046154f999b0d71a65da67c473acb0c87dbd0219848fbd2597867",
+      "sourceFile": "docs/evidence/model-view-host/native.json",
+      "jsonPointer": "/steps/0/originalReplayInputEvent/data/content/0/text",
+      "sourceTextSha256": "cdd1f59fd1458d09b51ba8aa1d963c60385ba4720460af6202aecab58bb1c0b2",
+      "kind": "decision-zh",
+      "authorship": "existing real model candidate replayed through normal Native render; recorded source/history retained, no new model output",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/revision-1.json"
+    },
+    {
+      "key": "revision-2",
+      "package": "results/revision-2.json",
+      "sha256": "b832c13d87be97386eb39af17dfcf575c22a073a3155cff75285c9f09ab36325",
+      "documentSha256": "83bcd9fd7d5f4bdfe03c556760accc350e86353066d86e5bbe25ccb57804574d",
+      "sourceFile": "docs/evidence/model-view-host/native.json",
+      "jsonPointer": "/steps/1/originalReplayInputEvent/data/content/0/text",
+      "sourceTextSha256": "165333888403209e612221ab14edbfaeed4544c4e8da49a299ee730865905ad7",
+      "kind": "decision-zh",
+      "authorship": "existing real model candidate replayed through normal Native render; recorded source/history retained, no new model output",
+      "historicalCanonicalMatchesCurrentCheck": true,
+      "sourceStatus": "checked within finite source grammar; not an identity or raw-answer certification",
+      "sourceTrace": "traces/revision-2.json"
+    }
+  ],
+  "newModelAnswers": 0,
+  "newNativeFixtureSessions": 0,
+  "newService": 0,
+  "naturalSix": {
+    "passed": 0,
+    "failed": 6,
+    "requests": 18
+  }
+}

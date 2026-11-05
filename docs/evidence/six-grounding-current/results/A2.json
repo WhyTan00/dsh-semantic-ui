@@ -1,0 +1,240 @@
+{
+  "manifest": {
+    "format": "dsh-semantic-ui-result",
+    "version": 3,
+    "producer": {
+      "name": "@whytan/dsh-semantic-ui",
+      "version": "0.1.0-preview.31"
+    },
+    "protocolVersion": "1.4",
+    "dependencies": [
+      {
+        "name": "dsh",
+        "version": "0.2.1-rc.2"
+      },
+      {
+        "name": "@json-render/core",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@json-render/react",
+        "version": "0.21.1"
+      },
+      {
+        "name": "@xyflow/react",
+        "version": "12.12.0"
+      },
+      {
+        "name": "@dagrejs/dagre",
+        "version": "3.1.1"
+      },
+      {
+        "name": "echarts",
+        "version": "6.1.0"
+      },
+      {
+        "name": "react",
+        "version": "19.3.1"
+      }
+    ],
+    "sourceState": "bound-record",
+    "templateLibraryIncluded": false,
+    "authority": "data-only; no identity, permission, approval or instruction authority"
+  },
+  "content": {
+    "view": {
+      "protocolVersion": "1.4",
+      "displayId": "source-reference-aee8484a0dc18764",
+      "revision": 1,
+      "summary": "来源声明的流程与明确异常规则；拓扑、失败动作范围和未知执行状态分开。",
+      "presentation": {
+        "version": 1,
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        }
+      },
+      "component": "ArchitectureExplorer",
+      "payload": {
+        "title": "来源声明的流程与异常规则",
+        "nodes": [
+          {
+            "id": "node-0",
+            "label": "入口",
+            "responsibility": "这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-1",
+            "label": "鉴权",
+            "responsibility": "这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-2",
+            "label": "库存",
+            "responsibility": "这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。",
+            "constraints": [],
+            "evidence": []
+          },
+          {
+            "id": "node-3",
+            "label": "支付",
+            "responsibility": "这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。",
+            "constraints": [
+              "通知失败分支明确不回滚支付；不等于该节点已经完成或必成功。"
+            ],
+            "evidence": []
+          },
+          {
+            "id": "node-4",
+            "label": "通知",
+            "responsibility": "这是来源拓扑中的节点；未给职责、执行状态与完成保证不作推断。",
+            "constraints": [
+              "当通知失败时，仅重试通知，不回滚支付。"
+            ],
+            "evidence": []
+          }
+        ],
+        "edges": [
+          {
+            "id": "edge-0",
+            "source": "node-0",
+            "target": "node-1",
+            "directed": true,
+            "type": "声明的正向流程关系",
+            "evidence": []
+          },
+          {
+            "id": "edge-1",
+            "source": "node-1",
+            "target": "node-2",
+            "directed": true,
+            "type": "声明的正向流程关系",
+            "evidence": []
+          },
+          {
+            "id": "edge-2",
+            "source": "node-2",
+            "target": "node-3",
+            "directed": true,
+            "type": "声明的正向流程关系",
+            "evidence": []
+          },
+          {
+            "id": "edge-3",
+            "source": "node-3",
+            "target": "node-4",
+            "directed": true,
+            "type": "声明的正向流程关系",
+            "evidence": []
+          }
+        ],
+        "scenarios": [
+          {
+            "id": "relation-0",
+            "label": "声明的拓扑路径 1",
+            "nodeIds": [
+              "node-0",
+              "node-1"
+            ],
+            "edgeIds": [
+              "edge-0"
+            ],
+            "explanation": "仅高亮声明的正向拓扑路径；异常规则见来源说明，不保证故障传播、反向回传或实际执行状态。"
+          },
+          {
+            "id": "relation-1",
+            "label": "声明的拓扑路径 2",
+            "nodeIds": [
+              "node-1",
+              "node-2"
+            ],
+            "edgeIds": [
+              "edge-1"
+            ],
+            "explanation": "仅高亮声明的正向拓扑路径；异常规则见来源说明，不保证故障传播、反向回传或实际执行状态。"
+          },
+          {
+            "id": "relation-2",
+            "label": "声明的拓扑路径 3",
+            "nodeIds": [
+              "node-2",
+              "node-3"
+            ],
+            "edgeIds": [
+              "edge-2"
+            ],
+            "explanation": "仅高亮声明的正向拓扑路径；异常规则见来源说明，不保证故障传播、反向回传或实际执行状态。"
+          },
+          {
+            "id": "relation-3",
+            "label": "声明的拓扑路径 4",
+            "nodeIds": [
+              "node-3",
+              "node-4"
+            ],
+            "edgeIds": [
+              "edge-3"
+            ],
+            "explanation": "仅高亮声明的正向拓扑路径；异常规则见来源说明，不保证故障传播、反向回传或实际执行状态。"
+          }
+        ]
+      }
+    },
+    "sourceRecord": {
+      "version": 1,
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "status": "bound",
+      "kind": "workflow-zh",
+      "explanation": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+      "sourceRef": {
+        "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "hostContext": {
+          "sessionId": "session-a97e57c9-cbb4-4d37-9051-ec558f664357",
+          "turn": 1,
+          "turnStartSeq": 6,
+          "messageId": "5b7f3565-02d3-463e-a622-c95e247ecb9e",
+          "messageSeq": 10,
+          "producerSourceKind": "user",
+          "inherited": false,
+          "excludedSyntheticContexts": 4,
+          "requestId": "86ae4afe-a77e-4791-950c-fcdea4cd5c8c"
+        }
+      },
+      "viewIdentity": {
+        "displayId": "source-reference-aee8484a0dc18764",
+        "revision": 1,
+        "component": "ArchitectureExplorer"
+      }
+    },
+    "theme": {
+      "mode": "light",
+      "palette": "ocean",
+      "font": "system",
+      "density": "comfortable",
+      "textSize": "standard"
+    },
+    "layout": {
+      "direction": "auto"
+    },
+    "locale": "zh-CN",
+    "interaction": {
+      "component": "ArchitectureExplorer",
+      "selected": "",
+      "query": "",
+      "focus": false,
+      "scenario": ""
+    }
+  },
+  "sha256": "801bcb34867fb087de3feacbd40db3c2797be25fc9362106dcb98082cb413b6e"
+}
