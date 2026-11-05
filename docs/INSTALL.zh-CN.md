@@ -1,6 +1,6 @@
 # 安装、隔离验证和回退
 
-当前新增[preview.30](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)支持[中文多条件草稿表单](LOCAL-CONDITIONS.zh-CN.md)，逐项校验、预览后应用、保存重开和跨环境继续；顶部「界面语言 / Language」默认中文并记忆选择，打开历史结果不覆盖当前语言。新导出结果格式2，可读旧preview.28格式1。最终不可变归档、定向Native/PTC/Linux及公开发行的接受记录另存仓库。28完整结果、27全缺失假设和26中文记忆沿用已有分层证据，不重跑旧矩阵。
+当前新增[preview.30](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)支持[中文多条件草稿表单](LOCAL-CONDITIONS.zh-CN.md)，逐项校验、预览后应用、保存重开和跨环境继续；顶部「界面语言 / Language」默认中文并记忆选择，打开历史结果不覆盖当前语言。新导出结果格式2，可读旧preview.28格式1。最终404文件包的正常安装、定向Native/PTC/Linux、公开下载及个人入口采用通过，[接受记录](evidence/local-conditions.json)另存仓库。28完整结果、27全缺失假设和26中文记忆沿用已有分层证据，不重跑旧矩阵。
 
 历史已核版本[preview.19](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.19)，317文件归档已在本机/Linux定向安装验收，四份资产匿名回验一致；[新证据](evidence/source-update.json)随仓库单列。18候选因真实安装失败未发行。
 

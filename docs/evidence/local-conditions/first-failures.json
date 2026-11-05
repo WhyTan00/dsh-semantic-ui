@@ -1,0 +1,26 @@
+[
+  {
+    "stage": "development typecheck and unit test",
+    "error": "tests/condition-form.test.ts imported validateForDelivery from protocol.ts, which does not export it",
+    "unitResult": "1 failed, 33 passed",
+    "correction": "Import the existing public validator from src/core.ts; no validator changed",
+    "subsequentFocusedResult": "35 passed"
+  },
+  {
+    "stage": "frozen candidate review",
+    "candidate": "0.1.0-preview.29",
+    "sourceCommit": "0059581eeb8bde1e0c1051f5d1a9fd73a35d4ae4",
+    "runtimeSha256": "7b4bee21a51b5ec386c11b5266948894fa67037c72d7ea2cb880e12bd5afd23c",
+    "observation": "Installed Native/PTC and 280 units passed, but bundled README/INSTALL still directed users to preview.28",
+    "correction": "Preserve candidate29 bytes; no tag or release29 published. Correct installation docs and freeze candidate30 separately; revalidate the final30 archive",
+    "productionBehaviorChangedAfter29": false
+  },
+  {
+    "stage": "publication transport",
+    "operation": "push corrected preview30 source and request CI",
+    "pushFailure": "remote fatal error in commit_refs_rules",
+    "dispatchFailure": "HTTP 500",
+    "reconciliation": "Remote main still0059581; no new workflow run; no rulesets; official status listed no unresolved incident",
+    "recovery": "One source push retry succeeded, read back remote main2804507, then submitted a fresh verified30 dispatch. No duplicate run recorded."
+  }
+]

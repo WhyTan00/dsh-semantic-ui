@@ -1,0 +1,115 @@
+{
+  "version": "0.1.0-preview.30",
+  "acceptedAt": "2026-11-05T16:33:22.682923+00:00",
+  "sourceCommit": "28045078c237122fe44360ec34d5509a3d5ed699",
+  "tag": "v0.1.0-preview.30",
+  "release": {
+    "id": 435440185,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30",
+    "allFourAnonymousFullDownloadsVerified": true,
+    "allFourMacosLinuxByteEqual": true,
+    "allFourGitHubDigestsVerified": true,
+    "assets": [
+      {
+        "name": "SHA256SUMS",
+        "bytes": 229,
+        "sha256": "176c1b5f3b1885d7cf3d95b2c39160601c38682cfa9d5e34f770c1953d528aa2",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:176c1b5f3b1885d7cf3d95b2c39160601c38682cfa9d5e34f770c1953d528aa2",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "package-manifest.json",
+        "bytes": 36129,
+        "sha256": "af3afb9a83f48e66fa45f15cf188c9a194ddeae78452d1eaf6fc227b3b15f85e",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:af3afb9a83f48e66fa45f15cf188c9a194ddeae78452d1eaf6fc227b3b15f85e",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "whytan-dsh-semantic-ui-0.1.0-preview.30.tgz",
+        "bytes": 2757272,
+        "sha256": "cc71f1eebe96a83650caca5331e5bd96afba807abe91efde131c8119075de962",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:cc71f1eebe96a83650caca5331e5bd96afba807abe91efde131c8119075de962",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      },
+      {
+        "name": "whytan-dsh-semantic-ui-evidence-0.1.0-preview.30.tgz",
+        "bytes": 44608777,
+        "sha256": "4aca6e07a99e34ea169673d92a017763269c6ac75fe4748ac3d567df2b5c2e87",
+        "macosLinuxByteEqual": true,
+        "githubDigest": "sha256:4aca6e07a99e34ea169673d92a017763269c6ac75fe4748ac3d567df2b5c2e87",
+        "githubDigestVerified": true,
+        "anonymousFullDownloadVerified": true
+      }
+    ]
+  },
+  "ci": {
+    "run": 42062948584,
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42062948584",
+    "conclusion": "success",
+    "scope": "new local condition form and language preference paths; normal final archive installation in two clean profiles",
+    "unitTests": 280,
+    "unitFiles": 40
+  },
+  "installation": {
+    "files": 404,
+    "platforms": [
+      "macOS",
+      "Linux"
+    ],
+    "toolModes": [
+      "Native",
+      "PTC"
+    ],
+    "pageErrors": 0,
+    "coreUnchangedFromPreview28": true
+  },
+  "capabilities": [
+    "Chinese default and bilingual selector",
+    "reader language preference survives imported English records",
+    "bounded boolean/number/choice drafts",
+    "field errors and explicit unknown",
+    "difference preview before atomic local apply",
+    "stale preview refusal",
+    "invalid raw draft save and reopen",
+    "cancel and source refill do not apply",
+    "format2 draft export/import and cross-profile continued edits",
+    "preview28 format1 read compatibility",
+    "640px and 360px containers without root overflow"
+  ],
+  "personalAdoption": {
+    "samePreexistingPersonalProfileAndPort": true,
+    "historicalSessions": 93,
+    "allHistoricalSessionBytesUnchanged": true,
+    "preexistingWorkspaceTemplatesAndResultsPreserved": true,
+    "onlyOwnTemporaryResultsRemoved": 2,
+    "modelAccountRoutingAndOtherPluginsUnchanged": true,
+    "normalWebClientFormFlowPassed": true,
+    "actualUserEdgeVisualAcceptance": "unverified",
+    "sharedServicesChanged": false
+  },
+  "newRealModelTurns": 0,
+  "originalNaturalCases": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18,
+    "rerun": false
+  },
+  "unverified": [
+    "natural-model semantic correctness",
+    "physical mobile device",
+    "screen reader",
+    "Codex rich UI"
+  ],
+  "firstFailures": "local-conditions/first-failures.json",
+  "notes": [
+    "preview29 frozen candidate was not released; corrected installation instructions were frozen as30",
+    "post-freeze acceptance is a separate documentation commit; published bytes and tag are not repacked",
+    "no new model route, global installation, routing, schedule or arbitrary action tool"
+  ]
+}

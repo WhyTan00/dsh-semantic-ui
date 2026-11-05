@@ -1,0 +1,35 @@
+{
+  "mode": "ptc",
+  "fixtureOnly": true,
+  "newRealModelTurns": 0,
+  "fields": 4,
+  "types": [
+    "boolean",
+    "number",
+    "choice"
+  ],
+  "invalidRawDraftSavedAndReopened": true,
+  "previewBeforeApply": true,
+  "staleBaseRefused": true,
+  "multipleValuesAppliedTogether": true,
+  "sourceAndNullsUnchanged": true,
+  "unknownAndZeroDistinct": true,
+  "cancelAndRefillDoNotApply": true,
+  "incompatibleImportDoesNotOverwriteDraftOrResults": true,
+  "fullResultFormat": 2,
+  "draftRoundTripAndContinue": true,
+  "preview28Format1Readable": true,
+  "importAndReopenDoNotOverrideChinese": true,
+  "bilingualSelectorAndRefreshMemory": true,
+  "noModelRequestsDuringLocalActions": true,
+  "pageErrors": [],
+  "widths": [
+    640,
+    360
+  ],
+  "noRootOverflow": true,
+  "executedToolCalls": 1,
+  "actualToolRoute": "run_code -> tools.dsh_semantic_ui",
+  "archiveInstalled": true,
+  "crossProfileDraft": "imported-and-edited-from-native-profile"
+}

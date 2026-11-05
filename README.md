@@ -1,6 +1,6 @@
 # DSH Semantic UI
 
-[English](README.en.md) · [安装](docs/INSTALL.zh-CN.md) · [语言设置](docs/LANGUAGE.zh-CN.md) · [验证证据](docs/evidence/language.json)
+[English](README.en.md) · [安装](docs/INSTALL.zh-CN.md) · [语言设置](docs/LANGUAGE.zh-CN.md) · [本版验证](docs/evidence/local-conditions.json)
 
 **默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有固定双语入口「界面语言 / Language」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
 

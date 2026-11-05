@@ -15,3 +15,13 @@ preview.30在决策比较内增加「批量编辑本地条件」。数字、是/
 打开或导入结果时，文件里记录的语言仅是保存记录，不覆盖当前浏览器选择的「简体中文 / English」。顶部入口始终显示「界面语言 / Language」，选错语言也能识别；默认简体中文，显式选择随刷新保留。
 
 验证命令：`pnpm typecheck`、`pnpm test`，冻结干净源码后运行`pnpm release:pack`和`pnpm test:installed-local-form`。新增定向检查覆盖真实DSH隔离Native/PTC、四个多类型条件、错误草稿保存重开、预览后原子应用、失效预览拒绝、未知/零、取消/重填、旧格式1英文记录不覆盖中文、两个干净profile之间携带草稿、640/360容器及页面错误。它们是合成夹具验证，不是模型自然题、用户Edge、真机或读屏验收；原自然题失败保留。最终工件与公开发行状态见接受记录，源码中的验证脚本本身不构成通过。
+
+## 最终接受
+
+[preview.30已公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)。404文件运行包在macOS/Linux的正常安装均逐文件核对，Native/PTC新增路径与两个独立profile间的草稿往返通过，页面错误0；280项单元、40文件及[定向CI](https://github.com/WhyTan00/dsh-semantic-ui/actions/runs/42062948584)通过。四工件跨平台逐字节一致，匿名完整下载、大小、SHA-256及GitHub摘要都一致。[分层回执](evidence/local-conditions.json)保留边界与首次失败。29只是未发行的冻结候选，安装说明问题在30修正，没有覆盖候选字节。
+
+也已正常采用到既有个人DSH，在原有历史会话验证中文表单、错误草稿保存重开及继续试算，最后恢复原视图；93条历史字节、模板与私有结果保留，只删除本轮临时副本。这里是自有正常Web客户端功能验证，用户Edge视觉仍未验收。以下截图只展示本轮公开合成字段及固定文案，不包含个人会话内容。
+
+![始终可识别的语言入口](evidence/local-conditions/language-selector.png)
+
+![中文多条件本地表单](evidence/local-conditions/chinese-form.png)
