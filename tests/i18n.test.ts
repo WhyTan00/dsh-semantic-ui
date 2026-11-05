@@ -21,6 +21,11 @@ it('formats existing deterministic summaries in Chinese without converting suppl
 });
 
 import {LanguageSelector} from '../src/components/LanguageSelector';
+import {ProseReviewPanel} from '../src/components/ProseReviewPanel';
+it('uses the current language for the local prose panel and a translated file button',()=>{
+ const zh=renderToStaticMarkup(createElement(ProseReviewPanel));expect(zh).toContain('核对说明与来源');expect(zh).toContain('核对并生成有据说明');expect(zh).toContain('从 JSON 载入来源与候选');
+ const en=renderToStaticMarkup(createElement(LocaleContext.Provider,{value:'en'},createElement(ProseReviewPanel)));expect(en).toContain('Check explanation against source');expect(en).toContain('Check and create grounded explanation');
+});
 it('always labels the language selector in both Chinese and English',()=>{
  for(const locale of ['zh-CN','en'] as const){const html=renderToStaticMarkup(createElement(LocaleContext.Provider,{value:locale},createElement(LanguageSelector)));expect(html).toContain('界面语言 / Language');expect(html).toContain('简体中文');expect(html).toContain('English');}
 });

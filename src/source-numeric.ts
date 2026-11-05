@@ -7,7 +7,7 @@ const MAX_POSITIONS=128,bytes=(s:string)=>new TextEncoder().encode(s).length;
 type Span={textByteStart:number;textByteEnd:number};
 export interface NumericSource{context:string;measurement:string;unit:string;positions:{index:number;value:number|null;span:Span}[]}
 const literal=(s:string,max:number)=>s.length>0&&s.length<=max&&!/[\u0000-\u001f<>，,。；;？！?!、]/u.test(s);
-function countValue(s:string){
+export function countValue(s:string){
  if(/^[1-9]\d{0,2}$/u.test(s))return Number(s);
  const digits='一二三四五六七八九',digit=(v:string)=>digits.indexOf(v)+1;
  if(s.length===1&&digits.includes(s))return digit(s);

@@ -1,0 +1,17 @@
+export const proseCopy={
+ 'Check explanation against source':'核对说明与来源',
+ 'Paste complete source text and a candidate explanation. This local check supports finite Chinese decision and observation assertions; it never approves an entire answer.':'粘贴完整来源与候选说明。本地核对支持有限的中文取舍、读数断言，不认证整篇回答。',
+ 'Complete source text':'完整来源文字','Candidate explanation (original)':'候选说明（原文）',
+ 'Check and create grounded explanation':'核对并生成有据说明','Checking locally…':'正在本地核对…',
+ 'Load source and candidate from JSON':'从 JSON 载入来源与候选','Source text pointer':'来源文字位置','Candidate text pointer':'候选文字位置',
+ 'JSON pointers select text fields in your file. Review exports are always checked again when loaded.':'文字位置使用 JSON Pointer。载入本面板导出的文件时会重新核对，不信任旧结论。',
+ 'Export explanation review':'导出说明核对记录','Grounded explanation':'有据说明',
+ 'Assertions checked within the finite contract':'有限合同内核对的断言','Supported':'来源支持','Supported only under explicit hypothesis':'仅在明确假设下成立','Contradicted':'与来源或计算矛盾','Insufficient source support':'来源依据不足','Undetermined':'无法判定',
+ 'Candidate location':'候选位置','Correction':'修订说明','Evidence and technical details':'来源依据与技术详情',
+ 'Uncovered text (not certified)':'未覆盖的文字（未经认证）',
+ 'This explanation was generated from the selected source and existing deterministic rules. Other assistant prose and the visible chart are not evidence; identity and world facts are not verified.':'本说明依据所选来源及既有确定性规则生成。其他聊天正文和可见图表不能替它背书；人类身份与现实事实未经认证。',
+ 'Input changed; check again. Previous verdicts were cleared.':'输入已改变，请重新核对。旧结论已清除。',
+ 'Could not check this input. Your text is preserved.':'无法核对此输入，已保留你的原文。',
+ 'Choose a JSON file with text at both selected locations. Maximum file size is 512 KiB.':'请选择两个指定位置均为文字的 JSON 文件，文件上限为 512 KiB。',
+ 'Review export includes your source and candidate text.':'导出记录包含你提供的来源与候选原文。',
+} as const;

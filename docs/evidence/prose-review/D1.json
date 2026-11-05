@@ -1,0 +1,277 @@
+{
+  "format": "dsh-semantic-prose-review",
+  "version": 1,
+  "sourceText": "虚构团队在选托管平台与虚拟机。前者由供应商更新、没有私网；后者支持私网、需要团队维护。两边价格都未知。我们暂时不需要私网，该怎样权衡？",
+  "candidate": "在上方组件里，你可以自己切换“当前是否需要私网”和“团队是否有维护余力”这两个条件。\n\n按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。\n\n因此真正需要先确认的是两件事：各自的月费用，以及团队能否长期承担更新与运维；在这两项确认之前，不宜先做选择。",
+  "report": {
+    "version": 1,
+    "status": "reviewed",
+    "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+    "candidateSha256": "1c159ff7bc6e6451bba7a795e22078dcc284d0d4580ef83ad7f0a4d3858010c7",
+    "originalCandidate": "在上方组件里，你可以自己切换“当前是否需要私网”和“团队是否有维护余力”这两个条件。\n\n按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。\n\n因此真正需要先确认的是两件事：各自的月费用，以及团队能否长期承担更新与运维；在这两项确认之前，不宜先做选择。",
+    "claims": [
+      {
+        "kind": "resource-availability-unknown",
+        "quote": "按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。",
+        "candidateSpan": {
+          "utf16Start": 44,
+          "utf16End": 171
+        },
+        "status": "supported",
+        "reason": "未声明资源能力保持未知。",
+        "correction": "团队维护余力=未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "source.facts.absent",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 201
+              }
+            ],
+            "scope": "完整来源未声明，不能自动取反或补值",
+            "value": null
+          }
+        ],
+        "expected": null,
+        "actual": null
+      },
+      {
+        "kind": "unknown-price",
+        "quote": "按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。",
+        "candidateSpan": {
+          "utf16Start": 44,
+          "utf16End": 171
+        },
+        "status": "supported",
+        "reason": "有限来源只提供未知价格，没有币种/周期或排序。",
+        "correction": "价格、币种、计费周期与成本排序均未建立。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "source.facts.4",
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ],
+            "value": null,
+            "scope": "price"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "source.facts.5",
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ],
+            "value": null,
+            "scope": "price"
+          }
+        ]
+      },
+      {
+        "kind": "withheld-recommendation",
+        "quote": "按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。",
+        "candidateSpan": {
+          "utf16Start": 44,
+          "utf16End": 171
+        },
+        "status": "supported",
+        "reason": "来源没有可核整体偏好政策，保留不作推荐。",
+        "correction": "当前不建立整体推荐。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "complete-selected-source",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 201
+              }
+            ],
+            "scope": "完整有限来源；没有独立作者或现实事实认证"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-1",
+            "spans": [],
+            "value": {
+              "id": "requirement-1",
+              "dimension": "dimension-1",
+              "input": "input-0",
+              "relation": "supports"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-2",
+            "spans": [],
+            "value": {
+              "id": "requirement-2",
+              "dimension": "dimension-2",
+              "input": "input-1",
+              "relation": "requires-availability"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          }
+        ]
+      },
+      {
+        "kind": "all-feasibility-unknown",
+        "quote": "按当前条件计算的结果：当前不需要私网，因此“私网支持”这条要求对两者都不生效，托管平台和虚拟机都没有被这项要求排除；由于“团队是否有维护余力”仍为未知，两者的可行性都未确定，费用也仍然未知，所以这次不产生推荐项，也不会因为某一方的已知条件更多就判它更优。",
+        "candidateSpan": {
+          "utf16Start": 44,
+          "utf16End": 171
+        },
+        "status": "supported",
+        "reason": "两者状态由同一资源/能力条件核心计算。",
+        "correction": "当前待确认方案：托管平台、虚拟机。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "complete-selected-source",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 201
+              }
+            ],
+            "scope": "完整有限来源；没有独立作者或现实事实认证"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-1",
+            "spans": [],
+            "value": {
+              "id": "requirement-1",
+              "dimension": "dimension-1",
+              "input": "input-0",
+              "relation": "supports"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-2",
+            "spans": [],
+            "value": {
+              "id": "requirement-2",
+              "dimension": "dimension-2",
+              "input": "input-1",
+              "relation": "requires-availability"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          }
+        ],
+        "expected": true
+      },
+      {
+        "kind": "price-period",
+        "quote": "因此真正需要先确认的是两件事：各自的月费用，以及团队能否长期承担更新与运维；在这两项确认之前，不宜先做选择。",
+        "candidateSpan": {
+          "utf16Start": 173,
+          "utf16End": 227
+        },
+        "status": "unsupported",
+        "reason": "来源没有给计费周期或币种；不能从价格未知补成月费用。",
+        "correction": "只可说两方案价格未知；不要指定币种、月费或排序。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "source.facts.4",
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ],
+            "value": null,
+            "scope": "price"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "source.facts.5",
+            "spans": [
+              {
+                "textByteStart": 129,
+                "textByteEnd": 150
+              }
+            ],
+            "value": null,
+            "scope": "price"
+          }
+        ]
+      },
+      {
+        "kind": "withheld-recommendation",
+        "quote": "因此真正需要先确认的是两件事：各自的月费用，以及团队能否长期承担更新与运维；在这两项确认之前，不宜先做选择。",
+        "candidateSpan": {
+          "utf16Start": 173,
+          "utf16End": 227
+        },
+        "status": "supported",
+        "reason": "来源没有可核整体偏好政策，保留不作推荐。",
+        "correction": "当前不建立整体推荐。",
+        "evidence": [
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "complete-selected-source",
+            "spans": [
+              {
+                "textByteStart": 0,
+                "textByteEnd": 201
+              }
+            ],
+            "scope": "完整有限来源；没有独立作者或现实事实认证"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-1",
+            "spans": [],
+            "value": {
+              "id": "requirement-1",
+              "dimension": "dimension-1",
+              "input": "input-0",
+              "relation": "supports"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          },
+          {
+            "sourceTextSha256": "c5bf2820e29db28ebed0c30be9fa6473b57ff9e46def418e82658705055360a1",
+            "path": "view.requirements.requirement-2",
+            "spans": [],
+            "value": {
+              "id": "requirement-2",
+              "dimension": "dimension-2",
+              "input": "input-1",
+              "relation": "requires-availability"
+            },
+            "scope": "既有条件/资源求值；假设不改来源"
+          }
+        ]
+      }
+    ],
+    "uncovered": [
+      {
+        "text": "在上方组件里，你可以自己切换“当前是否需要私网”和“团队是否有维护余力”这两个条件。",
+        "utf16Start": 0,
+        "utf16End": 42,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      }
+    ],
+    "groundedText": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。\n候选中以下说法已被排除或限定：\n只可说两方案价格未知；不要指定币种、月费或排序。",
+    "sourceExplanation": "托管平台：由供应商更新=true；私网支持=false；价格声明未知。\n虚拟机：私网支持=true；需要团队维护=true；价格声明未知。\n托管平台是否需要团队维护未声明；不能由其它更新责任推定需要或不需要。\n虚拟机是否由供应商更新未声明，不能自动取反。\n当前需要私网=false（不据此排除缺少该能力的方案）。\n团队维护余力未声明，保持未知。\n以上只对应来源中的有限声明；未给反面保持未知，不提供成本排序、推荐或任意正文认证。",
+    "coverage": "finite-chinese-assertions-only",
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "newModelCalls": 0,
+    "sourceKind": "decision-zh"
+  }
+}

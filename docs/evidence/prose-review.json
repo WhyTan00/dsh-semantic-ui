@@ -1,0 +1,87 @@
+{
+  "schema": "dsh-semantic-prose-review-acceptance-v1",
+  "clientRevision": "0.1.0-preview.31-prose.1",
+  "hostBaseVersion": "0.1.0-preview.31",
+  "sourceStatus": "new source code and client-only adoption; release identity to be appended after freeze",
+  "scope": "finite Chinese decision/observations assertions and plugin-owned grounded explanation path",
+  "checks": {
+    "typecheck": "passed",
+    "focusedUnitTests": 46,
+    "sourceReferenceContracts": 7,
+    "clientOverlaySafetyTests": 3,
+    "browser": [
+      {
+        "case": "actual-saved-D1-body",
+        "monthlyFeeUnsupported": true,
+        "correctCautionRetained": true,
+        "verbatimCandidateRetained": true
+      },
+      {
+        "case": "actual-saved-N2-body",
+        "universalFillRefuted": true,
+        "medianNotCertified": true,
+        "correctClaimsSupported": true,
+        "correctionGenerated": true
+      },
+      {
+        "case": "source-revision",
+        "oldVerdictClearedImmediately": true,
+        "sameCandidateRecomputed": true,
+        "meanFlipsSupportedToContradicted": true
+      },
+      {
+        "case": "reloaded-review",
+        "savedStatusesIgnored": true,
+        "recheckedChangedSource": true
+      },
+      {
+        "case": "language-and-narrow-screen",
+        "defaultChinese": true,
+        "englishSwitchRetainsInput": true,
+        "bothChoicesRememberedAfterNavigation": true,
+        "width": 360,
+        "noRootOverflow": true
+      }
+    ],
+    "pageErrors": []
+  },
+  "originalBodies": {
+    "D1": "prose-review/D1.json",
+    "N2": "prose-review/N2.json"
+  },
+  "installedClientFiles": [
+    {
+      "name": "client.js.LEGAL.txt",
+      "oldSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7",
+      "newSha256": "cd3ab02f132afa590b0be2f171ff104e38b510b8caf2990af4da5f4c77f98ec7"
+    },
+    {
+      "name": "client.js",
+      "oldSha256": "652ae39123b39fae4f8bfc1b8ee717b21f3ee19d150bfc6fbb0f607087c49d0b",
+      "newSha256": "1d2034bc22e6303ea62454dd76aa8cd18d7e9044f802cf9c5bab0f419d9cb75e"
+    }
+  ],
+  "preservation": {
+    "historyCount": 93,
+    "historyBytesAndMetadataUnchanged": true,
+    "templatesUnchanged": true,
+    "privateResultsUnchanged": true,
+    "rawProfileConfigUnchanged": true,
+    "healthyHostRestarted": false
+  },
+  "noNewModelCalls": true,
+  "noNewMcpConnections": true,
+  "noNewServices": true,
+  "naturalSixResults": "0 pass / 6 fail / 18 requests; unchanged",
+  "boundaries": {
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "arbitraryProseOrEnglishGrammar": false,
+    "externalAssistantBodyIntercepted": false,
+    "newLinuxOrPtcAcceptance": false,
+    "actualUserEdgeVisualAcceptance": false,
+    "physicalMobileAcceptance": false
+  },
+  "retainedDevelopmentFailure": "Initial unit test exposed vendor actor chosen instead of resource actor; corrected by existing input-coordinate mapping and added regression. First logs retained privately."
+}

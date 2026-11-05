@@ -1,0 +1,1068 @@
+{
+  "format": "dsh-semantic-prose-review",
+  "version": 1,
+  "sourceText": "虚构设备四次温度读数是 -2、0、缺失、2 摄氏度。请解释这批数据，能计算平均值吗？",
+  "candidate": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。先把数据本身看清楚，再谈平均值。\n\n```dsh-ui\n{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"}]}\n```\n\n**能不能算平均值，取决于你要算哪一个：**\n\n- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。\n- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。缺少 x₃ 的具体值，就无法确定结果。\n\n**容易出现的两种误读：**\n\n1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。所以是零填充，并不是数据本身。\n2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。\n\n**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+  "report": {
+    "version": 1,
+    "status": "reviewed",
+    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+    "candidateSha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+    "originalCandidate": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。先把数据本身看清楚，再谈平均值。\n\n```dsh-ui\n{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"}]}\n```\n\n**能不能算平均值，取决于你要算哪一个：**\n\n- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。\n- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。缺少 x₃ 的具体值，就无法确定结果。\n\n**容易出现的两种误读：**\n\n1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。所以是零填充，并不是数据本身。\n2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。\n\n**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+    "claims": [
+      {
+        "kind": "mean-denominator",
+        "quote": "{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。",
+        "candidateSpan": {
+          "utf16Start": 61,
+          "utf16End": 475
+        },
+        "status": "contradicted",
+        "reason": "候选声明的分母与该统计范围不一致，均值碰巧相同也不能通过。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 3,
+        "actual": [
+          4,
+          3,
+          4,
+          3
+        ]
+      },
+      {
+        "kind": "mean-value",
+        "quote": "{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。",
+        "candidateSpan": {
+          "utf16Start": 61,
+          "utf16End": 475
+        },
+        "status": "contradicted",
+        "reason": "逐项读数、单位和分母限定该均值。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 0,
+        "actual": {
+          "value": 3,
+          "negated": false,
+          "scope": "observed"
+        }
+      },
+      {
+        "kind": "universal-fill-changes-mean",
+        "quote": "缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。",
+        "candidateSpan": {
+          "utf16Start": 475,
+          "utf16End": 517
+        },
+        "status": "contradicted",
+        "reason": "量词“无论填什么都会改变”必须经反例核对，不能由正确观测均值背书。",
+        "correction": "反例：把缺失明确假设为0 摄氏度，填后均值仍为0 摄氏度。这不是实际观测；完整真实均值仍未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "counterexample": {
+          "fillValue": 0,
+          "imputedMean": 0,
+          "observedMean": 0
+        }
+      },
+      {
+        "kind": "mean-value",
+        "quote": "- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。",
+        "candidateSpan": {
+          "utf16Start": 551,
+          "utf16End": 603
+        },
+        "status": "supported",
+        "reason": "逐项读数、单位和分母限定该均值。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 0,
+        "actual": {
+          "value": 0,
+          "negated": false,
+          "scope": "observed"
+        }
+      },
+      {
+        "kind": "complete-mean-unknown",
+        "quote": "- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。",
+        "candidateSpan": {
+          "utf16Start": 657,
+          "utf16End": 732
+        },
+        "status": "supported",
+        "reason": "完整范围是否可计算由缺失掩码决定。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": null,
+        "actual": null
+      },
+      {
+        "kind": "mean-unit",
+        "quote": "这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。",
+        "candidateSpan": {
+          "utf16Start": 801,
+          "utf16End": 860
+        },
+        "status": "contradicted",
+        "reason": "单位必须与来源相同；未进行温标或单位转换。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": "摄氏度",
+        "actual": "恰好和按三个观测值算出的均值一样"
+      },
+      {
+        "kind": "mean-value",
+        "quote": "这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。",
+        "candidateSpan": {
+          "utf16Start": 801,
+          "utf16End": 860
+        },
+        "status": "contradicted",
+        "reason": "逐项读数、单位和分母限定该均值。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 0,
+        "actual": {
+          "value": 0,
+          "negated": false,
+          "scope": "observed"
+        }
+      },
+      {
+        "kind": "unsupported-median",
+        "quote": "中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。",
+        "candidateSpan": {
+          "utf16Start": 1054,
+          "utf16End": 1113
+        },
+        "status": "unsupported",
+        "reason": "当前合同没有核对该中位数/缺失范围断言。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。中位数的额外断言不进入有据说明。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ]
+      },
+      {
+        "kind": "mean-value",
+        "quote": "{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"}",
+        "extractedText": "三个观测值的均值：0 °C",
+        "candidateSpan": {
+          "utf16Start": 319,
+          "utf16End": 352,
+          "jsonPointer": "/items/1/pairs/2"
+        },
+        "status": "supported",
+        "reason": "逐项读数、单位和分母限定该均值。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 0,
+        "actual": {
+          "value": 0,
+          "negated": false,
+          "scope": "observed"
+        }
+      },
+      {
+        "kind": "complete-mean-unknown",
+        "quote": "{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}",
+        "extractedText": "四次读数的均值：(0 + x₃) / 4，x₃ 未知 → 无法确定",
+        "candidateSpan": {
+          "utf16Start": 353,
+          "utf16End": 406,
+          "jsonPointer": "/items/1/pairs/3"
+        },
+        "status": "supported",
+        "reason": "完整范围是否可计算由缺失掩码决定。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": null,
+        "actual": null
+      },
+      {
+        "kind": "universal-fill-changes-mean",
+        "quote": "\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"",
+        "extractedText": "0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。",
+        "candidateSpan": {
+          "utf16Start": 454,
+          "utf16End": 518,
+          "jsonPointer": "/items/2/content"
+        },
+        "status": "contradicted",
+        "reason": "量词“无论填什么都会改变”必须经反例核对，不能由正确观测均值背书。",
+        "correction": "反例：把缺失明确假设为0 摄氏度，填后均值仍为0 摄氏度。这不是实际观测；完整真实均值仍未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "counterexample": {
+          "fillValue": 0,
+          "imputedMean": 0,
+          "observedMean": 0
+        }
+      },
+      {
+        "kind": "mean-denominator",
+        "quote": "\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"",
+        "extractedText": "0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。",
+        "candidateSpan": {
+          "utf16Start": 454,
+          "utf16End": 518,
+          "jsonPointer": "/items/2/content"
+        },
+        "status": "contradicted",
+        "reason": "候选声明的分母与该统计范围不一致，均值碰巧相同也不能通过。",
+        "correction": "已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 4,
+        "actual": [
+          3,
+          4
+        ]
+      },
+      {
+        "kind": "mean-value",
+        "quote": "\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"",
+        "extractedText": "0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。",
+        "candidateSpan": {
+          "utf16Start": 454,
+          "utf16End": 518,
+          "jsonPointer": "/items/2/content"
+        },
+        "status": "contradicted",
+        "reason": "补零只作为显式假设；原始读数与完整真实范围不变。",
+        "correction": "在明确补零假设下，4个位置的均值为0 摄氏度；完整真实均值仍未知。",
+        "evidence": [
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "source.positions",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 43,
+                "textByteEnd": 49
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "scope": "原始顺序、实测值和null掩码"
+          },
+          {
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "path": "numericStats.observed",
+            "spans": [
+              {
+                "textByteStart": 34,
+                "textByteEnd": 36
+              },
+              {
+                "textByteStart": 39,
+                "textByteEnd": 40
+              },
+              {
+                "textByteStart": 52,
+                "textByteEnd": 53
+              }
+            ],
+            "value": {
+              "n": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "min": -2,
+              "max": 2
+            },
+            "scope": "已观测范围；复用numericStats"
+          }
+        ],
+        "expected": 0,
+        "actual": {
+          "value": 0,
+          "negated": false,
+          "scope": "hypothesis"
+        }
+      }
+    ],
+    "uncovered": [
+      {
+        "text": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。",
+        "utf16Start": 0,
+        "utf16End": 33,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "先把数据本身看清楚，再谈平均值。",
+        "utf16Start": 33,
+        "utf16End": 49,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "```dsh-ui",
+        "utf16Start": 51,
+        "utf16End": 60,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "\"}]}",
+        "utf16Start": 517,
+        "utf16End": 521,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "**能不能算平均值，取决于你要算哪一个：**",
+        "utf16Start": 527,
+        "utf16End": 549,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。",
+        "utf16Start": 603,
+        "utf16End": 656,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "缺少 x₃ 的具体值，就无法确定结果。",
+        "utf16Start": 732,
+        "utf16End": 751,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "**容易出现的两种误读：**",
+        "utf16Start": 753,
+        "utf16End": 767,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。",
+        "utf16Start": 769,
+        "utf16End": 801,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "所以是零填充，并不是数据本身。",
+        "utf16Start": 860,
+        "utf16End": 875,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。",
+        "utf16Start": 876,
+        "utf16End": 985,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。",
+        "utf16Start": 987,
+        "utf16End": 1054,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      },
+      {
+        "text": "如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+        "utf16Start": 1113,
+        "utf16End": 1159,
+        "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+      }
+    ],
+    "groundedText": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\n候选中以下说法已被排除或限定：\n已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。\n反例：把缺失明确假设为0 摄氏度，填后均值仍为0 摄氏度。这不是实际观测；完整真实均值仍未知。\n已观测3个读数的均值为0 摄氏度；完整4个位置含1个缺失，均值未知。中位数的额外断言不进入有据说明。\n在明确补零假设下，4个位置的均值为0 摄氏度；完整真实均值仍未知。",
+    "sourceExplanation": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+    "coverage": "finite-chinese-assertions-only",
+    "wholeCandidateVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "newModelCalls": 0,
+    "sourceKind": "observations-zh"
+  }
+}
