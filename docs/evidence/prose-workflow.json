@@ -89,5 +89,39 @@
     "nativeCodexRichUiAcceptance": false,
     "physicalMobileAcceptance": false
   },
-  "releaseStatus": "source and final normal-UI differences accepted; new client archive to be frozen from committed source"
+  "releaseStatus": "new source and normal personal DSH adoption complete; new frozen client prerelease published",
+  "release": {
+    "releaseId": 435849701,
+    "tag": "client-v0.1.0-preview.31-prose.2",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.2",
+    "assets": [
+      {
+        "name": "client-manifest.json",
+        "bytes": 1818,
+        "sha256": "1e7e3d83532dd944181bad919b98ea78c3f3503a845883a415005d51cad3b09b",
+        "githubUploadDigestMatchesLocal": true
+      },
+      {
+        "name": "dsh-semantic-ui-client-0.1.0-preview.31-prose.2.zip",
+        "bytes": 804247,
+        "sha256": "ed09d1ed2113cf679bfd760cd79c43775555ca0ddbb370ba31aa05bca9b49bf7",
+        "githubUploadDigestMatchesLocal": true
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 118,
+        "sha256": "152eebdb935438dc367d86474ce928bf1c854d001c43ee386311520807c1eaeb",
+        "githubUploadDigestMatchesLocal": true
+      }
+    ],
+    "verification": "local frozen archive and GitHub upload digest/size; anonymous download and old matrices deliberately not repeated",
+    "newAnonymousDownloadMatrix": false,
+    "newCiDispatches": 0,
+    "sourceCommit": "30c575939795ff34d683ef6917eb526dfed96a19",
+    "clientRevision": "0.1.0-preview.31-prose.2",
+    "sha256": "ed09d1ed2113cf679bfd760cd79c43775555ca0ddbb370ba31aa05bca9b49bf7",
+    "files": 227,
+    "bytes": 804247,
+    "installedClientMatchesFrozenArchive": true
+  }
 }
