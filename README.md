@@ -4,7 +4,7 @@
 
 **默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有固定双语入口「界面语言 / Language」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
 
-preview.29修正打开历史结果意外覆盖语言偏好的问题，并新增[中文批量条件表单](docs/LOCAL-CONDITIONS.zh-CN.md)：逐项校验、预览差异后应用、本地草稿保存重开和携带。新结果使用格式2，继续读取preview.28的格式1。
+preview.30修正打开历史结果意外覆盖语言偏好的问题，并新增[中文批量条件表单](docs/LOCAL-CONDITIONS.zh-CN.md)：逐项校验、预览差异后应用、本地草稿保存重开和携带。新结果使用格式2，继续读取preview.28的格式1。
 
 DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、取舍和数值整理成可交互组件，并把来源、计算结果、本地假设与模型说明分开。
 
@@ -20,10 +20,10 @@ DSH Semantic UI 是个人开源的受约束语义界面插件。它把关系、�
 
 ## 安装新版
 
-下载 [0.1.0-preview.28 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.28)的运行包，核对同页 `SHA256SUMS` 后安装：
+下载 [0.1.0-preview.30 公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/v0.1.0-preview.30)的运行包，核对同页 `SHA256SUMS` 后安装：
 
 ```sh
-dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.28.tgz
+dsh plugin --profile web add /绝对路径/whytan-dsh-semantic-ui-0.1.0-preview.30.tgz
 ```
 
 本项目锁定 DSH `0.2.1-rc.2` 与 json-render `0.21.1`，组件协议为1.4。完整配置、兼容范围与历史版本见[安装说明](docs/INSTALL.zh-CN.md)。当前共享工作台不会因源码更新而自动升级，请按自己的运行环境安装新包。
