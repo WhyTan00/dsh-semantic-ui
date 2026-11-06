@@ -8,7 +8,9 @@ main 源码现在将普通 `action=check` 接入与 `render` 相同的当前来�
 
 这只核对显式提交的草稿，不截取、改写或认证模型随后发送的最终正文；`wholeCandidateVerified`、身份与现实事实认证保持 false。`check` 和 `source-check` 不生成交付 checkpoint；`render` 仍只保存原有已绑定视图与来源说明，草稿报告不写进历史协议或结果包。
 
-类型检查与173项定向检查通过，编译宿主入口也已在无服务的工具体环境核对；记录见[源码验证](evidence/host-grounded-check.json)。这不是新增模型自然验收，也不是现有运行宿主已加载的证明。当前冻结31宿主加prose.3客户端继续运行；现有浏览器管理入口不可操作，未绕过认证、配置重载或重启健康宿主。新宿主源码待正常已认证的单插件管理入口或所属入口的正常启动窗口采用。以下dev.2–24记录是历史证据，不能替代此源码增量的安装与界面验收。
+类型检查与173项定向检查通过，编译宿主入口也已在无服务的工具体环境核对；记录见[源码验证](evidence/host-grounded-check.json)。这不是新增模型自然验收，也不是现有运行宿主已加载的证明。后续已恢复现有实例的正常管理路径：公开 BrowserAuth 允许原宿主认证入口建立同一 owner 的 HTTP 会话，不要求新开浏览器或重新登录模型。读取实际 `pluginManager/listPlugins` 的条目后，以 `setPluginEnabled(id, true)` 对已启用的本插件进行正常 HMR 重核，返回 `application=applied`、`changed=false`、无 warnings，进程未重启，原配置与既有prose.3客户端保持。此前将浏览器工具禁用推成管理入口全部不可用的判断已纠正。
+
+真实新工具消费者仍未验证：锁定版本的 `ToolRuntime.execute` 是进程内 API，没有 Remote 声明；现有命令目录也没有直接执行语义工具的命令。`source-update` 预留意图后仍转普通 `session/prompt`，会进入模型，因此不能充当零模型调用。没有凭空调用 `tools/execute`、借 inspect 执行业务变更、加载另一个QA壳子或新建实例。剩余最小条件是现有宿主支持的同实例零模型工具调用上下文，或原冻结范围内具备完整资格证据的正常模型回合；仅管理回执与持久接口读取成功不算此消费者链路通过。以下dev.2–24记录是历史证据，不能替代此源码增量的安装与界面验收。
 
 
 24的[字段合同/精确诊断](CAPACITY-CONTRACT.zh-CN.md)沿同一正常source-check/render公开viewContract，错误标签不再冒当前量错误；调用者必须显式改标签。最终382文件归档的macOS/Linux Native/PTC各1诊断序列及CLI[单独接受](evidence/capacity-contract.json)，不把0模型夹具补作模型采用。

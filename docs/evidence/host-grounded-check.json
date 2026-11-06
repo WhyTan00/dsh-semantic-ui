@@ -1,7 +1,7 @@
 {
   "format": "dsh-semantic-ui-host-grounded-check",
   "version": 1,
-  "status": "source-and-compiled-entry-verified; live-adoption-pending",
+  "status": "source-and-compiled-entry-verified; normal same-instance plugin management applied; tool consumer unverified",
   "code": [
     "src/dsh/host.ts",
     "src/dsh/source-binding.ts",
@@ -54,10 +54,23 @@
       "failed": 6,
       "requests": 18
     },
-    "runningHostAdopted": false,
     "releaseAssetsPublishedForThisChange": false,
     "browserUiVerifiedForThisChange": false,
     "installedClient": "Existing preview.31-prose.3 retained; language acceptance not rerun.",
-    "adoptionDependency": "Use an existing authenticated normal plugin-management surface or the owning entrypoint normal startup window; no healthy host restart or config-reload trick."
+    "adoptionDependency": "Normal plugin management application is complete. New tool consumer execution remains unverified; no invented API, extra QA shell, new instance or model call."
+  },
+  "hostManagement": {
+    "normalDeclaredEndpoint": "pluginManager/setPluginEnabled",
+    "target": "include:dsh-semantic-ui",
+    "enabled": true,
+    "application": "applied",
+    "changed": false,
+    "warnings": [],
+    "sameExistingProcess": true,
+    "healthyHostRestarted": false,
+    "configAndClientPreserved": true,
+    "normalLibraryAndResultReadsAfterManagement": true,
+    "newSourceToolToPersistentViewVerified": false,
+    "smallestConsumerDependency": "ToolRuntime.execute is same-process only; existing Remote/commands lack zero-model semantic-tool execution. A supported same-instance caller or a qualified frozen normal model turn is required."
   }
 }
