@@ -1,7 +1,7 @@
 {
   "clientRevision": "0.1.0-preview.31-data.1",
   "scope": "Client-only bounded CSV mapping and linked exploration; existing host/tools/MCP/history/configuration preserved.",
-  "sourceCommit": null,
+  "sourceCommit": "fcc3198c685579bf427a84d2d36fdeea070c1d58",
   "typecheck": {
     "command": "pnpm typecheck",
     "passed": true
@@ -122,6 +122,47 @@
   },
   "wholeGoalComplete": false,
   "release": {
-    "status": "not_built_yet"
+    "status": "published_prerelease",
+    "id": 436089849,
+    "tag": "client-v0.1.0-preview.31-data.1",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-data.1",
+    "assets": [
+      {
+        "name": "client-manifest.json",
+        "bytes": 2970,
+        "sha256": "e386640e1a0fff7c44f8b3145e9e606cb4f459535917ea20f233732b1c424163",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-data.1/client-manifest.json"
+      },
+      {
+        "name": "dsh-semantic-ui-client-0.1.0-preview.31-data.1.zip",
+        "bytes": 820237,
+        "sha256": "f9995b5c0571b36f5a86200eea3ab4acc0b6533098a4b7afc537c0d05377deb5",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-data.1/dsh-semantic-ui-client-0.1.0-preview.31-data.1.zip"
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 117,
+        "sha256": "d3b96f815f6ca7928d41e60614085dedca6a01e7d306b7ddc2201fe7809ac33e",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-data.1/SHA256SUMS"
+      }
+    ],
+    "verification": "GitHub uploaded asset sizes and SHA-256 metadata match local frozen files; no anonymous download matrix rerun.",
+    "tagSourceCommit": "fcc3198c685579bf427a84d2d36fdeea070c1d58",
+    "immutableArchiveOverwritten": false
+  },
+  "frozenArchive": {
+    "files": 228,
+    "bytes": 820237,
+    "sha256": "f9995b5c0571b36f5a86200eea3ab4acc0b6533098a4b7afc537c0d05377deb5",
+    "candidateMatchesFrozenClient": true,
+    "extractedInstaller": {
+      "passed": true,
+      "archiveExtracted": true,
+      "cloneOnly": true,
+      "existingApprovedHostVariantAccepted": true,
+      "clientInstalledThenExactRollback": true,
+      "runtimeAndSyntheticConfigPreserved": true,
+      "actualPersonalInstalledClientChanged": false
+    }
   }
 }
