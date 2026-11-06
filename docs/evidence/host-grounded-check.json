@@ -1,0 +1,63 @@
+{
+  "format": "dsh-semantic-ui-host-grounded-check",
+  "version": 1,
+  "status": "source-and-compiled-entry-verified; live-adoption-pending",
+  "code": [
+    "src/dsh/host.ts",
+    "src/dsh/source-binding.ts",
+    "src/dsh/guidance.ts"
+  ],
+  "behavior": {
+    "checkAndRenderShareCurrentSourceBinding": true,
+    "optionalDraftReviewActions": [
+      "check",
+      "source-check",
+      "render"
+    ],
+    "sourceReference": "current own-turn host text SHA-256 and context, never caller-supplied source",
+    "sourceChangedDuringReview": "HOST_SOURCE_CHANGED; no delivery or stale report",
+    "wholeAnswerCertified": false,
+    "finalAssistantMessageIntercepted": false,
+    "checkpointProtocolChanged": false
+  },
+  "verification": {
+    "typecheck": "pnpm exec tsc --noEmit: passed",
+    "focusedTests": 173,
+    "focusedFiles": 12,
+    "newHostToolTests": 8,
+    "compiledEntrypoint": {
+      "entry": "src/dsh/host.ts",
+      "sha256": "399943c1ef81eeebdf70e429be341339555a2f7b89bc80cbd178da3a3da8ed54",
+      "bytes": 348826,
+      "actualRegisteredToolInvoked": true,
+      "scope": "in-process tool-body check without running DSH services"
+    },
+    "firstDevelopmentFailures": [
+      {
+        "kind": "runtime-test-expectation",
+        "reason": "Non-text prose was rejected earlier by the DSH tool schema, rather than returning an in-body refusal.",
+        "fixed": "Assert schema rejection; retain byte-limit refusal case."
+      },
+      {
+        "kind": "test-typecheck",
+        "reason": "The DataChart union includes histograms; the positional row fixture needed explicit narrowing.",
+        "fixed": "Narrow the fixture without weakening runtime validation."
+      }
+    ]
+  },
+  "boundaries": {
+    "newModelCalls": 0,
+    "newMcpConnections": 0,
+    "newServices": 0,
+    "naturalQuestionResultsUnchanged": {
+      "passed": 0,
+      "failed": 6,
+      "requests": 18
+    },
+    "runningHostAdopted": false,
+    "releaseAssetsPublishedForThisChange": false,
+    "browserUiVerifiedForThisChange": false,
+    "installedClient": "Existing preview.31-prose.3 retained; language acceptance not rerun.",
+    "adoptionDependency": "Use an existing authenticated normal plugin-management surface or the owning entrypoint normal startup window; no healthy host restart or config-reload trick."
+  }
+}

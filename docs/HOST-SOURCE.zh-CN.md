@@ -1,5 +1,16 @@
 # 从 DSH 当前输入核对比较内容
 
+## 普通check与正文草稿
+
+main 源码现在将普通 `action=check` 接入与 `render` 相同的当前来源绑定。以前它仅对模型提交的载荷做内部算术；例如把缺失读数写成零，仍可能算出内部自洽的结果。现在支持的完整来源会重核原始位置、缺失、单位、字段坐标和条件，错误载荷被拒绝；需要坐标的来源先调用 `source-check`，再把同一 `mapping` 交给 `check`。通用、未支持或来源不可用的内部核对保留明确的 `unverified` 范围，不作来源认证。纯函数 `core.analyzeEnvelope` 仍保持与宿主无关的合同。
+
+`check`、`source-check`、`render` 均可接收可选 `prose` 草稿（最多24000 UTF-8字节）。它复用已公开的有限中文正文核对引擎，不增加语法：返回原文、逐句位置、支持/假设/矛盾/依据不足、未覆盖片段和有据说明。`proseReview.sourceRef` 是本次实际宿主输入的文本摘要与回合坐标，报告内摘要必须相同；调用参数不能替换来源。正文核对异步完成后再核当前来源和回合，已换源则返回 `HOST_SOURCE_CHANGED`，不提交旧视图或旧报告。
+
+这只核对显式提交的草稿，不截取、改写或认证模型随后发送的最终正文；`wholeCandidateVerified`、身份与现实事实认证保持 false。`check` 和 `source-check` 不生成交付 checkpoint；`render` 仍只保存原有已绑定视图与来源说明，草稿报告不写进历史协议或结果包。
+
+类型检查与173项定向检查通过，编译宿主入口也已在无服务的工具体环境核对；记录见[源码验证](evidence/host-grounded-check.json)。这不是新增模型自然验收，也不是现有运行宿主已加载的证明。当前冻结31宿主加prose.3客户端继续运行；现有浏览器管理入口不可操作，未绕过认证、配置重载或重启健康宿主。新宿主源码待正常已认证的单插件管理入口或所属入口的正常启动窗口采用。以下dev.2–24记录是历史证据，不能替代此源码增量的安装与界面验收。
+
+
 24的[字段合同/精确诊断](CAPACITY-CONTRACT.zh-CN.md)沿同一正常source-check/render公开viewContract，错误标签不再冒当前量错误；调用者必须显式改标签。最终382文件归档的macOS/Linux Native/PTC各1诊断序列及CLI[单独接受](evidence/capacity-contract.json)，不把0模型夹具补作模型采用。
 
 23新增[完整capacity-zh来源](SOURCE-CAPACITY.zh-CN.md)，由当前唯一用户源的存储语法选择。量值/单位/当前需求/未来可能点分别核对，正常render重核后派生现有Decision数值硬条件和独立属性说明；本地数字是假设，不能更新来源或确认计划。仅绑定容量控件处理非负域，其他数字合同不改；[最终归档接受](evidence/source-capacity.json)包括本机/Linux Native/PTC、无效值、刷新/旧1.2和正常CLI。新kind需23 reader，本段0模型。

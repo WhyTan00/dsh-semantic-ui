@@ -20,6 +20,8 @@ preview.31新增[双方案本地假设对照](docs/WHAT-IF.zh-CN.md)：保留只
 
 [`preview.31-prose.3`](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-prose.3) 新增[容量正文的时间与确定性](docs/PROSE-CAPACITY.zh-CN.md)：当前需求、未来可能点、已拥有量／预留承诺和整体推荐分开核对，来源更新会改变当前结论并保留独立未来假设。未来可能需求不能变成未来已有容量，需求情景也不能变成已确定阶段。正常面板接受与自然模型观察分别记录。
 
+main 源码新增[正常工具的同源核对](docs/HOST-SOURCE.zh-CN.md#普通check与正文草稿)：`check` 与 `render` 共用当前来源绑定，三种核对/交付动作可复用已有正文引擎核对可选草稿。此宿主增强尚未包含在上述冻结发行或当前运行宿主中；现有中文客户端继续可用。
+
 [六题当前状态与可保存的有据结果](docs/SIX-QUESTION-STATUS.zh-CN.md)逐题区分已实现的有限来源修复和仍未通过的模型自由正文；提供既有正常checkpoint的结果包，在现有DSH选择文件即可读来源说明、改本地条件、保存重开。原六题自然结果仍为0通过/6失败/18请求。
 
 独立Codex伴随包新增[完整结果显式互通](docs/CODEX-RESULTS.zh-CN.md)：零新增模型地读取保存结果，核对来源与A/B假设，原合同文件可交回DSH继续使用。
