@@ -24,3 +24,11 @@ test('refuses a package symlink escaping the explicit personal profile',()=>{
 test('upgrades an approved previous client and rolls back to that exact revision rather than the original base',()=>{
  const f=fixture();try{const path=join(f.bundle,'client-manifest.json'),m=JSON.parse(readFileSync(path)),files={};for(const name of ['client.js','client.js.LEGAL.txt']){const bytes='previous overlay '+name;writeFileSync(join(f.pkg,'dist',name),bytes);files[name]=sha(bytes);}m.previousClients=[{clientRevision:'previous',files}];writeFileSync(path,JSON.stringify(m));const r=applyClientOverlay(f.bundle,f.profile);applyClientOverlay(f.bundle,f.profile,r.backupDirectory);assert.equal(readFileSync(join(f.pkg,'dist/client.js'),'utf8'),'previous overlay client.js');}finally{rmSync(f.root,{recursive:true,force:true});}
 });
+test('accepts an explicitly approved complete host variant and refuses an unknown runtime without changing assets',()=>{
+ const f=fixture();try{
+  const path=join(f.bundle,'client-manifest.json'),m=JSON.parse(readFileSync(path)),host='approved existing host overlay';
+  m.runtimeVariants=[{name:'existing-host-overlay',entrypoints:{...m.baseRuntimeEntrypoints,'dist/host.js':sha(host)}}];writeFileSync(path,JSON.stringify(m));writeFileSync(join(f.pkg,'dist/host.js'),host);
+  const r=applyClientOverlay(f.bundle,f.profile);assert.equal(readFileSync(join(f.pkg,'dist/host.js'),'utf8'),host);applyClientOverlay(f.bundle,f.profile,r.backupDirectory);
+  writeFileSync(join(f.pkg,'dist/core.js'),'unknown core');assert.throws(()=>applyClientOverlay(f.bundle,f.profile),/approved complete runtime/);assert.equal(readFileSync(join(f.pkg,'dist/client.js'),'utf8'),'old client.js');
+ }finally{rmSync(f.root,{recursive:true,force:true});}
+});

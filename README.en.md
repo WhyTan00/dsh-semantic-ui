@@ -1,5 +1,7 @@
 # DSH Semantic UI
 
+Client increment [preview.31-data.1](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-data.1) adds explicit local CSV mapping and two linked plots. One row selection drives plots, details, statistics and export; browser-saved format 4 reopens after refresh, and replacing the dataset clears old selections and conclusions. No model call or file upload is used. [Chinese usage and compatibility guide](docs/DATA-EXPLORATION.zh-CN.md); [layered verification](docs/evidence/data-exploration.json).
+
 The `preview.31-prose.3` client adds [finite temporal capacity prose checks](docs/PROSE-CAPACITY.zh-CN.md). Current demand, a possible future demand, owned/provided capacity and confirmed plans remain distinct. Eligibility reuses the capacity core and does not establish an overall recommendation. Source updates recheck current conclusions while preserving separate hypotheses and historical snapshots; no new natural model observation was performed without verified free eligibility and remaining budget.
 
 The `preview.31-prose.2` overlay adds [finite workflow prose checks](docs/PROSE-WORKFLOW.zh-CN.md): conditional failure branches, retry/rollback targets and scope, negation and passive wording. Unresolved new antecedents invalidate the previous branch. This reuses the existing workflow checker and panel; it does not infer runtime causality or certify an entire answer.

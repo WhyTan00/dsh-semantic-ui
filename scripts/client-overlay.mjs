@@ -6,6 +6,7 @@ import assert from 'node:assert/strict';
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
 const inside=(base,path)=>{const rel=relative(base,path);return rel!==''&&!isAbsolute(rel)&&rel!=='..'&&!rel.startsWith('../');};
 const names=['client.js.LEGAL.txt','client.js'];
+const runtimeNames=['dist/host.js','dist/core.js','dist/mcp.js','dist/protocol.js'];
 
 /** Explicit personal profile only. Never edits a shared pnpm store or restarts the host. */
 export function applyClientOverlay(bundleDirectory,profileDirectory,rollbackDirectory){
@@ -15,7 +16,14 @@ export function applyClientOverlay(bundleDirectory,profileDirectory,rollbackDire
  assert.equal(manifest.format,'dsh-semantic-ui-client-overlay');assert.equal(manifest.version,1);
  assert.match(manifest.clientRevision,/^[A-Za-z0-9.-]{1,80}$/);
  assert.equal(JSON.parse(readFileSync(join(pkg,'package.json'))).version,manifest.baseVersion);
- for(const [path,expected]of Object.entries(manifest.baseRuntimeEntrypoints)){assert(['dist/host.js','dist/core.js','dist/mcp.js','dist/protocol.js'].includes(path));assert.equal(sha(readFileSync(join(pkg,path))),expected,'Base runtime differs: '+path);}
+ const variants=[{name:'base',entrypoints:manifest.baseRuntimeEntrypoints},...(manifest.runtimeVariants??[])];
+ for(const variant of variants){
+  assert.equal(typeof variant.name,'string');assert.deepEqual(Object.keys(variant.entrypoints).sort(),[...runtimeNames].sort(),'Runtime variant must declare all four entrypoints.');
+  for(const digest of Object.values(variant.entrypoints))assert.match(digest,/^[a-f0-9]{64}$/);
+ }
+ const runtime=Object.fromEntries(runtimeNames.map(path=>[path,sha(readFileSync(join(pkg,path)))]));
+ const runtimeVariant=variants.find(v=>runtimeNames.every(path=>runtime[path]===v.entrypoints[path]));
+ assert(runtimeVariant,'Installed runtime differs from every approved complete runtime variant.');
  const backup=rollbackDirectory?realpathSync(rollbackDirectory):join(profile,'.semantic-ui-client-backups',manifest.clientRevision+'-'+randomUUID());
  if(rollbackDirectory)assert(inside(join(profile,'.semantic-ui-client-backups'),backup),'Rollback backup must belong to this profile.');
  const approved=[manifest.baseClient,...(manifest.previousClients??[]).map(previous=>previous.files)];

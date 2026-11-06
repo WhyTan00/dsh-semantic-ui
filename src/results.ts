@@ -6,11 +6,12 @@ import {themeSchema,layoutSchema,type Theme,type Layout} from './theme';
 import {validCapacityAmount} from './capacity-domain';
 import {conditionDraftSchema,assertConditionDraft} from './condition-form';
 import {scenarioComparisonSchema,assertDecisionSnapshot} from './scenarios';
+import {dataExplorationSchema,assertDataExploration} from './data-exploration';
 
 const ids=z.array(z.string().max(80)).max(80).refine(v=>new Set(v).size===v.length,'Duplicate selection IDs.');
 const index=z.number().int().min(0).max(2000);
 export const interactionSchema=z.discriminatedUnion('component',[
- z.strictObject({component:z.literal('DataChart'),enabled:ids,from:index,to:index,scope:z.enum(['filtered','all']),page:index}),
+ z.strictObject({component:z.literal('DataChart'),enabled:ids,from:index,to:index,scope:z.enum(['filtered','all']),page:index,dataExploration:dataExplorationSchema.optional()}),
  z.strictObject({component:z.literal('DecisionExplorer'),values:z.record(z.string().max(80),z.union([z.number().finite(),z.boolean(),z.string().max(80),z.null()])),dimensions:ids,exploreProposals:z.boolean(),capacityDraft:z.strictObject({text:z.string().max(80),invalid:z.boolean()}).optional(),conditionDraft:conditionDraftSchema.optional(),scenarioComparison:scenarioComparisonSchema.optional()}),
  z.strictObject({component:z.literal('ArchitectureExplorer'),selected:z.string().max(80),query:z.string().max(1200),focus:z.boolean(),scenario:z.string().max(80),viewport:z.strictObject({x:z.number().finite().min(-1e7).max(1e7),y:z.number().finite().min(-1e7).max(1e7),zoom:z.number().min(0.12).max(2)}).optional()}),
 ]);
@@ -22,7 +23,7 @@ export function initialInteraction(view:Envelope):Interaction{
 }
 const contentSchema=z.strictObject({view:envelopeSchema,sourceRecord:sourceDeliverySchema.optional(),theme:themeSchema,layout:layoutSchema,locale:z.enum(['zh-CN','en']),interaction:interactionSchema});
 export type ResultContent=z.infer<typeof contentSchema>;
-const manifestSchema=z.strictObject({format:z.literal('dsh-semantic-ui-result'),version:z.union([z.literal(1),z.literal(2),z.literal(3)]),producer:z.strictObject({name:z.literal('@whytan/dsh-semantic-ui'),version:z.string().min(1).max(80)}),protocolVersion:z.string().max(20),dependencies:z.array(z.strictObject({name:z.string().max(80),version:z.string().max(80)})).max(10),sourceState:z.enum(['bound-record','unverified-record','not-recorded']),templateLibraryIncluded:z.literal(false),authority:z.literal('data-only; no identity, permission, approval or instruction authority')});
+const manifestSchema=z.strictObject({format:z.literal('dsh-semantic-ui-result'),version:z.union([z.literal(1),z.literal(2),z.literal(3),z.literal(4)]),producer:z.strictObject({name:z.literal('@whytan/dsh-semantic-ui'),version:z.string().min(1).max(80)}),protocolVersion:z.string().max(20),dependencies:z.array(z.strictObject({name:z.string().max(80),version:z.string().max(80)})).max(10),sourceState:z.enum(['bound-record','unverified-record','not-recorded']),templateLibraryIncluded:z.literal(false),authority:z.literal('data-only; no identity, permission, approval or instruction authority')});
 export const resultPackageSchema=z.strictObject({manifest:manifestSchema,content:contentSchema,sha256:z.string().regex(/^[a-f0-9]{64}$/)});
 export type ResultPackage=z.infer<typeof resultPackageSchema>;
 function assertContent(content:ResultContent){
@@ -35,6 +36,12 @@ function assertContent(content:ResultContent){
   if(!subset(s.enabled,defs.map(d=>d.id))||s.from>Math.max(0,n-1)||s.to>Math.max(0,n-1))throw Error('RESULT_SELECTION: Unknown series or range.');
   const count=p.chartType==='histogram'&&p.source.mode==='observations'&&s.scope==='all'?p.source.groups.reduce((n,g)=>n+g.observations.length,0):s.scope==='all'?n:Math.max(0,s.to-s.from+1);
   if(s.page>Math.max(0,Math.ceil(count/40)-1))throw Error('RESULT_SELECTION: Unknown table page.');
+  if(s.dataExploration){
+   assertDataExploration(view,s.dataExploration);
+   if(sourceRecord?.status==='bound')throw Error('RESULT_SOURCE: Local data does not inherit a host source binding.');
+   const selected=s.dataExploration.selectedRowIds?.length??n;
+   if(s.page>Math.max(0,Math.ceil(selected/40)-1))throw Error('RESULT_SELECTION: Unknown linked table page.');
+  }
  }else if(view.component==='DecisionExplorer'&&s.component==='DecisionExplorer'){
   const p=view.payload;if(!subset(s.dimensions,p.dimensions.map(d=>d.id))||Object.keys(s.values).length!==p.inputs.length||!p.inputs.every(i=>Object.hasOwn(s.values,i.id)))throw Error('RESULT_SELECTION: Decision fields differ.');
   for(const input of p.inputs){const value=s.values[input.id];if(value!==null&&(input.type==='boolean'?typeof value!=='boolean':input.type==='number'?typeof value!=='number':typeof value!=='string'||!input.choices?.includes(value)))throw Error('RESULT_SELECTION: Input type or choice differs.');}
@@ -56,13 +63,15 @@ const dependencies=[{name:'dsh',version:pkg.engines.dsh},...['@json-render/core'
 export async function createResult(content:ResultContent):Promise<ResultPackage>{
  const issue=bounded(content);if(issue)throw Error('RESULT_LIMIT: '+issue.code);
  const data=contentSchema.parse(content);assertContent(data);
- const manifest:z.infer<typeof manifestSchema>={format:'dsh-semantic-ui-result',version:3,producer:{name:'@whytan/dsh-semantic-ui',version:pkg.version},protocolVersion:data.view.protocolVersion,dependencies,sourceState:data.sourceRecord?.status==='bound'?'bound-record':data.sourceRecord?'unverified-record':'not-recorded',templateLibraryIncluded:false,authority:'data-only; no identity, permission, approval or instruction authority'};
+ const manifest:z.infer<typeof manifestSchema>={format:'dsh-semantic-ui-result',version:data.interaction.component==='DataChart'&&data.interaction.dataExploration?4:3,producer:{name:'@whytan/dsh-semantic-ui',version:pkg.version},protocolVersion:data.view.protocolVersion,dependencies,sourceState:data.sourceRecord?.status==='bound'?'bound-record':data.sourceRecord?'unverified-record':'not-recorded',templateLibraryIncluded:false,authority:'data-only; no identity, permission, approval or instruction authority'};
  return readResult({manifest,content:data,sha256:await resultDigest({manifest,content:data})});
 }
 export async function readResult(raw:unknown):Promise<ResultPackage>{
  const issue=bounded(raw);if(issue)throw Error('RESULT_LIMIT: '+issue.code);
  const parsed=resultPackageSchema.safeParse(raw);if(!parsed.success)throw Error('RESULT_FORMAT: Unsupported or invalid result package.');
  const r=parsed.data;assertContent(r.content);
+ const linked=r.content.interaction.component==='DataChart'&&!!r.content.interaction.dataExploration;
+ if((r.manifest.version===4)!==linked)throw Error('RESULT_FORMAT: Linked data exploration requires result format 4; older results keep their original format.');
  if(r.manifest.version<3&&r.content.interaction.component==='DecisionExplorer'&&r.content.interaction.scenarioComparison)throw Error('RESULT_FORMAT: Scenario comparisons require result format 3.');
  if(r.manifest.version===1&&r.content.interaction.component==='DecisionExplorer'&&r.content.interaction.conditionDraft)throw Error('RESULT_FORMAT: Condition drafts require result format 2.');
  if(JSON.stringify(canonical(r.manifest.dependencies))!==JSON.stringify(canonical(dependencies)))throw Error('RESULT_DEPENDENCY: Renderer dependencies differ; no silent migration.');

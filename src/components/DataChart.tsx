@@ -1,27 +1,22 @@
 import{useResultField}from'../interaction';
 import{useI18n}from'../i18n';
-import {useEffect,useMemo,useRef,useState} from 'react';
-import * as echarts from 'echarts/core';
-import {LineChart,BarChart} from 'echarts/charts';
-import {GridComponent,TooltipComponent,LegendComponent,AriaComponent} from 'echarts/components';
-import {SVGRenderer} from 'echarts/renderers';
+import {useMemo,useState} from 'react';
 import {useAppearance} from '../appearance';
 import type {Chart} from '../protocol';
 import {chartView,type ChartSelection} from '../chart-view';
-echarts.use([LineChart,BarChart,GridComponent,TooltipComponent,LegendComponent,AriaComponent,SVGRenderer]);
-
-function Plot({option,description,horizontal}:{option:echarts.EChartsCoreOption;description:string;horizontal:boolean}){
- const div=useRef<HTMLDivElement>(null),instance=useRef<echarts.EChartsType|null>(null);
- useEffect(()=>{if(!div.current)return;const c=echarts.init(div.current,undefined,{renderer:'svg'});instance.current=c;const observer=new ResizeObserver(()=>c.resize());observer.observe(div.current);return()=>{observer.disconnect();c.dispose();instance.current=null;};},[]);
- useEffect(()=>{instance.current?.setOption(option,{notMerge:true});},[option]);
- return <div ref={div} className="plot" role="img" aria-label={description} data-orientation={horizontal?'horizontal':'vertical'}/>;
-}
+import {Plot} from './Plot';
+import {LinkedDataChart} from './LinkedDataChart';
+import type {DataExploration} from '../data-exploration';
 function Table({headers,rows,scope}:{headers:string[];rows:(string|number|null)[][];scope:string}){
  const {t,locale}=useI18n();
  const [page,setPage]=useResultField('page',0);const safePage=Math.min(page,Math.max(0,Math.ceil(rows.length/40)-1));
  return <><div role="region" aria-label={t("Source data table")} className="table-wrap" tabIndex={0}><table><caption>{t(scope)} · {rows.length} {t("rows")}</caption><thead><tr>{headers.map((h,i)=><th key={i} scope="col">{h}</th>)}</tr></thead><tbody>{rows.slice(safePage*40,safePage*40+40).map((r,i)=><tr key={i}>{r.map((v,j)=><td key={j}>{v===null?t("Missing"):String(v)}</td>)}</tr>)}</tbody></table></div>{rows.length>40?<div className="toolbar"><button disabled={!safePage} onClick={()=>setPage(safePage-1)}>{t("Previous rows")}</button><span aria-live="polite">{t("Page")} {safePage+1}/{Math.ceil(rows.length/40)}</span><button disabled={(safePage+1)*40>=rows.length} onClick={()=>setPage(safePage+1)}>{t("Next rows")}</button></div>:null}<p className="meta">{rows.length} {t("table rows. Missing is distinct from zero. Exact values and full labels are retained here.")}</p></>;
 }
 export function DataChart({data:p}:{data:Chart}){
+ const [exploration,setExploration]=useResultField<DataExploration|undefined>('dataExploration',undefined);
+ return exploration&&p.chartType!=='histogram'?<LinkedDataChart data={p} state={exploration} onSelect={selectedRowIds=>setExploration(old=>old?{...old,selectedRowIds}:old)}/>:<SingleDataChart data={p}/>;
+}
+function SingleDataChart({data:p}:{data:Chart}){
  const {t,locale}=useI18n();
  const {tokens}=useAppearance();
  const computedNumber=(value:number|null)=>value===null?t('unknown'):String(value);

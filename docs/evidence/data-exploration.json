@@ -1,0 +1,127 @@
+{
+  "clientRevision": "0.1.0-preview.31-data.1",
+  "scope": "Client-only bounded CSV mapping and linked exploration; existing host/tools/MCP/history/configuration preserved.",
+  "sourceCommit": null,
+  "typecheck": {
+    "command": "pnpm typecheck",
+    "passed": true
+  },
+  "unitChecks": {
+    "command": "pnpm exec vitest run tests/data-exploration.test.ts tests/data-exploration-chart.test.ts tests/results.test.ts tests/chart-view.test.ts tests/i18n.test.ts tests/result-interop.test.ts tests/scenarios.test.ts",
+    "passed": 78,
+    "files": 7
+  },
+  "installerChecks": {
+    "command": "node --test tests/client-overlay.test.mjs",
+    "passed": 5,
+    "runtimeVariantAndRollbackVerified": true
+  },
+  "clientBuild": {
+    "command": "buildClient client-only closure build",
+    "passed": true,
+    "candidateSha256": "8729ddb95c711cd46f75729325d46db9fb65b54ae1c419a485da5a52cd47602f"
+  },
+  "ui": {
+    "mode": "Headless Chromium on the existing personal DSH; candidate factory replaced only in the QA page response, not on disk.",
+    "normalExistingHistory": true,
+    "actualFileChooser": true,
+    "actualSvgMarkClick": true,
+    "distributionKeyboardEquivalent": true,
+    "oneSelectionForTwoPlotsTableStatisticsDownload": true,
+    "clearAndEmptySelection": true,
+    "explicitSaveReloadReopen": true,
+    "savedContentEqualsReopenedContent": true,
+    "cancelMalformedNumericAndOversizePreserveCurrent": true,
+    "secondDifferentDatasetResetsRowsSelectionAndConclusions": true,
+    "pageErrors": [],
+    "narrowViewportWidth": 360,
+    "narrowContainer": {
+      "width": 231,
+      "scroll": 231
+    },
+    "initialSessionCreateAttemptsBlockedBeforeSend": 2,
+    "dataPhaseMutatingRequests": 0,
+    "fileContentsInRpc": false,
+    "userEdgeInspected": false,
+    "phoneOrScreenReaderAccepted": false
+  },
+  "syntheticOracles": {
+    "observations": {
+      "rows": 10,
+      "valid": 8,
+      "missing": 2,
+      "observedSubtotal": 40,
+      "observedMean": 5,
+      "completeMean": null,
+      "firstBinRows": 4,
+      "firstBinMean": -2.5,
+      "unit": "摄氏度"
+    },
+    "power": {
+      "rows": 6,
+      "valid": 5,
+      "missing": 1,
+      "observedSubtotal": 14,
+      "observedMean": 2.8,
+      "completeMean": null,
+      "unit": "kW",
+      "presentationSortedByTime": true
+    }
+  },
+  "firstFailures": [
+    {
+      "cause": "Existing category-x uniqueness validation rejected duplicate labels.",
+      "fix": "Keep the validator; retain original labels separately and use unique source record positions for canonical category x."
+    },
+    {
+      "cause": "Type narrowing and impossible union guards failed typecheck.",
+      "fix": "Use an explicit never-returning function declaration and remove impossible guards."
+    },
+    {
+      "cause": "QA string replacement interpreted JavaScript replacement tokens inside the compiled candidate, corrupting the combo response.",
+      "fix": "Use a replacement callback to insert literal candidate bytes; retain failed transfer evidence privately."
+    },
+    {
+      "cause": "Context and selected ECharts layers reused one series id; json-render caught the engine error and omitted the chart.",
+      "fix": "Distinct application-owned layer IDs; actual SVG engine and UI regression passed."
+    },
+    {
+      "cause": "Narrow QA sidebar control changed during resize and an arbitrary width expectation exceeded the actual host container.",
+      "fix": "Collapse before resize, record actual 231px container within 360px page, verify overflow and inspect screenshots; compact time ticks."
+    }
+  ],
+  "preservation": {
+    "installedClientChanged": false,
+    "hostRestarted": false,
+    "runtimeEntrypointsUnchanged": true,
+    "configurationUnchanged": true,
+    "oldResultFormatsStillReadable": [
+      1,
+      2,
+      3
+    ],
+    "newExplorationResultFormat": 4,
+    "newExplorationStorage": "current origin/browser local storage or explicit file export",
+    "existingResultStorage": "original DSH profile route"
+  },
+  "adoption": {
+    "state": "pending_existing_page_draft_state",
+    "installedClientRevision": "0.1.0-preview.31-prose.3",
+    "reason": "Existing Edge connections; local browser control disabled. DSH client HMR remounts components and draft state is unknown. Preserve existing page while preparing reviewable source and archive."
+  },
+  "newModelRequests": 0,
+  "newModelIntents": 0,
+  "newDshServices": 0,
+  "newMcpConnections": 0,
+  "newRemoteJobs": 0,
+  "newCiRuns": 0,
+  "originalNaturalResults": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18
+  },
+  "wholeGoalComplete": false,
+  "release": {
+    "status": "not_built_yet"
+  }
+}
