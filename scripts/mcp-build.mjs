@@ -16,3 +16,6 @@ export const buildResultCli=({outfile,absWorkingDir}={})=>build({
  ...(absWorkingDir?{absWorkingDir}:{}),
  banner:{js:'#!/usr/bin/env node\nimport {createRequire as semanticCreateRequire} from "node:module";const require=semanticCreateRequire(import.meta.url);'},
 });
+
+/** Existing direct reader, compiled for the same personal package; no MCP transport. */
+export const buildLocalResultCli=({outfile,version,absWorkingDir}={})=>build({entryPoints:['scripts/result-local.ts'],bundle:true,format:'esm',platform:'node',outfile,minify:true,legalComments:'linked',...(absWorkingDir?{absWorkingDir}:{}),...(version?{define:{__SEMANTIC_READONLY_VERSION__:JSON.stringify(version)}}:{}),banner:{js:'#!/usr/bin/env node'}});

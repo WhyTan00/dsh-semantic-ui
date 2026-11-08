@@ -1,0 +1,29 @@
+{
+  "id": "T2",
+  "originalFile": "docs/evidence/natural/r9-T2.json",
+  "originalFileSha256": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2",
+  "sourceTextSha256": "40a76f7e8e2c1cfdf500d5437fa15197be5da39f25c3e51ce43d84a884612dfa",
+  "originalClassification": "fail; unchanged",
+  "originalFinalAnswer": "**缺失读数和零并不是同一回事**：零是一个被观测到的数值，缺失则是“没有观测结果”这一状态，两者属于不同的类别。\n\n- **零表示“测到了，确认是 0”**：传感器正常工作，读数确实为零，这个结果带有真实含义，例如电流为 0、降雨量为 0。\n- **缺失表示“不知道”**：传感器没有运行、通信中断、样本被跳过或者没有上报；缺失的意思只是“没有数据”，并非“数据是 0”。\n\n为什么要严格区分？因为把缺失读成零会让统计结果失真：\n\n- **均值会被拉低**：比如 10 次真实读数都在 5 左右，另外 90 次没有记录，如果把这 90 次缺失都按 0 计入，均值会从 5 掉到 0.5，而这个 0.5 是凭空造出来的。\n- **总量会被低估**：把缺失当成零求和，结果会系统性偏小。\n- **趋势和异常会被掩盖**：真实的“数据中断”会被伪装成“用量降为零”，于是告警消失，问题反而被藏起来。\n\n所以正确做法是：缺失值单独标记，只参与“缺失率”这类统计，不参与均值、求和等需要真实数值的计算；需要补值时，就用插值或模型估计，并明确说明这是推测值，不能悄悄填 0。",
+  "originalViewPresent": false,
+  "originalDelivery": {
+    "version": 1,
+    "wholeCandidateVerified": false,
+    "wholeViewProseVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "externalAssistantBodyIntercepted": false,
+    "answerProvidedByCaller": true,
+    "answerCompleteness": "caller-supplied; completeness not independently established",
+    "originalAnswer": "**缺失读数和零并不是同一回事**：零是一个被观测到的数值，缺失则是“没有观测结果”这一状态，两者属于不同的类别。\n\n- **零表示“测到了，确认是 0”**：传感器正常工作，读数确实为零，这个结果带有真实含义，例如电流为 0、降雨量为 0。\n- **缺失表示“不知道”**：传感器没有运行、通信中断、样本被跳过或者没有上报；缺失的意思只是“没有数据”，并非“数据是 0”。\n\n为什么要严格区分？因为把缺失读成零会让统计结果失真：\n\n- **均值会被拉低**：比如 10 次真实读数都在 5 左右，另外 90 次没有记录，如果把这 90 次缺失都按 0 计入，均值会从 5 掉到 0.5，而这个 0.5 是凭空造出来的。\n- **总量会被低估**：把缺失当成零求和，结果会系统性偏小。\n- **趋势和异常会被掩盖**：真实的“数据中断”会被伪装成“用量降为零”，于是告警消失，问题反而被藏起来。\n\n所以正确做法是：缺失值单独标记，只参与“缺失率”这类统计，不参与均值、求和等需要真实数值的计算；需要补值时，就用插值或模型估计，并明确说明这是推测值，不能悄悄填 0。",
+    "newModelCalls": 0,
+    "status": "refused",
+    "code": "ANSWER_INPUT",
+    "reason": "视图或候选超限/无效；没有返回部分全文批准。",
+    "text": null
+  },
+  "programReference": {
+    "status": "refused",
+    "reason": "No complete supported finite source grammar; no component fabricated."
+  }
+}

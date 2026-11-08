@@ -13,6 +13,7 @@ export {checkSourceDecision,parseDecisionSource,sourceDecisionRequestSchema} fro
 export {checkSourcePermissions,parsePermissionSource,sourcePermissionsRequestSchema} from './source-permissions';
 export {checkSourceNumeric,parseNumericSource,sourceNumericRequestSchema} from './source-numeric';
 export {bindCapacityView,bindWorkflowView,bindPermissionView,bindDecisionView,bindNumericView} from './source-delivery';
+export {checkAnswerDelivery,answerBindingSchema,answerInputSchema} from './answer-delivery';
 
 /** A new request cannot select historical behavior to bypass current policy. */
 export function validateForDelivery(input:unknown):Validation{
@@ -30,7 +31,7 @@ export function describeSemantic(component:ComponentName){return {component,prot
 
 /** Host-independent checked facts. Never loads DSH services, files, models or credentials. */
 function analyzeUnchecked(view:Envelope){
- const common={protocolVersion:view.protocolVersion,component:view.component,summarySource:'model-authored; not independently verified',sourceFactsVerified:false,responseContract:'Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.'};
+ const common={protocolVersion:view.protocolVersion,component:view.component,summarySource:'model-authored; not independently verified',sourceFactsVerified:false,wholeAnswerVerified:false,validationScope:'supplied structured data only; no free-text coverage',responseContract:'Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.'};
  if(view.component==='ArchitectureExplorer'){
   const facts=graphFacts(view.payload),labels=(ids:string[])=>ids.map(id=>view.payload.nodes.find(n=>n.id===id)?.label??id).join(', ');
   return {...common,graphFacts:facts,canonicalSummary:`Declared graph: ${facts.nodeCount} nodes, ${facts.edgeCount} relationships.${facts.sharedTargets.length?' Shared directed targets: '+labels(facts.sharedTargets.map(n=>n.nodeId))+'.':''}`,canonicalSummarySource:'computed from the supplied graph; not independent verification'};

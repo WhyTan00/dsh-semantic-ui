@@ -4,6 +4,8 @@
 
 **默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有固定双语入口「界面语言 / Language」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
 
+独立离线伴随包31.2新增[完整答复交付门](docs/ANSWER-DELIVERY.zh-CN.md)：结构匹配或一条正确断言都不批准全文；原文完整保留未核，只输出当前有限来源的程序说明或明确拒绝。现有[正常文件入口](docs/CODEX-LOCAL-ENTRY.zh-CN.md)支持完整候选、摘要绑定和有据输出，编译后无需MCP连接；原DSH/客户端与模型观察保持各自边界。
+
 新增[可复用任务表单](docs/TASK-FORM.zh-CN.md)：补充布尔/数值/枚举/文字条件，预览后明确确认并另存，重开后继续成新修订；模板、主题与答案分开。[task.3 预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-task.3)提供单文件离线HTML与文件命令入口，可独立使用，无须更改当前DSH页。当前个人页未安装/热更新，本轮未做浏览器或DSH显示验收。
 
 **[打开个人DSH交互视图（本机3200）](http://127.0.0.1:3200/)** · [免命令操作指南](docs/INTERACTIVE-ENTRY.zh-CN.md) · [项目技能](.agents/skills/semantic-ui-view/SKILL.md)

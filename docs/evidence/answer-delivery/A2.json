@@ -1,0 +1,1629 @@
+{
+  "id": "A2",
+  "originalFile": "docs/evidence/natural/r9-A2.json",
+  "originalFileSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+  "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+  "originalClassification": "fail; unchanged",
+  "originalFinalAnswer": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。**\n\n- **通知出错**：影响只到“支付到通知”这段。按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。\n- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。\n\n另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。细节可看上面那张图，切换场景即可对比。",
+  "originalViewPresent": true,
+  "originalDelivery": {
+    "version": 1,
+    "wholeCandidateVerified": false,
+    "wholeViewProseVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "externalAssistantBodyIntercepted": false,
+    "answerProvidedByCaller": true,
+    "answerCompleteness": "caller-supplied; completeness not independently established",
+    "originalAnswer": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。**\n\n- **通知出错**：影响只到“支付到通知”这段。按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。\n- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。\n\n另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。细节可看上面那张图，切换场景即可对比。",
+    "newModelCalls": 0,
+    "status": "refused",
+    "code": "ANSWER_VIEW_SOURCE_MISMATCH",
+    "reason": "原始结构没有匹配当前有限来源。没有用正确片段或本地假设替换原字段。",
+    "text": null,
+    "binding": {
+      "checkerVersion": "answer-delivery-1",
+      "sourceDocumentSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+      "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+      "sourceSnapshotSha256": "0549f064e9875dec73eb9b49069b5855eed6033e46195442587ababae7d4b475",
+      "viewSha256": "78ebe83e9f69cac94796398e6dc579f8542acd572eeef05c494cf00b363be041",
+      "rulesSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "mappingSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "candidateBundleSha256": "c0cc771cd637e5d83351131a09302de02615db7dcb1de336ec1488d021c25156"
+    },
+    "viewIdentity": {
+      "displayId": "order-flow-fault-scope",
+      "revision": 1,
+      "component": "ArchitectureExplorer"
+    },
+    "coverage": {
+      "policy": "all-original-text-remains-unverified",
+      "diagnosticSpansAreNotCoverage": true,
+      "allViewFieldsIncludedInDigest": true,
+      "representations": [
+        {
+          "origin": "view",
+          "encoding": "canonical-json",
+          "sha256": "78ebe83e9f69cac94796398e6dc579f8542acd572eeef05c494cf00b363be041",
+          "utf16Length": 1977,
+          "unverifiedRanges": [
+            {
+              "utf16Start": 0,
+              "utf16End": 1977
+            }
+          ]
+        },
+        {
+          "origin": "answer",
+          "encoding": "original-text",
+          "sha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+          "utf16Length": 262,
+          "unverifiedRanges": [
+            {
+              "utf16Start": 0,
+              "utf16End": 262
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": [
+      {
+        "path": "/view/summary",
+        "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "candidateSha256": "3a546f0c24a31894eaae9632438ea43cc65519f2a633b36e76051cb63f9361c2",
+        "reviewStatus": "reviewed",
+        "wholeCandidateVerified": false,
+        "assertions": [
+          {
+            "kind": "workflow-action-target",
+            "status": "unsupported",
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 72
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.0",
+                "spans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ],
+                "value": {
+                  "trigger": "通知",
+                  "retryOnly": [
+                    "通知"
+                  ],
+                  "noRollback": [
+                    "支付"
+                  ]
+                },
+                "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+              }
+            ],
+            "reason": "动作对象未能完整绑定到来源字面节点，不用名称子串猜测对象。",
+            "quoteVerified": false
+          }
+        ],
+        "uncovered": [],
+        "recognizedAssertionsDoNotApproveRemainingText": true
+      },
+      {
+        "path": "/answer",
+        "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+        "candidateSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+        "reviewStatus": "reviewed",
+        "wholeCandidateVerified": false,
+        "assertions": [
+          {
+            "kind": "workflow-execution-causality",
+            "status": "unsupported",
+            "candidateSpan": {
+              "utf16Start": 0,
+              "utf16End": 29
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.relations",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ],
+                "value": [
+                  [
+                    "入口",
+                    "鉴权"
+                  ],
+                  [
+                    "鉴权",
+                    "库存"
+                  ],
+                  [
+                    "库存",
+                    "支付"
+                  ],
+                  [
+                    "支付",
+                    "通知"
+                  ]
+                ],
+                "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+              },
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.absent",
+                "spans": [
+                  {
+                    "textByteStart": 0,
+                    "textByteEnd": 174
+                  }
+                ],
+                "value": null,
+                "scope": "完整来源未声明此分支策略；未知不等于否"
+              }
+            ],
+            "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-execution-causality",
+            "status": "unsupported",
+            "candidateSpan": {
+              "utf16Start": 33,
+              "utf16End": 58
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.relations",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ],
+                "value": [
+                  [
+                    "入口",
+                    "鉴权"
+                  ],
+                  [
+                    "鉴权",
+                    "库存"
+                  ],
+                  [
+                    "库存",
+                    "支付"
+                  ],
+                  [
+                    "支付",
+                    "通知"
+                  ]
+                ],
+                "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+              },
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.0",
+                "spans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ],
+                "value": {
+                  "trigger": "通知",
+                  "retryOnly": [
+                    "通知"
+                  ],
+                  "noRollback": [
+                    "支付"
+                  ]
+                },
+                "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+              }
+            ],
+            "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-retry-scope",
+            "status": "supported",
+            "candidateSpan": {
+              "utf16Start": 58,
+              "utf16End": 96
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.0",
+                "spans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ],
+                "value": {
+                  "trigger": "通知",
+                  "retryOnly": [
+                    "通知"
+                  ],
+                  "noRollback": [
+                    "支付"
+                  ]
+                },
+                "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+              }
+            ],
+            "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-rollback-scope",
+            "status": "supported",
+            "candidateSpan": {
+              "utf16Start": 58,
+              "utf16End": 96
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.0",
+                "spans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  },
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ],
+                "value": {
+                  "trigger": "通知",
+                  "retryOnly": [
+                    "通知"
+                  ],
+                  "noRollback": [
+                    "支付"
+                  ]
+                },
+                "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+              }
+            ],
+            "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-terminal-topology",
+            "status": "supported",
+            "candidateSpan": {
+              "utf16Start": 58,
+              "utf16End": 96
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.relations",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ],
+                "value": [
+                  [
+                    "入口",
+                    "鉴权"
+                  ],
+                  [
+                    "鉴权",
+                    "库存"
+                  ],
+                  [
+                    "库存",
+                    "支付"
+                  ],
+                  [
+                    "支付",
+                    "通知"
+                  ]
+                ],
+                "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+              }
+            ],
+            "reason": "仅核对声明图的出边及明确极性，不把末端节点变成故障传播保证。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-execution-causality",
+            "status": "unsupported",
+            "candidateSpan": {
+              "utf16Start": 97,
+              "utf16End": 163
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.relations",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ],
+                "value": [
+                  [
+                    "入口",
+                    "鉴权"
+                  ],
+                  [
+                    "鉴权",
+                    "库存"
+                  ],
+                  [
+                    "库存",
+                    "支付"
+                  ],
+                  [
+                    "支付",
+                    "通知"
+                  ]
+                ],
+                "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+              },
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.absent",
+                "spans": [
+                  {
+                    "textByteStart": 0,
+                    "textByteEnd": 174
+                  }
+                ],
+                "value": null,
+                "scope": "完整来源未声明此分支策略；未知不等于否"
+              }
+            ],
+            "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-execution-causality",
+            "status": "unsupported",
+            "candidateSpan": {
+              "utf16Start": 165,
+              "utf16End": 213
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.relations",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  },
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ],
+                "value": [
+                  [
+                    "入口",
+                    "鉴权"
+                  ],
+                  [
+                    "鉴权",
+                    "库存"
+                  ],
+                  [
+                    "库存",
+                    "支付"
+                  ],
+                  [
+                    "支付",
+                    "通知"
+                  ]
+                ],
+                "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+              },
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.absent",
+                "spans": [
+                  {
+                    "textByteStart": 0,
+                    "textByteEnd": 174
+                  }
+                ],
+                "value": null,
+                "scope": "完整来源未声明此分支策略；未知不等于否"
+              }
+            ],
+            "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+            "quoteVerified": false
+          },
+          {
+            "kind": "workflow-compensation",
+            "status": "supported",
+            "candidateSpan": {
+              "utf16Start": 213,
+              "utf16End": 243
+            },
+            "evidence": [
+              {
+                "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                "path": "source.failurePolicies.absent",
+                "spans": [
+                  {
+                    "textByteStart": 0,
+                    "textByteEnd": 174
+                  }
+                ],
+                "value": null,
+                "scope": "完整来源未声明此分支策略；未知不等于否"
+              }
+            ],
+            "reason": "当前完整来源未提供补偿政策，不能从重试或不回滚推得。",
+            "quoteVerified": false
+          }
+        ],
+        "uncovered": [
+          {
+            "text": "细节可看上面那张图，切换场景即可对比。",
+            "utf16Start": 243,
+            "utf16End": 262,
+            "reason": "未进入有限工作流正文合同；没有据拓扑推断因果或执行。"
+          }
+        ],
+        "recognizedAssertionsDoNotApproveRemainingText": true
+      }
+    ],
+    "structuredSourceMatch": false
+  },
+  "programReference": {
+    "authorship": "existing program source constructor; not repaired or new model answer",
+    "receipt": {
+      "status": "limited-delivery",
+      "structuredStatus": "checked",
+      "statusScope": "structured source match and limited delivery; never whole-answer verification",
+      "answerDelivery": {
+        "version": 1,
+        "wholeCandidateVerified": false,
+        "wholeViewProseVerified": false,
+        "identityVerified": false,
+        "worldFactsVerified": false,
+        "externalAssistantBodyIntercepted": false,
+        "answerProvidedByCaller": true,
+        "answerCompleteness": "caller-supplied; completeness not independently established",
+        "originalAnswer": "**两个出错点的影响范围不同，因为它们在链路中的位置不同。**\n\n- **通知出错**：影响只到“支付到通知”这段。按你给的规则，通知失败只重试通知、不回滚支付，而通知又是末端节点，没有下游。\n- **库存出错**：位置在支付之前，所以支付和通知都无法到达，影响范围覆盖库存之后的整段；入口和鉴权在更上游，属于已经完成的环节。\n\n另外，两个场景的重合点是“支付到通知”这段，但方向相反：一个是通知阻碍回传，一个是库存阻碍前进。库存出错后是否补偿、如何补偿，你尚未说明，这里只按顺序推断。细节可看上面那张图，切换场景即可对比。",
+        "newModelCalls": 0,
+        "binding": {
+          "checkerVersion": "answer-delivery-1",
+          "sourceDocumentSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+          "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+          "sourceSnapshotSha256": "0549f064e9875dec73eb9b49069b5855eed6033e46195442587ababae7d4b475",
+          "viewSha256": "45a95b130c4694184173496e2078baab42e75498cf937016af2d237bf8a27c06",
+          "rulesSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "mappingSha256": "8749f6a338f6c6a19b5f1a448b1167d32ac709eb13217b701e1922a138417483",
+          "candidateBundleSha256": "cab7400fefdd8be6b0b9df49a3f0b11d5afa05ad4c4f51833036dc9c96dbd379"
+        },
+        "viewIdentity": {
+          "displayId": "source-reference-aee8484a0dc18764",
+          "revision": 1,
+          "component": "ArchitectureExplorer"
+        },
+        "coverage": {
+          "policy": "all-original-text-remains-unverified",
+          "diagnosticSpansAreNotCoverage": true,
+          "allViewFieldsIncludedInDigest": true,
+          "representations": [
+            {
+              "origin": "view",
+              "encoding": "canonical-json",
+              "sha256": "45a95b130c4694184173496e2078baab42e75498cf937016af2d237bf8a27c06",
+              "utf16Length": 1614,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 1614
+                }
+              ]
+            },
+            {
+              "origin": "answer",
+              "encoding": "original-text",
+              "sha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+              "utf16Length": 262,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 262
+                }
+              ]
+            }
+          ]
+        },
+        "diagnostics": [
+          {
+            "path": "/view/summary",
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "candidateSha256": "9cfc48e8decb18fb13ef7fbf4517920450ac2f7b61f60909dcc055273e74012a",
+            "reviewStatus": "reviewed",
+            "wholeCandidateVerified": false,
+            "assertions": [],
+            "uncovered": [
+              {
+                "text": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+                "utf16Start": 0,
+                "utf16End": 27,
+                "reason": "未进入有限工作流正文合同；没有据拓扑推断因果或执行。"
+              }
+            ],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          },
+          {
+            "path": "/answer",
+            "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "candidateSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+            "reviewStatus": "reviewed",
+            "wholeCandidateVerified": false,
+            "assertions": [
+              {
+                "kind": "workflow-execution-causality",
+                "status": "unsupported",
+                "candidateSpan": {
+                  "utf16Start": 0,
+                  "utf16End": 29
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.relations",
+                    "spans": [
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 57,
+                        "textByteEnd": 72
+                      }
+                    ],
+                    "value": [
+                      [
+                        "入口",
+                        "鉴权"
+                      ],
+                      [
+                        "鉴权",
+                        "库存"
+                      ],
+                      [
+                        "库存",
+                        "支付"
+                      ],
+                      [
+                        "支付",
+                        "通知"
+                      ]
+                    ],
+                    "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+                  },
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.absent",
+                    "spans": [
+                      {
+                        "textByteStart": 0,
+                        "textByteEnd": 174
+                      }
+                    ],
+                    "value": null,
+                    "scope": "完整来源未声明此分支策略；未知不等于否"
+                  }
+                ],
+                "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-execution-causality",
+                "status": "unsupported",
+                "candidateSpan": {
+                  "utf16Start": 33,
+                  "utf16End": 58
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.relations",
+                    "spans": [
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 57,
+                        "textByteEnd": 72
+                      }
+                    ],
+                    "value": [
+                      [
+                        "入口",
+                        "鉴权"
+                      ],
+                      [
+                        "鉴权",
+                        "库存"
+                      ],
+                      [
+                        "库存",
+                        "支付"
+                      ],
+                      [
+                        "支付",
+                        "通知"
+                      ]
+                    ],
+                    "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+                  },
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.0",
+                    "spans": [
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 105,
+                        "textByteEnd": 120
+                      }
+                    ],
+                    "value": {
+                      "trigger": "通知",
+                      "retryOnly": [
+                        "通知"
+                      ],
+                      "noRollback": [
+                        "支付"
+                      ]
+                    },
+                    "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+                  }
+                ],
+                "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-retry-scope",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 58,
+                  "utf16End": 96
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.0",
+                    "spans": [
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 105,
+                        "textByteEnd": 120
+                      }
+                    ],
+                    "value": {
+                      "trigger": "通知",
+                      "retryOnly": [
+                        "通知"
+                      ],
+                      "noRollback": [
+                        "支付"
+                      ]
+                    },
+                    "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+                  }
+                ],
+                "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-rollback-scope",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 58,
+                  "utf16End": 96
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.0",
+                    "spans": [
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 75,
+                        "textByteEnd": 102
+                      },
+                      {
+                        "textByteStart": 105,
+                        "textByteEnd": 120
+                      }
+                    ],
+                    "value": {
+                      "trigger": "通知",
+                      "retryOnly": [
+                        "通知"
+                      ],
+                      "noRollback": [
+                        "支付"
+                      ]
+                    },
+                    "scope": "仅此明确失败触发分支；不推正常路径或全局策略"
+                  }
+                ],
+                "reason": "用既有工作流求值核对当前失败分支的动作对象和范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-terminal-topology",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 58,
+                  "utf16End": 96
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.relations",
+                    "spans": [
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 57,
+                        "textByteEnd": 72
+                      }
+                    ],
+                    "value": [
+                      [
+                        "入口",
+                        "鉴权"
+                      ],
+                      [
+                        "鉴权",
+                        "库存"
+                      ],
+                      [
+                        "库存",
+                        "支付"
+                      ],
+                      [
+                        "支付",
+                        "通知"
+                      ]
+                    ],
+                    "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+                  }
+                ],
+                "reason": "仅核对声明图的出边及明确极性，不把末端节点变成故障传播保证。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-execution-causality",
+                "status": "unsupported",
+                "candidateSpan": {
+                  "utf16Start": 97,
+                  "utf16End": 163
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.relations",
+                    "spans": [
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 57,
+                        "textByteEnd": 72
+                      }
+                    ],
+                    "value": [
+                      [
+                        "入口",
+                        "鉴权"
+                      ],
+                      [
+                        "鉴权",
+                        "库存"
+                      ],
+                      [
+                        "库存",
+                        "支付"
+                      ],
+                      [
+                        "支付",
+                        "通知"
+                      ]
+                    ],
+                    "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+                  },
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.absent",
+                    "spans": [
+                      {
+                        "textByteStart": 0,
+                        "textByteEnd": 174
+                      }
+                    ],
+                    "value": null,
+                    "scope": "完整来源未声明此分支策略；未知不等于否"
+                  }
+                ],
+                "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-execution-causality",
+                "status": "unsupported",
+                "candidateSpan": {
+                  "utf16Start": 165,
+                  "utf16End": 213
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.relations",
+                    "spans": [
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 21,
+                        "textByteEnd": 54
+                      },
+                      {
+                        "textByteStart": 57,
+                        "textByteEnd": 72
+                      }
+                    ],
+                    "value": [
+                      [
+                        "入口",
+                        "鉴权"
+                      ],
+                      [
+                        "鉴权",
+                        "库存"
+                      ],
+                      [
+                        "库存",
+                        "支付"
+                      ],
+                      [
+                        "支付",
+                        "通知"
+                      ]
+                    ],
+                    "scope": "声明的正向拓扑；不证明故障传播、实际执行或已完成"
+                  },
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.absent",
+                    "spans": [
+                      {
+                        "textByteStart": 0,
+                        "textByteEnd": 174
+                      }
+                    ],
+                    "value": null,
+                    "scope": "完整来源未声明此分支策略；未知不等于否"
+                  }
+                ],
+                "reason": "声明拓扑不证明实际阻塞、反向传播、上游已完成或故障影响范围。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "workflow-compensation",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 213,
+                  "utf16End": 243
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+                    "path": "source.failurePolicies.absent",
+                    "spans": [
+                      {
+                        "textByteStart": 0,
+                        "textByteEnd": 174
+                      }
+                    ],
+                    "value": null,
+                    "scope": "完整来源未声明此分支策略；未知不等于否"
+                  }
+                ],
+                "reason": "当前完整来源未提供补偿政策，不能从重试或不回滚推得。",
+                "quoteVerified": false
+              }
+            ],
+            "uncovered": [
+              {
+                "text": "细节可看上面那张图，切换场景即可对比。",
+                "utf16Start": 243,
+                "utf16End": 262,
+                "reason": "未进入有限工作流正文合同；没有据拓扑推断因果或执行。"
+              }
+            ],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          }
+        ],
+        "structuredSourceMatch": true,
+        "status": "limited-source-output",
+        "code": "ORIGINAL_CANDIDATE_NOT_APPROVED",
+        "reason": "原候选完整保留为未核数据；交付文本是当前来源的程序投影，不是修复后的模型原回答。",
+        "text": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。",
+        "textSha256": "b6578081dee99fd428b26961883eff19ee101e3ece05168dd23c71e87f244d7f",
+        "textOrigin": "program-derived finite source projection",
+        "sourceKind": "workflow-zh",
+        "sourceComparisonScope": "caller-selected complete finite text; no identity or world-fact certification"
+      },
+      "explanationZh": "已读取架构关系图完整结果（格式3）。保存的语言、主题、选择、A/B与草稿保留在原合同内。\n原始view与调用者固定来源在既有有限语法内匹配；未认证作者、现实事实、任意正文或政策。\n结构匹配不批准整段正文。原候选和全部view文字保留为未核数据；有限断言不是同句或剩余内容的覆盖证明。\n仅可交付当前来源的有限程序说明：\n来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。\n原始声明的完整范围计算与本地展示选择分开；筛选、搜索、情景和画布状态保留于原包，不作为新的来源事实。\n计算复用已有核心；规则、标签和模型注释仍是声明，不认证优选或世界事实。",
+      "document": {
+        "manifest": {
+          "format": "dsh-semantic-ui-result",
+          "version": 3,
+          "producer": {
+            "name": "@whytan/dsh-semantic-ui",
+            "version": "0.1.0-preview.31"
+          },
+          "protocolVersion": "1.4",
+          "dependencies": [
+            {
+              "name": "dsh",
+              "version": "0.2.1-rc.2"
+            },
+            {
+              "name": "@json-render/core",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@json-render/react",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@xyflow/react",
+              "version": "12.12.0"
+            },
+            {
+              "name": "@dagrejs/dagre",
+              "version": "3.1.1"
+            },
+            {
+              "name": "echarts",
+              "version": "6.1.0"
+            },
+            {
+              "name": "react",
+              "version": "19.3.1"
+            }
+          ],
+          "sourceState": "not-recorded",
+          "templateLibraryIncluded": false,
+          "authority": "data-only; no identity, permission, approval or instruction authority"
+        },
+        "content": {
+          "view": {
+            "protocolVersion": "1.4",
+            "displayId": "source-reference-aee8484a0dc18764",
+            "revision": 1,
+            "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "来源声明的直接关系",
+              "nodes": [
+                {
+                  "id": "node-0",
+                  "label": "入口",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-1",
+                  "label": "鉴权",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-2",
+                  "label": "库存",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-3",
+                  "label": "支付",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-4",
+                  "label": "通知",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                }
+              ],
+              "edges": [
+                {
+                  "id": "edge-0",
+                  "source": "node-0",
+                  "target": "node-1",
+                  "directed": true,
+                  "type": "声明流程",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-1",
+                  "source": "node-1",
+                  "target": "node-2",
+                  "directed": true,
+                  "type": "声明流程",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-2",
+                  "source": "node-2",
+                  "target": "node-3",
+                  "directed": true,
+                  "type": "声明流程",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-3",
+                  "source": "node-3",
+                  "target": "node-4",
+                  "directed": true,
+                  "type": "声明流程",
+                  "evidence": []
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "relation-0",
+                  "label": "声明关系 1",
+                  "nodeIds": [
+                    "node-0",
+                    "node-1"
+                  ],
+                  "edgeIds": [
+                    "edge-0"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-1",
+                  "label": "声明关系 2",
+                  "nodeIds": [
+                    "node-1",
+                    "node-2"
+                  ],
+                  "edgeIds": [
+                    "edge-1"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-2",
+                  "label": "声明关系 3",
+                  "nodeIds": [
+                    "node-2",
+                    "node-3"
+                  ],
+                  "edgeIds": [
+                    "edge-2"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-3",
+                  "label": "声明关系 4",
+                  "nodeIds": [
+                    "node-3",
+                    "node-4"
+                  ],
+                  "edgeIds": [
+                    "edge-3"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                }
+              ]
+            }
+          },
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          },
+          "locale": "zh-CN",
+          "interaction": {
+            "component": "ArchitectureExplorer",
+            "selected": "",
+            "query": "",
+            "focus": false,
+            "scenario": ""
+          }
+        },
+        "sha256": "f13b8ee40637e1120d533db8988af8438d0c49c5a6801a459326fc92bb79d57b"
+      },
+      "retained": {
+        "format": 3,
+        "locale": "zh-CN",
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        },
+        "recordedSourceStatus": "not-recorded"
+      },
+      "layers": {
+        "recordedSource": "historical-data-only",
+        "recordedSourceConsistency": "no-bound-record",
+        "declarations": {
+          "protocolVersion": "1.4",
+          "component": "ArchitectureExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "wholeAnswerVerified": false,
+          "validationScope": "supplied structured data only; no free-text coverage",
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "graphFacts": {
+            "scope": "declared-graph-only",
+            "sourceFactsVerified": false,
+            "nodeCount": 5,
+            "edgeCount": 4,
+            "directedEdgeCount": 4,
+            "directedEdges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1"
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2"
+              },
+              {
+                "id": "edge-2",
+                "source": "node-2",
+                "target": "node-3"
+              },
+              {
+                "id": "edge-3",
+                "source": "node-3",
+                "target": "node-4"
+              }
+            ],
+            "directedEdgesOmitted": 0,
+            "sharedTargets": [],
+            "sharedTargetsOmitted": 0,
+            "scenarioIntersections": [
+              {
+                "scenarioIds": [
+                  "relation-0",
+                  "relation-1"
+                ],
+                "sharedNodeIds": [
+                  "node-1"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-1",
+                  "relation-2"
+                ],
+                "sharedNodeIds": [
+                  "node-2"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-2",
+                  "relation-3"
+                ],
+                "sharedNodeIds": [
+                  "node-3"
+                ],
+                "nodesOmitted": 0
+              }
+            ],
+            "scenarioIntersectionsOmitted": 0,
+            "boundary": "Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route."
+          },
+          "canonicalSummary": "Declared graph: 5 nodes, 4 relationships.",
+          "canonicalSummarySource": "computed from the supplied graph; not independent verification"
+        },
+        "local": {
+          "scope": "presentation-selection-only",
+          "selection": {
+            "component": "ArchitectureExplorer",
+            "selected": "",
+            "query": "",
+            "focus": false,
+            "scenario": ""
+          },
+          "recomputedAsSource": false
+        },
+        "sourceComparison": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "workflow-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+            "jsonPointer": "/question",
+            "textSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "excerptSha256": "aee8484a0dc18764e15eaa2713e5ceffbae6399e12412e100eb32e85875839b0",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 174,
+              "textUTF8Bytes": 174
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded workflow-zh complete topology, explicit failure trigger, retry-only target and no-rollback target; topology alone does not prove execution state or causal guarantees; source identity and arbitrary prose remain unverified"
+          },
+          "identityVerified": false,
+          "sourceFactsVerified": false,
+          "freeProseVerified": false,
+          "status": "compared",
+          "sourceWorkflow": {
+            "nodes": [
+              "入口",
+              "鉴权",
+              "库存",
+              "支付",
+              "通知"
+            ],
+            "relations": [
+              {
+                "from": "入口",
+                "to": "鉴权",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "鉴权",
+                "to": "库存",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "库存",
+                "to": "支付",
+                "spans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "from": "支付",
+                "to": "通知",
+                "spans": [
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ]
+              }
+            ],
+            "failurePolicies": [
+              {
+                "trigger": "通知",
+                "retryOnly": [
+                  "通知"
+                ],
+                "noRollback": [
+                  "支付"
+                ],
+                "triggerSpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "retrySpans": [
+                  {
+                    "textByteStart": 75,
+                    "textByteEnd": 102
+                  }
+                ],
+                "noRollbackSpans": [
+                  {
+                    "textByteStart": 105,
+                    "textByteEnd": 120
+                  }
+                ]
+              }
+            ],
+            "questions": [
+              {
+                "triggers": [
+                  "通知",
+                  "库存"
+                ],
+                "span": {
+                  "textByteStart": 123,
+                  "textByteEnd": 171
+                }
+              }
+            ]
+          },
+          "comparison": {
+            "status": "matched",
+            "coverage": "all explicit topology and failure policies in the complete selected workflow source",
+            "edgeChecks": [
+              {
+                "edgeId": "edge-0",
+                "from": "入口",
+                "to": "鉴权",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-1",
+                "from": "鉴权",
+                "to": "库存",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-2",
+                "from": "库存",
+                "to": "支付",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 21,
+                    "textByteEnd": 54
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-3",
+                "from": "支付",
+                "to": "通知",
+                "status": "matched",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 57,
+                    "textByteEnd": 72
+                  }
+                ]
+              }
+            ],
+            "missingRelations": [],
+            "policyChecks": [
+              {
+                "trigger": "通知",
+                "retryOnly": [
+                  "通知"
+                ],
+                "noRollback": [
+                  "支付"
+                ]
+              }
+            ],
+            "missingPolicies": []
+          },
+          "issues": [],
+          "claimChecks": [],
+          "conclusion": {
+            "selectedSource": "matched",
+            "structuredClaims": "not-requested",
+            "sourceIdentity": "unverified",
+            "freeProse": "not-verified"
+          },
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "reason": "No keyword removal or arbitrary prose certification."
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete finite workflow syntax only",
+            "text": "来源明确给出的有向拓扑：入口 → 鉴权；鉴权 → 库存；库存 → 支付；支付 → 通知。\n明确异常规则：当通知失败时，仅重试通知；此失败分支不回滚支付。重试范围不扩展到整个流程。\n库存失败的重试、回滚或补偿策略未声明，保持未知。\n拓扑可用于查看声明的正向连接，不保证故障传播、反向回传、实际执行/阻塞或上游已完成。重试次数、必成功、最终状态和未声明分支均未知。以上是合成来源的有限声明核对，不执行任何动作，也不认证世界事实或任意正文。"
+          }
+        }
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "automaticModelOrToolCalls": 0
+    }
+  }
+}

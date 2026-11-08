@@ -1,0 +1,37 @@
+{
+  "phase": "source-checked-awaiting-frozen-consumer",
+  "version": "0.1.0-preview.31.2",
+  "scope": "offline complete-answer delivery gate and existing direct consumer",
+  "sourceChecks": {
+    "typecheck": "passed",
+    "testFiles": 8,
+    "tests": 176,
+    "deliveryAndProseTests": 131,
+    "coreProtocolAndResultTests": 45
+  },
+  "sourceEntry": {
+    "cases": 19,
+    "normalExistingDirectConsumer": true,
+    "networkAttempts": 0,
+    "childProcessAttempts": 0
+  },
+  "savedFailures": {
+    "originalResults": {
+      "pass": 0,
+      "fail": 6,
+      "requests": 18
+    },
+    "allSixOriginalAnswersRemainUnverified": true,
+    "programFiniteReplacements": 5,
+    "unsupportedT2Refused": true,
+    "naturalRerun": false
+  },
+  "newMcpConnections": 0,
+  "newModelTurns": 0,
+  "browserOrDshAccess": false,
+  "globalInstallationPerformed": false,
+  "mcpRuntimeAcceptedThisRound": false,
+  "hostToolConsumerAccepted": false,
+  "wholeCandidateVerified": false,
+  "evidenceDirectory": "answer-delivery/"
+}

@@ -1,0 +1,97 @@
+{
+  "scope": "offline saved failures; no natural rerun or regrading",
+  "originalResults": {
+    "pass": 0,
+    "fail": 6,
+    "requests": 18
+  },
+  "allOriginalFilesUnchanged": true,
+  "allOriginalCandidatesRetainedUnverified": true,
+  "originalDeliveriesRefused": 6,
+  "programFiniteReplacements": 5,
+  "unsupportedSourceRefusals": 1,
+  "cases": [
+    {
+      "id": "A2",
+      "originalFile": "docs/evidence/natural/r9-A2.json",
+      "originalFileSha256": "17a3d65a7367f5b4686b9cc57867e7bbc265e11ff5f91fb9d1d00a2f59f2104e",
+      "originalFinalAnswerSha256": "ee19b7e1682afcf1eb1922683f0ba0caa3c7abd6baae026bebb0ce72d00e1792",
+      "originalViewPresent": true,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_VIEW_SOURCE_MISMATCH",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "limited-delivery",
+      "detailFile": "A2.json",
+      "detailSha256": "161269c548cfa0aeef02b91ff5bcbf6da9096560f39c4d7a367cbd63eb946acb"
+    },
+    {
+      "id": "A3",
+      "originalFile": "docs/evidence/natural/r9-A3.json",
+      "originalFileSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "originalFinalAnswerSha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+      "originalViewPresent": true,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_VIEW_SOURCE_MISMATCH",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "limited-delivery",
+      "detailFile": "A3.json",
+      "detailSha256": "8494b995d8ae54e272f936945a95e4ca00e06b4e49409577532226104320c6ce"
+    },
+    {
+      "id": "D1",
+      "originalFile": "docs/evidence/natural/r9-D1.json",
+      "originalFileSha256": "d47b26ee4b18104228b5a9c76b51c15079c65cc080be4f96b0c31fedf25c2b61",
+      "originalFinalAnswerSha256": "1c159ff7bc6e6451bba7a795e22078dcc284d0d4580ef83ad7f0a4d3858010c7",
+      "originalViewPresent": true,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_VIEW_SOURCE_MISMATCH",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "limited-delivery",
+      "detailFile": "D1.json",
+      "detailSha256": "9a5575cb951a7f913bfa5e6d5e13bdf36f67e90b29cf10f9f7704820ff68ec1a"
+    },
+    {
+      "id": "D2",
+      "originalFile": "docs/evidence/natural/r9-D2.json",
+      "originalFileSha256": "7069cb4f14bb3cefa87c82dab5343b4cceb0d586ba3fd8036a73879efba5ec24",
+      "originalFinalAnswerSha256": "31697c4ced78e92410b37c8945d93ae4426f0809b44cfa64cc7d00560a6b5fcc",
+      "originalViewPresent": true,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_VIEW_SOURCE_MISMATCH",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "limited-delivery",
+      "detailFile": "D2.json",
+      "detailSha256": "e1b39643ee0e77e41a04e123831ead0bd76a59b31b406c7a78a1b677de4759f1"
+    },
+    {
+      "id": "N2",
+      "originalFile": "docs/evidence/natural/r9-N2.json",
+      "originalFileSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+      "originalFinalAnswerSha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+      "originalViewPresent": false,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_INPUT",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "limited-delivery",
+      "detailFile": "N2.json",
+      "detailSha256": "e6b86cf8a69a33b167eceb73a2bdbb9ac63d8844da58d6607b04d9f43e17f9e3"
+    },
+    {
+      "id": "T2",
+      "originalFile": "docs/evidence/natural/r9-T2.json",
+      "originalFileSha256": "609b6a4a74931a2e511af8d2ed0d7c2e228803340d42382dc0721ad3b54522a2",
+      "originalFinalAnswerSha256": "98c575665f01cdcd26cc70945c31d59966f0eba278c899386ff65242fe1997c0",
+      "originalViewPresent": false,
+      "originalStatus": "refused",
+      "originalCode": "ANSWER_INPUT",
+      "wholeCandidateVerified": false,
+      "programReferenceStatus": "refused",
+      "detailFile": "T2.json",
+      "detailSha256": "3cb06edf7677d0ee284c2e4f4180fbc0e6218a9c46f7ae153a11169b80a1d997"
+    }
+  ],
+  "newModelTurns": 0,
+  "newMcpConnections": 0,
+  "browserOrDshAccess": false,
+  "globalInstallationPerformed": false
+}

@@ -1,5 +1,7 @@
 # 在个人Codex显式读取DSH保存结果
 
+当前源码和独立31.2伴随包新增[完整答复交付门](ANSWER-DELIVERY.zh-CN.md)：结果格式1–5沿用同一parser，完整候选与view文字始终保留未核，只能交付当前有限来源的程序说明或拒绝。正常`dist/result-local.js`直接复用核心，无需MCP连接；`--answer-file`、`--binding-file`和`--emit grounded`见[修订2说明](CODEX-LOCAL-ENTRY.zh-CN.md)。新顶层状态为`limited-delivery`/`delivery-refused`，有限结构状态单列`structuredStatus`。下方31.1发行与stdio接受为历史记录，本次没有重跑或改写。
+
 仓库日常使用可运行[项目内直接本地命令](CODEX-LOCAL-ENTRY.zh-CN.md)：复用本页同一校验核心与包合同，0 MCP连接。下方独立ZIP/原Python入口仍通过stdio MCP；两种入口的采用与客户端边界分别记录。
 
 独立Codex伴随包`0.1.0-preview.31.1`增加完整结果入口，复用已经发行的DSH31解析器、语义核心、A/B和来源检查。DSH31包和个人3200入口继续沿用，不为这次桥接重打、重装或重启。

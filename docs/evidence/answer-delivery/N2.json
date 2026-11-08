@@ -1,0 +1,1481 @@
+{
+  "id": "N2",
+  "originalFile": "docs/evidence/natural/r9-N2.json",
+  "originalFileSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+  "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+  "originalClassification": "fail; unchanged",
+  "originalFinalAnswer": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。先把数据本身看清楚，再谈平均值。\n\n```dsh-ui\n{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"}]}\n```\n\n**能不能算平均值，取决于你要算哪一个：**\n\n- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。\n- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。缺少 x₃ 的具体值，就无法确定结果。\n\n**容易出现的两种误读：**\n\n1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。所以是零填充，并不是数据本身。\n2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。\n\n**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+  "originalViewPresent": false,
+  "originalDelivery": {
+    "version": 1,
+    "wholeCandidateVerified": false,
+    "wholeViewProseVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "externalAssistantBodyIntercepted": false,
+    "answerProvidedByCaller": true,
+    "answerCompleteness": "caller-supplied; completeness not independently established",
+    "originalAnswer": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。先把数据本身看清楚，再谈平均值。\n\n```dsh-ui\n{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"}]}\n```\n\n**能不能算平均值，取决于你要算哪一个：**\n\n- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。\n- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。缺少 x₃ 的具体值，就无法确定结果。\n\n**容易出现的两种误读：**\n\n1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。所以是零填充，并不是数据本身。\n2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。\n\n**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+    "newModelCalls": 0,
+    "status": "refused",
+    "code": "ANSWER_INPUT",
+    "reason": "视图或候选超限/无效；没有返回部分全文批准。",
+    "text": null
+  },
+  "programReference": {
+    "authorship": "existing program source constructor; not repaired or new model answer",
+    "receipt": {
+      "status": "limited-delivery",
+      "structuredStatus": "checked",
+      "statusScope": "structured source match and limited delivery; never whole-answer verification",
+      "answerDelivery": {
+        "version": 1,
+        "wholeCandidateVerified": false,
+        "wholeViewProseVerified": false,
+        "identityVerified": false,
+        "worldFactsVerified": false,
+        "externalAssistantBodyIntercepted": false,
+        "answerProvidedByCaller": true,
+        "answerCompleteness": "caller-supplied; completeness not independently established",
+        "originalAnswer": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。先把数据本身看清楚，再谈平均值。\n\n```dsh-ui\n{\"title\":\"四次温度读数\",\"gap\":12,\"items\":[{\"type\":\"table\",\"columns\":[\"序号\",\"读数 (°C)\",\"状态\"],\"rows\":[[\"1\",\"-2\",\"已观测\"],[\"2\",\"0\",\"已观测\"],[\"3\",\"—\",\"缺失\"],[\"4\",\"2\",\"已观测\"]]},{\"type\":\"keyvalue\",\"pairs\":[{\"key\":\"已观测之和\",\"value\":\"−2 + 0 + 2 = 0 °C\"},{\"key\":\"已观测个数\",\"value\":\"3\"},{\"key\":\"三个观测值的均值\",\"value\":\"0 °C\"},{\"key\":\"四次读数的均值\",\"value\":\"(0 + x₃) / 4，x₃ 未知 → 无法确定\"}]},{\"type\":\"callout\",\"tone\":\"warning\",\"content\":\"0 °C 只是已观测那三个读数的平均值。缺失位置无论填什么，都会改变四次读数的均值；把缺失当作 0 是一种假设，而不是观测。\"}]}\n```\n\n**能不能算平均值，取决于你要算哪一个：**\n\n- **只按已观测的三次算**，可以：−2、0、2 加起来是 0，再除以 3，均值是 **0 °C**。这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。\n- **按全部四次算**，算不出来：总和是 (0 + x₃)，其中 x₃ 是缺失读数，所以均值是 (0 + x₃)/4；x₃ 只要变化，结果就跟着变。缺少 x₃ 的具体值，就无法确定结果。\n\n**容易出现的两种误读：**\n\n1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。这个 0 恰好和按三个观测值算出的均值一样，但含义不同：这样做相当于假设缺失时温度是 0 °C，而这一点没有被观测到。所以是零填充，并不是数据本身。\n2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。\n\n**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。中位数本身也不受影响：三个观测值排序后是 −2、0、2，中位数是 0；但中位数是另一个统计量，不等于“四次的平均值”。如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+        "newModelCalls": 0,
+        "binding": {
+          "checkerVersion": "answer-delivery-1",
+          "sourceDocumentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+          "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+          "sourceSnapshotSha256": "d6ecaf268f3c9c9818209dd78a38b9ad3ba9dd555990a5327b323fc2f09e0c4c",
+          "viewSha256": "b937205ba54d2e330de3f410ea8c43121b9ed4d8d615b4454d6fa65037cd10db",
+          "rulesSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "mappingSha256": "acf6d6803538558b144adcfbce9a3ba72c06b41d788aed1b6db2e8a30b3cc96e",
+          "candidateBundleSha256": "29fe3ecdf825db397c5ea87a8699c3e0e04787a6566f95b353997e90ae9171e5"
+        },
+        "viewIdentity": {
+          "displayId": "source-reference-30e3ee365de57d2e",
+          "revision": 1,
+          "component": "DataChart"
+        },
+        "coverage": {
+          "policy": "all-original-text-remains-unverified",
+          "diagnosticSpansAreNotCoverage": true,
+          "allViewFieldsIncludedInDigest": true,
+          "representations": [
+            {
+              "origin": "view",
+              "encoding": "canonical-json",
+              "sha256": "b937205ba54d2e330de3f410ea8c43121b9ed4d8d615b4454d6fa65037cd10db",
+              "utf16Length": 539,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 539
+                }
+              ]
+            },
+            {
+              "origin": "answer",
+              "encoding": "original-text",
+              "sha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+              "utf16Length": 1159,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 1159
+                }
+              ]
+            }
+          ]
+        },
+        "diagnostics": [
+          {
+            "path": "/view/summary",
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "candidateSha256": "9cfc48e8decb18fb13ef7fbf4517920450ac2f7b61f60909dcc055273e74012a",
+            "reviewStatus": "reviewed",
+            "wholeCandidateVerified": false,
+            "assertions": [],
+            "uncovered": [
+              {
+                "text": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+                "utf16Start": 0,
+                "utf16End": 27,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              }
+            ],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          },
+          {
+            "path": "/answer",
+            "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "candidateSha256": "b4cdf13b02b247a3b213d164ced2b354992236b3639cb26f402d037492ba5e47",
+            "reviewStatus": "reviewed",
+            "wholeCandidateVerified": false,
+            "assertions": [
+              {
+                "kind": "mean-denominator",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 61,
+                  "utf16End": 475
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "候选声明的分母与该统计范围不一致，均值碰巧相同也不能通过。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-value",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 61,
+                  "utf16End": 475
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "逐项读数、单位和分母限定该均值。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "universal-fill-changes-mean",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 475,
+                  "utf16End": 517
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "量词“无论填什么都会改变”必须经反例核对，不能由正确观测均值背书。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-value",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 551,
+                  "utf16End": 603
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "逐项读数、单位和分母限定该均值。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "complete-mean-unknown",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 657,
+                  "utf16End": 732
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "完整范围是否可计算由缺失掩码决定。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-unit",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 801,
+                  "utf16End": 860
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "单位必须与来源相同；未进行温标或单位转换。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-value",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 801,
+                  "utf16End": 860
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "逐项读数、单位和分母限定该均值。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "unsupported-median",
+                "status": "unsupported",
+                "candidateSpan": {
+                  "utf16Start": 1054,
+                  "utf16End": 1113
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "当前合同没有核对该中位数/缺失范围断言。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-value",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 319,
+                  "utf16End": 352,
+                  "jsonPointer": "/items/1/pairs/2"
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "逐项读数、单位和分母限定该均值。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "complete-mean-unknown",
+                "status": "supported",
+                "candidateSpan": {
+                  "utf16Start": 353,
+                  "utf16End": 406,
+                  "jsonPointer": "/items/1/pairs/3"
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "完整范围是否可计算由缺失掩码决定。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "universal-fill-changes-mean",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 454,
+                  "utf16End": 518,
+                  "jsonPointer": "/items/2/content"
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "量词“无论填什么都会改变”必须经反例核对，不能由正确观测均值背书。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-denominator",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 454,
+                  "utf16End": 518,
+                  "jsonPointer": "/items/2/content"
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "候选声明的分母与该统计范围不一致，均值碰巧相同也不能通过。",
+                "quoteVerified": false
+              },
+              {
+                "kind": "mean-value",
+                "status": "contradicted",
+                "candidateSpan": {
+                  "utf16Start": 454,
+                  "utf16End": 518,
+                  "jsonPointer": "/items/2/content"
+                },
+                "evidence": [
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "source.positions",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 43,
+                        "textByteEnd": 49
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": [
+                      -2,
+                      0,
+                      null,
+                      2
+                    ],
+                    "scope": "原始顺序、实测值和null掩码"
+                  },
+                  {
+                    "sourceTextSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+                    "path": "numericStats.observed",
+                    "spans": [
+                      {
+                        "textByteStart": 34,
+                        "textByteEnd": 36
+                      },
+                      {
+                        "textByteStart": 39,
+                        "textByteEnd": 40
+                      },
+                      {
+                        "textByteStart": 52,
+                        "textByteEnd": 53
+                      }
+                    ],
+                    "value": {
+                      "n": 3,
+                      "missing": 1,
+                      "sum": 0,
+                      "mean": 0,
+                      "min": -2,
+                      "max": 2
+                    },
+                    "scope": "已观测范围；复用numericStats"
+                  }
+                ],
+                "reason": "补零只作为显式假设；原始读数与完整真实范围不变。",
+                "quoteVerified": false
+              }
+            ],
+            "uncovered": [
+              {
+                "text": "这批数据是四个温度读数：-2、0、一个缺失值、2，单位都是摄氏度。",
+                "utf16Start": 0,
+                "utf16End": 33,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "先把数据本身看清楚，再谈平均值。",
+                "utf16Start": 33,
+                "utf16End": 49,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "```dsh-ui",
+                "utf16Start": 51,
+                "utf16End": 60,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "\"}]}",
+                "utf16Start": 517,
+                "utf16End": 521,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "**能不能算平均值，取决于你要算哪一个：**",
+                "utf16Start": 527,
+                "utf16End": 549,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "这是这批数据里唯一不需要额外假设就能算出的均值，但它对应的是“三次已观测读数”的均值，并不是全部四次读数。",
+                "utf16Start": 603,
+                "utf16End": 656,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "缺少 x₃ 的具体值，就无法确定结果。",
+                "utf16Start": 732,
+                "utf16End": 751,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "**容易出现的两种误读：**",
+                "utf16Start": 753,
+                "utf16End": 767,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "1. 把缺失位置当成 0 °C，算成 (0)/4 = 0 °C。",
+                "utf16Start": 769,
+                "utf16End": 801,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "所以是零填充，并不是数据本身。",
+                "utf16Start": 860,
+                "utf16End": 875,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "2. 反过来，也不能说“0 °C 是四次均值”，因为第四个值完全没有被观测到，而且可能改变结果的方向取决于 x₃ 的正负：x₃ > 0 时四次均值大于 0，x₃ < 0 时四次均值小于 0，x₃ = 0 时才等于 0。",
+                "utf16Start": 876,
+                "utf16End": 985,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "**想得到四次均值，需要先补一条信息**：第 3 次读数实际是多少，或者明确采用哪种处理规则，比如按观测值均值做插补，或者改用中位数。",
+                "utf16Start": 987,
+                "utf16End": 1054,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              },
+              {
+                "text": "如果你告诉我第 3 次读数，或者你希望采用哪种缺失处理方式，我可以按对应方法给出确切的数值。",
+                "utf16Start": 1113,
+                "utf16End": 1159,
+                "reason": "不在已实现的有限断言语法内；原文保留，不进入有据修订。"
+              }
+            ],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          }
+        ],
+        "structuredSourceMatch": true,
+        "status": "limited-source-output",
+        "code": "ORIGINAL_CANDIDATE_NOT_APPROVED",
+        "reason": "原候选完整保留为未核数据；交付文本是当前来源的程序投影，不是修复后的模型原回答。",
+        "text": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。",
+        "textSha256": "7df2714263eed1023c91f80afcebb702728c0d517f4e7d0e2558314b83ec8c25",
+        "textOrigin": "program-derived finite source projection",
+        "sourceKind": "observations-zh",
+        "sourceComparisonScope": "caller-selected complete finite text; no identity or world-fact certification"
+      },
+      "explanationZh": "已读取数据图表完整结果（格式3）。保存的语言、主题、选择、A/B与草稿保留在原合同内。\n原始view与调用者固定来源在既有有限语法内匹配；未认证作者、现实事实、任意正文或政策。\n结构匹配不批准整段正文。原候选和全部view文字保留为未核数据；有限断言不是同句或剩余内容的覆盖证明。\n仅可交付当前来源的有限程序说明：\n虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。\n原始声明的完整范围计算与本地展示选择分开；筛选、搜索、情景和画布状态保留于原包，不作为新的来源事实。\n计算复用已有核心；规则、标签和模型注释仍是声明，不认证优选或世界事实。",
+      "document": {
+        "manifest": {
+          "format": "dsh-semantic-ui-result",
+          "version": 3,
+          "producer": {
+            "name": "@whytan/dsh-semantic-ui",
+            "version": "0.1.0-preview.31"
+          },
+          "protocolVersion": "1.4",
+          "dependencies": [
+            {
+              "name": "dsh",
+              "version": "0.2.1-rc.2"
+            },
+            {
+              "name": "@json-render/core",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@json-render/react",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@xyflow/react",
+              "version": "12.12.0"
+            },
+            {
+              "name": "@dagrejs/dagre",
+              "version": "3.1.1"
+            },
+            {
+              "name": "echarts",
+              "version": "6.1.0"
+            },
+            {
+              "name": "react",
+              "version": "19.3.1"
+            }
+          ],
+          "sourceState": "not-recorded",
+          "templateLibraryIncluded": false,
+          "authority": "data-only; no identity, permission, approval or instruction authority"
+        },
+        "content": {
+          "view": {
+            "protocolVersion": "1.4",
+            "displayId": "source-reference-30e3ee365de57d2e",
+            "revision": 1,
+            "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+            "component": "DataChart",
+            "payload": {
+              "chartType": "bar",
+              "title": "来源声明的温度",
+              "unit": "摄氏度",
+              "x": {
+                "kind": "category",
+                "order": "input"
+              },
+              "series": [
+                {
+                  "id": "source-values",
+                  "label": "温度"
+                }
+              ],
+              "rows": [
+                {
+                  "id": "position-0",
+                  "x": "1",
+                  "values": {
+                    "source-values": -2
+                  }
+                },
+                {
+                  "id": "position-1",
+                  "x": "2",
+                  "values": {
+                    "source-values": 0
+                  }
+                },
+                {
+                  "id": "position-2",
+                  "x": "3",
+                  "values": {
+                    "source-values": null
+                  }
+                },
+                {
+                  "id": "position-3",
+                  "x": "4",
+                  "values": {
+                    "source-values": 2
+                  }
+                }
+              ]
+            }
+          },
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          },
+          "locale": "zh-CN",
+          "interaction": {
+            "component": "DataChart",
+            "enabled": [
+              "source-values"
+            ],
+            "from": 0,
+            "to": 3,
+            "scope": "filtered",
+            "page": 0
+          }
+        },
+        "sha256": "c3924b81876b751165fcdfbf8960c820ac7f05f945751e1694b56afd0e08014a"
+      },
+      "retained": {
+        "format": 3,
+        "locale": "zh-CN",
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        },
+        "recordedSourceStatus": "not-recorded"
+      },
+      "layers": {
+        "recordedSource": "historical-data-only",
+        "recordedSourceConsistency": "no-bound-record",
+        "declarations": {
+          "protocolVersion": "1.4",
+          "component": "DataChart",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "wholeAnswerVerified": false,
+          "validationScope": "supplied structured data only; no free-text coverage",
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "dataFacts": {
+            "scope": "original-full-data",
+            "chartType": "bar",
+            "unit": "摄氏度",
+            "order": "input",
+            "rows": 4,
+            "firstRow": {
+              "id": "position-0",
+              "x": "1",
+              "xTruncated": false
+            },
+            "lastRow": {
+              "id": "position-3",
+              "x": "4",
+              "xTruncated": false
+            },
+            "series": [
+              {
+                "id": "source-values",
+                "valid": 3,
+                "missing": 1,
+                "sum": 0,
+                "mean": 0,
+                "zeroFillIllustration": {
+                  "assumption": "Replace only declared nulls with zero; hypothetical, not observed data or an estimate of the full population.",
+                  "count": 4,
+                  "sum": 0,
+                  "differenceFromObservedSum": 0,
+                  "directionRelativeToObservedSum": "same",
+                  "completeDataSumKnown": false,
+                  "mean": 0,
+                  "differenceFromObservedMean": 0,
+                  "directionRelativeToObservedMean": "same",
+                  "completeDataMeanKnown": false
+                },
+                "minimum": -2,
+                "maximum": 2,
+                "firstValue": -2,
+                "lastValue": 2,
+                "netChange": 4,
+                "adjacentValidDecreases": 0
+              }
+            ]
+          },
+          "canonicalSummary": "Declared bar data in 摄氏度: source-values: 3 valid, 1 missing, mean 0.",
+          "canonicalSummarySource": "computed from supplied observations; not independent source verification"
+        },
+        "local": {
+          "scope": "presentation-selection-only",
+          "selection": {
+            "component": "DataChart",
+            "enabled": [
+              "source-values"
+            ],
+            "from": 0,
+            "to": 3,
+            "scope": "filtered",
+            "page": 0
+          },
+          "recomputedAsSource": false
+        },
+        "sourceComparison": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "observations-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "270ea1e29a7d3857d3dc6463d98eac0ebe38263095be4ecd9730ba02b9c6e54b",
+            "jsonPointer": "/question",
+            "textSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "excerptSha256": "30e3ee365de57d2e8706758de871dea3c5a8ad4f9de075fb937d91c9797779f0",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 114,
+              "textUTF8Bytes": 114
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded observations-zh complete ordered readings, explicit missing mask, exact unit and observed/complete arithmetic sum and mean ranges; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source identity, authorship and real-world readings",
+            "unselected context, arbitrary prose, chart title and annotations",
+            "time intervals, unit conversion, imputation, weighted/population statistics and arbitrary chart representations"
+          ],
+          "status": "compared",
+          "sourceObservations": {
+            "context": "虚构设备",
+            "measurement": "温度",
+            "unit": "摄氏度",
+            "positions": [
+              {
+                "index": 0,
+                "value": -2,
+                "span": {
+                  "textByteStart": 34,
+                  "textByteEnd": 36
+                }
+              },
+              {
+                "index": 1,
+                "value": 0,
+                "span": {
+                  "textByteStart": 39,
+                  "textByteEnd": 40
+                }
+              },
+              {
+                "index": 2,
+                "value": null,
+                "span": {
+                  "textByteStart": 43,
+                  "textByteEnd": 49
+                }
+              },
+              {
+                "index": 3,
+                "value": 2,
+                "span": {
+                  "textByteStart": 52,
+                  "textByteEnd": 53
+                }
+              }
+            ]
+          },
+          "sourceStatistics": {
+            "unit": "摄氏度",
+            "positions": 4,
+            "values": [
+              -2,
+              0,
+              null,
+              2
+            ],
+            "missingMask": [
+              false,
+              false,
+              true,
+              false
+            ],
+            "observed": {
+              "count": 3,
+              "missing": 1,
+              "sum": 0,
+              "mean": 0,
+              "denominator": 3,
+              "scope": "declared non-missing positions only"
+            },
+            "complete": {
+              "count": 4,
+              "sum": null,
+              "sumKnown": false,
+              "mean": null,
+              "denominator": 4,
+              "known": false,
+              "scope": "all declared positions; missing readings remain unknown"
+            },
+            "method": "unweighted arithmetic sum and mean; no imputation, unit conversion, sampling or population inference"
+          },
+          "comparison": {
+            "status": "matched",
+            "scope": "all ordered source values, null mask, exact unit and single positional bar representation",
+            "rowChecks": [
+              {
+                "sourceIndex": 0,
+                "rowId": "position-0",
+                "seriesId": "source-values",
+                "expected": -2,
+                "actual": -2,
+                "missing": false,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 34,
+                  "textByteEnd": 36
+                }
+              },
+              {
+                "sourceIndex": 1,
+                "rowId": "position-1",
+                "seriesId": "source-values",
+                "expected": 0,
+                "actual": 0,
+                "missing": false,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 39,
+                  "textByteEnd": 40
+                }
+              },
+              {
+                "sourceIndex": 2,
+                "rowId": "position-2",
+                "seriesId": "source-values",
+                "expected": null,
+                "actual": null,
+                "missing": true,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 43,
+                  "textByteEnd": 49
+                }
+              },
+              {
+                "sourceIndex": 3,
+                "rowId": "position-3",
+                "seriesId": "source-values",
+                "expected": 2,
+                "actual": 2,
+                "missing": false,
+                "status": "matched",
+                "sourceSpan": {
+                  "textByteStart": 52,
+                  "textByteEnd": 53
+                }
+              }
+            ],
+            "viewAnnotations": "not-verified"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "complete selected finite source readings and explicit calculation range only",
+            "text": "虚构设备的温度读数（摄氏度），按原文位置：1=-2、2=0、3=缺失、4=2。\n共4个位置，3个实际观测、1个缺失；实测零保留，缺失不填零。\n已观测项的算术平均值：0 摄氏度；分母为3个实际观测。\n已观测3项的小计：0 摄氏度；仅覆盖实际观测。\n完整4次读数的平均值：未知；完整范围分母为4。\n完整4次读数的合计：未知。\n按位置展示不代表时间间距；补零只能是另列假设，不能成为实测值或真实完整均值、合计，也不据此推断真实完整数据的偏差方向、总体或任意正文。"
+          }
+        }
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "automaticModelOrToolCalls": 0
+    }
+  }
+}

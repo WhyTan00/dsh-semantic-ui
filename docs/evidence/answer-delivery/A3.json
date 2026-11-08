@@ -1,0 +1,788 @@
+{
+  "id": "A3",
+  "originalFile": "docs/evidence/natural/r9-A3.json",
+  "originalFileSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+  "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+  "originalClassification": "fail; unchanged",
+  "originalFinalAnswer": "已在上面渲染了这套边界模型（6 个节点、5 条有向关系），下面按“边界”和“耦合”两种视角分开看：\n\n**边界：三条不重叠的作用域**\n- 入口边界：图中只有 Client→Gateway 一条入口边，所有外部调用都必须先经过 Gateway，它在图中是唯一的入口。\n- 查询侧：Search→Index 是只读边，因此读操作不会影响写操作。\n- 账户侧：Account→Store 是读写边，也是唯一一条写操作路径。\n- Search 与 Account 之间没有边，Index 与 Store 之间也没有边；把两部分拆开后，彼此没有连接点。\n- “禁止 Search 访问 Store”是约束条件，不是图中存在的一条被删掉的边：图中本来就没有 Search→Store 这条有向边，也不代表 Store 被声明为绝对排他所有——只是在你给出的关系里，Store 只有 Account 一个访问方。\n\n**耦合：两条路径恰好共用一段入口**\n- 查询路径 `Client→Gateway→Search→Index` 与账户路径 `Client→Gateway→Account→Store` 的交集只有 `Client`、`Gateway` 两个节点。这种耦合是共享入口造成的，并非业务逻辑互相调用造成的。\n- 因此，两条业务流程在 Search/Account 往下的部分彼此无关，但在 Gateway 处汇合：Gateway 一旦出问题，两条路径都会受影响，不能据此认为故障影响互不相关。\n- 反过来，如果 Index 或 Store 出问题，按图中关系影响范围各自独立；不过 Search 若需要跨侧数据，只能绕回 Gateway 走 Account，这条替代路径在你的规则里并不存在。\n\n**尚未明确的**：重试、回滚、复制、事务边界、Gateway 内部是否按路由分实例、只读是否有缓存副本——这些你都没有给出，因此不构成当前模型的一部分。\n\n上面组件里的交集合计（`Client`、`Gateway`）就是“耦合有多紧”的直接读数：耦合的宽度等于共享节点数，而不是服务之间的调用数。",
+  "originalViewPresent": true,
+  "originalDelivery": {
+    "version": 1,
+    "wholeCandidateVerified": false,
+    "wholeViewProseVerified": false,
+    "identityVerified": false,
+    "worldFactsVerified": false,
+    "externalAssistantBodyIntercepted": false,
+    "answerProvidedByCaller": true,
+    "answerCompleteness": "caller-supplied; completeness not independently established",
+    "originalAnswer": "已在上面渲染了这套边界模型（6 个节点、5 条有向关系），下面按“边界”和“耦合”两种视角分开看：\n\n**边界：三条不重叠的作用域**\n- 入口边界：图中只有 Client→Gateway 一条入口边，所有外部调用都必须先经过 Gateway，它在图中是唯一的入口。\n- 查询侧：Search→Index 是只读边，因此读操作不会影响写操作。\n- 账户侧：Account→Store 是读写边，也是唯一一条写操作路径。\n- Search 与 Account 之间没有边，Index 与 Store 之间也没有边；把两部分拆开后，彼此没有连接点。\n- “禁止 Search 访问 Store”是约束条件，不是图中存在的一条被删掉的边：图中本来就没有 Search→Store 这条有向边，也不代表 Store 被声明为绝对排他所有——只是在你给出的关系里，Store 只有 Account 一个访问方。\n\n**耦合：两条路径恰好共用一段入口**\n- 查询路径 `Client→Gateway→Search→Index` 与账户路径 `Client→Gateway→Account→Store` 的交集只有 `Client`、`Gateway` 两个节点。这种耦合是共享入口造成的，并非业务逻辑互相调用造成的。\n- 因此，两条业务流程在 Search/Account 往下的部分彼此无关，但在 Gateway 处汇合：Gateway 一旦出问题，两条路径都会受影响，不能据此认为故障影响互不相关。\n- 反过来，如果 Index 或 Store 出问题，按图中关系影响范围各自独立；不过 Search 若需要跨侧数据，只能绕回 Gateway 走 Account，这条替代路径在你的规则里并不存在。\n\n**尚未明确的**：重试、回滚、复制、事务边界、Gateway 内部是否按路由分实例、只读是否有缓存副本——这些你都没有给出，因此不构成当前模型的一部分。\n\n上面组件里的交集合计（`Client`、`Gateway`）就是“耦合有多紧”的直接读数：耦合的宽度等于共享节点数，而不是服务之间的调用数。",
+    "newModelCalls": 0,
+    "status": "refused",
+    "code": "ANSWER_VIEW_SOURCE_MISMATCH",
+    "reason": "原始结构没有匹配当前有限来源。没有用正确片段或本地假设替换原字段。",
+    "text": null,
+    "binding": {
+      "checkerVersion": "answer-delivery-1",
+      "sourceDocumentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+      "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+      "sourceSnapshotSha256": "222f6092ac0ba1d7ff827220fa2df54120c8c56ffaf3e9fc312b23da86a8a371",
+      "viewSha256": "0fa8578cd016eaf554ff4c63bd7916bd9efa35e51969fdbe847e119091fd2910",
+      "rulesSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "mappingSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+      "candidateBundleSha256": "9f2dce0d37b20059bf7c215899f0022a428e05bd4c56f25a8fad2857393b949a"
+    },
+    "viewIdentity": {
+      "displayId": "gateway-search-account-boundary",
+      "revision": 1,
+      "component": "ArchitectureExplorer"
+    },
+    "coverage": {
+      "policy": "all-original-text-remains-unverified",
+      "diagnosticSpansAreNotCoverage": true,
+      "allViewFieldsIncludedInDigest": true,
+      "representations": [
+        {
+          "origin": "view",
+          "encoding": "canonical-json",
+          "sha256": "0fa8578cd016eaf554ff4c63bd7916bd9efa35e51969fdbe847e119091fd2910",
+          "utf16Length": 2383,
+          "unverifiedRanges": [
+            {
+              "utf16Start": 0,
+              "utf16End": 2383
+            }
+          ]
+        },
+        {
+          "origin": "answer",
+          "encoding": "original-text",
+          "sha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+          "utf16Length": 897,
+          "unverifiedRanges": [
+            {
+              "utf16Start": 0,
+              "utf16End": 897
+            }
+          ]
+        }
+      ]
+    },
+    "diagnostics": [
+      {
+        "path": "/view/summary",
+        "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "candidateSha256": "62ba165e02cf100048ddf24ea259fec4b0e412415e0f205065a655e6561d557a",
+        "reviewStatus": "source-unsupported",
+        "wholeCandidateVerified": false,
+        "assertions": [],
+        "uncovered": [],
+        "recognizedAssertionsDoNotApproveRemainingText": true
+      },
+      {
+        "path": "/answer",
+        "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+        "candidateSha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+        "reviewStatus": "source-unsupported",
+        "wholeCandidateVerified": false,
+        "assertions": [],
+        "uncovered": [],
+        "recognizedAssertionsDoNotApproveRemainingText": true
+      }
+    ],
+    "structuredSourceMatch": false
+  },
+  "programReference": {
+    "authorship": "existing program source constructor; not repaired or new model answer",
+    "receipt": {
+      "status": "limited-delivery",
+      "structuredStatus": "checked",
+      "statusScope": "structured source match and limited delivery; never whole-answer verification",
+      "answerDelivery": {
+        "version": 1,
+        "wholeCandidateVerified": false,
+        "wholeViewProseVerified": false,
+        "identityVerified": false,
+        "worldFactsVerified": false,
+        "externalAssistantBodyIntercepted": false,
+        "answerProvidedByCaller": true,
+        "answerCompleteness": "caller-supplied; completeness not independently established",
+        "originalAnswer": "已在上面渲染了这套边界模型（6 个节点、5 条有向关系），下面按“边界”和“耦合”两种视角分开看：\n\n**边界：三条不重叠的作用域**\n- 入口边界：图中只有 Client→Gateway 一条入口边，所有外部调用都必须先经过 Gateway，它在图中是唯一的入口。\n- 查询侧：Search→Index 是只读边，因此读操作不会影响写操作。\n- 账户侧：Account→Store 是读写边，也是唯一一条写操作路径。\n- Search 与 Account 之间没有边，Index 与 Store 之间也没有边；把两部分拆开后，彼此没有连接点。\n- “禁止 Search 访问 Store”是约束条件，不是图中存在的一条被删掉的边：图中本来就没有 Search→Store 这条有向边，也不代表 Store 被声明为绝对排他所有——只是在你给出的关系里，Store 只有 Account 一个访问方。\n\n**耦合：两条路径恰好共用一段入口**\n- 查询路径 `Client→Gateway→Search→Index` 与账户路径 `Client→Gateway→Account→Store` 的交集只有 `Client`、`Gateway` 两个节点。这种耦合是共享入口造成的，并非业务逻辑互相调用造成的。\n- 因此，两条业务流程在 Search/Account 往下的部分彼此无关，但在 Gateway 处汇合：Gateway 一旦出问题，两条路径都会受影响，不能据此认为故障影响互不相关。\n- 反过来，如果 Index 或 Store 出问题，按图中关系影响范围各自独立；不过 Search 若需要跨侧数据，只能绕回 Gateway 走 Account，这条替代路径在你的规则里并不存在。\n\n**尚未明确的**：重试、回滚、复制、事务边界、Gateway 内部是否按路由分实例、只读是否有缓存副本——这些你都没有给出，因此不构成当前模型的一部分。\n\n上面组件里的交集合计（`Client`、`Gateway`）就是“耦合有多紧”的直接读数：耦合的宽度等于共享节点数，而不是服务之间的调用数。",
+        "newModelCalls": 0,
+        "binding": {
+          "checkerVersion": "answer-delivery-1",
+          "sourceDocumentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+          "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+          "sourceSnapshotSha256": "222f6092ac0ba1d7ff827220fa2df54120c8c56ffaf3e9fc312b23da86a8a371",
+          "viewSha256": "220d3a1dd518519c8e92b280a7eae80f4f0fb0743a3eb00ee2647c60d9ff28d2",
+          "rulesSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "mappingSha256": "74234e98afe7498fb5daf1f36ac2d78acc339464f950703b8c019892f982b90b",
+          "candidateBundleSha256": "c47d3ab30dda26e0e4d63e1ba431832cfa15ed0ed22cd0641d4c74b1424ad046"
+        },
+        "viewIdentity": {
+          "displayId": "source-reference-05ee44b266d6bbbd",
+          "revision": 1,
+          "component": "ArchitectureExplorer"
+        },
+        "coverage": {
+          "policy": "all-original-text-remains-unverified",
+          "diagnosticSpansAreNotCoverage": true,
+          "allViewFieldsIncludedInDigest": true,
+          "representations": [
+            {
+              "origin": "view",
+              "encoding": "canonical-json",
+              "sha256": "220d3a1dd518519c8e92b280a7eae80f4f0fb0743a3eb00ee2647c60d9ff28d2",
+              "utf16Length": 1976,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 1976
+                }
+              ]
+            },
+            {
+              "origin": "answer",
+              "encoding": "original-text",
+              "sha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+              "utf16Length": 897,
+              "unverifiedRanges": [
+                {
+                  "utf16Start": 0,
+                  "utf16End": 897
+                }
+              ]
+            }
+          ]
+        },
+        "diagnostics": [
+          {
+            "path": "/view/summary",
+            "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "candidateSha256": "9cfc48e8decb18fb13ef7fbf4517920450ac2f7b61f60909dcc055273e74012a",
+            "reviewStatus": "source-unsupported",
+            "wholeCandidateVerified": false,
+            "assertions": [],
+            "uncovered": [],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          },
+          {
+            "path": "/answer",
+            "sourceTextSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "candidateSha256": "8ae96aadc371c11c8adea4fd51cc1df9c18b4673378c73a248d3e8ef0e453076",
+            "reviewStatus": "source-unsupported",
+            "wholeCandidateVerified": false,
+            "assertions": [],
+            "uncovered": [],
+            "recognizedAssertionsDoNotApproveRemainingText": true
+          }
+        ],
+        "structuredSourceMatch": true,
+        "status": "limited-source-output",
+        "code": "ORIGINAL_CANDIDATE_NOT_APPROVED",
+        "reason": "原候选完整保留为未核数据；交付文本是当前来源的程序投影，不是修复后的模型原回答。",
+        "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。",
+        "textSha256": "f494b68f4edc52a20121419726ef225e56b931eccbfccf10a2d32df39c1c6719",
+        "textOrigin": "program-derived finite source projection",
+        "sourceKind": "permissions-zh",
+        "sourceComparisonScope": "caller-selected complete finite text; no identity or world-fact certification"
+      },
+      "explanationZh": "已读取架构关系图完整结果（格式3）。保存的语言、主题、选择、A/B与草稿保留在原合同内。\n原始view与调用者固定来源在既有有限语法内匹配；未认证作者、现实事实、任意正文或政策。\n结构匹配不批准整段正文。原候选和全部view文字保留为未核数据；有限断言不是同句或剩余内容的覆盖证明。\n仅可交付当前来源的有限程序说明：\n客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。\n原始声明的完整范围计算与本地展示选择分开；筛选、搜索、情景和画布状态保留于原包，不作为新的来源事实。\n计算复用已有核心；规则、标签和模型注释仍是声明，不认证优选或世界事实。",
+      "document": {
+        "manifest": {
+          "format": "dsh-semantic-ui-result",
+          "version": 3,
+          "producer": {
+            "name": "@whytan/dsh-semantic-ui",
+            "version": "0.1.0-preview.31"
+          },
+          "protocolVersion": "1.4",
+          "dependencies": [
+            {
+              "name": "dsh",
+              "version": "0.2.1-rc.2"
+            },
+            {
+              "name": "@json-render/core",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@json-render/react",
+              "version": "0.21.1"
+            },
+            {
+              "name": "@xyflow/react",
+              "version": "12.12.0"
+            },
+            {
+              "name": "@dagrejs/dagre",
+              "version": "3.1.1"
+            },
+            {
+              "name": "echarts",
+              "version": "6.1.0"
+            },
+            {
+              "name": "react",
+              "version": "19.3.1"
+            }
+          ],
+          "sourceState": "not-recorded",
+          "templateLibraryIncluded": false,
+          "authority": "data-only; no identity, permission, approval or instruction authority"
+        },
+        "content": {
+          "view": {
+            "protocolVersion": "1.4",
+            "displayId": "source-reference-05ee44b266d6bbbd",
+            "revision": 1,
+            "summary": "有限来源的程序参考载荷；不是模型原文，不认证世界事实。",
+            "component": "ArchitectureExplorer",
+            "payload": {
+              "title": "来源声明的直接关系",
+              "nodes": [
+                {
+                  "id": "node-0",
+                  "label": "客户端",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-1",
+                  "label": "Gateway",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-2",
+                  "label": "Search",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-3",
+                  "label": "Account",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-4",
+                  "label": "Index",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                },
+                {
+                  "id": "node-5",
+                  "label": "Store",
+                  "responsibility": "来源声明中的字面节点。",
+                  "constraints": [],
+                  "evidence": []
+                }
+              ],
+              "edges": [
+                {
+                  "id": "edge-0",
+                  "source": "node-0",
+                  "target": "node-1",
+                  "directed": true,
+                  "type": "access",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-1",
+                  "source": "node-1",
+                  "target": "node-2",
+                  "directed": true,
+                  "type": "access",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-2",
+                  "source": "node-1",
+                  "target": "node-3",
+                  "directed": true,
+                  "type": "access",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-3",
+                  "source": "node-2",
+                  "target": "node-4",
+                  "directed": true,
+                  "type": "read-only",
+                  "evidence": []
+                },
+                {
+                  "id": "edge-4",
+                  "source": "node-3",
+                  "target": "node-5",
+                  "directed": true,
+                  "type": "read-write",
+                  "evidence": []
+                }
+              ],
+              "scenarios": [
+                {
+                  "id": "relation-0",
+                  "label": "声明关系 1",
+                  "nodeIds": [
+                    "node-0",
+                    "node-1"
+                  ],
+                  "edgeIds": [
+                    "edge-0"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-1",
+                  "label": "声明关系 2",
+                  "nodeIds": [
+                    "node-1",
+                    "node-2"
+                  ],
+                  "edgeIds": [
+                    "edge-1"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-2",
+                  "label": "声明关系 3",
+                  "nodeIds": [
+                    "node-1",
+                    "node-3"
+                  ],
+                  "edgeIds": [
+                    "edge-2"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-3",
+                  "label": "声明关系 4",
+                  "nodeIds": [
+                    "node-2",
+                    "node-4"
+                  ],
+                  "edgeIds": [
+                    "edge-3"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                },
+                {
+                  "id": "relation-4",
+                  "label": "声明关系 5",
+                  "nodeIds": [
+                    "node-3",
+                    "node-5"
+                  ],
+                  "edgeIds": [
+                    "edge-4"
+                  ],
+                  "explanation": "只高亮这条已声明的正向关系，不解释故障传播、业务独立或执行保证。"
+                }
+              ]
+            }
+          },
+          "theme": {
+            "mode": "light",
+            "palette": "ocean",
+            "font": "system",
+            "density": "comfortable",
+            "textSize": "standard"
+          },
+          "layout": {
+            "direction": "auto"
+          },
+          "locale": "zh-CN",
+          "interaction": {
+            "component": "ArchitectureExplorer",
+            "selected": "",
+            "query": "",
+            "focus": false,
+            "scenario": ""
+          }
+        },
+        "sha256": "feb4294d94853bf1baf84529f846b453642a63741d524583762bae31f646edc3"
+      },
+      "retained": {
+        "format": 3,
+        "locale": "zh-CN",
+        "theme": {
+          "mode": "light",
+          "palette": "ocean",
+          "font": "system",
+          "density": "comfortable",
+          "textSize": "standard"
+        },
+        "layout": {
+          "direction": "auto"
+        },
+        "recordedSourceStatus": "not-recorded"
+      },
+      "layers": {
+        "recordedSource": "historical-data-only",
+        "recordedSourceConsistency": "no-bound-record",
+        "declarations": {
+          "protocolVersion": "1.4",
+          "component": "ArchitectureExplorer",
+          "summarySource": "model-authored; not independently verified",
+          "sourceFactsVerified": false,
+          "wholeAnswerVerified": false,
+          "validationScope": "supplied structured data only; no free-text coverage",
+          "responseContract": "Base the final response on these computed fields and actual supplied facts. Keep it concise. Do not invent causal guarantees, operating costs, migration advantages or rules; do not call an unknown source fact resolved by a local demand control.",
+          "graphFacts": {
+            "scope": "declared-graph-only",
+            "sourceFactsVerified": false,
+            "nodeCount": 6,
+            "edgeCount": 5,
+            "directedEdgeCount": 5,
+            "directedEdges": [
+              {
+                "id": "edge-0",
+                "source": "node-0",
+                "target": "node-1"
+              },
+              {
+                "id": "edge-1",
+                "source": "node-1",
+                "target": "node-2"
+              },
+              {
+                "id": "edge-2",
+                "source": "node-1",
+                "target": "node-3"
+              },
+              {
+                "id": "edge-3",
+                "source": "node-2",
+                "target": "node-4"
+              },
+              {
+                "id": "edge-4",
+                "source": "node-3",
+                "target": "node-5"
+              }
+            ],
+            "directedEdgesOmitted": 0,
+            "sharedTargets": [],
+            "sharedTargetsOmitted": 0,
+            "scenarioIntersections": [
+              {
+                "scenarioIds": [
+                  "relation-0",
+                  "relation-1"
+                ],
+                "sharedNodeIds": [
+                  "node-1"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-0",
+                  "relation-2"
+                ],
+                "sharedNodeIds": [
+                  "node-1"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-1",
+                  "relation-2"
+                ],
+                "sharedNodeIds": [
+                  "node-1"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-1",
+                  "relation-3"
+                ],
+                "sharedNodeIds": [
+                  "node-2"
+                ],
+                "nodesOmitted": 0
+              },
+              {
+                "scenarioIds": [
+                  "relation-2",
+                  "relation-4"
+                ],
+                "sharedNodeIds": [
+                  "node-3"
+                ],
+                "nodesOmitted": 0
+              }
+            ],
+            "scenarioIntersectionsOmitted": 0,
+            "boundary": "Only supplied edges and paths. Missing edges do not prove forbidden access, unique ownership or fault independence. An edge does not define rollback, retries or failure propagation. Never invent a reverse route."
+          },
+          "canonicalSummary": "Declared graph: 6 nodes, 5 relationships.",
+          "canonicalSummarySource": "computed from the supplied graph; not independent verification"
+        },
+        "local": {
+          "scope": "presentation-selection-only",
+          "selection": {
+            "component": "ArchitectureExplorer",
+            "selected": "",
+            "query": "",
+            "focus": false,
+            "scenario": ""
+          },
+          "recomputedAsSource": false
+        },
+        "sourceComparison": {
+          "sourceCheckVersion": "1.0",
+          "sourceCheckKind": "permissions-zh",
+          "source": {
+            "input": "caller-configured startup file snapshot; separate from tool arguments",
+            "documentSha256": "2fb654eabcbe810aee4581f124f773610dc1cd9867925931f2d5513dcceb8481",
+            "jsonPointer": "/question",
+            "textSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "excerptSha256": "05ee44b266d6bbbd75607f04de92a39928732f50e3f8981c14b1cd50d7a56db8",
+            "selection": {
+              "textUTF8ByteStart": 0,
+              "textUTF8ByteEnd": 193,
+              "textUTF8Bytes": 193
+            },
+            "identityVerified": false,
+            "authorship": "unverified; a configured file does not certify its author or original user",
+            "scope": "bounded permissions-zh direct access, pair-bound read/write and subject-local only-target restrictions; source identity, unselected context and arbitrary prose are not assessed"
+          },
+          "sourceFactsVerified": false,
+          "unverified": [
+            "source author/human identity",
+            "unselected context and general natural-language meaning",
+            "node annotations, unrecognized edge labels, scenario explanations, summary and arbitrary prose",
+            "global exclusivity, alternative paths, retries, transactions and real failure propagation"
+          ],
+          "status": "compared",
+          "sourcePermissions": {
+            "context": "虚构服务",
+            "nodes": [
+              "客户端",
+              "Gateway",
+              "Search",
+              "Account",
+              "Index",
+              "Store"
+            ],
+            "accesses": [
+              {
+                "from": "客户端",
+                "to": "Gateway",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 18,
+                    "textByteEnd": 47
+                  }
+                ]
+              },
+              {
+                "from": "Gateway",
+                "to": "Search",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "from": "Gateway",
+                "to": "Account",
+                "mode": "access",
+                "spans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "from": "Search",
+                "to": "Index",
+                "mode": "read-only",
+                "spans": [
+                  {
+                    "textByteStart": 86,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "from": "Account",
+                "to": "Store",
+                "mode": "read-write",
+                "spans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 128
+                  }
+                ]
+              }
+            ],
+            "prohibitions": [
+              {
+                "from": "Search",
+                "to": "Store",
+                "spans": [
+                  {
+                    "textByteStart": 131,
+                    "textByteEnd": 157
+                  }
+                ]
+              }
+            ],
+            "onlyTargets": [
+              {
+                "from": "客户端",
+                "targets": [
+                  "Gateway"
+                ],
+                "spans": [
+                  {
+                    "textByteStart": 18,
+                    "textByteEnd": 47
+                  }
+                ]
+              }
+            ]
+          },
+          "comparison": {
+            "status": "matched",
+            "scope": "all declared direct positive pairs and finite edge modes only; prohibitions/only-target conditions are listed in sourcePermissions and checked via typed claims, not inferred from view annotations",
+            "nodeChecks": [
+              {
+                "nodeId": "node-0",
+                "label": "客户端",
+                "status": "matched"
+              },
+              {
+                "nodeId": "node-1",
+                "label": "Gateway",
+                "status": "matched"
+              },
+              {
+                "nodeId": "node-2",
+                "label": "Search",
+                "status": "matched"
+              },
+              {
+                "nodeId": "node-3",
+                "label": "Account",
+                "status": "matched"
+              },
+              {
+                "nodeId": "node-4",
+                "label": "Index",
+                "status": "matched"
+              },
+              {
+                "nodeId": "node-5",
+                "label": "Store",
+                "status": "matched"
+              }
+            ],
+            "edgeChecks": [
+              {
+                "edgeId": "edge-0",
+                "from": "客户端",
+                "to": "Gateway",
+                "status": "matched",
+                "expectedMode": "access",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 18,
+                    "textByteEnd": 47
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-1",
+                "from": "Gateway",
+                "to": "Search",
+                "status": "matched",
+                "expectedMode": "access",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-2",
+                "from": "Gateway",
+                "to": "Account",
+                "status": "matched",
+                "expectedMode": "access",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 50,
+                    "textByteEnd": 83
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-3",
+                "from": "Search",
+                "to": "Index",
+                "status": "matched",
+                "expectedMode": "read-only",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 86,
+                    "textByteEnd": 105
+                  }
+                ]
+              },
+              {
+                "edgeId": "edge-4",
+                "from": "Account",
+                "to": "Store",
+                "status": "matched",
+                "expectedMode": "read-write",
+                "sourceSpans": [
+                  {
+                    "textByteStart": 108,
+                    "textByteEnd": 128
+                  }
+                ]
+              }
+            ],
+            "viewAnnotations": "not-verified"
+          },
+          "issues": [],
+          "claimChecks": [],
+          "freeProse": {
+            "status": "not-verified",
+            "provided": false,
+            "characters": 0
+          },
+          "canonicalExplanation": {
+            "status": "available",
+            "basis": "bounded explicit source declarations; no global or causal inference",
+            "text": "客户端 → Gateway：明确访问关系；读写权限未声明。\nGateway → Search：明确访问关系；读写权限未声明。\nGateway → Account：明确访问关系；读写权限未声明。\nSearch → Index：该主体对该目标只读，不许可写入。\nAccount → Store：该主体对该目标可读写。\n禁止 Search → Store；这是方向性限制，不是正向访问边。\n客户端 的直接访问目标仅限 Gateway；不限制其它主体的访问目标。\n未声明的关系和权限保持未知；已给读写不代表独占访问。任意注释、全局唯一入口、替代路径、事务或故障影响均未核对。"
+          }
+        }
+      },
+      "identityVerified": false,
+      "sourceFactsVerified": false,
+      "freeProseVerified": false,
+      "automaticModelOrToolCalls": 0
+    }
+  }
+}

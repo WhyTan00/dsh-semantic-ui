@@ -1,0 +1,12 @@
+[
+  {
+    "stage": "first typecheck",
+    "observed": "Missing closing bracket in coverage representation array.",
+    "fix": "Correct array syntax before building any artifact."
+  },
+  {
+    "stage": "typecheck after first coverage implementation",
+    "observed": "Test code accessed diagnostics before narrowing the refused/limited result union.",
+    "fix": "Narrow on limited-source-output before accessing diagnostics; final typecheck passed."
+  }
+]
