@@ -4,6 +4,8 @@
 
 **默认简体中文，支持可记忆的「简体中文 / English」切换。** 每个组件顶部都有固定双语入口「界面语言 / Language」，同页同步切换，刷新后保留选择。图表、决策面板、架构图、模板主题与状态提示共用同一语言设置；你提供的来源和数据保持原样。
 
+新增[可复用任务表单](docs/TASK-FORM.zh-CN.md)：补充布尔/数值/枚举/文字条件，预览后明确确认并另存，重开后继续成新修订；模板、主题与答案分开。[task.1 预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-task.1)提供单文件离线HTML与文件命令入口，可独立使用，无须更改当前DSH页。当前个人页未安装/热更新，本轮未做浏览器或DSH显示验收。
+
 **[打开个人DSH交互视图（本机3200）](http://127.0.0.1:3200/)** · [免命令操作指南](docs/INTERACTIVE-ENTRY.zh-CN.md) · [项目技能](.agents/skills/semantic-ui-view/SKILL.md)
 
 在已有语义消息中展开“保存与携带完整结果”，选择自己的结果JSON，就能用中文修改本地条件、查看差异和unknown、保存并重开。这里打开真实个人DSH页面；Codex原生内嵌和自然技能选择仍未验。其他环境请使用自己的DSH地址。

@@ -7,6 +7,7 @@ import {validCapacityAmount} from './capacity-domain';
 import {conditionDraftSchema,assertConditionDraft} from './condition-form';
 import {scenarioComparisonSchema,assertDecisionSnapshot} from './scenarios';
 import {dataExplorationSchema,assertDataExploration} from './data-exploration';
+import {taskRecordSchema,assertTaskRecord,taskView} from './task-form/core';
 
 const ids=z.array(z.string().max(80)).max(80).refine(v=>new Set(v).size===v.length,'Duplicate selection IDs.');
 const index=z.number().int().min(0).max(2000);
@@ -21,9 +22,9 @@ export function initialInteraction(view:Envelope):Interaction{
  if(view.component==='DecisionExplorer')return {component:view.component,values:Object.fromEntries(view.payload.inputs.map(i=>[i.id,i.initial])),dimensions:view.payload.dimensions.map(d=>d.id),exploreProposals:false};
  return {component:view.component,selected:'',query:'',focus:false,scenario:''};
 }
-const contentSchema=z.strictObject({view:envelopeSchema,sourceRecord:sourceDeliverySchema.optional(),theme:themeSchema,layout:layoutSchema,locale:z.enum(['zh-CN','en']),interaction:interactionSchema});
+const contentSchema=z.strictObject({view:envelopeSchema,sourceRecord:sourceDeliverySchema.optional(),theme:themeSchema,layout:layoutSchema,locale:z.enum(['zh-CN','en']),interaction:interactionSchema,taskForm:taskRecordSchema.optional()});
 export type ResultContent=z.infer<typeof contentSchema>;
-const manifestSchema=z.strictObject({format:z.literal('dsh-semantic-ui-result'),version:z.union([z.literal(1),z.literal(2),z.literal(3),z.literal(4)]),producer:z.strictObject({name:z.literal('@whytan/dsh-semantic-ui'),version:z.string().min(1).max(80)}),protocolVersion:z.string().max(20),dependencies:z.array(z.strictObject({name:z.string().max(80),version:z.string().max(80)})).max(10),sourceState:z.enum(['bound-record','unverified-record','not-recorded']),templateLibraryIncluded:z.literal(false),authority:z.literal('data-only; no identity, permission, approval or instruction authority')});
+const manifestSchema=z.strictObject({format:z.literal('dsh-semantic-ui-result'),version:z.union([z.literal(1),z.literal(2),z.literal(3),z.literal(4),z.literal(5)]),producer:z.strictObject({name:z.literal('@whytan/dsh-semantic-ui'),version:z.string().min(1).max(80)}),protocolVersion:z.string().max(20),dependencies:z.array(z.strictObject({name:z.string().max(80),version:z.string().max(80)})).max(10),sourceState:z.enum(['bound-record','unverified-record','not-recorded']),templateLibraryIncluded:z.literal(false),authority:z.literal('data-only; no identity, permission, approval or instruction authority')});
 export const resultPackageSchema=z.strictObject({manifest:manifestSchema,content:contentSchema,sha256:z.string().regex(/^[a-f0-9]{64}$/)});
 export type ResultPackage=z.infer<typeof resultPackageSchema>;
 function assertContent(content:ResultContent){
@@ -63,13 +64,18 @@ const dependencies=[{name:'dsh',version:pkg.engines.dsh},...['@json-render/core'
 export async function createResult(content:ResultContent):Promise<ResultPackage>{
  const issue=bounded(content);if(issue)throw Error('RESULT_LIMIT: '+issue.code);
  const data=contentSchema.parse(content);assertContent(data);
- const manifest:z.infer<typeof manifestSchema>={format:'dsh-semantic-ui-result',version:data.interaction.component==='DataChart'&&data.interaction.dataExploration?4:3,producer:{name:'@whytan/dsh-semantic-ui',version:pkg.version},protocolVersion:data.view.protocolVersion,dependencies,sourceState:data.sourceRecord?.status==='bound'?'bound-record':data.sourceRecord?'unverified-record':'not-recorded',templateLibraryIncluded:false,authority:'data-only; no identity, permission, approval or instruction authority'};
+ const manifest:z.infer<typeof manifestSchema>={format:'dsh-semantic-ui-result',version:data.taskForm?5:data.interaction.component==='DataChart'&&data.interaction.dataExploration?4:3,producer:{name:'@whytan/dsh-semantic-ui',version:pkg.version},protocolVersion:data.view.protocolVersion,dependencies,sourceState:data.sourceRecord?.status==='bound'?'bound-record':data.sourceRecord?'unverified-record':'not-recorded',templateLibraryIncluded:false,authority:'data-only; no identity, permission, approval or instruction authority'};
  return readResult({manifest,content:data,sha256:await resultDigest({manifest,content:data})});
 }
 export async function readResult(raw:unknown):Promise<ResultPackage>{
  const issue=bounded(raw);if(issue)throw Error('RESULT_LIMIT: '+issue.code);
  const parsed=resultPackageSchema.safeParse(raw);if(!parsed.success)throw Error('RESULT_FORMAT: Unsupported or invalid result package.');
  const r=parsed.data;assertContent(r.content);
+ if((r.manifest.version===5)!==!!r.content.taskForm)throw Error('RESULT_FORMAT: Task records require result format 5.');
+ if(r.content.taskForm){
+  const task=await assertTaskRecord(r.content.taskForm);
+  if(r.content.sourceRecord?.status==='bound'||JSON.stringify(canonical(r.content.view))!==JSON.stringify(canonical(taskView(task))))throw Error('TASK_CONTEXT: Local task records cannot inherit a host source binding or a different view.');
+ }
  const linked=r.content.interaction.component==='DataChart'&&!!r.content.interaction.dataExploration;
  if((r.manifest.version===4)!==linked)throw Error('RESULT_FORMAT: Linked data exploration requires result format 4; older results keep their original format.');
  if(r.manifest.version<3&&r.content.interaction.component==='DecisionExplorer'&&r.content.interaction.scenarioComparison)throw Error('RESULT_FORMAT: Scenario comparisons require result format 3.');
