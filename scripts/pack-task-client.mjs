@@ -7,7 +7,7 @@ import assert from 'node:assert/strict';
 import {buildClient} from './client-build.mjs';
 import {buildTaskForm} from './task-form-build.mjs';
 const sha=bytes=>createHash('sha256').update(bytes).digest('hex');
-const baseVersion='0.1.0-preview.31',clientRevision=baseVersion+'-task.2',out=join('artifacts/releases',clientRevision),root=join(out,'client');
+const baseVersion='0.1.0-preview.31',clientRevision=baseVersion+'-task.3',out=join('artifacts/releases',clientRevision),root=join(out,'client');
 const filename='dsh-semantic-ui-client-'+clientRevision+'.zip';assert(!existsSync(join(out,filename)),'Refusing to overwrite a frozen client archive.');
 const git=args=>execFileSync('git',args,{encoding:'utf8'}).trim();
 assert.equal(git(['status','--porcelain']),'','Commit the source before freezing a client archive.');

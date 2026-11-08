@@ -3,7 +3,7 @@ import {renderToStaticMarkup} from 'react-dom/server';
 import {createElement} from 'react';
 import {exampleTaskTemplate as t,exampleSourceA as a,exampleSourceB as b,exampleAnswersA as aa,exampleAnswersB as ab} from '../fixtures/task-form/example';
 import {blankTaskDraft,previewTask,confirmTask,continueTask,taskParse,taskTemplateSchema,taskTemplateFromLegacy,replaceTaskTemplate,validateTaskDraft,type TaskRecord} from '../src/task-form/core';
-import {packageTask,taskResults,TASK_RESULTS_KEY} from '../src/task-form/storage';
+import {packageTask,taskResults,taskResultName,TASK_RESULTS_KEY} from '../src/task-form/storage';
 import {readResult,resultDigest} from '../src/results';
 import {TaskFormPanel} from '../src/task-form/TaskFormPanel';
 const lineage=()=>({seriesId:crypto.randomUUID(),revision:1,parentConfirmationSha256:null});
@@ -32,6 +32,9 @@ it('saves, reloads and continues an immutable confirmation as a new revision usi
 });
 it('keeps old saved results on quota failure or stale library revision',async()=>{
  let bytes:string|null=null,fail=false;const store={getItem:()=>bytes,setItem:(_k:string,v:string)=>{if(fail)throw Error('QUOTA');bytes=v;}},bridge=taskResults(store,()=>crypto.randomUUID(),async job=>job()),doc=await packageTask(await confirmed());await bridge({action:'save',expectedRevision:0,name:'原副本',document:doc});const before=bytes;fail=true;await expect(bridge({action:'save',expectedRevision:1,name:'失败',document:doc})).rejects.toThrow('QUOTA');expect(bytes).toBe(before);fail=false;await expect(bridge({action:'save',expectedRevision:0,name:'过期',document:doc})).rejects.toThrow('RESULT_CONFLICT');expect(bytes).toBe(before);expect(TASK_RESULTS_KEY).not.toBe('dsh-semantic-ui.local-data-results.v1');
+});
+it('saves a maximum-length template name through the real result library without losing the full template name',async()=>{
+ const w=working();w.template.name='长'.repeat(80);const document=await packageTask({version:1,status:'draft',...w}),map=new Map<string,string>(),bridge=taskResults({getItem:k=>map.get(k)??null,setItem:(k,v)=>{map.set(k,v);}},()=>crypto.randomUUID(),async job=>job());const saved=await bridge({action:'save',expectedRevision:0,name:taskResultName(document),document});expect(saved.results[0].name).toHaveLength(80);expect(saved.results[0].document.content.taskForm!.template.name).toHaveLength(80);
 });
 it('saves invalid draft text as draft and rejects altered confirmations, downgrade and imported unknown schema',async()=>{
  const w=working();w.draft.size.text='NaN';const draft:TaskRecord={version:1,status:'draft',...w};expect((await readResult(await packageTask(draft))).content.taskForm).toEqual(draft);

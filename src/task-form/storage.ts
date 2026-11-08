@@ -1,6 +1,7 @@
 import {ResultLibrary,resultsSchema,emptyResults,createResult,initialInteraction,type ResultsBridge,type ResultPackage} from '../results';
 import {taskView,type TaskRecord} from './core';
 export const TASK_RESULTS_KEY='dsh-semantic-ui.task-results.v1';
+export const taskResultName=(document:ResultPackage,preferred='')=>(preferred.trim()||`${document.content.taskForm!.template.name} · ${document.content.taskForm!.status==='confirmed'?'确认':'草稿'} v${document.content.taskForm!.lineage.revision}`).slice(0,80);
 /** Same ResultLibrary and limits; no chat log, host RPC or access to old browser libraries. */
 export function taskResults(storage:Pick<Storage,'getItem'|'setItem'>,uuid:()=>string,exclusive:<T>(job:()=>Promise<T>)=>Promise<T>):ResultsBridge{
  const read=()=>{const raw=storage.getItem(TASK_RESULTS_KEY);return raw===null?emptyResults():resultsSchema.parse(JSON.parse(raw));};
