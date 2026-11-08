@@ -1,6 +1,6 @@
 {
   "clientRevision": "0.1.0-preview.31-task.3",
-  "sourceCommit": null,
+  "sourceCommit": "6d43d58c69316ee31521f3bc48232dcfea348d0f",
   "scope": "New local task form and new public artifacts only. Existing browser, profile, runtime, old requests and old waiting gates untouched.",
   "typecheck": {
     "command": "pnpm typecheck",
@@ -121,7 +121,40 @@
   },
   "wholeProjectGoalComplete": false,
   "release": {
-    "status": "not_built_yet"
+    "status": "published_prerelease",
+    "id": 438003943,
+    "tag": "client-v0.1.0-preview.31-task.3",
+    "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-task.3",
+    "assets": [
+      {
+        "name": "client-manifest.json",
+        "bytes": 3261,
+        "sha256": "76a35e940e39dd107081c1c7f82cb630045512781808ce7762a90c47ac4f4154",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-task.3/client-manifest.json"
+      },
+      {
+        "name": "dsh-semantic-ui-client-0.1.0-preview.31-task.3.zip",
+        "bytes": 1074676,
+        "sha256": "cb8a54e925fdba034611af8170a8a1ca8d76edbdde28551752cfd10002fc68fe",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-task.3/dsh-semantic-ui-client-0.1.0-preview.31-task.3.zip"
+      },
+      {
+        "name": "SHA256SUMS",
+        "bytes": 309,
+        "sha256": "029294b372e59a27b2f022239e0dcb12a32272cb8df7cc059573fb05e50c724a",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-task.3/SHA256SUMS"
+      },
+      {
+        "name": "task-form-0.1.0-preview.31-task.3.html",
+        "bytes": 634979,
+        "sha256": "78a6751bd113a575238f9a0322224183cd878a8800f565b73fb4e54c5a480763",
+        "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/download/client-v0.1.0-preview.31-task.3/task-form-0.1.0-preview.31-task.3.html"
+      }
+    ],
+    "uploadedAssetSizesAndDigestsMatch": true,
+    "anonymousStandaloneHtmlDownloadMatches": true,
+    "anonymousHtmlDownloadWasHttpFileTransferNotBrowserAccess": true,
+    "ciRuns": 0
   },
   "unpublishedFrozenCandidate": {
     "clientRevision": "0.1.0-preview.31-task.1",
@@ -134,5 +167,17 @@
     "sourceCommit": "d82273fd69e1255e3d44ddc4409098f388d9bcf0",
     "sha256": "124ee442319b94e37835dccfe864289e559edb9abb509cef908bd873702670a1",
     "reason": "Final review found maximum-length template name plus default suffix exceeded saved-name limit; cap only the copy name, preserve full template name, add real-library regression."
+  },
+  "frozenArtifact": {
+    "passed": true,
+    "sourceCommit": "6d43d58c69316ee31521f3bc48232dcfea348d0f",
+    "archiveBytes": 1074676,
+    "archiveFiles": 235,
+    "archiveSha256": "cb8a54e925fdba034611af8170a8a1ca8d76edbdde28551752cfd10002fc68fe",
+    "allPublishedAssetSumsMatch": true,
+    "clientHtmlAndCliMatchTestedBuild": true,
+    "cliSameBytesAsPassedFrozenConsumer": true,
+    "fullStandaloneLicenses": true,
+    "previousFrozenCandidatesPreserved": true
   }
 }
