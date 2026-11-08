@@ -1,0 +1,45 @@
+{
+  "artifact": "plugins/semantic-ui-checks/dist/core.js",
+  "actualFrozenCoreImported": true,
+  "cases": [
+    {
+      "id": "A2",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "limited-source-output"
+    },
+    {
+      "id": "A3",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "limited-source-output"
+    },
+    {
+      "id": "D1",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "limited-source-output"
+    },
+    {
+      "id": "D2",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "limited-source-output"
+    },
+    {
+      "id": "N2",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "limited-source-output"
+    },
+    {
+      "id": "T2",
+      "originalDelivery": "refused",
+      "wholeCandidateVerified": false,
+      "programReference": "refused"
+    }
+  ],
+  "newMcpConnections": 0,
+  "newModelTurns": 0,
+  "browserOrDshAccess": false
+}

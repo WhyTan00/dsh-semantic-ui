@@ -1,0 +1,168 @@
+{
+  "entry": "node --import tsx scripts/result-local.ts",
+  "revision": 2,
+  "packageVersion": "0.1.0-preview.31.2",
+  "checkerContract": "answer-delivery-1; no whole-candidate certification",
+  "completeAnswerRetainedUnverified": true,
+  "onlyProgramSourceProjectionDelivered": true,
+  "staleBindingRefusesOutput": true,
+  "normalLocalDirectEntry": true,
+  "usesExistingCheckResultPackage": true,
+  "usesExistingReadSourceSnapshot": true,
+  "normalPublicInputs": [
+    "docs/evidence/codex-result-interop/examples/capacity-returned.json",
+    "docs/evidence/scenarios/examples/pair.json",
+    "fixtures/capacity-source.json",
+    "fixtures/result-capacity-mapping.json"
+  ],
+  "firstFixedSourceStatus": "limited-delivery",
+  "unverifiedPairStatus": "checked-unverified",
+  "sourceAndHypothesesSeparate": true,
+  "a80Source80B120AndInvalidDraftRetained": true,
+  "a100B220UnknownPriceAndTeamRetained": true,
+  "localeThemeAndSelectionRetained": true,
+  "sameResultContractEmitted": true,
+  "originalFilesByteUnchanged": true,
+  "pathContainsSpaces": true,
+  "importGraphHasNoMcpSdkOrNetworkOrChildProcessModule": true,
+  "allChildEntryGuardsPassed": true,
+  "cases": [
+    {
+      "name": "fixed-source",
+      "exit": 0,
+      "status": "limited-delivery",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "unverified-pair",
+      "exit": 0,
+      "status": "checked-unverified",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "carried-document",
+      "exit": 0,
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "chinese-explanation",
+      "exit": 0,
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "complete-answer",
+      "exit": 0,
+      "status": "limited-delivery",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "grounded-only",
+      "exit": 0,
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "missing-grounded-source",
+      "exit": 2,
+      "status": "checked-unverified",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "stale-answer",
+      "exit": 2,
+      "status": "delivery-refused",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "missing-required-source",
+      "exit": 2,
+      "status": "source-required",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "wrong-mapping",
+      "exit": 2,
+      "status": "source-mismatch",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "damaged",
+      "exit": 2,
+      "status": "invalid-result",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "incompatible",
+      "exit": 2,
+      "status": "invalid-result",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "dependency",
+      "exit": 2,
+      "status": "invalid-result",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "package-cannot-select-source",
+      "exit": 2,
+      "status": "invalid-result",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "bad-json",
+      "exit": 2,
+      "status": "entry-error",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "duplicate-source",
+      "exit": 2,
+      "status": "entry-error",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "missing-source-file",
+      "exit": 2,
+      "status": "entry-error",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "oversized-file",
+      "exit": 2,
+      "status": "entry-error",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    },
+    {
+      "name": "symlink-file",
+      "exit": 2,
+      "status": "entry-error",
+      "networkAttempts": 0,
+      "childProcessAttempts": 0
+    }
+  ],
+  "newMcpConnections": 0,
+  "newCodexThreads": 0,
+  "newModelTurns": 0,
+  "globalConfigurationChanged": false,
+  "serviceStartedOrRestarted": false,
+  "mainChatAutomaticRegistrationVerified": false,
+  "richUiVerified": false
+}

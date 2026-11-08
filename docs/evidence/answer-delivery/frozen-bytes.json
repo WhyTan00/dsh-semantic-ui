@@ -1,0 +1,14 @@
+{
+  "version": "0.1.0-preview.31.2",
+  "sourceCommit": "beed0c7af350b305e7ea2c6da558576dbac4bef3",
+  "sourceWorkingTreeClean": true,
+  "filename": "semantic-ui-checks-codex-0.1.0-preview.31.2.zip",
+  "bytes": 847368,
+  "sha256": "155f335b687c67da13b7a62d713152a900c39bec5e98acabb9cc746e6bfd7ed8",
+  "files": 240,
+  "allFilesMatchManifest": true,
+  "noPrivatePathsOrNodeModulesOrSourcemaps": true,
+  "origin": null,
+  "coreByteEqualToOrigin": null,
+  "directReaderSha256": "c36dc3d2edac2ecaaef6aacfc15fb471275fdd4aea26bfa97eb6f3748f93ea39"
+}

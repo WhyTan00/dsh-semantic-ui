@@ -1,0 +1,33 @@
+{
+  "releaseId": 438050647,
+  "tag": "codex-v0.1.0-preview.31.2",
+  "url": "https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.2",
+  "publicPrerelease": true,
+  "allThreeAnonymousDownloadsMatch": true,
+  "assets": [
+    {
+      "name": "plugin-package-manifest.json",
+      "httpStatus": 200,
+      "bytes": 51628,
+      "sha256": "34170eadcdff733023691785dcb4fbbc6c63319b6b68dd271403fa35b49eeb90",
+      "sameAsFrozenLocal": true,
+      "sameAsGitHubServerDigest": true
+    },
+    {
+      "name": "semantic-ui-checks-codex-0.1.0-preview.31.2.zip",
+      "httpStatus": 200,
+      "bytes": 847368,
+      "sha256": "155f335b687c67da13b7a62d713152a900c39bec5e98acabb9cc746e6bfd7ed8",
+      "sameAsFrozenLocal": true,
+      "sameAsGitHubServerDigest": true
+    },
+    {
+      "name": "SHA256SUMS",
+      "httpStatus": 200,
+      "bytes": 114,
+      "sha256": "dccfd6af1943f02723510cfe346b2fb77c0bc8fd6ca283c252d85e00e5356ca7",
+      "sameAsFrozenLocal": true,
+      "sameAsGitHubServerDigest": true
+    }
+  ]
+}

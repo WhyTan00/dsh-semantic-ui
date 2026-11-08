@@ -41,3 +41,5 @@ node --import tsx scripts/result-local.ts \
 131项答复/正文定向检查、45项核心/协议/结果回归及类型检查通过，含同句漏项、矛盾、无据段、旧候选/源/映射/规则、部分来源、伪造证明、原包保留与超限。保存六题离线复核：四份原view来源不匹配，N2/T2无本插件原view，六份原正文均保留未核；五种既有程序参考可输出有限说明，T2保持拒绝。这是程序参考替代与拒绝验证，没有把任何原模型失败改判通过。
 
 实际文件入口的读取、原合同输出、有据输出、缺源/错源/旧绑定与文件限制检查另列在[新回执](evidence/answer-delivery.json)。MCP实现完成静态编译；本轮没有连接MCP、访问浏览器/DSH、调用模型或改全局配置。原六题仍为0通过/6失败/18请求；原宿主消费者、模型自然采用与Codex原生富UI分别未验。
+
+[31.2公开预发布](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/codex-v0.1.0-preview.31.2)已完成：干净源码/tag `beed0c7af350b305e7ea2c6da558576dbac4bef3`，240文件、ZIP847368字节，SHA-256 `155f335b687c67da13b7a62d713152a900c39bec5e98acabb9cc746e6bfd7ed8`。最终编译入口19项通过，实际冻结core复核六题及自带样例通过；三公开工件匿名全量下载HTTP200、字节/SHA和GitHub服务器digest均一致。本接受单独提交，不重打或修改冻结包。
