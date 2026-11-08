@@ -1,5 +1,5 @@
 {
-  "clientRevision": "0.1.0-preview.31-task.1",
+  "clientRevision": "0.1.0-preview.31-task.2",
   "sourceCommit": null,
   "scope": "New local task form and new public artifacts only. Existing browser, profile, runtime, old requests and old waiting gates untouched.",
   "typecheck": {
@@ -32,9 +32,10 @@
     "browserExecuted": false,
     "hashes": {
       "client.js": "76fb2f83cc63a4aea217404a19240a946759f855c19bd5458f916c000633234e",
-      "task-form.html": "694ebce16ac568c29ec7fc69064325cee53dd94a6f553f64f544b2cab23640c7",
+      "task-form.html": "cfbdc65b034037a495c1be4a63eb580f4ec0697c183ebda5f380593c51c3a586",
       "task-form.mjs": "f3fe2e4099dc22cf29e3a406b901f43461c7c9e3002620687d5e0cc297e5e181"
-    }
+    },
+    "fullStandaloneLicenseNotices": true
   },
   "syntheticOracles": {
     "A": {
@@ -72,6 +73,11 @@
       "stage": "adversarial unit/typecheck",
       "observed": "Constructor-key test incorrectly expected acceptance; existing bounded JSON contract explicitly refuses that key, and TypeScript treats property constructor as Function.",
       "fix": "Keep the shared refusal; construct the adversarial record via fromEntries and assert TASK_LIMIT. No protected validator changed."
+    },
+    {
+      "stage": "first frozen packaging, before publication",
+      "observed": "Standalone HTML had inline code copyright comments but omitted full MIT permission texts; ZIP already carried full licenses.",
+      "fix": "Embed the complete own/React/ReactDOM/Scheduler/Zod licenses in standalone HTML. Retain unpublished frozen task.1 unchanged; publish new task.2 revision instead."
     }
   ],
   "compatibility": {
@@ -115,5 +121,11 @@
   "wholeProjectGoalComplete": false,
   "release": {
     "status": "not_built_yet"
+  },
+  "unpublishedFrozenCandidate": {
+    "clientRevision": "0.1.0-preview.31-task.1",
+    "sourceCommit": "ca163e70572396186f9d947af3ab6fccb8a6a92e",
+    "sha256": "f0c95c0af1a888ab784d8d2cd1abd58c50bcd2d0efcd362ecf44d8bc8a3c12fb",
+    "reason": "Direct HTML license omission corrected in task.2; task.1 was not published, installed or overwritten."
   }
 }

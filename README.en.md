@@ -1,6 +1,6 @@
 # DSH Semantic UI
 
-[Task forms](docs/TASK-FORM.zh-CN.md) add typed local inputs, explicit preview/acknowledgement, immutable saved revisions and data-free reusable templates. [task.1](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-task.1) includes a standalone offline HTML entry and a file CLI. No browser, existing-profile installation or runtime changes were performed for this release; those UI acceptance boundaries remain unverified.
+[Task forms](docs/TASK-FORM.zh-CN.md) add typed local inputs, explicit preview/acknowledgement, immutable saved revisions and data-free reusable templates. [task.2](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-task.2) includes a standalone offline HTML entry and a file CLI. No browser, existing-profile installation or runtime changes were performed for this release; those UI acceptance boundaries remain unverified.
 
 Client increment [preview.31-data.1](https://github.com/WhyTan00/dsh-semantic-ui/releases/tag/client-v0.1.0-preview.31-data.1) adds explicit local CSV mapping and two linked plots. One row selection drives plots, details, statistics and export; browser-saved format 4 reopens after refresh, and replacing the dataset clears old selections and conclusions. No model call or file upload is used. [Chinese usage and compatibility guide](docs/DATA-EXPLORATION.zh-CN.md); [layered verification](docs/evidence/data-exploration.json).
 
